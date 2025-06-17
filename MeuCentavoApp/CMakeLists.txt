@@ -8,16 +8,19 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_SOURCE_DIR}/Designer)
-# Diga ao Qt onde procurar os arquivos .ui
-find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
+
+# Adicione Sql aqui
+find_package(Qt6 COMPONENTS Core Gui Widgets Sql REQUIRED)
 
 add_executable(MeuCentavoApp
         main.cpp
         Designer/interfaceMeuCentavo.ui
 )
 
+# Link com Qt::Sql também
 target_link_libraries(MeuCentavoApp
         Qt::Core
         Qt::Gui
         Qt::Widgets
+        Qt::Sql
 )
