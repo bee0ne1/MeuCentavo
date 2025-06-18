@@ -895,6 +895,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o: /home/bruno/Documentos/Git
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
+  /usr/include/qt6/QtCore/QDebug \
   /usr/include/qt6/QtCore/QVariant \
   /usr/include/qt6/QtCore/q17memory.h \
   /usr/include/qt6/QtCore/q20functional.h \
