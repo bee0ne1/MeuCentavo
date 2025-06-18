@@ -1,0 +1,17 @@
+/home/bruno/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp -B /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug
+-- The C compiler identification is GNU 15.1.1
+-- The CXX compiler identification is GNU 15.1.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found OpenGL: /usr/lib/libOpenGL.so
+-- Configuring done (5.3s)
+-- Generating done (0.2s)
+-- Build files have been written to: /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug

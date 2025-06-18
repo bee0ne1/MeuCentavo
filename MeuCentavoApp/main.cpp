@@ -1,14 +1,10 @@
 #include <QApplication>
 #include <QFile>
 #include <QTextStream>
-#include <QMainWindow>
-#include "ui_interfaceMeuCentavo.h"
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlError>
 #include <QDebug>
-#include <QSqlTableModel>
-#include <QTableView>
-
+#include "Designer/formMain.h"  // Inclui a sua nova tela principal
 
 int main(int argc, char *argv[])
 {
@@ -26,9 +22,9 @@ int main(int argc, char *argv[])
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setPort(3306);
-    db.setDatabaseName("MeuCentavoDB");  // Altere para o nome real do banco
-    db.setUserName("root");        // Altere para seu usuário
-    db.setPassword("8243");          // Altere para sua senha
+    db.setDatabaseName("MeuCentavoDB");
+    db.setUserName("root");
+    db.setPassword("8243");
 
     if (!db.open()) {
         qDebug() << "Erro ao conectar ao banco de dados:" << db.lastError().text();
@@ -37,12 +33,9 @@ int main(int argc, char *argv[])
 
     qDebug() << "Conexão com o banco de dados estabelecida com sucesso!";
 
-    // Cria e exibe a janela principal
-    QMainWindow mainWindow;
-    Ui::MainWindow ui;
-    ui.setupUi(&mainWindow);
-    mainWindow.show();
 
-    // Inicia o loop da aplicação
+    formMain janela;
+    janela.show();
+
     return app.exec();
 }
