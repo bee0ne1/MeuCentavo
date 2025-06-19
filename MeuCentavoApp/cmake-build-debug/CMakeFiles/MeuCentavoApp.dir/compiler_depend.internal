@@ -4,6 +4,7 @@
 CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o
  /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.cpp
  /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h
+ /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h
  /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/include/ui_formCadastro.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
@@ -531,9 +532,11 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o
  /usr/include/qt6/QtWidgets/QGridLayout
  /usr/include/qt6/QtWidgets/QLabel
  /usr/include/qt6/QtWidgets/QLineEdit
+ /usr/include/qt6/QtWidgets/QPushButton
  /usr/include/qt6/QtWidgets/QSpacerItem
  /usr/include/qt6/QtWidgets/QVBoxLayout
  /usr/include/qt6/QtWidgets/QWidget
+ /usr/include/qt6/QtWidgets/qabstractbutton.h
  /usr/include/qt6/QtWidgets/qapplication.h
  /usr/include/qt6/QtWidgets/qboxlayout.h
  /usr/include/qt6/QtWidgets/qframe.h
@@ -542,6 +545,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o
  /usr/include/qt6/QtWidgets/qlayout.h
  /usr/include/qt6/QtWidgets/qlayoutitem.h
  /usr/include/qt6/QtWidgets/qlineedit.h
+ /usr/include/qt6/QtWidgets/qpushbutton.h
  /usr/include/qt6/QtWidgets/qsizepolicy.h
  /usr/include/qt6/QtWidgets/qtwidgets-config.h
  /usr/include/qt6/QtWidgets/qtwidgetsexports.h
@@ -1067,6 +1071,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o
  /usr/include/qt6/QtGui/qkeysequence.h
  /usr/include/qt6/QtGui/qpaintdevice.h
  /usr/include/qt6/QtGui/qpalette.h
+ /usr/include/qt6/QtGui/qpen.h
  /usr/include/qt6/QtGui/qpicture.h
  /usr/include/qt6/QtGui/qpixelformat.h
  /usr/include/qt6/QtGui/qpixmap.h
@@ -1074,7 +1079,10 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o
  /usr/include/qt6/QtGui/qregion.h
  /usr/include/qt6/QtGui/qrgb.h
  /usr/include/qt6/QtGui/qrgba64.h
+ /usr/include/qt6/QtGui/qtextcursor.h
  /usr/include/qt6/QtGui/qtextdocument.h
+ /usr/include/qt6/QtGui/qtextformat.h
+ /usr/include/qt6/QtGui/qtextoption.h
  /usr/include/qt6/QtGui/qtgui-config.h
  /usr/include/qt6/QtGui/qtguiexports.h
  /usr/include/qt6/QtGui/qtguiglobal.h
@@ -1083,8 +1091,10 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o
  /usr/include/qt6/QtWidgets/QApplication
  /usr/include/qt6/QtWidgets/QGridLayout
  /usr/include/qt6/QtWidgets/QLabel
+ /usr/include/qt6/QtWidgets/QLineEdit
  /usr/include/qt6/QtWidgets/QMainWindow
  /usr/include/qt6/QtWidgets/QPushButton
+ /usr/include/qt6/QtWidgets/QSpacerItem
  /usr/include/qt6/QtWidgets/QVBoxLayout
  /usr/include/qt6/QtWidgets/QWidget
  /usr/include/qt6/QtWidgets/qabstractbutton.h
@@ -1095,6 +1105,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o
  /usr/include/qt6/QtWidgets/qlabel.h
  /usr/include/qt6/QtWidgets/qlayout.h
  /usr/include/qt6/QtWidgets/qlayoutitem.h
+ /usr/include/qt6/QtWidgets/qlineedit.h
  /usr/include/qt6/QtWidgets/qmainwindow.h
  /usr/include/qt6/QtWidgets/qpushbutton.h
  /usr/include/qt6/QtWidgets/qsizepolicy.h
@@ -1641,6 +1652,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o
  /usr/include/qt6/QtWidgets/QLabel
  /usr/include/qt6/QtWidgets/QMainWindow
  /usr/include/qt6/QtWidgets/QPushButton
+ /usr/include/qt6/QtWidgets/QSpacerItem
  /usr/include/qt6/QtWidgets/QStatusBar
  /usr/include/qt6/QtWidgets/QVBoxLayout
  /usr/include/qt6/QtWidgets/QWidget

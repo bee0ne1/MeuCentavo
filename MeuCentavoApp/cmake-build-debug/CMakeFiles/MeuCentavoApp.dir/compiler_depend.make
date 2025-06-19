@@ -3,6 +3,7 @@
 
 CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o: /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.cpp \
   /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h \
+  /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h \
   MeuCentavoApp_autogen/include/ui_formCadastro.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -530,9 +531,11 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o: /home/bruno/Docu
   /usr/include/qt6/QtWidgets/QGridLayout \
   /usr/include/qt6/QtWidgets/QLabel \
   /usr/include/qt6/QtWidgets/QLineEdit \
+  /usr/include/qt6/QtWidgets/QPushButton \
   /usr/include/qt6/QtWidgets/QSpacerItem \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
+  /usr/include/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/qt6/QtWidgets/qapplication.h \
   /usr/include/qt6/QtWidgets/qboxlayout.h \
   /usr/include/qt6/QtWidgets/qframe.h \
@@ -541,6 +544,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o: /home/bruno/Docu
   /usr/include/qt6/QtWidgets/qlayout.h \
   /usr/include/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/qt6/QtWidgets/qlineedit.h \
+  /usr/include/qt6/QtWidgets/qpushbutton.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
@@ -1065,6 +1069,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o: /home/bruno/Docum
   /usr/include/qt6/QtGui/qkeysequence.h \
   /usr/include/qt6/QtGui/qpaintdevice.h \
   /usr/include/qt6/QtGui/qpalette.h \
+  /usr/include/qt6/QtGui/qpen.h \
   /usr/include/qt6/QtGui/qpicture.h \
   /usr/include/qt6/QtGui/qpixelformat.h \
   /usr/include/qt6/QtGui/qpixmap.h \
@@ -1072,7 +1077,10 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o: /home/bruno/Docum
   /usr/include/qt6/QtGui/qregion.h \
   /usr/include/qt6/QtGui/qrgb.h \
   /usr/include/qt6/QtGui/qrgba64.h \
+  /usr/include/qt6/QtGui/qtextcursor.h \
   /usr/include/qt6/QtGui/qtextdocument.h \
+  /usr/include/qt6/QtGui/qtextformat.h \
+  /usr/include/qt6/QtGui/qtextoption.h \
   /usr/include/qt6/QtGui/qtgui-config.h \
   /usr/include/qt6/QtGui/qtguiexports.h \
   /usr/include/qt6/QtGui/qtguiglobal.h \
@@ -1081,8 +1089,10 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o: /home/bruno/Docum
   /usr/include/qt6/QtWidgets/QApplication \
   /usr/include/qt6/QtWidgets/QGridLayout \
   /usr/include/qt6/QtWidgets/QLabel \
+  /usr/include/qt6/QtWidgets/QLineEdit \
   /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QPushButton \
+  /usr/include/qt6/QtWidgets/QSpacerItem \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
   /usr/include/qt6/QtWidgets/qabstractbutton.h \
@@ -1093,6 +1103,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o: /home/bruno/Docum
   /usr/include/qt6/QtWidgets/qlabel.h \
   /usr/include/qt6/QtWidgets/qlayout.h \
   /usr/include/qt6/QtWidgets/qlayoutitem.h \
+  /usr/include/qt6/QtWidgets/qlineedit.h \
   /usr/include/qt6/QtWidgets/qmainwindow.h \
   /usr/include/qt6/QtWidgets/qpushbutton.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
@@ -1638,6 +1649,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o: /home/bruno/Documentos/Git
   /usr/include/qt6/QtWidgets/QLabel \
   /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QPushButton \
+  /usr/include/qt6/QtWidgets/QSpacerItem \
   /usr/include/qt6/QtWidgets/QStatusBar \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
@@ -2900,11 +2912,7 @@ MeuCentavoApp_autogen/include/ui_formMain.h:
 
 /usr/include/qt6/QtWidgets/qmainwindow.h:
 
-/usr/include/qt6/QtWidgets/QPushButton:
-
 /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/formMain.h:
-
-/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h:
 
@@ -2937,6 +2945,8 @@ MeuCentavoApp_autogen/include/ui_formMain.h:
 /usr/include/qt6/QtWidgets/qlayoutitem.h:
 
 /usr/include/qt6/QtWidgets/qlayout.h:
+
+/usr/include/qt6/QtWidgets/QPushButton:
 
 /usr/include/qt6/QtWidgets/QLabel:
 
@@ -3442,6 +3452,14 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o:
 
 /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/os_defines.h:
 
+/usr/lib/libXdmcp.so.6:
+
+/usr/include/qt6/QtGui/qimage.h:
+
+/usr/include/math.h:
+
+/usr/include/c++/15.1.1/bits/nested_exception.h:
+
 /usr/include/c++/15.1.1/bits/allocator.h:
 
 /usr/include/c++/15.1.1/bits/locale_classes.tcc:
@@ -3453,6 +3471,14 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o:
 /usr/include/qt6/QtCore/qstring.h:
 
 /usr/include/bits/posix_opt.h:
+
+/usr/include/c++/15.1.1/bits/atomic_base.h:
+
+/usr/include/c++/15.1.1/compare:
+
+/usr/include/qt6/QtCore/qobjectdefs.h:
+
+/usr/include/bits/types/error_t.h:
 
 /usr/include/bits/libc-header-start.h:
 
@@ -3542,26 +3568,6 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o:
 
 /usr/include/asm/posix_types_64.h:
 
-/usr/include/bits/types/struct_FILE.h:
-
-/usr/include/bits/types/wint_t.h:
-
-/usr/include/c++/15.1.1/cwchar:
-
-/usr/include/qt6/QtCore/qtextstream.h:
-
-/usr/include/bits/struct_rwlock.h:
-
-/usr/include/bits/types/sigset_t.h:
-
-/usr/include/c++/15.1.1/bits/max_size_type.h:
-
-/usr/include/qt6/QtCore/qhashfunctions.h:
-
-/usr/include/qt6/QtCore/qatomic_cxx11.h:
-
-/usr/include/bits/time64.h:
-
 /usr/include/c++/15.1.1/bits/fs_dir.h:
 
 /usr/include/bits/select.h:
@@ -3598,7 +3604,25 @@ MeuCentavoApp_autogen/include/ui_formUsuario.h:
 
 /usr/include/asm/unistd_64.h:
 
-MeuCentavoApp_autogen/include/ui_formCadastro.h:
+/usr/include/bits/types/struct_FILE.h:
+
+/usr/include/bits/types/wint_t.h:
+
+/usr/include/c++/15.1.1/cwchar:
+
+/usr/include/qt6/QtCore/qtextstream.h:
+
+/usr/include/bits/struct_rwlock.h:
+
+/usr/include/bits/types/sigset_t.h:
+
+/usr/include/c++/15.1.1/bits/max_size_type.h:
+
+/usr/include/qt6/QtCore/qhashfunctions.h:
+
+/usr/include/qt6/QtCore/qatomic_cxx11.h:
+
+/usr/include/bits/time64.h:
 
 /usr/include/bits/mathcalls.h:
 
@@ -3664,6 +3688,18 @@ MeuCentavoApp_autogen/include/ui_formCadastro.h:
 
 /usr/include/c++/15.1.1/bits/memory_resource.h:
 
+/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h:
+
+/usr/include/c++/15.1.1/bits/string_view.tcc:
+
+/usr/include/c++/15.1.1/bits/basic_string.tcc:
+
+/usr/include/bits/types.h:
+
+/usr/include/c++/15.1.1/stdlib.h:
+
+MeuCentavoApp_autogen/include/ui_formCadastro.h:
+
 /usr/include/asm/posix_types.h:
 
 /usr/include/bits/wordsize.h:
@@ -3677,20 +3713,6 @@ MeuCentavoApp_autogen/include/ui_formCadastro.h:
 /usr/include/qt6/QtCore/qstringconverter_base.h:
 
 /usr/include/bits/mathcalls-macros.h:
-
-/usr/include/c++/15.1.1/bits/predefined_ops.h:
-
-/usr/lib/libXdmcp.so.6:
-
-/usr/include/qt6/QtGui/qimage.h:
-
-/usr/include/c++/15.1.1/bits/nested_exception.h:
-
-/usr/include/math.h:
-
-/usr/include/c++/15.1.1/new:
-
-/usr/include/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/qt6/QtWidgets/qpushbutton.h:
 
@@ -3754,14 +3776,6 @@ MeuCentavoApp_autogen/YLDCOW74CO/moc_formCadastro.cpp:
 
 /usr/include/c++/15.1.1/bits/charconv.h:
 
-/usr/include/c++/15.1.1/bits/string_view.tcc:
-
-/usr/include/c++/15.1.1/bits/basic_string.tcc:
-
-/usr/include/bits/types.h:
-
-/usr/include/c++/15.1.1/stdlib.h:
-
 /usr/include/qt6/QtCore/qlatin1stringview.h:
 
 /usr/include/bits/types/__FILE.h:
@@ -3778,13 +3792,11 @@ MeuCentavoApp_autogen/YLDCOW74CO/moc_formCadastro.cpp:
 
 /usr/include/c++/15.1.1/tr1/beta_function.tcc:
 
-/usr/include/c++/15.1.1/bits/atomic_base.h:
+/usr/include/c++/15.1.1/bits/predefined_ops.h:
 
-/usr/include/c++/15.1.1/compare:
+/usr/include/bits/pthread_stack_min-dynamic.h:
 
-/usr/include/qt6/QtCore/qobjectdefs.h:
-
-/usr/include/bits/types/error_t.h:
+/usr/include/c++/15.1.1/new:
 
 /usr/lib/libpcre2-16.so.0:
 

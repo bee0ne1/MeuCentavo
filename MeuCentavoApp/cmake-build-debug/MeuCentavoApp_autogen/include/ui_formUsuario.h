@@ -13,7 +13,9 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -24,12 +26,16 @@ class Ui_formUsuario
 public:
     QVBoxLayout *verticalLayout;
     QGridLayout *gridLayout;
-    QPushButton *buttonUsuarioSwitch2;
-    QPushButton *buttonUsuarioSwitch1;
-    QLabel *label;
     QPushButton *buttonUsuarioSwitch3;
     QPushButton *buttonCadastro;
+    QPushButton *pushButton;
+    QLineEdit *lineEdit_2;
+    QLabel *label;
+    QPushButton *buttonUsuarioSwitch2;
+    QPushButton *buttonUsuarioSwitch1;
     QPushButton *buttonBack;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *verticalSpacer_2;
 
     void setupUi(QWidget *formUsuario)
     {
@@ -43,24 +49,36 @@ public:
         verticalLayout->setObjectName("verticalLayout");
         gridLayout = new QGridLayout();
         gridLayout->setObjectName("gridLayout");
-        buttonUsuarioSwitch2 = new QPushButton(formUsuario);
-        buttonUsuarioSwitch2->setObjectName("buttonUsuarioSwitch2");
+        buttonUsuarioSwitch3 = new QPushButton(formUsuario);
+        buttonUsuarioSwitch3->setObjectName("buttonUsuarioSwitch3");
         QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(buttonUsuarioSwitch2->sizePolicy().hasHeightForWidth());
-        buttonUsuarioSwitch2->setSizePolicy(sizePolicy);
-        buttonUsuarioSwitch2->setMinimumSize(QSize(200, 200));
+        sizePolicy.setHeightForWidth(buttonUsuarioSwitch3->sizePolicy().hasHeightForWidth());
+        buttonUsuarioSwitch3->setSizePolicy(sizePolicy);
+        buttonUsuarioSwitch3->setMinimumSize(QSize(200, 200));
 
-        gridLayout->addWidget(buttonUsuarioSwitch2, 1, 1, 1, 1);
+        gridLayout->addWidget(buttonUsuarioSwitch3, 2, 2, 1, 1);
 
-        buttonUsuarioSwitch1 = new QPushButton(formUsuario);
-        buttonUsuarioSwitch1->setObjectName("buttonUsuarioSwitch1");
-        sizePolicy.setHeightForWidth(buttonUsuarioSwitch1->sizePolicy().hasHeightForWidth());
-        buttonUsuarioSwitch1->setSizePolicy(sizePolicy);
-        buttonUsuarioSwitch1->setMinimumSize(QSize(200, 200));
+        buttonCadastro = new QPushButton(formUsuario);
+        buttonCadastro->setObjectName("buttonCadastro");
+        buttonCadastro->setMinimumSize(QSize(200, 0));
+        buttonCadastro->setMaximumSize(QSize(200, 16777215));
 
-        gridLayout->addWidget(buttonUsuarioSwitch1, 1, 0, 1, 1);
+        gridLayout->addWidget(buttonCadastro, 3, 1, 1, 1);
+
+        pushButton = new QPushButton(formUsuario);
+        pushButton->setObjectName("pushButton");
+
+        gridLayout->addWidget(pushButton, 3, 2, 1, 1);
+
+        lineEdit_2 = new QLineEdit(formUsuario);
+        lineEdit_2->setObjectName("lineEdit_2");
+        lineEdit_2->setMinimumSize(QSize(200, 0));
+        lineEdit_2->setMaximumSize(QSize(200, 16777215));
+        lineEdit_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout->addWidget(lineEdit_2, 3, 0, 1, 1);
 
         label = new QLabel(formUsuario);
         label->setObjectName("label");
@@ -76,27 +94,36 @@ public:
 
         gridLayout->addWidget(label, 0, 0, 1, 3);
 
-        buttonUsuarioSwitch3 = new QPushButton(formUsuario);
-        buttonUsuarioSwitch3->setObjectName("buttonUsuarioSwitch3");
-        sizePolicy.setHeightForWidth(buttonUsuarioSwitch3->sizePolicy().hasHeightForWidth());
-        buttonUsuarioSwitch3->setSizePolicy(sizePolicy);
-        buttonUsuarioSwitch3->setMinimumSize(QSize(200, 200));
+        buttonUsuarioSwitch2 = new QPushButton(formUsuario);
+        buttonUsuarioSwitch2->setObjectName("buttonUsuarioSwitch2");
+        sizePolicy.setHeightForWidth(buttonUsuarioSwitch2->sizePolicy().hasHeightForWidth());
+        buttonUsuarioSwitch2->setSizePolicy(sizePolicy);
+        buttonUsuarioSwitch2->setMinimumSize(QSize(200, 200));
 
-        gridLayout->addWidget(buttonUsuarioSwitch3, 1, 2, 1, 1);
+        gridLayout->addWidget(buttonUsuarioSwitch2, 2, 1, 1, 1);
 
-        buttonCadastro = new QPushButton(formUsuario);
-        buttonCadastro->setObjectName("buttonCadastro");
-        buttonCadastro->setMinimumSize(QSize(200, 0));
-        buttonCadastro->setMaximumSize(QSize(200, 16777215));
+        buttonUsuarioSwitch1 = new QPushButton(formUsuario);
+        buttonUsuarioSwitch1->setObjectName("buttonUsuarioSwitch1");
+        sizePolicy.setHeightForWidth(buttonUsuarioSwitch1->sizePolicy().hasHeightForWidth());
+        buttonUsuarioSwitch1->setSizePolicy(sizePolicy);
+        buttonUsuarioSwitch1->setMinimumSize(QSize(200, 200));
 
-        gridLayout->addWidget(buttonCadastro, 2, 1, 1, 1);
+        gridLayout->addWidget(buttonUsuarioSwitch1, 2, 0, 1, 1);
 
         buttonBack = new QPushButton(formUsuario);
         buttonBack->setObjectName("buttonBack");
         buttonBack->setMinimumSize(QSize(200, 0));
         buttonBack->setMaximumSize(QSize(200, 16777215));
 
-        gridLayout->addWidget(buttonBack, 3, 1, 1, 1);
+        gridLayout->addWidget(buttonBack, 4, 1, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 1, 1, 1, 1);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 5, 1, 1, 1);
 
 
         verticalLayout->addLayout(gridLayout);
@@ -110,11 +137,13 @@ public:
     void retranslateUi(QWidget *formUsuario)
     {
         formUsuario->setWindowTitle(QCoreApplication::translate("formUsuario", "formUsuario", nullptr));
-        buttonUsuarioSwitch2->setText(QCoreApplication::translate("formUsuario", "USU\303\201RIO 2", nullptr));
-        buttonUsuarioSwitch1->setText(QCoreApplication::translate("formUsuario", "USU\303\201RIO 1", nullptr));
-        label->setText(QCoreApplication::translate("formUsuario", "MEU CENTAVO", nullptr));
         buttonUsuarioSwitch3->setText(QCoreApplication::translate("formUsuario", "USU\303\201RIO 3", nullptr));
         buttonCadastro->setText(QCoreApplication::translate("formUsuario", "Cadastrar novo usu\303\241rio", nullptr));
+        pushButton->setText(QCoreApplication::translate("formUsuario", "Editar usu\303\241rios", nullptr));
+        lineEdit_2->setText(QCoreApplication::translate("formUsuario", "Adicionar novo usu\303\241rio", nullptr));
+        label->setText(QCoreApplication::translate("formUsuario", "MEU CENTAVO", nullptr));
+        buttonUsuarioSwitch2->setText(QCoreApplication::translate("formUsuario", "USU\303\201RIO 2", nullptr));
+        buttonUsuarioSwitch1->setText(QCoreApplication::translate("formUsuario", "USU\303\201RIO 1", nullptr));
         buttonBack->setText(QCoreApplication::translate("formUsuario", "Voltar a tela de in\303\255cio", nullptr));
     } // retranslateUi
 

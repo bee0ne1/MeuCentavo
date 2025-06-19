@@ -30,7 +30,7 @@ void formUsuario::closeEvent(QCloseEvent *event)
 
 void formUsuario::abrirFormCadastro() {
         if (!cadastroWindow) {
-            cadastroWindow = new formCadastro();  // sem parent!
+            cadastroWindow = new formCadastro(this);
 
             connect(cadastroWindow, &formCadastro::cadastroFechado, this, &formUsuario::show);
         }
@@ -40,7 +40,7 @@ void formUsuario::abrirFormCadastro() {
 }
 
 void formUsuario::voltarFormInicio() {
-    this->hide();
+    this->close();
     if (inicioWindow)
         inicioWindow->show();
 }
