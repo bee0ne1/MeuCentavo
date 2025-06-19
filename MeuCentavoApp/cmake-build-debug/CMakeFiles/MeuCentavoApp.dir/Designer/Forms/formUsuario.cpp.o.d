@@ -1,8 +1,7 @@
-CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: \
- /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/mocs_compilation.cpp \
+CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o: \
+ /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.cpp \
  /usr/include/stdc-predef.h \
- /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/YLDCOW74CO/moc_formCadastro.cpp \
- /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/YLDCOW74CO/../../../Designer/Forms/formCadastro.h \
+ /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
@@ -384,17 +383,43 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qfontvariableaxis.h \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
- /usr/include/qt6/QtCore/qtmochelpers.h \
- /usr/include/qt6/QtCore/qtmocconstants.h \
- /usr/include/qt6/QtCore/q20algorithm.h \
- /usr/include/qt6/QtCore/q23type_traits.h \
- /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/YLDCOW74CO/moc_formUsuario.cpp \
- /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/YLDCOW74CO/../../../Designer/Forms/formUsuario.h \
- /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/YLDCOW74CO/../../../Designer/Forms/formCadastro.h \
- /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/OVWQHZ74WH/moc_formMain.cpp \
- /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/OVWQHZ74WH/../../../Designer/formMain.h \
+ /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h \
+ /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/formMain.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h \
- /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/OVWQHZ74WH/../../../Designer/Forms/formUsuario.h
+ /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h \
+ /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/include/ui_formUsuario.h \
+ /usr/include/qt6/QtCore/QVariant /usr/include/qt6/QtCore/qvariant.h \
+ /usr/include/qt6/QtWidgets/QApplication \
+ /usr/include/qt6/QtWidgets/qapplication.h \
+ /usr/include/qt6/QtCore/qcoreapplication.h \
+ /usr/include/qt6/QtCore/qcoreevent.h \
+ /usr/include/qt6/QtCore/qbasictimer.h \
+ /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
+ /usr/include/qt6/QtCore/qeventloop.h \
+ /usr/include/qt6/QtCore/qdeadlinetimer.h \
+ /usr/include/qt6/QtCore/qelapsedtimer.h \
+ /usr/include/qt6/QtCore/qnativeinterface.h \
+ /usr/include/qt6/QtCore/qcoreapplication_platform.h \
+ /usr/include/qt6/QtGui/qguiapplication.h \
+ /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
+ /usr/include/qt6/QtGui/qguiapplication_platform.h \
+ /usr/include/qt6/QtWidgets/QGridLayout \
+ /usr/include/qt6/QtWidgets/qgridlayout.h \
+ /usr/include/qt6/QtWidgets/qlayout.h \
+ /usr/include/qt6/QtWidgets/qlayoutitem.h \
+ /usr/include/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/qt6/QtWidgets/qgridlayout.h \
+ /usr/include/qt6/QtWidgets/QLabel /usr/include/qt6/QtWidgets/qlabel.h \
+ /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtGui/qpicture.h \
+ /usr/include/qt6/QtCore/qiodevice.h \
+ /usr/include/qt6/QtGui/qtextdocument.h /usr/include/qt6/QtCore/qurl.h \
+ /usr/include/qt6/QtWidgets/QPushButton \
+ /usr/include/qt6/QtWidgets/qpushbutton.h \
+ /usr/include/qt6/QtWidgets/qabstractbutton.h \
+ /usr/include/qt6/QtWidgets/QVBoxLayout \
+ /usr/include/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtCore/QDebug \
+ /usr/include/qt6/QtCore/qdebug.h

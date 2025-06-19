@@ -6,6 +6,7 @@ MeuCentavoApp: \
   CMakeFiles/MeuCentavoApp.dir/main.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o \
   /usr/lib/libQt6Widgets.so.6.9.1 \
   /usr/lib/libQt6Sql.so.6.9.1 \
   /usr/lib/libQt6Gui.so.6.9.1 \
@@ -85,6 +86,8 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o:
 CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o:
 
 /usr/lib/libQt6Widgets.so.6.9.1:
 

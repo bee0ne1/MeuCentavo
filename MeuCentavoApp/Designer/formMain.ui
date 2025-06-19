@@ -42,50 +42,94 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label">
-      <property name="maximumSize">
-       <size>
-        <width>800</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Noto Sans Arabic Cond Light</family>
-        <pointsize>24</pointsize>
-        <italic>false</italic>
-        <fontweight>Light</fontweight>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 300 24pt &quot;Noto Sans Arabic Cond Light&quot;;</string>
-      </property>
-      <property name="text">
-       <string>MEU CENTAVO</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="buttonCadastro">
-      <property name="text">
-       <string>Cadastro</string>
-      </property>
-     </widget>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="0">
+       <widget class="QPushButton" name="buttonAppAcess">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>USUÁRIO </string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="buttonExit">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Sair</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="buttonSwitchUsuario">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Trocar Usuário</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="maximumSize">
+         <size>
+          <width>800</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Noto Sans Arabic Cond Light</family>
+          <pointsize>24</pointsize>
+          <italic>false</italic>
+          <fontweight>Light</fontweight>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 300 24pt &quot;Noto Sans Arabic Cond Light&quot;;</string>
+        </property>
+        <property name="text">
+         <string>MEU CENTAVO</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>30</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

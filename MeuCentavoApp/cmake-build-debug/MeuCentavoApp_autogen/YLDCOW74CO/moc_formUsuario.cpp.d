@@ -1,7 +1,6 @@
-/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/OVWQHZ74WH/moc_formMain.cpp: /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/formMain.h \
+/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/YLDCOW74CO/moc_formUsuario.cpp: /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h \
   /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/moc_predefs.h \
   /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h \
-  /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -460,11 +459,8 @@
   /usr/include/qt6/QtGui/qtguiglobal.h \
   /usr/include/qt6/QtGui/qtransform.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
-  /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QWidget \
-  /usr/include/qt6/QtWidgets/qmainwindow.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
-  /usr/include/qt6/QtWidgets/qtabwidget.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
   /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \

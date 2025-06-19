@@ -2,30 +2,26 @@
 #include "ui_formMain.h"
 #include <QDebug>
 
-formMain::formMain(QWidget *parent)
-    : QMainWindow(parent),
-      ui(new Ui::formMain),
-      cadastroWindow(nullptr)
-{
+formMain::formMain(QWidget *parent):
+    QMainWindow(parent), ui(new Ui::formMain) {
     ui->setupUi(this);
-
-    connect(ui->buttonCadastro, &QPushButton::clicked, this, &formMain::abrirTelaCadastro);
+    connect(ui->buttonSwitchUsuario, &QPushButton::clicked, this, &formMain::abrirTelaUsuario);
+    connect(ui->buttonExit, &QPushButton::clicked, this, &QApplication::quit);
 }
 
 formMain::~formMain() {
     delete ui;
 }
 
-void formMain::abrirTelaCadastro() {
-    qDebug() << "Abrindo tela de cadastro";
 
-    if (!cadastroWindow) {
-        cadastroWindow = new formCadastro();  // sem parent!
+void formMain::abrirTelaUsuario() {
 
-        connect(cadastroWindow, &formCadastro::cadastroFechado, this, &formMain::show);
-        qDebug() << "Nova formCadastro criada";
+    if (!usuarioWindow) {
+        usuarioWindow = new formUsuario(this);
+
+        connect(usuarioWindow, &formUsuario::usuarioFechado, this, &formMain::show);
     }
 
     this->hide();
-    cadastroWindow->show();
+    usuarioWindow->show();
 }

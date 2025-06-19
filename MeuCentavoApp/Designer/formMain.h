@@ -2,7 +2,7 @@
 #define FORMMAIN_H
 
 #include <QMainWindow>
-#include "Forms/formCadastro.h"
+#include "Forms/formUsuario.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -18,11 +18,11 @@ public:
     ~formMain();
 
 private slots:
-    void abrirTelaCadastro();
+    void abrirTelaUsuario();
 
 private:
     Ui::formMain *ui;
-    formCadastro *cadastroWindow;
+    formUsuario* usuarioWindow = nullptr;
 };
 
 #endif // FORMMAIN_H

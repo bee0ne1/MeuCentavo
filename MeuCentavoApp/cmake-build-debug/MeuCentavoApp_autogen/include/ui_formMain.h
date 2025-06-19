@@ -11,9 +11,9 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
@@ -26,9 +26,11 @@ class Ui_formMain
 public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
+    QGridLayout *gridLayout;
+    QPushButton *buttonAppAcess;
+    QPushButton *buttonExit;
+    QPushButton *buttonSwitchUsuario;
     QLabel *label;
-    QPushButton *buttonCadastro;
-    QMenuBar *menubar;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *formMain)
@@ -48,6 +50,33 @@ public:
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
         verticalLayout->setObjectName("verticalLayout");
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName("gridLayout");
+        buttonAppAcess = new QPushButton(centralwidget);
+        buttonAppAcess->setObjectName("buttonAppAcess");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(buttonAppAcess->sizePolicy().hasHeightForWidth());
+        buttonAppAcess->setSizePolicy(sizePolicy);
+        buttonAppAcess->setMinimumSize(QSize(200, 200));
+
+        gridLayout->addWidget(buttonAppAcess, 2, 0, 1, 1);
+
+        buttonExit = new QPushButton(centralwidget);
+        buttonExit->setObjectName("buttonExit");
+        buttonExit->setMinimumSize(QSize(200, 0));
+        buttonExit->setMaximumSize(QSize(200, 16777215));
+
+        gridLayout->addWidget(buttonExit, 4, 0, 1, 1);
+
+        buttonSwitchUsuario = new QPushButton(centralwidget);
+        buttonSwitchUsuario->setObjectName("buttonSwitchUsuario");
+        buttonSwitchUsuario->setMinimumSize(QSize(200, 0));
+        buttonSwitchUsuario->setMaximumSize(QSize(200, 16777215));
+
+        gridLayout->addWidget(buttonSwitchUsuario, 3, 0, 1, 1);
+
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setMaximumSize(QSize(800, 100));
@@ -60,18 +89,12 @@ public:
         label->setStyleSheet(QString::fromUtf8("font: 300 24pt \"Noto Sans Arabic Cond Light\";"));
         label->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
 
-        verticalLayout->addWidget(label);
+        gridLayout->addWidget(label, 1, 0, 1, 1);
 
-        buttonCadastro = new QPushButton(centralwidget);
-        buttonCadastro->setObjectName("buttonCadastro");
 
-        verticalLayout->addWidget(buttonCadastro);
+        verticalLayout->addLayout(gridLayout);
 
         formMain->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(formMain);
-        menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 30));
-        formMain->setMenuBar(menubar);
         statusbar = new QStatusBar(formMain);
         statusbar->setObjectName("statusbar");
         formMain->setStatusBar(statusbar);
@@ -84,8 +107,10 @@ public:
     void retranslateUi(QMainWindow *formMain)
     {
         formMain->setWindowTitle(QCoreApplication::translate("formMain", "MainWindow", nullptr));
+        buttonAppAcess->setText(QCoreApplication::translate("formMain", "USU\303\201RIO ", nullptr));
+        buttonExit->setText(QCoreApplication::translate("formMain", "Sair", nullptr));
+        buttonSwitchUsuario->setText(QCoreApplication::translate("formMain", "Trocar Usu\303\241rio", nullptr));
         label->setText(QCoreApplication::translate("formMain", "MEU CENTAVO", nullptr));
-        buttonCadastro->setText(QCoreApplication::translate("formMain", "Cadastro", nullptr));
     } // retranslateUi
 
 };

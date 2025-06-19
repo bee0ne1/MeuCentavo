@@ -39,12 +39,12 @@ template <> constexpr inline auto formMain::qt_create_metaobjectdata<qt_meta_tag
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "formMain",
-        "abrirTelaCadastro",
+        "abrirTelaUsuario",
         ""
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'abrirTelaCadastro'
+        // Slot 'abrirTelaUsuario'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
@@ -69,7 +69,7 @@ void formMain::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     auto *_t = static_cast<formMain *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->abrirTelaCadastro(); break;
+        case 0: _t->abrirTelaUsuario(); break;
         default: ;
         }
     }

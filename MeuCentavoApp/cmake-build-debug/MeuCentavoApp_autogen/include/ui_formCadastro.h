@@ -96,11 +96,13 @@ public:
 
         lineEdit_3 = new QLineEdit(formCadastro);
         lineEdit_3->setObjectName("lineEdit_3");
+        lineEdit_3->setEchoMode(QLineEdit::EchoMode::Password);
 
         gridLayout->addWidget(lineEdit_3, 5, 2, 1, 1);
 
         lineEdit = new QLineEdit(formCadastro);
         lineEdit->setObjectName("lineEdit");
+        lineEdit->setEnabled(false);
 
         gridLayout->addWidget(lineEdit, 3, 2, 1, 1);
 
@@ -125,6 +127,8 @@ public:
 
         verticalLayout->addLayout(gridLayout);
 
+        QWidget::setTabOrder(lineEdit, lineEdit_2);
+        QWidget::setTabOrder(lineEdit_2, lineEdit_3);
 
         retranslateUi(formCadastro);
 

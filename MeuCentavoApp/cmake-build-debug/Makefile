@@ -186,6 +186,30 @@ Designer/Forms/formCadastro.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.s
 .PHONY : Designer/Forms/formCadastro.cpp.s
 
+Designer/Forms/formUsuario.o: Designer/Forms/formUsuario.cpp.o
+.PHONY : Designer/Forms/formUsuario.o
+
+# target to build an object file
+Designer/Forms/formUsuario.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o
+.PHONY : Designer/Forms/formUsuario.cpp.o
+
+Designer/Forms/formUsuario.i: Designer/Forms/formUsuario.cpp.i
+.PHONY : Designer/Forms/formUsuario.i
+
+# target to preprocess a source file
+Designer/Forms/formUsuario.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.i
+.PHONY : Designer/Forms/formUsuario.cpp.i
+
+Designer/Forms/formUsuario.s: Designer/Forms/formUsuario.cpp.s
+.PHONY : Designer/Forms/formUsuario.s
+
+# target to generate assembly for a file
+Designer/Forms/formUsuario.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.s
+.PHONY : Designer/Forms/formUsuario.cpp.s
+
 Designer/formMain.o: Designer/formMain.cpp.o
 .PHONY : Designer/formMain.o
 
@@ -273,6 +297,9 @@ help:
 	@echo "... Designer/Forms/formCadastro.o"
 	@echo "... Designer/Forms/formCadastro.i"
 	@echo "... Designer/Forms/formCadastro.s"
+	@echo "... Designer/Forms/formUsuario.o"
+	@echo "... Designer/Forms/formUsuario.i"
+	@echo "... Designer/Forms/formUsuario.s"
 	@echo "... Designer/formMain.o"
 	@echo "... Designer/formMain.i"
 	@echo "... Designer/formMain.s"

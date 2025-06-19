@@ -24,6 +24,9 @@ add_executable(MeuCentavoApp
         Designer/Forms/formCadastro.ui
         Designer/formMain.cpp
         Designer/formMain.h
+        Designer/Forms/formUsuario.cpp
+        Designer/Forms/formUsuario.h
+        Designer/Forms/formUsuario.ui
 )
 
 target_include_directories(MeuCentavoApp PRIVATE

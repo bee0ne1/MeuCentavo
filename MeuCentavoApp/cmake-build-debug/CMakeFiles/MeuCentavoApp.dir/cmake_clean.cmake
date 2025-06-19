@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "MeuCentavoApp_autogen"
   "CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o"
   "CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o.d"
+  "CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o"
+  "CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o.d"
   "CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o"
   "CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o.d"
   "CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o"

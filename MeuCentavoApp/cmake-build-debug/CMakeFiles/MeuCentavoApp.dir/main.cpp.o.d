@@ -417,5 +417,6 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /usr/include/qt6/QtGui/qfontvariableaxis.h \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h \
- /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h \
- /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h
+ /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h \
+ /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
+ /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h

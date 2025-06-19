@@ -16,8 +16,8 @@ public:
     explicit formCadastro(QWidget *parent = nullptr);
     ~formCadastro();
 
-    signals:
-        void cadastroFechado();
+signals:
+    void cadastroFechado();
 
 protected:
     void closeEvent(QCloseEvent *event) override;
