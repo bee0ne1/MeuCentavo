@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug"
+			"value" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "3"
+			"value" : "4"
 		},
 		{
 			"name" : "CMAKE_CACHE_MINOR_VERSION",
@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "31"
+			"value" : "0"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "6"
+			"value" : "3"
 		},
 		{
 			"name" : "CMAKE_COLOR_DIAGNOSTICS",
@@ -100,22 +100,6 @@
 				{
 					"name" : "HELPSTRING",
 					"value" : "Enable colored diagnostics throughout."
-				}
-			],
-			"type" : "BOOL",
-			"value" : "ON"
-		},
-		{
-			"name" : "CMAKE_COLOR_MAKEFILE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Enable/Disable color output during build."
 				}
 			],
 			"type" : "BOOL",
@@ -131,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/bruno/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake"
+			"value" : "/usr/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -143,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/bruno/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cpack"
+			"value" : "/usr/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -155,7 +139,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/bruno/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/ctest"
+			"value" : "/usr/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -170,7 +154,7 @@
 					"value" : "CXX compiler"
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/c++"
 		},
 		{
@@ -298,7 +282,7 @@
 					"value" : "C compiler"
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/cc"
 		},
 		{
@@ -571,7 +555,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -643,7 +627,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp"
+			"value" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -1199,7 +1183,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/bruno/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31"
+			"value" : "/usr/share/cmake"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1463,7 +1447,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/lib/libOpenGL.so][/usr/lib/libGLX.so][/usr/include][c ][v()]"
+			"value" : "[/usr/lib/libOpenGL.so][/usr/lib/libGLX.so][/usr/include][ ][v()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
@@ -1502,18 +1486,6 @@
 			"value" : "[ON][v()]"
 		},
 		{
-			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_WrapVulkanHeaders",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Details about finding WrapVulkanHeaders"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "[/usr/include][v()]"
-		},
-		{
 			"name" : "HAVE_STDATOMIC",
 			"properties" : 
 			[
@@ -1535,7 +1507,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug"
+			"value" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug"
 		},
 		{
 			"name" : "MeuCentavoApp_IS_TOP_LEVEL",
@@ -1559,7 +1531,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp"
+			"value" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp"
 		},
 		{
 			"name" : "OPENGL_EGL_INCLUDE_DIR",
@@ -7211,7 +7183,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "Vulkan_INCLUDE_DIR-NOTFOUND"
 		},
 		{
 			"name" : "Vulkan_LIBRARY",
@@ -7252,42 +7224,6 @@
 			],
 			"type" : "FILEPATH",
 			"value" : "/usr/lib/libxkbcommon.so"
-		},
-		{
-			"name" : "_CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
-		},
-		{
-			"name" : "_CMAKE_C_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
-		},
-		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
 		},
 		{
 			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",

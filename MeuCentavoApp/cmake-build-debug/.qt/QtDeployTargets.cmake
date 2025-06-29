@@ -1,2 +1,2 @@
-set(__QT_DEPLOY_TARGET_MeuCentavoApp_FILE /home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp)
+set(__QT_DEPLOY_TARGET_MeuCentavoApp_FILE /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp)
 set(__QT_DEPLOY_TARGET_MeuCentavoApp_TYPE EXECUTABLE)

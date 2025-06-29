@@ -23,9 +23,9 @@
 		"files" : 
 		[
 			"CMakeLists.txt",
-			"/home/bruno/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindOpenGL.cmake",
+			"/usr/share/cmake/Modules/FindOpenGL.cmake",
 			"/usr/lib/cmake/Qt6/FindWrapOpenGL.cmake",
-			"/home/bruno/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake",
+			"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
 			"/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
 			"/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake",
 			"/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
@@ -93,7 +93,7 @@
 			{
 				"command" : 3,
 				"file" : 3,
-				"line" : 76,
+				"line" : 78,
 				"parent" : 10
 			},
 			{
@@ -165,15 +165,15 @@
 			"includes" : 
 			[
 				{
-					"path" : "/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug"
+					"path" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug"
 				},
 				{
-					"path" : "/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp"
+					"path" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp"
 				},
 				{
 					"backtrace" : 17,
 					"isSystem" : true,
-					"path" : "/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/include"
+					"path" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/include"
 				},
 				{
 					"backtrace" : 2,
@@ -229,11 +229,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "MeuCentavoApp_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "MeuCentavoApp_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "MeuCentavoApp_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "MeuCentavoApp::@6890427a1f51a3e7e1df",
@@ -243,10 +243,6 @@
 		[
 			{
 				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "",
 				"role" : "flags"
 			},
 			{

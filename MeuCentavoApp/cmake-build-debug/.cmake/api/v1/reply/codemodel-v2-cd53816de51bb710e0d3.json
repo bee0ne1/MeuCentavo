@@ -43,7 +43,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "MeuCentavoApp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-MeuCentavoApp-Debug-903b494d42c66220f338.json",
+					"jsonFile" : "target-MeuCentavoApp-Debug-994e16d3ab5e8a3b2e26.json",
 					"name" : "MeuCentavoApp",
 					"projectIndex" : 0
 				},
@@ -67,12 +67,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp/cmake-build-debug",
-		"source" : "/home/bruno/Documentos/GitHub/MeuCentavo/MeuCentavoApp"
+		"build" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug",
+		"source" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 7
+		"minor" : 8
 	}
 }
