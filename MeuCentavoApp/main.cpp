@@ -5,6 +5,7 @@
 #include <QtSql/QSqlError>
 #include <QDebug>
 #include "Designer/formMain.h"  // Inclui a sua nova tela principal
+#include <QMessageBox>
 
 int main(int argc, char *argv[])
 {
@@ -34,7 +35,7 @@ int main(int argc, char *argv[])
     qDebug() << "Conexão com o banco de dados estabelecida com sucesso!";
 
 
-    formMain janela;
+    formMain janela(db);
     janela.show();
 
     return app.exec();

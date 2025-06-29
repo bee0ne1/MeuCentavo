@@ -27,6 +27,12 @@ add_executable(MeuCentavoApp
         Designer/Forms/formUsuario.cpp
         Designer/Forms/formUsuario.h
         Designer/Forms/formUsuario.ui
+        Modelo/Lancamento.h
+        Negocio/LancamentoDAO.cpp
+        Negocio/LancamentoDAO.h
+        Modelo/Usuario.h
+        Negocio/UsuarioDAO.cpp
+        Negocio/UsuarioDAO.h
 )
 
 target_include_directories(MeuCentavoApp PRIVATE

@@ -384,17 +384,32 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qfontvariableaxis.h \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
+ /usr/include/qt6/QtSql/QSqlDatabase \
+ /usr/include/qt6/QtSql/qsqldatabase.h \
+ /usr/include/qt6/QtSql/qtsqlglobal.h \
+ /usr/include/qt6/QtSql/qtsql-config.h \
+ /usr/include/qt6/QtSql/qtsqlexports.h \
+ /usr/include/qt6/QtCore/qmetaobject.h \
  /usr/include/qt6/QtCore/qtmochelpers.h \
  /usr/include/qt6/QtCore/qtmocconstants.h \
  /usr/include/qt6/QtCore/q20algorithm.h \
  /usr/include/qt6/QtCore/q23type_traits.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/YLDCOW74CO/moc_formUsuario.cpp \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/YLDCOW74CO/../../../Designer/Forms/formUsuario.h \
- /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/YLDCOW74CO/../../../Designer/Forms/formCadastro.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/OVWQHZ74WH/moc_formMain.cpp \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/OVWQHZ74WH/../../../Designer/formMain.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h \
- /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/OVWQHZ74WH/../../../Designer/Forms/formUsuario.h
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/HFG6JEBVJ3/moc_LancamentoDAO.cpp \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/HFG6JEBVJ3/../../../Negocio/LancamentoDAO.h \
+ /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
+ /usr/include/qt6/QtCore/QVector /usr/include/qt6/QtCore/qvector.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
+ /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
+ /usr/include/qt6/QtCore/QDate /usr/include/qt6/QtCore/qdatetime.h \
+ /usr/include/qt6/QtCore/qcalendar.h /usr/include/qt6/QtCore/qlocale.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/HFG6JEBVJ3/moc_UsuarioDAO.cpp \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/HFG6JEBVJ3/../../../Negocio/UsuarioDAO.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h

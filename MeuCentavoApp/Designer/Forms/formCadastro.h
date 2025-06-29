@@ -2,6 +2,8 @@
 #define FORMCADASTRO_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+
 class formUsuario;
 
 QT_BEGIN_NAMESPACE
@@ -14,7 +16,7 @@ class formCadastro : public QWidget {
     Q_OBJECT
 
 public:
-    explicit formCadastro(formUsuario *usuario,QWidget *parent = nullptr);
+    explicit formCadastro(formUsuario *usuario,QSqlDatabase db, QWidget *parent = nullptr);
     ~formCadastro();
 
 signals:
@@ -24,6 +26,7 @@ private slots:
     void verificarCampos();
     void visualizarSenha();
     void cancelarCadastro();
+    void gravarUsuario();
 
 protected:
     void closeEvent(QCloseEvent *event) override;
@@ -31,6 +34,7 @@ protected:
 private:
     Ui::formCadastro *ui;
     formUsuario *usuarioWindow = nullptr;
+     QSqlDatabase m_db;
 };
 
 #endif // FORMCADASTRO_H

@@ -10,8 +10,8 @@
 #include "formCadastro.h"
 #include <QDebug>
 
-formUsuario::formUsuario(formMain *inicio, QWidget *parent) :
-    QWidget(parent), ui(new Ui::formUsuario), inicioWindow(inicio) {
+formUsuario::formUsuario(QSqlDatabase db, QWidget *parent) :
+    QWidget(parent), ui(new Ui::formUsuario), m_db(db) { // A conexão recebida é guardada aqui!
     ui->setupUi(this);
     connect(ui->buttonCadastro, &QPushButton::clicked, this, &formUsuario::abrirFormCadastro);
     connect(ui->buttonBack, &QPushButton::clicked, this, &formUsuario::voltarFormInicio);
@@ -30,7 +30,7 @@ void formUsuario::closeEvent(QCloseEvent *event)
 
 void formUsuario::abrirFormCadastro() {
         if (!cadastroWindow) {
-            cadastroWindow = new formCadastro(this);
+            cadastroWindow = new formCadastro(this,m_db);
 
             connect(cadastroWindow, &formCadastro::cadastroFechado, this, &formUsuario::show);
         }
@@ -39,8 +39,11 @@ void formUsuario::abrirFormCadastro() {
         cadastroWindow->show();
 }
 
-void formUsuario::voltarFormInicio() {
+void formUsuario::voltarFormInicio()
+{
+    // Não precisamos mais guardar um ponteiro para a janela de início.
+    // Simplesmente fechamos esta janela. O 'closeEvent' acima emitirá o sinal
+    // 'usuarioFechado', e o 'formMain' que está escutando esse sinal irá
+    // se encarregar de aparecer novamente. É um design mais limpo!
     this->close();
-    if (inicioWindow)
-        inicioWindow->show();
 }

@@ -258,6 +258,54 @@ MeuCentavoApp_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.s
 .PHONY : MeuCentavoApp_autogen/mocs_compilation.cpp.s
 
+Negocio/LancamentoDAO.o: Negocio/LancamentoDAO.cpp.o
+.PHONY : Negocio/LancamentoDAO.o
+
+# target to build an object file
+Negocio/LancamentoDAO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/LancamentoDAO.cpp.o
+.PHONY : Negocio/LancamentoDAO.cpp.o
+
+Negocio/LancamentoDAO.i: Negocio/LancamentoDAO.cpp.i
+.PHONY : Negocio/LancamentoDAO.i
+
+# target to preprocess a source file
+Negocio/LancamentoDAO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/LancamentoDAO.cpp.i
+.PHONY : Negocio/LancamentoDAO.cpp.i
+
+Negocio/LancamentoDAO.s: Negocio/LancamentoDAO.cpp.s
+.PHONY : Negocio/LancamentoDAO.s
+
+# target to generate assembly for a file
+Negocio/LancamentoDAO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/LancamentoDAO.cpp.s
+.PHONY : Negocio/LancamentoDAO.cpp.s
+
+Negocio/UsuarioDAO.o: Negocio/UsuarioDAO.cpp.o
+.PHONY : Negocio/UsuarioDAO.o
+
+# target to build an object file
+Negocio/UsuarioDAO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/UsuarioDAO.cpp.o
+.PHONY : Negocio/UsuarioDAO.cpp.o
+
+Negocio/UsuarioDAO.i: Negocio/UsuarioDAO.cpp.i
+.PHONY : Negocio/UsuarioDAO.i
+
+# target to preprocess a source file
+Negocio/UsuarioDAO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/UsuarioDAO.cpp.i
+.PHONY : Negocio/UsuarioDAO.cpp.i
+
+Negocio/UsuarioDAO.s: Negocio/UsuarioDAO.cpp.s
+.PHONY : Negocio/UsuarioDAO.s
+
+# target to generate assembly for a file
+Negocio/UsuarioDAO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/UsuarioDAO.cpp.s
+.PHONY : Negocio/UsuarioDAO.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -306,6 +354,12 @@ help:
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.o"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.i"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.s"
+	@echo "... Negocio/LancamentoDAO.o"
+	@echo "... Negocio/LancamentoDAO.i"
+	@echo "... Negocio/LancamentoDAO.s"
+	@echo "... Negocio/UsuarioDAO.o"
+	@echo "... Negocio/UsuarioDAO.i"
+	@echo "... Negocio/UsuarioDAO.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

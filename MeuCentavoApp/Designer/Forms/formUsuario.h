@@ -6,9 +6,9 @@
 #define FORMUSUARIO_H
 
 #include <QWidget>
-#include "formCadastro.h"
+#include <QSqlDatabase>
 
-class formMain;
+class formCadastro;
 
 
 QT_BEGIN_NAMESPACE
@@ -19,7 +19,7 @@ class formUsuario : public QWidget {
 Q_OBJECT
 
 public:
-    explicit formUsuario(formMain *inicio,QWidget *parent = nullptr);
+    explicit formUsuario(QSqlDatabase db, QWidget *parent = nullptr);
     ~formUsuario() override;
 
 signals:
@@ -31,7 +31,7 @@ protected:
 private:
     Ui::formUsuario *ui;
     formCadastro* cadastroWindow = nullptr;
-    formMain* inicioWindow = nullptr;
+     QSqlDatabase m_db;
 
 private slots:
     void abrirFormCadastro();

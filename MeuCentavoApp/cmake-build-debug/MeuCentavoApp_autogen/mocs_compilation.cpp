@@ -2,3 +2,5 @@
 #include "YLDCOW74CO/moc_formCadastro.cpp"
 #include "YLDCOW74CO/moc_formUsuario.cpp"
 #include "OVWQHZ74WH/moc_formMain.cpp"
+#include "HFG6JEBVJ3/moc_LancamentoDAO.cpp"
+#include "HFG6JEBVJ3/moc_UsuarioDAO.cpp"

@@ -1,10 +1,10 @@
-CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o: \
- /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.cpp \
+CMakeFiles/MeuCentavoApp.dir/Negocio/UsuarioDAO.cpp.o: \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Negocio/UsuarioDAO.cpp \
  /usr/include/stdc-predef.h \
- /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h \
- /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
- /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
- /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Negocio/UsuarioDAO.h \
+ /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
+ /usr/include/qt6/QtCore/qobjectdefs.h \
+ /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qglobal.h \
  /usr/include/c++/15.1.1/type_traits \
  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -186,13 +186,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o: \
  /usr/include/qt6/QtCore/qtresource.h \
  /usr/include/qt6/QtCore/qttranslation.h \
  /usr/include/qt6/QtCore/qversiontagging.h \
- /usr/include/qt6/QtGui/qtgui-config.h \
- /usr/include/qt6/QtGui/qtguiexports.h \
- /usr/include/qt6/QtWidgets/qtwidgets-config.h \
- /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
- /usr/include/qt6/QtGui/qwindowdefs.h \
- /usr/include/qt6/QtCore/qobjectdefs.h \
- /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qcompare.h \
+ /usr/include/qt6/QtCore/qcompare.h \
  /usr/include/qt6/QtCore/qstdlibdetection.h \
  /usr/include/qt6/QtCore/qcomparehelpers.h \
  /usr/include/qt6/QtCore/q20type_traits.h \
@@ -282,8 +276,8 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o: \
  /usr/include/c++/15.1.1/backward/auto_ptr.h \
  /usr/include/c++/15.1.1/bits/ranges_uninitialized.h \
  /usr/include/c++/15.1.1/pstl/glue_memory_defs.h \
- /usr/include/qt6/QtCore/qobject.h /usr/include/qt6/QtCore/qstring.h \
- /usr/include/qt6/QtCore/qchar.h /usr/include/qt6/QtCore/qstringview.h \
+ /usr/include/qt6/QtCore/qstring.h /usr/include/qt6/QtCore/qchar.h \
+ /usr/include/qt6/QtCore/qstringview.h \
  /usr/include/qt6/QtCore/qbytearray.h /usr/include/qt6/QtCore/qrefcount.h \
  /usr/include/qt6/QtCore/qarraydata.h /usr/include/qt6/QtCore/qpair.h \
  /usr/include/string.h /usr/include/strings.h \
@@ -352,22 +346,16 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o: \
  /usr/include/c++/15.1.1/bits/sstream.tcc \
  /usr/include/c++/15.1.1/bits/chrono_io.h /usr/include/c++/15.1.1/iomanip \
  /usr/include/c++/15.1.1/bits/quoted_string.h \
- /usr/include/qt6/QtCore/qmargins.h /usr/include/qt6/QtCore/q23utility.h \
- /usr/include/qt6/QtCore/q20utility.h /usr/include/qt6/QtGui/qaction.h \
- /usr/include/qt6/QtGui/qkeysequence.h /usr/include/qt6/QtGui/qicon.h \
- /usr/include/qt6/QtCore/qsize.h /usr/include/qt6/QtGui/qpixmap.h \
- /usr/include/qt6/QtGui/qpaintdevice.h /usr/include/qt6/QtCore/qrect.h \
- /usr/include/qt6/QtCore/qpoint.h /usr/include/qt6/QtGui/qcolor.h \
- /usr/include/qt6/QtGui/qrgb.h /usr/include/qt6/QtGui/qrgba64.h \
- /usr/include/qt6/QtCore/qshareddata.h /usr/include/qt6/QtGui/qimage.h \
- /usr/include/qt6/QtGui/qpixelformat.h \
- /usr/include/qt6/QtGui/qtransform.h /usr/include/qt6/QtGui/qpolygon.h \
- /usr/include/qt6/QtGui/qregion.h /usr/include/qt6/QtCore/qspan.h \
- /usr/include/c++/15.1.1/cassert /usr/include/qt6/QtCore/q20iterator.h \
- /usr/include/qt6/QtCore/qline.h /usr/include/qt6/QtCore/qvariant.h \
+ /usr/include/qt6/QtSql/QSqlDatabase \
+ /usr/include/qt6/QtSql/qsqldatabase.h \
+ /usr/include/qt6/QtSql/qtsqlglobal.h \
+ /usr/include/qt6/QtSql/qtsql-config.h \
+ /usr/include/qt6/QtSql/qtsqlexports.h \
+ /usr/include/qt6/QtCore/qmetaobject.h /usr/include/qt6/QtCore/qvariant.h \
  /usr/include/qt6/QtCore/qdebug.h /usr/include/qt6/QtCore/qtextstream.h \
  /usr/include/qt6/QtCore/qcontiguouscache.h \
  /usr/include/qt6/QtCore/qsharedpointer.h \
+ /usr/include/qt6/QtCore/qshareddata.h \
  /usr/include/qt6/QtCore/qsharedpointer_impl.h \
  /usr/include/c++/15.1.1/set /usr/include/c++/15.1.1/bits/stl_set.h \
  /usr/include/c++/15.1.1/bits/stl_multiset.h \
@@ -377,75 +365,11 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o: \
  /usr/include/qt6/QtCore/qshareddata_impl.h \
  /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/qhash.h \
  /usr/include/qt6/QtCore/qvarlengtharray.h \
- /usr/include/qt6/QtGui/qpalette.h /usr/include/qt6/QtGui/qbrush.h \
- /usr/include/qt6/QtGui/qfont.h /usr/include/qt6/QtCore/qendian.h \
- /usr/include/qt6/QtGui/qfontmetrics.h /usr/include/qt6/QtGui/qfontinfo.h \
- /usr/include/qt6/QtGui/qfontvariableaxis.h \
- /usr/include/qt6/QtWidgets/qsizepolicy.h \
- /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
- /usr/include/qt6/QtSql/QSqlDatabase \
- /usr/include/qt6/QtSql/qsqldatabase.h \
- /usr/include/qt6/QtSql/qtsqlglobal.h \
- /usr/include/qt6/QtSql/qtsql-config.h \
- /usr/include/qt6/QtSql/qtsqlexports.h \
- /usr/include/qt6/QtCore/qmetaobject.h \
- /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/include/ui_formCadastro.h \
- /usr/include/qt6/QtCore/QVariant /usr/include/qt6/QtCore/qvariant.h \
- /usr/include/qt6/QtWidgets/QApplication \
- /usr/include/qt6/QtWidgets/qapplication.h \
- /usr/include/qt6/QtCore/qcoreapplication.h \
- /usr/include/qt6/QtCore/qcoreevent.h \
- /usr/include/qt6/QtCore/qbasictimer.h \
- /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
- /usr/include/qt6/QtCore/qeventloop.h \
- /usr/include/qt6/QtCore/qdeadlinetimer.h \
- /usr/include/qt6/QtCore/qelapsedtimer.h \
- /usr/include/qt6/QtCore/qnativeinterface.h \
- /usr/include/qt6/QtCore/qcoreapplication_platform.h \
- /usr/include/qt6/QtGui/qguiapplication.h \
- /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
- /usr/include/qt6/QtGui/qguiapplication_platform.h \
- /usr/include/qt6/QtWidgets/QGridLayout \
- /usr/include/qt6/QtWidgets/qgridlayout.h \
- /usr/include/qt6/QtWidgets/qlayout.h \
- /usr/include/qt6/QtWidgets/qlayoutitem.h \
- /usr/include/qt6/QtWidgets/qboxlayout.h \
- /usr/include/qt6/QtWidgets/qgridlayout.h \
- /usr/include/qt6/QtWidgets/QLabel /usr/include/qt6/QtWidgets/qlabel.h \
- /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtWidgets/qwidget.h \
- /usr/include/qt6/QtGui/qpicture.h /usr/include/qt6/QtCore/qiodevice.h \
- /usr/include/qt6/QtGui/qtextdocument.h /usr/include/qt6/QtCore/qurl.h \
- /usr/include/qt6/QtWidgets/QLineEdit \
- /usr/include/qt6/QtWidgets/qlineedit.h \
- /usr/include/qt6/QtGui/qtextcursor.h \
- /usr/include/qt6/QtGui/qtextformat.h /usr/include/qt6/QtGui/qpen.h \
- /usr/include/qt6/QtGui/qtextoption.h \
- /usr/include/qt6/QtWidgets/QPushButton \
- /usr/include/qt6/QtWidgets/qpushbutton.h \
- /usr/include/qt6/QtWidgets/qabstractbutton.h \
- /usr/include/qt6/QtWidgets/QSpacerItem \
- /usr/include/qt6/QtWidgets/qlayoutitem.h \
- /usr/include/qt6/QtWidgets/QVBoxLayout \
- /usr/include/qt6/QtWidgets/qboxlayout.h \
- /usr/include/qt6/QtWidgets/QWidget \
- /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h \
- /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Negocio/UsuarioDAO.h \
- /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
+ /usr/include/qt6/QtCore/q23utility.h \
+ /usr/include/qt6/QtCore/q20utility.h /usr/include/qt6/QtCore/qobject.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
  /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
- /usr/include/qt6/QtCore/QDebug /usr/include/qt6/QtCore/qdebug.h \
- /usr/include/qt6/QtGui/QCloseEvent /usr/include/qt6/QtGui/qevent.h \
- /usr/include/qt6/QtGui/qeventpoint.h /usr/include/qt6/QtGui/qvector2d.h \
- /usr/include/qt6/QtGui/qvectornd.h \
- /usr/include/qt6/QtGui/qpointingdevice.h \
- /usr/include/qt6/QtGui/qinputdevice.h /usr/include/qt6/QtGui/qscreen.h \
- /usr/include/qt6/QtCore/QList /usr/include/qt6/QtCore/qlist.h \
- /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/QRect \
- /usr/include/qt6/QtCore/qrect.h /usr/include/qt6/QtCore/QSize \
- /usr/include/qt6/QtCore/qsize.h /usr/include/qt6/QtCore/QSizeF \
- /usr/include/qt6/QtGui/QTransform /usr/include/qt6/QtGui/qtransform.h \
- /usr/include/qt6/QtGui/qscreen_platform.h \
- /usr/include/qt6/QtWidgets/QMessageBox \
- /usr/include/qt6/QtWidgets/qmessagebox.h \
- /usr/include/qt6/QtWidgets/qdialog.h \
- /usr/include/qt6/QtWidgets/qdialogbuttonbox.h
+ /usr/include/qt6/QtSql/QSqlQuery /usr/include/qt6/QtSql/qsqlquery.h \
+ /usr/include/qt6/QtSql/qsqldatabase.h /usr/include/qt6/QtSql/QSqlError \
+ /usr/include/qt6/QtSql/qsqlerror.h /usr/include/qt6/QtCore/QDebug \
+ /usr/include/qt6/QtCore/qdebug.h

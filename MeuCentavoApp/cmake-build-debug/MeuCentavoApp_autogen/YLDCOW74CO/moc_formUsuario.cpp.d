@@ -1,6 +1,5 @@
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/YLDCOW74CO/moc_formUsuario.cpp: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/moc_predefs.h \
-  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -368,6 +367,7 @@
   /usr/include/qt6/QtCore/qmargins.h \
   /usr/include/qt6/QtCore/qmath.h \
   /usr/include/qt6/QtCore/qmetacontainer.h \
+  /usr/include/qt6/QtCore/qmetaobject.h \
   /usr/include/qt6/QtCore/qmetatype.h \
   /usr/include/qt6/QtCore/qminmax.h \
   /usr/include/qt6/QtCore/qnamespace.h \
@@ -459,6 +459,11 @@
   /usr/include/qt6/QtGui/qtguiglobal.h \
   /usr/include/qt6/QtGui/qtransform.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
+  /usr/include/qt6/QtSql/QSqlDatabase \
+  /usr/include/qt6/QtSql/qsqldatabase.h \
+  /usr/include/qt6/QtSql/qtsql-config.h \
+  /usr/include/qt6/QtSql/qtsqlexports.h \
+  /usr/include/qt6/QtSql/qtsqlglobal.h \
   /usr/include/qt6/QtWidgets/QWidget \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \

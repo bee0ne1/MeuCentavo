@@ -383,13 +383,17 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o: \
  /usr/include/qt6/QtGui/qfontvariableaxis.h \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
- /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h \
+ /usr/include/qt6/QtSql/QSqlDatabase \
+ /usr/include/qt6/QtSql/qsqldatabase.h \
+ /usr/include/qt6/QtSql/qtsqlglobal.h \
+ /usr/include/qt6/QtSql/qtsql-config.h \
+ /usr/include/qt6/QtSql/qtsqlexports.h \
+ /usr/include/qt6/QtCore/qmetaobject.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formMain.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h \
- /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/include/ui_formUsuario.h \
  /usr/include/qt6/QtCore/QVariant /usr/include/qt6/QtCore/qvariant.h \
  /usr/include/qt6/QtWidgets/QApplication \
@@ -428,5 +432,6 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o: \
  /usr/include/qt6/QtWidgets/qlayoutitem.h \
  /usr/include/qt6/QtWidgets/QVBoxLayout \
  /usr/include/qt6/QtWidgets/qboxlayout.h \
- /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtCore/QDebug \
- /usr/include/qt6/QtCore/qdebug.h
+ /usr/include/qt6/QtWidgets/QWidget \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h \
+ /usr/include/qt6/QtCore/QDebug /usr/include/qt6/QtCore/qdebug.h

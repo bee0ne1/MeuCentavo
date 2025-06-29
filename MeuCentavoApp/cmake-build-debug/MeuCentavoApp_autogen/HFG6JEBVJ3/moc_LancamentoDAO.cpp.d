@@ -1,5 +1,6 @@
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/OVWQHZ74WH/moc_formMain.cpp: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formMain.h \
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/HFG6JEBVJ3/moc_LancamentoDAO.cpp: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Negocio/LancamentoDAO.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/moc_predefs.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -204,7 +205,6 @@
   /usr/include/c++/15.1.1/bits/utility.h \
   /usr/include/c++/15.1.1/bits/vector.tcc \
   /usr/include/c++/15.1.1/bits/version.h \
-  /usr/include/c++/15.1.1/cassert \
   /usr/include/c++/15.1.1/cctype \
   /usr/include/c++/15.1.1/cerrno \
   /usr/include/c++/15.1.1/charconv \
@@ -308,9 +308,12 @@
   /usr/include/linux/types.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
+  /usr/include/qt6/QtCore/QDate \
+  /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QString \
+  /usr/include/qt6/QtCore/QVector \
   /usr/include/qt6/QtCore/q17memory.h \
   /usr/include/qt6/QtCore/q20functional.h \
-  /usr/include/qt6/QtCore/q20iterator.h \
   /usr/include/qt6/QtCore/q20memory.h \
   /usr/include/qt6/QtCore/q20type_traits.h \
   /usr/include/qt6/QtCore/q20utility.h \
@@ -329,6 +332,7 @@
   /usr/include/qt6/QtCore/qbytearrayalgorithms.h \
   /usr/include/qt6/QtCore/qbytearraylist.h \
   /usr/include/qt6/QtCore/qbytearrayview.h \
+  /usr/include/qt6/QtCore/qcalendar.h \
   /usr/include/qt6/QtCore/qchar.h \
   /usr/include/qt6/QtCore/qcompare.h \
   /usr/include/qt6/QtCore/qcompare_impl.h \
@@ -342,8 +346,8 @@
   /usr/include/qt6/QtCore/qcontiguouscache.h \
   /usr/include/qt6/QtCore/qdarwinhelpers.h \
   /usr/include/qt6/QtCore/qdatastream.h \
+  /usr/include/qt6/QtCore/qdatetime.h \
   /usr/include/qt6/QtCore/qdebug.h \
-  /usr/include/qt6/QtCore/qendian.h \
   /usr/include/qt6/QtCore/qexceptionhandling.h \
   /usr/include/qt6/QtCore/qflags.h \
   /usr/include/qt6/QtCore/qfloat16.h \
@@ -359,12 +363,11 @@
   /usr/include/qt6/QtCore/qiterable.h \
   /usr/include/qt6/QtCore/qiterator.h \
   /usr/include/qt6/QtCore/qlatin1stringview.h \
-  /usr/include/qt6/QtCore/qline.h \
   /usr/include/qt6/QtCore/qlist.h \
+  /usr/include/qt6/QtCore/qlocale.h \
   /usr/include/qt6/QtCore/qlogging.h \
   /usr/include/qt6/QtCore/qmalloc.h \
   /usr/include/qt6/QtCore/qmap.h \
-  /usr/include/qt6/QtCore/qmargins.h \
   /usr/include/qt6/QtCore/qmath.h \
   /usr/include/qt6/QtCore/qmetacontainer.h \
   /usr/include/qt6/QtCore/qmetaobject.h \
@@ -378,9 +381,7 @@
   /usr/include/qt6/QtCore/qobjectdefs_impl.h \
   /usr/include/qt6/QtCore/qoverload.h \
   /usr/include/qt6/QtCore/qpair.h \
-  /usr/include/qt6/QtCore/qpoint.h \
   /usr/include/qt6/QtCore/qprocessordetection.h \
-  /usr/include/qt6/QtCore/qrect.h \
   /usr/include/qt6/QtCore/qrefcount.h \
   /usr/include/qt6/QtCore/qscopedpointer.h \
   /usr/include/qt6/QtCore/qscopeguard.h \
@@ -389,8 +390,6 @@
   /usr/include/qt6/QtCore/qshareddata_impl.h \
   /usr/include/qt6/QtCore/qsharedpointer.h \
   /usr/include/qt6/QtCore/qsharedpointer_impl.h \
-  /usr/include/qt6/QtCore/qsize.h \
-  /usr/include/qt6/QtCore/qspan.h \
   /usr/include/qt6/QtCore/qstdlibdetection.h \
   /usr/include/qt6/QtCore/qstring.h \
   /usr/include/qt6/QtCore/qstringalgorithms.h \
@@ -431,47 +430,15 @@
   /usr/include/qt6/QtCore/qutf8stringview.h \
   /usr/include/qt6/QtCore/qvariant.h \
   /usr/include/qt6/QtCore/qvarlengtharray.h \
+  /usr/include/qt6/QtCore/qvector.h \
   /usr/include/qt6/QtCore/qversiontagging.h \
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \
-  /usr/include/qt6/QtGui/qaction.h \
-  /usr/include/qt6/QtGui/qbitmap.h \
-  /usr/include/qt6/QtGui/qbrush.h \
-  /usr/include/qt6/QtGui/qcolor.h \
-  /usr/include/qt6/QtGui/qcursor.h \
-  /usr/include/qt6/QtGui/qfont.h \
-  /usr/include/qt6/QtGui/qfontinfo.h \
-  /usr/include/qt6/QtGui/qfontmetrics.h \
-  /usr/include/qt6/QtGui/qfontvariableaxis.h \
-  /usr/include/qt6/QtGui/qicon.h \
-  /usr/include/qt6/QtGui/qimage.h \
-  /usr/include/qt6/QtGui/qkeysequence.h \
-  /usr/include/qt6/QtGui/qpaintdevice.h \
-  /usr/include/qt6/QtGui/qpalette.h \
-  /usr/include/qt6/QtGui/qpixelformat.h \
-  /usr/include/qt6/QtGui/qpixmap.h \
-  /usr/include/qt6/QtGui/qpolygon.h \
-  /usr/include/qt6/QtGui/qregion.h \
-  /usr/include/qt6/QtGui/qrgb.h \
-  /usr/include/qt6/QtGui/qrgba64.h \
-  /usr/include/qt6/QtGui/qtgui-config.h \
-  /usr/include/qt6/QtGui/qtguiexports.h \
-  /usr/include/qt6/QtGui/qtguiglobal.h \
-  /usr/include/qt6/QtGui/qtransform.h \
-  /usr/include/qt6/QtGui/qwindowdefs.h \
   /usr/include/qt6/QtSql/QSqlDatabase \
   /usr/include/qt6/QtSql/qsqldatabase.h \
   /usr/include/qt6/QtSql/qtsql-config.h \
   /usr/include/qt6/QtSql/qtsqlexports.h \
   /usr/include/qt6/QtSql/qtsqlglobal.h \
-  /usr/include/qt6/QtWidgets/QMainWindow \
-  /usr/include/qt6/QtWidgets/qmainwindow.h \
-  /usr/include/qt6/QtWidgets/qsizepolicy.h \
-  /usr/include/qt6/QtWidgets/qtabwidget.h \
-  /usr/include/qt6/QtWidgets/qtwidgets-config.h \
-  /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
-  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
-  /usr/include/qt6/QtWidgets/qwidget.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \

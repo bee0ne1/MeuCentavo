@@ -2,7 +2,9 @@
 #define FORMMAIN_H
 
 #include <QMainWindow>
-#include "Forms/formUsuario.h"
+#include <QSqlDatabase>
+
+class formUsuario;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -14,7 +16,7 @@ class formMain : public QMainWindow {
     Q_OBJECT
 
 public:
-    explicit formMain(QWidget *parent = nullptr);
+    explicit formMain(QSqlDatabase db, QWidget *parent = nullptr);
     ~formMain();
 
 private slots:
@@ -22,7 +24,8 @@ private slots:
 
 private:
     Ui::formMain *ui;
-    formUsuario* usuarioWindow = nullptr;
+    formUsuario *usuarioWindow = nullptr;
+    QSqlDatabase m_db; // Variável membro para GUARDAR a conexão recebida.
 };
 
 #endif // FORMMAIN_H

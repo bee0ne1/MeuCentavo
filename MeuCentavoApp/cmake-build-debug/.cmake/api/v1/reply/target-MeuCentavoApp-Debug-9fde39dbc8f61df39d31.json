@@ -45,7 +45,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 37,
+				"line" : 43,
 				"parent" : 0
 			},
 			{
@@ -125,7 +125,7 @@
 			{
 				"command" : 8,
 				"file" : 0,
-				"line" : 32,
+				"line" : 38,
 				"parent" : 0
 			}
 		]
@@ -222,18 +222,20 @@
 				1,
 				3,
 				6,
-				8
+				8,
+				12,
+				15
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "MeuCentavoApp_autogen::@6890427a1f51a3e7e1df"
+			"id" : "MeuCentavoApp_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "MeuCentavoApp_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "MeuCentavoApp_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "MeuCentavoApp::@6890427a1f51a3e7e1df",
@@ -295,7 +297,9 @@
 				1,
 				3,
 				6,
-				8
+				8,
+				12,
+				15
 			]
 		},
 		{
@@ -305,7 +309,7 @@
 				2,
 				5,
 				10,
-				14
+				20
 			]
 		},
 		{
@@ -316,15 +320,19 @@
 				7,
 				9,
 				11,
-				12,
-				13
+				13,
+				14,
+				16,
+				17,
+				18,
+				19
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				15
+				21
 			]
 		}
 	],
@@ -390,6 +398,38 @@
 			"backtrace" : 1,
 			"path" : "Designer/Forms/formUsuario.ui",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Modelo/Lancamento.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Negocio/LancamentoDAO.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Negocio/LancamentoDAO.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Modelo/Usuario.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Negocio/UsuarioDAO.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Negocio/UsuarioDAO.h",
+			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,
