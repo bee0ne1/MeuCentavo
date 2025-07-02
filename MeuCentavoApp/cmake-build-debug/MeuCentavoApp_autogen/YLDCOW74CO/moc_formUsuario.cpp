@@ -42,7 +42,9 @@ template <> constexpr inline auto formUsuario::qt_create_metaobjectdata<qt_meta_
         "usuarioFechado",
         "",
         "abrirFormCadastro",
-        "voltarFormInicio"
+        "voltarFormInicio",
+        "carregarListaDeUsuarios",
+        "abrirExcluirUsuarios"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -52,6 +54,10 @@ template <> constexpr inline auto formUsuario::qt_create_metaobjectdata<qt_meta_
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'voltarFormInicio'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'carregarListaDeUsuarios'
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'abrirExcluirUsuarios'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -78,6 +84,8 @@ void formUsuario::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 0: _t->usuarioFechado(); break;
         case 1: _t->abrirFormCadastro(); break;
         case 2: _t->voltarFormInicio(); break;
+        case 3: _t->carregarListaDeUsuarios(); break;
+        case 4: _t->abrirExcluirUsuarios(); break;
         default: ;
         }
     }
@@ -106,14 +114,14 @@ int formUsuario::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 5;
     }
     return _id;
 }

@@ -9,6 +9,8 @@
 #include <QObject>
 #include <QSqlDatabase>
 #include "Modelo/Usuario.h" // Incluindo a struct que acabamos de criar
+#include <optional> // Essencial para o retorno opcional
+
 
 class UsuarioDAO : public QObject {
     Q_OBJECT
@@ -21,9 +23,16 @@ public:
     // Método para verificar se um usuário existe (útil para login)
     bool autenticarUsuario(const QString& nomeUsuario, const QString& senha);
 
+    // Esta função retorna o usuário se o login for válido, ou nada se for inválido.
+    std::optional<Usuario> autenticarEObterUsuario(const QString& nomeUsuario, const QString& senha);
+    QVector<Usuario> obterTodosUsuarios();
+    std::optional<Usuario> obterUltimoUsuario();
+    bool removerUsuario(int id);
+    bool existeUsuario(const QString& nomeUsuario);
+
     // Poderíamos adicionar outros:
     // Usuario obterUsuarioPorNome(const QString& nomeUsuario);
-    // bool removerUsuario(int id);
+
 
 private:
     QSqlDatabase m_db; // Instância da conexão com o banco

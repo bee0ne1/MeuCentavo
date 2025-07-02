@@ -92,13 +92,6 @@ all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
-# The main codegen target
-codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles 0
-.PHONY : codegen
-
 # The main clean target
 clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
@@ -162,6 +155,54 @@ MeuCentavoApp_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp_autogen.dir/build.make CMakeFiles/MeuCentavoApp_autogen.dir/build
 .PHONY : MeuCentavoApp_autogen/fast
 
+DataAccess/LancamentoDAO.o: DataAccess/LancamentoDAO.cpp.o
+.PHONY : DataAccess/LancamentoDAO.o
+
+# target to build an object file
+DataAccess/LancamentoDAO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o
+.PHONY : DataAccess/LancamentoDAO.cpp.o
+
+DataAccess/LancamentoDAO.i: DataAccess/LancamentoDAO.cpp.i
+.PHONY : DataAccess/LancamentoDAO.i
+
+# target to preprocess a source file
+DataAccess/LancamentoDAO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.i
+.PHONY : DataAccess/LancamentoDAO.cpp.i
+
+DataAccess/LancamentoDAO.s: DataAccess/LancamentoDAO.cpp.s
+.PHONY : DataAccess/LancamentoDAO.s
+
+# target to generate assembly for a file
+DataAccess/LancamentoDAO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.s
+.PHONY : DataAccess/LancamentoDAO.cpp.s
+
+DataAccess/UsuarioDAO.o: DataAccess/UsuarioDAO.cpp.o
+.PHONY : DataAccess/UsuarioDAO.o
+
+# target to build an object file
+DataAccess/UsuarioDAO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o
+.PHONY : DataAccess/UsuarioDAO.cpp.o
+
+DataAccess/UsuarioDAO.i: DataAccess/UsuarioDAO.cpp.i
+.PHONY : DataAccess/UsuarioDAO.i
+
+# target to preprocess a source file
+DataAccess/UsuarioDAO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.i
+.PHONY : DataAccess/UsuarioDAO.cpp.i
+
+DataAccess/UsuarioDAO.s: DataAccess/UsuarioDAO.cpp.s
+.PHONY : DataAccess/UsuarioDAO.s
+
+# target to generate assembly for a file
+DataAccess/UsuarioDAO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.s
+.PHONY : DataAccess/UsuarioDAO.cpp.s
+
 Designer/Forms/formCadastro.o: Designer/Forms/formCadastro.cpp.o
 .PHONY : Designer/Forms/formCadastro.o
 
@@ -185,6 +226,30 @@ Designer/Forms/formCadastro.s: Designer/Forms/formCadastro.cpp.s
 Designer/Forms/formCadastro.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.s
 .PHONY : Designer/Forms/formCadastro.cpp.s
+
+Designer/Forms/formExcluirUsuario.o: Designer/Forms/formExcluirUsuario.cpp.o
+.PHONY : Designer/Forms/formExcluirUsuario.o
+
+# target to build an object file
+Designer/Forms/formExcluirUsuario.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formExcluirUsuario.cpp.o
+.PHONY : Designer/Forms/formExcluirUsuario.cpp.o
+
+Designer/Forms/formExcluirUsuario.i: Designer/Forms/formExcluirUsuario.cpp.i
+.PHONY : Designer/Forms/formExcluirUsuario.i
+
+# target to preprocess a source file
+Designer/Forms/formExcluirUsuario.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formExcluirUsuario.cpp.i
+.PHONY : Designer/Forms/formExcluirUsuario.cpp.i
+
+Designer/Forms/formExcluirUsuario.s: Designer/Forms/formExcluirUsuario.cpp.s
+.PHONY : Designer/Forms/formExcluirUsuario.s
+
+# target to generate assembly for a file
+Designer/Forms/formExcluirUsuario.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formExcluirUsuario.cpp.s
+.PHONY : Designer/Forms/formExcluirUsuario.cpp.s
 
 Designer/Forms/formUsuario.o: Designer/Forms/formUsuario.cpp.o
 .PHONY : Designer/Forms/formUsuario.o
@@ -258,54 +323,6 @@ MeuCentavoApp_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.s
 .PHONY : MeuCentavoApp_autogen/mocs_compilation.cpp.s
 
-Negocio/LancamentoDAO.o: Negocio/LancamentoDAO.cpp.o
-.PHONY : Negocio/LancamentoDAO.o
-
-# target to build an object file
-Negocio/LancamentoDAO.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/LancamentoDAO.cpp.o
-.PHONY : Negocio/LancamentoDAO.cpp.o
-
-Negocio/LancamentoDAO.i: Negocio/LancamentoDAO.cpp.i
-.PHONY : Negocio/LancamentoDAO.i
-
-# target to preprocess a source file
-Negocio/LancamentoDAO.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/LancamentoDAO.cpp.i
-.PHONY : Negocio/LancamentoDAO.cpp.i
-
-Negocio/LancamentoDAO.s: Negocio/LancamentoDAO.cpp.s
-.PHONY : Negocio/LancamentoDAO.s
-
-# target to generate assembly for a file
-Negocio/LancamentoDAO.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/LancamentoDAO.cpp.s
-.PHONY : Negocio/LancamentoDAO.cpp.s
-
-Negocio/UsuarioDAO.o: Negocio/UsuarioDAO.cpp.o
-.PHONY : Negocio/UsuarioDAO.o
-
-# target to build an object file
-Negocio/UsuarioDAO.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/UsuarioDAO.cpp.o
-.PHONY : Negocio/UsuarioDAO.cpp.o
-
-Negocio/UsuarioDAO.i: Negocio/UsuarioDAO.cpp.i
-.PHONY : Negocio/UsuarioDAO.i
-
-# target to preprocess a source file
-Negocio/UsuarioDAO.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/UsuarioDAO.cpp.i
-.PHONY : Negocio/UsuarioDAO.cpp.i
-
-Negocio/UsuarioDAO.s: Negocio/UsuarioDAO.cpp.s
-.PHONY : Negocio/UsuarioDAO.s
-
-# target to generate assembly for a file
-Negocio/UsuarioDAO.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Negocio/UsuarioDAO.cpp.s
-.PHONY : Negocio/UsuarioDAO.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -336,15 +353,23 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... codegen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MeuCentavoApp_autogen"
 	@echo "... MeuCentavoApp_autogen_timestamp_deps"
 	@echo "... MeuCentavoApp"
+	@echo "... DataAccess/LancamentoDAO.o"
+	@echo "... DataAccess/LancamentoDAO.i"
+	@echo "... DataAccess/LancamentoDAO.s"
+	@echo "... DataAccess/UsuarioDAO.o"
+	@echo "... DataAccess/UsuarioDAO.i"
+	@echo "... DataAccess/UsuarioDAO.s"
 	@echo "... Designer/Forms/formCadastro.o"
 	@echo "... Designer/Forms/formCadastro.i"
 	@echo "... Designer/Forms/formCadastro.s"
+	@echo "... Designer/Forms/formExcluirUsuario.o"
+	@echo "... Designer/Forms/formExcluirUsuario.i"
+	@echo "... Designer/Forms/formExcluirUsuario.s"
 	@echo "... Designer/Forms/formUsuario.o"
 	@echo "... Designer/Forms/formUsuario.i"
 	@echo "... Designer/Forms/formUsuario.s"
@@ -354,12 +379,6 @@ help:
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.o"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.i"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.s"
-	@echo "... Negocio/LancamentoDAO.o"
-	@echo "... Negocio/LancamentoDAO.i"
-	@echo "... Negocio/LancamentoDAO.s"
-	@echo "... Negocio/UsuarioDAO.o"
-	@echo "... Negocio/UsuarioDAO.i"
-	@echo "... Negocio/UsuarioDAO.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

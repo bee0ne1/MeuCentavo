@@ -9,7 +9,7 @@
 #include <QSqlDatabase>
 
 class formCadastro;
-
+class formExcluirUsuario;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class formUsuario; }
@@ -31,11 +31,14 @@ protected:
 private:
     Ui::formUsuario *ui;
     formCadastro* cadastroWindow = nullptr;
+    formExcluirUsuario* excluirWindow = nullptr;
      QSqlDatabase m_db;
 
 private slots:
     void abrirFormCadastro();
     void voltarFormInicio();
+    void carregarListaDeUsuarios();
+    void abrirExcluirUsuarios();
 };
 
 

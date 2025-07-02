@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MeuCentavoApp_autogen"
   "MeuCentavoApp_autogen/include/Designer/Forms/ui_formCadastro.h"
+  "MeuCentavoApp_autogen/include/Designer/Forms/ui_formExcluirUsuario.h"
   "MeuCentavoApp_autogen/include/Designer/Forms/ui_formUsuario.h"
   "MeuCentavoApp_autogen/include/Designer/ui_formMain.h"
   "MeuCentavoApp_autogen/mocs_compilation.cpp"

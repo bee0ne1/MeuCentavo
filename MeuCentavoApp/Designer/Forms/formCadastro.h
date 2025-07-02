@@ -16,11 +16,12 @@ class formCadastro : public QWidget {
     Q_OBJECT
 
 public:
-    explicit formCadastro(formUsuario *usuario,QSqlDatabase db, QWidget *parent = nullptr);
+    explicit formCadastro(QSqlDatabase db, QWidget *parent = nullptr);
     ~formCadastro();
 
 signals:
     void cadastroFechado();
+     void cadastroConcluido();
 
 private slots:
     void verificarCampos();

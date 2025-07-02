@@ -41,6 +41,7 @@ template <> constexpr inline auto formCadastro::qt_create_metaobjectdata<qt_meta
         "formCadastro",
         "cadastroFechado",
         "",
+        "cadastroConcluido",
         "verificarCampos",
         "visualizarSenha",
         "cancelarCadastro",
@@ -50,14 +51,16 @@ template <> constexpr inline auto formCadastro::qt_create_metaobjectdata<qt_meta
     QtMocHelpers::UintData qt_methods {
         // Signal 'cadastroFechado'
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'cadastroConcluido'
+        QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'verificarCampos'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'visualizarSenha'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'cancelarCadastro'
+        // Slot 'visualizarSenha'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'gravarUsuario'
+        // Slot 'cancelarCadastro'
         QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'gravarUsuario'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -82,15 +85,18 @@ void formCadastro::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->cadastroFechado(); break;
-        case 1: _t->verificarCampos(); break;
-        case 2: _t->visualizarSenha(); break;
-        case 3: _t->cancelarCadastro(); break;
-        case 4: _t->gravarUsuario(); break;
+        case 1: _t->cadastroConcluido(); break;
+        case 2: _t->verificarCampos(); break;
+        case 3: _t->visualizarSenha(); break;
+        case 4: _t->cancelarCadastro(); break;
+        case 5: _t->gravarUsuario(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (formCadastro::*)()>(_a, &formCadastro::cadastroFechado, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (formCadastro::*)()>(_a, &formCadastro::cadastroConcluido, 1))
             return;
     }
 }
@@ -114,14 +120,14 @@ int formCadastro::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }
@@ -130,5 +136,11 @@ int formCadastro::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void formCadastro::cadastroFechado()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void formCadastro::cadastroConcluido()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP

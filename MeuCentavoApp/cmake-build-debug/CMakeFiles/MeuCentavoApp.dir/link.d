@@ -4,11 +4,12 @@ MeuCentavoApp: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
   CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/main.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formExcluirUsuario.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Negocio/LancamentoDAO.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Negocio/UsuarioDAO.cpp.o \
   /usr/lib/libQt6Widgets.so.6.9.1 \
   /usr/lib/libQt6Sql.so.6.9.1 \
   /usr/lib/libQt6Gui.so.6.9.1 \
@@ -85,15 +86,17 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/main.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o:
 
+CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formExcluirUsuario.cpp.o:
+
 CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o:
-
-CMakeFiles/MeuCentavoApp.dir/Negocio/LancamentoDAO.cpp.o:
-
-CMakeFiles/MeuCentavoApp.dir/Negocio/UsuarioDAO.cpp.o:
 
 /usr/lib/libQt6Widgets.so.6.9.1:
 

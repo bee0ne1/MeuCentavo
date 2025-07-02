@@ -1,48 +1,53 @@
-cmake_minimum_required(VERSION 3.31.6)
-project(MeuCentavoApp)
+cmake_minimum_required(VERSION 3.16)
+project(MeuCentavoApp LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_AUTOMOC ON)
+# Encontra o pacote do Qt6 com os módulos que precisamos (Widgets e Sql)
+find_package(Qt6 COMPONENTS Widgets Sql REQUIRED)
+
+# Configurações para que o Qt funcione magicamente com o CMake
 set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_AUTOUIC_SEARCH_PATHS
-        ${CMAKE_SOURCE_DIR}/Designer
-        ${CMAKE_SOURCE_DIR}/Designer/Forms
-)
 
+# --- AQUI ESTÁ A ORGANIZAÇÃO CORRETA ---
 
-# Adicione Sql aqui
-find_package(Qt6 COMPONENTS Core Gui Widgets Sql REQUIRED)
-
-add_executable(MeuCentavoApp
+# 1. Criamos uma lista apenas com os arquivos de código-fonte (.cpp)
+set(PROJECT_SOURCES
         main.cpp
-        Designer/formMain.ui
-        Designer/Forms/formCadastro.cpp
-        Designer/Forms/formCadastro.h
-        Designer/Forms/formCadastro.ui
+        DataAccess/LancamentoDAO.cpp
+        DataAccess/UsuarioDAO.cpp
         Designer/formMain.cpp
-        Designer/formMain.h
+        Designer/Forms/formCadastro.cpp
+        Designer/Forms/formExcluirUsuario.cpp
         Designer/Forms/formUsuario.cpp
-        Designer/Forms/formUsuario.h
+)
+
+# 2. Criamos uma lista apenas com os arquivos de interface (.ui)
+set(PROJECT_FORMS
+        Designer/formMain.ui
+        Designer/Forms/formCadastro.ui
+        Designer/Forms/formExcluirUsuario.ui
         Designer/Forms/formUsuario.ui
-        Modelo/Lancamento.h
-        Negocio/LancamentoDAO.cpp
-        Negocio/LancamentoDAO.h
-        Modelo/Usuario.h
-        Negocio/UsuarioDAO.cpp
-        Negocio/UsuarioDAO.h
 )
 
-target_include_directories(MeuCentavoApp PRIVATE
-        ${CMAKE_CURRENT_BINARY_DIR}/MeuCentavoApp_autogen/include
+# 3. Criamos o executável usando uma função especial do Qt
+#    Ela entende essas listas e lida com tudo automaticamente
+qt_add_executable(MeuCentavoApp
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+        ${PROJECT_FORMS}
 )
 
-# Link com Qt::Sql também
-target_link_libraries(MeuCentavoApp
-        Qt::Core
-        Qt::Gui
-        Qt::Widgets
-        Qt::Sql
+target_include_directories(MeuCentavoApp PRIVATE ${PROJECT_SOURCE_DIR})
+
+# 4. Linkamos as bibliotecas do Qt ao nosso executável
+target_link_libraries(MeuCentavoApp PRIVATE
+        Qt6::Widgets
+        Qt6::Sql
 )
+
+# Finaliza as configurações do MOC, UIC, e RCC
+qt_finalize_executable(MeuCentavoApp)

@@ -1,21 +1,19 @@
 #include "formCadastro.h"
 #include "ui_formCadastro.h"
 #include "formUsuario.h"
-#include "Negocio/UsuarioDAO.h"
+#include "DataAccess/UsuarioDAO.h"
 #include "Modelo/Usuario.h"
 #include <QDebug>
 #include <QCloseEvent>
 #include <QMessageBox>
 
-formCadastro::formCadastro(formUsuario *usuario,QSqlDatabase db,QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::formCadastro),
-    usuarioWindow(usuario),
+formCadastro::formCadastro(QSqlDatabase db,QWidget *parent):
+    QWidget(parent),
+    ui(new Ui::formCadastro),
     m_db(db) // <-- INICIALIZE A VARIÁVEL DO BANCO
 
 {
     ui->setupUi(this);
-
     connect(ui->lineEditSenha, &QLineEdit::textChanged, this, &formCadastro::verificarCampos);
     connect(ui->lineEditUsuario, &QLineEdit::textChanged, this, &formCadastro::verificarCampos);
     connect(ui->buttonViewPassword, &QPushButton::clicked, this, &formCadastro::visualizarSenha);
@@ -51,31 +49,40 @@ void formCadastro::visualizarSenha() {
 
 void formCadastro::cancelarCadastro() {
     this->close();
-    usuarioWindow->show();
 }
 
 void formCadastro::gravarUsuario()
 {
+    // Não precisamos verificar se os campos estão vazios aqui,
+    // pois a função verificarCampos() já garantiu isso ao habilitar o botão.
+
     // a. Pega os dados da interface
     QString nome = ui->lineEditUsuario->text();
     QString senha = ui->lineEditSenha->text();
 
-    // b. Cria a struct Usuario e a preenche
+    // b. Validação de complexidade da senha (ainda recomendada)
+    if (senha.length() < 6) {
+        QMessageBox::warning(this, "Senha Fraca", "A senha deve ter pelo menos 6 caracteres.");
+        return;
+    }
+
+    // c. Validação de usuário duplicado no banco
+    UsuarioDAO dao(m_db);
+    if (dao.existeUsuario(nome)) {
+        QMessageBox::warning(this, "Erro de Cadastro", "Este nome de usuário já está em uso.");
+        return;
+    }
+
+    // d. Se todas as validações passaram, cria e salva o usuário
     Usuario novoUsuario;
     novoUsuario.nomeUsuario = nome;
     novoUsuario.senha = senha;
 
-    // c. Cria o DAO e tenta inserir no banco
-    UsuarioDAO dao(m_db); // Usa a conexão que guardamos
-
     if (dao.adicionarUsuario(novoUsuario)) {
-        // Se deu certo, avisa o usuário e volta para a tela anterior
         QMessageBox::information(this, "Sucesso", "Usuário cadastrado com sucesso!");
-        cancelarCadastro(); // Reutiliza a função de fechar e mostrar a outra tela
+        emit cadastroConcluido();
+        this->close();
     } else {
-        // Se deu errado, avisa o usuário
-        QMessageBox::warning(this, "Erro de Cadastro",
-                             "Não foi possível cadastrar o usuário.\n"
-                             "O nome de usuário pode já estar em uso.");
+        QMessageBox::warning(this, "Erro de Banco de Dados", "Ocorreu um erro inesperado ao salvar o usuário.");
     }
 }
