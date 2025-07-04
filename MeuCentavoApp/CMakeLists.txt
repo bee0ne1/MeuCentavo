@@ -19,18 +19,24 @@ set(PROJECT_SOURCES
         main.cpp
         DataAccess/LancamentoDAO.cpp
         DataAccess/UsuarioDAO.cpp
-        Designer/formMain.cpp
+        Designer/formInicio.cpp
         Designer/Forms/formCadastro.cpp
         Designer/Forms/formExcluirUsuario.cpp
         Designer/Forms/formUsuario.cpp
+        Designer/Forms/formBoasVindas.cpp
+        Designer/Forms/formBoasVindas.h
+        Designer/Forms/formBoasVindas.ui
 )
 
 # 2. Criamos uma lista apenas com os arquivos de interface (.ui)
 set(PROJECT_FORMS
-        Designer/formMain.ui
+        Designer/formInicio.ui
         Designer/Forms/formCadastro.ui
         Designer/Forms/formExcluirUsuario.ui
         Designer/Forms/formUsuario.ui
+        Designer/Forms/formBoasVindas.cpp
+        Designer/Forms/formBoasVindas.h
+        Designer/Forms/formBoasVindas.ui
 )
 
 # 3. Criamos o executável usando uma função especial do Qt

@@ -12,7 +12,6 @@
 #include <QCloseEvent>
 #include <QPushButton>
 #include <QLayoutItem>
-
 #include "formExcluirUsuario.h"
 
 formUsuario::formUsuario(QSqlDatabase db, QWidget *parent) :

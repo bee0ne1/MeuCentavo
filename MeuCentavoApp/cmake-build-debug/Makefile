@@ -203,6 +203,30 @@ DataAccess/UsuarioDAO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.s
 .PHONY : DataAccess/UsuarioDAO.cpp.s
 
+Designer/Forms/formBoasVindas.o: Designer/Forms/formBoasVindas.cpp.o
+.PHONY : Designer/Forms/formBoasVindas.o
+
+# target to build an object file
+Designer/Forms/formBoasVindas.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o
+.PHONY : Designer/Forms/formBoasVindas.cpp.o
+
+Designer/Forms/formBoasVindas.i: Designer/Forms/formBoasVindas.cpp.i
+.PHONY : Designer/Forms/formBoasVindas.i
+
+# target to preprocess a source file
+Designer/Forms/formBoasVindas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.i
+.PHONY : Designer/Forms/formBoasVindas.cpp.i
+
+Designer/Forms/formBoasVindas.s: Designer/Forms/formBoasVindas.cpp.s
+.PHONY : Designer/Forms/formBoasVindas.s
+
+# target to generate assembly for a file
+Designer/Forms/formBoasVindas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.s
+.PHONY : Designer/Forms/formBoasVindas.cpp.s
+
 Designer/Forms/formCadastro.o: Designer/Forms/formCadastro.cpp.o
 .PHONY : Designer/Forms/formCadastro.o
 
@@ -275,29 +299,29 @@ Designer/Forms/formUsuario.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.s
 .PHONY : Designer/Forms/formUsuario.cpp.s
 
-Designer/formMain.o: Designer/formMain.cpp.o
-.PHONY : Designer/formMain.o
+Designer/formInicio.o: Designer/formInicio.cpp.o
+.PHONY : Designer/formInicio.o
 
 # target to build an object file
-Designer/formMain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o
-.PHONY : Designer/formMain.cpp.o
+Designer/formInicio.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o
+.PHONY : Designer/formInicio.cpp.o
 
-Designer/formMain.i: Designer/formMain.cpp.i
-.PHONY : Designer/formMain.i
+Designer/formInicio.i: Designer/formInicio.cpp.i
+.PHONY : Designer/formInicio.i
 
 # target to preprocess a source file
-Designer/formMain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.i
-.PHONY : Designer/formMain.cpp.i
+Designer/formInicio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.i
+.PHONY : Designer/formInicio.cpp.i
 
-Designer/formMain.s: Designer/formMain.cpp.s
-.PHONY : Designer/formMain.s
+Designer/formInicio.s: Designer/formInicio.cpp.s
+.PHONY : Designer/formInicio.s
 
 # target to generate assembly for a file
-Designer/formMain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.s
-.PHONY : Designer/formMain.cpp.s
+Designer/formInicio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.s
+.PHONY : Designer/formInicio.cpp.s
 
 MeuCentavoApp_autogen/mocs_compilation.o: MeuCentavoApp_autogen/mocs_compilation.cpp.o
 .PHONY : MeuCentavoApp_autogen/mocs_compilation.o
@@ -364,6 +388,9 @@ help:
 	@echo "... DataAccess/UsuarioDAO.o"
 	@echo "... DataAccess/UsuarioDAO.i"
 	@echo "... DataAccess/UsuarioDAO.s"
+	@echo "... Designer/Forms/formBoasVindas.o"
+	@echo "... Designer/Forms/formBoasVindas.i"
+	@echo "... Designer/Forms/formBoasVindas.s"
 	@echo "... Designer/Forms/formCadastro.o"
 	@echo "... Designer/Forms/formCadastro.i"
 	@echo "... Designer/Forms/formCadastro.s"
@@ -373,9 +400,9 @@ help:
 	@echo "... Designer/Forms/formUsuario.o"
 	@echo "... Designer/Forms/formUsuario.i"
 	@echo "... Designer/Forms/formUsuario.s"
-	@echo "... Designer/formMain.o"
-	@echo "... Designer/formMain.i"
-	@echo "... Designer/formMain.s"
+	@echo "... Designer/formInicio.o"
+	@echo "... Designer/formInicio.i"
+	@echo "... Designer/formInicio.s"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.o"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.i"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.s"

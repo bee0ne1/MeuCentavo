@@ -135,19 +135,19 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.cpp -o CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.s
 
-CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o: CMakeFiles/MeuCentavoApp.dir/flags.make
-CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formMain.cpp
-CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o: CMakeFiles/MeuCentavoApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o -MF CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o.d -o CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o -c /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formMain.cpp
+CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o: CMakeFiles/MeuCentavoApp.dir/flags.make
+CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp
+CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o: CMakeFiles/MeuCentavoApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o -MF CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o.d -o CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o -c /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp
 
-CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formMain.cpp > CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.i
+CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp > CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.i
 
-CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formMain.cpp -o CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.s
+CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp -o CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.s
 
 CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o: CMakeFiles/MeuCentavoApp.dir/flags.make
 CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.cpp
@@ -191,16 +191,31 @@ CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.cpp -o CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.s
 
+CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o: CMakeFiles/MeuCentavoApp.dir/flags.make
+CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formBoasVindas.cpp
+CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o: CMakeFiles/MeuCentavoApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o -MF CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o.d -o CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o -c /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formBoasVindas.cpp
+
+CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formBoasVindas.cpp > CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.i
+
+CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formBoasVindas.cpp -o CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.s
+
 # Object files for target MeuCentavoApp
 MeuCentavoApp_OBJECTS = \
 "CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/MeuCentavoApp.dir/main.cpp.o" \
 "CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o" \
 "CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o" \
-"CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o" \
+"CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o" \
 "CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o" \
 "CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formExcluirUsuario.cpp.o" \
-"CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o"
+"CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o" \
+"CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o"
 
 # External object files for target MeuCentavoApp
 MeuCentavoApp_EXTERNAL_OBJECTS =
@@ -209,10 +224,11 @@ MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilati
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/main.cpp.o
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o
-MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o
+MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formExcluirUsuario.cpp.o
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o
+MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/build.make
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/compiler_depend.ts
 MeuCentavoApp: /usr/lib/libQt6Widgets.so.6.9.1
@@ -222,7 +238,7 @@ MeuCentavoApp: /usr/lib/libGLX.so
 MeuCentavoApp: /usr/lib/libOpenGL.so
 MeuCentavoApp: /usr/lib/libQt6Core.so.6.9.1
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable MeuCentavoApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable MeuCentavoApp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MeuCentavoApp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,5 +1,5 @@
-#ifndef FORMMAIN_H
-#define FORMMAIN_H
+#ifndef FORMINICIO_H
+#define FORMINICIO_H
 
 #include <QMainWindow>
 #include <QSqlDatabase>
@@ -9,18 +9,18 @@ class formUsuario;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-    class formMain;
+    class formInicio;
 }
 QT_END_NAMESPACE
 
-class formMain : public QMainWindow {
+class formInicio : public QMainWindow {
     Q_OBJECT
 
 public:
 
-    explicit formMain(QSqlDatabase db, QWidget *parent = nullptr);
+    explicit formInicio(QSqlDatabase db, QWidget *parent = nullptr);
 
-    ~formMain();
+    ~formInicio();
 
 
 public slots:
@@ -32,7 +32,7 @@ private slots:
 
 
 private:
-    Ui::formMain *ui;
+    Ui::formInicio *ui;
     formUsuario *usuarioWindow = nullptr;
     QSqlDatabase m_db; // Variável membro para GUARDAR a conexão recebida.
     Usuario m_usuarioAtual; // Variável para guardar os dados do usuário logado
@@ -40,4 +40,4 @@ private:
 
 };
 
-#endif // FORMMAIN_H
+#endif // FORMINICIO_H

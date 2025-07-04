@@ -4,39 +4,60 @@
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlError>
 #include <QDebug>
-#include "Designer/formMain.h"  // Inclui a sua nova tela principal
+#include "Designer/formInicio.h"
+#include "Designer/Forms/formBoasVindas.h"
+#include "DataAccess/UsuarioDAO.h"
 #include <QMessageBox>
+#include <QSqlQuery>
+
+
+
+void configurarBancoInicial(QSqlDatabase& db)
+{
+    QSqlQuery query(db);
+    // A cláusula "IF NOT EXISTS" é crucial. Ela garante que o comando só
+    // fará algo se a tabela realmente não existir.
+    QString criarTabelaUsuario = "CREATE TABLE IF NOT EXISTS usuario ("
+                                 "user_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                                 "user_usuario TEXT NOT NULL UNIQUE, "
+                                 "user_password TEXT NOT NULL"
+                                 ");";
+
+    if (!query.exec(criarTabelaUsuario)) {
+        qDebug() << "Erro ao criar tabela usuario:" << query.lastError();
+    } else {
+        qDebug() << "Tabela 'usuario' verificada/criada com sucesso.";
+    }
+}
+
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    // Carrega o estilo (QSS)
-    QFile file("Designer/metro.qss");
-    if (file.open(QFile::ReadOnly | QFile::Text)) {
-        QTextStream stream(&file);
-        QString style = stream.readAll();
-        app.setStyleSheet(style);
-    }
-
-    // Conexão com o banco de dados
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setPort(3306);
-    db.setDatabaseName("meucentavodb");
-    db.setUserName("bruno");
-    db.setPassword("8243");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("meucentavo.db");
 
     if (!db.open()) {
-        qDebug() << "Erro ao conectar ao banco de dados:" << db.lastError().text();
+        qDebug() << "Erro crítico ao abrir/criar banco de dados:" << db.lastError();
         return -1;
     }
 
-    qDebug() << "Conexão com o banco de dados estabelecida com sucesso!";
+    configurarBancoInicial(db);
 
-
-    formMain janela(db);
-    janela.show();
-
+    // verifica se ha usuarios criados,abre uma tela de boas vindas caso nao
+    UsuarioDAO dao(db);
+    if (dao.existemUsuarios()) {
+        // Se já existem usuários, abre a tela principal normal.
+        qDebug() << "Usuários encontrados. Abrindo formMain.";
+        formInicio *w = new formInicio(db);
+        w->show();
+    } else {
+        // Se não existem usuários, abre a tela de boas-vindas.
+        qDebug() << "Nenhum usuário encontrado. Abrindo formBoasVindas.";
+        formBoasVindas *w = new formBoasVindas(db);
+        w->show();
+    }
     return app.exec();
+
 }

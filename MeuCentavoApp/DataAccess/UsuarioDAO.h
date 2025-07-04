@@ -30,6 +30,7 @@ public:
     std::optional<Usuario> obterUsuarioPorId(int id);
     bool removerUsuario(int id);
     bool existeUsuario(const QString& nomeUsuario);
+    bool existemUsuarios();
 
     // Poderíamos adicionar outros:
     // Usuario obterUsuarioPorNome(const QString& nomeUsuario);

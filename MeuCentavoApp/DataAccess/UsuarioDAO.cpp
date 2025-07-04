@@ -189,3 +189,18 @@ bool UsuarioDAO::existeUsuario(const QString& nomeUsuario)
     qDebug() << "Erro ao verificar a existência do usuário:" << query.lastError().text();
     return false;
 }
+
+bool UsuarioDAO::existemUsuarios()
+{
+    QSqlQuery query(m_db);
+    // COUNT(*) é a forma mais rápida de contar o número de linhas.
+    query.prepare("SELECT COUNT(*) FROM usuario");
+
+    if (query.exec() && query.next()) {
+        int count = query.value(0).toInt();
+        return (count > 0); // Retorna true se houver 1 ou mais usuários.
+    }
+
+    qDebug() << "Erro ao verificar se existem usuários:" << query.lastError().text();
+    return false; // Em caso de erro, assume que não existem.
+}
