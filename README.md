@@ -1,7 +1,7 @@
 # MeuCentavo
 Projeto de Gestão Financeira
 
-Linguagens utilizadas: C#, sql
+Linguagens utilizadas: C++, sql
 
 Programas utlizados:
 DBeaver (IDE, ou seja, inteface grafica, para auxiliar o gerenciamento os bancos de dados)
