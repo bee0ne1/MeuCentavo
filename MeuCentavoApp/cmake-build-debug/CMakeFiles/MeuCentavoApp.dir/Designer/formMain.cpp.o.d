@@ -393,4 +393,5 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o: \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtCore/QDebug \
  /usr/include/qt6/QtCore/qdebug.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess//UsuarioDAO.h \
- /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h
+ /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
+ /usr/include/qt6/QtCore/QSettings /usr/include/qt6/QtCore/qsettings.h

@@ -53,8 +53,6 @@ void formCadastro::cancelarCadastro() {
 
 void formCadastro::gravarUsuario()
 {
-    // Não precisamos verificar se os campos estão vazios aqui,
-    // pois a função verificarCampos() já garantiu isso ao habilitar o botão.
 
     // a. Pega os dados da interface
     QString nome = ui->lineEditUsuario->text();

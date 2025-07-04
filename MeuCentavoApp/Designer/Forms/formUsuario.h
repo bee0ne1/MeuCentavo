@@ -7,6 +7,7 @@
 
 #include <QWidget>
 #include <QSqlDatabase>
+#include "Modelo/Usuario.h"
 
 class formCadastro;
 class formExcluirUsuario;
@@ -24,6 +25,7 @@ public:
 
 signals:
     void usuarioFechado();
+    void usuarioAtual(const Usuario& usuario);
 
 protected:
     void closeEvent(QCloseEvent *event) override;

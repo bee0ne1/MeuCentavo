@@ -21,10 +21,15 @@ public:
     explicit formMain(QSqlDatabase db, QWidget *parent = nullptr);
 
     ~formMain();
-    void carregarUltimoUsuario(); // Função pública para atualizar o botão
+
+
+public slots:
+    void carregarUsuarioInicial();
+    void atualizarUsuarioNoBotao(const Usuario& usuario);
 
 private slots:
     void abrirTelaUsuario();
+
 
 private:
     Ui::formMain *ui;

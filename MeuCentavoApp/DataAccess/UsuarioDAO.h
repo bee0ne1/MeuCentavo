@@ -27,6 +27,7 @@ public:
     std::optional<Usuario> autenticarEObterUsuario(const QString& nomeUsuario, const QString& senha);
     QVector<Usuario> obterTodosUsuarios();
     std::optional<Usuario> obterUltimoUsuario();
+    std::optional<Usuario> obterUsuarioPorId(int id);
     bool removerUsuario(int id);
     bool existeUsuario(const QString& nomeUsuario);
 

@@ -87,7 +87,7 @@ void formUsuario::carregarListaDeUsuarios()
 
         connect(botaoUsuario, &QPushButton::clicked, [this, usuario]() {
             qDebug() << "Usuário selecionado:" << usuario.nomeUsuario;
-            // Lógica de login para este usuário
+            emit usuarioAtual(usuario);
         });
         ui->layoutUsuarios->addWidget(botaoUsuario);
     }

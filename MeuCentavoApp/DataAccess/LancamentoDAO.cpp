@@ -7,6 +7,7 @@
 LancamentoDAO::LancamentoDAO(QSqlDatabase db, QObject *parent)
     : QObject(parent), m_db(db) {}
 
+/*
 // Implementação para obter os dados (sua pergunta principal)
 QVector<Lancamento> LancamentoDAO::obterTodosLancamentos() {
     QVector<Lancamento> lancamentos;
@@ -43,8 +44,8 @@ QVector<Lancamento> LancamentoDAO::obterTodosLancamentos() {
 
     return lancamentos;
 }
-
-
+*/
+/*
 // Implementação para adicionar um novo registro
 bool LancamentoDAO::adicionarLancamento(const Lancamento& lancamento) {
     QSqlQuery query(m_db);
@@ -71,3 +72,4 @@ bool LancamentoDAO::adicionarLancamento(const Lancamento& lancamento) {
 
     return true;
 }
+*/

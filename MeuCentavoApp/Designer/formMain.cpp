@@ -3,6 +3,7 @@
 #include "Forms/formUsuario.h"  // Inclui as definições das janelas que vai abrir
 #include <QDebug>
 #include "DataAccess//UsuarioDAO.h" // Precisa do DAO para buscar
+#include <QSettings>
 
 formMain::formMain(QSqlDatabase db, QWidget *parent):
     QMainWindow(parent), ui(new Ui::formMain), m_db(db){
@@ -12,40 +13,75 @@ formMain::formMain(QSqlDatabase db, QWidget *parent):
 
     // Chama a função para personalizar a UI
     atualizarBoasVindas();
-    carregarUltimoUsuario();
+    carregarUsuarioInicial();
+
 }
 
 formMain::~formMain() {
     delete ui;
 }
-void formMain::carregarUltimoUsuario()
+
+void formMain::carregarUsuarioInicial()
 {
-    qDebug() << "formMain: Atualizando o último usuário...";
+    qDebug() << "formMain: Carregando usuário inicial...";
+    QSettings settings("BrunoApps", "MeuCentavoApp");
     UsuarioDAO dao(m_db);
 
-    // O método obterUltimoUsuario() que criamos agora será usado.
-    if (auto ultimoUsuarioOpt = dao.obterUltimoUsuario()) {
-        // Supondo que o botão principal se chama 'buttonUltimoUsuario'
-        ui->buttonAppAcess->setText(ultimoUsuarioOpt->nomeUsuario);
+    // 1. Tenta ler o ID salvo. Se não houver, usa -1 como padrão.
+    int ultimoId = settings.value("ultimoUsuarioId", -1).toInt();
+
+    std::optional<Usuario> usuarioParaExibir;
+
+    if (ultimoId != -1) {
+        // 2. Se encontrou um ID salvo, tenta buscar esse usuário específico.
+        qDebug() << "Encontrado ID salvo:" << ultimoId << ". Buscando usuário...";
+        usuarioParaExibir = dao.obterUsuarioPorId(ultimoId);
+    }
+
+    // 3. Se não havia ID salvo, OU se o usuário salvo foi deletado,
+    //    buscamos o último usuário cadastrado como um fallback.
+    if (!usuarioParaExibir) {
+        qDebug() << "Nenhum usuário salvo/válido encontrado. Buscando o último do banco...";
+        usuarioParaExibir = dao.obterUltimoUsuario();
+    }
+
+    // 4. Atualiza o botão
+    if (usuarioParaExibir) {
+        ui->buttonAppAcess->setText(usuarioParaExibir->nomeUsuario);
     } else {
         ui->buttonAppAcess->setText("Cadastrar Usuário");
+        ui->buttonAppAcess->setEnabled(false);
     }
 }
+
+
+void formMain::atualizarUsuarioNoBotao(const Usuario& usuario)
+{
+    qDebug() << "formMain: Recebeu o usuário selecionado:" << usuario.nomeUsuario;
+     ui->buttonAppAcess->setText(usuario.nomeUsuario);
+
+    // --- SALVANDO A ESCOLHA ---
+    // Criamos um objeto QSettings, definindo o nome da sua organização e da aplicação
+    QSettings settings("BrunoApps", "MeuCentavoApp");
+    // Salvamos o ID do usuário com a chave "ultimoUsuarioId"
+    settings.setValue("ultimoUsuarioId", usuario.id);
+    qDebug() << "ID" << usuario.id << "salvo como último usuário.";
+
+}
+
 
 void formMain::abrirTelaUsuario() {
 
     if (!usuarioWindow) {
         usuarioWindow = new formUsuario(m_db, nullptr);
 
-        // --- CONEXÃO ATUALIZADA ---
-        // Agora, quando o sinal 'usuarioFechado' for emitido, executamos uma pequena
-        // função (lambda) que faz DUAS coisas:
+        connect(usuarioWindow, &formUsuario::usuarioAtual,
+                this, &formMain::atualizarUsuarioNoBotao);
+
         connect(usuarioWindow, &formUsuario::usuarioFechado, [this]() {
             // 1. Reexibe a janela principal
             this->show();
-            // 2. Chama a função para recarregar o último usuário do banco
-            this->carregarUltimoUsuario();
-            // 3. Limpa o ponteiro para que a janela possa ser recriada na próxima vez
+            // 2. Limpa o ponteiro para que a janela possa ser recriada na próxima vez
             this->usuarioWindow = nullptr;
         });
     }

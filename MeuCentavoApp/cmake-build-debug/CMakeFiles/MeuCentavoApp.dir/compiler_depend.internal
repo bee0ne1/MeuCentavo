@@ -3653,6 +3653,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o
  /usr/include/pthread.h
  /usr/include/qt6/QtCore/QDebug
  /usr/include/qt6/QtCore/QObject
+ /usr/include/qt6/QtCore/QSettings
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QVariant
  /usr/include/qt6/QtCore/q17memory.h
@@ -3743,6 +3744,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o
  /usr/include/qt6/QtCore/qscopedpointer.h
  /usr/include/qt6/QtCore/qscopeguard.h
  /usr/include/qt6/QtCore/qset.h
+ /usr/include/qt6/QtCore/qsettings.h
  /usr/include/qt6/QtCore/qshareddata.h
  /usr/include/qt6/QtCore/qshareddata_impl.h
  /usr/include/qt6/QtCore/qsharedpointer.h

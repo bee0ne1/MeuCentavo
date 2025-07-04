@@ -3646,6 +3646,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o: /home/bruno/Documentos/ges
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDebug \
   /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QSettings \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVariant \
   /usr/include/qt6/QtCore/q17memory.h \
@@ -3736,6 +3737,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/formMain.cpp.o: /home/bruno/Documentos/ges
   /usr/include/qt6/QtCore/qscopedpointer.h \
   /usr/include/qt6/QtCore/qscopeguard.h \
   /usr/include/qt6/QtCore/qset.h \
+  /usr/include/qt6/QtCore/qsettings.h \
   /usr/include/qt6/QtCore/qshareddata.h \
   /usr/include/qt6/QtCore/qshareddata_impl.h \
   /usr/include/qt6/QtCore/qsharedpointer.h \
@@ -5535,6 +5537,10 @@ MeuCentavoApp_autogen/OVWQHZ74WH/moc_formMain.cpp:
 
 /usr/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake:
 
+CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o:
+
+/usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake:
+
 /usr/include/bits/types/clock_t.h:
 
 /usr/lib/cmake/Qt6/3rdparty/kwin/FindXKB.cmake:
@@ -6653,6 +6659,8 @@ MeuCentavoApp_autogen/include/ui_formUsuario.h:
 
 /usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateDependencies.cmake:
 
+/usr/include/qt6/QtCore/QSettings:
+
 /usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateTargets.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QSvgPluginConfig.cmake:
@@ -7075,6 +7083,10 @@ MeuCentavoApp_autogen/include/ui_formMain.h:
 
 /usr/include/qt6/QtWidgets/qlayoutitem.h:
 
+/usr/include/c++/15.1.1/bits/sstream.tcc:
+
+/usr/lib/libfontconfig.so.1:
+
 /usr/include/qt6/QtWidgets/QStatusBar:
 
 MeuCentavoApp_autogen/mocs_compilation.cpp:
@@ -7099,10 +7111,6 @@ MeuCentavoApp_autogen/YLDCOW74CO/moc_formUsuario.cpp:
 
 /usr/include/c++/15.1.1/bits/ostream.h:
 
-/usr/include/c++/15.1.1/bits/sstream.tcc:
-
-/usr/lib/libfontconfig.so.1:
-
 /usr/include/c++/15.1.1/codecvt:
 
 /usr/include/c++/15.1.1/cwctype:
@@ -7112,6 +7120,8 @@ MeuCentavoApp_autogen/YLDCOW74CO/moc_formUsuario.cpp:
 /usr/include/c++/15.1.1/filesystem:
 
 /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:
+
+/usr/include/qt6/QtCore/qsettings.h:
 
 /usr/include/c++/15.1.1/ios:
 
@@ -7178,7 +7188,3 @@ MeuCentavoApp_autogen/YLDCOW74CO/moc_formUsuario.cpp:
 /usr/lib/libpng16.so.16:
 
 /usr/lib/libz.so.1:
-
-/usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake:
-
-CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o:

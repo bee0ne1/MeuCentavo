@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setPort(3306);
-    db.setDatabaseName("gestaofinanceira");
+    db.setDatabaseName("meucentavodb");
     db.setUserName("bruno");
     db.setPassword("8243");
 

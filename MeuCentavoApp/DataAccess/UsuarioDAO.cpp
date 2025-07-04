@@ -142,6 +142,21 @@ std::optional<Usuario> UsuarioDAO::obterUltimoUsuario()
     return std::nullopt;
 }
 
+std::optional<Usuario> UsuarioDAO::obterUsuarioPorId(int id)
+{
+    QSqlQuery query(m_db);
+    query.prepare("SELECT user_id, user_usuario FROM usuario WHERE user_id = :id");
+    query.bindValue(":id", id);
+
+    if (query.exec() && query.next()) {
+        Usuario usuario;
+        usuario.id = query.value("user_id").toInt();
+        usuario.nomeUsuario = query.value("user_usuario").toString();
+        return usuario;
+    }
+    return std::nullopt; // Retorna vazio se não encontrar
+}
+
 bool UsuarioDAO::removerUsuario(int id)
 {
     QSqlQuery query(m_db);
