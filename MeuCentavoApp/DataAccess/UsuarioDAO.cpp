@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <QCryptographicHash>
 
 UsuarioDAO::UsuarioDAO(QSqlDatabase db, QObject *parent)
     : QObject(parent), m_db(db) {}
@@ -203,4 +204,25 @@ bool UsuarioDAO::existemUsuarios()
 
     qDebug() << "Erro ao verificar se existem usuários:" << query.lastError().text();
     return false; // Em caso de erro, assume que não existem.
+}
+
+
+bool UsuarioDAO::verificarSenhaUsuario(int usuarioId, const QString& senhaFornecida)
+{
+    // 1. Busca o HASH da senha que está salvo no banco
+    QSqlQuery query(m_db);
+    query.prepare("SELECT user_password FROM usuario WHERE user_id = :id");
+    query.bindValue(":id", usuarioId);
+
+    if (!query.exec() || !query.next()) {
+        return false; // Usuário não encontrado
+    }
+    QString hashSalvo = query.value(0).toString();
+
+    // 2. Cria o HASH da senha que o usuário ACABOU de digitar
+    QByteArray hashFornecido = QCryptographicHash::hash(senhaFornecida.toUtf8(), QCryptographicHash::Sha256);
+    QString hashFornecidoEmHex = hashFornecido.toHex();
+
+    // 3. Compara os dois hashes
+    return (hashSalvo == hashFornecidoEmHex);
 }

@@ -31,6 +31,7 @@ public:
     bool removerUsuario(int id);
     bool existeUsuario(const QString& nomeUsuario);
     bool existemUsuarios();
+    bool verificarSenhaUsuario(int usuarioId, const QString& senhaFornecida);
 
     // Poderíamos adicionar outros:
     // Usuario obterUsuarioPorNome(const QString& nomeUsuario);

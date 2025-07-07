@@ -5,7 +5,7 @@
 #include <QtSql/QSqlError>
 #include <QDebug>
 #include "Designer/formInicio.h"
-#include "Designer/Forms/formBoasVindas.h"
+#include "Designer/FormsLogin/formBoasVindas.h"
 #include "DataAccess/UsuarioDAO.h"
 #include <QMessageBox>
 #include <QSqlQuery>

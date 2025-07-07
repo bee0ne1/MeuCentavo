@@ -516,6 +516,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.h",
+			"MU",
+			"XBHMEMWWJC/moc_PasswordFormHelper.cpp",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.h",
 			"MU",
 			"V5IIWBEYZM/moc_LancamentoDAO.cpp",
@@ -528,27 +534,39 @@
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formBoasVindas.h",
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.h",
 			"MU",
-			"YLDCOW74CO/moc_formBoasVindas.cpp",
+			"JUEWMI7LB7/moc_formMainDashboard.cpp",
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.h",
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formBoasVindas.h",
 			"MU",
-			"YLDCOW74CO/moc_formCadastro.cpp",
+			"FTZSGGJYIR/moc_formBoasVindas.cpp",
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formExcluirUsuario.h",
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formCadastro.h",
 			"MU",
-			"YLDCOW74CO/moc_formExcluirUsuario.cpp",
+			"FTZSGGJYIR/moc_formCadastro.cpp",
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.h",
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formExcluirUsuario.h",
 			"MU",
-			"YLDCOW74CO/moc_formUsuario.cpp",
+			"FTZSGGJYIR/moc_formExcluirUsuario.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formLoginSenha.h",
+			"MU",
+			"FTZSGGJYIR/moc_formLoginSenha.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.h",
+			"MU",
+			"FTZSGGJYIR/moc_formUsuario.cpp",
 			null
 		],
 		[
@@ -620,6 +638,11 @@
 	"SOURCES" : 
 	[
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.cpp",
 			"MU",
 			null
@@ -630,22 +653,32 @@
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formBoasVindas.cpp",
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formCadastro.cpp",
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formBoasVindas.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formExcluirUsuario.cpp",
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formCadastro.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Forms/formUsuario.cpp",
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formExcluirUsuario.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formLoginSenha.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.cpp",
 			"MU",
 			null
 		],

@@ -4,8 +4,10 @@
 #include <QMainWindow>
 #include <QSqlDatabase>
 #include "Modelo/Usuario.h"
+#include <optional>
 
 class formUsuario;
+class formLoginSenha;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -29,14 +31,13 @@ public slots:
 
 private slots:
     void abrirTelaUsuario();
-
+    void abrirTelaLogin();
 
 private:
     Ui::formInicio *ui;
     formUsuario *usuarioWindow = nullptr;
     QSqlDatabase m_db; // Variável membro para GUARDAR a conexão recebida.
-    Usuario m_usuarioAtual; // Variável para guardar os dados do usuário logado
-    void atualizarBoasVindas(); // Função para atualizar a UI
+    std::optional<Usuario> m_usuarioAtual; // Usamos std::optional para representar um usuário que pode ou não estar carregado.
 
 };
 

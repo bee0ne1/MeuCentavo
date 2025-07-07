@@ -20,23 +20,39 @@ set(PROJECT_SOURCES
         DataAccess/LancamentoDAO.cpp
         DataAccess/UsuarioDAO.cpp
         Designer/formInicio.cpp
-        Designer/Forms/formCadastro.cpp
-        Designer/Forms/formExcluirUsuario.cpp
-        Designer/Forms/formUsuario.cpp
-        Designer/Forms/formBoasVindas.cpp
-        Designer/Forms/formBoasVindas.h
-        Designer/Forms/formBoasVindas.ui
+        Designer/FormsLogin/formCadastro.cpp
+        Designer/FormsLogin/formExcluirUsuario.cpp
+        Designer/FormsLogin/formUsuario.cpp
+        Designer/FormsLogin/formBoasVindas.cpp
+        Designer/FormsLogin/formBoasVindas.h
+        Designer/FormsLogin/formBoasVindas.ui
+        Designer/FormsLogin/formLoginSenha.cpp
+        Designer/FormsLogin/formLoginSenha.h
+        Designer/FormsLogin/formLoginSenha.ui
+        Designer/FormsDashboard/formMainDashboard.cpp
+        Designer/FormsDashboard/formMainDashboard.h
+        Designer/FormsDashboard/formMainDashboard.ui
+        Composicoes/PasswordFormHelper.cpp
+        Composicoes/PasswordFormHelper.h
 )
 
 # 2. Criamos uma lista apenas com os arquivos de interface (.ui)
 set(PROJECT_FORMS
         Designer/formInicio.ui
-        Designer/Forms/formCadastro.ui
-        Designer/Forms/formExcluirUsuario.ui
-        Designer/Forms/formUsuario.ui
-        Designer/Forms/formBoasVindas.cpp
-        Designer/Forms/formBoasVindas.h
-        Designer/Forms/formBoasVindas.ui
+        Designer/FormsLogin/formCadastro.ui
+        Designer/FormsLogin/formExcluirUsuario.ui
+        Designer/FormsLogin/formUsuario.ui
+        Designer/FormsLogin/formBoasVindas.cpp
+        Designer/FormsLogin/formBoasVindas.h
+        Designer/FormsLogin/formBoasVindas.ui
+        Designer/FormsLogin/formLoginSenha.cpp
+        Designer/FormsLogin/formLoginSenha.h
+        Designer/FormsLogin/formLoginSenha.ui
+        Designer/FormsDashboard/formMainDashboard.cpp
+        Designer/FormsDashboard/formMainDashboard.h
+        Designer/FormsDashboard/formMainDashboard.ui
+        Composicoes/PasswordFormHelper.cpp
+        Composicoes/PasswordFormHelper.h
 )
 
 # 3. Criamos o executável usando uma função especial do Qt

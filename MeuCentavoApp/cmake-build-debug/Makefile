@@ -155,6 +155,30 @@ MeuCentavoApp_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp_autogen.dir/build.make CMakeFiles/MeuCentavoApp_autogen.dir/build
 .PHONY : MeuCentavoApp_autogen/fast
 
+Composicoes/PasswordFormHelper.o: Composicoes/PasswordFormHelper.cpp.o
+.PHONY : Composicoes/PasswordFormHelper.o
+
+# target to build an object file
+Composicoes/PasswordFormHelper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o
+.PHONY : Composicoes/PasswordFormHelper.cpp.o
+
+Composicoes/PasswordFormHelper.i: Composicoes/PasswordFormHelper.cpp.i
+.PHONY : Composicoes/PasswordFormHelper.i
+
+# target to preprocess a source file
+Composicoes/PasswordFormHelper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.i
+.PHONY : Composicoes/PasswordFormHelper.cpp.i
+
+Composicoes/PasswordFormHelper.s: Composicoes/PasswordFormHelper.cpp.s
+.PHONY : Composicoes/PasswordFormHelper.s
+
+# target to generate assembly for a file
+Composicoes/PasswordFormHelper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.s
+.PHONY : Composicoes/PasswordFormHelper.cpp.s
+
 DataAccess/LancamentoDAO.o: DataAccess/LancamentoDAO.cpp.o
 .PHONY : DataAccess/LancamentoDAO.o
 
@@ -203,101 +227,149 @@ DataAccess/UsuarioDAO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.s
 .PHONY : DataAccess/UsuarioDAO.cpp.s
 
-Designer/Forms/formBoasVindas.o: Designer/Forms/formBoasVindas.cpp.o
-.PHONY : Designer/Forms/formBoasVindas.o
+Designer/FormsDashboard/formMainDashboard.o: Designer/FormsDashboard/formMainDashboard.cpp.o
+.PHONY : Designer/FormsDashboard/formMainDashboard.o
 
 # target to build an object file
-Designer/Forms/formBoasVindas.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.o
-.PHONY : Designer/Forms/formBoasVindas.cpp.o
+Designer/FormsDashboard/formMainDashboard.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o
+.PHONY : Designer/FormsDashboard/formMainDashboard.cpp.o
 
-Designer/Forms/formBoasVindas.i: Designer/Forms/formBoasVindas.cpp.i
-.PHONY : Designer/Forms/formBoasVindas.i
+Designer/FormsDashboard/formMainDashboard.i: Designer/FormsDashboard/formMainDashboard.cpp.i
+.PHONY : Designer/FormsDashboard/formMainDashboard.i
 
 # target to preprocess a source file
-Designer/Forms/formBoasVindas.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.i
-.PHONY : Designer/Forms/formBoasVindas.cpp.i
+Designer/FormsDashboard/formMainDashboard.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.i
+.PHONY : Designer/FormsDashboard/formMainDashboard.cpp.i
 
-Designer/Forms/formBoasVindas.s: Designer/Forms/formBoasVindas.cpp.s
-.PHONY : Designer/Forms/formBoasVindas.s
+Designer/FormsDashboard/formMainDashboard.s: Designer/FormsDashboard/formMainDashboard.cpp.s
+.PHONY : Designer/FormsDashboard/formMainDashboard.s
 
 # target to generate assembly for a file
-Designer/Forms/formBoasVindas.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formBoasVindas.cpp.s
-.PHONY : Designer/Forms/formBoasVindas.cpp.s
+Designer/FormsDashboard/formMainDashboard.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.s
+.PHONY : Designer/FormsDashboard/formMainDashboard.cpp.s
 
-Designer/Forms/formCadastro.o: Designer/Forms/formCadastro.cpp.o
-.PHONY : Designer/Forms/formCadastro.o
+Designer/FormsLogin/formBoasVindas.o: Designer/FormsLogin/formBoasVindas.cpp.o
+.PHONY : Designer/FormsLogin/formBoasVindas.o
 
 # target to build an object file
-Designer/Forms/formCadastro.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.o
-.PHONY : Designer/Forms/formCadastro.cpp.o
+Designer/FormsLogin/formBoasVindas.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o
+.PHONY : Designer/FormsLogin/formBoasVindas.cpp.o
 
-Designer/Forms/formCadastro.i: Designer/Forms/formCadastro.cpp.i
-.PHONY : Designer/Forms/formCadastro.i
+Designer/FormsLogin/formBoasVindas.i: Designer/FormsLogin/formBoasVindas.cpp.i
+.PHONY : Designer/FormsLogin/formBoasVindas.i
 
 # target to preprocess a source file
-Designer/Forms/formCadastro.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.i
-.PHONY : Designer/Forms/formCadastro.cpp.i
+Designer/FormsLogin/formBoasVindas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.i
+.PHONY : Designer/FormsLogin/formBoasVindas.cpp.i
 
-Designer/Forms/formCadastro.s: Designer/Forms/formCadastro.cpp.s
-.PHONY : Designer/Forms/formCadastro.s
+Designer/FormsLogin/formBoasVindas.s: Designer/FormsLogin/formBoasVindas.cpp.s
+.PHONY : Designer/FormsLogin/formBoasVindas.s
 
 # target to generate assembly for a file
-Designer/Forms/formCadastro.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formCadastro.cpp.s
-.PHONY : Designer/Forms/formCadastro.cpp.s
+Designer/FormsLogin/formBoasVindas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.s
+.PHONY : Designer/FormsLogin/formBoasVindas.cpp.s
 
-Designer/Forms/formExcluirUsuario.o: Designer/Forms/formExcluirUsuario.cpp.o
-.PHONY : Designer/Forms/formExcluirUsuario.o
+Designer/FormsLogin/formCadastro.o: Designer/FormsLogin/formCadastro.cpp.o
+.PHONY : Designer/FormsLogin/formCadastro.o
 
 # target to build an object file
-Designer/Forms/formExcluirUsuario.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formExcluirUsuario.cpp.o
-.PHONY : Designer/Forms/formExcluirUsuario.cpp.o
+Designer/FormsLogin/formCadastro.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formCadastro.cpp.o
+.PHONY : Designer/FormsLogin/formCadastro.cpp.o
 
-Designer/Forms/formExcluirUsuario.i: Designer/Forms/formExcluirUsuario.cpp.i
-.PHONY : Designer/Forms/formExcluirUsuario.i
+Designer/FormsLogin/formCadastro.i: Designer/FormsLogin/formCadastro.cpp.i
+.PHONY : Designer/FormsLogin/formCadastro.i
 
 # target to preprocess a source file
-Designer/Forms/formExcluirUsuario.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formExcluirUsuario.cpp.i
-.PHONY : Designer/Forms/formExcluirUsuario.cpp.i
+Designer/FormsLogin/formCadastro.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formCadastro.cpp.i
+.PHONY : Designer/FormsLogin/formCadastro.cpp.i
 
-Designer/Forms/formExcluirUsuario.s: Designer/Forms/formExcluirUsuario.cpp.s
-.PHONY : Designer/Forms/formExcluirUsuario.s
+Designer/FormsLogin/formCadastro.s: Designer/FormsLogin/formCadastro.cpp.s
+.PHONY : Designer/FormsLogin/formCadastro.s
 
 # target to generate assembly for a file
-Designer/Forms/formExcluirUsuario.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formExcluirUsuario.cpp.s
-.PHONY : Designer/Forms/formExcluirUsuario.cpp.s
+Designer/FormsLogin/formCadastro.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formCadastro.cpp.s
+.PHONY : Designer/FormsLogin/formCadastro.cpp.s
 
-Designer/Forms/formUsuario.o: Designer/Forms/formUsuario.cpp.o
-.PHONY : Designer/Forms/formUsuario.o
+Designer/FormsLogin/formExcluirUsuario.o: Designer/FormsLogin/formExcluirUsuario.cpp.o
+.PHONY : Designer/FormsLogin/formExcluirUsuario.o
 
 # target to build an object file
-Designer/Forms/formUsuario.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.o
-.PHONY : Designer/Forms/formUsuario.cpp.o
+Designer/FormsLogin/formExcluirUsuario.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formExcluirUsuario.cpp.o
+.PHONY : Designer/FormsLogin/formExcluirUsuario.cpp.o
 
-Designer/Forms/formUsuario.i: Designer/Forms/formUsuario.cpp.i
-.PHONY : Designer/Forms/formUsuario.i
+Designer/FormsLogin/formExcluirUsuario.i: Designer/FormsLogin/formExcluirUsuario.cpp.i
+.PHONY : Designer/FormsLogin/formExcluirUsuario.i
 
 # target to preprocess a source file
-Designer/Forms/formUsuario.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.i
-.PHONY : Designer/Forms/formUsuario.cpp.i
+Designer/FormsLogin/formExcluirUsuario.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formExcluirUsuario.cpp.i
+.PHONY : Designer/FormsLogin/formExcluirUsuario.cpp.i
 
-Designer/Forms/formUsuario.s: Designer/Forms/formUsuario.cpp.s
-.PHONY : Designer/Forms/formUsuario.s
+Designer/FormsLogin/formExcluirUsuario.s: Designer/FormsLogin/formExcluirUsuario.cpp.s
+.PHONY : Designer/FormsLogin/formExcluirUsuario.s
 
 # target to generate assembly for a file
-Designer/Forms/formUsuario.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Forms/formUsuario.cpp.s
-.PHONY : Designer/Forms/formUsuario.cpp.s
+Designer/FormsLogin/formExcluirUsuario.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formExcluirUsuario.cpp.s
+.PHONY : Designer/FormsLogin/formExcluirUsuario.cpp.s
+
+Designer/FormsLogin/formLoginSenha.o: Designer/FormsLogin/formLoginSenha.cpp.o
+.PHONY : Designer/FormsLogin/formLoginSenha.o
+
+# target to build an object file
+Designer/FormsLogin/formLoginSenha.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formLoginSenha.cpp.o
+.PHONY : Designer/FormsLogin/formLoginSenha.cpp.o
+
+Designer/FormsLogin/formLoginSenha.i: Designer/FormsLogin/formLoginSenha.cpp.i
+.PHONY : Designer/FormsLogin/formLoginSenha.i
+
+# target to preprocess a source file
+Designer/FormsLogin/formLoginSenha.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formLoginSenha.cpp.i
+.PHONY : Designer/FormsLogin/formLoginSenha.cpp.i
+
+Designer/FormsLogin/formLoginSenha.s: Designer/FormsLogin/formLoginSenha.cpp.s
+.PHONY : Designer/FormsLogin/formLoginSenha.s
+
+# target to generate assembly for a file
+Designer/FormsLogin/formLoginSenha.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formLoginSenha.cpp.s
+.PHONY : Designer/FormsLogin/formLoginSenha.cpp.s
+
+Designer/FormsLogin/formUsuario.o: Designer/FormsLogin/formUsuario.cpp.o
+.PHONY : Designer/FormsLogin/formUsuario.o
+
+# target to build an object file
+Designer/FormsLogin/formUsuario.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.o
+.PHONY : Designer/FormsLogin/formUsuario.cpp.o
+
+Designer/FormsLogin/formUsuario.i: Designer/FormsLogin/formUsuario.cpp.i
+.PHONY : Designer/FormsLogin/formUsuario.i
+
+# target to preprocess a source file
+Designer/FormsLogin/formUsuario.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.i
+.PHONY : Designer/FormsLogin/formUsuario.cpp.i
+
+Designer/FormsLogin/formUsuario.s: Designer/FormsLogin/formUsuario.cpp.s
+.PHONY : Designer/FormsLogin/formUsuario.s
+
+# target to generate assembly for a file
+Designer/FormsLogin/formUsuario.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.s
+.PHONY : Designer/FormsLogin/formUsuario.cpp.s
 
 Designer/formInicio.o: Designer/formInicio.cpp.o
 .PHONY : Designer/formInicio.o
@@ -382,24 +454,33 @@ help:
 	@echo "... MeuCentavoApp_autogen"
 	@echo "... MeuCentavoApp_autogen_timestamp_deps"
 	@echo "... MeuCentavoApp"
+	@echo "... Composicoes/PasswordFormHelper.o"
+	@echo "... Composicoes/PasswordFormHelper.i"
+	@echo "... Composicoes/PasswordFormHelper.s"
 	@echo "... DataAccess/LancamentoDAO.o"
 	@echo "... DataAccess/LancamentoDAO.i"
 	@echo "... DataAccess/LancamentoDAO.s"
 	@echo "... DataAccess/UsuarioDAO.o"
 	@echo "... DataAccess/UsuarioDAO.i"
 	@echo "... DataAccess/UsuarioDAO.s"
-	@echo "... Designer/Forms/formBoasVindas.o"
-	@echo "... Designer/Forms/formBoasVindas.i"
-	@echo "... Designer/Forms/formBoasVindas.s"
-	@echo "... Designer/Forms/formCadastro.o"
-	@echo "... Designer/Forms/formCadastro.i"
-	@echo "... Designer/Forms/formCadastro.s"
-	@echo "... Designer/Forms/formExcluirUsuario.o"
-	@echo "... Designer/Forms/formExcluirUsuario.i"
-	@echo "... Designer/Forms/formExcluirUsuario.s"
-	@echo "... Designer/Forms/formUsuario.o"
-	@echo "... Designer/Forms/formUsuario.i"
-	@echo "... Designer/Forms/formUsuario.s"
+	@echo "... Designer/FormsDashboard/formMainDashboard.o"
+	@echo "... Designer/FormsDashboard/formMainDashboard.i"
+	@echo "... Designer/FormsDashboard/formMainDashboard.s"
+	@echo "... Designer/FormsLogin/formBoasVindas.o"
+	@echo "... Designer/FormsLogin/formBoasVindas.i"
+	@echo "... Designer/FormsLogin/formBoasVindas.s"
+	@echo "... Designer/FormsLogin/formCadastro.o"
+	@echo "... Designer/FormsLogin/formCadastro.i"
+	@echo "... Designer/FormsLogin/formCadastro.s"
+	@echo "... Designer/FormsLogin/formExcluirUsuario.o"
+	@echo "... Designer/FormsLogin/formExcluirUsuario.i"
+	@echo "... Designer/FormsLogin/formExcluirUsuario.s"
+	@echo "... Designer/FormsLogin/formLoginSenha.o"
+	@echo "... Designer/FormsLogin/formLoginSenha.i"
+	@echo "... Designer/FormsLogin/formLoginSenha.s"
+	@echo "... Designer/FormsLogin/formUsuario.o"
+	@echo "... Designer/FormsLogin/formUsuario.i"
+	@echo "... Designer/FormsLogin/formUsuario.s"
 	@echo "... Designer/formInicio.o"
 	@echo "... Designer/formInicio.i"
 	@echo "... Designer/formInicio.s"
