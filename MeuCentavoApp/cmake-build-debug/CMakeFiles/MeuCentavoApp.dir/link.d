@@ -12,8 +12,10 @@ MeuCentavoApp: \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formLoginSenha.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.o \
   /usr/lib/libQt6Widgets.so.6.9.1 \
   /usr/lib/libQt6Sql.so.6.9.1 \
   /usr/lib/libQt6Gui.so.6.9.1 \
@@ -106,9 +108,13 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formLoginSenha.cpp.o:
 
+CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o:
+
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.o:
 
 /usr/lib/libQt6Widgets.so.6.9.1:
 

@@ -29,11 +29,17 @@ set(PROJECT_SOURCES
         Designer/FormsLogin/formLoginSenha.cpp
         Designer/FormsLogin/formLoginSenha.h
         Designer/FormsLogin/formLoginSenha.ui
+        Composicoes/PasswordFormHelper.cpp
+        Composicoes/PasswordFormHelper.h
+        Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp
+        Designer/FormsDashboard/DashboardPages/pageRelatorios.h
+        Designer/FormsDashboard/DashboardPages/pageRelatorios.ui
         Designer/FormsDashboard/formMainDashboard.cpp
         Designer/FormsDashboard/formMainDashboard.h
         Designer/FormsDashboard/formMainDashboard.ui
-        Composicoes/PasswordFormHelper.cpp
-        Composicoes/PasswordFormHelper.h
+        Designer/FormsDashboard/DashboardPages/pageHome.cpp
+        Designer/FormsDashboard/DashboardPages/pageHome.h
+        Designer/FormsDashboard/DashboardPages/pageHome.ui
 )
 
 # 2. Criamos uma lista apenas com os arquivos de interface (.ui)
@@ -48,11 +54,17 @@ set(PROJECT_FORMS
         Designer/FormsLogin/formLoginSenha.cpp
         Designer/FormsLogin/formLoginSenha.h
         Designer/FormsLogin/formLoginSenha.ui
+        Composicoes/PasswordFormHelper.cpp
+        Composicoes/PasswordFormHelper.h
+        Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp
+        Designer/FormsDashboard/DashboardPages/pageRelatorios.h
+        Designer/FormsDashboard/DashboardPages/pageRelatorios.ui
         Designer/FormsDashboard/formMainDashboard.cpp
         Designer/FormsDashboard/formMainDashboard.h
         Designer/FormsDashboard/formMainDashboard.ui
-        Composicoes/PasswordFormHelper.cpp
-        Composicoes/PasswordFormHelper.h
+        Designer/FormsDashboard/DashboardPages/pageHome.cpp
+        Designer/FormsDashboard/DashboardPages/pageHome.h
+        Designer/FormsDashboard/DashboardPages/pageHome.ui
 )
 
 # 3. Criamos o executável usando uma função especial do Qt

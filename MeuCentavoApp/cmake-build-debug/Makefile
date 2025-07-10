@@ -227,6 +227,54 @@ DataAccess/UsuarioDAO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.s
 .PHONY : DataAccess/UsuarioDAO.cpp.s
 
+Designer/FormsDashboard/DashboardPages/pageHome.o: Designer/FormsDashboard/DashboardPages/pageHome.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageHome.o
+
+# target to build an object file
+Designer/FormsDashboard/DashboardPages/pageHome.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageHome.cpp.o
+
+Designer/FormsDashboard/DashboardPages/pageHome.i: Designer/FormsDashboard/DashboardPages/pageHome.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageHome.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/DashboardPages/pageHome.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageHome.cpp.i
+
+Designer/FormsDashboard/DashboardPages/pageHome.s: Designer/FormsDashboard/DashboardPages/pageHome.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageHome.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/DashboardPages/pageHome.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageHome.cpp.s
+
+Designer/FormsDashboard/DashboardPages/pageRelatorios.o: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.o
+
+# target to build an object file
+Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
+
+Designer/FormsDashboard/DashboardPages/pageRelatorios.i: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i
+
+Designer/FormsDashboard/DashboardPages/pageRelatorios.s: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
+
 Designer/FormsDashboard/formMainDashboard.o: Designer/FormsDashboard/formMainDashboard.cpp.o
 .PHONY : Designer/FormsDashboard/formMainDashboard.o
 
@@ -463,6 +511,12 @@ help:
 	@echo "... DataAccess/UsuarioDAO.o"
 	@echo "... DataAccess/UsuarioDAO.i"
 	@echo "... DataAccess/UsuarioDAO.s"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.o"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.i"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.s"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.o"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.i"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.s"
 	@echo "... Designer/FormsDashboard/formMainDashboard.o"
 	@echo "... Designer/FormsDashboard/formMainDashboard.i"
 	@echo "... Designer/FormsDashboard/formMainDashboard.s"

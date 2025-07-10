@@ -112,6 +112,7 @@ void formUsuario::abrirExcluirUsuarios()
         });
 
     }
+    this->hide();
     excluirWindow->show();
 }
 

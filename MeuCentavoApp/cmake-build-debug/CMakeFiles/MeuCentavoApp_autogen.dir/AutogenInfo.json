@@ -534,6 +534,18 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.h",
+			"MU",
+			"UKUT43B7UZ/moc_pageHome.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h",
+			"MU",
+			"UKUT43B7UZ/moc_pageRelatorios.cpp",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.h",
 			"MU",
 			"JUEWMI7LB7/moc_formMainDashboard.cpp",
@@ -649,6 +661,16 @@
 		],
 		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp",
 			"MU",
 			null
 		],
