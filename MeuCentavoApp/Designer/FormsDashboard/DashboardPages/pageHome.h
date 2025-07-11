@@ -8,6 +8,8 @@
 #include <QWidget>
 #include <QSqlDatabase>
 #include "Modelo/Usuario.h"
+#include "DataAccess/LancamentoDAO.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class pageHome; }
@@ -24,6 +26,9 @@ private:
     Ui::pageHome *ui;
     QSqlDatabase m_db;
     Usuario m_usuarioAtual;
+    void atualizarDados();
+    void carregarResumos();
+    void carregarTabelaRecentes();
 };
 
 

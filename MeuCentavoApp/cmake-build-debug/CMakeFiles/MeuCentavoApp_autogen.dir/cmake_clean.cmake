@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MeuCentavoApp_autogen"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/DashboardPages/ui_pageHome.h"
+  "MeuCentavoApp_autogen/include/Designer/FormsDashboard/DashboardPages/ui_pageLancamentos.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/DashboardPages/ui_pageRelatorios.h"
+  "MeuCentavoApp_autogen/include/Designer/FormsDashboard/ui_formAdicionarLancamento.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/ui_formMainDashboard.h"
   "MeuCentavoApp_autogen/include/Designer/FormsLogin/ui_formBoasVindas.h"
   "MeuCentavoApp_autogen/include/Designer/FormsLogin/ui_formCadastro.h"

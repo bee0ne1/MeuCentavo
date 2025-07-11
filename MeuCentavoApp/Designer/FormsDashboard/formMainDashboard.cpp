@@ -4,6 +4,7 @@
 // Incluímos os cabeçalhos das "páginas" que vamos adicionar ao QStackedWidget.
 #include "DashboardPages/pageHome.h"
 #include "DashboardPages/pageRelatorios.h"
+#include "DashboardPages/pageLancamentos.h"
 
 #include <QDebug>
 
@@ -44,13 +45,14 @@ void formMainDashboard::setupPaginas()
     // 1. Cria uma instância de cada uma das suas páginas.
     pageHome *paginaHome = new pageHome(m_usuarioAtual, m_db, this);
     pageRelatorios *paginaRelatorios = new pageRelatorios(m_usuarioAtual, m_db, this);
-    // Crie as outras páginas aqui, se necessário...
+    pageLancamentos *paginaLancamentos = new pageLancamentos(m_usuarioAtual,m_db,this);
+
 
     // 2. Adiciona as páginas ao seu QStackedWidget. A ORDEM IMPORTA!
     // Supondo que o objectName no .ui seja 'stackedWidgetConteudo'.
-    ui->stackedWidgetConteudo->addWidget(paginaHome);       // Página no índice 0
-    ui->stackedWidgetConteudo->addWidget(paginaRelatorios); // Página no índice 1
-
+    ui->stackedWidgetConteudo->addWidget(paginaHome);
+    ui->stackedWidgetConteudo->addWidget(paginaLancamentos);
+    ui->stackedWidgetConteudo->addWidget(paginaRelatorios);
     // 3. Define qual página deve aparecer primeiro.
     ui->stackedWidgetConteudo->setCurrentIndex(0); // Mostra a página Home por padrão.
     qDebug() << "Dashboard configurada e página Home exibida.";
@@ -65,18 +67,17 @@ void formMainDashboard::on_buttonHome_clicked()
     ui->stackedWidgetConteudo->setCurrentIndex(0);
 }
 
-void formMainDashboard::on_buttonRelatorios_clicked()
+void formMainDashboard::on_buttonLancamentos_clicked()
 {
-    // Mostra a página no índice 1.
     ui->stackedWidgetConteudo->setCurrentIndex(1);
 }
 
-void formMainDashboard::on_buttonLancamentos_clicked()
+void formMainDashboard::on_buttonRelatorios_clicked()
 {
-    // Supondo que a página de lançamentos será a terceira adicionada (índice 2)
-    // ui->stackedWidgetConteudo->setCurrentIndex(2);
-    qDebug() << "Botão Lançamentos clicado! (Página ainda não adicionada)";
+    // Mostra a página no índice 1.
+    ui->stackedWidgetConteudo->setCurrentIndex(2);
 }
+
 
 void formMainDashboard::on_buttonConfiguracoes_clicked()
 {

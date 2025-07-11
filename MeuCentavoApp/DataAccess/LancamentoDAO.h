@@ -16,9 +16,12 @@ public:
     // O construtor recebe a conexão com o banco de dados já aberta
     explicit LancamentoDAO(QSqlDatabase db, QObject *parent = nullptr);
 
+    QVector<Lancamento> obterLancamentosRecentes(int usuarioId, int limite = 10);
+    double obterSomaPorTipoNoMes(int usuarioId, const QString& tipo, int mes, int ano);
     bool adicionarLancamento(const Lancamento& lancamento);
-    QVector<Lancamento> obterLancamentoPorUsuario(int usuarioId);
     bool removerLancamento(int id);
+    QVector<Lancamento> obterTodosLancamentosPorUsuario(int usuarioId);
+
 
     // Você pode adicionar outros métodos aqui depois:
     // bool atualizarLancamento(const Lancamento& lancamento);

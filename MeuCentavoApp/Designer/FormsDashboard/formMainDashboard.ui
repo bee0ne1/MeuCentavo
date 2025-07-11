@@ -25,28 +25,28 @@
            <item>
             <widget class="QPushButton" name="buttonHome">
              <property name="text">
-              <string>home</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="buttonRelatorios">
-             <property name="text">
-              <string>lancamentos</string>
+              <string>Home</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="buttonLancamentos">
              <property name="text">
-              <string>PushButton</string>
+              <string>Lançamentos</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonRelatorios">
+             <property name="text">
+              <string>Relatórios</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="buttonConfiguracoes">
              <property name="text">
-              <string>PushButton</string>
+              <string>Configurações</string>
              </property>
             </widget>
            </item>

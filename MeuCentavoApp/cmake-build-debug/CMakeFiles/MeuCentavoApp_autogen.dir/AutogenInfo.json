@@ -507,7 +507,64 @@
 		"/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake",
 		"/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake",
 		"/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake",
-		"/usr/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake"
+		"/usr/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake",
+		"/usr/lib/cmake/Qt6Charts/Qt6ChartsConfigVersion.cmake",
+		"/usr/lib/cmake/Qt6Charts/Qt6ChartsConfigVersionImpl.cmake",
+		"/usr/lib/cmake/Qt6Charts/Qt6ChartsConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6Charts/Qt6ChartsDependencies.cmake",
+		"/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake",
+		"/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersionImpl.cmake",
+		"/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLDependencies.cmake",
+		"/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake",
+		"/usr/share/cmake/Modules/FindVulkan.cmake",
+		"/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake",
+		"/usr/share/cmake/Modules/FindPackageMessage.cmake",
+		"/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake",
+		"/usr/share/cmake/Modules/FindPackageMessage.cmake",
+		"/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets.cmake",
+		"/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets-relwithdebinfo.cmake",
+		"/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfigVersion.cmake",
+		"/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfigVersionImpl.cmake",
+		"/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateDependencies.cmake",
+		"/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateTargets.cmake",
+		"/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateVersionlessAliasTargets.cmake",
+		"/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersion.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersionImpl.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsDependencies.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets-relwithdebinfo.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateConfigVersion.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateConfigVersionImpl.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateDependencies.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateTargets.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateVersionlessAliasTargets.cmake",
+		"/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessAliasTargets.cmake",
+		"/usr/lib/cmake/Qt6Charts/Qt6ChartsTargets.cmake",
+		"/usr/lib/cmake/Qt6Charts/Qt6ChartsTargets-relwithdebinfo.cmake",
+		"/usr/lib/cmake/Qt6Charts/Qt6ChartsAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersion.cmake",
+		"/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersionImpl.cmake",
+		"/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateDependencies.cmake",
+		"/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateTargets.cmake",
+		"/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateVersionlessAliasTargets.cmake",
+		"/usr/lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp",
 	"CROSS_CONFIG" : false,
@@ -540,9 +597,21 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.h",
+			"MU",
+			"UKUT43B7UZ/moc_pageLancamentos.cpp",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h",
 			"MU",
 			"UKUT43B7UZ/moc_pageRelatorios.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formAdicionarLancamento.h",
+			"MU",
+			"JUEWMI7LB7/moc_formAdicionarLancamento.cpp",
 			null
 		],
 		[
@@ -591,7 +660,16 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_SQL_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CHARTS_LIB",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_OPENGLWIDGETS_LIB",
+		"QT_OPENGL_LIB",
+		"QT_SQL_LIB",
+		"QT_WIDGETS_LIB"
+	],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -608,6 +686,9 @@
 		"/usr/include/qt6/QtWidgets",
 		"/usr/include/qt6/QtGui",
 		"/usr/include/qt6/QtSql",
+		"/usr/include/qt6/QtCharts",
+		"/usr/include/qt6/QtOpenGL",
+		"/usr/include/qt6/QtOpenGLWidgets",
 		"/usr/include",
 		"/usr/include/c++/15.1.1",
 		"/usr/include/c++/15.1.1/x86_64-pc-linux-gnu",
@@ -670,7 +751,17 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formAdicionarLancamento.cpp",
 			"MU",
 			null
 		],

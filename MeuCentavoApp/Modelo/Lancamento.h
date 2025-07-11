@@ -14,8 +14,9 @@ struct Lancamento {
     int id;
     QString descricao;
     double valor;
-    QDate data;
+    QDate data_lancamento;
     QString tipo; // Ex: "Receita" ou "Despesa"
+    int id_usuario;
 };
 
 #endif //MEUCENTAVOAPP_LANCAMENTO_H

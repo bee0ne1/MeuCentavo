@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Encontra o pacote do Qt6 com os módulos que precisamos (Widgets e Sql)
-find_package(Qt6 COMPONENTS Widgets Sql REQUIRED)
+find_package(Qt6 COMPONENTS Widgets Sql Charts REQUIRED)
 
 # Configurações para que o Qt funcione magicamente com o CMake
 set(CMAKE_AUTOUIC ON)
@@ -40,6 +40,12 @@ set(PROJECT_SOURCES
         Designer/FormsDashboard/DashboardPages/pageHome.cpp
         Designer/FormsDashboard/DashboardPages/pageHome.h
         Designer/FormsDashboard/DashboardPages/pageHome.ui
+        Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp
+        Designer/FormsDashboard/DashboardPages/pageLancamentos.h
+        Designer/FormsDashboard/DashboardPages/pageLancamentos.ui
+        Designer/FormsDashboard/formAdicionarLancamento.cpp
+        Designer/FormsDashboard/formAdicionarLancamento.h
+        Designer/FormsDashboard/formAdicionarLancamento.ui
 )
 
 # 2. Criamos uma lista apenas com os arquivos de interface (.ui)
@@ -65,6 +71,12 @@ set(PROJECT_FORMS
         Designer/FormsDashboard/DashboardPages/pageHome.cpp
         Designer/FormsDashboard/DashboardPages/pageHome.h
         Designer/FormsDashboard/DashboardPages/pageHome.ui
+        Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp
+        Designer/FormsDashboard/DashboardPages/pageLancamentos.h
+        Designer/FormsDashboard/DashboardPages/pageLancamentos.ui
+        Designer/FormsDashboard/formAdicionarLancamento.cpp
+        Designer/FormsDashboard/formAdicionarLancamento.h
+        Designer/FormsDashboard/formAdicionarLancamento.ui
 )
 
 # 3. Criamos o executável usando uma função especial do Qt
@@ -81,6 +93,7 @@ target_include_directories(MeuCentavoApp PRIVATE ${PROJECT_SOURCE_DIR})
 target_link_libraries(MeuCentavoApp PRIVATE
         Qt6::Widgets
         Qt6::Sql
+        Qt6::Charts
 )
 
 # Finaliza as configurações do MOC, UIC, e RCC

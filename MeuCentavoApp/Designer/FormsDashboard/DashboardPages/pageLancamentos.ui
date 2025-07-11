@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>pageLancamentos</class>
+ <widget class="QWidget" name="pageLancamentos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1008</width>
+    <height>753</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>pageLancamentos</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QTableWidget" name="tabelaTodosLancamentos">
+       <property name="columnCount">
+        <number>5</number>
+       </property>
+       <column>
+        <property name="text">
+         <string>Data</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Descrição</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Tipo</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Valor</string>
+        </property>
+       </column>
+       <column/>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonAdicionarLancamento">
+         <property name="text">
+          <string>Adicionar Novo Lançamento</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

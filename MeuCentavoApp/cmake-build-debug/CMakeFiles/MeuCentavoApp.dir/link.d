@@ -16,8 +16,13 @@ MeuCentavoApp: \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.o \
-  /usr/lib/libQt6Widgets.so.6.9.1 \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.o \
   /usr/lib/libQt6Sql.so.6.9.1 \
+  /usr/lib/libQt6Charts.so.6.9.1 \
+  /usr/lib/libQt6OpenGLWidgets.so.6.9.1 \
+  /usr/lib/libQt6Widgets.so.6.9.1 \
+  /usr/lib/libQt6OpenGL.so.6.9.1 \
   /usr/lib/libQt6Gui.so.6.9.1 \
   /usr/lib/libGLX.so \
   /usr/lib/libOpenGL.so \
@@ -116,9 +121,19 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.o:
 
-/usr/lib/libQt6Widgets.so.6.9.1:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.o:
 
 /usr/lib/libQt6Sql.so.6.9.1:
+
+/usr/lib/libQt6Charts.so.6.9.1:
+
+/usr/lib/libQt6OpenGLWidgets.so.6.9.1:
+
+/usr/lib/libQt6Widgets.so.6.9.1:
+
+/usr/lib/libQt6OpenGL.so.6.9.1:
 
 /usr/lib/libQt6Gui.so.6.9.1:
 

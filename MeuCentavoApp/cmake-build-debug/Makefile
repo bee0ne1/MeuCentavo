@@ -251,6 +251,30 @@ Designer/FormsDashboard/DashboardPages/pageHome.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.s
 .PHONY : Designer/FormsDashboard/DashboardPages/pageHome.cpp.s
 
+Designer/FormsDashboard/DashboardPages/pageLancamentos.o: Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.o
+
+# target to build an object file
+Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o
+
+Designer/FormsDashboard/DashboardPages/pageLancamentos.i: Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.i
+
+Designer/FormsDashboard/DashboardPages/pageLancamentos.s: Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
+
 Designer/FormsDashboard/DashboardPages/pageRelatorios.o: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
 .PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.o
 
@@ -274,6 +298,30 @@ Designer/FormsDashboard/DashboardPages/pageRelatorios.s: Designer/FormsDashboard
 Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
 .PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
+
+Designer/FormsDashboard/formAdicionarLancamento.o: Designer/FormsDashboard/formAdicionarLancamento.cpp.o
+.PHONY : Designer/FormsDashboard/formAdicionarLancamento.o
+
+# target to build an object file
+Designer/FormsDashboard/formAdicionarLancamento.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.o
+.PHONY : Designer/FormsDashboard/formAdicionarLancamento.cpp.o
+
+Designer/FormsDashboard/formAdicionarLancamento.i: Designer/FormsDashboard/formAdicionarLancamento.cpp.i
+.PHONY : Designer/FormsDashboard/formAdicionarLancamento.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/formAdicionarLancamento.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.i
+.PHONY : Designer/FormsDashboard/formAdicionarLancamento.cpp.i
+
+Designer/FormsDashboard/formAdicionarLancamento.s: Designer/FormsDashboard/formAdicionarLancamento.cpp.s
+.PHONY : Designer/FormsDashboard/formAdicionarLancamento.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/formAdicionarLancamento.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.s
+.PHONY : Designer/FormsDashboard/formAdicionarLancamento.cpp.s
 
 Designer/FormsDashboard/formMainDashboard.o: Designer/FormsDashboard/formMainDashboard.cpp.o
 .PHONY : Designer/FormsDashboard/formMainDashboard.o
@@ -514,9 +562,15 @@ help:
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.s"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.o"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.i"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.s"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.s"
+	@echo "... Designer/FormsDashboard/formAdicionarLancamento.o"
+	@echo "... Designer/FormsDashboard/formAdicionarLancamento.i"
+	@echo "... Designer/FormsDashboard/formAdicionarLancamento.s"
 	@echo "... Designer/FormsDashboard/formMainDashboard.o"
 	@echo "... Designer/FormsDashboard/formMainDashboard.i"
 	@echo "... Designer/FormsDashboard/formMainDashboard.s"
