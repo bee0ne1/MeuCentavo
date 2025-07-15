@@ -1,48 +1,77 @@
-//
-// Created by bruno on 07/07/25.
-//
-
-// You may need to build the project (run Qt uic code generator) to get "ui_formLoginSenha.h" resolved
-
 #include "formLoginSenha.h"
 #include "ui_formLoginSenha.h"
 #include "DataAccess/UsuarioDAO.h"
 #include <QMessageBox>
-#include <QCryptographicHash> // Para o Hashing da senha
+#include <QDebug>
 
-
-formLoginSenha::formLoginSenha(const Usuario& usuario, QSqlDatabase db, QWidget *parent) :
-    QDialog(parent), ui(new Ui::formLoginSenha), m_db(db),m_usuario(usuario) {
+formLoginSenha::formLoginSenha(const Usuario& usuario, QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::formLoginSenha),
+    m_usuario(usuario) // Armazena o usuário recebido
+{
     ui->setupUi(this);
-    m_passwordHelper = new PasswordFormHelper(ui->lineEditSenha, ui->buttonViewPassword, this);
     setWindowTitle("Autenticação");
 
-    // Personaliza a mensagem de prompt
+    // Cria o ajudante para a funcionalidade de "visualizar senha"
+    m_passwordHelper = new PasswordFormHelper(ui->lineEditSenha, ui->buttonViewPassword, this);
+
+    // Personaliza a mensagem de prompt para o usuário
     ui->labelPrompt->setText(QString("Senha para %1:").arg(m_usuario.nomeUsuario));
 
-    // O botão Cancelar simplesmente "rejeita" e fecha o diálogo
+    // Conecta os botões
+    connect(ui->buttonEntrar, &QPushButton::clicked, this, &formLoginSenha::tentarLogin);
     connect(ui->buttonCancelar, &QPushButton::clicked, this, &QDialog::reject);
 }
 
-formLoginSenha::~formLoginSenha() {
+formLoginSenha::~formLoginSenha()
+{
     delete ui;
 }
 
-void formLoginSenha::on_buttonEntrar_clicked()
+void formLoginSenha::tentarLogin()
 {
     QString senhaDigitada = ui->lineEditSenha->text();
-
-    // Lógica de autenticação do DAO (precisamos criar/ajustar este método)
-    UsuarioDAO dao(m_db);
-
-    // Supondo que temos um método que verifica a senha de um usuário específico
-    if (dao.verificarSenhaUsuario(m_usuario.id, senhaDigitada)) {
-        // Se a senha estiver correta, "aceitamos" e fechamos o diálogo.
-        // Isso fará com que dialog.exec() retorne QDialog::Accepted.
-        this->accept();
-    } else {
-        // Se a senha estiver errada, mostramos um aviso.
-        QMessageBox::warning(this, "Erro de Autenticação", "Senha incorreta.");
-        ui->lineEditSenha->clear(); // Limpa o campo para nova tentativa
+    if (senhaDigitada.isEmpty()) {
+        QMessageBox::warning(this, "Campo Vazio", "Por favor, digite sua senha.");
+        return;
     }
+
+    // Desabilita o botão para evitar cliques duplos
+    ui->buttonEntrar->setEnabled(false);
+    ui->buttonEntrar->setText("Verificando...");
+
+    // Cria uma instância do nosso DAO de rede
+    UsuarioDAO *dao = new UsuarioDAO(this);
+
+    // Conecta os sinais de resultado do DAO aos nossos slots
+    connect(dao, &UsuarioDAO::loginSucesso, this, &formLoginSenha::onLoginSucesso);
+    connect(dao, &UsuarioDAO::erroDeAutenticacao, this, &formLoginSenha::onLoginFalhou);
+    connect(dao, &UsuarioDAO::erroDeRede, this, &formLoginSenha::onLoginFalhou); // Podemos usar o mesmo slot de falha
+
+    // Inicia a requisição de rede para logar o usuário
+    dao->logarUsuario(m_usuario.nomeUsuario, senhaDigitada);
+}
+
+void formLoginSenha::onLoginSucesso(const QString& token, const Usuario& usuario)
+{
+    // O DAO nos avisou que a API retornou sucesso!
+    qDebug() << "Diálogo de senha: Login bem-sucedido.";
+
+    // Emitimos nosso próprio sinal para avisar a formInicio, passando os dados adiante.
+    emit loginSucesso(token, usuario);
+
+    // Fecha o diálogo com o status de "Aceito".
+    this->accept();
+}
+
+void formLoginSenha::onLoginFalhou(const QString& motivo)
+{
+    // O DAO nos avisou que a API retornou um erro.
+    QMessageBox::warning(this, "Erro de Autenticação", motivo);
+
+    // Reabilita o botão para o usuário poder tentar novamente.
+    ui->buttonEntrar->setEnabled(true);
+    ui->buttonEntrar->setText("Entrar");
+    ui->lineEditSenha->clear();
+    ui->lineEditSenha->setFocus();
 }

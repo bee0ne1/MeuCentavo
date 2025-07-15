@@ -1,44 +1,43 @@
-//
-// Created by bruno on 01/07/25.
-//
-
 #ifndef FORMEXCLUIRUSUARIO_H
 #define FORMEXCLUIRUSUARIO_H
 
 #include <QWidget>
-#include <QSqlDatabase>
 #include "Modelo/Usuario.h"
+#include <QVector>
 
-QT_BEGIN_NAMESPACE
 namespace Ui { class formExcluirUsuario; }
-QT_END_NAMESPACE
+class UsuarioDAO; // Forward declaration
 
-class formExcluirUsuario : public QWidget {
-Q_OBJECT
+class formExcluirUsuario : public QWidget
+{
+    Q_OBJECT
 
 public:
-    explicit formExcluirUsuario(QSqlDatabase db, QWidget *parent = nullptr);
-    ~formExcluirUsuario() override;
-
-private:
-    Ui::formExcluirUsuario *ui;
-    QSqlDatabase m_db;
+    // O construtor agora pode receber o token de autenticação
+    explicit formExcluirUsuario(const QString& token, QWidget *parent = nullptr);
+    ~formExcluirUsuario();
 
 signals:
-    // Sinal para avisar a janela mãe que esta foi fechada
     void exclusaoFechada();
-    // Sinal para avisar que a lista de usuários mudou
     void listaDeUsuariosModificada();
 
 private slots:
-    void carregarUsuarios();
     void confirmarExclusaoUsuario(const Usuario& usuario);
 
-protected:
-    void closeEvent(QCloseEvent* event) override;
+    // Slots para receber as respostas do DAO
+    void onUsuariosRecebidos(const QVector<Usuario>& usuarios);
+    void onRemocaoSucesso();
+    void onErro(const QString& motivo);
 
+private:
+    void carregarUsuarios(); // Agora é uma função privada que inicia a requisição
+
+    Ui::formExcluirUsuario *ui;
+    QString m_token; // Guarda o token para usar nas requisições
+    UsuarioDAO* m_dao;
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
 };
 
-
-
-#endif //FORMEXCLUIRUSUARIO_H
+#endif // FORMEXCLUIRUSUARIO_H

@@ -1,42 +1,35 @@
 #ifndef FORMCADASTRO_H
 #define FORMCADASTRO_H
 
-#include <QWidget>
-#include <QSqlDatabase>
-#include "Composicoes/PasswordFormHelper.h"
+#include <QDialog>
+#include "Composicoes/PasswordFormHelper.h" // Assumindo que o helper está aqui
 
-class formUsuario;
+// Forward declaration
+namespace Ui { class formCadastro; }
 
-QT_BEGIN_NAMESPACE
-namespace Ui {
-    class formCadastro;
-}
-QT_END_NAMESPACE
-
-class formCadastro : public QWidget {
+class formCadastro : public QDialog
+{
     Q_OBJECT
 
 public:
-    explicit formCadastro(QSqlDatabase db, QWidget *parent = nullptr);
+    explicit formCadastro(QWidget *parent = nullptr);
     ~formCadastro();
 
 signals:
-    void cadastroFechado();
-     void cadastroConcluido();
+    // Sinal para avisar que o processo foi concluído com sucesso
+    void cadastroConcluido();
 
 private slots:
-    void verificarCampos();
-    void cancelarCadastro();
+    // Slots para a lógica da UI
     void gravarUsuario();
+    void verificarCampos();
 
-
-protected:
-    void closeEvent(QCloseEvent *event) override;
+    // Slots para reagir às respostas do DAO
+    void onRegistroSucesso();
+    void onRegistroFalhou(const QString& motivo);
 
 private:
     Ui::formCadastro *ui;
-    formUsuario *usuarioWindow = nullptr;
-    QSqlDatabase m_db;
     PasswordFormHelper *m_passwordHelper;
 };
 

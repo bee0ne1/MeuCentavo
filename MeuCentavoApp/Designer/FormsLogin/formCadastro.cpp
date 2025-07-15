@@ -1,89 +1,81 @@
 #include "formCadastro.h"
 #include "ui_formCadastro.h"
-#include "formUsuario.h"
-#include "DataAccess/UsuarioDAO.h"
-#include "Modelo/Usuario.h"
-#include <QDebug>
-#include <QCloseEvent>
+#include "DataAccess/UsuarioDAO.h" // Inclui nosso DAO refatorado
 #include <QMessageBox>
-#include <QCryptographicHash>
+#include <QDebug>
 
-
-formCadastro::formCadastro(QSqlDatabase db,QWidget *parent):
-    QWidget(parent),
-    ui(new Ui::formCadastro),
-    m_db(db) // <-- INICIALIZE A VARIÁVEL DO BANCO
-
+formCadastro::formCadastro(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::formCadastro)
 {
     ui->setupUi(this);
+    setAttribute(Qt::WA_DeleteOnClose);
+    setWindowTitle("Cadastrar Novo Usuário");
+
+    // Cria o ajudante para a funcionalidade de "visualizar senha"
     m_passwordHelper = new PasswordFormHelper(ui->lineEditSenha, ui->buttonViewPassword, this);
+
+    // Conecta os botões e campos de texto
     connect(ui->lineEditSenha, &QLineEdit::textChanged, this, &formCadastro::verificarCampos);
     connect(ui->lineEditUsuario, &QLineEdit::textChanged, this, &formCadastro::verificarCampos);
-    connect(ui->buttonCancelar, &QPushButton::clicked, this, &formCadastro::cancelarCadastro);
+    connect(ui->buttonCancelar, &QPushButton::clicked, this, &QWidget::close); // Botão cancelar simplesmente fecha a janela
     connect(ui->buttonGravarUsuario, &QPushButton::clicked, this, &formCadastro::gravarUsuario);
 
-    // Chame isso para garantir que o botão comece desabilitado
-    verificarCampos();
+    verificarCampos(); // Garante que o botão de gravar comece desabilitado
 }
 
-formCadastro::~formCadastro() {
+formCadastro::~formCadastro()
+{
     delete ui;
 }
 
-void formCadastro::closeEvent(QCloseEvent *event) {
-    qDebug() << "formCadastro sendo fechado";
-    emit cadastroFechado();
-    QWidget::closeEvent(event);
-}
-
-void formCadastro::verificarCampos() {
+void formCadastro::verificarCampos()
+{
     bool usuarioPreenchido = !ui->lineEditUsuario->text().isEmpty();
     bool senhaPreenchida   = !ui->lineEditSenha->text().isEmpty();
-
     ui->buttonGravarUsuario->setEnabled(usuarioPreenchido && senhaPreenchida);
-}
-
-
-void formCadastro::cancelarCadastro() {
-    this->close();
 }
 
 void formCadastro::gravarUsuario()
 {
-
-    // Pega os dados da interface
     QString nome = ui->lineEditUsuario->text();
-    QString senhaDigitada = ui->lineEditSenha->text();
+    QString senha = ui->lineEditSenha->text();
 
-    // Validação de complexidade da senha (ainda recomendada)
-    if (senhaDigitada.length() < 6) {
+    // Validação de UI: complexidade da senha
+    if (senha.length() < 6) {
         QMessageBox::warning(this, "Senha Fraca", "A senha deve ter pelo menos 6 caracteres.");
         return;
     }
 
-    // Validação de usuário duplicado no banco
-    UsuarioDAO dao(m_db);
-    if (dao.existeUsuario(nome)) {
-        QMessageBox::warning(this, "Erro de Cadastro", "Este nome de usuário já está em uso.");
-        return;
-    }
+    // Desabilita o botão para evitar cliques duplos enquanto espera a resposta da rede
+    ui->buttonGravarUsuario->setEnabled(false);
+    ui->buttonGravarUsuario->setText("Salvando...");
 
-    // Gera o hash da senha pura usando o algoritmo SHA-256
-    QByteArray hashBytes = QCryptographicHash::hash(senhaDigitada.toUtf8(), QCryptographicHash::Sha256);
-    // Converte o hash para uma string hexadecimal para salvar no banco
-    QString senhaComHash = hashBytes.toHex();
+    // Cria uma instância do nosso DAO (que agora é um cliente de API)
+    UsuarioDAO *dao = new UsuarioDAO(this);
 
+    // Conecta os sinais de resultado do DAO aos nossos novos slots
+    connect(dao, &UsuarioDAO::registroSucesso, this, &formCadastro::onRegistroSucesso);
+    connect(dao, &UsuarioDAO::registroFalhou, this, &formCadastro::onRegistroFalhou);
 
-    // Se todas as validações passaram, cria e salva o usuário
-    Usuario novoUsuario;
-    novoUsuario.nomeUsuario = nome;
-    novoUsuario.senha = senhaComHash;
+    // Inicia a requisição de rede para registrar o usuário
+    dao->registrarUsuario(nome, senha);
+}
 
-    if (dao.adicionarUsuario(novoUsuario)) {
-        QMessageBox::information(this, "Sucesso", "Usuário cadastrado com sucesso!");
-        emit cadastroConcluido();
-        this->close();
-    } else {
-        QMessageBox::warning(this, "Erro de Banco de Dados", "Ocorreu um erro inesperado ao salvar o usuário.");
-    }
+void formCadastro::onRegistroSucesso()
+{
+    // O DAO nos avisou que a API retornou sucesso!
+    QMessageBox::information(this, "Sucesso", "Usuário cadastrado com sucesso!");
+    emit cadastroConcluido(); // Avisa a janela anterior sobre o sucesso
+    this->close(); // Fecha a janela de cadastro
+}
+
+void formCadastro::onRegistroFalhou(const QString& motivo)
+{
+    // O DAO nos avisou que a API retornou um erro
+    QMessageBox::warning(this, "Erro de Cadastro", motivo);
+
+    // Reabilita o botão para o usuário poder tentar novamente
+    ui->buttonGravarUsuario->setEnabled(true);
+    ui->buttonGravarUsuario->setText("Gravar Usuário");
 }

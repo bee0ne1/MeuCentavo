@@ -1,35 +1,34 @@
-//
-// Created by bruno on 10/07/25.
-//
-
 #ifndef PAGEHOME_H
 #define PAGEHOME_H
 
 #include <QWidget>
-#include <QSqlDatabase>
-#include "Modelo/Usuario.h"
-#include "DataAccess/LancamentoDAO.h"
+#include "Modelo/Lancamento.h" // Inclui a struct
+#include <QVector>
 
-
-QT_BEGIN_NAMESPACE
+// Forward declarations
 namespace Ui { class pageHome; }
-QT_END_NAMESPACE
+class LancamentoDAO;
 
-class pageHome : public QWidget {
-Q_OBJECT
+class pageHome : public QWidget
+{
+    Q_OBJECT
 
 public:
-    explicit pageHome(const Usuario& usuario, QSqlDatabase db,QWidget *parent = nullptr);
-    ~pageHome() override;
+    // Construtor muito mais simples! Não precisa mais de usuário ou banco.
+    explicit pageHome(QWidget *parent = nullptr);
+    ~pageHome();
+
+private slots:
+    // Slots para receber os dados vindos da API através do DAO
+    void onResumosRecebidos(double receitas, double despesas);
+    void onLancamentosRecentesRecebidos(const QVector<Lancamento>& lancamentos);
+    void onErroDeRede(const QString& erro);
 
 private:
+    void atualizarDados(); // Função que inicia as requisições
+
     Ui::pageHome *ui;
-    QSqlDatabase m_db;
-    Usuario m_usuarioAtual;
-    void atualizarDados();
-    void carregarResumos();
-    void carregarTabelaRecentes();
+    LancamentoDAO* m_dao;
 };
 
-
-#endif //PAGEHOME_H
+#endif // PAGEHOME_H

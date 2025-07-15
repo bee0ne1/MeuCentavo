@@ -1,35 +1,39 @@
-//
-// Created by bruno on 11/07/25.
-//
-
 #ifndef PAGELANCAMENTOS_H
 #define PAGELANCAMENTOS_H
 
 #include <QWidget>
-#include "Modelo/Usuario.h"
-#include <QSqlDatabase>
+#include <QVector>
+#include "Modelo/Lancamento.h"
 
-QT_BEGIN_NAMESPACE
+// Forward declarations
 namespace Ui { class pageLancamentos; }
-QT_END_NAMESPACE
+class LancamentoDAO;
+class formAdicionarLancamento;
 
-class pageLancamentos : public QWidget {
-Q_OBJECT
+class pageLancamentos : public QWidget
+{
+    Q_OBJECT
 
 public:
-    explicit pageLancamentos(const Usuario& usuario, QSqlDatabase db,QWidget *parent = nullptr);
-    ~pageLancamentos() override;
+    // Construtor muito mais simples. Ele buscará as informações de sessão por conta própria.
+    explicit pageLancamentos(QWidget *parent = nullptr);
+    ~pageLancamentos();
 
 private slots:
-    void on_buttonAdicionarLancamento_clicked();
-    void carregarTabela(); // Slot para (re)carregar os dados da tabela
+    // Slot para o botão "Adicionar Lançamento"
+    void abrirDialogoAdicionar();
+    
+    // Slot para (re)carregar os dados da tabela, agora ele apenas inicia a requisição.
+    void carregarTabela();
+
+    // Slots para receber as respostas da API através do DAO
+    void onLancamentosRecebidos(const QVector<Lancamento>& lancamentos);
+    void onErroDeRede(const QString& motivo);
 
 private:
     Ui::pageLancamentos *ui;
-    QSqlDatabase m_db;
-    Usuario m_usuarioAtual;
-
+    LancamentoDAO* m_dao;
+    formAdicionarLancamento* m_dialogoAdicionar;
 };
 
-
-#endif //PAGELANCAMENTOS_H
+#endif // PAGELANCAMENTOS_H

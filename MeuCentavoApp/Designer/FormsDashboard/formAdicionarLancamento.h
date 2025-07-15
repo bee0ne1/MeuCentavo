@@ -1,36 +1,35 @@
-//
-// Created by bruno on 11/07/25.
-//
-
-#ifndef FORMADICIONARLANCAMENTOS_H
-#define FORMADICIONARLANCAMENTOS_H
+#ifndef FORMADICIONARLANCAMENTO_H
+#define FORMADICIONARLANCAMENTO_H
 
 #include <QDialog>
-#include <QSqlDatabase>
 
-QT_BEGIN_NAMESPACE
+// Forward declaration
 namespace Ui { class formAdicionarLancamento; }
-QT_END_NAMESPACE
 
-class formAdicionarLancamento : public QDialog {
-Q_OBJECT
+class formAdicionarLancamento : public QDialog
+{
+    Q_OBJECT
 
 public:
-    explicit formAdicionarLancamento(int usuarioId, QSqlDatabase db,QWidget *parent = nullptr);
-    ~formAdicionarLancamento() override;
+    // O construtor agora é muito mais simples. Ele buscará o ID do usuário
+    // do SessionManager quando precisar.
+    explicit formAdicionarLancamento(QWidget *parent = nullptr);
+    ~formAdicionarLancamento();
 
 signals:
+        // Sinal para avisar a página de lançamentos que a lista precisa ser atualizada.
     void lancamentoSalvo();
-private slots:
-    void on_buttonSalvar_clicked();
 
+private slots:
+    // Slot conectado ao clique do botão Salvar.
+    void salvarLancamento();
+
+    // Slots que reagem aos sinais de resposta do DAO.
+    void onLancamentoAdicionado();
+    void onErroDeRede(const QString& motivo);
 
 private:
     Ui::formAdicionarLancamento *ui;
-    QSqlDatabase m_db;
-    int m_usuarioId;
-
 };
 
-
-#endif //FORMADICIONARLANCAMENTOS_H
+#endif // FORMADICIONARLANCAMENTO_H

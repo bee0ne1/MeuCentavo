@@ -1,228 +1,221 @@
-//
-// Created by bruno on 29/06/25.
-//
-
 #include "UsuarioDAO.h"
-#include <QSqlQuery>
-#include <QSqlError>
+
+// Includes necessários para rede e JSON
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QUrl>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 #include <QDebug>
-#include <QCryptographicHash>
 
-UsuarioDAO::UsuarioDAO(QSqlDatabase db, QObject *parent)
-    : QObject(parent), m_db(db) {}
-
-// --- MÉTODO PARA INSERIR UM NOVO USUÁRIO ---
-bool UsuarioDAO::adicionarUsuario(const Usuario& usuario) {
-    QSqlQuery query(m_db);
-
-    // Prepara o comando SQL para a tabela 'usuario' com os campos corretos
-    QString sql = "INSERT INTO usuario (user_usuario, user_password) "
-                  "VALUES (:nome_usuario, :senha)";
-
-    if (!query.prepare(sql)) {
-        qDebug() << "Erro ao preparar a query de inserção de usuário:" << query.lastError().text();
-        return false;
-    }
-
-    // Associa os valores da nossa struct aos placeholders da query
-    query.bindValue(":nome_usuario", usuario.nomeUsuario);
-    query.bindValue(":senha", usuario.senha); // Idealmente, a senha deveria ser criptografada antes!
-
-    if (!query.exec()) {
-        qDebug() << "Erro ao executar a query de inserção de usuário:" << query.lastError().text();
-        return false;
-    }
-
-    qDebug() << "Usuário" << usuario.nomeUsuario << "inserido com sucesso!";
-    return true;
-}
-
-
-// --- MÉTODO BÔNUS PARA AUTENTICAÇÃO ---
-bool UsuarioDAO::autenticarUsuario(const QString& nomeUsuario, const QString& senha) {
-    QSqlQuery query(m_db);
-
-    QString sql = "SELECT COUNT(*) FROM usuario WHERE user_usuario = :nome_usuario AND user_password = :senha";
-
-    if (!query.prepare(sql)) {
-        qDebug() << "Erro ao preparar a query de autenticação:" << query.lastError().text();
-        return false;
-    }
-
-    query.bindValue(":nome_usuario", nomeUsuario);
-    query.bindValue(":senha", senha);
-
-    if (!query.exec()) {
-        qDebug() << "Erro ao executar a query de autenticação:" << query.lastError().text();
-        return false;
-    }
-
-    // Se a query retornou uma linha, vamos pegar o resultado
-    if (query.next()) {
-        int count = query.value(0).toInt();
-        return (count > 0); // Retorna true se encontrou 1 (ou mais) usuário, false caso contrário
-    }
-
-    return false; // Se não conseguiu nem ler o resultado
-}
-
-std::optional<Usuario> UsuarioDAO::autenticarEObterUsuario(const QString& nomeUsuario, const QString& senha)
+UsuarioDAO::UsuarioDAO(QObject *parent)
+    : QObject(parent)
 {
-    QSqlQuery query(m_db);
-    // Selecionamos os dados que queremos do usuário
-    query.prepare("SELECT user_id, user_usuario FROM usuario WHERE user_usuario = :nome AND user_password = :senha");
-    query.bindValue(":nome", nomeUsuario);
-    query.bindValue(":senha", senha);
-
-    if (query.exec() && query.next()) {
-        // Se encontrou, preenchemos a struct com os dados do banco
-        Usuario usuarioLogado;
-        usuarioLogado.id = query.value("user_id").toInt();
-        usuarioLogado.nomeUsuario = query.value("user_usuario").toString();
-        // ... pode pegar mais dados se quiser ...
-
-        // Retorna o objeto de usuário preenchido
-        return usuarioLogado;
-    }
-
-    // Se a query falhou ou não encontrou nenhum usuário, retorna um "opcional vazio"
-    return std::nullopt;
+    m_manager = new QNetworkAccessManager(this);
 }
 
-QVector<Usuario> UsuarioDAO::obterTodosUsuarios()
+// --- REGISTRO ---
+void UsuarioDAO::registrarUsuario(const QString& username, const QString& password)
 {
-    // 1. Cria o vetor que será retornado
-    QVector<Usuario> listaDeUsuarios;
+    QJsonObject json;
+    json["username"] = username;
+    json["password"] = password;
 
-    QSqlQuery query(m_db);
-    QString sql = "SELECT user_id, user_usuario FROM usuario ORDER BY user_usuario ASC";
+    QNetworkRequest request(QUrl(m_baseUrl + "/registrar"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
-    // 2. Prepara e executa a query
-    if (!query.prepare(sql)) {
-        qDebug() << "Erro ao preparar a query para obter todos os usuários:" << query.lastError().text();
-        return listaDeUsuarios; // Retorna a lista vazia em caso de erro
-    }
+    // Conecta a resposta ao nosso slot privado
+    connect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onRegistroReply);
 
-    if (!query.exec()) {
-        qDebug() << "Erro ao executar a query para obter todos os usuários:" << query.lastError().text();
-        return listaDeUsuarios; // Retorna a lista vazia em caso de erro
-    }
-
-    // 3. Itera sobre os resultados
-    while (query.next()) {
-        // Para cada linha retornada pelo banco...
-        Usuario usuario; // Cria uma struct temporária
-
-        // Preenche a struct com os dados da linha atual
-        usuario.id = query.value("user_id").toInt();
-        usuario.nomeUsuario = query.value("user_usuario").toString();
-
-        // Adiciona a struct preenchida ao nosso vetor
-        listaDeUsuarios.append(usuario);
-    }
-
-    // 4. Retorna a lista completa
-    return listaDeUsuarios;
+    m_manager->post(request, QJsonDocument(json).toJson());
 }
 
-std::optional<Usuario> UsuarioDAO::obterUltimoUsuario()
+void UsuarioDAO::onRegistroReply(QNetworkReply *reply)
 {
-    QSqlQuery query(m_db);
-    // ORDER BY user_id DESC pega o maior ID (o mais recente)
-    // LIMIT 1 garante que pegaremos apenas uma linha
-    QString sql = "SELECT user_id, user_usuario FROM usuario ORDER BY user_id DESC LIMIT 1";
+    qDebug() << "DAO: Resposta do registro recebida!";
 
-    if (query.exec(sql) && query.next()) {
-        Usuario usuario;
-        usuario.id = query.value("user_id").toInt();
-        usuario.nomeUsuario = query.value("user_usuario").toString();
-        return usuario;
+    // Verifica se houve um erro de rede (ex: servidor offline)
+    if (reply->error() != QNetworkReply::NoError) {
+        qDebug() << "DAO: Erro de rede:" << reply->errorString();
+        emit registroFalhou("Erro de rede: " + reply->errorString());
+        reply->deleteLater(); // Limpa a memória
+        return;
     }
 
-    qDebug() << "Nenhum usuário encontrado no banco de dados.";
-    return std::nullopt;
-}
+    // Lê o código de status HTTP da resposta (ex: 201, 409, 500)
+    int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+    // Lê o corpo da resposta
+    QByteArray responseData = reply->readAll();
 
-std::optional<Usuario> UsuarioDAO::obterUsuarioPorId(int id)
-{
-    QSqlQuery query(m_db);
-    query.prepare("SELECT user_id, user_usuario FROM usuario WHERE user_id = :id");
-    query.bindValue(":id", id);
+    qDebug() << "DAO: Status Code:" << statusCode;
+    qDebug() << "DAO: Corpo da Resposta:" << responseData;
 
-    if (query.exec() && query.next()) {
-        Usuario usuario;
-        usuario.id = query.value("user_id").toInt();
-        usuario.nomeUsuario = query.value("user_usuario").toString();
-        return usuario;
-    }
-    return std::nullopt; // Retorna vazio se não encontrar
-}
-
-bool UsuarioDAO::removerUsuario(int id)
-{
-    QSqlQuery query(m_db);
-    // Usamos um placeholder :id para segurança (evitar SQL Injection)
-    query.prepare("DELETE FROM usuario WHERE user_id = :id");
-    query.bindValue(":id", id);
-
-    if (query.exec()) {
-        qDebug() << "Usuário com ID" << id << "removido com sucesso.";
-        return true;
+    // Se o status code for 201 (Created), o registro foi um sucesso!
+    if (statusCode == 201) {
+        emit registroSucesso();
     } else {
-        qDebug() << "Erro ao remover usuário:" << query.lastError().text();
-        return false;
+        // Se for outro status, consideramos um erro e pegamos a mensagem do backend
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
+        QString motivo = jsonDoc.object()["message"].toString();
+        if (motivo.isEmpty()) {
+            motivo = "Ocorreu um erro desconhecido no servidor.";
+        }
+        emit registroFalhou(motivo);
     }
+
+    // Essencial: marca o objeto de resposta para ser deletado, evitando vazamento de memória.
+    reply->deleteLater();
 }
 
-bool UsuarioDAO::existeUsuario(const QString& nomeUsuario)
+// --- LOGIN ---
+void UsuarioDAO::logarUsuario(const QString& username, const QString& password)
 {
-    QSqlQuery query(m_db);
-    // Usamos COUNT(*) que é otimizado para contar linhas.
-    // A query retorna uma única linha com a contagem de usuários com aquele nome.
-    query.prepare("SELECT COUNT(*) FROM usuario WHERE user_usuario = :nome");
-    query.bindValue(":nome", nomeUsuario);
+    QJsonObject json;
+    json["username"] = username;
+    json["password"] = password;
 
-    if (query.exec() && query.next()) {
-        int count = query.value(0).toInt();
-        return (count > 0); // Se a contagem for > 0, o usuário existe.
-    }
+    QNetworkRequest request(QUrl(m_baseUrl + "/login"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
-    qDebug() << "Erro ao verificar a existência do usuário:" << query.lastError().text();
-    return false;
+    connect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onLoginReply);
+    m_manager->post(request, QJsonDocument(json).toJson());
 }
 
-bool UsuarioDAO::existemUsuarios()
+void UsuarioDAO::onLoginReply(QNetworkReply *reply)
 {
-    QSqlQuery query(m_db);
-    // COUNT(*) é a forma mais rápida de contar o número de linhas.
-    query.prepare("SELECT COUNT(*) FROM usuario");
+    disconnect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onLoginReply);
 
-    if (query.exec() && query.next()) {
-        int count = query.value(0).toInt();
-        return (count > 0); // Retorna true se houver 1 ou mais usuários.
+    if (reply->error() == QNetworkReply::NoError) {
+        int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+        QByteArray responseData = reply->readAll();
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
+        QJsonObject jsonObj = jsonDoc.object();
+
+        if (statusCode == 200) { // 200 OK
+            QString token = jsonObj["token"].toString();
+            // Supondo que o backend também retorna os dados do usuário no login
+            Usuario usuario;
+            usuario.id = jsonObj["user"].toObject()["userId"].toInt();
+            usuario.nomeUsuario = jsonObj["user"].toObject()["username"].toString();
+            emit loginSucesso(token, usuario);
+        } else { // ex: 401 Unauthorized
+            emit erroDeAutenticacao(jsonObj["message"].toString());
+        }
+    } else {
+        emit erroDeRede(reply->errorString());
     }
-
-    qDebug() << "Erro ao verificar se existem usuários:" << query.lastError().text();
-    return false; // Em caso de erro, assume que não existem.
+    reply->deleteLater();
 }
 
 
-bool UsuarioDAO::verificarSenhaUsuario(int usuarioId, const QString& senhaFornecida)
+// --- OBTER TODOS OS USUÁRIOS (Exemplo de requisição autenticada) ---
+void UsuarioDAO::obterTodosUsuarios(const QString& token)
 {
-    // 1. Busca o HASH da senha que está salvo no banco
-    QSqlQuery query(m_db);
-    query.prepare("SELECT user_password FROM usuario WHERE user_id = :id");
-    query.bindValue(":id", usuarioId);
+    // Esta rota precisaria ser criada no seu backend
+    QNetworkRequest request(QUrl(m_baseUrl + "/"));
+    // Adiciona o token JWT no cabeçalho para provar que estamos logados
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
 
-    if (!query.exec() || !query.next()) {
-        return false; // Usuário não encontrado
+    connect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onObterTodosReply);
+    m_manager->get(request);
+}
+
+void UsuarioDAO::onObterTodosReply(QNetworkReply *reply)
+{
+    // ... Lógica para processar a resposta, similar ao onObterTodosLancamentosFinished ...
+    // ... que emitiria o sinal todosUsuariosRecebidos(lista) ...
+    reply->deleteLater();
+}
+
+void UsuarioDAO::obterUsuarioInicial()
+{
+    // Esta requisição vai para um novo endpoint que você criará no backend.
+    // Ex: GET /api/usuarios/inicial
+    // Este endpoint pode ler o QSettings (enviado como parâmetro) ou pegar o último usuário do banco.
+    // Por simplicidade aqui, vamos assumir que ele retorna o último usuário.
+    QNetworkRequest request(QUrl(m_baseUrl + "/inicial"));
+
+    // Conecta a resposta ao nosso novo slot
+    connect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onUsuarioInicialReply);
+
+    // Envia a requisição GET
+    m_manager->get(request);
+}
+
+void UsuarioDAO::onUsuarioInicialReply(QNetworkReply *reply)
+{
+    disconnect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onUsuarioInicialReply);
+
+    std::optional<Usuario> usuarioEncontrado; // Começa como vazio
+
+    if (reply->error() == QNetworkReply::NoError && reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 200) {
+        QByteArray responseData = reply->readAll();
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
+        QJsonObject jsonObj = jsonDoc.object();
+
+        // Se o backend retornou um objeto de usuário...
+        if (!jsonObj.isEmpty()) {
+            Usuario u;
+            u.id = jsonObj["user_id"].toInt();
+            u.nomeUsuario = jsonObj["user_usuario"].toString();
+            usuarioEncontrado = u;
+            qDebug() << "DAO: Usuário inicial recebido da API:" << u.nomeUsuario;
+        } else {
+            // Se o backend retornou um corpo vazio (ex: banco de dados vazio)
+            qDebug() << "DAO: API não retornou um usuário inicial.";
+        }
+    } else {
+        qDebug() << "DAO: Erro ao buscar usuário inicial:" << reply->errorString();
+        // Não emitimos um erro de rede aqui, pois pode ser simplesmente que o banco está vazio (um 404, por exemplo)
     }
-    QString hashSalvo = query.value(0).toString();
 
-    // 2. Cria o HASH da senha que o usuário ACABOU de digitar
-    QByteArray hashFornecido = QCryptographicHash::hash(senhaFornecida.toUtf8(), QCryptographicHash::Sha256);
-    QString hashFornecidoEmHex = hashFornecido.toHex();
+    // Emite o sinal com o resultado, seja um usuário ou um optional vazio.
+    emit usuarioInicialRecebido(usuarioEncontrado);
 
-    // 3. Compara os dois hashes
-    return (hashSalvo == hashFornecidoEmHex);
+    reply->deleteLater();
+}
+
+void UsuarioDAO::removerUsuario(int usuarioId, const QString& token)
+{
+    // Rota: DELETE /api/usuarios/:id
+    QNetworkRequest request(QUrl(m_baseUrl + "/" + QString::number(usuarioId)));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+
+    connect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onRemoverUsuarioReply);
+    m_manager->deleteResource(request);
+}
+
+void UsuarioDAO::onRemoverUsuarioReply(QNetworkReply *reply)
+{
+    // Desconecta o sinal para esta requisição específica.
+    disconnect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onRemoverUsuarioReply);
+
+    qDebug() << "DAO: Resposta da remoção recebida.";
+
+    if (reply->error() != QNetworkReply::NoError) {
+        // Erro de rede (ex: servidor offline, sem conexão)
+        emit erroDeRede("Erro de rede ao tentar remover usuário: " + reply->errorString());
+        reply->deleteLater();
+        return;
+    }
+
+    int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+    qDebug() << "DAO: Status Code da remoção:" << statusCode;
+
+    // HTTP Status 200 OK ou 204 No Content são respostas comuns para um DELETE bem-sucedido.
+    if (statusCode == 200 || statusCode == 204) {
+        // Deu certo! Emite o sinal de sucesso.
+        emit remocaoSucesso();
+    } else {
+        // Se for outro status, como 403 (Proibido) ou 404 (Não encontrado), tratamos como erro.
+        QByteArray responseData = reply->readAll();
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
+        QString motivo = jsonDoc.object()["message"].toString();
+        emit erroDeRede("Não foi possível remover o usuário: " + motivo);
+    }
+
+    // Essencial para limpar a memória do objeto de resposta.
+    reply->deleteLater();
 }

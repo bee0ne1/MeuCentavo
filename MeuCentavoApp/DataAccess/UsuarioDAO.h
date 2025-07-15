@@ -1,46 +1,53 @@
-//
-// Created by bruno on 29/06/25.
-//
-
 #ifndef USUARIODAO_H
 #define USUARIODAO_H
 
-
 #include <QObject>
-#include <QSqlDatabase>
-#include "Modelo/Usuario.h" // Incluindo a struct que acabamos de criar
-#include <optional> // Essencial para o retorno opcional
+#include <QVector>
+#include "Modelo/Usuario.h"
+#include <optional>
 
+// Forward declarations para as classes de rede
+class QNetworkAccessManager;
+class QNetworkReply;
 
-class UsuarioDAO : public QObject {
+class UsuarioDAO : public QObject
+{
     Q_OBJECT
 public:
-    explicit UsuarioDAO(QSqlDatabase db, QObject *parent = nullptr);
+    // O construtor agora é mais simples, não precisa mais do 'db'
+    explicit UsuarioDAO(QObject *parent = nullptr);
 
-    // Método para inserir um novo usuário no banco
-    bool adicionarUsuario(const Usuario& usuario);
+    // --- MÉTODOS PÚBLICOS ---
+    // Eles iniciam a requisição de rede, mas não retornam o resultado diretamente.
+    void registrarUsuario(const QString& username, const QString& password);
+    void logarUsuario(const QString& username, const QString& password);
+    void obterTodosUsuarios(const QString& token); // Precisa do token para autorização
+    void obterUsuarioInicial();
+    void removerUsuario(int usuarioId, const QString& token);
 
-    // Método para verificar se um usuário existe (útil para login)
-    bool autenticarUsuario(const QString& nomeUsuario, const QString& senha);
+signals:
+        // --- SINAIS PARA COMUNICAR O RESULTADO ---
+        // A interface vai se conectar a estes sinais para saber quando uma operação terminou.
+    void registroSucesso();
+    void loginSucesso(const QString& token, const Usuario& usuario);
+    void todosUsuariosRecebidos(const QVector<Usuario>& usuarios);
+    void erroDeAutenticacao(const QString& mensagem);
+    void erroDeRede(const QString& mensagem);
+    void usuarioInicialRecebido(const std::optional<Usuario>& usuario);
+    void registroFalhou(const QString& motivo);
+    void remocaoSucesso();
 
-    // Esta função retorna o usuário se o login for válido, ou nada se for inválido.
-    std::optional<Usuario> autenticarEObterUsuario(const QString& nomeUsuario, const QString& senha);
-    QVector<Usuario> obterTodosUsuarios();
-    std::optional<Usuario> obterUltimoUsuario();
-    std::optional<Usuario> obterUsuarioPorId(int id);
-    bool removerUsuario(int id);
-    bool existeUsuario(const QString& nomeUsuario);
-    bool existemUsuarios();
-    bool verificarSenhaUsuario(int usuarioId, const QString& senhaFornecida);
-
-    // Poderíamos adicionar outros:
-    // Usuario obterUsuarioPorNome(const QString& nomeUsuario);
-
+private slots:
+    // Slots privados que serão chamados quando o servidor responder.
+    void onRegistroReply(QNetworkReply *reply);
+    void onLoginReply(QNetworkReply *reply);
+    void onObterTodosReply(QNetworkReply *reply);
+    void onUsuarioInicialReply(QNetworkReply *reply);
+    void onRemoverUsuarioReply(QNetworkReply *reply);
 
 private:
-    QSqlDatabase m_db; // Instância da conexão com o banco
+    QNetworkAccessManager *m_manager;
+    QString m_baseUrl = "http://localhost:3000/api/usuarios"; // URL base da nossa API de usuários
 };
 
-
-
-#endif //USUARIODAO_H
+#endif // USUARIODAO_H

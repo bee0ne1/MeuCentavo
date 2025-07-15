@@ -1,7 +1,9 @@
 CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/main.cpp \
- /usr/include/stdc-predef.h /usr/include/qt6/QtWidgets/QApplication \
- /usr/include/qt6/QtWidgets/qapplication.h \
+ /usr/include/stdc-predef.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.h \
+ /usr/include/qt6/QtWidgets/QMainWindow \
+ /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
  /usr/include/c++/15.1.1/type_traits \
@@ -148,9 +150,10 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /usr/include/qt6/QtGui/qtguiexports.h \
  /usr/include/qt6/QtWidgets/qtwidgets-config.h \
  /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
- /usr/include/qt6/QtCore/qcoreapplication.h \
- /usr/include/qt6/QtCore/qstring.h /usr/include/qt6/QtCore/qchar.h \
- /usr/include/qt6/QtCore/qcompare.h \
+ /usr/include/qt6/QtWidgets/qwidget.h \
+ /usr/include/qt6/QtGui/qwindowdefs.h \
+ /usr/include/qt6/QtCore/qobjectdefs.h \
+ /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qcompare.h \
  /usr/include/qt6/QtCore/qstdlibdetection.h \
  /usr/include/qt6/QtCore/qcomparehelpers.h \
  /usr/include/qt6/QtCore/q20type_traits.h \
@@ -179,32 +182,23 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /usr/include/c++/15.1.1/bits/stl_vector.h \
  /usr/include/c++/15.1.1/bits/stl_bvector.h \
  /usr/include/c++/15.1.1/bits/vector.tcc /usr/include/c++/15.1.1/array \
- /usr/include/c++/15.1.1/compare /usr/include/qt6/QtCore/qstringview.h \
- /usr/include/qt6/QtCore/qbytearray.h /usr/include/qt6/QtCore/qrefcount.h \
- /usr/include/qt6/QtCore/qnamespace.h \
- /usr/include/qt6/QtCore/qtmetamacros.h \
- /usr/include/qt6/QtCore/qarraydata.h /usr/include/qt6/QtCore/qpair.h \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/qt6/QtCore/qarraydatapointer.h \
- /usr/include/qt6/QtCore/qarraydataops.h \
- /usr/include/qt6/QtCore/qcontainertools_impl.h \
- /usr/include/qt6/QtCore/qxptype_traits.h /usr/include/c++/15.1.1/cstring \
- /usr/include/c++/15.1.1/iterator \
- /usr/include/c++/15.1.1/bits/stream_iterator.h \
- /usr/include/c++/15.1.1/iosfwd /usr/include/c++/15.1.1/bits/stringfwd.h \
+ /usr/include/c++/15.1.1/compare /usr/include/qt6/QtCore/qtmetamacros.h \
+ /usr/include/qt6/QtCore/qobjectdefs_impl.h \
+ /usr/include/qt6/QtCore/qfunctionaltools_impl.h \
+ /usr/include/c++/15.1.1/memory \
+ /usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/15.1.1/bits/align.h \
+ /usr/include/c++/15.1.1/bits/unique_ptr.h \
+ /usr/include/c++/15.1.1/bits/shared_ptr.h /usr/include/c++/15.1.1/iosfwd \
+ /usr/include/c++/15.1.1/bits/stringfwd.h \
  /usr/include/c++/15.1.1/bits/postypes.h /usr/include/c++/15.1.1/cwchar \
  /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
  /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
  /usr/include/bits/types/FILE.h \
- /usr/include/c++/15.1.1/bits/streambuf_iterator.h \
- /usr/include/c++/15.1.1/streambuf \
- /usr/include/c++/15.1.1/bits/localefwd.h \
- /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++locale.h \
- /usr/include/c++/15.1.1/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h /usr/include/c++/15.1.1/cctype \
- /usr/include/ctype.h /usr/include/c++/15.1.1/bits/ios_base.h \
+ /usr/include/c++/15.1.1/bits/shared_ptr_base.h \
+ /usr/include/c++/15.1.1/bits/allocated_ptr.h \
  /usr/include/c++/15.1.1/ext/atomicity.h \
  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/gthr.h \
  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
@@ -223,6 +217,28 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /usr/include/bits/pthread_stack_min-dynamic.h \
  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
  /usr/include/sys/single_threaded.h \
+ /usr/include/c++/15.1.1/ext/concurrence.h \
+ /usr/include/c++/15.1.1/bits/shared_ptr_atomic.h \
+ /usr/include/c++/15.1.1/backward/auto_ptr.h \
+ /usr/include/c++/15.1.1/pstl/glue_memory_defs.h \
+ /usr/include/qt6/QtCore/qobject.h /usr/include/qt6/QtCore/qstring.h \
+ /usr/include/qt6/QtCore/qchar.h /usr/include/qt6/QtCore/qstringview.h \
+ /usr/include/qt6/QtCore/qbytearray.h /usr/include/qt6/QtCore/qrefcount.h \
+ /usr/include/qt6/QtCore/qarraydata.h /usr/include/qt6/QtCore/qpair.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/qt6/QtCore/qarraydatapointer.h \
+ /usr/include/qt6/QtCore/qarraydataops.h \
+ /usr/include/qt6/QtCore/qcontainertools_impl.h \
+ /usr/include/qt6/QtCore/qxptype_traits.h /usr/include/c++/15.1.1/cstring \
+ /usr/include/c++/15.1.1/iterator \
+ /usr/include/c++/15.1.1/bits/stream_iterator.h \
+ /usr/include/c++/15.1.1/bits/streambuf_iterator.h \
+ /usr/include/c++/15.1.1/streambuf \
+ /usr/include/c++/15.1.1/bits/localefwd.h \
+ /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++locale.h \
+ /usr/include/c++/15.1.1/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/15.1.1/cctype \
+ /usr/include/ctype.h /usr/include/c++/15.1.1/bits/ios_base.h \
  /usr/include/c++/15.1.1/bits/locale_classes.h \
  /usr/include/c++/15.1.1/string \
  /usr/include/c++/15.1.1/bits/char_traits.h \
@@ -248,17 +264,6 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/error_constants.h \
  /usr/include/c++/15.1.1/stdexcept \
  /usr/include/c++/15.1.1/bits/streambuf.tcc \
- /usr/include/c++/15.1.1/memory \
- /usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h \
- /usr/include/c++/15.1.1/bits/align.h \
- /usr/include/c++/15.1.1/bits/unique_ptr.h \
- /usr/include/c++/15.1.1/bits/shared_ptr.h \
- /usr/include/c++/15.1.1/bits/shared_ptr_base.h \
- /usr/include/c++/15.1.1/bits/allocated_ptr.h \
- /usr/include/c++/15.1.1/ext/concurrence.h \
- /usr/include/c++/15.1.1/bits/shared_ptr_atomic.h \
- /usr/include/c++/15.1.1/backward/auto_ptr.h \
- /usr/include/c++/15.1.1/pstl/glue_memory_defs.h \
  /usr/include/qt6/QtCore/q20functional.h \
  /usr/include/qt6/QtCore/q20memory.h /usr/include/qt6/QtCore/q17memory.h \
  /usr/include/qt6/QtCore/qbytearrayalgorithms.h \
@@ -273,12 +278,6 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /usr/include/qt6/QtCore/qstringbuilder.h \
  /usr/include/qt6/QtCore/qstringconverter.h \
  /usr/include/qt6/QtCore/qstringconverter_base.h \
- /usr/include/qt6/QtCore/qcoreevent.h \
- /usr/include/qt6/QtCore/qbasictimer.h \
- /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
- /usr/include/qt6/QtCore/qobject.h /usr/include/qt6/QtCore/qobjectdefs.h \
- /usr/include/qt6/QtCore/qobjectdefs_impl.h \
- /usr/include/qt6/QtCore/qfunctionaltools_impl.h \
  /usr/include/qt6/QtCore/qlist.h /usr/include/qt6/QtCore/qhashfunctions.h \
  /usr/include/c++/15.1.1/numeric \
  /usr/include/c++/15.1.1/bits/stl_numeric.h \
@@ -307,19 +306,14 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /usr/include/qt6/QtCore/qobject_impl.h \
  /usr/include/qt6/QtCore/qbindingstorage.h /usr/include/c++/15.1.1/chrono \
  /usr/include/c++/15.1.1/bits/chrono.h /usr/include/c++/15.1.1/ratio \
- /usr/include/c++/15.1.1/ctime /usr/include/qt6/QtCore/qeventloop.h \
- /usr/include/qt6/QtCore/qdeadlinetimer.h \
- /usr/include/qt6/QtCore/qelapsedtimer.h \
- /usr/include/qt6/QtCore/qnativeinterface.h \
- /usr/include/qt6/QtCore/qcoreapplication_platform.h \
- /usr/include/qt6/QtGui/qwindowdefs.h /usr/include/qt6/QtCore/qpoint.h \
+ /usr/include/c++/15.1.1/ctime /usr/include/qt6/QtCore/qmargins.h \
  /usr/include/qt6/QtCore/q23utility.h \
- /usr/include/qt6/QtCore/q20utility.h /usr/include/qt6/QtCore/qsize.h \
- /usr/include/qt6/QtCore/qmargins.h /usr/include/qt6/QtGui/qcursor.h \
- /usr/include/qt6/QtGui/qbitmap.h /usr/include/qt6/QtGui/qpixmap.h \
+ /usr/include/qt6/QtCore/q20utility.h /usr/include/qt6/QtGui/qaction.h \
+ /usr/include/qt6/QtGui/qkeysequence.h /usr/include/qt6/QtGui/qicon.h \
+ /usr/include/qt6/QtCore/qsize.h /usr/include/qt6/QtGui/qpixmap.h \
  /usr/include/qt6/QtGui/qpaintdevice.h /usr/include/qt6/QtCore/qrect.h \
- /usr/include/qt6/QtGui/qcolor.h /usr/include/qt6/QtGui/qrgb.h \
- /usr/include/qt6/QtGui/qrgba64.h \
+ /usr/include/qt6/QtCore/qpoint.h /usr/include/qt6/QtGui/qcolor.h \
+ /usr/include/qt6/QtGui/qrgb.h /usr/include/qt6/QtGui/qrgba64.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
@@ -330,10 +324,8 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /usr/include/qt6/QtGui/qtransform.h /usr/include/qt6/QtGui/qpolygon.h \
  /usr/include/qt6/QtGui/qregion.h /usr/include/qt6/QtCore/qspan.h \
  /usr/include/c++/15.1.1/cassert /usr/include/qt6/QtCore/q20iterator.h \
- /usr/include/qt6/QtCore/qline.h /usr/include/qt6/QtGui/qguiapplication.h \
- /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
- /usr/include/qt6/QtCore/qvariant.h /usr/include/qt6/QtCore/qdebug.h \
- /usr/include/qt6/QtCore/qtextstream.h \
+ /usr/include/qt6/QtCore/qline.h /usr/include/qt6/QtCore/qvariant.h \
+ /usr/include/qt6/QtCore/qdebug.h /usr/include/qt6/QtCore/qtextstream.h \
  /usr/include/qt6/QtCore/qcontiguouscache.h \
  /usr/include/c++/15.1.1/climits /usr/include/qt6/QtCore/qsharedpointer.h \
  /usr/include/qt6/QtCore/qsharedpointer_impl.h \
@@ -345,66 +337,32 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /usr/include/qt6/QtCore/qshareddata_impl.h \
  /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/qhash.h \
  /usr/include/qt6/QtCore/qvarlengtharray.h \
- /usr/include/qt6/QtGui/qguiapplication_platform.h \
- /usr/include/qt6/QtCore/QFile /usr/include/qt6/QtCore/qfile.h \
- /usr/include/qt6/QtCore/qfiledevice.h \
- /usr/include/qt6/QtCore/qiodevice.h /usr/include/c++/15.1.1/filesystem \
- /usr/include/c++/15.1.1/bits/fs_fwd.h \
- /usr/include/c++/15.1.1/bits/fs_path.h /usr/include/c++/15.1.1/locale \
- /usr/include/c++/15.1.1/bits/locale_facets.h \
- /usr/include/c++/15.1.1/cwctype /usr/include/wctype.h \
- /usr/include/bits/wctype-wchar.h \
- /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
- /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
- /usr/include/c++/15.1.1/bits/locale_facets.tcc \
- /usr/include/c++/15.1.1/bits/locale_facets_nonio.h \
- /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
- /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/15.1.1/bits/codecvt.h \
- /usr/include/c++/15.1.1/bits/locale_facets_nonio.tcc \
- /usr/include/c++/15.1.1/bits/locale_conv.h \
- /usr/include/c++/15.1.1/iomanip \
- /usr/include/c++/15.1.1/bits/quoted_string.h \
- /usr/include/c++/15.1.1/sstream /usr/include/c++/15.1.1/istream \
- /usr/include/c++/15.1.1/ios /usr/include/c++/15.1.1/bits/basic_ios.h \
- /usr/include/c++/15.1.1/bits/basic_ios.tcc \
- /usr/include/c++/15.1.1/ostream /usr/include/c++/15.1.1/bits/ostream.h \
- /usr/include/c++/15.1.1/bits/ostream.tcc \
- /usr/include/c++/15.1.1/bits/istream.tcc \
- /usr/include/c++/15.1.1/bits/sstream.tcc /usr/include/c++/15.1.1/codecvt \
- /usr/include/c++/15.1.1/bits/fs_dir.h \
- /usr/include/c++/15.1.1/bits/fs_ops.h \
- /usr/include/qt6/QtCore/QTextStream \
- /usr/include/qt6/QtCore/qtextstream.h \
- /usr/include/qt6/QtSql/QSqlDatabase \
- /usr/include/qt6/QtSql/qsqldatabase.h \
- /usr/include/qt6/QtSql/qtsqlglobal.h \
- /usr/include/qt6/QtSql/qtsql-config.h \
- /usr/include/qt6/QtSql/qtsqlexports.h \
- /usr/include/qt6/QtCore/qmetaobject.h /usr/include/qt6/QtSql/QSqlError \
- /usr/include/qt6/QtSql/qsqlerror.h /usr/include/qt6/QtCore/QDebug \
- /usr/include/qt6/QtCore/qdebug.h \
- /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.h \
- /usr/include/qt6/QtWidgets/QMainWindow \
- /usr/include/qt6/QtWidgets/qmainwindow.h \
- /usr/include/qt6/QtWidgets/qwidget.h /usr/include/qt6/QtGui/qaction.h \
- /usr/include/qt6/QtGui/qkeysequence.h /usr/include/qt6/QtGui/qicon.h \
  /usr/include/qt6/QtGui/qpalette.h /usr/include/qt6/QtGui/qbrush.h \
  /usr/include/qt6/QtGui/qfont.h /usr/include/qt6/QtCore/qendian.h \
  /usr/include/qt6/QtGui/qfontmetrics.h /usr/include/qt6/QtGui/qfontinfo.h \
  /usr/include/qt6/QtGui/qfontvariableaxis.h \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
+ /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h \
- /usr/include/qt6/QtSql/QSqlDatabase \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
  /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formBoasVindas.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
- /usr/include/qt6/QtWidgets/QMessageBox \
- /usr/include/qt6/QtWidgets/qmessagebox.h \
- /usr/include/qt6/QtWidgets/qdialog.h \
- /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
- /usr/include/qt6/QtSql/QSqlQuery /usr/include/qt6/QtSql/qsqlquery.h \
- /usr/include/qt6/QtSql/qsqldatabase.h
+ /usr/include/qt6/QtCore/QVector /usr/include/qt6/QtCore/qvector.h \
+ /usr/include/qt6/QtWidgets/QApplication \
+ /usr/include/qt6/QtWidgets/qapplication.h \
+ /usr/include/qt6/QtCore/qcoreapplication.h \
+ /usr/include/qt6/QtCore/qcoreevent.h \
+ /usr/include/qt6/QtCore/qbasictimer.h \
+ /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
+ /usr/include/qt6/QtCore/qeventloop.h \
+ /usr/include/qt6/QtCore/qdeadlinetimer.h \
+ /usr/include/qt6/QtCore/qelapsedtimer.h \
+ /usr/include/qt6/QtCore/qnativeinterface.h \
+ /usr/include/qt6/QtCore/qcoreapplication_platform.h \
+ /usr/include/qt6/QtGui/qguiapplication.h \
+ /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
+ /usr/include/qt6/QtGui/qguiapplication_platform.h \
+ /usr/include/qt6/QtCore/QDebug /usr/include/qt6/QtCore/qdebug.h

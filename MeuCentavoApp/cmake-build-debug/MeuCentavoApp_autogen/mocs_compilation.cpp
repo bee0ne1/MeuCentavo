@@ -4,7 +4,6 @@
 #include "V5IIWBEYZM/moc_UsuarioDAO.cpp"
 #include "UKUT43B7UZ/moc_pageHome.cpp"
 #include "UKUT43B7UZ/moc_pageLancamentos.cpp"
-#include "UKUT43B7UZ/moc_pageRelatorios.cpp"
 #include "JUEWMI7LB7/moc_formAdicionarLancamento.cpp"
 #include "JUEWMI7LB7/moc_formMainDashboard.cpp"
 #include "FTZSGGJYIR/moc_formBoasVindas.cpp"

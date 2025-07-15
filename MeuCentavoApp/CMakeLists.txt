@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Encontra o pacote do Qt6 com os módulos que precisamos (Widgets e Sql)
-find_package(Qt6 COMPONENTS Widgets Sql Charts REQUIRED)
+find_package(Qt6 COMPONENTS Widgets Sql Charts Network REQUIRED)
 
 # Configurações para que o Qt funcione magicamente com o CMake
 set(CMAKE_AUTOUIC ON)
@@ -31,9 +31,6 @@ set(PROJECT_SOURCES
         Designer/FormsLogin/formLoginSenha.ui
         Composicoes/PasswordFormHelper.cpp
         Composicoes/PasswordFormHelper.h
-        Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp
-        Designer/FormsDashboard/DashboardPages/pageRelatorios.h
-        Designer/FormsDashboard/DashboardPages/pageRelatorios.ui
         Designer/FormsDashboard/formMainDashboard.cpp
         Designer/FormsDashboard/formMainDashboard.h
         Designer/FormsDashboard/formMainDashboard.ui
@@ -46,6 +43,8 @@ set(PROJECT_SOURCES
         Designer/FormsDashboard/formAdicionarLancamento.cpp
         Designer/FormsDashboard/formAdicionarLancamento.h
         Designer/FormsDashboard/formAdicionarLancamento.ui
+        Designer/Gerenciamento/SessionManager.cpp
+        Designer/Gerenciamento/SessionManager.h
 )
 
 # 2. Criamos uma lista apenas com os arquivos de interface (.ui)
@@ -62,9 +61,6 @@ set(PROJECT_FORMS
         Designer/FormsLogin/formLoginSenha.ui
         Composicoes/PasswordFormHelper.cpp
         Composicoes/PasswordFormHelper.h
-        Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp
-        Designer/FormsDashboard/DashboardPages/pageRelatorios.h
-        Designer/FormsDashboard/DashboardPages/pageRelatorios.ui
         Designer/FormsDashboard/formMainDashboard.cpp
         Designer/FormsDashboard/formMainDashboard.h
         Designer/FormsDashboard/formMainDashboard.ui
@@ -77,6 +73,8 @@ set(PROJECT_FORMS
         Designer/FormsDashboard/formAdicionarLancamento.cpp
         Designer/FormsDashboard/formAdicionarLancamento.h
         Designer/FormsDashboard/formAdicionarLancamento.ui
+        Designer/Gerenciamento/SessionManager.cpp
+        Designer/Gerenciamento/SessionManager.h
 )
 
 # 3. Criamos o executável usando uma função especial do Qt
@@ -94,6 +92,7 @@ target_link_libraries(MeuCentavoApp PRIVATE
         Qt6::Widgets
         Qt6::Sql
         Qt6::Charts
+        Qt6::Network
 )
 
 # Finaliza as configurações do MOC, UIC, e RCC

@@ -1,121 +1,128 @@
 #include "LancamentoDAO.h"
-#include <QSqlQuery>
-#include <QSqlError>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QUrl>
+#include <QUrlQuery>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 #include <QDebug>
-#include <QDate>
 
-
-LancamentoDAO::LancamentoDAO(QSqlDatabase db, QObject *parent)
-    : QObject(parent), m_db(db)
+LancamentoDAO::LancamentoDAO(QObject *parent)
+    : QObject(parent)
 {
-
+    m_manager = new QNetworkAccessManager(this);
 }
 
-bool LancamentoDAO::adicionarLancamento(const Lancamento& lancamento)
+// --- ADICIONAR LANÇAMENTO ---
+void LancamentoDAO::adicionarLancamento(const Lancamento& lancamento, const QString& token)
 {
-    QSqlQuery query(m_db);
-    query.prepare("INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario) "
-                  "VALUES (:descricao, :valor, :data, :tipo, :id_usuario)");
+    QJsonObject json;
+    json["descricao"] = lancamento.descricao;
+    json["valor"] = lancamento.valor;
+    json["data_lancamento"] = lancamento.data_lancamento.toString(Qt::ISODate);
+    json["tipo"] = lancamento.tipo;
 
-    query.bindValue(":descricao", lancamento.descricao);
-    query.bindValue(":valor", lancamento.valor);
-    // Convertemos o QDate para o formato de texto que o SQLite entende
-    query.bindValue(":data", lancamento.data_lancamento.toString(Qt::ISODate));
-    query.bindValue(":tipo", lancamento.tipo);
-    query.bindValue(":id_usuario", lancamento.id_usuario);
+    QNetworkRequest request(QUrl(m_baseUrl + "/adicionar"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
 
-    if (!query.exec()) {
-        qDebug() << "Erro ao adicionar lançamento:" << query.lastError().text();
-        return false;
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(json).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=](){
+        onAdicionarLancamentoReply(reply);
+    });
+}
+
+void LancamentoDAO::onAdicionarLancamentoReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError && reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 201) {
+        emit lancamentoAdicionado();
+    } else {
+        emit erroOcorrido("Falha ao adicionar lançamento: " + reply->errorString() + " | " + reply->readAll());
     }
-
-    return true;
+    reply->deleteLater();
 }
 
-double LancamentoDAO::obterSomaPorTipoNoMes(int usuarioId, const QString& tipo, int mes, int ano)
+// --- OBTER TODOS OS LANÇAMENTOS ---
+void LancamentoDAO::obterTodos(const QString& token)
 {
-    QSqlQuery query(m_db);
-    query.prepare("SELECT SUM(valor) FROM lancamentos WHERE id_usuario = :id "
-                  "AND tipo = :tipo "
-                  "AND strftime('%m', data_lancamento) = :mes "
-                  "AND strftime('%Y', data_lancamento) = :ano");
-
-    query.bindValue(":id", usuarioId);
-    query.bindValue(":tipo", tipo);
-    // Formata o mês e ano para texto com o preenchimento de zeros correto
-    query.bindValue(":mes", QString("%1").arg(mes, 2, 10, QChar('0')));
-    query.bindValue(":ano", QString::number(ano));
-
-    if (query.exec() && query.next()) {
-        // .value(0) pega a primeira coluna do resultado (o SUM(valor))
-        return query.value(0).toDouble();
-    }
-    return 0.0;
+    QNetworkRequest request(QUrl(m_baseUrl + "/"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=](){ onObterLancamentosReply(reply); });
 }
 
-QVector<Lancamento> LancamentoDAO::obterLancamentosRecentes(int usuarioId, int limite)
+// --- OBTER LANÇAMENTOS RECENTES ---
+void LancamentoDAO::obterRecentes(const QString& token, int limite)
 {
-    QVector<Lancamento> lancamentos;
-    QSqlQuery query(m_db);
-    query.prepare("SELECT * FROM lancamentos WHERE id_usuario = :id "
-                  "ORDER BY data_lancamento DESC, id DESC LIMIT :limite");
+    QUrl url(m_baseUrl + "/recentes");
+    QUrlQuery query;
+    query.addQueryItem("limite", QString::number(limite));
+    url.setQuery(query);
 
-    query.bindValue(":id", usuarioId);
-    query.bindValue(":limite", limite);
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=](){ onObterLancamentosReply(reply); });
+}
 
-    if (query.exec()) {
-        while (query.next()) {
+void LancamentoDAO::onObterLancamentosReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError && reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 200) {
+        QVector<Lancamento> lista;
+        QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
+        for (const QJsonValue &value : jsonArray) {
+            QJsonObject obj = value.toObject();
             Lancamento l;
-            l.id = query.value("id").toInt();
-            l.descricao = query.value("descricao").toString();
-            l.valor = query.value("valor").toDouble();
-            l.data_lancamento = QDate::fromString(query.value("data_lancamento").toString(), Qt::ISODate);
-            l.tipo = query.value("tipo").toString();
-            l.id_usuario = query.value("id_usuario").toInt();
-            // Adicione id_categoria e id_conta aqui se já as tiver
-            lancamentos.append(l);
+            l.id = obj["id"].toInt();
+            l.descricao = obj["descricao"].toString();
+            l.valor = obj["valor"].toDouble();
+            l.data_lancamento = QDate::fromString(obj["data_lancamento"].toString().left(10), Qt::ISODate);
+            l.tipo = obj["tipo"].toString();
+            l.id_usuario = obj["id_usuario"].toInt();
+            lista.append(l);
         }
+        emit lancamentosRecebidos(lista);
+    } else {
+        emit erroOcorrido("Falha ao buscar lançamentos: " + reply->errorString());
     }
-    return lancamentos;
+    reply->deleteLater();
 }
 
-QVector<Lancamento> LancamentoDAO::obterTodosLancamentosPorUsuario(int usuarioId)
+// --- OBTER RESUMOS DO MÊS ---
+void LancamentoDAO::obterResumosDoMes(const QString& token)
 {
-    // Cria o vetor que será retornado
-    QVector<Lancamento> listaLancamentos;
-    QSqlQuery query(m_db);
+    QNetworkRequest request(QUrl(m_baseUrl + "/resumo/mes"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=](){ onObterResumosReply(reply); });
+}
 
-    // Prepara a query SQL para buscar todos os lançamentos de um usuário específico,
-    // ordenando pelos mais recentes primeiro.
-    query.prepare("SELECT * FROM lancamentos WHERE id_usuario = :id_usuario ORDER BY data_lancamento DESC, id DESC");
-    query.bindValue(":id_usuario", usuarioId);
-
-    if (!query.exec()) {
-        qDebug() << "Erro ao obter todos os lançamentos do usuário:" << query.lastError().text();
-        return listaLancamentos; // Retorna a lista vazia em caso de erro
+void LancamentoDAO::onObterResumosReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError && reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 200) {
+        QJsonObject jsonObj = QJsonDocument::fromJson(reply->readAll()).object();
+        double receitas = jsonObj["receitas"].toDouble();
+        double despesas = jsonObj["despesas"].toDouble();
+        emit resumosRecebidos(receitas, despesas);
+    } else {
+        emit erroOcorrido("Falha ao buscar resumos: " + reply->errorString());
     }
+    reply->deleteLater();
+}
 
-    // Itera sobre cada linha que o banco de dados retornou
-    while (query.next()) {
-        Lancamento l; // Cria uma struct temporária
+// --- OBTER GASTOS POR CATEGORIA (PARA O GRÁFICO) ---
+void LancamentoDAO::obterGastosPorCategoria(const QString& token)
+{
+    // Este método dependerá de uma rota como GET /api/lancamentos/gastos/categoria
+    // A implementação seguirá o mesmo padrão das outras funções GET.
+    // O slot onObterGastosCategoriaReply irá processar a resposta e emitir
+    // o sinal gastosPorCategoriaRecebidos(dadosDoGrafico).
+}
 
-        // Preenche a struct com os dados da linha atual
-        l.id = query.value("id").toInt();
-        l.descricao = query.value("descricao").toString();
-        l.valor = query.value("valor").toDouble();
-        // Converte a data do formato de texto 'YYYY-MM-DD' para QDate
-        l.data_lancamento = QDate::fromString(query.value("data_lancamento").toString(), Qt::ISODate);
-        l.tipo = query.value("tipo").toString();
-        l.id_usuario = query.value("id_usuario").toInt();
-
-        // Se você já adicionou as colunas de categoria/conta, adicione-as aqui:
-        // l.id_categoria = query.value("id_categoria").toInt();
-        // l.id_conta = query.value("id_conta").toInt();
-
-        // Adiciona o lançamento preenchido à nossa lista
-        listaLancamentos.append(l);
-    }
-
-    // Retorna a lista com todos os lançamentos encontrados
-    return listaLancamentos;
+void LancamentoDAO::onObterGastosCategoriaReply(QNetworkReply *reply)
+{
+    // Implementação futura, similar a onObterLancamentosReply
+    reply->deleteLater();
 }

@@ -1,13 +1,9 @@
-//
-// Created by bruno on 04/07/25.
-//
-
 #ifndef FORMBOASVINDAS_H
 #define FORMBOASVINDAS_H
 
 #include <QWidget>
-#include <QSqlDatabase>
 
+// Forward declaration para a classe que ele vai abrir
 class formCadastro;
 
 namespace Ui {
@@ -19,7 +15,7 @@ class formBoasVindas : public QWidget
     Q_OBJECT
 
 public:
-    explicit formBoasVindas(QSqlDatabase db, QWidget *parent = nullptr);
+    explicit formBoasVindas(QWidget *parent = nullptr);
     ~formBoasVindas();
 
 private slots:
@@ -28,7 +24,7 @@ private slots:
 
 private:
     Ui::formBoasVindas *ui;
-    QSqlDatabase m_db;
+    // Não temos mais 'm_db'.
     formCadastro* m_formCadastro;
 };
 

@@ -1,29 +1,40 @@
-//
-// Created by bruno on 18/06/25.
-//
-
-// You may need to build the project (run Qt uic code generator) to get "ui_formUsuario.h" resolved
-
 #include "formUsuario.h"
 #include "ui_formUsuario.h"
 #include "formCadastro.h"
+#include "formExcluirUsuario.h"
 #include "DataAccess/UsuarioDAO.h"
-#include <QDebug>
-#include <QCloseEvent>
 #include <QPushButton>
 #include <QLayoutItem>
-#include "formExcluirUsuario.h"
+#include <QCloseEvent>
+#include <QMessageBox>
+#include <QDebug>
 
-formUsuario::formUsuario(QSqlDatabase db, QWidget *parent) :
+formUsuario::formUsuario(const QString& token, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::formUsuario),
-    m_db(db)
+    m_token(token)
 {
     ui->setupUi(this);
+    setAttribute(Qt::WA_DeleteOnClose);
+    setWindowTitle("Selecionar ou Gerenciar Usuários");
 
-    connect(ui->buttonCadastro, &QPushButton::clicked, this, &formUsuario::abrirFormCadastro);
-    connect(ui->buttonBack, &QPushButton::clicked, this, &formUsuario::voltarFormInicio);
-    connect(ui-> buttonExcluirUsuarios, &QPushButton::clicked, this, &formUsuario:: abrirExcluirUsuarios);
+    m_formCadastro = nullptr;
+    m_formExcluirUsuario = nullptr;
+
+    // Cria uma única instância do DAO para esta janela
+    m_dao = new UsuarioDAO(this);
+
+    // Conecta os sinais de resultado do DAO aos nossos slots
+    connect(m_dao, &UsuarioDAO::todosUsuariosRecebidos, this, &formUsuario::onUsuariosRecebidos);
+    connect(m_dao, &UsuarioDAO::erroDeRede, this, &formUsuario::onErroDeRede);
+    // Você pode conectar outros sinais do DAO aqui se precisar (ex: de exclusão)
+
+    // Conecta os botões da interface
+    connect(ui->buttonCadastro, &QPushButton::clicked, this, &formUsuario::abrirTelaCadastro);
+    connect(ui->buttonExcluirUsuarios, &QPushButton::clicked, this, &formUsuario::abrirTelaExcluir);
+    connect(ui->buttonBack, &QPushButton::clicked, this, &QWidget::close);
+
+    // Inicia a busca pelos usuários assim que a janela é criada
     carregarListaDeUsuarios();
 }
 
@@ -34,85 +45,71 @@ formUsuario::~formUsuario()
 
 void formUsuario::closeEvent(QCloseEvent *event)
 {
-    emit usuarioFechado();
+    emit fechado(); // Emite o sinal para a formInicio saber que foi fechado
     QWidget::closeEvent(event);
-}
-
-void formUsuario::abrirFormCadastro()
-{
-    if (!cadastroWindow) {
-        cadastroWindow = new formCadastro(m_db, nullptr);
-        cadastroWindow->setAttribute(Qt::WA_DeleteOnClose);
-
-        // --- ESTA É A LINHA QUE FAZ A MÁGICA DO REFRESH ---
-        // Ela conecta o sinal do cadastro à função que atualiza a lista.
-        connect(cadastroWindow, &formCadastro::cadastroConcluido,
-                this, &formUsuario::carregarListaDeUsuarios);
-        // ----------------------------------------------------
-
-        // Conexão para a navegação de volta
-        connect(cadastroWindow, &QObject::destroyed, [this]() {
-            this->show();
-            this->cadastroWindow = nullptr;
-        });
-    }
-    this->hide();
-    cadastroWindow->show();
-
-}
-
-
-void formUsuario::voltarFormInicio()
-{
-    this->close();
 }
 
 void formUsuario::carregarListaDeUsuarios()
 {
-    qDebug() << "Carregando a lista de usuários para a UI...";
+    qDebug() << "formUsuario: Requisitando lista de usuários da API...";
+    ui->labelStatus->setText("Carregando..."); // Opcional: um label de status na UI
+    // Inicia a requisição de rede e espera a resposta chegar no slot onUsuariosRecebidos
+    m_dao->obterTodosUsuarios(m_token);
+}
+
+void formUsuario::onUsuariosRecebidos(const QVector<Usuario>& usuarios)
+{
+    qDebug() << "formUsuario: Lista com" << usuarios.count() << "usuários recebida. Atualizando UI.";
+    ui->labelStatus->setText("Selecione um usuário:");
+
+    // Limpa o layout antes de adicionar os novos botões
     QLayoutItem* item;
     while ((item = ui->layoutUsuarios->takeAt(0)) != nullptr) {
         delete item->widget();
         delete item;
     }
 
-    UsuarioDAO dao(m_db);
-    QVector<Usuario> usuarios = dao.obterTodosUsuarios();
-
+    // Cria os botões com base na lista recebida da API
     for (const auto& usuario : usuarios) {
         QPushButton *botaoUsuario = new QPushButton(usuario.nomeUsuario, this);
         botaoUsuario->setMinimumHeight(40);
         botaoUsuario->setCursor(Qt::PointingHandCursor);
 
-        connect(botaoUsuario, &QPushButton::clicked, [this, usuario]() {
+        connect(botaoUsuario, &QPushButton::clicked, this, [this, usuario]() {
             qDebug() << "Usuário selecionado:" << usuario.nomeUsuario;
-            emit usuarioAtual(usuario);
+            emit usuarioSelecionado(usuario); // Emite o sinal com os dados do usuário
+            this->close(); // Fecha esta janela após a seleção
         });
         ui->layoutUsuarios->addWidget(botaoUsuario);
     }
 }
 
-void formUsuario::abrirExcluirUsuarios()
+void formUsuario::abrirTelaCadastro()
 {
-    if (!excluirWindow)
-    {
-        excluirWindow = new formExcluirUsuario(m_db, nullptr);
-        excluirWindow->setAttribute(Qt::WA_DeleteOnClose);
-         // Conecta o sinal de modificação da janela filha à função que
-         // recarrega a lista de botões desta janela (a mãe).
-        connect(excluirWindow, &formExcluirUsuario::listaDeUsuariosModificada,
-                this, &formUsuario::carregarListaDeUsuarios);
-        // Conexão para a navegação de volta
-        connect(excluirWindow, &formExcluirUsuario::exclusaoFechada, [this]() {
-            this->show();
-        });
+    if (!m_formCadastro) {
+        // O formCadastro também foi refatorado e não precisa mais do 'db'
+        m_formCadastro = new formCadastro(this);
+        m_formCadastro->setAttribute(Qt::WA_DeleteOnClose);
 
-        connect(excluirWindow, &QObject::destroyed, [this]() {
-            this->excluirWindow = nullptr;
-        });
-
+        // Quando um cadastro for concluído, recarregamos a lista de usuários
+        connect(m_formCadastro, &formCadastro::cadastroConcluido, this, &formUsuario::carregarListaDeUsuarios);
     }
-    this->hide();
-    excluirWindow->show();
+    m_formCadastro->show();
 }
 
+void formUsuario::abrirTelaExcluir()
+{
+    if (!m_formExcluirUsuario) {
+        m_formExcluirUsuario = new formExcluirUsuario(m_token, this);
+        m_formExcluirUsuario->setAttribute(Qt::WA_DeleteOnClose);
+
+        connect(m_formExcluirUsuario, &formExcluirUsuario::listaDeUsuariosModificada, this, &formUsuario::carregarListaDeUsuarios);
+    }
+    m_formExcluirUsuario->show();
+}
+
+void formUsuario::onErroDeRede(const QString& motivo)
+{
+    QMessageBox::critical(this, "Erro de Rede", motivo);
+    ui->labelStatus->setText("Erro ao carregar usuários.");
+}

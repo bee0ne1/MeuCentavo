@@ -275,30 +275,6 @@ Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
 .PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
 
-Designer/FormsDashboard/DashboardPages/pageRelatorios.o: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
-.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.o
-
-# target to build an object file
-Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
-.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
-
-Designer/FormsDashboard/DashboardPages/pageRelatorios.i: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i
-.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.i
-
-# target to preprocess a source file
-Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i
-.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i
-
-Designer/FormsDashboard/DashboardPages/pageRelatorios.s: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
-.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.s
-
-# target to generate assembly for a file
-Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
-.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
-
 Designer/FormsDashboard/formAdicionarLancamento.o: Designer/FormsDashboard/formAdicionarLancamento.cpp.o
 .PHONY : Designer/FormsDashboard/formAdicionarLancamento.o
 
@@ -467,6 +443,30 @@ Designer/FormsLogin/formUsuario.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.s
 .PHONY : Designer/FormsLogin/formUsuario.cpp.s
 
+Designer/Gerenciamento/SessionManager.o: Designer/Gerenciamento/SessionManager.cpp.o
+.PHONY : Designer/Gerenciamento/SessionManager.o
+
+# target to build an object file
+Designer/Gerenciamento/SessionManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Gerenciamento/SessionManager.cpp.o
+.PHONY : Designer/Gerenciamento/SessionManager.cpp.o
+
+Designer/Gerenciamento/SessionManager.i: Designer/Gerenciamento/SessionManager.cpp.i
+.PHONY : Designer/Gerenciamento/SessionManager.i
+
+# target to preprocess a source file
+Designer/Gerenciamento/SessionManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Gerenciamento/SessionManager.cpp.i
+.PHONY : Designer/Gerenciamento/SessionManager.cpp.i
+
+Designer/Gerenciamento/SessionManager.s: Designer/Gerenciamento/SessionManager.cpp.s
+.PHONY : Designer/Gerenciamento/SessionManager.s
+
+# target to generate assembly for a file
+Designer/Gerenciamento/SessionManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Gerenciamento/SessionManager.cpp.s
+.PHONY : Designer/Gerenciamento/SessionManager.cpp.s
+
 Designer/formInicio.o: Designer/formInicio.cpp.o
 .PHONY : Designer/formInicio.o
 
@@ -565,9 +565,6 @@ help:
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.s"
-	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.o"
-	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.i"
-	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.s"
 	@echo "... Designer/FormsDashboard/formAdicionarLancamento.o"
 	@echo "... Designer/FormsDashboard/formAdicionarLancamento.i"
 	@echo "... Designer/FormsDashboard/formAdicionarLancamento.s"
@@ -589,6 +586,9 @@ help:
 	@echo "... Designer/FormsLogin/formUsuario.o"
 	@echo "... Designer/FormsLogin/formUsuario.i"
 	@echo "... Designer/FormsLogin/formUsuario.s"
+	@echo "... Designer/Gerenciamento/SessionManager.o"
+	@echo "... Designer/Gerenciamento/SessionManager.i"
+	@echo "... Designer/Gerenciamento/SessionManager.s"
 	@echo "... Designer/formInicio.o"
 	@echo "... Designer/formInicio.i"
 	@echo "... Designer/formInicio.s"

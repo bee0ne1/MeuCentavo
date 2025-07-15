@@ -14,9 +14,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.ui \
-  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp \
-  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h \
-  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.ui \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formAdicionarLancamento.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formAdicionarLancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formAdicionarLancamento.ui \
@@ -38,6 +35,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.ui \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Gerenciamento/SessionManager.cpp \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Gerenciamento/SessionManager.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.ui \
@@ -309,6 +308,7 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/include/locale.h \
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDate \
+  /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVector \
@@ -374,7 +374,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/include/qt6/QtCore/qmargins.h \
   /usr/include/qt6/QtCore/qmath.h \
   /usr/include/qt6/QtCore/qmetacontainer.h \
-  /usr/include/qt6/QtCore/qmetaobject.h \
   /usr/include/qt6/QtCore/qmetatype.h \
   /usr/include/qt6/QtCore/qminmax.h \
   /usr/include/qt6/QtCore/qnamespace.h \
@@ -467,11 +466,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/include/qt6/QtGui/qtguiglobal.h \
   /usr/include/qt6/QtGui/qtransform.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
-  /usr/include/qt6/QtSql/QSqlDatabase \
-  /usr/include/qt6/QtSql/qsqldatabase.h \
-  /usr/include/qt6/QtSql/qtsql-config.h \
-  /usr/include/qt6/QtSql/qtsqlexports.h \
-  /usr/include/qt6/QtSql/qtsqlglobal.h \
   /usr/include/qt6/QtWidgets/QDialog \
   /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QWidget \
@@ -788,6 +782,38 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake \
   /usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
   /usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
+  /usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateVersionlessAliasTargets.cmake \
   /usr/lib/cmake/Qt6OpenGL/Qt6OpenGLAdditionalTargetInfo.cmake \
   /usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake \
   /usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake \
@@ -934,10 +960,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/share/cmake/Modules/Linker/GNU-CXX.cmake:
 
-/usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake:
-
-/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:
-
 /usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake:
 
 /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake:
@@ -1076,6 +1098,44 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake:
 
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfig.cmake:
+
+/usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake:
+
+/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake:
+
 /usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake:
 
 /usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake:
@@ -1098,9 +1158,13 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginTargets-relwithdebinfo.cmake:
 
+/usr/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets.cmake:
 
@@ -1125,6 +1189,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 /usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersionImpl.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginAdditionalTargetInfo.cmake:
 
@@ -1220,6 +1286,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake:
 
+/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginConfig.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake:
@@ -1227,6 +1295,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 /usr/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QJp2PluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QJp2PluginConfig.cmake:
 
@@ -1236,11 +1306,15 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake:
 
+/usr/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake:
 
@@ -1328,6 +1402,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake:
 
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake:
+
 /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets-relwithdebinfo.cmake:
@@ -1392,21 +1468,13 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateDependencies.cmake:
 
-/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersionImpl.cmake:
-
-/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersion.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsTargets.cmake:
-
 /usr/include/c++/15.1.1/pstl/execution_defs.h:
 
 /usr/include/qt6/QtCore/qtpreprocessorsupport.h:
 
 /usr/include/qt6/QtCore/qtypeinfo.h:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersion.cmake:
 
 /usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersionImpl.cmake:
 
@@ -1466,10 +1534,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h:
-
 /usr/include/c++/15.1.1/bits/vector.tcc:
 
 /usr/include/c++/15.1.1/bits/utility.h:
@@ -1512,6 +1576,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/c++/15.1.1/bits/stl_map.h:
 
+/usr/lib/cmake/Qt6Charts/Qt6ChartsTargets.cmake:
+
 /usr/include/qt6/QtCore/qvector.h:
 
 /usr/include/c++/15.1.1/bits/stl_iterator_base_types.h:
@@ -1532,13 +1598,15 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/c++/15.1.1/compare:
 
-/usr/include/c++/15.1.1/bits/exception.h:
-
 /usr/include/bits/errno.h:
+
+/usr/include/c++/15.1.1/bits/exception.h:
 
 /usr/include/c++/15.1.1/bits/refwrap.h:
 
 /usr/include/c++/15.1.1/bits/ptr_traits.h:
+
+/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersion.cmake:
 
 /usr/include/c++/15.1.1/ctime:
 
@@ -1559,6 +1627,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 /usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateAdditionalTargetInfo.cmake:
 
 /usr/include/c++/15.1.1/list:
+
+/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersionImpl.cmake:
 
 /usr/include/c++/15.1.1/bits/invoke.h:
 
@@ -1616,6 +1686,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/qt6/QtCore/qtcoreexports.h:
 
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateTargets.cmake:
+
 /usr/include/c++/15.1.1/bits/atomic_lockfree_defines.h:
 
 /usr/include/c++/15.1.1/bits/allocator.h:
@@ -1644,11 +1716,11 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6/FindWrapAtomic.cmake:
 
-/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:
+/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersion.cmake:
 
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsDependencies.cmake:
+/usr/include/c++/15.1.1/debug/assertions.h:
 
-/usr/include/c++/15.1.1/backward/binders.h:
+/usr/include/qt6/QtCore/qbytearray.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake:
 
@@ -1674,8 +1746,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/bits/types/timer_t.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.ui:
-
 /usr/include/qt6/QtCore/qvariant.h:
 
 /usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateTargets.cmake:
@@ -1690,7 +1760,11 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp:
 
+/usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake:
+
 /usr/include/bits/types/struct_timeval.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formAdicionarLancamento.h:
 
 /usr/include/c++/15.1.1/bits/cpp_type_traits.h:
 
@@ -1722,9 +1796,33 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/asm/types.h:
 
+/usr/include/c++/15.1.1/bits/range_access.h:
+
+/usr/include/bits/types/error_t.h:
+
+/usr/include/qt6/QtCore/qstringalgorithms.h:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtGui/qfontinfo.h:
+
+/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfigVersion.cmake:
+
+/usr/include/c++/15.1.1/bits/shared_ptr_base.h:
+
+/usr/include/c++/15.1.1/cmath:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.h:
+
+/usr/lib/cmake/Qt6Charts/Qt6ChartsAdditionalTargetInfo.cmake:
+
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.ui:
 
 /usr/include/c++/15.1.1/bits/stl_iterator.h:
+
+/usr/include/assert.h:
+
+/usr/include/qt6/QtCore/qstringmatcher.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginAdditionalTargetInfo.cmake:
 
@@ -1733,6 +1831,14 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formCadastro.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/bits/algorithmfwd.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.h:
+
+/usr/include/qt6/QtCore/qtenvironmentvariables.h:
 
 /usr/include/bits/posix1_lim.h:
 
@@ -1749,6 +1855,8 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake:
 
 /usr/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateDependencies.cmake:
 
 /usr/include/c++/15.1.1/chrono:
 
@@ -1780,13 +1888,13 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp:
-
 /usr/include/c++/15.1.1/cctype:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formBoasVindas.ui:
+
+/usr/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake:
 
 /usr/include/qt6/QtCore/qstdlibdetection.h:
 
@@ -1794,13 +1902,25 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/c++/15.1.1/utility:
 
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargets-relwithdebinfo.cmake:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Gerenciamento/SessionManager.h:
 
-/usr/include/c++/15.1.1/bits/algorithmfwd.h:
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginAdditionalTargetInfo.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.h:
+/usr/include/c++/15.1.1/bits/memoryfwd.h:
 
-/usr/include/qt6/QtCore/qtenvironmentvariables.h:
+/usr/lib/cmake/Qt6Core/Qt6CoreTargets.cmake:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qtransform.h:
+
+/usr/include/c++/15.1.1/bits/hashtable.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.cpp:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake:
 
@@ -1822,50 +1942,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/bits/pthreadtypes.h:
 
-/usr/include/c++/15.1.1/bits/range_access.h:
-
-/usr/include/bits/types/error_t.h:
-
-/usr/include/qt6/QtCore/qstringalgorithms.h:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake:
-
-/usr/include/qt6/QtGui/qfontinfo.h:
-
-/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfigVersion.cmake:
-
-/usr/include/c++/15.1.1/bits/shared_ptr_base.h:
-
-/usr/include/c++/15.1.1/cmath:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.h:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsAdditionalTargetInfo.cmake:
-
-/usr/include/bits/types/mbstate_t.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formBoasVindas.cpp:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginAdditionalTargetInfo.cmake:
-
-/usr/include/c++/15.1.1/bits/memoryfwd.h:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreTargets.cmake:
-
-/usr/include/bits/stdlib-float.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfig.cmake:
-
-/usr/include/qt6/QtGui/qtransform.h:
-
-/usr/include/c++/15.1.1/bits/hashtable.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formAdicionarLancamento.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.cpp:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.h:
-
 /usr/include/c++/15.1.1/bits/alloc_traits.h:
 
 /usr/include/bits/atomic_wide_counter.h:
@@ -1873,10 +1949,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /usr/include/asm/errno.h:
 
 /usr/include/bits/endian.h:
-
-/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersion.cmake:
-
-/usr/include/c++/15.1.1/debug/assertions.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.h:
 
@@ -1956,6 +2028,10 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/c++/15.1.1/cstdlib:
 
+/usr/include/bits/types/mbstate_t.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formBoasVindas.cpp:
+
 /usr/include/c++/15.1.1/iosfwd:
 
 /usr/include/qt6/QtCore/qanystringview.h:
@@ -1972,6 +2048,8 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfig.cmake:
 
+/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake:
+
 /usr/include/c++/15.1.1/bits/basic_string.tcc:
 
 /usr/include/bits/waitstatus.h:
@@ -1987,12 +2065,6 @@ MeuCentavoApp_autogen/moc_predefs.h:
 /usr/include/c++/15.1.1/bits/move.h:
 
 /usr/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake:
-
-/usr/include/qt6/QtCore/qstringmatcher.h:
-
-/usr/include/assert.h:
-
-/usr/include/qt6/QtCore/qbytearray.h:
 
 /usr/include/bits/stdio_lim.h:
 
@@ -2012,9 +2084,9 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginConfig.cmake:
 
-/usr/include/qt6/QtSql/QSqlDatabase:
-
 /usr/include/bits/cpu-set.h:
+
+/usr/include/qt6/QtCore/QHash:
 
 /usr/include/bits/typesizes.h:
 
@@ -2058,20 +2130,6 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/bits/locale.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp:
-
-/usr/include/c++/15.1.1/backward/auto_ptr.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6/QtFeatureCommon.cmake:
-
-/usr/include/bits/posix2_lim.h:
-
-/usr/include/c++/15.1.1/tuple:
-
-/usr/include/c++/15.1.1/vector:
-
 /usr/include/bits/types/cookie_io_functions_t.h:
 
 /usr/include/c++/15.1.1/bits/stl_multimap.h:
@@ -2089,6 +2147,10 @@ MeuCentavoApp_autogen/moc_predefs.h:
 /usr/include/c++/15.1.1/bits/stl_set.h:
 
 /usr/include/bits/struct_mutex.h:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets.cmake:
+
+/usr/include/bits/timex.h:
 
 /usr/include/bits/types.h:
 
@@ -2117,6 +2179,12 @@ MeuCentavoApp_autogen/moc_predefs.h:
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formExcluirUsuario.h:
 
 /usr/include/c++/15.1.1/bits/uses_allocator_args.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.h:
+
+/usr/include/c++/15.1.1/set:
+
+/usr/include/bits/types/__locale_t.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginAdditionalTargetInfo.cmake:
 
@@ -2190,11 +2258,25 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/c++/15.1.1/bits/unique_ptr.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp:
 
-/usr/include/bits/types/__locale_t.h:
+/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets.cmake:
 
-/usr/include/c++/15.1.1/set:
+/usr/lib/cmake/Qt6/QtFeatureCommon.cmake:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/c++/15.1.1/tuple:
+
+/usr/include/c++/15.1.1/vector:
+
+/usr/include/c++/15.1.1/backward/auto_ptr.h:
+
+/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsDependencies.cmake:
+
+/usr/include/c++/15.1.1/backward/binders.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formCadastro.ui:
 
@@ -2266,8 +2348,6 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++locale.h:
 
-/usr/include/qt6/QtSql/qtsqlexports.h:
-
 /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/cpu_defines.h:
 
 /usr/include/c++/15.1.1/bits/stl_uninitialized.h:
@@ -2330,6 +2410,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/include/qt6/QtCore/qfunctionpointer.h:
 
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake:
+
 /usr/include/qt6/QtCore/q17memory.h:
 
 /usr/include/qt6/QtCore/QVector:
@@ -2367,8 +2449,6 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/qt6/QtCore/qbindingstorage.h:
-
-/usr/include/qt6/QtSql/qtsqlglobal.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginAdditionalTargetInfo.cmake:
 
@@ -2466,8 +2546,6 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/include/qt6/QtCore/qmetacontainer.h:
 
-/usr/include/qt6/QtCore/qmetaobject.h:
-
 /usr/include/qt6/QtCore/qnamespace.h:
 
 /usr/include/qt6/QtCore/qobject.h:
@@ -2533,12 +2611,6 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/qt6/QtCore/qstringliteral.h:
 
 /usr/include/qt6/QtCore/qstringtokenizer.h:
-
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets.cmake:
-
-/usr/include/bits/timex.h:
-
-/usr/include/qt6/QtSql/qsqldatabase.h:
 
 /usr/include/qt6/QtCore/qswap.h:
 
@@ -2608,8 +2680,6 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/include/qt6/QtCore/qvarlengtharray.h:
 
-/usr/include/qt6/QtSql/qtsql-config.h:
-
 /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake:
@@ -2664,6 +2734,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/include/c++/15.1.1/numeric:
 
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Gerenciamento/SessionManager.cpp:
+
 /usr/include/qt6/QtGui/qtgui-config.h:
 
 /usr/include/qt6/QtGui/qtguiexports.h:
@@ -2693,6 +2765,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/qt6/QtWidgets/qtwidgetsglobal.h:
 
 /usr/include/sched.h:
+
+/usr/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake:
 
 /usr/include/c++/15.1.1/bits/nested_exception.h:
 
@@ -2765,3 +2839,7 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6/QtPublicToolHelpers.cmake:
 
 /usr/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake:

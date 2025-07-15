@@ -1,69 +1,56 @@
 #include "formMainDashboard.h"
 #include "ui_formMainDashboard.h"
+#include "Designer/Gerenciamento/SessionManager.h" // Inclui nosso novo "cofre"
 
-// Incluímos os cabeçalhos das "páginas" que vamos adicionar ao QStackedWidget.
+// Incluímos os cabeçalhos das páginas
 #include "DashboardPages/pageHome.h"
-#include "DashboardPages/pageRelatorios.h"
 #include "DashboardPages/pageLancamentos.h"
+//#include "DashboardPages/pageRelatorios.h"
 
 #include <QDebug>
 
-formMainDashboard::formMainDashboard(const Usuario& usuario, QSqlDatabase db, QWidget *parent) :
+formMainDashboard::formMainDashboard(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::formMainDashboard),
-    m_db(db),
-    m_usuarioAtual(usuario)
+    ui(new Ui::formMainDashboard)
 {
-    // Configura a interface criada no Qt Designer. Essencial!
     ui->setupUi(this);
-
-    // Define um título para a janela.
     setWindowTitle("Meu Centavo - Dashboard");
-    
-    // Chama a função para configurar as páginas e o QStackedWidget.
-    setupPaginas();
+    setupPaginas(); // Chama a função para configurar as páginas
 }
 
 formMainDashboard::~formMainDashboard()
 {
-    // Libera a memória alocada para a interface.
     delete ui;
 }
 
 void formMainDashboard::setupPaginas()
 {
-
-    // --- LIMPEZA DO STACKED WIDGET (MÉTODO RECOMENDADO) ---
-    while (ui->stackedWidgetConteudo->count() > 0)
-    {
+    // Limpa o stacked widget de páginas padrão do Designer
+    while (ui->stackedWidgetConteudo->count() > 0) {
         QWidget* page = ui->stackedWidgetConteudo->widget(0);
         ui->stackedWidgetConteudo->removeWidget(page);
-        // Usar deleteLater() é mais seguro que 'delete' para objetos Qt
         page->deleteLater();
     }
 
-    // 1. Cria uma instância de cada uma das suas páginas.
-    pageHome *paginaHome = new pageHome(m_usuarioAtual, m_db, this);
-    pageRelatorios *paginaRelatorios = new pageRelatorios(m_usuarioAtual, m_db, this);
-    pageLancamentos *paginaLancamentos = new pageLancamentos(m_usuarioAtual,m_db,this);
+    // Cria as instâncias das páginas. Note que os construtores delas também
+    // serão simplificados, pois elas mesmas podem acessar o SessionManager.
+    m_pageHome = new pageHome(this);
+    m_pageLancamentos = new pageLancamentos(this);
+    //m_pageRelatorios = new pageRelatorios(this);
 
+    // Adiciona as páginas ao "baralho"
+    ui->stackedWidgetConteudo->addWidget(m_pageHome);          // Índice 0
+    ui->stackedWidgetConteudo->addWidget(m_pageLancamentos);    // Índice 1
+    //ui->stackedWidgetConteudo->addWidget(m_pageRelatorios);     // Índice 2
 
-    // 2. Adiciona as páginas ao seu QStackedWidget. A ORDEM IMPORTA!
-    // Supondo que o objectName no .ui seja 'stackedWidgetConteudo'.
-    ui->stackedWidgetConteudo->addWidget(paginaHome);
-    ui->stackedWidgetConteudo->addWidget(paginaLancamentos);
-    ui->stackedWidgetConteudo->addWidget(paginaRelatorios);
-    // 3. Define qual página deve aparecer primeiro.
-    ui->stackedWidgetConteudo->setCurrentIndex(0); // Mostra a página Home por padrão.
+    // Define a página inicial
+    ui->stackedWidgetConteudo->setCurrentIndex(0);
     qDebug() << "Dashboard configurada e página Home exibida.";
 }
 
-
-// --- Implementação dos Slots de Navegação ---
-
+// Os slots de navegação continuam funcionando da mesma forma
 void formMainDashboard::on_buttonHome_clicked()
 {
-    // Diz ao QStackedWidget para mostrar a página no índice 0.
     ui->stackedWidgetConteudo->setCurrentIndex(0);
 }
 
@@ -74,14 +61,10 @@ void formMainDashboard::on_buttonLancamentos_clicked()
 
 void formMainDashboard::on_buttonRelatorios_clicked()
 {
-    // Mostra a página no índice 1.
     ui->stackedWidgetConteudo->setCurrentIndex(2);
 }
 
-
 void formMainDashboard::on_buttonConfiguracoes_clicked()
 {
-    // Supondo que a página de configurações seja a quarta (índice 3)
-    // ui->stackedWidgetConteudo->setCurrentIndex(3);
-    qDebug() << "Botão Configurações clicado! (Página ainda não adicionada)";
+    qDebug() << "Botão Configurações clicado!";
 }
