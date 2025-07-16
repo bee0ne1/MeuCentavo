@@ -683,15 +683,15 @@
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Gerenciamento/SessionManager.h",
-			"MU",
-			"DU3NKSZSJ4/moc_SessionManager.cpp",
-			null
-		],
-		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.h",
 			"MU",
 			"OVWQHZ74WH/moc_formInicio.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h",
+			"MU",
+			"LTMKJI32CL/moc_SessionManager.cpp",
 			null
 		]
 	],
@@ -831,12 +831,12 @@
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Gerenciamento/SessionManager.cpp",
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp",
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.cpp",
 			"MU",
 			null
 		],

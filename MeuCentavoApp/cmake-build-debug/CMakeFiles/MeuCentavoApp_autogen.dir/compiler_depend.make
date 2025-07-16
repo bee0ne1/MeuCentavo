@@ -35,11 +35,11 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.ui \
-  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Gerenciamento/SessionManager.cpp \
-  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Gerenciamento/SessionManager.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.ui \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.cpp \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake \
@@ -1764,7 +1764,17 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/bits/types/struct_timeval.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formAdicionarLancamento.h:
+/usr/include/assert.h:
+
+/usr/include/qt6/QtCore/qstringmatcher.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/qdialog.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formCadastro.h:
 
 /usr/include/c++/15.1.1/bits/cpp_type_traits.h:
 
@@ -1819,18 +1829,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.ui:
 
 /usr/include/c++/15.1.1/bits/stl_iterator.h:
-
-/usr/include/assert.h:
-
-/usr/include/qt6/QtCore/qstringmatcher.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtWidgets/qdialog.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formCadastro.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargets-relwithdebinfo.cmake:
 
@@ -1902,21 +1900,7 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/c++/15.1.1/utility:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Gerenciamento/SessionManager.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginAdditionalTargetInfo.cmake:
-
-/usr/include/c++/15.1.1/bits/memoryfwd.h:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreTargets.cmake:
-
-/usr/include/bits/stdlib-float.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfig.cmake:
-
-/usr/include/qt6/QtGui/qtransform.h:
-
-/usr/include/c++/15.1.1/bits/hashtable.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formAdicionarLancamento.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.cpp:
 
@@ -2066,6 +2050,22 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake:
 
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/bits/memoryfwd.h:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreTargets.cmake:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qtransform.h:
+
+/usr/include/c++/15.1.1/bits/hashtable.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h:
+
 /usr/include/bits/stdio_lim.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formExcluirUsuario.cpp:
@@ -2095,6 +2095,10 @@ MeuCentavoApp_autogen/moc_predefs.h:
 /usr/include/qt6/QtCore/qlist.h:
 
 /usr/include/bits/endianness.h:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets.cmake:
+
+/usr/include/bits/timex.h:
 
 /usr/include/c++/15.1.1/bits/locale_classes.h:
 
@@ -2147,10 +2151,6 @@ MeuCentavoApp_autogen/moc_predefs.h:
 /usr/include/c++/15.1.1/bits/stl_set.h:
 
 /usr/include/bits/struct_mutex.h:
-
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets.cmake:
-
-/usr/include/bits/timex.h:
 
 /usr/include/bits/types.h:
 
@@ -2686,6 +2686,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formExcluirUsuario.ui:
 
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.cpp:
+
 /usr/include/qt6/QtGui/qaction.h:
 
 /usr/include/qt6/QtGui/qbitmap.h:
@@ -2733,8 +2735,6 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/qt6/QtGui/qrgb.h:
 
 /usr/include/c++/15.1.1/numeric:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/Gerenciamento/SessionManager.cpp:
 
 /usr/include/qt6/QtGui/qtgui-config.h:
 

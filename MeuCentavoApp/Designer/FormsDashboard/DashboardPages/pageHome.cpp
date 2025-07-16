@@ -1,7 +1,7 @@
 #include "pageHome.h"
 #include "ui_pageHome.h"
 #include "DataAccess/LancamentoDAO.h"
-#include "Designer/Gerenciamento/SessionManager.h" // Nosso "cofre" de sessão
+#include "Gerenciamento/SessionManager.h" // Nosso "cofre" de sessão
 #include <QHeaderView>
 #include <QMessageBox>
 

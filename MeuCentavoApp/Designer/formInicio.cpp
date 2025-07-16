@@ -5,7 +5,7 @@
 #include "FormsLogin/formBoasVindas.h"
 #include "FormsLogin/formLoginSenha.h"
 #include "FormsDashboard/formMainDashboard.h"
-#include "Designer/Gerenciamento/SessionManager.h"
+#include "Gerenciamento/SessionManager.h"
 #include <QSettings>
 #include <QMessageBox>
 #include <QDebug>

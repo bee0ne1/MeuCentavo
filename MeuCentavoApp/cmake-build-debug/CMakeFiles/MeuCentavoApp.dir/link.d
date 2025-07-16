@@ -17,7 +17,7 @@ MeuCentavoApp: \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/Gerenciamento/SessionManager.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o \
   /usr/lib/libQt6Sql.so.6.9.1 \
   /usr/lib/libQt6Charts.so.6.9.1 \
   /usr/lib/libQt6Network.so.6.9.1 \
@@ -151,7 +151,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamen
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/Gerenciamento/SessionManager.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o:
 
 /usr/lib/libQt6Sql.so.6.9.1:
 

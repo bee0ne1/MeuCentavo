@@ -443,30 +443,6 @@ Designer/FormsLogin/formUsuario.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.s
 .PHONY : Designer/FormsLogin/formUsuario.cpp.s
 
-Designer/Gerenciamento/SessionManager.o: Designer/Gerenciamento/SessionManager.cpp.o
-.PHONY : Designer/Gerenciamento/SessionManager.o
-
-# target to build an object file
-Designer/Gerenciamento/SessionManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Gerenciamento/SessionManager.cpp.o
-.PHONY : Designer/Gerenciamento/SessionManager.cpp.o
-
-Designer/Gerenciamento/SessionManager.i: Designer/Gerenciamento/SessionManager.cpp.i
-.PHONY : Designer/Gerenciamento/SessionManager.i
-
-# target to preprocess a source file
-Designer/Gerenciamento/SessionManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Gerenciamento/SessionManager.cpp.i
-.PHONY : Designer/Gerenciamento/SessionManager.cpp.i
-
-Designer/Gerenciamento/SessionManager.s: Designer/Gerenciamento/SessionManager.cpp.s
-.PHONY : Designer/Gerenciamento/SessionManager.s
-
-# target to generate assembly for a file
-Designer/Gerenciamento/SessionManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/Gerenciamento/SessionManager.cpp.s
-.PHONY : Designer/Gerenciamento/SessionManager.cpp.s
-
 Designer/formInicio.o: Designer/formInicio.cpp.o
 .PHONY : Designer/formInicio.o
 
@@ -490,6 +466,30 @@ Designer/formInicio.s: Designer/formInicio.cpp.s
 Designer/formInicio.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.s
 .PHONY : Designer/formInicio.cpp.s
+
+Gerenciamento/SessionManager.o: Gerenciamento/SessionManager.cpp.o
+.PHONY : Gerenciamento/SessionManager.o
+
+# target to build an object file
+Gerenciamento/SessionManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o
+.PHONY : Gerenciamento/SessionManager.cpp.o
+
+Gerenciamento/SessionManager.i: Gerenciamento/SessionManager.cpp.i
+.PHONY : Gerenciamento/SessionManager.i
+
+# target to preprocess a source file
+Gerenciamento/SessionManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.i
+.PHONY : Gerenciamento/SessionManager.cpp.i
+
+Gerenciamento/SessionManager.s: Gerenciamento/SessionManager.cpp.s
+.PHONY : Gerenciamento/SessionManager.s
+
+# target to generate assembly for a file
+Gerenciamento/SessionManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.s
+.PHONY : Gerenciamento/SessionManager.cpp.s
 
 MeuCentavoApp_autogen/mocs_compilation.o: MeuCentavoApp_autogen/mocs_compilation.cpp.o
 .PHONY : MeuCentavoApp_autogen/mocs_compilation.o
@@ -586,12 +586,12 @@ help:
 	@echo "... Designer/FormsLogin/formUsuario.o"
 	@echo "... Designer/FormsLogin/formUsuario.i"
 	@echo "... Designer/FormsLogin/formUsuario.s"
-	@echo "... Designer/Gerenciamento/SessionManager.o"
-	@echo "... Designer/Gerenciamento/SessionManager.i"
-	@echo "... Designer/Gerenciamento/SessionManager.s"
 	@echo "... Designer/formInicio.o"
 	@echo "... Designer/formInicio.i"
 	@echo "... Designer/formInicio.s"
+	@echo "... Gerenciamento/SessionManager.o"
+	@echo "... Gerenciamento/SessionManager.i"
+	@echo "... Gerenciamento/SessionManager.s"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.o"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.i"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.s"

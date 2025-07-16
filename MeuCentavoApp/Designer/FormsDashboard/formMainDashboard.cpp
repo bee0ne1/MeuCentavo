@@ -1,6 +1,6 @@
 #include "formMainDashboard.h"
 #include "ui_formMainDashboard.h"
-#include "Designer/Gerenciamento/SessionManager.h" // Inclui nosso novo "cofre"
+#include "Gerenciamento/SessionManager.h" // Inclui nosso novo "cofre"
 
 // Incluímos os cabeçalhos das páginas
 #include "DashboardPages/pageHome.h"
