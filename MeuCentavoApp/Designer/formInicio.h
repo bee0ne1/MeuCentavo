@@ -6,9 +6,7 @@
 #include <optional>
 
 // Forward declarations
-class formUsuario;
 class formLoginSenha;
-class UsuarioDAO;
 namespace Ui { class formInicio; }
 
 class formInicio : public QMainWindow
@@ -17,28 +15,25 @@ class formInicio : public QMainWindow
 
 public:
     // O construtor agora é muito mais simples, não precisa do banco de dados
-    explicit formInicio(QWidget *parent = nullptr);
+    explicit formInicio(const Usuario& usuarioInicial,QWidget *parent = nullptr);
     ~formInicio();
 
 private slots:
-    // Slots para os botões da UI
-    void abrirTelaSelecaoUsuario();
-    void tentarLogin();
+    // Slot para o clique no botão principal de login.
+    void on_buttonAppAcess_clicked();
 
-    // Slots para receber as respostas do DAO
-    void onUsuarioInicialRecebido(const std::optional<Usuario>& usuario);
-    void onUsuarioSelecionado(const Usuario& usuario);
-    void onLoginSucesso(const QString& token, const Usuario& usuario);
-    void onLoginFalhou(const QString& motivo);
+    // Slot que recebe o resultado do diálogo de senha.
+    void onLoginFinalizado(const QString& token, const Usuario& usuario);
+
+signals:
+    // Sinal para avisar o AppController que o login foi um sucesso.
+    // Ele carrega o token e os dados do usuário.
+    void loginBemSucedido(const QString& token, const Usuario& usuario);
 
 private:
     Ui::formInicio *ui;
 
-    // Ponteiros para as outras janelas
-    formUsuario *m_formUsuario;
-
-    // Variável para guardar o usuário que está atualmente em exibição no botão
-    std::optional<Usuario> m_usuarioAtual;
+    Usuario m_usuarioAtual;
 };
 
 #endif // FORMINICIO_H

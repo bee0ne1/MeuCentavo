@@ -39,40 +39,25 @@ template <> constexpr inline auto formInicio::qt_create_metaobjectdata<qt_meta_t
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "formInicio",
-        "abrirTelaSelecaoUsuario",
+        "loginBemSucedido",
         "",
-        "tentarLogin",
-        "onUsuarioInicialRecebido",
-        "std::optional<Usuario>",
-        "usuario",
-        "onUsuarioSelecionado",
-        "Usuario",
-        "onLoginSucesso",
         "token",
-        "onLoginFalhou",
-        "motivo"
+        "Usuario",
+        "usuario",
+        "on_buttonAppAcess_clicked",
+        "onLoginFinalizado"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'abrirTelaSelecaoUsuario'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'tentarLogin'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onUsuarioInicialRecebido'
-        QtMocHelpers::SlotData<void(const std::optional<Usuario> &)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 5, 6 },
+        // Signal 'loginBemSucedido'
+        QtMocHelpers::SignalData<void(const QString &, const Usuario &)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 3 }, { 0x80000000 | 4, 5 },
         }}),
-        // Slot 'onUsuarioSelecionado'
-        QtMocHelpers::SlotData<void(const Usuario &)>(7, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 8, 6 },
-        }}),
-        // Slot 'onLoginSucesso'
-        QtMocHelpers::SlotData<void(const QString &, const Usuario &)>(9, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 10 }, { 0x80000000 | 8, 6 },
-        }}),
-        // Slot 'onLoginFalhou'
-        QtMocHelpers::SlotData<void(const QString &)>(11, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 12 },
+        // Slot 'on_buttonAppAcess_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onLoginFinalizado'
+        QtMocHelpers::SlotData<void(const QString &, const Usuario &)>(7, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 3 }, { 0x80000000 | 4, 5 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -97,14 +82,15 @@ void formInicio::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     auto *_t = static_cast<formInicio *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->abrirTelaSelecaoUsuario(); break;
-        case 1: _t->tentarLogin(); break;
-        case 2: _t->onUsuarioInicialRecebido((*reinterpret_cast< std::add_pointer_t<std::optional<Usuario>>>(_a[1]))); break;
-        case 3: _t->onUsuarioSelecionado((*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[1]))); break;
-        case 4: _t->onLoginSucesso((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[2]))); break;
-        case 5: _t->onLoginFalhou((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 0: _t->loginBemSucedido((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[2]))); break;
+        case 1: _t->on_buttonAppAcess_clicked(); break;
+        case 2: _t->onLoginFinalizado((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[2]))); break;
         default: ;
         }
+    }
+    if (_c == QMetaObject::IndexOfMethod) {
+        if (QtMocHelpers::indexOfMethod<void (formInicio::*)(const QString & , const Usuario & )>(_a, &formInicio::loginBemSucedido, 0))
+            return;
     }
 }
 
@@ -127,15 +113,21 @@ int formInicio::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 3;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 3;
     }
     return _id;
+}
+
+// SIGNAL 0
+void formInicio::loginBemSucedido(const QString & _t1, const Usuario & _t2)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1, _t2);
 }
 QT_WARNING_POP

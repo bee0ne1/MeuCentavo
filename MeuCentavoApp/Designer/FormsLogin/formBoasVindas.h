@@ -2,6 +2,7 @@
 #define FORMBOASVINDAS_H
 
 #include <QWidget>
+#include "Modelo/Usuario.h"
 
 // Forward declaration para a classe que ele vai abrir
 class formCadastro;
@@ -20,7 +21,7 @@ public:
 
 private slots:
     void abrirTelaCadastro();
-    void onCadastroConcluido();
+    void onCadastroConcluido(const Usuario& novoUsuario);
 
 private:
     Ui::formBoasVindas *ui;

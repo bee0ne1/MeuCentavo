@@ -19,6 +19,9 @@ void SessionManager::encerrarSessao()
 {
     m_token.clear();
     m_usuarioAtual.reset();
+
+    // Emite o sinal para que o AppController possa reagir
+    emit precisaReiniciarParaLogin();
 }
 
 bool SessionManager::estaLogado() const

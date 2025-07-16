@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "Composicoes/PasswordFormHelper.h" // Assumindo que o helper está aqui
+#include "formUsuario.h"
 
 // Forward declaration
 namespace Ui { class formCadastro; }
@@ -17,7 +18,7 @@ public:
 
 signals:
     // Sinal para avisar que o processo foi concluído com sucesso
-    void cadastroConcluido();
+    void cadastroConcluido(const Usuario& novoUsuario);
 
 private slots:
     // Slots para a lógica da UI
@@ -25,7 +26,7 @@ private slots:
     void verificarCampos();
 
     // Slots para reagir às respostas do DAO
-    void onRegistroSucesso();
+    void onRegistroSucesso(const Usuario& novoUsuario);
     void onRegistroFalhou(const QString& motivo);
 
 private:

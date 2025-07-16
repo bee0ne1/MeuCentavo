@@ -12,3 +12,5 @@
 #include "FTZSGGJYIR/moc_formLoginSenha.cpp"
 #include "FTZSGGJYIR/moc_formUsuario.cpp"
 #include "OVWQHZ74WH/moc_formInicio.cpp"
+#include "LTMKJI32CL/moc_AppController.cpp"
+#include "LTMKJI32CL/moc_SessionManager.cpp"

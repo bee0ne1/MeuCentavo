@@ -41,14 +41,18 @@ template <> constexpr inline auto formBoasVindas::qt_create_metaobjectdata<qt_me
         "formBoasVindas",
         "abrirTelaCadastro",
         "",
-        "onCadastroConcluido"
+        "onCadastroConcluido",
+        "Usuario",
+        "novoUsuario"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Slot 'abrirTelaCadastro'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onCadastroConcluido'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void(const Usuario &)>(3, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 4, 5 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -73,11 +77,10 @@ void formBoasVindas::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->abrirTelaCadastro(); break;
-        case 1: _t->onCadastroConcluido(); break;
+        case 1: _t->onCadastroConcluido((*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *formBoasVindas::metaObject() const

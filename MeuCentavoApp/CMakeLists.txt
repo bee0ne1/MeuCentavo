@@ -45,6 +45,8 @@ set(PROJECT_SOURCES
         Designer/FormsDashboard/formAdicionarLancamento.ui
         Gerenciamento/SessionManager.cpp
         Gerenciamento/SessionManager.h
+        Gerenciamento/AppController.cpp
+        Gerenciamento/AppController.h
 )
 
 # 2. Criamos uma lista apenas com os arquivos de interface (.ui)
@@ -75,6 +77,8 @@ set(PROJECT_FORMS
         Designer/FormsDashboard/formAdicionarLancamento.ui
         Gerenciamento/SessionManager.cpp
         Gerenciamento/SessionManager.h
+        Gerenciamento/AppController.cpp
+        Gerenciamento/AppController.h
 )
 
 # 3. Criamos o executável usando uma função especial do Qt

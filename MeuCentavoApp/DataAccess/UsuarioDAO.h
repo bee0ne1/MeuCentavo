@@ -22,13 +22,13 @@ public:
     void registrarUsuario(const QString& username, const QString& password);
     void logarUsuario(const QString& username, const QString& password);
     void obterTodosUsuarios(const QString& token); // Precisa do token para autorização
-    void obterUsuarioInicial();
+    void obterUsuarioPreferencial(int id);
     void removerUsuario(int usuarioId, const QString& token);
 
 signals:
         // --- SINAIS PARA COMUNICAR O RESULTADO ---
         // A interface vai se conectar a estes sinais para saber quando uma operação terminou.
-    void registroSucesso();
+    void registroSucesso(const Usuario& novoUsuario);
     void loginSucesso(const QString& token, const Usuario& usuario);
     void todosUsuariosRecebidos(const QVector<Usuario>& usuarios);
     void erroDeAutenticacao(const QString& mensagem);
@@ -42,7 +42,7 @@ private slots:
     void onRegistroReply(QNetworkReply *reply);
     void onLoginReply(QNetworkReply *reply);
     void onObterTodosReply(QNetworkReply *reply);
-    void onUsuarioInicialReply(QNetworkReply *reply);
+    void onUsuarioPreferencialReply(QNetworkReply *reply);
     void onRemoverUsuarioReply(QNetworkReply *reply);
 
 private:

@@ -4,9 +4,11 @@
 #include "Modelo/Usuario.h"
 #include <QString>
 #include <optional>
+#include <QObject>
 
-class SessionManager
-{
+class SessionManager: public QObject
+{ Q_OBJECT
+
 public:
     // Método estático para acessar a única instância da classe
     static SessionManager& instance();
@@ -23,6 +25,10 @@ public:
     QString getToken() const;
     Usuario getUsuario() const;
     int getUsuarioId() const;
+
+signals:
+    void precisaReiniciarParaLogin();
+
 
 
 private:

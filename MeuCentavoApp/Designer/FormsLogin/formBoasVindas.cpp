@@ -37,11 +37,11 @@ void formBoasVindas::abrirTelaCadastro()
     m_formCadastro->open();
 }
 
-void formBoasVindas::onCadastroConcluido()
+void formBoasVindas::onCadastroConcluido(const Usuario& novoUsuario)
 {
     // O formCadastro nos avisou que o primeiro usuário foi criado.
     // Agora, criamos a formInicio (que também não precisa mais do banco).
-    formInicio *inicioWindow = new formInicio();
+    formInicio *inicioWindow = new formInicio(novoUsuario,nullptr);
     inicioWindow->show();
 
     // Fecha a si mesma, completando a transição para o fluxo normal do app.

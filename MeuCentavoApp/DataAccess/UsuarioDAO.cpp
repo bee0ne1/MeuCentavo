@@ -54,7 +54,20 @@ void UsuarioDAO::onRegistroReply(QNetworkReply *reply)
 
     // Se o status code for 201 (Created), o registro foi um sucesso!
     if (statusCode == 201) {
-        emit registroSucesso();
+        // 1. Lemos a resposta JSON que o seu backend enviou.
+        QJsonObject jsonObj = QJsonDocument::fromJson(responseData).object();
+
+        // 2. O seu backend retorna um objeto 'user'. Nós o extraímos.
+        QJsonObject userObj = jsonObj["user"].toObject();
+
+        // 3. CRIAMOS a variável 'novoUsuario' AQUI, dentro desta função.
+        Usuario novoUsuario;
+
+        // 4. PREENCHEMOS a variável com os dados que vieram do JSON.
+        novoUsuario.id = userObj["user_id"].toInt();
+        novoUsuario.nomeUsuario = userObj["user_usuario"].toString();
+
+        emit registroSucesso(novoUsuario);
     } else {
         // Se for outro status, consideramos um erro e pegamos a mensagem do backend
         QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
@@ -129,24 +142,32 @@ void UsuarioDAO::onObterTodosReply(QNetworkReply *reply)
     reply->deleteLater();
 }
 
-void UsuarioDAO::obterUsuarioInicial()
+void UsuarioDAO::obterUsuarioPreferencial(int id)
 {
-    // Esta requisição vai para um novo endpoint que você criará no backend.
-    // Ex: GET /api/usuarios/inicial
-    // Este endpoint pode ler o QSettings (enviado como parâmetro) ou pegar o último usuário do banco.
-    // Por simplicidade aqui, vamos assumir que ele retorna o último usuário.
-    QNetworkRequest request(QUrl(m_baseUrl + "/inicial"));
+    QUrl url;
 
-    // Conecta a resposta ao nosso novo slot
-    connect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onUsuarioInicialReply);
+    if (id == -1) {
+        // Se o ID for -1, não há preferência salva. Buscamos o último usuário cadastrado.
+        qDebug() << "DAO: Nenhum ID salvo. Buscando o último usuário na rota /inicial.";
+        url = QUrl(m_baseUrl + "/inicial");
+    } else {
+        // Se temos um ID, buscamos por ele especificamente.
+        qDebug() << "DAO: Buscando usuário com ID específico:" << id;
+        url = QUrl(m_baseUrl + "/" + QString::number(id));
+    }
 
-    // Envia a requisição GET
-    m_manager->get(request);
+    QNetworkRequest request(url);
+    // Esta requisição não precisa de token, pois é para a tela de início.
+
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onUsuarioPreferencialReply(reply);
+    });
 }
 
-void UsuarioDAO::onUsuarioInicialReply(QNetworkReply *reply)
+void UsuarioDAO::onUsuarioPreferencialReply(QNetworkReply *reply)
 {
-    disconnect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onUsuarioInicialReply);
+    disconnect(m_manager, &QNetworkAccessManager::finished, this, &UsuarioDAO::onUsuarioPreferencialReply);
 
     std::optional<Usuario> usuarioEncontrado; // Começa como vazio
 

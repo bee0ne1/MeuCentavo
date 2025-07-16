@@ -62,11 +62,11 @@ void formCadastro::gravarUsuario()
     dao->registrarUsuario(nome, senha);
 }
 
-void formCadastro::onRegistroSucesso()
+void formCadastro::onRegistroSucesso(const Usuario& novoUsuario)
 {
     // O DAO nos avisou que a API retornou sucesso!
     QMessageBox::information(this, "Sucesso", "Usuário cadastrado com sucesso!");
-    emit cadastroConcluido(); // Avisa a janela anterior sobre o sucesso
+    emit cadastroConcluido(novoUsuario); // Avisa a janela anterior sobre o sucesso
     this->close(); // Fecha a janela de cadastro
 }
 

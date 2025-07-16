@@ -29,6 +29,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.o.d"
   "CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o"
   "CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o.d"
+  "CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.o"
+  "CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.o.d"
   "CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o"
   "CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o.d"
   "CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o"

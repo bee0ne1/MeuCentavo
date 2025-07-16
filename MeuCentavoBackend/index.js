@@ -73,7 +73,13 @@ app.post(
             );
 
             // 5. Envia uma resposta de sucesso
-            res.status(201).json({ message: 'Usuário registrado com sucesso!', userId: result.insertId }); // 201 Created
+            res.status(201).json({
+                message: 'Usuário registrado com sucesso!',
+                user: {
+                    user_id: result.insertId,
+                    user_usuario: username
+                }
+            });
 
         } catch (error) {
             console.error("Erro no registro:", error);

@@ -467,6 +467,30 @@ Designer/formInicio.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.s
 .PHONY : Designer/formInicio.cpp.s
 
+Gerenciamento/AppController.o: Gerenciamento/AppController.cpp.o
+.PHONY : Gerenciamento/AppController.o
+
+# target to build an object file
+Gerenciamento/AppController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.o
+.PHONY : Gerenciamento/AppController.cpp.o
+
+Gerenciamento/AppController.i: Gerenciamento/AppController.cpp.i
+.PHONY : Gerenciamento/AppController.i
+
+# target to preprocess a source file
+Gerenciamento/AppController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.i
+.PHONY : Gerenciamento/AppController.cpp.i
+
+Gerenciamento/AppController.s: Gerenciamento/AppController.cpp.s
+.PHONY : Gerenciamento/AppController.s
+
+# target to generate assembly for a file
+Gerenciamento/AppController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.s
+.PHONY : Gerenciamento/AppController.cpp.s
+
 Gerenciamento/SessionManager.o: Gerenciamento/SessionManager.cpp.o
 .PHONY : Gerenciamento/SessionManager.o
 
@@ -589,6 +613,9 @@ help:
 	@echo "... Designer/formInicio.o"
 	@echo "... Designer/formInicio.i"
 	@echo "... Designer/formInicio.s"
+	@echo "... Gerenciamento/AppController.o"
+	@echo "... Gerenciamento/AppController.i"
+	@echo "... Gerenciamento/AppController.s"
 	@echo "... Gerenciamento/SessionManager.o"
 	@echo "... Gerenciamento/SessionManager.i"
 	@echo "... Gerenciamento/SessionManager.s"

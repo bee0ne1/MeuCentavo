@@ -42,9 +42,10 @@ template <> constexpr inline auto UsuarioDAO::qt_create_metaobjectdata<qt_meta_t
         "UsuarioDAO",
         "registroSucesso",
         "",
+        "Usuario",
+        "novoUsuario",
         "loginSucesso",
         "token",
-        "Usuario",
         "usuario",
         "todosUsuariosRecebidos",
         "QList<Usuario>",
@@ -62,58 +63,60 @@ template <> constexpr inline auto UsuarioDAO::qt_create_metaobjectdata<qt_meta_t
         "reply",
         "onLoginReply",
         "onObterTodosReply",
-        "onUsuarioInicialReply",
+        "onUsuarioPreferencialReply",
         "onRemoverUsuarioReply"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'registroSucesso'
-        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SignalData<void(const Usuario &)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 3, 4 },
+        }}),
         // Signal 'loginSucesso'
-        QtMocHelpers::SignalData<void(const QString &, const Usuario &)>(3, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 4 }, { 0x80000000 | 5, 6 },
+        QtMocHelpers::SignalData<void(const QString &, const Usuario &)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 6 }, { 0x80000000 | 3, 7 },
         }}),
         // Signal 'todosUsuariosRecebidos'
-        QtMocHelpers::SignalData<void(const QVector<Usuario> &)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 8, 9 },
+        QtMocHelpers::SignalData<void(const QVector<Usuario> &)>(8, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 9, 10 },
         }}),
         // Signal 'erroDeAutenticacao'
-        QtMocHelpers::SignalData<void(const QString &)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 11 },
+        QtMocHelpers::SignalData<void(const QString &)>(11, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 12 },
         }}),
         // Signal 'erroDeRede'
-        QtMocHelpers::SignalData<void(const QString &)>(12, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 11 },
+        QtMocHelpers::SignalData<void(const QString &)>(13, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 12 },
         }}),
         // Signal 'usuarioInicialRecebido'
-        QtMocHelpers::SignalData<void(const std::optional<Usuario> &)>(13, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 14, 6 },
+        QtMocHelpers::SignalData<void(const std::optional<Usuario> &)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 15, 7 },
         }}),
         // Signal 'registroFalhou'
-        QtMocHelpers::SignalData<void(const QString &)>(15, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 16 },
+        QtMocHelpers::SignalData<void(const QString &)>(16, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 17 },
         }}),
         // Signal 'remocaoSucesso'
-        QtMocHelpers::SignalData<void()>(17, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SignalData<void()>(18, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'onRegistroReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(18, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 19, 20 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(19, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 20, 21 },
         }}),
         // Slot 'onLoginReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(21, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 19, 20 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(22, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 20, 21 },
         }}),
         // Slot 'onObterTodosReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(22, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 19, 20 },
-        }}),
-        // Slot 'onUsuarioInicialReply'
         QtMocHelpers::SlotData<void(QNetworkReply *)>(23, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 19, 20 },
+            { 0x80000000 | 20, 21 },
+        }}),
+        // Slot 'onUsuarioPreferencialReply'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(24, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 20, 21 },
         }}),
         // Slot 'onRemoverUsuarioReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(24, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 19, 20 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(25, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 20, 21 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -138,7 +141,7 @@ void UsuarioDAO::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     auto *_t = static_cast<UsuarioDAO *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->registroSucesso(); break;
+        case 0: _t->registroSucesso((*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[1]))); break;
         case 1: _t->loginSucesso((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[2]))); break;
         case 2: _t->todosUsuariosRecebidos((*reinterpret_cast< std::add_pointer_t<QList<Usuario>>>(_a[1]))); break;
         case 3: _t->erroDeAutenticacao((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
@@ -149,13 +152,13 @@ void UsuarioDAO::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 8: _t->onRegistroReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
         case 9: _t->onLoginReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
         case 10: _t->onObterTodosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 11: _t->onUsuarioInicialReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 11: _t->onUsuarioPreferencialReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
         case 12: _t->onRemoverUsuarioReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
-        if (QtMocHelpers::indexOfMethod<void (UsuarioDAO::*)()>(_a, &UsuarioDAO::registroSucesso, 0))
+        if (QtMocHelpers::indexOfMethod<void (UsuarioDAO::*)(const Usuario & )>(_a, &UsuarioDAO::registroSucesso, 0))
             return;
         if (QtMocHelpers::indexOfMethod<void (UsuarioDAO::*)(const QString & , const Usuario & )>(_a, &UsuarioDAO::loginSucesso, 1))
             return;
@@ -206,9 +209,9 @@ int UsuarioDAO::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void UsuarioDAO::registroSucesso()
+void UsuarioDAO::registroSucesso(const Usuario & _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
 }
 
 // SIGNAL 1
