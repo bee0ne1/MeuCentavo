@@ -39,33 +39,28 @@ template <> constexpr inline auto formCadastro::qt_create_metaobjectdata<qt_meta
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "formCadastro",
-        "cadastroConcluido",
-        "",
-        "Usuario",
-        "novoUsuario",
         "gravarUsuario",
+        "",
         "verificarCampos",
         "onRegistroSucesso",
+        "Usuario",
+        "novoUsuario",
         "onRegistroFalhou",
         "motivo"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Signal 'cadastroConcluido'
-        QtMocHelpers::SignalData<void(const Usuario &)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 3, 4 },
-        }}),
         // Slot 'gravarUsuario'
-        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'verificarCampos'
-        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onRegistroSucesso'
-        QtMocHelpers::SlotData<void(const Usuario &)>(7, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 3, 4 },
+        QtMocHelpers::SlotData<void(const Usuario &)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 5, 6 },
         }}),
         // Slot 'onRegistroFalhou'
-        QtMocHelpers::SlotData<void(const QString &)>(8, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 9 },
+        QtMocHelpers::SlotData<void(const QString &)>(7, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 8 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -90,17 +85,12 @@ void formCadastro::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     auto *_t = static_cast<formCadastro *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->cadastroConcluido((*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[1]))); break;
-        case 1: _t->gravarUsuario(); break;
-        case 2: _t->verificarCampos(); break;
-        case 3: _t->onRegistroSucesso((*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[1]))); break;
-        case 4: _t->onRegistroFalhou((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 0: _t->gravarUsuario(); break;
+        case 1: _t->verificarCampos(); break;
+        case 2: _t->onRegistroSucesso((*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[1]))); break;
+        case 3: _t->onRegistroFalhou((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
-    }
-    if (_c == QMetaObject::IndexOfMethod) {
-        if (QtMocHelpers::indexOfMethod<void (formCadastro::*)(const Usuario & )>(_a, &formCadastro::cadastroConcluido, 0))
-            return;
     }
 }
 
@@ -123,21 +113,15 @@ int formCadastro::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 4;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 4;
     }
     return _id;
-}
-
-// SIGNAL 0
-void formCadastro::cadastroConcluido(const Usuario & _t1)
-{
-    QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
 }
 QT_WARNING_POP

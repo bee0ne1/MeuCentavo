@@ -92,6 +92,7 @@ void formMainDashboard::on_buttonSwitchUsuario_clicked()
     // 3. Cria a janela de seleção, passando o token válido.
     // Usamos 'nullptr' como pai para garantir que ela seja uma janela independente.
     m_formUsuario = new formUsuario(token, nullptr);
+    m_formUsuario->setWindowModality(Qt::ApplicationModal);
 
     // 4. Conecta o sinal de destruição da janela para limparmos nosso ponteiro.
     // Isso nos permite clicar no botão e abrir a janela novamente no futuro.

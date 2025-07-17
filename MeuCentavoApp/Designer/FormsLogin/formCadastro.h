@@ -16,10 +16,6 @@ public:
     explicit formCadastro(QWidget *parent = nullptr);
     ~formCadastro();
 
-signals:
-    // Sinal para avisar que o processo foi concluído com sucesso
-    void cadastroConcluido(const Usuario& novoUsuario);
-
 private slots:
     // Slots para a lógica da UI
     void gravarUsuario();

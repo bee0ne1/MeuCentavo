@@ -88,13 +88,11 @@ void formUsuario::onUsuariosRecebidos(const QVector<Usuario>& usuarios)
 
 void formUsuario::abrirTelaCadastro()
 {
-    if (!m_formCadastro) {
+    if (!m_formCadastro)
+    {
         // O formCadastro também foi refatorado e não precisa mais do 'db'
         m_formCadastro = new formCadastro(this);
-        m_formCadastro->setAttribute(Qt::WA_DeleteOnClose);
-
-        // Quando um cadastro for concluído, recarregamos a lista de usuários
-        connect(m_formCadastro, &formCadastro::cadastroConcluido, this, &formUsuario::carregarListaDeUsuarios);
+        m_formCadastro->setWindowModality(Qt::ApplicationModal);
     }
     m_formCadastro->show();
 }
