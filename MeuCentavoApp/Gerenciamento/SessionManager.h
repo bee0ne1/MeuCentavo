@@ -20,11 +20,14 @@ public:
     // Métodos para gerenciar a sessão
     void criarSessao(const QString& token, const Usuario& usuario);
     void encerrarSessao();
+    void trocarUsuario(const Usuario& novoUsuario);
+    void salvarUsuarioPreferencial(int usuarioId);
 
     bool estaLogado() const;
     QString getToken() const;
     Usuario getUsuario() const;
     int getUsuarioId() const;
+    int obterIdUsuarioPreferencial() const;
 
 signals:
     void precisaReiniciarParaLogin();

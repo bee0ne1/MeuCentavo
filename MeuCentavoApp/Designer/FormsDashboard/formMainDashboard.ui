@@ -50,6 +50,25 @@
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QPushButton" name="buttonSwitchUsuario">
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Trocar Usuário</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </item>
         </layout>

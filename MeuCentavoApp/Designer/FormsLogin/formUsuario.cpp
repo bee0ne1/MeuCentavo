@@ -3,6 +3,7 @@
 #include "formCadastro.h"
 #include "formExcluirUsuario.h"
 #include "DataAccess/UsuarioDAO.h"
+#include "Gerenciamento/SessionManager.h"
 #include <QPushButton>
 #include <QLayoutItem>
 #include <QCloseEvent>
@@ -77,8 +78,9 @@ void formUsuario::onUsuariosRecebidos(const QVector<Usuario>& usuarios)
 
         connect(botaoUsuario, &QPushButton::clicked, this, [this, usuario]() {
             qDebug() << "Usuário selecionado:" << usuario.nomeUsuario;
-            emit usuarioSelecionado(usuario); // Emite o sinal com os dados do usuário
-            this->close(); // Fecha esta janela após a seleção
+            SessionManager::instance().trocarUsuario(usuario);
+            // O AppController irá capturar o sinal do SessionManager e fechará
+            // todas as janelas (incluindo esta e a dashboard) para reiniciar o fluxo.
         });
         ui->layoutUsuarios->addWidget(botaoUsuario);
     }
@@ -100,11 +102,19 @@ void formUsuario::abrirTelaCadastro()
 void formUsuario::abrirTelaExcluir()
 {
     if (!m_formExcluirUsuario) {
-        m_formExcluirUsuario = new formExcluirUsuario(m_token, this);
-        m_formExcluirUsuario->setAttribute(Qt::WA_DeleteOnClose);
+        m_formExcluirUsuario = new formExcluirUsuario(m_token, nullptr);
+
+        // Define que esta janela bloqueará todas as outras da aplicação.
+        m_formExcluirUsuario->setWindowModality(Qt::ApplicationModal);
 
         connect(m_formExcluirUsuario, &formExcluirUsuario::listaDeUsuariosModificada, this, &formUsuario::carregarListaDeUsuarios);
+        // Também é uma boa prática limpar o ponteiro quando a janela for fechada
+        connect(m_formExcluirUsuario, &QObject::destroyed, this, [this](){
+            m_formExcluirUsuario = nullptr;
+            this->show();
+        });
     }
+    this->hide();
     m_formExcluirUsuario->show();
 }
 

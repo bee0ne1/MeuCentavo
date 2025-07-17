@@ -389,6 +389,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.o: \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formExcluirUsuario.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h \
  /usr/include/qt6/QtWidgets/QPushButton \
  /usr/include/qt6/QtWidgets/QLayoutItem \
  /usr/include/qt6/QtGui/QCloseEvent /usr/include/qt6/QtGui/qevent.h \

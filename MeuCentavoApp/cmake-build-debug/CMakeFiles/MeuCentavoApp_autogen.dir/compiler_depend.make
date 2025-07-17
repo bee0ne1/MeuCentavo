@@ -910,22 +910,79 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h \
+  /usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in \
+  /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp \
   /usr/share/cmake/Modules/CMakeCXXInformation.cmake \
   /usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
   /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake \
+  /usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineCompiler.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake \
+  /usr/share/cmake/Modules/CMakeFindBinUtils.cmake \
   /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake \
   /usr/share/cmake/Modules/CMakeGenericSystem.cmake \
   /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake \
   /usr/share/cmake/Modules/CMakeLanguageInformation.cmake \
+  /usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake \
+  /usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake \
+  /usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake \
+  /usr/share/cmake/Modules/CMakeSystem.cmake.in \
   /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake \
   /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake \
+  /usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake \
+  /usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake \
+  /usr/share/cmake/Modules/CMakeUnixFindMake.cmake \
   /usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake \
   /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake \
   /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake \
   /usr/share/cmake/Modules/CheckLibraryExists.cmake \
+  /usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+  /usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
+  /usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake \
+  /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake \
   /usr/share/cmake/Modules/Compiler/GNU.cmake \
+  /usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
+  /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/FeatureSummary.cmake \
   /usr/share/cmake/Modules/FindOpenGL.cmake \
   /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake \
@@ -936,15 +993,19 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/share/cmake/Modules/GNUInstallDirs.cmake \
   /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake \
   /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake \
+  /usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake \
+  /usr/share/cmake/Modules/Internal/CMakeInspectCXXLinker.cmake \
   /usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake \
   /usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake \
   /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake \
+  /usr/share/cmake/Modules/Internal/FeatureTesting.cmake \
   /usr/share/cmake/Modules/Linker/GNU-CXX.cmake \
   /usr/share/cmake/Modules/Linker/GNU.cmake \
   /usr/share/cmake/Modules/MacroAddFileDependencies.cmake \
   /usr/share/cmake/Modules/Platform/Linker/GNU.cmake \
   /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake \
+  /usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linux-GNU.cmake \
   /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake \
@@ -958,11 +1019,15 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/share/cmake/Modules/Platform/Linux-GNU.cmake:
 
+/usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake:
+
 /usr/share/cmake/Modules/Linker/GNU.cmake:
 
 /usr/share/cmake/Modules/Linker/GNU-CXX.cmake:
 
 /usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake:
+
+/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:
 
 /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake:
 
@@ -974,25 +1039,91 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/share/cmake/Modules/FeatureSummary.cmake:
 
+/usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake:
+
 /usr/share/cmake/Modules/Compiler/GNU.cmake:
 
 /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake:
 
+/usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake:
+
+/usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake:
+
 /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake:
+
+/usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake:
 
 /usr/share/cmake/Modules/CheckLibraryExists.cmake:
 
 /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:
 
+/usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake:
+
+/usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:
+
+/usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake:
+
 /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake:
 
+/usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/CMakeSystem.cmake.in:
+
+/usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake:
+
+/usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake:
+
+/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:
+
+/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:
+
 /usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
+
+/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp:
+
+/usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h:
 
 /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake:
+
+/usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake:
 
@@ -1014,6 +1145,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake:
 
+/usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake:
+
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:
 
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:
@@ -1031,6 +1164,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 /usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake:
+
+/usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake:
 
@@ -1057,6 +1192,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 /usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:
 
 /usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake:
+
+/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake:
 
@@ -1160,6 +1297,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginTargets-relwithdebinfo.cmake:
 
+/usr/share/cmake/Modules/Internal/CMakeInspectCXXLinker.cmake:
+
 /usr/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginTargets-relwithdebinfo.cmake:
@@ -1196,6 +1335,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginAdditionalTargetInfo.cmake:
 
+/usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake:
+
 /usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets-relwithdebinfo.cmake:
@@ -1224,6 +1365,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginConfig.cmake:
 
+/usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake:
@@ -1242,6 +1385,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cmake:
 
+/usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake:
@@ -1251,6 +1396,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 /usr/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QPdfPluginConfig.cmake:
+
+/usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake:
 
@@ -1270,11 +1417,15 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargets.cmake:
 
+/usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginConfig.cmake:
+
+/usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginAdditionalTargetInfo.cmake:
 
@@ -1333,6 +1484,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 /usr/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake:
+
+/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake:
 
@@ -1456,6 +1609,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfigVersionImpl.cmake:
 
+/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfigVersion.cmake:
@@ -1521,6 +1676,8 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 /usr/share/cmake/Modules/FindVulkan.cmake:
 
 /usr/include/c++/15.1.1/cstring:
+
+/usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake:
 
 /usr/include/c++/15.1.1/cstdint:
 
@@ -1682,6 +1839,10 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/bits/local_lim.h:
 
+/usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in:
+
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/c++/15.1.1/bits/stl_relops.h:
@@ -1739,6 +1900,8 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /usr/include/c++/15.1.1/bits/stream_iterator.h:
 
 /usr/include/qt6/QtCore/q20functional.h:
+
+/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:
 
 /usr/include/c++/15.1.1/bits/postypes.h:
 
@@ -1868,6 +2031,8 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h:
 
+/usr/share/cmake/Modules/Internal/FeatureTesting.cmake:
+
 /usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets-relwithdebinfo.cmake:
@@ -1911,6 +2076,8 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formAdicionarLancamento.ui:
 
 /usr/include/qt6/QtCore/qtformat_impl.h:
+
+/usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake:
 
 /usr/include/c++/15.1.1/ext/atomicity.h:
 
@@ -2254,6 +2421,8 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/bits/types/wint_t.h:
 
+/usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake:
+
 /usr/include/bits/uio_lim.h:
 
 /usr/include/bits/xopen_lim.h:
@@ -2345,6 +2514,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/qt6/QtCore/qmargins.h:
+
+/usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake:
 
 /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++allocator.h:
 
@@ -2468,6 +2639,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/include/qt6/QtCore/qcompare_impl.h:
 
+/usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake:
+
 /usr/include/qt6/QtCore/qcomparehelpers.h:
 
 /usr/include/qt6/QtCore/qcontainerfwd.h:
@@ -2551,6 +2724,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/qt6/QtWidgets/qsizepolicy.h:
 
 /usr/include/qt6/QtCore/qmetacontainer.h:
+
+/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:
 
 /usr/include/qt6/QtCore/qnamespace.h:
 
@@ -2656,6 +2831,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/include/qt6/QtCore/qtdeprecationmarkers.h:
 
+/usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake:
+
 /usr/include/qt6/QtCore/qtextstream.h:
 
 /usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:
@@ -2675,6 +2852,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/qt6/QtCore/qttranslation.h:
 
 /usr/include/qt6/QtCore/qversiontagging.h:
+
+/usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake:
 
 /usr/include/qt6/QtCore/qtconfiginclude.h:
 
@@ -2711,6 +2890,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateVersionlessAliasTargets.cmake:
 
 /usr/include/qt6/QtGui/qcursor.h:
+
+/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:
 
 /usr/lib/cmake/Qt6Charts/Qt6ChartsConfig.cmake:
 
@@ -2809,6 +2990,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake:
 
 /usr/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake:
+
+/usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6/QtPublicGitHelpers.cmake:
 

@@ -389,6 +389,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formCadastro.cpp.o: \
  /usr/include/qt6/QtWidgets/qboxlayout.h \
  /usr/include/qt6/QtWidgets/QWidget \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h \
  /usr/include/qt6/QtWidgets/QMessageBox \
  /usr/include/qt6/QtWidgets/qmessagebox.h \
  /usr/include/qt6/QtWidgets/qdialog.h \

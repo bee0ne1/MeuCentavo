@@ -11,6 +11,7 @@ AppController::AppController(QObject *parent) : QObject(parent)
 {
     m_formInicio = nullptr;
     m_dashboard = nullptr;
+    m_idUsuarioRequisitado = -1;
 
     // Criamos o DAO uma única vez e o mantemos vivo
     m_usuarioDAO = new UsuarioDAO(this);
@@ -34,14 +35,30 @@ AppController::~AppController()
 void AppController::iniciarAplicacao()
 {
     qDebug() << "Controlador: Iniciando aplicação, buscando usuário preferencial...";
-    // Pede ao DAO para buscar os dados. A resposta será tratada no slot.
-    int idSalvo = SessionManager::instance().getUsuarioId();
+    // Linha modificada: Em vez de pegar o ID da sessão ATUAL,
+    // pega o ID que foi SALVO como preferencial.
+    int idSalvo = SessionManager::instance().obterIdUsuarioPreferencial();
+
     m_usuarioDAO->obterUsuarioPreferencial(idSalvo);
 }
 
 void AppController::onUsuarioInicialRecebido(const std::optional<Usuario>& usuario)
 {
     qDebug() << "Controlador: Resposta da API recebida.";
+
+    // --- LÓGICA DE AUTOCORREÇÃO ---
+    // SE: não recebemos um usuário (optional vazio) E estávamos esperando um usuário específico (ID era diferente de -1)
+    if (!usuario.has_value() && m_idUsuarioRequisitado != -1) {
+        qDebug() << "Controlador: O usuário preferencial com ID" << m_idUsuarioRequisitado << "é inválido. Limpando preferência e reiniciando.";
+
+        // Limpa a configuração inválida para não tentar de novo no futuro.
+        SessionManager::instance().salvarUsuarioPreferencial(-1);
+
+        // Reinicia o fluxo da aplicação. Ele agora vai pedir o usuário "-1" (o mais recente).
+        iniciarAplicacao();
+        return; // Para a execução deste slot para esperar a nova resposta.
+    }
+
     fecharJanelasAtuais();
 
     if (usuario) {

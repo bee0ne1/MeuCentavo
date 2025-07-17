@@ -41,6 +41,7 @@ private:
     formInicio* m_formInicio;
     formMainDashboard* m_dashboard;
     UsuarioDAO* m_usuarioDAO;
+    int m_idUsuarioRequisitado;
 };
 
 #endif // APPCONTROLLER_H

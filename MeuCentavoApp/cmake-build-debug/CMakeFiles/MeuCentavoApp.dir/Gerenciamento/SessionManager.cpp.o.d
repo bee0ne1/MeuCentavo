@@ -301,4 +301,27 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: \
  /usr/include/qt6/QtCore/qobject_impl.h \
  /usr/include/qt6/QtCore/qbindingstorage.h /usr/include/c++/15.1.1/chrono \
  /usr/include/c++/15.1.1/bits/chrono.h /usr/include/c++/15.1.1/ratio \
- /usr/include/c++/15.1.1/ctime
+ /usr/include/c++/15.1.1/ctime /usr/include/qt6/QtCore/QSettings \
+ /usr/include/qt6/QtCore/qsettings.h /usr/include/qt6/QtCore/qobject.h \
+ /usr/include/qt6/QtCore/qvariant.h /usr/include/qt6/QtCore/qdebug.h \
+ /usr/include/qt6/QtCore/qtextstream.h \
+ /usr/include/qt6/QtCore/qcontiguouscache.h \
+ /usr/include/c++/15.1.1/climits \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/include/qt6/QtCore/qsharedpointer.h \
+ /usr/include/qt6/QtCore/qshareddata.h \
+ /usr/include/qt6/QtCore/qsharedpointer_impl.h \
+ /usr/include/c++/15.1.1/set /usr/include/c++/15.1.1/bits/stl_set.h \
+ /usr/include/c++/15.1.1/bits/stl_multiset.h \
+ /usr/include/c++/15.1.1/unordered_set \
+ /usr/include/c++/15.1.1/bits/unordered_set.h \
+ /usr/include/qt6/QtCore/qmap.h \
+ /usr/include/qt6/QtCore/qshareddata_impl.h \
+ /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/qhash.h \
+ /usr/include/qt6/QtCore/qvarlengtharray.h \
+ /usr/include/qt6/QtCore/q23utility.h \
+ /usr/include/qt6/QtCore/q20utility.h

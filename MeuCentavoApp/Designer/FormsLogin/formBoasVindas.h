@@ -21,7 +21,6 @@ public:
 
 private slots:
     void abrirTelaCadastro();
-    void onCadastroConcluido(const Usuario& novoUsuario);
 
 private:
     Ui::formBoasVindas *ui;

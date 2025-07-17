@@ -910,22 +910,79 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h \
+  /usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in \
+  /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp \
   /usr/share/cmake/Modules/CMakeCXXInformation.cmake \
   /usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
   /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake \
+  /usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineCompiler.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake \
+  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake \
+  /usr/share/cmake/Modules/CMakeFindBinUtils.cmake \
   /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake \
   /usr/share/cmake/Modules/CMakeGenericSystem.cmake \
   /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake \
   /usr/share/cmake/Modules/CMakeLanguageInformation.cmake \
+  /usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake \
+  /usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake \
+  /usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake \
+  /usr/share/cmake/Modules/CMakeSystem.cmake.in \
   /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake \
   /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake \
+  /usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake \
+  /usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake \
+  /usr/share/cmake/Modules/CMakeUnixFindMake.cmake \
   /usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake \
   /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake \
   /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake \
   /usr/share/cmake/Modules/CheckLibraryExists.cmake \
+  /usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+  /usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
+  /usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake \
+  /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake \
   /usr/share/cmake/Modules/Compiler/GNU.cmake \
+  /usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
+  /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
+  /usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/FeatureSummary.cmake \
   /usr/share/cmake/Modules/FindOpenGL.cmake \
   /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake \
@@ -936,15 +993,19 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/share/cmake/Modules/GNUInstallDirs.cmake \
   /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake \
   /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake \
+  /usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake \
+  /usr/share/cmake/Modules/Internal/CMakeInspectCXXLinker.cmake \
   /usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake \
   /usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake \
   /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake \
+  /usr/share/cmake/Modules/Internal/FeatureTesting.cmake \
   /usr/share/cmake/Modules/Linker/GNU-CXX.cmake \
   /usr/share/cmake/Modules/Linker/GNU.cmake \
   /usr/share/cmake/Modules/MacroAddFileDependencies.cmake \
   /usr/share/cmake/Modules/Platform/Linker/GNU.cmake \
   /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake \
+  /usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linux-GNU.cmake \
   /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake \
@@ -4008,6 +4069,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o: /h
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
@@ -4468,6 +4530,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o: /h
   /usr/include/qt6/QtWidgets/QHBoxLayout \
   /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QMenuBar \
+  /usr/include/qt6/QtWidgets/QMessageBox \
   /usr/include/qt6/QtWidgets/QPushButton \
   /usr/include/qt6/QtWidgets/QStackedWidget \
   /usr/include/qt6/QtWidgets/QStatusBar \
@@ -4476,6 +4539,8 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o: /h
   /usr/include/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/qt6/QtWidgets/qapplication.h \
   /usr/include/qt6/QtWidgets/qboxlayout.h \
+  /usr/include/qt6/QtWidgets/qdialog.h \
+  /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
   /usr/include/qt6/QtWidgets/qframe.h \
   /usr/include/qt6/QtWidgets/qgridlayout.h \
   /usr/include/qt6/QtWidgets/qlayout.h \
@@ -4483,6 +4548,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o: /h
   /usr/include/qt6/QtWidgets/qmainwindow.h \
   /usr/include/qt6/QtWidgets/qmenu.h \
   /usr/include/qt6/QtWidgets/qmenubar.h \
+  /usr/include/qt6/QtWidgets/qmessagebox.h \
   /usr/include/qt6/QtWidgets/qpushbutton.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/qt6/QtWidgets/qstackedwidget.h \
@@ -5016,6 +5082,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formCadastro.cpp.o: /home/bruno
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formCadastro.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_formCadastro.h \
   /usr/include/alloca.h \
@@ -6556,6 +6623,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.o: /home/bruno/
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formCadastro.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formExcluirUsuario.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_formUsuario.h \
   /usr/include/alloca.h \
@@ -8112,6 +8180,7 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
@@ -8119,6 +8188,8 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/bits/mathcalls-macros.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
@@ -8164,10 +8235,12 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/15.1.1/algorithm \
   /usr/include/c++/15.1.1/array \
   /usr/include/c++/15.1.1/atomic \
@@ -8239,10 +8312,12 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/c++/15.1.1/bits/stl_list.h \
   /usr/include/c++/15.1.1/bits/stl_map.h \
   /usr/include/c++/15.1.1/bits/stl_multimap.h \
+  /usr/include/c++/15.1.1/bits/stl_multiset.h \
   /usr/include/c++/15.1.1/bits/stl_numeric.h \
   /usr/include/c++/15.1.1/bits/stl_pair.h \
   /usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/15.1.1/bits/stl_relops.h \
+  /usr/include/c++/15.1.1/bits/stl_set.h \
   /usr/include/c++/15.1.1/bits/stl_tempbuf.h \
   /usr/include/c++/15.1.1/bits/stl_tree.h \
   /usr/include/c++/15.1.1/bits/stl_uninitialized.h \
@@ -8255,6 +8330,7 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/c++/15.1.1/bits/uniform_int_dist.h \
   /usr/include/c++/15.1.1/bits/unique_ptr.h \
   /usr/include/c++/15.1.1/bits/unordered_map.h \
+  /usr/include/c++/15.1.1/bits/unordered_set.h \
   /usr/include/c++/15.1.1/bits/uses_allocator.h \
   /usr/include/c++/15.1.1/bits/uses_allocator_args.h \
   /usr/include/c++/15.1.1/bits/utility.h \
@@ -8263,6 +8339,7 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/c++/15.1.1/cctype \
   /usr/include/c++/15.1.1/cerrno \
   /usr/include/c++/15.1.1/chrono \
+  /usr/include/c++/15.1.1/climits \
   /usr/include/c++/15.1.1/clocale \
   /usr/include/c++/15.1.1/cmath \
   /usr/include/c++/15.1.1/compare \
@@ -8301,6 +8378,7 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/c++/15.1.1/pstl/glue_numeric_defs.h \
   /usr/include/c++/15.1.1/pstl/pstl_config.h \
   /usr/include/c++/15.1.1/ratio \
+  /usr/include/c++/15.1.1/set \
   /usr/include/c++/15.1.1/stdexcept \
   /usr/include/c++/15.1.1/stdlib.h \
   /usr/include/c++/15.1.1/streambuf \
@@ -8323,6 +8401,7 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/c++/15.1.1/type_traits \
   /usr/include/c++/15.1.1/typeinfo \
   /usr/include/c++/15.1.1/unordered_map \
+  /usr/include/c++/15.1.1/unordered_set \
   /usr/include/c++/15.1.1/utility \
   /usr/include/c++/15.1.1/variant \
   /usr/include/c++/15.1.1/vector \
@@ -8343,7 +8422,9 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
+  /usr/include/limits.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/linux/posix_types.h \
   /usr/include/linux/sched/types.h \
   /usr/include/linux/stddef.h \
@@ -8352,11 +8433,14 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QSettings \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/q17memory.h \
   /usr/include/qt6/QtCore/q20functional.h \
   /usr/include/qt6/QtCore/q20memory.h \
   /usr/include/qt6/QtCore/q20type_traits.h \
+  /usr/include/qt6/QtCore/q20utility.h \
+  /usr/include/qt6/QtCore/q23utility.h \
   /usr/include/qt6/QtCore/qalgorithms.h \
   /usr/include/qt6/QtCore/qanystringview.h \
   /usr/include/qt6/QtCore/qarraydata.h \
@@ -8381,8 +8465,10 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/qt6/QtCore/qcontainerfwd.h \
   /usr/include/qt6/QtCore/qcontainerinfo.h \
   /usr/include/qt6/QtCore/qcontainertools_impl.h \
+  /usr/include/qt6/QtCore/qcontiguouscache.h \
   /usr/include/qt6/QtCore/qdarwinhelpers.h \
   /usr/include/qt6/QtCore/qdatastream.h \
+  /usr/include/qt6/QtCore/qdebug.h \
   /usr/include/qt6/QtCore/qexceptionhandling.h \
   /usr/include/qt6/QtCore/qflags.h \
   /usr/include/qt6/QtCore/qfloat16.h \
@@ -8392,6 +8478,7 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/qt6/QtCore/qgenericatomic.h \
   /usr/include/qt6/QtCore/qglobal.h \
   /usr/include/qt6/QtCore/qglobalstatic.h \
+  /usr/include/qt6/QtCore/qhash.h \
   /usr/include/qt6/QtCore/qhashfunctions.h \
   /usr/include/qt6/QtCore/qiodevicebase.h \
   /usr/include/qt6/QtCore/qiterable.h \
@@ -8400,6 +8487,7 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/qt6/QtCore/qlist.h \
   /usr/include/qt6/QtCore/qlogging.h \
   /usr/include/qt6/QtCore/qmalloc.h \
+  /usr/include/qt6/QtCore/qmap.h \
   /usr/include/qt6/QtCore/qmath.h \
   /usr/include/qt6/QtCore/qmetacontainer.h \
   /usr/include/qt6/QtCore/qmetatype.h \
@@ -8416,6 +8504,12 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/qt6/QtCore/qrefcount.h \
   /usr/include/qt6/QtCore/qscopedpointer.h \
   /usr/include/qt6/QtCore/qscopeguard.h \
+  /usr/include/qt6/QtCore/qset.h \
+  /usr/include/qt6/QtCore/qsettings.h \
+  /usr/include/qt6/QtCore/qshareddata.h \
+  /usr/include/qt6/QtCore/qshareddata_impl.h \
+  /usr/include/qt6/QtCore/qsharedpointer.h \
+  /usr/include/qt6/QtCore/qsharedpointer_impl.h \
   /usr/include/qt6/QtCore/qstdlibdetection.h \
   /usr/include/qt6/QtCore/qstring.h \
   /usr/include/qt6/QtCore/qstringalgorithms.h \
@@ -8441,6 +8535,7 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/qt6/QtCore/qtdeprecationdefinitions.h \
   /usr/include/qt6/QtCore/qtdeprecationmarkers.h \
   /usr/include/qt6/QtCore/qtenvironmentvariables.h \
+  /usr/include/qt6/QtCore/qtextstream.h \
   /usr/include/qt6/QtCore/qtformat_impl.h \
   /usr/include/qt6/QtCore/qtmetamacros.h \
   /usr/include/qt6/QtCore/qtnoop.h \
@@ -8453,6 +8548,8 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/qt6/QtCore/qtypeinfo.h \
   /usr/include/qt6/QtCore/qtypes.h \
   /usr/include/qt6/QtCore/qutf8stringview.h \
+  /usr/include/qt6/QtCore/qvariant.h \
+  /usr/include/qt6/QtCore/qvarlengtharray.h \
   /usr/include/qt6/QtCore/qversiontagging.h \
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \
@@ -8469,10 +8566,12 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o: /home/bruno/Doc
   /usr/include/sys/types.h \
   /usr/include/time.h \
   /usr/include/wchar.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h
 
 CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: MeuCentavoApp_autogen/mocs_compilation.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.h \
@@ -9606,8 +9705,6 @@ CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o:
 
 /usr/lib/libkeyutils.so.1:
 
-/usr/lib/libicuuc.so.76:
-
 /usr/lib/libicui18n.so.76:
 
 /usr/lib/libgssapi_krb5.so.2:
@@ -9708,8 +9805,6 @@ MeuCentavoApp_autogen/include/ui_formBoasVindas.h:
 
 /usr/include/qt6/QtWidgets/qmenubar.h:
 
-/usr/include/qt6/QtWidgets/qmenu.h:
-
 /usr/include/qt6/QtWidgets/QStatusBar:
 
 /usr/include/qt6/QtWidgets/QMenuBar:
@@ -9742,7 +9837,91 @@ MeuCentavoApp_autogen/include/ui_pageLancamentos.h:
 
 /usr/include/qt6/QtWidgets/qlayoutitem.h:
 
-/usr/include/qt6/QtWidgets/qlayout.h:
+/usr/include/qt6/QtWidgets/qlabel.h:
+
+/usr/include/qt6/QtWidgets/qgroupbox.h:
+
+/usr/include/qt6/QtWidgets/qgridlayout.h:
+
+/usr/include/qt6/QtCore/qtmochelpers.h:
+
+/usr/include/qt6/QtWidgets/qgraphicswidget.h:
+
+/usr/include/qt6/QtWidgets/qgraphicsview.h:
+
+/usr/include/qt6/QtWidgets/qgraphicsscene.h:
+
+/usr/include/qt6/QtWidgets/qgraphicslayoutitem.h:
+
+/usr/include/qt6/QtWidgets/qdialogbuttonbox.h:
+
+/usr/include/qt6/QtWidgets/qboxlayout.h:
+
+/usr/include/qt6/QtWidgets/qabstractitemview.h:
+
+/usr/lib/libduktape.so.207:
+
+/usr/include/qt6/QtWidgets/qabstractitemdelegate.h:
+
+/usr/include/qt6/QtWidgets/QMessageBox:
+
+/usr/include/qt6/QtWidgets/QHeaderView:
+
+/usr/include/qt6/QtWidgets/QHBoxLayout:
+
+/usr/include/qt6/QtWidgets/QGroupBox:
+
+/usr/include/qt6/QtWidgets/QGraphicsWidget:
+
+/usr/include/qt6/QtGui/qvectornd.h:
+
+/usr/include/qt6/QtGui/qvector2d.h:
+
+/usr/include/qt6/QtGui/qvalidator.h:
+
+/usr/include/qt6/QtGui/qscreen.h:
+
+/usr/lib/libc.so:
+
+/usr/include/qt6/QtGui/qpointingdevice.h:
+
+/usr/include/qt6/QtGui/qpicture.h:
+
+/usr/include/qt6/QtGui/qpainter.h:
+
+/usr/include/qt6/QtGui/qinputmethod.h:
+
+/usr/include/qt6/QtGui/qinputdevice.h:
+
+/usr/include/qt6/QtGui/qguiapplication.h:
+
+/usr/include/qt6/QtGui/qeventpoint.h:
+
+/usr/include/qt6/QtWidgets/qspinbox.h:
+
+MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
+
+/usr/include/qt6/QtGui/qevent.h:
+
+/usr/include/qt6/QtGui/QPen:
+
+/usr/include/qt6/QtGui/QFont:
+
+/usr/include/qt6/QtGui/QBrush:
+
+/usr/include/qt6/QtCore/qitemselectionmodel.h:
+
+/usr/include/qt6/QtCore/qelapsedtimer.h:
+
+/usr/include/qt6/QtCore/qdeadlinetimer.h:
+
+/usr/include/qt6/QtCore/qcoreapplication.h:
+
+/usr/include/qt6/QtCore/qbasictimer.h:
+
+/usr/include/qt6/QtCore/qabstracteventdispatcher.h:
+
+/usr/include/qt6/QtCore/QRect:
 
 /usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake:
 
@@ -9786,8 +9965,6 @@ MeuCentavoApp_autogen/include/ui_pageLancamentos.h:
 
 /usr/include/qt6/QtCore/qlocale.h:
 
-/usr/include/sys/types.h:
-
 /usr/include/sys/cdefs.h:
 
 /usr/include/string.h:
@@ -9808,12 +9985,6 @@ MeuCentavoApp_autogen/include/ui_pageLancamentos.h:
 
 /usr/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake:
 
-/usr/include/qt6/QtWidgets/qspinbox.h:
-
-MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
-
-/usr/include/qt6/QtGui/qevent.h:
-
 /usr/include/c++/15.1.1/bits/stl_multiset.h:
 
 /usr/include/qt6/QtGui/qtguiglobal.h:
@@ -9824,21 +9995,19 @@ MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
 
 /usr/include/qt6/QtWidgets/qlineedit.h:
 
+/usr/include/qt6/QtWidgets/QDoubleSpinBox:
+
+/usr/include/qt6/QtWidgets/QApplication:
+
+/usr/include/qt6/QtGui/qtguiexports.h:
+
 /usr/include/qt6/QtGui/qtgui-config.h:
 
 /usr/include/c++/15.1.1/numeric:
 
 /usr/include/qt6/QtGui/qrgb.h:
 
-/usr/include/qt6/QtWidgets/QMainWindow:
-
-/usr/bin/cmake:
-
 /usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateVersionlessAliasTargets.cmake:
-
-/usr/include/qt6/QtGui/qpicture.h:
-
-/usr/include/qt6/QtGui/qpolygon.h:
 
 /usr/include/qt6/QtCore/qfunctionaltools_impl.h:
 
@@ -9849,6 +10018,8 @@ MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
 /usr/include/qt6/QtGui/qpaintdevice.h:
 
 /usr/lib/cmake/Qt6/QtFeature.cmake:
+
+/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:
 
 /usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateVersionlessAliasTargets.cmake:
 
@@ -9876,6 +10047,10 @@ MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
 
 /usr/include/qt6/QtCore/qtypes.h:
 
+/usr/include/sys/types.h:
+
+/usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake:
+
 /usr/include/qt6/QtCore/qversiontagging.h:
 
 /usr/include/qt6/QtCore/qttranslation.h:
@@ -9894,15 +10069,15 @@ MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
 
 /usr/include/locale.h:
 
-/usr/include/qt6/QtCore/qtmochelpers.h:
-
-/usr/include/qt6/QtWidgets/qgraphicswidget.h:
-
 /usr/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake:
 
 /usr/include/qt6/QtCore/qtdeprecationdefinitions.h:
 
 /usr/include/asm/posix_types.h:
+
+/usr/include/qt6/QtWidgets/qabstractspinbox.h:
+
+/usr/include/qt6/QtCore/qtcoreglobal.h:
 
 /usr/include/qt6/QtCore/qtcore-config.h:
 
@@ -9931,8 +10106,6 @@ MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
 /usr/include/qt6/QtCore/qstring.h:
 
 /usr/include/qt6/QtCore/qspan.h:
-
-/usr/include/qt6/QtCore/qtnoop.h:
 
 /usr/include/qt6/QtCore/qshareddata.h:
 
@@ -9966,8 +10139,6 @@ MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginConfig.cmake:
 
-/usr/include/qt6/QtGui/qpainterpath.h:
-
 /usr/include/qt6/QtCore/qpoint.h:
 
 /usr/include/qt6/QtCore/qobjectdefs.h:
@@ -9981,6 +10152,8 @@ MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
 /usr/include/qt6/QtCore/qcoreevent.h:
 
 /usr/include/qt6/QtCore/qnamespace.h:
+
+/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:
 
 /usr/include/sched.h:
 
@@ -10003,6 +10176,8 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o:
 /usr/include/qt6/QtGui/qcolor.h:
 
 /usr/include/qt6/QtCore/qlogging.h:
+
+/usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets.cmake:
 
@@ -10086,8 +10261,6 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o:
 
 /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake:
 
-/usr/include/qt6/QtWidgets/QHeaderView:
-
 /usr/include/features.h:
 
 /usr/include/qt6/QtCore/qobjectdefs_impl.h:
@@ -10104,8 +10277,6 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o:
 
 /usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qnumeric.h:
-
 /usr/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets.cmake:
@@ -10118,15 +10289,9 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o:
 
 /usr/include/qt6/QtCore/qtversionchecks.h:
 
-/usr/include/features-time64.h:
-
 /usr/include/c++/15.1.1/bits/stl_numeric.h:
 
 /usr/include/qt6/QtNetwork/QSslConfiguration:
-
-/usr/include/qt6/QtWidgets/qgraphicslayoutitem.h:
-
-/usr/include/errno.h:
 
 /usr/share/cmake/Modules/CMakeGenericSystem.cmake:
 
@@ -10139,10 +10304,6 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o:
 /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/error_constants.h:
 
 /usr/include/c++/15.1.1/bits/stl_uninitialized.h:
-
-/usr/lib/crti.o:
-
-/usr/include/c++/15.1.1/bits/shared_ptr.h:
 
 /usr/include/qt6/QtWidgets/QComboBox:
 
@@ -10167,8 +10328,6 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o:
 /usr/include/c++/15.1.1/unordered_map:
 
 /usr/include/qt6/QtCore/qcontainerinfo.h:
-
-/usr/include/c++/15.1.1/tr1/special_function_util.h:
 
 /usr/include/c++/15.1.1/tr1/riemann_zeta.tcc:
 
@@ -10224,8 +10383,6 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.h:
 
-/usr/include/qt6/QtGui/qvectornd.h:
-
 /usr/include/bits/struct_rwlock.h:
 
 /usr/include/qt6/QtCore/qshareddata_impl.h:
@@ -10241,6 +10398,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/c++/15.1.1/ext/string_conversions.h:
 
 /usr/include/bits/xopen_lim.h:
+
+/usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake:
 
 /usr/include/bits/types/wint_t.h:
 
@@ -10266,6 +10425,10 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/include/bits/types/struct_itimerspec.h:
 
+/usr/include/qt6/QtGui/QTransform:
+
+/usr/include/qt6/QtCore/qjsonvalue.h:
+
 /usr/include/c++/15.1.1/bits/stl_algobase.h:
 
 /usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateDependencies.cmake:
@@ -10285,8 +10448,6 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o:
 /usr/include/bits/types/clock_t.h:
 
 /usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtGui/qvector2d.h:
 
 /usr/include/bits/time64.h:
 
@@ -10313,6 +10474,12 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o:
 /usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake:
 
 /usr/include/linux/posix_types.h:
+
+/usr/include/qt6/QtWidgets/qapplication.h:
+
+/usr/include/qt6/QtGui/qicon.h:
+
+/usr/include/bits/types/FILE.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginConfig.cmake:
 
@@ -10363,8 +10530,6 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o:
 /usr/include/linux/errno.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake:
 
 /usr/include/bits/floatn.h:
 
@@ -10450,6 +10615,10 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formExcluirUsuario.cpp.o:
 
 /usr/include/qt6/QtCharts/qchartglobal.h:
 
+/usr/include/qt6/QtGui/qguiapplication_platform.h:
+
+/usr/include/bits/wchar.h:
+
 /usr/include/qt6/QtCharts/QAbstractSeries:
 
 /usr/lib/cmake/Qt6DBus/Qt6DBusTargets.cmake:
@@ -10488,6 +10657,10 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formExcluirUsuario.cpp.o:
 
 /usr/include/bits/types/__FILE.h:
 
+/usr/include/qt6/QtWidgets/QVBoxLayout:
+
+/usr/include/bits/types/struct_sched_param.h:
+
 /usr/include/c++/15.1.1/bits/string_view.tcc:
 
 /usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfig.cmake:
@@ -10514,7 +10687,11 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formExcluirUsuario.cpp.o:
 
 /usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfig.cmake:
 
-/usr/include/qt6/QtWidgets/qgraphicsview.h:
+/usr/include/qt6/QtWidgets/qabstractslider.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/c++/15.1.1/cassert:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginAdditionalTargetInfo.cmake:
 
@@ -10523,10 +10700,6 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formExcluirUsuario.cpp.o:
 /usr/lib/cmake/Qt6/QtPublicTargetHelpers.cmake:
 
 /usr/include/c++/15.1.1/memory:
-
-/usr/include/qt6/QtCore/qjsonvalue.h:
-
-/usr/include/qt6/QtGui/QTransform:
 
 /usr/include/c++/15.1.1/bits/std_abs.h:
 
@@ -10568,10 +10741,6 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/bits/endian.h:
 
-/usr/include/qt6/QtCore/qtaggedpointer.h:
-
-/usr/include/c++/15.1.1/bits/alloc_traits.h:
-
 /usr/include/bits/pthreadtypes.h:
 
 /usr/include/qt6/QtCore/qdatetime.h:
@@ -10600,13 +10769,11 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.cpp:
 
-/usr/lib/libblkid.so.1:
+/usr/include/qt6/QtCore/QSize:
 
-/usr/include/qt6/QtCore/qstdlibdetection.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.ui:
 
 /usr/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formBoasVindas.ui:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake:
 
@@ -10631,6 +10798,8 @@ MeuCentavoApp_autogen/moc_predefs.h:
 /usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake:
+
+/usr/share/cmake/Modules/Internal/FeatureTesting.cmake:
 
 /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h:
 
@@ -10667,12 +10836,6 @@ MeuCentavoApp_autogen/include/ui_formCadastro.h:
 /usr/include/c++/15.1.1/array:
 
 /usr/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake:
-
-/usr/include/qt6/QtWidgets/QDoubleSpinBox:
-
-/usr/include/qt6/QtGui/qtguiexports.h:
-
-/usr/include/qt6/QtWidgets/QApplication:
 
 /usr/lib/cmake/Qt6/Qt6Dependencies.cmake:
 
@@ -10752,6 +10915,10 @@ MeuCentavoApp_autogen/include/ui_formCadastro.h:
 
 /usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake:
 
+/usr/include/qt6/QtCore/qnativeinterface.h:
+
+/usr/include/c++/15.1.1/bits/align.h:
+
 /usr/include/qt6/QtCore/qassert.h:
 
 /usr/include/c++/15.1.1/bits/charconv.h:
@@ -10770,13 +10937,13 @@ MeuCentavoApp_autogen/include/ui_formCadastro.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginAdditionalTargetInfo.cmake:
 
+/usr/include/qt6/QtWidgets/qheaderview.h:
+
+/usr/include/bits/types/struct_timeval.h:
+
 /usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp:
-
-/usr/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
-
-/usr/include/qt6/QtCore/qurl.h:
 
 /usr/include/strings.h:
 
@@ -10791,6 +10958,8 @@ MeuCentavoApp_autogen/include/ui_formCadastro.h:
 /usr/include/bits/types/timer_t.h:
 
 /usr/include/c++/15.1.1/bits/postypes.h:
+
+/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginConfig.cmake:
 
@@ -10807,6 +10976,8 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/qt6/QtCore/QIODevice:
+
+/usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake:
 
 /usr/include/asm-generic/errno-base.h:
 
@@ -10842,15 +11013,23 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/qt6/QtCore/qtcoreexports.h:
 
-/usr/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake:
-
 /usr/include/qt6/QtWidgets/QLabel:
+
+/usr/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake:
 
 /usr/include/c++/15.1.1/bits/stl_relops.h:
 
 /usr/lib/libQt6OpenGLWidgets.so.6.9.1:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/features-time64.h:
+
+/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in:
+
+/usr/include/qt6/QtCore/qnumeric.h:
+
+/usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake:
 
 /usr/include/qt6/QtGui/qbrush.h:
 
@@ -10880,10 +11059,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/bits/types/time_t.h:
 
-/usr/include/qt6/QtCore/qsettings.h:
-
-/usr/include/qt6/QtCharts/qtchartsexports.h:
-
 /usr/include/qt6/QtCharts/qtcharts-config.h:
 
 /usr/include/bits/types/locale_t.h:
@@ -10900,9 +11075,11 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/c++/15.1.1/bits/functional_hash.h:
 
-/usr/include/qt6/QtWidgets/qgridlayout.h:
-
 /usr/include/c++/15.1.1/bits/basic_string.h:
+
+/usr/include/qt6/QtGui/qscreen_platform.h:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake:
 
 /usr/include/c++/15.1.1/bits/memory_resource.h:
 
@@ -10919,8 +11096,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /usr/include/c++/15.1.1/bits/locale_classes.tcc:
 
 /usr/include/qt6/QtGui/qfontvariableaxis.h:
-
-/usr/include/qt6/QtCore/qbasictimer.h:
 
 /usr/include/c++/15.1.1/bits/predefined_ops.h:
 
@@ -10948,8 +11123,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/c++/15.1.1/tr1/hypergeometric.tcc:
-
 /usr/include/qt6/QtWidgets/QWidget:
 
 /usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessAliasTargets.cmake:
@@ -10973,8 +11146,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /usr/include/c++/15.1.1/bits/stl_map.h:
 
 /usr/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCore/qelapsedtimer.h:
 
 /usr/include/c++/15.1.1/bits/ostream_insert.h:
 
@@ -11048,6 +11219,8 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 
 /usr/include/c++/15.1.1/cstdint:
 
+/usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake:
+
 /usr/include/linux/sched/types.h:
 
 /usr/include/c++/15.1.1/cstring:
@@ -11090,15 +11263,13 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 
 /usr/include/qt6/QtGui/qpalette.h:
 
+/usr/include/qt6/QtCore/qeventloop.h:
+
+/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersionImpl.cmake:
+
 /usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersion.cmake:
 
 /usr/include/qt6/QtCore/qtypeinfo.h:
-
-/usr/include/bits/select.h:
-
-/usr/include/c++/15.1.1/cassert:
-
-/usr/include/qt6/QtWidgets/qabstractslider.h:
 
 /usr/include/c++/15.1.1/pstl/execution_defs.h:
 
@@ -11107,6 +11278,12 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 /usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtWidgets/QGraphicsView:
+
+/usr/include/c++/15.1.1/bits/ios_base.h:
+
+/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateDependencies.cmake:
 
 /usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateTargets.cmake:
 
@@ -11117,8 +11294,6 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 /usr/include/gnu/stubs-64.h:
 
 /usr/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:
 
 /usr/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake:
 
@@ -11149,8 +11324,6 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 /usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:
 
 /usr/lib/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake:
-
-/usr/include/qt6/QtGui/qguiapplication.h:
 
 /usr/lib/libQt6Charts.so.6.9.1:
 
@@ -11186,8 +11359,6 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 
 /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake:
 
-/usr/include/qt6/QtGui/QFont:
-
 /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets-relwithdebinfo.cmake:
@@ -11200,6 +11371,8 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:
 
+/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:
+
 /usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfig.cmake:
 
 /usr/include/qt6/QtWidgets/qpushbutton.h:
@@ -11207,8 +11380,6 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 /usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginConfig.cmake:
 
@@ -11262,10 +11433,6 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginConfig.cmake:
 
-/usr/include/qt6/QtCore/qregularexpression.h:
-
-/usr/include/qt6/QtCore/QUrl:
-
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QPdfPluginAdditionalTargetInfo.cmake:
@@ -11278,6 +11445,12 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 
 /usr/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake:
 
+/usr/include/qt6/QtCore/qsettings.h:
+
+/usr/include/qt6/QtCharts/qtchartsexports.h:
+
+/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake:
 
 /usr/include/linux/limits.h:
@@ -11289,8 +11462,6 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersionImpl.cmake:
-
-/usr/include/qt6/QtGui/QBrush:
 
 /usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets.cmake:
 
@@ -11360,6 +11531,12 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 
 /usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginAdditionalTargetInfo.cmake:
 
+/usr/include/qt6/QtCore/qregularexpression.h:
+
+/usr/include/qt6/QtCore/QUrl:
+
+/usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets-relwithdebinfo.cmake:
@@ -11368,15 +11545,13 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 
 /usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginAdditionalTargetInfo.cmake:
 
+/usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake:
+
 /usr/include/qt6/QtCore/QMetaType:
 
 /usr/include/qt6/QtGui/qcursor.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargets.cmake:
-
-/usr/include/bits/wchar.h:
-
-/usr/include/qt6/QtGui/qguiapplication_platform.h:
 
 /usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateVersionlessAliasTargets.cmake:
 
@@ -11389,8 +11564,6 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 /usr/lib/cmake/Qt6Gui/Qt6QMngPluginAdditionalTargetInfo.cmake:
 
 /usr/include/bits/mathcalls-narrow.h:
-
-/usr/include/qt6/QtWidgets/QGraphicsWidget:
 
 /usr/lib/libQt6Network.so.6.9.1:
 
@@ -11406,6 +11579,12 @@ MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 
 /usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake:
 
+/usr/include/qt6/QtCore/qtaggedpointer.h:
+
+/usr/include/c++/15.1.1/bits/alloc_traits.h:
+
+/usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake:
+
 MeuCentavoApp_autogen/include/ui_formUsuario.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QPdfPluginConfig.cmake:
@@ -11415,6 +11594,10 @@ MeuCentavoApp_autogen/include/ui_formUsuario.h:
 /usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qpainterpath.h:
+
+/usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cmake:
 
@@ -11434,6 +11617,8 @@ MeuCentavoApp_autogen/include/ui_formUsuario.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake:
 
+/usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/qt6/QtWidgets/QPushButton:
@@ -11442,11 +11627,11 @@ MeuCentavoApp_autogen/include/ui_formUsuario.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake:
 
+/usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake:
+
 /usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateTargets.cmake:
 
 /usr/include/qt6/QtNetwork/qabstractsocket.h:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake:
 
@@ -11474,6 +11659,8 @@ MeuCentavoApp_autogen/include/ui_formUsuario.h:
 
 /usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake:
 
+/usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersionImpl.cmake:
@@ -11481,6 +11668,10 @@ MeuCentavoApp_autogen/include/ui_formUsuario.h:
 /usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qabstractscrollarea.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets.cmake:
 
 /usr/include/qt6/QtCore/qtpreprocessorsupport.h:
 
@@ -11517,6 +11708,10 @@ MeuCentavoApp_autogen/include/ui_formUsuario.h:
 /usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake:
+
+/usr/include/errno.h:
+
+/usr/share/cmake/Modules/Internal/CMakeInspectCXXLinker.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginTargets-relwithdebinfo.cmake:
 
@@ -11628,6 +11823,8 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_SessionManager.cpp:
 
 MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 
+/usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake:
+
 /usr/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake:
 
 /usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateAdditionalTargetInfo.cmake:
@@ -11644,12 +11841,6 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 
 /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake:
 
-/usr/include/qt6/QtCore/qdeadlinetimer.h:
-
-/usr/include/bits/types/struct_sched_param.h:
-
-/usr/include/qt6/QtWidgets/QVBoxLayout:
-
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formBoasVindas.h:
 
 /usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateConfigVersion.cmake:
@@ -11659,12 +11850,6 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 /usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateDependencies.cmake:
 
 /usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateTargets.cmake:
-
-/usr/include/qt6/QtGui/qicon.h:
-
-/usr/include/bits/types/FILE.h:
-
-/usr/include/qt6/QtWidgets/qapplication.h:
 
 /usr/include/c++/15.1.1/bits/requires_hosted.h:
 
@@ -11679,6 +11864,10 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 /usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qmenu.h:
+
+/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake:
 
@@ -11700,6 +11889,14 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 
 /usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake:
 
+/usr/include/qt6/QtWidgets/qgraphicsitem.h:
+
+/usr/include/c++/15.1.1/bits/stream_iterator.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake:
+
 /usr/lib/cmake/Qt6/QtPublicPluginHelpers.cmake:
 
 /usr/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake:
@@ -11716,7 +11913,11 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 
 /usr/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake:
 
-/usr/include/qt6/QtGui/qvalidator.h:
+/usr/lib/libblkid.so.1:
+
+/usr/include/qt6/QtCore/qstdlibdetection.h:
+
+/usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake:
 
@@ -11729,8 +11930,6 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 /usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfig.cmake:
 
 /usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateDependencies.cmake:
-
-/usr/include/qt6/QtWidgets/qlabel.h:
 
 /usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateTargets.cmake:
 
@@ -11746,8 +11945,6 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 
 /usr/include/qt6/QtCore/QMargins:
 
-/usr/include/qt6/QtGui/qeventpoint.h:
-
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:
 
 /usr/include/stdio.h:
@@ -11757,6 +11954,10 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 /usr/include/qt6/QtCharts/qchartview.h:
 
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:
+
+/usr/include/qt6/QtGui/qpolygon.h:
+
+/usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake:
 
@@ -11792,6 +11993,10 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 
 /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake:
 
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake:
+
+/usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake:
+
 /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h:
@@ -11800,13 +12005,47 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
 
+/usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake:
+
 /usr/include/qt6/QtCore/QVariant:
 
+/usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:
+
+/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp:
+
 /usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
+
+/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:
+
+/usr/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake:
+
+/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:
+
+/usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake:
+
+/usr/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
+
+/usr/include/qt6/QtCore/qurl.h:
+
+/usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake:
+
+/usr/share/cmake/Modules/CMakeSystem.cmake.in:
+
+/usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake:
 
 /usr/include/c++/15.1.1/bits/unique_ptr.h:
 
 /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake:
+
+/usr/include/c++/15.1.1/tr1/special_function_util.h:
+
+/usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake:
+
+/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:
+
+/usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake:
 
 /usr/lib/libharfbuzz.so.0:
 
@@ -11816,9 +12055,37 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 
 /usr/share/cmake/Modules/CheckLibraryExists.cmake:
 
+/usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake:
+
 /usr/include/qt6/QtCore/qbytearrayalgorithms.h:
 
 /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake:
+
+/usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake:
+
+/usr/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake:
+
+/usr/include/qt6/QtCore/qtnoop.h:
+
+/usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake:
+
+/usr/include/qt6/QtWidgets/QMainWindow:
+
+/usr/bin/cmake:
+
+/usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake:
+
+/usr/include/qt6/QtWidgets/qlayout.h:
+
+/usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake:
 
 /usr/include/qt6/QtCore/qcontiguouscache.h:
 
@@ -11828,9 +12095,39 @@ MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 
 /usr/share/cmake/Modules/Compiler/GNU.cmake:
 
-/usr/include/qt6/QtWidgets/QMessageBox:
+/usr/include/c++/15.1.1/tr1/hypergeometric.tcc:
 
-/usr/include/qt6/QtWidgets/qgroupbox.h:
+/usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake:
+
+/usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
+
+/usr/include/qt6/QtCore/qjsonarray.h:
+
+/usr/include/bits/math-vector.h:
+
+/usr/lib/libicuuc.so.76:
+
+/usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake:
+
+/usr/include/qt6/QtCore/QSizeF:
+
+/usr/share/cmake/Modules/FeatureSummary.cmake:
 
 /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake:
 
@@ -11854,25 +12151,25 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp
 
 /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake:
 
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formBoasVindas.ui:
+
+/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:
+
 /usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake:
 
 /usr/share/cmake/Modules/Linker/GNU-CXX.cmake:
 
 /usr/share/cmake/Modules/Linker/GNU.cmake:
 
-/usr/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake:
+/usr/lib/crti.o:
 
-/usr/include/qt6/QtGui/qscreen_platform.h:
+/usr/include/c++/15.1.1/bits/shared_ptr.h:
+
+/usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake:
 
 /usr/include/c++/15.1.1/bits/stringfwd.h:
 
 /usr/share/cmake/Modules/Platform/Linux-GNU.cmake:
-
-/usr/include/c++/15.1.1/bits/ios_base.h:
-
-/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateDependencies.cmake:
-
-/usr/include/qt6/QtWidgets/QGraphicsView:
 
 /usr/include/bits/stdlib-float.h:
 
@@ -11954,10 +12251,6 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp
 
 /usr/include/qt6/QtCore/qcryptographichash.h:
 
-/usr/include/bits/math-vector.h:
-
-/usr/include/qt6/QtCore/qjsonarray.h:
-
 /usr/include/qt6/QtCore/qjsonobject.h:
 
 /usr/include/qt6/QtCore/qabstractitemmodel.h:
@@ -11984,6 +12277,12 @@ MeuCentavoApp_autogen/FTZSGGJYIR/moc_formCadastro.cpp:
 
 /usr/include/qt6/QtNetwork/qsslsocket.h:
 
+/usr/include/qt6/QtWidgets/QTableWidget:
+
+/usr/include/qt6/QtCharts/QChartGlobal:
+
+/usr/include/qt6/QtNetwork/qtcpsocket.h:
+
 /usr/include/qt6/QtCore/QDate:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake:
@@ -11996,90 +12295,12 @@ MeuCentavoApp_autogen/include/ui_pageHome.h:
 
 /usr/include/qt6/QtCharts/QChartView:
 
+/usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake:
+
 /usr/include/qt6/QtCharts/qabstractaxis.h:
-
-/usr/include/qt6/QtCharts/qlegend.h:
-
-/usr/include/qt6/QtCore/QRect:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.ui:
-
-/usr/include/qt6/QtCore/QSize:
-
-/usr/share/cmake/Modules/FeatureSummary.cmake:
-
-/usr/include/qt6/QtCore/QSizeF:
-
-/usr/include/qt6/QtCore/qabstracteventdispatcher.h:
-
-/usr/include/qt6/QtWidgets/QHBoxLayout:
-
-/usr/include/qt6/QtCore/qcoreapplication.h:
-
-/usr/include/qt6/QtCharts/qchart.h:
 
 /usr/include/qt6/QtCore/qcoreapplication_platform.h:
 
-/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersionImpl.cmake:
+/usr/include/qt6/QtCharts/qchart.h:
 
-/usr/include/qt6/QtCore/qeventloop.h:
-
-/usr/include/qt6/QtCore/qitemselectionmodel.h:
-
-/usr/include/c++/15.1.1/bits/align.h:
-
-/usr/include/qt6/QtCore/qnativeinterface.h:
-
-/usr/include/qt6/QtGui/QPen:
-
-/usr/include/qt6/QtGui/qinputdevice.h:
-
-/usr/include/qt6/QtGui/qinputmethod.h:
-
-/usr/include/qt6/QtGui/qpainter.h:
-
-/usr/lib/libc.so:
-
-/usr/include/qt6/QtGui/qpointingdevice.h:
-
-/usr/include/qt6/QtGui/qscreen.h:
-
-/usr/include/qt6/QtWidgets/QGroupBox:
-
-/usr/include/qt6/QtCharts/QChartGlobal:
-
-/usr/include/qt6/QtNetwork/qtcpsocket.h:
-
-/usr/include/qt6/QtWidgets/QTableWidget:
-
-/usr/lib/libduktape.so.207:
-
-/usr/include/qt6/QtWidgets/qabstractitemdelegate.h:
-
-/usr/include/qt6/QtWidgets/qabstractitemview.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets.cmake:
-
-/usr/include/qt6/QtWidgets/qabstractscrollarea.h:
-
-/usr/include/qt6/QtCore/qtcoreglobal.h:
-
-/usr/include/qt6/QtWidgets/qabstractspinbox.h:
-
-/usr/include/qt6/QtWidgets/qboxlayout.h:
-
-/usr/include/qt6/QtWidgets/qdialogbuttonbox.h:
-
-/usr/include/c++/15.1.1/bits/stream_iterator.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake:
-
-/usr/include/qt6/QtWidgets/qgraphicsitem.h:
-
-/usr/include/qt6/QtWidgets/qgraphicsscene.h:
-
-/usr/include/bits/types/struct_timeval.h:
-
-/usr/include/qt6/QtWidgets/qheaderview.h:
+/usr/include/qt6/QtCharts/qlegend.h:

@@ -1,6 +1,7 @@
 #include "formCadastro.h"
 #include "ui_formCadastro.h"
 #include "DataAccess/UsuarioDAO.h" // Inclui nosso DAO refatorado
+#include "Gerenciamento/SessionManager.h"
 #include <QMessageBox>
 #include <QDebug>
 
@@ -66,8 +67,13 @@ void formCadastro::onRegistroSucesso(const Usuario& novoUsuario)
 {
     // O DAO nos avisou que a API retornou sucesso!
     QMessageBox::information(this, "Sucesso", "Usuário cadastrado com sucesso!");
-    emit cadastroConcluido(novoUsuario); // Avisa a janela anterior sobre o sucesso
-    this->close(); // Fecha a janela de cadastro
+    // Em vez de só avisar a janela anterior, agora vamos dizer ao SessionManager
+    // para trocar para este novo usuário. Ele salvará a preferência e reiniciará
+    // a aplicação para a tela de login correta.
+    SessionManager::instance().trocarUsuario(novoUsuario);
+
+    // Não precisamos mais emitir o sinal nem fechar a janela manualmente.
+    // O AppController cuidará de fechar tudo ao reiniciar.
 }
 
 void formCadastro::onRegistroFalhou(const QString& motivo)

@@ -43,7 +43,8 @@ template <> constexpr inline auto formMainDashboard::qt_create_metaobjectdata<qt
         "",
         "on_buttonRelatorios_clicked",
         "on_buttonLancamentos_clicked",
-        "on_buttonConfiguracoes_clicked"
+        "on_buttonConfiguracoes_clicked",
+        "on_buttonSwitchUsuario_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -55,6 +56,8 @@ template <> constexpr inline auto formMainDashboard::qt_create_metaobjectdata<qt
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_buttonConfiguracoes_clicked'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_buttonSwitchUsuario_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -82,6 +85,7 @@ void formMainDashboard::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 1: _t->on_buttonRelatorios_clicked(); break;
         case 2: _t->on_buttonLancamentos_clicked(); break;
         case 3: _t->on_buttonConfiguracoes_clicked(); break;
+        case 4: _t->on_buttonSwitchUsuario_clicked(); break;
         default: ;
         }
     }
@@ -107,14 +111,14 @@ int formMainDashboard::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

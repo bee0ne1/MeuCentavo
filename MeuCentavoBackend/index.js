@@ -39,6 +39,27 @@ app.get('/api/usuarios/inicial', async (req, res) => {
     }
 });
 
+// Rota para BUSCAR um usuário específico pelo ID
+app.get('/api/usuarios/:id', async (req, res) => {
+    try {
+        const { id } = req.params; // Captura o ID da URL (ex: o "22" de "/api/usuarios/22")
+
+        // Busca no banco de dados pelo usuário com o ID correspondente
+        const [users] = await pool.query('SELECT user_id, user_usuario FROM usuario WHERE user_id = ?', [id]);
+
+        if (users.length > 0) {
+            // Se encontrou, retorna o usuário como um objeto JSON
+            res.json(users[0]);
+        } else {
+            // Se não encontrou nenhum usuário com esse ID, retorna 404 Not Found
+            res.status(404).json({ message: 'Usuário não encontrado.' });
+        }
+    } catch (error) {
+        console.error("Erro ao buscar usuário por ID:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
 // Rota para REGISTRAR um novo usuário
 app.post(
     '/api/usuarios/registrar',
@@ -89,6 +110,37 @@ app.post(
 );
 
 const jwt = require('jsonwebtoken'); // Importa a nova biblioteca
+
+// Middleware para verificar o Token JWT
+const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // Formato "Bearer TOKEN"
+
+    if (token == null) {
+        return res.sendStatus(401); // Unauthorized - Nenhum token enviado
+    }
+
+    jwt.verify(token, 'sua_chave_super_secreta_pode_ser_qualquer_coisa', (err, user) => {
+        if (err) {
+            return res.sendStatus(403); // Forbidden - Token inválido ou expirado
+        }
+        req.user = user; // Salva os dados do usuário na requisição para uso futuro
+        next(); // Continua para a rota
+    });
+};
+
+
+// Rota para BUSCAR TODOS os usuários (protegida por autenticação)
+app.get('/api/usuarios', authenticateToken, async (req, res) => {
+    try {
+        // Busca todos os usuários, selecionando apenas os campos necessários
+        const [users] = await pool.query('SELECT user_id, user_usuario FROM usuario');
+        res.json(users); // Retorna a lista de usuários como um array JSON
+    } catch (error) {
+        console.error("Erro ao buscar usuários:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
 
 
 // Rota para LOGAR um usuário existente
@@ -141,6 +193,36 @@ app.post(
         }
     }
 );
+
+
+// Rota para EXCLUIR um usuário (protegida por autenticação) - VERSÃO CORRIGIDA
+app.delete('/api/usuarios/:id', authenticateToken, async (req, res) => {
+    try {
+        // Precisamos extrair o 'id' dos parâmetros da URL e guardá-lo em uma variável.
+        const idParaExcluir = req.params.id;
+
+        const idDoRequisitante = req.user.userId; // ID de quem está logado (vem do token)
+
+        // Verificação de auto-exclusão
+        if (Number(idParaExcluir) === idDoRequisitante) {
+            return res.status(403).json({ message: 'Você não pode excluir o seu próprio usuário.' });
+        }
+
+        // Agora usamos a variável 'idParaExcluir' que acabamos de criar na consulta.
+        const [result] = await pool.query('DELETE FROM usuario WHERE user_id = ?', [idParaExcluir]);
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Usuário excluído com sucesso.' });
+        } else {
+            res.status(404).json({ message: 'Usuário não encontrado.' });
+        }
+
+    } catch (error) {
+        // A mensagem de erro que você viu no log do servidor vem daqui.
+        console.error("Erro ao excluir usuário:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
 
 // Inicia o servidor
 app.listen(port, () => {

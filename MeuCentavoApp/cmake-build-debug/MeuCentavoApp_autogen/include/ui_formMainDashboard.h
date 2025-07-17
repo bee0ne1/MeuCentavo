@@ -35,6 +35,7 @@ public:
     QPushButton *buttonLancamentos;
     QPushButton *buttonRelatorios;
     QPushButton *buttonConfiguracoes;
+    QPushButton *buttonSwitchUsuario;
     QStackedWidget *stackedWidgetConteudo;
     QWidget *page;
     QWidget *page_2;
@@ -77,6 +78,13 @@ public:
         buttonConfiguracoes->setObjectName("buttonConfiguracoes");
 
         verticalLayout->addWidget(buttonConfiguracoes);
+
+        buttonSwitchUsuario = new QPushButton(menuContainer);
+        buttonSwitchUsuario->setObjectName("buttonSwitchUsuario");
+        buttonSwitchUsuario->setMinimumSize(QSize(200, 0));
+        buttonSwitchUsuario->setMaximumSize(QSize(200, 16777215));
+
+        verticalLayout->addWidget(buttonSwitchUsuario);
 
 
         horizontalLayout_2->addLayout(verticalLayout);
@@ -128,6 +136,7 @@ public:
         buttonLancamentos->setText(QCoreApplication::translate("formMainDashboard", "Lan\303\247amentos", nullptr));
         buttonRelatorios->setText(QCoreApplication::translate("formMainDashboard", "Relat\303\263rios", nullptr));
         buttonConfiguracoes->setText(QCoreApplication::translate("formMainDashboard", "Configura\303\247\303\265es", nullptr));
+        buttonSwitchUsuario->setText(QCoreApplication::translate("formMainDashboard", "Trocar Usu\303\241rio", nullptr));
     } // retranslateUi
 
 };

@@ -9,6 +9,7 @@ namespace Ui { class formMainDashboard; }
 class pageHome;
 class pageLancamentos;
 class pageRelatorios;
+class formUsuario;
 
 class formMainDashboard : public QMainWindow
 {
@@ -24,6 +25,7 @@ private slots:
     void on_buttonRelatorios_clicked();
     void on_buttonLancamentos_clicked();
     void on_buttonConfiguracoes_clicked();
+    void on_buttonSwitchUsuario_clicked();
 
 private:
     void setupPaginas();
@@ -35,6 +37,7 @@ private:
     pageHome* m_pageHome;
     pageLancamentos* m_pageLancamentos;
     pageRelatorios* m_pageRelatorios;
+    formUsuario* m_formUsuario;
 };
 
 #endif // FORMMAINDASHBOARD_H

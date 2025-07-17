@@ -1,19 +1,20 @@
 #include "formMainDashboard.h"
 #include "ui_formMainDashboard.h"
 #include "Gerenciamento/SessionManager.h" // Inclui nosso novo "cofre"
-
-// Incluímos os cabeçalhos das páginas
+#include "Designer/FormsLogin/formUsuario.h"
 #include "DashboardPages/pageHome.h"
 #include "DashboardPages/pageLancamentos.h"
 //#include "DashboardPages/pageRelatorios.h"
 
 #include <QDebug>
+#include <QMessageBox>
 
 formMainDashboard::formMainDashboard(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::formMainDashboard)
 {
     ui->setupUi(this);
+    m_formUsuario = nullptr;
     setWindowTitle("Meu Centavo - Dashboard");
     setupPaginas(); // Chama a função para configurar as páginas
 }
@@ -67,4 +68,39 @@ void formMainDashboard::on_buttonRelatorios_clicked()
 void formMainDashboard::on_buttonConfiguracoes_clicked()
 {
     qDebug() << "Botão Configurações clicado!";
+}
+
+void formMainDashboard::on_buttonSwitchUsuario_clicked()
+{
+    qDebug() << "Dashboard: Botão 'Trocar Usuário' clicado.";
+
+    // 1. Lógica para não abrir múltiplas janelas ao mesmo tempo
+    // Se a janela já existe e está visível, apenas a traga para frente.
+    if (m_formUsuario) {
+        m_formUsuario->activateWindow();
+        return;
+    }
+
+    // 2. Pega o token da sessão atual. Como estamos logados, ele deve existir.
+    QString token = SessionManager::instance().getToken();
+    if (token.isEmpty()) {
+        QMessageBox::critical(this, "Erro de Sessão", "Sua sessão é inválida. Por favor, reinicie o aplicativo.");
+        return;
+    }
+    qDebug() << "Token recuperado para abrir a tela de usuários:" << token;
+
+    // 3. Cria a janela de seleção, passando o token válido.
+    // Usamos 'nullptr' como pai para garantir que ela seja uma janela independente.
+    m_formUsuario = new formUsuario(token, nullptr);
+
+    // 4. Conecta o sinal de destruição da janela para limparmos nosso ponteiro.
+    // Isso nos permite clicar no botão e abrir a janela novamente no futuro.
+    connect(m_formUsuario, &QObject::destroyed, this, [this]() {
+        qDebug() << "Janela formUsuario foi destruída. Limpando ponteiro m_formUsuario.";
+        this->m_formUsuario = nullptr;
+    });
+
+    // 5. Mostra a janela de gerenciamento.
+    // A dashboard (this) continua visível no fundo.
+    m_formUsuario->show();
 }

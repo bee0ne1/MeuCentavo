@@ -383,11 +383,16 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o: \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsLogin/formUsuario.h \
+ /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtCore/QVector \
+ /usr/include/qt6/QtCore/qvector.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.h \
- /usr/include/qt6/QtWidgets/QWidget \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
  /usr/include/qt6/QtCore/QDate /usr/include/qt6/QtCore/qdatetime.h \
- /usr/include/qt6/QtCore/qcalendar.h /usr/include/qt6/QtCore/QVector \
- /usr/include/qt6/QtCore/qvector.h \
+ /usr/include/qt6/QtCore/qcalendar.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.h \
- /usr/include/qt6/QtCore/QDebug /usr/include/qt6/QtCore/qdebug.h
+ /usr/include/qt6/QtCore/QDebug /usr/include/qt6/QtCore/qdebug.h \
+ /usr/include/qt6/QtWidgets/QMessageBox \
+ /usr/include/qt6/QtWidgets/qmessagebox.h \
+ /usr/include/qt6/QtWidgets/qdialog.h \
+ /usr/include/qt6/QtWidgets/qdialogbuttonbox.h
