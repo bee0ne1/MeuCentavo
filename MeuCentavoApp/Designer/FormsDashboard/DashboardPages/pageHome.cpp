@@ -44,7 +44,7 @@ void pageHome::atualizarDados()
 
     // Inicia as requisições de rede. As respostas virão depois, nos slots.
     m_dao->obterResumosDoMes(token);
-    m_dao->obterRecentes(token, usuarioId);
+    m_dao->obterRecentes(token, 5);
 }
 
 void pageHome::onResumosRecebidos(double receitas, double despesas)

@@ -20,7 +20,7 @@ const pool = mysql.createPool({
   queueLimit: 0
 });
 
-// --- Início das Rotas da API ---
+// -----ROTAS DE USUARIO------
 
 app.get('/', (req, res) => {
   res.send('<h1>Backend "Meu Centavo" no ar!</h1>');
@@ -223,6 +223,108 @@ app.delete('/api/usuarios/:id', authenticateToken, async (req, res) => {
         res.status(500).json({ message: 'Erro interno do servidor.' });
     }
 });
+
+//------ROTAS DE LANÇAMENTO---------
+
+// Rota para BUSCAR TODOS os lançamentos do usuário logado
+app.get('/api/lancamentos', authenticateToken, async (req, res) => {
+    try {
+        const usuarioId = req.user.userId;
+
+        // ALTERAÇÃO AQUI: de 'lancamento' para 'lancamentos'
+        const [lancamentos] = await pool.query(
+            'SELECT * FROM lancamentos WHERE id_usuario = ? ORDER BY data_lancamento DESC',
+            [usuarioId]
+        );
+
+        res.json(lancamentos);
+
+    } catch (error) {
+        console.error("Erro ao buscar lançamentos:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+
+// Rota para ADICIONAR um novo lançamento
+app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
+    try {
+        const { descricao, valor, data_lancamento, tipo } = req.body;
+        const id_usuario = req.user.userId;
+
+        if (!descricao || !valor || !data_lancamento || !tipo) {
+            return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
+        }
+
+        // ALTERAÇÃO AQUI: de 'lancamento' para 'lancamentos'
+        const [result] = await pool.query(
+            'INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario) VALUES (?, ?, ?, ?, ?)',
+            [descricao, valor, data_lancamento, tipo, id_usuario]
+        );
+
+        res.status(201).json({ message: 'Lançamento adicionado com sucesso!', insertId: result.insertId });
+
+    } catch (error) {
+        console.error("Erro ao adicionar lançamento:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+// Rota para BUSCAR os lançamentos mais recentes de um usuário
+app.get('/api/lancamentos/recentes', authenticateToken, async (req, res) => {
+    try {
+        const usuarioId = req.user.userId;
+        // Pega o limite da query string, ou usa 5 como padrão.
+        const limite = parseInt(req.query.limite) || 5;
+
+        const [lancamentos] = await pool.query(
+            'SELECT * FROM lancamentos WHERE id_usuario = ? ORDER BY data_lancamento DESC, id DESC LIMIT ?',
+            [usuarioId, limite]
+        );
+        res.json(lancamentos);
+
+    } catch (error) {
+        console.error("Erro ao buscar lançamentos recentes:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+// Rota para BUSCAR um resumo de receitas e despesas do mês atual
+app.get('/api/lancamentos/resumo/mes', authenticateToken, async (req, res) => {
+    try {
+        const usuarioId = req.user.userId;
+
+        // Query que soma os valores, agrupados por tipo, apenas para o mês e ano atuais.
+        const [rows] = await pool.query(
+            `SELECT tipo, SUM(valor) as total
+             FROM lancamentos
+             WHERE id_usuario = ? AND MONTH(data_lancamento) = MONTH(CURRENT_DATE()) AND YEAR(data_lancamento) = YEAR(CURRENT_DATE())
+             GROUP BY tipo`,
+            [usuarioId]
+        );
+
+        // Processa o resultado para enviar um JSON limpo para o C++
+        let resumo = {
+            receitas: 0.00,
+            despesas: 0.00
+        };
+
+        for (const row of rows) {
+            if (row.tipo === 'Receita') {
+                resumo.receitas = parseFloat(row.total);
+            } else if (row.tipo === 'Despesa') {
+                resumo.despesas = parseFloat(row.total);
+            }
+        }
+
+        res.json(resumo);
+
+    } catch (error) {
+        console.error("Erro ao buscar resumo do mês:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
 
 // Inicia o servidor
 app.listen(port, () => {
