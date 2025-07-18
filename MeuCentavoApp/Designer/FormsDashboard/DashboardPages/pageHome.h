@@ -17,6 +17,7 @@ public:
     // Construtor muito mais simples! Não precisa mais de usuário ou banco.
     explicit pageHome(QWidget *parent = nullptr);
     ~pageHome();
+    void atualizarDados(); // Função que inicia as requisições
 
 private slots:
     // Slots para receber os dados vindos da API através do DAO
@@ -25,7 +26,6 @@ private slots:
     void onErroDeRede(const QString& erro);
 
 private:
-    void atualizarDados(); // Função que inicia as requisições
 
     Ui::pageHome *ui;
     LancamentoDAO* m_dao;

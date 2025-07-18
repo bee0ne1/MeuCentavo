@@ -44,6 +44,8 @@ void formMainDashboard::setupPaginas()
     ui->stackedWidgetConteudo->addWidget(m_pageLancamentos);    // Índice 1
     //ui->stackedWidgetConteudo->addWidget(m_pageRelatorios);     // Índice 2
 
+    connect(m_pageLancamentos, &pageLancamentos::dadosAtualizados, m_pageHome, &pageHome::atualizarDados);
+
     // Define a página inicial
     ui->stackedWidgetConteudo->setCurrentIndex(0);
     qDebug() << "Dashboard configurada e página Home exibida.";

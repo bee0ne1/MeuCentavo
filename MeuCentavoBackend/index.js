@@ -17,7 +17,8 @@ const pool = mysql.createPool({
   database: 'meucentavodb',
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 0,
+  decimalNumbers: true
 });
 
 // -----ROTAS DE USUARIO------
@@ -249,6 +250,8 @@ app.get('/api/lancamentos', authenticateToken, async (req, res) => {
 // Rota para ADICIONAR um novo lançamento
 app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
     try {
+
+        console.log("Backend recebeu o corpo da requisição:", req.body);
         const { descricao, valor, data_lancamento, tipo } = req.body;
         const id_usuario = req.user.userId;
 

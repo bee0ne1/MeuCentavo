@@ -18,6 +18,8 @@ public:
     // Construtor muito mais simples. Ele buscará as informações de sessão por conta própria.
     explicit pageLancamentos(QWidget *parent = nullptr);
     ~pageLancamentos();
+signals:
+    void dadosAtualizados();
 
 private slots:
     // Slot para o botão "Adicionar Lançamento"

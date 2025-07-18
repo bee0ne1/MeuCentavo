@@ -62,6 +62,7 @@ void pageLancamentos::carregarTabela()
 
     // Inicia a requisição de rede e espera a resposta chegar no slot 'onLancamentosRecebidos'
     m_dao->obterTodos(token);
+    emit dadosAtualizados();
 }
 
 void pageLancamentos::onLancamentosRecebidos(const QVector<Lancamento>& lancamentos)
@@ -72,6 +73,7 @@ void pageLancamentos::onLancamentosRecebidos(const QVector<Lancamento>& lancamen
     ui->tabelaTodosLancamentos->setRowCount(0);
 
     for (const auto& lancamento : lancamentos) {
+        qDebug() << "Adicionando à tabela -> Descricao:" << lancamento.descricao << "| Valor no objeto:" << lancamento.valor;
         int linha = ui->tabelaTodosLancamentos->rowCount();
         ui->tabelaTodosLancamentos->insertRow(linha);
 

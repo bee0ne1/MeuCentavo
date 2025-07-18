@@ -40,8 +40,9 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "pageLancamentos",
-        "abrirDialogoAdicionar",
+        "dadosAtualizados",
         "",
+        "abrirDialogoAdicionar",
         "carregarTabela",
         "onLancamentosRecebidos",
         "QList<Lancamento>",
@@ -51,17 +52,19 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Signal 'dadosAtualizados'
+        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'abrirDialogoAdicionar'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'carregarTabela'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'carregarTabela'
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onLancamentosRecebidos'
-        QtMocHelpers::SlotData<void(const QVector<Lancamento> &)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 5, 6 },
+        QtMocHelpers::SlotData<void(const QVector<Lancamento> &)>(5, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 6, 7 },
         }}),
         // Slot 'onErroDeRede'
-        QtMocHelpers::SlotData<void(const QString &)>(7, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 8 },
+        QtMocHelpers::SlotData<void(const QString &)>(8, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 9 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -86,12 +89,17 @@ void pageLancamentos::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
     auto *_t = static_cast<pageLancamentos *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->abrirDialogoAdicionar(); break;
-        case 1: _t->carregarTabela(); break;
-        case 2: _t->onLancamentosRecebidos((*reinterpret_cast< std::add_pointer_t<QList<Lancamento>>>(_a[1]))); break;
-        case 3: _t->onErroDeRede((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 0: _t->dadosAtualizados(); break;
+        case 1: _t->abrirDialogoAdicionar(); break;
+        case 2: _t->carregarTabela(); break;
+        case 3: _t->onLancamentosRecebidos((*reinterpret_cast< std::add_pointer_t<QList<Lancamento>>>(_a[1]))); break;
+        case 4: _t->onErroDeRede((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
+    }
+    if (_c == QMetaObject::IndexOfMethod) {
+        if (QtMocHelpers::indexOfMethod<void (pageLancamentos::*)()>(_a, &pageLancamentos::dadosAtualizados, 0))
+            return;
     }
 }
 
@@ -114,15 +122,21 @@ int pageLancamentos::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
+}
+
+// SIGNAL 0
+void pageLancamentos::dadosAtualizados()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP
