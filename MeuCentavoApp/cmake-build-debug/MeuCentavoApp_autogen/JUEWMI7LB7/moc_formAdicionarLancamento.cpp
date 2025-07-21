@@ -8,6 +8,7 @@
 
 #include "../../../Designer/FormsDashboard/formAdicionarLancamento.h"
 #include <QtCore/qmetatype.h>
+#include <QtCore/QList>
 
 #include <QtCore/qtmochelpers.h>
 
@@ -42,9 +43,16 @@ template <> constexpr inline auto formAdicionarLancamento::qt_create_metaobjectd
         "lancamentoSalvo",
         "",
         "salvarLancamento",
+        "onContasRecebidas",
+        "QList<Conta>",
+        "contas",
+        "onCategoriasRecebidas",
+        "QList<Categoria>",
+        "categorias",
         "onLancamentoAdicionado",
         "onErroDeRede",
-        "motivo"
+        "motivo",
+        "filtrarCategoriasPorTipo"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -52,12 +60,22 @@ template <> constexpr inline auto formAdicionarLancamento::qt_create_metaobjectd
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'salvarLancamento'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onLancamentoAdicionado'
-        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onErroDeRede'
-        QtMocHelpers::SlotData<void(const QString &)>(5, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 6 },
+        // Slot 'onContasRecebidas'
+        QtMocHelpers::SlotData<void(const QVector<Conta> &)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 5, 6 },
         }}),
+        // Slot 'onCategoriasRecebidas'
+        QtMocHelpers::SlotData<void(const QVector<Categoria> &)>(7, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 8, 9 },
+        }}),
+        // Slot 'onLancamentoAdicionado'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onErroDeRede'
+        QtMocHelpers::SlotData<void(const QString &)>(11, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 12 },
+        }}),
+        // Slot 'filtrarCategoriasPorTipo'
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -83,8 +101,11 @@ void formAdicionarLancamento::qt_static_metacall(QObject *_o, QMetaObject::Call 
         switch (_id) {
         case 0: _t->lancamentoSalvo(); break;
         case 1: _t->salvarLancamento(); break;
-        case 2: _t->onLancamentoAdicionado(); break;
-        case 3: _t->onErroDeRede((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 2: _t->onContasRecebidas((*reinterpret_cast< std::add_pointer_t<QList<Conta>>>(_a[1]))); break;
+        case 3: _t->onCategoriasRecebidas((*reinterpret_cast< std::add_pointer_t<QList<Categoria>>>(_a[1]))); break;
+        case 4: _t->onLancamentoAdicionado(); break;
+        case 5: _t->onErroDeRede((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 6: _t->filtrarCategoriasPorTipo(); break;
         default: ;
         }
     }
@@ -113,14 +134,14 @@ int formAdicionarLancamento::qt_metacall(QMetaObject::Call _c, int _id, void **_
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 7;
     }
     return _id;
 }

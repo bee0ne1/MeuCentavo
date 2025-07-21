@@ -25,6 +25,7 @@ private slots:
     void onLancamentosRecentesRecebidos(const QVector<Lancamento>& lancamentos);
     void onErroDeRede(const QString& erro);
 
+
 private:
 
     Ui::pageHome *ui;

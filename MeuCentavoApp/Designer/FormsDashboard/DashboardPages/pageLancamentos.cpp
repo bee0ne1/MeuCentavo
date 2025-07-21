@@ -6,6 +6,7 @@
 #include <QHeaderView>
 #include <QMessageBox>
 #include <QDebug>
+#include <QIcon>
 
 pageLancamentos::pageLancamentos(QWidget *parent) :
     QWidget(parent),
@@ -20,13 +21,14 @@ pageLancamentos::pageLancamentos(QWidget *parent) :
     // Conecta os sinais de resultado do DAO aos nossos slots
     connect(m_dao, &LancamentoDAO::lancamentosRecebidos, this, &pageLancamentos::onLancamentosRecebidos);
     connect(m_dao, &LancamentoDAO::erroOcorrido, this, &pageLancamentos::onErroDeRede);
+    connect(m_dao, &LancamentoDAO::lancamentoExcluidoComSucesso, this, &pageLancamentos::carregarTabela);
 
     // Conecta o botão da UI ao slot que abre o diálogo
     connect(ui->buttonAdicionarLancamento, &QPushButton::clicked, this, &pageLancamentos::abrirDialogoAdicionar);
 
     // Configuração inicial da tabela
-    ui->tabelaTodosLancamentos->setColumnCount(4);
-    ui->tabelaTodosLancamentos->setHorizontalHeaderLabels({"Data", "Descrição", "Tipo", "Valor"});
+    ui->tabelaTodosLancamentos->setColumnCount(5);
+    ui->tabelaTodosLancamentos->setHorizontalHeaderLabels({"Data", "Descrição", "Tipo", "Valor", "Excluir"});
     ui->tabelaTodosLancamentos->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
 
     // Inicia a busca por dados assim que a página é criada
@@ -90,6 +92,35 @@ void pageLancamentos::onLancamentosRecebidos(const QVector<Lancamento>& lancamen
         } else {
             itemValor->setForeground(QColor("#e74c3c")); // Vermelho
         }
+
+        // 1. Crie o botão sem texto
+        QPushButton* btnExcluir = new QPushButton(this);
+
+        // 2. Crie o QIcon usando o caminho do recurso
+        //    O ':/' indica que é um recurso. O resto é o caminho dentro do .qrc
+        QIcon trashIcon(":/Recursos/trash_icon.png");
+
+        // 3. Defina o ícone e outras propriedades
+        btnExcluir->setIcon(trashIcon);
+        btnExcluir->setIconSize(QSize(24, 24)); // Ajuste o tamanho conforme necessário
+        btnExcluir->setCursor(Qt::PointingHandCursor);
+        btnExcluir->setToolTip("Excluir Lançamento"); // Dica ao passar o rato
+
+
+        // Conecta o clique do botão
+        connect(btnExcluir, &QPushButton::clicked, this, [this, lancamento](){
+            QMessageBox::StandardButton resposta = QMessageBox::question(this, "Confirmar Exclusão",
+                QString("Tem certeza que deseja excluir o lançamento '%1'?").arg(lancamento.descricao),
+                QMessageBox::Yes | QMessageBox::No);
+
+            if (resposta == QMessageBox::Yes) {
+                QString token = SessionManager::instance().getToken();
+                m_dao->excluirLancamento(lancamento.id, token);
+            }
+        });
+
+        // Adiciona o botão à célula da nova coluna
+        ui->tabelaTodosLancamentos->setCellWidget(linha, 4, btnExcluir);
 
         ui->tabelaTodosLancamentos->setItem(linha, 0, itemData);
         ui->tabelaTodosLancamentos->setItem(linha, 1, itemDesc);

@@ -2,6 +2,8 @@
 #define FORMMAINDASHBOARD_H
 
 #include <QMainWindow>
+
+#include "DashboardPages/pageConfig.h"
 #include "Modelo/Usuario.h"
 
 // Forward declarations
@@ -10,6 +12,7 @@ class pageHome;
 class pageLancamentos;
 class pageRelatorios;
 class formUsuario;
+class pageConfig;
 
 class formMainDashboard : public QMainWindow
 {
@@ -38,6 +41,7 @@ private:
     pageLancamentos* m_pageLancamentos;
     pageRelatorios* m_pageRelatorios;
     formUsuario* m_formUsuario;
+    pageConfig* m_pageConfig;
 };
 
 #endif // FORMMAINDASHBOARD_H

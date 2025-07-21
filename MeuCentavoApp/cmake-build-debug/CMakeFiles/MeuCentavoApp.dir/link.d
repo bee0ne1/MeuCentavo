@@ -19,6 +19,9 @@ MeuCentavoApp: \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarCategorias.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o \
   /usr/lib/libQt6Sql.so.6.9.1 \
   /usr/lib/libQt6Charts.so.6.9.1 \
   /usr/lib/libQt6Network.so.6.9.1 \
@@ -155,6 +158,12 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp
 CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarCategorias.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o:
 
 /usr/lib/libQt6Sql.so.6.9.1:
 

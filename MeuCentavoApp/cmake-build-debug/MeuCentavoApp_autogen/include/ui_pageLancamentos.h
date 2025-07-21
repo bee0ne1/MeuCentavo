@@ -42,8 +42,8 @@ public:
         gridLayout = new QGridLayout();
         gridLayout->setObjectName("gridLayout");
         tabelaTodosLancamentos = new QTableWidget(pageLancamentos);
-        if (tabelaTodosLancamentos->columnCount() < 5)
-            tabelaTodosLancamentos->setColumnCount(5);
+        if (tabelaTodosLancamentos->columnCount() < 6)
+            tabelaTodosLancamentos->setColumnCount(6);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tabelaTodosLancamentos->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -52,8 +52,10 @@ public:
         tabelaTodosLancamentos->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         tabelaTodosLancamentos->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tabelaTodosLancamentos->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         tabelaTodosLancamentos->setObjectName("tabelaTodosLancamentos");
-        tabelaTodosLancamentos->setColumnCount(5);
+        tabelaTodosLancamentos->setColumnCount(6);
 
         gridLayout->addWidget(tabelaTodosLancamentos, 1, 0, 1, 1);
 
@@ -95,6 +97,8 @@ public:
         ___qtablewidgetitem2->setText(QCoreApplication::translate("pageLancamentos", "Tipo", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = tabelaTodosLancamentos->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QCoreApplication::translate("pageLancamentos", "Valor", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tabelaTodosLancamentos->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("pageLancamentos", "Excluir", nullptr));
         buttonAdicionarLancamento->setText(QCoreApplication::translate("pageLancamentos", "Adicionar Novo Lan\303\247amento", nullptr));
     } // retranslateUi
 

@@ -2,8 +2,12 @@
 #define FORMADICIONARLANCAMENTO_H
 
 #include <QDialog>
+#include "Modelo/Lancamento.h"
+#include "Modelo/Conta.h"
+#include "Modelo/Categoria.h"
 
 // Forward declaration
+class LancamentoDAO;
 namespace Ui { class formAdicionarLancamento; }
 
 class formAdicionarLancamento : public QDialog
@@ -11,25 +15,24 @@ class formAdicionarLancamento : public QDialog
     Q_OBJECT
 
 public:
-    // O construtor agora é muito mais simples. Ele buscará o ID do usuário
-    // do SessionManager quando precisar.
     explicit formAdicionarLancamento(QWidget *parent = nullptr);
     ~formAdicionarLancamento();
 
-signals:
-        // Sinal para avisar a página de lançamentos que a lista precisa ser atualizada.
-    void lancamentoSalvo();
+    signals:
+        void lancamentoSalvo();
 
 private slots:
-    // Slot conectado ao clique do botão Salvar.
     void salvarLancamento();
-
-    // Slots que reagem aos sinais de resposta do DAO.
+    void onContasRecebidas(const QVector<Conta>& contas);
+    void onCategoriasRecebidas(const QVector<Categoria>& categorias);
     void onLancamentoAdicionado();
     void onErroDeRede(const QString& motivo);
+    void filtrarCategoriasPorTipo(); // Novo slot para o filtro inteligente
 
 private:
     Ui::formAdicionarLancamento *ui;
+    LancamentoDAO* m_dao; // DAO como membro da classe
+    QVector<Categoria> m_todasCategorias; // Guardamos todas as categorias aqui
 };
 
 #endif // FORMADICIONARLANCAMENTO_H

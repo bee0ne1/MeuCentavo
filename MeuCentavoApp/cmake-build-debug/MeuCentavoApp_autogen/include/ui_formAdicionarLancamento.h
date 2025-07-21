@@ -30,14 +30,18 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout;
     QGridLayout *gridLayout;
-    QLabel *label_2;
-    QDoubleSpinBox *spinBoxValor;
-    QLineEdit *lineEditDescricao;
-    QLabel *label_3;
+    QLabel *label_5;
     QLabel *label;
+    QLabel *label_4;
+    QDoubleSpinBox *spinBoxValor;
     QComboBox *comboBoxTipo;
     QDateEdit *dateEditData;
-    QLabel *label_4;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLineEdit *lineEditDescricao;
+    QLabel *label_6;
+    QComboBox *comboBoxConta;
+    QComboBox *comboBoxCategoria;
     QHBoxLayout *horizontalLayout;
     QPushButton *buttonSalvar;
     QPushButton *buttonCancelar;
@@ -53,33 +57,28 @@ public:
         verticalLayout->setObjectName("verticalLayout");
         gridLayout = new QGridLayout();
         gridLayout->setObjectName("gridLayout");
-        label_2 = new QLabel(formAdicionarLancamento);
-        label_2->setObjectName("label_2");
-        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_5 = new QLabel(formAdicionarLancamento);
+        label_5->setObjectName("label_5");
+        label_5->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout->addWidget(label_2, 1, 0, 1, 1);
-
-        spinBoxValor = new QDoubleSpinBox(formAdicionarLancamento);
-        spinBoxValor->setObjectName("spinBoxValor");
-
-        gridLayout->addWidget(spinBoxValor, 1, 1, 1, 1);
-
-        lineEditDescricao = new QLineEdit(formAdicionarLancamento);
-        lineEditDescricao->setObjectName("lineEditDescricao");
-
-        gridLayout->addWidget(lineEditDescricao, 0, 1, 1, 1);
-
-        label_3 = new QLabel(formAdicionarLancamento);
-        label_3->setObjectName("label_3");
-        label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout->addWidget(label_3, 2, 0, 1, 1);
+        gridLayout->addWidget(label_5, 6, 0, 1, 1);
 
         label = new QLabel(formAdicionarLancamento);
         label->setObjectName("label");
         label->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout->addWidget(label, 0, 0, 1, 1);
+
+        label_4 = new QLabel(formAdicionarLancamento);
+        label_4->setObjectName("label_4");
+        label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout->addWidget(label_4, 5, 0, 1, 1);
+
+        spinBoxValor = new QDoubleSpinBox(formAdicionarLancamento);
+        spinBoxValor->setObjectName("spinBoxValor");
+
+        gridLayout->addWidget(spinBoxValor, 1, 1, 1, 1);
 
         comboBoxTipo = new QComboBox(formAdicionarLancamento);
         comboBoxTipo->setObjectName("comboBoxTipo");
@@ -91,11 +90,38 @@ public:
 
         gridLayout->addWidget(dateEditData, 2, 1, 1, 1);
 
-        label_4 = new QLabel(formAdicionarLancamento);
-        label_4->setObjectName("label_4");
-        label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_2 = new QLabel(formAdicionarLancamento);
+        label_2->setObjectName("label_2");
+        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout->addWidget(label_4, 5, 0, 1, 1);
+        gridLayout->addWidget(label_2, 1, 0, 1, 1);
+
+        label_3 = new QLabel(formAdicionarLancamento);
+        label_3->setObjectName("label_3");
+        label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout->addWidget(label_3, 2, 0, 1, 1);
+
+        lineEditDescricao = new QLineEdit(formAdicionarLancamento);
+        lineEditDescricao->setObjectName("lineEditDescricao");
+
+        gridLayout->addWidget(lineEditDescricao, 0, 1, 1, 1);
+
+        label_6 = new QLabel(formAdicionarLancamento);
+        label_6->setObjectName("label_6");
+        label_6->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout->addWidget(label_6, 7, 0, 1, 1);
+
+        comboBoxConta = new QComboBox(formAdicionarLancamento);
+        comboBoxConta->setObjectName("comboBoxConta");
+
+        gridLayout->addWidget(comboBoxConta, 6, 1, 1, 1);
+
+        comboBoxCategoria = new QComboBox(formAdicionarLancamento);
+        comboBoxCategoria->setObjectName("comboBoxCategoria");
+
+        gridLayout->addWidget(comboBoxCategoria, 7, 1, 1, 1);
 
 
         verticalLayout->addLayout(gridLayout);
@@ -128,10 +154,12 @@ public:
     void retranslateUi(QDialog *formAdicionarLancamento)
     {
         formAdicionarLancamento->setWindowTitle(QCoreApplication::translate("formAdicionarLancamento", "formAdicionarLancamentos", nullptr));
-        label_2->setText(QCoreApplication::translate("formAdicionarLancamento", "Valor", nullptr));
-        label_3->setText(QCoreApplication::translate("formAdicionarLancamento", "Data de Lan\303\247amento", nullptr));
+        label_5->setText(QCoreApplication::translate("formAdicionarLancamento", "Conta", nullptr));
         label->setText(QCoreApplication::translate("formAdicionarLancamento", "Descri\303\247\303\243o", nullptr));
         label_4->setText(QCoreApplication::translate("formAdicionarLancamento", "Tipo", nullptr));
+        label_2->setText(QCoreApplication::translate("formAdicionarLancamento", "Valor", nullptr));
+        label_3->setText(QCoreApplication::translate("formAdicionarLancamento", "Data de Lan\303\247amento", nullptr));
+        label_6->setText(QCoreApplication::translate("formAdicionarLancamento", "Categoria", nullptr));
         buttonSalvar->setText(QCoreApplication::translate("formAdicionarLancamento", "Salvar", nullptr));
         buttonCancelar->setText(QCoreApplication::translate("formAdicionarLancamento", "Cancelar", nullptr));
     } // retranslateUi

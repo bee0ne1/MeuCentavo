@@ -247,22 +247,24 @@ app.get('/api/lancamentos', authenticateToken, async (req, res) => {
 });
 
 
-// Rota para ADICIONAR um novo lançamento
+// Rota para ADICIONAR um novo lançamento (VERSÃO ATUALIZADA)
 app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
     try {
-
         console.log("Backend recebeu o corpo da requisição:", req.body);
-        const { descricao, valor, data_lancamento, tipo } = req.body;
+
+        // Agora também extraímos id_conta e id_categoria
+        const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria } = req.body;
         const id_usuario = req.user.userId;
 
-        if (!descricao || !valor || !data_lancamento || !tipo) {
-            return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
+        // Validação para os novos campos
+        if (!descricao || !valor || !data_lancamento || !tipo || !id_conta || !id_categoria) {
+            return res.status(400).json({ message: 'Todos os campos, incluindo conta e categoria, são obrigatórios.' });
         }
 
-        // ALTERAÇÃO AQUI: de 'lancamento' para 'lancamentos'
+        // Adicionamos os novos campos à consulta INSERT
         const [result] = await pool.query(
-            'INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario) VALUES (?, ?, ?, ?, ?)',
-            [descricao, valor, data_lancamento, tipo, id_usuario]
+            'INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria) VALUES (?, ?, ?, ?, ?, ?, ?)',
+            [descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria]
         );
 
         res.status(201).json({ message: 'Lançamento adicionado com sucesso!', insertId: result.insertId });
@@ -328,6 +330,140 @@ app.get('/api/lancamentos/resumo/mes', authenticateToken, async (req, res) => {
     }
 });
 
+// Rota para EXCLUIR um lançamento específico
+app.delete('/api/lancamentos/:id', authenticateToken, async (req, res) => {
+    try {
+        const idLancamento = req.params.id;
+        const idUsuario = req.user.userId;
+
+        // Query para deletar o lançamento.
+        // A condição 'id_usuario = ?' é uma camada de segurança CRÍTICA.
+        // Ela garante que um utilizador só pode apagar os seus próprios lançamentos.
+        const [result] = await pool.query(
+            'DELETE FROM lancamentos WHERE id = ? AND id_usuario = ?',
+            [idLancamento, idUsuario]
+        );
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Lançamento excluído com sucesso.' });
+        } else {
+            // Isso acontece se o lançamento não existe ou não pertence ao usuário.
+            res.status(404).json({ message: 'Lançamento não encontrado ou não autorizado.' });
+        }
+    } catch (error) {
+        console.error("Erro ao excluir lançamento:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+// --- ROTAS PARA CONTAS E CATEGORIAS ---
+
+// Rota para BUSCAR TODAS as contas do usuário logado
+app.get('/api/contas', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+        const [contas] = await pool.query('SELECT * FROM contas WHERE id_usuario = ?', [idUsuario]);
+        res.json(contas);
+    } catch (error) {
+        console.error("Erro ao buscar contas:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para BUSCAR TODAS as categorias do usuário logado
+app.get('/api/categorias', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+        const [categorias] = await pool.query('SELECT * FROM categorias WHERE id_usuario = ?', [idUsuario]);
+        res.json(categorias);
+    } catch (error) {
+        console.error("Erro ao buscar categorias:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para ADICIONAR uma nova categoria para o usuário logado
+app.post('/api/categorias', authenticateToken, async (req, res) => {
+    try {
+        const { nome, tipo } = req.body; // 'tipo' será "Receita" ou "Despesa"
+        const idUsuario = req.user.userId;
+
+        // Validação
+        if (!nome || !tipo) {
+            return res.status(400).json({ message: 'O nome e o tipo da categoria são obrigatórios.' });
+        }
+        if (tipo !== 'Receita' && tipo !== 'Despesa') {
+            return res.status(400).json({ message: 'O tipo da categoria deve ser "Receita" ou "Despesa".' });
+        }
+
+        // Insere a nova categoria no banco de dados
+        const [result] = await pool.query(
+            'INSERT INTO categorias (nome, tipo, id_usuario) VALUES (?, ?, ?)',
+            [nome, tipo, idUsuario]
+        );
+
+        // Retorna a categoria recém-criada
+        res.status(201).json({
+            id_categoria: result.insertId,
+            nome: nome,
+            tipo: tipo,
+            id_usuario: idUsuario
+        });
+
+    } catch (error) {
+        console.error("Erro ao adicionar categoria:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para EDITAR (Atualizar) uma categoria existente
+app.put('/api/categorias/:id', authenticateToken, async (req, res) => {
+    try {
+        const { nome } = req.body;
+        const idCategoria = req.params.id;
+        const idUsuario = req.user.userId;
+
+        if (!nome) {
+            return res.status(400).json({ message: 'O novo nome é obrigatório.' });
+        }
+
+        const [result] = await pool.query(
+            'UPDATE categorias SET nome = ? WHERE id_categoria = ? AND id_usuario = ?',
+            [nome, idCategoria, idUsuario]
+        );
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Categoria atualizada com sucesso.' });
+        } else {
+            res.status(404).json({ message: 'Categoria não encontrada ou não autorizada.' });
+        }
+    } catch (error) {
+        console.error("Erro ao editar categoria:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para EXCLUIR uma categoria existente
+app.delete('/api/categorias/:id', authenticateToken, async (req, res) => {
+    try {
+        const idCategoria = req.params.id;
+        const idUsuario = req.user.userId;
+
+        const [result] = await pool.query(
+            'DELETE FROM categorias WHERE id_categoria = ? AND id_usuario = ?',
+            [idCategoria, idUsuario]
+        );
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Categoria excluída com sucesso.' });
+        } else {
+            res.status(404).json({ message: 'Categoria não encontrada ou não autorizada.' });
+        }
+    } catch (error) {
+        console.error("Erro ao excluir categoria:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
 
 // Inicia o servidor
 app.listen(port, () => {

@@ -19,7 +19,7 @@
      <item row="1" column="0">
       <widget class="QTableWidget" name="tabelaTodosLancamentos">
        <property name="columnCount">
-        <number>5</number>
+        <number>6</number>
        </property>
        <column>
         <property name="text">
@@ -39,6 +39,11 @@
        <column>
         <property name="text">
          <string>Valor</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Excluir</string>
         </property>
        </column>
        <column/>

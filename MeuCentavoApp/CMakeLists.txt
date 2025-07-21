@@ -4,17 +4,15 @@ project(MeuCentavoApp LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Encontra o pacote do Qt6 com os módulos que precisamos (Widgets e Sql)
 find_package(Qt6 COMPONENTS Widgets Sql Charts Network REQUIRED)
 
-# Configurações para que o Qt funcione magicamente com o CMake
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-# --- AQUI ESTÁ A ORGANIZAÇÃO CORRETA ---
+# --- LISTAS DE FICHEIROS CORRETAMENTE ORGANIZADAS ---
 
-# 1. Criamos uma lista apenas com os arquivos de código-fonte (.cpp)
+# 1. Lista de Ficheiros de Código-Fonte (.cpp)
 set(PROJECT_SOURCES
         main.cpp
         DataAccess/LancamentoDAO.cpp
@@ -24,74 +22,71 @@ set(PROJECT_SOURCES
         Designer/FormsLogin/formExcluirUsuario.cpp
         Designer/FormsLogin/formUsuario.cpp
         Designer/FormsLogin/formBoasVindas.cpp
-        Designer/FormsLogin/formBoasVindas.h
-        Designer/FormsLogin/formBoasVindas.ui
         Designer/FormsLogin/formLoginSenha.cpp
-        Designer/FormsLogin/formLoginSenha.h
-        Designer/FormsLogin/formLoginSenha.ui
         Composicoes/PasswordFormHelper.cpp
-        Composicoes/PasswordFormHelper.h
         Designer/FormsDashboard/formMainDashboard.cpp
-        Designer/FormsDashboard/formMainDashboard.h
-        Designer/FormsDashboard/formMainDashboard.ui
         Designer/FormsDashboard/DashboardPages/pageHome.cpp
-        Designer/FormsDashboard/DashboardPages/pageHome.h
-        Designer/FormsDashboard/DashboardPages/pageHome.ui
         Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp
-        Designer/FormsDashboard/DashboardPages/pageLancamentos.h
-        Designer/FormsDashboard/DashboardPages/pageLancamentos.ui
         Designer/FormsDashboard/formAdicionarLancamento.cpp
-        Designer/FormsDashboard/formAdicionarLancamento.h
-        Designer/FormsDashboard/formAdicionarLancamento.ui
         Gerenciamento/SessionManager.cpp
-        Gerenciamento/SessionManager.h
         Gerenciamento/AppController.cpp
-        Gerenciamento/AppController.h
+        Designer/FormsDashboard/DashboardPages/pageConfig.cpp
+        Designer/FormsDashboard/formGerenciarCategorias.cpp
 )
 
-# 2. Criamos uma lista apenas com os arquivos de interface (.ui)
+# 2. Lista COMPLETA de Ficheiros de Cabeçalho (.h)
+set(PROJECT_HEADERS
+        DataAccess/LancamentoDAO.h
+        DataAccess/UsuarioDAO.h
+        Designer/formInicio.h
+        Designer/FormsLogin/formCadastro.h
+        Designer/FormsLogin/formExcluirUsuario.h
+        Designer/FormsLogin/formUsuario.h
+        Designer/FormsLogin/formBoasVindas.h
+        Designer/FormsLogin/formLoginSenha.h
+        Composicoes/PasswordFormHelper.h
+        Designer/FormsDashboard/formMainDashboard.h
+        Designer/FormsDashboard/DashboardPages/pageHome.h
+        Designer/FormsDashboard/DashboardPages/pageLancamentos.h
+        Designer/FormsDashboard/formAdicionarLancamento.h
+        Gerenciamento/SessionManager.h
+        Gerenciamento/AppController.h
+        Modelo/Usuario.h
+        Modelo/Lancamento.h
+        Modelo/Conta.h
+        Modelo/Categoria.h
+        Designer/FormsDashboard/DashboardPages/pageConfig.h
+        Designer/FormsDashboard/formGerenciarCategorias.h
+)
+
+# 3. Lista de Ficheiros de Interface (.ui)
 set(PROJECT_FORMS
         Designer/formInicio.ui
         Designer/FormsLogin/formCadastro.ui
         Designer/FormsLogin/formExcluirUsuario.ui
         Designer/FormsLogin/formUsuario.ui
-        Designer/FormsLogin/formBoasVindas.cpp
-        Designer/FormsLogin/formBoasVindas.h
         Designer/FormsLogin/formBoasVindas.ui
-        Designer/FormsLogin/formLoginSenha.cpp
-        Designer/FormsLogin/formLoginSenha.h
         Designer/FormsLogin/formLoginSenha.ui
-        Composicoes/PasswordFormHelper.cpp
-        Composicoes/PasswordFormHelper.h
-        Designer/FormsDashboard/formMainDashboard.cpp
-        Designer/FormsDashboard/formMainDashboard.h
         Designer/FormsDashboard/formMainDashboard.ui
-        Designer/FormsDashboard/DashboardPages/pageHome.cpp
-        Designer/FormsDashboard/DashboardPages/pageHome.h
         Designer/FormsDashboard/DashboardPages/pageHome.ui
-        Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp
-        Designer/FormsDashboard/DashboardPages/pageLancamentos.h
         Designer/FormsDashboard/DashboardPages/pageLancamentos.ui
-        Designer/FormsDashboard/formAdicionarLancamento.cpp
-        Designer/FormsDashboard/formAdicionarLancamento.h
         Designer/FormsDashboard/formAdicionarLancamento.ui
-        Gerenciamento/SessionManager.cpp
-        Gerenciamento/SessionManager.h
-        Gerenciamento/AppController.cpp
-        Gerenciamento/AppController.h
+        Designer/FormsDashboard/DashboardPages/pageConfig.ui
+        Designer/FormsDashboard/formGerenciarCategorias.ui
 )
 
-# 3. Criamos o executável usando uma função especial do Qt
-#    Ela entende essas listas e lida com tudo automaticamente
+# 4. Criamos o executável, agora passando TODAS as listas de ficheiros
 qt_add_executable(MeuCentavoApp
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        ${PROJECT_HEADERS}
         ${PROJECT_FORMS}
+        recursos.qrc
 )
 
 target_include_directories(MeuCentavoApp PRIVATE ${PROJECT_SOURCE_DIR})
 
-# 4. Linkamos as bibliotecas do Qt ao nosso executável
+# 5. Linkamos as bibliotecas do Qt
 target_link_libraries(MeuCentavoApp PRIVATE
         Qt6::Widgets
         Qt6::Sql
@@ -99,5 +94,5 @@ target_link_libraries(MeuCentavoApp PRIVATE
         Qt6::Network
 )
 
-# Finaliza as configurações do MOC, UIC, e RCC
+# 6. Finaliza as configurações
 qt_finalize_executable(MeuCentavoApp)

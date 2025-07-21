@@ -227,6 +227,30 @@ DataAccess/UsuarioDAO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.s
 .PHONY : DataAccess/UsuarioDAO.cpp.s
 
+Designer/FormsDashboard/DashboardPages/pageConfig.o: Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageConfig.o
+
+# target to build an object file
+Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o
+
+Designer/FormsDashboard/DashboardPages/pageConfig.i: Designer/FormsDashboard/DashboardPages/pageConfig.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageConfig.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/DashboardPages/pageConfig.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageConfig.cpp.i
+
+Designer/FormsDashboard/DashboardPages/pageConfig.s: Designer/FormsDashboard/DashboardPages/pageConfig.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageConfig.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/DashboardPages/pageConfig.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageConfig.cpp.s
+
 Designer/FormsDashboard/DashboardPages/pageHome.o: Designer/FormsDashboard/DashboardPages/pageHome.cpp.o
 .PHONY : Designer/FormsDashboard/DashboardPages/pageHome.o
 
@@ -298,6 +322,30 @@ Designer/FormsDashboard/formAdicionarLancamento.s: Designer/FormsDashboard/formA
 Designer/FormsDashboard/formAdicionarLancamento.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.s
 .PHONY : Designer/FormsDashboard/formAdicionarLancamento.cpp.s
+
+Designer/FormsDashboard/formGerenciarCategorias.o: Designer/FormsDashboard/formGerenciarCategorias.cpp.o
+.PHONY : Designer/FormsDashboard/formGerenciarCategorias.o
+
+# target to build an object file
+Designer/FormsDashboard/formGerenciarCategorias.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarCategorias.cpp.o
+.PHONY : Designer/FormsDashboard/formGerenciarCategorias.cpp.o
+
+Designer/FormsDashboard/formGerenciarCategorias.i: Designer/FormsDashboard/formGerenciarCategorias.cpp.i
+.PHONY : Designer/FormsDashboard/formGerenciarCategorias.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/formGerenciarCategorias.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarCategorias.cpp.i
+.PHONY : Designer/FormsDashboard/formGerenciarCategorias.cpp.i
+
+Designer/FormsDashboard/formGerenciarCategorias.s: Designer/FormsDashboard/formGerenciarCategorias.cpp.s
+.PHONY : Designer/FormsDashboard/formGerenciarCategorias.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/formGerenciarCategorias.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarCategorias.cpp.s
+.PHONY : Designer/FormsDashboard/formGerenciarCategorias.cpp.s
 
 Designer/FormsDashboard/formMainDashboard.o: Designer/FormsDashboard/formMainDashboard.cpp.o
 .PHONY : Designer/FormsDashboard/formMainDashboard.o
@@ -515,6 +563,30 @@ Gerenciamento/SessionManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.s
 .PHONY : Gerenciamento/SessionManager.cpp.s
 
+MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.o: MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o
+.PHONY : MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.o
+
+# target to build an object file
+MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o
+.PHONY : MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o
+
+MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.i: MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.i
+.PHONY : MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.i
+
+# target to preprocess a source file
+MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.i
+.PHONY : MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.i
+
+MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.s: MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.s
+.PHONY : MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.s
+
+# target to generate assembly for a file
+MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.s
+.PHONY : MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.s
+
 MeuCentavoApp_autogen/mocs_compilation.o: MeuCentavoApp_autogen/mocs_compilation.cpp.o
 .PHONY : MeuCentavoApp_autogen/mocs_compilation.o
 
@@ -583,6 +655,9 @@ help:
 	@echo "... DataAccess/UsuarioDAO.o"
 	@echo "... DataAccess/UsuarioDAO.i"
 	@echo "... DataAccess/UsuarioDAO.s"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageConfig.o"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageConfig.i"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageConfig.s"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.s"
@@ -592,6 +667,9 @@ help:
 	@echo "... Designer/FormsDashboard/formAdicionarLancamento.o"
 	@echo "... Designer/FormsDashboard/formAdicionarLancamento.i"
 	@echo "... Designer/FormsDashboard/formAdicionarLancamento.s"
+	@echo "... Designer/FormsDashboard/formGerenciarCategorias.o"
+	@echo "... Designer/FormsDashboard/formGerenciarCategorias.i"
+	@echo "... Designer/FormsDashboard/formGerenciarCategorias.s"
 	@echo "... Designer/FormsDashboard/formMainDashboard.o"
 	@echo "... Designer/FormsDashboard/formMainDashboard.i"
 	@echo "... Designer/FormsDashboard/formMainDashboard.s"
@@ -619,6 +697,9 @@ help:
 	@echo "... Gerenciamento/SessionManager.o"
 	@echo "... Gerenciamento/SessionManager.i"
 	@echo "... Gerenciamento/SessionManager.s"
+	@echo "... MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.o"
+	@echo "... MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.i"
+	@echo "... MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.s"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.o"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.i"
 	@echo "... MeuCentavoApp_autogen/mocs_compilation.s"

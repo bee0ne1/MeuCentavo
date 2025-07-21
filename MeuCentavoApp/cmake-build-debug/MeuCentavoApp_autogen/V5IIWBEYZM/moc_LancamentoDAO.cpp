@@ -53,12 +53,23 @@ template <> constexpr inline auto LancamentoDAO::qt_create_metaobjectdata<qt_met
         "dadosGrafico",
         "erroOcorrido",
         "mensagem",
+        "lancamentoExcluidoComSucesso",
+        "contasRecebidas",
+        "QList<Conta>",
+        "contas",
+        "categoriasRecebidas",
+        "QList<Categoria>",
+        "categorias",
+        "categoriaModificadaComSucesso",
         "onAdicionarLancamentoReply",
         "QNetworkReply*",
         "reply",
         "onObterLancamentosReply",
         "onObterResumosReply",
-        "onObterGastosCategoriaReply"
+        "onObterGastosCategoriaReply",
+        "onObterContasReply",
+        "onObterCategoriasReply",
+        "onModificarCategoriaReply"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -80,21 +91,45 @@ template <> constexpr inline auto LancamentoDAO::qt_create_metaobjectdata<qt_met
         QtMocHelpers::SignalData<void(const QString &)>(12, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 13 },
         }}),
+        // Signal 'lancamentoExcluidoComSucesso'
+        QtMocHelpers::SignalData<void()>(14, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'contasRecebidas'
+        QtMocHelpers::SignalData<void(const QVector<Conta> &)>(15, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 16, 17 },
+        }}),
+        // Signal 'categoriasRecebidas'
+        QtMocHelpers::SignalData<void(const QVector<Categoria> &)>(18, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 19, 20 },
+        }}),
+        // Signal 'categoriaModificadaComSucesso'
+        QtMocHelpers::SignalData<void()>(21, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'onAdicionarLancamentoReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(14, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 15, 16 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(22, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 23, 24 },
         }}),
         // Slot 'onObterLancamentosReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(17, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 15, 16 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(25, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 23, 24 },
         }}),
         // Slot 'onObterResumosReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(18, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 15, 16 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(26, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 23, 24 },
         }}),
         // Slot 'onObterGastosCategoriaReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(19, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 15, 16 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(27, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 23, 24 },
+        }}),
+        // Slot 'onObterContasReply'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(28, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 23, 24 },
+        }}),
+        // Slot 'onObterCategoriasReply'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(29, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 23, 24 },
+        }}),
+        // Slot 'onModificarCategoriaReply'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(30, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 23, 24 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -124,10 +159,17 @@ void LancamentoDAO::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 2: _t->resumosRecebidos((*reinterpret_cast< std::add_pointer_t<double>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2]))); break;
         case 3: _t->gastosPorCategoriaRecebidos((*reinterpret_cast< std::add_pointer_t<QHash<QString,double>>>(_a[1]))); break;
         case 4: _t->erroOcorrido((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 5: _t->onAdicionarLancamentoReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 6: _t->onObterLancamentosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 7: _t->onObterResumosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 8: _t->onObterGastosCategoriaReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 5: _t->lancamentoExcluidoComSucesso(); break;
+        case 6: _t->contasRecebidas((*reinterpret_cast< std::add_pointer_t<QList<Conta>>>(_a[1]))); break;
+        case 7: _t->categoriasRecebidas((*reinterpret_cast< std::add_pointer_t<QList<Categoria>>>(_a[1]))); break;
+        case 8: _t->categoriaModificadaComSucesso(); break;
+        case 9: _t->onAdicionarLancamentoReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 10: _t->onObterLancamentosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 11: _t->onObterResumosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 12: _t->onObterGastosCategoriaReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 13: _t->onObterContasReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 14: _t->onObterCategoriasReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 15: _t->onModificarCategoriaReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
         default: ;
         }
     }
@@ -141,6 +183,14 @@ void LancamentoDAO::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         if (QtMocHelpers::indexOfMethod<void (LancamentoDAO::*)(const QHash<QString,double> & )>(_a, &LancamentoDAO::gastosPorCategoriaRecebidos, 3))
             return;
         if (QtMocHelpers::indexOfMethod<void (LancamentoDAO::*)(const QString & )>(_a, &LancamentoDAO::erroOcorrido, 4))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (LancamentoDAO::*)()>(_a, &LancamentoDAO::lancamentoExcluidoComSucesso, 5))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (LancamentoDAO::*)(const QVector<Conta> & )>(_a, &LancamentoDAO::contasRecebidas, 6))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (LancamentoDAO::*)(const QVector<Categoria> & )>(_a, &LancamentoDAO::categoriasRecebidas, 7))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (LancamentoDAO::*)()>(_a, &LancamentoDAO::categoriaModificadaComSucesso, 8))
             return;
     }
 }
@@ -164,14 +214,14 @@ int LancamentoDAO::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 16;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 16)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 16;
     }
     return _id;
 }
@@ -204,5 +254,29 @@ void LancamentoDAO::gastosPorCategoriaRecebidos(const QHash<QString,double> & _t
 void LancamentoDAO::erroOcorrido(const QString & _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 4, nullptr, _t1);
+}
+
+// SIGNAL 5
+void LancamentoDAO::lancamentoExcluidoComSucesso()
+{
+    QMetaObject::activate(this, &staticMetaObject, 5, nullptr);
+}
+
+// SIGNAL 6
+void LancamentoDAO::contasRecebidas(const QVector<Conta> & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 6, nullptr, _t1);
+}
+
+// SIGNAL 7
+void LancamentoDAO::categoriasRecebidas(const QVector<Categoria> & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 7, nullptr, _t1);
+}
+
+// SIGNAL 8
+void LancamentoDAO::categoriaModificadaComSucesso()
+{
+    QMetaObject::activate(this, &staticMetaObject, 8, nullptr);
 }
 QT_WARNING_POP

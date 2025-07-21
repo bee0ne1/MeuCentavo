@@ -1,8 +1,7 @@
 #include "formAdicionarLancamento.h"
 #include "ui_formAdicionarLancamento.h"
 #include "DataAccess/LancamentoDAO.h"
-#include "Modelo/Lancamento.h"
-#include "Gerenciamento/SessionManager.h" // Inclui nosso "cofre" de sessão
+#include "Gerenciamento/SessionManager.h"
 #include <QMessageBox>
 #include <QDate>
 #include <QDebug>
@@ -15,15 +14,32 @@ formAdicionarLancamento::formAdicionarLancamento(QWidget *parent) :
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowTitle("Adicionar Novo Lançamento");
 
-    // Configurações iniciais dos campos (continua igual)
+    // --- Instanciamos o DAO UMA ÚNICA VEZ ---
+    m_dao = new LancamentoDAO(this);
+
+    // --- Configurações iniciais dos campos ---
     ui->comboBoxTipo->addItems({"Despesa", "Receita"});
     ui->dateEditData->setDate(QDate::currentDate());
     ui->spinBoxValor->setMinimum(0.01);
     ui->spinBoxValor->setMaximum(9999999.99);
 
-    // Conectamos o botão Salvar ao nosso novo slot
+    // --- Conectamos TODOS os sinais e slots aqui no construtor ---
     connect(ui->buttonSalvar, &QPushButton::clicked, this, &formAdicionarLancamento::salvarLancamento);
     connect(ui->buttonCancelar, &QPushButton::clicked, this, &QDialog::reject);
+
+    // Conecta o DAO
+    connect(m_dao, &LancamentoDAO::contasRecebidas, this, &formAdicionarLancamento::onContasRecebidas);
+    connect(m_dao, &LancamentoDAO::categoriasRecebidas, this, &formAdicionarLancamento::onCategoriasRecebidas);
+    connect(m_dao, &LancamentoDAO::lancamentoAdicionado, this, &formAdicionarLancamento::onLancamentoAdicionado);
+    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &formAdicionarLancamento::onErroDeRede);
+
+    // Conecta o combobox de tipo ao nosso novo slot de filtro
+    connect(ui->comboBoxTipo, &QComboBox::currentTextChanged, this, &formAdicionarLancamento::filtrarCategoriasPorTipo);
+
+    // --- Inicia o carregamento dos dados ---
+    QString token = SessionManager::instance().getToken();
+    m_dao->obterTodasContas(token);
+    m_dao->obterTodasCategorias(token);
 }
 
 formAdicionarLancamento::~formAdicionarLancamento()
@@ -31,57 +47,74 @@ formAdicionarLancamento::~formAdicionarLancamento()
     delete ui;
 }
 
+void formAdicionarLancamento::onContasRecebidas(const QVector<Conta>& contas)
+{
+    for (const auto& conta : contas) {
+        ui->comboBoxConta->addItem(conta.nome, conta.id);
+    }
+}
+
+void formAdicionarLancamento::onCategoriasRecebidas(const QVector<Categoria>& categorias)
+{
+    m_todasCategorias = categorias; // Guarda a lista completa
+    filtrarCategoriasPorTipo(); // Chama o filtro para exibir a lista inicial correta
+}
+
+void formAdicionarLancamento::filtrarCategoriasPorTipo()
+{
+    QString tipoSelecionado = ui->comboBoxTipo->currentText();
+    ui->comboBoxCategoria->clear(); // Limpa as opções atuais
+
+    for (const auto& categoria : m_todasCategorias) {
+        // Adiciona a categoria ao combobox apenas se o tipo for o mesmo
+        if (categoria.tipo == tipoSelecionado) {
+            ui->comboBoxCategoria->addItem(categoria.nome, categoria.id);
+        }
+    }
+}
+
 void formAdicionarLancamento::salvarLancamento()
 {
-    // 1. Validação da UI
     if (ui->lineEditDescricao->text().isEmpty()) {
         QMessageBox::warning(this, "Campo Obrigatório", "A descrição não pode estar vazia.");
         return;
     }
 
-    // Desabilita o botão para evitar múltiplos cliques
     ui->buttonSalvar->setEnabled(false);
     ui->buttonSalvar->setText("Salvando...");
 
-    // 2. Coleta dos dados da interface
     Lancamento novoLancamento;
     novoLancamento.descricao = ui->lineEditDescricao->text();
     novoLancamento.valor = ui->spinBoxValor->value();
     novoLancamento.data_lancamento = ui->dateEditData->date();
     novoLancamento.tipo = ui->comboBoxTipo->currentText();
-    // O ID do usuário e da conta/categoria serão tratados pelo backend ou DAO
+    novoLancamento.id_conta = ui->comboBoxConta->currentData().toInt();
+    novoLancamento.id_categoria = ui->comboBoxCategoria->currentData().toInt();
 
-    // 3. Pega o token de autenticação do nosso "cofre"
+    if (novoLancamento.id_conta == 0 || novoLancamento.id_categoria == 0) {
+        QMessageBox::warning(this, "Seleção Obrigatória", "Por favor, selecione uma conta e uma categoria.");
+        ui->buttonSalvar->setEnabled(true); // Reabilita o botão
+        ui->buttonSalvar->setText("Salvar");
+        return;
+    }
+
     QString token = SessionManager::instance().getToken();
 
-    // 4. Inicia a requisição de rede através do DAO
-    LancamentoDAO *dao = new LancamentoDAO(this);
-
-    // Conecta os sinais do DAO aos nossos slots de resposta
-    connect(dao, &LancamentoDAO::lancamentoAdicionado, this, &formAdicionarLancamento::onLancamentoAdicionado);
-    connect(dao, &LancamentoDAO::erroOcorrido, this, &formAdicionarLancamento::onErroDeRede);
-
-    dao->adicionarLancamento(novoLancamento, token);
+    // --- USA O DAO MEMBRO ---
+    // Removemos a criação de um novo DAO aqui
+    m_dao->adicionarLancamento(novoLancamento, token);
 }
 
 void formAdicionarLancamento::onLancamentoAdicionado()
 {
-    // O DAO nos avisou que a API retornou sucesso!
     qDebug() << "Lançamento adicionado com sucesso, fechando diálogo.";
-
-    // Avisa a página anterior (ex: pageLancamentos) que ela pode se atualizar
     emit lancamentoSalvo();
-
-    // Fecha o diálogo com o status de "Aceito"
     this->accept();
 }
 
 void formAdicionarLancamento::onErroDeRede(const QString& motivo)
 {
-    // O DAO nos avisou que a API retornou um erro
     QMessageBox::critical(this, "Erro de Rede", motivo);
-
-    // Reabilita o botão para o usuário poder tentar novamente
     ui->buttonSalvar->setEnabled(true);
     ui->buttonSalvar->setText("Salvar");
 }
