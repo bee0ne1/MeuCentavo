@@ -186,7 +186,14 @@ app.post(
             const token = jwt.sign(payload, secretKey, { expiresIn: '1h' }); // Token expira em 1 hora
 
             // 4. Envia o token de volta para o cliente
-            res.json({ message: 'Login bem-sucedido!', token: token });
+            res.json({
+                message: 'Login bem-sucedido!',
+                token: token,
+                user: { // <-- Objeto que o C++ espera
+                    user_id: user.user_id,
+                    user_usuario: user.user_usuario
+                }
+            });
 
         } catch (error) {
             console.error("Erro no login:", error);
@@ -245,7 +252,7 @@ app.get('/api/lancamentos', authenticateToken, async (req, res) => {
              ORDER BY l.data_lancamento DESC, l.id DESC`,
             [usuarioId]
         );
-        
+
         res.json(lancamentos);
 
     } catch (error) {
