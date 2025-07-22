@@ -13,6 +13,7 @@ formAdicionarLancamento::formAdicionarLancamento(QWidget *parent) :
     ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowTitle("Adicionar Novo Lançamento");
+    m_idLancamentoEdicao = -1; // -1 significa modo "Adicionar"
 
     // --- Instanciamos o DAO UMA ÚNICA VEZ ---
     m_dao = new LancamentoDAO(this);
@@ -31,6 +32,7 @@ formAdicionarLancamento::formAdicionarLancamento(QWidget *parent) :
     connect(m_dao, &LancamentoDAO::contasRecebidas, this, &formAdicionarLancamento::onContasRecebidas);
     connect(m_dao, &LancamentoDAO::categoriasRecebidas, this, &formAdicionarLancamento::onCategoriasRecebidas);
     connect(m_dao, &LancamentoDAO::lancamentoAdicionado, this, &formAdicionarLancamento::onLancamentoAdicionado);
+    connect(m_dao, &LancamentoDAO::lancamentoModificadoComSucesso, this, &formAdicionarLancamento::onLancamentoAdicionado);
     connect(m_dao, &LancamentoDAO::erroOcorrido, this, &formAdicionarLancamento::onErroDeRede);
 
     // Conecta o combobox de tipo ao nosso novo slot de filtro
@@ -75,34 +77,41 @@ void formAdicionarLancamento::filtrarCategoriasPorTipo()
 
 void formAdicionarLancamento::salvarLancamento()
 {
+    // 1. Validações (continuam iguais)
     if (ui->lineEditDescricao->text().isEmpty()) {
         QMessageBox::warning(this, "Campo Obrigatório", "A descrição não pode estar vazia.");
+        return;
+    }
+    if (ui->comboBoxConta->currentIndex() == -1 || ui->comboBoxCategoria->currentIndex() == -1) {
+        QMessageBox::warning(this, "Seleção Obrigatória", "Por favor, selecione uma conta e uma categoria.");
         return;
     }
 
     ui->buttonSalvar->setEnabled(false);
     ui->buttonSalvar->setText("Salvando...");
 
-    Lancamento novoLancamento;
-    novoLancamento.descricao = ui->lineEditDescricao->text();
-    novoLancamento.valor = ui->spinBoxValor->value();
-    novoLancamento.data_lancamento = ui->dateEditData->date();
-    novoLancamento.tipo = ui->comboBoxTipo->currentText();
-    novoLancamento.id_conta = ui->comboBoxConta->currentData().toInt();
-    novoLancamento.id_categoria = ui->comboBoxCategoria->currentData().toInt();
-
-    if (novoLancamento.id_conta == 0 || novoLancamento.id_categoria == 0) {
-        QMessageBox::warning(this, "Seleção Obrigatória", "Por favor, selecione uma conta e uma categoria.");
-        ui->buttonSalvar->setEnabled(true); // Reabilita o botão
-        ui->buttonSalvar->setText("Salvar");
-        return;
-    }
+    // 2. Coleta os dados da interface (quase igual)
+    Lancamento lancamento;
+    lancamento.id = m_idLancamentoEdicao; // IMPORTANTE: Pega o ID que guardámos (-1 se for novo)
+    lancamento.descricao = ui->lineEditDescricao->text();
+    lancamento.valor = ui->spinBoxValor->value();
+    lancamento.data_lancamento = ui->dateEditData->date();
+    lancamento.tipo = ui->comboBoxTipo->currentText();
+    lancamento.id_conta = ui->comboBoxConta->currentData().toInt();
+    lancamento.id_categoria = ui->comboBoxCategoria->currentData().toInt();
 
     QString token = SessionManager::instance().getToken();
 
-    // --- USA O DAO MEMBRO ---
-    // Removemos a criação de um novo DAO aqui
-    m_dao->adicionarLancamento(novoLancamento, token);
+    // 3. LÓGICA DE DECISÃO: Adicionar ou Editar?
+    if (lancamento.id == -1) {
+        // MODO ADICIONAR: O ID é -1, então chamamos o método de adicionar do DAO
+        qDebug() << "Salvando NOVO lançamento...";
+        m_dao->adicionarLancamento(lancamento, token);
+    } else {
+        // MODO EDITAR: O ID é válido, então chamamos o método de editar do DAO
+        qDebug() << "Atualizando lançamento existente com ID:" << lancamento.id;
+        m_dao->editarLancamento(lancamento, token);
+    }
 }
 
 void formAdicionarLancamento::onLancamentoAdicionado()
@@ -118,3 +127,20 @@ void formAdicionarLancamento::onErroDeRede(const QString& motivo)
     ui->buttonSalvar->setEnabled(true);
     ui->buttonSalvar->setText("Salvar");
 }
+
+void formAdicionarLancamento::setLancamentoParaEdicao(const Lancamento& lancamento)
+{
+    setWindowTitle("Editar Lançamento");
+    m_idLancamentoEdicao = lancamento.id;
+
+    // Preenche os campos da UI com os dados do lançamento
+    ui->lineEditDescricao->setText(lancamento.descricao);
+    ui->spinBoxValor->setValue(lancamento.valor);
+    ui->dateEditData->setDate(lancamento.data_lancamento);
+    ui->comboBoxTipo->setCurrentText(lancamento.tipo);
+
+    // Encontra e seleciona a conta e categoria corretas nos comboboxes
+    ui->comboBoxConta->setCurrentIndex(ui->comboBoxConta->findData(lancamento.id_conta));
+    ui->comboBoxCategoria->setCurrentIndex(ui->comboBoxCategoria->findData(lancamento.id_categoria));
+}
+

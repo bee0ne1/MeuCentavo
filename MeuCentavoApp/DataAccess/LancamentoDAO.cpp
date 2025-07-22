@@ -86,6 +86,8 @@ void LancamentoDAO::onObterLancamentosReply(QNetworkReply *reply)
             l.data_lancamento = QDate::fromString(obj["data_lancamento"].toString().left(10), Qt::ISODate);
             l.tipo = obj["tipo"].toString();
             l.id_usuario = obj["id_usuario"].toInt();
+            l.nome_conta = obj["nome_conta"].toString();
+            l.nome_categoria = obj["nome_categoria"].toString();
             lista.append(l);
         }
         emit lancamentosRecebidos(lista);
@@ -130,6 +132,31 @@ void LancamentoDAO::onObterGastosCategoriaReply(QNetworkReply *reply)
 {
     // Implementação futura, similar a onObterLancamentosReply
     reply->deleteLater();
+}
+
+void LancamentoDAO::editarLancamento(const Lancamento& lancamento, const QString& token)
+{
+    QJsonObject json;
+    json["descricao"] = lancamento.descricao;
+    json["valor"] = lancamento.valor;
+    json["data_lancamento"] = lancamento.data_lancamento.toString(Qt::ISODate);
+    json["tipo"] = lancamento.tipo;
+    json["id_conta"] = lancamento.id_conta;
+    json["id_categoria"] = lancamento.id_categoria;
+
+    QNetworkRequest request(QUrl(m_baseUrl + "/" + QString::number(lancamento.id)));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->put(request, QJsonDocument(json).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        if (reply->error() == QNetworkReply::NoError) {
+            emit lancamentoModificadoComSucesso();
+        } else {
+            emit erroOcorrido("Falha ao editar lançamento: " + reply->errorString());
+        }
+        reply->deleteLater();
+    });
 }
 
 void LancamentoDAO::excluirLancamento(int idLancamento, const QString& token)

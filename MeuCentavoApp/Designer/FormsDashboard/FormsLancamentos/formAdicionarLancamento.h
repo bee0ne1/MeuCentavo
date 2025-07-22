@@ -17,9 +17,10 @@ class formAdicionarLancamento : public QDialog
 public:
     explicit formAdicionarLancamento(QWidget *parent = nullptr);
     ~formAdicionarLancamento();
+    void setLancamentoParaEdicao(const Lancamento& lancamento);
 
-    signals:
-        void lancamentoSalvo();
+signals:
+    void lancamentoSalvo();
 
 private slots:
     void salvarLancamento();
@@ -29,10 +30,12 @@ private slots:
     void onErroDeRede(const QString& motivo);
     void filtrarCategoriasPorTipo(); // Novo slot para o filtro inteligente
 
+
 private:
     Ui::formAdicionarLancamento *ui;
     LancamentoDAO* m_dao; // DAO como membro da classe
     QVector<Categoria> m_todasCategorias; // Guardamos todas as categorias aqui
+    int m_idLancamentoEdicao; // Guarda o ID do lançamento a ser editado
 };
 
 #endif // FORMADICIONARLANCAMENTO_H

@@ -27,9 +27,19 @@ pageLancamentos::pageLancamentos(QWidget *parent) :
     connect(ui->buttonAdicionarLancamento, &QPushButton::clicked, this, &pageLancamentos::abrirDialogoAdicionar);
 
     // Configuração inicial da tabela
-    ui->tabelaTodosLancamentos->setColumnCount(5);
-    ui->tabelaTodosLancamentos->setHorizontalHeaderLabels({"Data", "Descrição", "Tipo", "Valor", "Excluir"});
-    ui->tabelaTodosLancamentos->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+    ui->tabelaTodosLancamentos->setColumnCount(7);
+    ui->tabelaTodosLancamentos->setHorizontalHeaderLabels({"Data", "Descrição", "Conta", "Categoria", "Tipo", "Valor", "Ações"});
+    QHeaderView* header = ui->tabelaTodosLancamentos->horizontalHeader();
+    header->setSectionResizeMode(0, QHeaderView::ResizeToContents); // Data
+    header->setSectionResizeMode(1, QHeaderView::Stretch);           // Descrição (estica)
+    header->setSectionResizeMode(2, QHeaderView::ResizeToContents); // Conta
+    header->setSectionResizeMode(3, QHeaderView::ResizeToContents); // Categoria
+    header->setSectionResizeMode(4, QHeaderView::ResizeToContents); // Tipo
+    header->setSectionResizeMode(5, QHeaderView::Interactive); // Valor
+    header->setSectionResizeMode(6, QHeaderView::ResizeToContents); // Ações
+
+    //AUMENTO DA COLUNA VALOR
+    ui->tabelaTodosLancamentos->setColumnWidth(5, 120);
 
     // Inicia a busca por dados assim que a página é criada
     carregarTabela();
@@ -71,61 +81,90 @@ void pageLancamentos::onLancamentosRecebidos(const QVector<Lancamento>& lancamen
 {
     qDebug() << "pageLancamentos: Lista com" << lancamentos.count() << "lançamentos recebida. Atualizando tabela.";
 
-    ui->tabelaTodosLancamentos->clearContents();
+    ui->tabelaTodosLancamentos->blockSignals(true);
     ui->tabelaTodosLancamentos->setRowCount(0);
 
     for (const auto& lancamento : lancamentos) {
-        qDebug() << "Adicionando à tabela -> Descricao:" << lancamento.descricao << "| Valor no objeto:" << lancamento.valor;
         int linha = ui->tabelaTodosLancamentos->rowCount();
         ui->tabelaTodosLancamentos->insertRow(linha);
 
+        // --- Coluna 0: Data ---
         QTableWidgetItem *itemData = new QTableWidgetItem(lancamento.data_lancamento.toString("dd/MM/yyyy"));
-        QTableWidgetItem *itemDesc = new QTableWidgetItem(lancamento.descricao);
-        QTableWidgetItem *itemTipo = new QTableWidgetItem(lancamento.tipo);
-        QTableWidgetItem *itemValor = new QTableWidgetItem(QString::number(lancamento.valor, 'f', 2));
-
         itemData->setTextAlignment(Qt::AlignCenter);
-        itemValor->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
+        ui->tabelaTodosLancamentos->setItem(linha, 0, itemData);
 
+        // --- Coluna 1: Descrição ---
+        ui->tabelaTodosLancamentos->setItem(linha, 1, new QTableWidgetItem(lancamento.descricao));
+
+        // --- Coluna 2: Conta (COM ALINHAMENTO CORRIGIDO) ---
+        QTableWidgetItem *itemConta = new QTableWidgetItem(lancamento.nome_conta);
+        itemConta->setTextAlignment(Qt::AlignCenter);
+        ui->tabelaTodosLancamentos->setItem(linha, 2, itemConta);
+
+        // --- Coluna 3: Categoria (COM ALINHAMENTO CORRIGIDO) ---
+        QTableWidgetItem *itemCategoria = new QTableWidgetItem(lancamento.nome_categoria);
+        itemCategoria->setTextAlignment(Qt::AlignCenter);
+        ui->tabelaTodosLancamentos->setItem(linha, 3, itemCategoria);
+
+        // --- Coluna 4: Tipo (COM ALINHAMENTO CORRIGIDO) ---
+        QTableWidgetItem *itemTipo = new QTableWidgetItem(lancamento.tipo);
+        itemTipo->setTextAlignment(Qt::AlignCenter);
+        ui->tabelaTodosLancamentos->setItem(linha, 4, itemTipo);
+
+        // --- Coluna 5: Valor ---
+        QTableWidgetItem *itemValor = new QTableWidgetItem(QString::number(lancamento.valor, 'f', 2));
+        itemValor->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         if (lancamento.tipo == "Receita") {
             itemValor->setForeground(QColor("#2ecc71")); // Verde
         } else {
             itemValor->setForeground(QColor("#e74c3c")); // Vermelho
         }
+        ui->tabelaTodosLancamentos->setItem(linha, 5, itemValor);
 
-        // 1. Crie o botão sem texto
-        QPushButton* btnExcluir = new QPushButton(this);
+        // --- Coluna 6: Ações (COM ÍNDICE CORRIGIDO) ---
+        QWidget* pWidget = new QWidget();
+        QHBoxLayout* pLayout = new QHBoxLayout(pWidget);
+        pLayout->setContentsMargins(5, 0, 5, 0);
+        QPushButton* btnEdit = new QPushButton("Editar");
+        QPushButton* btnDelete = new QPushButton();
+        btnDelete->setIcon(QIcon(":/Recursos/trash_icon.png"));
+        btnEdit->setMinimumWidth(75);
+        btnDelete->setFixedSize(QSize(32, 32));
+        pLayout->addWidget(btnEdit);
+        pLayout->addWidget(btnDelete);
+        pWidget->setLayout(pLayout);
+        // O widget com os botões deve ser inserido na coluna de índice 6
+        ui->tabelaTodosLancamentos->setCellWidget(linha, 6, pWidget);
 
-        // 2. Crie o QIcon usando o caminho do recurso
-        //    O ':/' indica que é um recurso. O resto é o caminho dentro do .qrc
-        QIcon trashIcon(":/Recursos/trash_icon.png");
+        // Conectar os sinais
+        connect(btnEdit, &QPushButton::clicked, this, [this, lancamento](){ editarLancamento(lancamento); });
+        connect(btnDelete, &QPushButton::clicked, this, [this, lancamento](){ excluirLancamento(lancamento); });
+    }
 
-        // 3. Defina o ícone e outras propriedades
-        btnExcluir->setIcon(trashIcon);
-        btnExcluir->setIconSize(QSize(24, 24)); // Ajuste o tamanho conforme necessário
-        btnExcluir->setCursor(Qt::PointingHandCursor);
-        btnExcluir->setToolTip("Excluir Lançamento"); // Dica ao passar o rato
+    ui->tabelaTodosLancamentos->blockSignals(false);
+}
 
+void pageLancamentos::editarLancamento(const Lancamento& lancamento)
+{
+    // Reutilizamos o mesmo formulário de adicionar
+    formAdicionarLancamento* form = new formAdicionarLancamento(this);
+    form->setLancamentoParaEdicao(lancamento); // Nova função para pré-preencher
 
-        // Conecta o clique do botão
-        connect(btnExcluir, &QPushButton::clicked, this, [this, lancamento](){
-            QMessageBox::StandardButton resposta = QMessageBox::question(this, "Confirmar Exclusão",
-                QString("Tem certeza que deseja excluir o lançamento '%1'?").arg(lancamento.descricao),
-                QMessageBox::Yes | QMessageBox::No);
+    // Conectamos o sinal de sucesso para recarregar a tabela
+    connect(form, &formAdicionarLancamento::lancamentoSalvo, this, &pageLancamentos::carregarTabela);
 
-            if (resposta == QMessageBox::Yes) {
-                QString token = SessionManager::instance().getToken();
-                m_dao->excluirLancamento(lancamento.id, token);
-            }
-        });
+    form->exec();
+}
 
-        // Adiciona o botão à célula da nova coluna
-        ui->tabelaTodosLancamentos->setCellWidget(linha, 4, btnExcluir);
+void pageLancamentos::excluirLancamento(const Lancamento& lancamento)
+{
+    QMessageBox::StandardButton resposta = QMessageBox::question(this, "Confirmar Exclusão",
+        QString("Tem certeza que deseja excluir o lançamento '%1'?").arg(lancamento.descricao),
+        QMessageBox::Yes | QMessageBox::No);
 
-        ui->tabelaTodosLancamentos->setItem(linha, 0, itemData);
-        ui->tabelaTodosLancamentos->setItem(linha, 1, itemDesc);
-        ui->tabelaTodosLancamentos->setItem(linha, 2, itemTipo);
-        ui->tabelaTodosLancamentos->setItem(linha, 3, itemValor);
+    if (resposta == QMessageBox::Yes) {
+        QString token = SessionManager::instance().getToken();
+        m_dao->excluirLancamento(lancamento.id, token);
     }
 }
 

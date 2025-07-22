@@ -48,7 +48,11 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
         "QList<Lancamento>",
         "lancamentos",
         "onErroDeRede",
-        "motivo"
+        "motivo",
+        "editarLancamento",
+        "Lancamento",
+        "lancamento",
+        "excluirLancamento"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -65,6 +69,14 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
         // Slot 'onErroDeRede'
         QtMocHelpers::SlotData<void(const QString &)>(8, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::QString, 9 },
+        }}),
+        // Slot 'editarLancamento'
+        QtMocHelpers::SlotData<void(const Lancamento &)>(10, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 11, 12 },
+        }}),
+        // Slot 'excluirLancamento'
+        QtMocHelpers::SlotData<void(const Lancamento &)>(13, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 11, 12 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -94,6 +106,8 @@ void pageLancamentos::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 2: _t->carregarTabela(); break;
         case 3: _t->onLancamentosRecebidos((*reinterpret_cast< std::add_pointer_t<QList<Lancamento>>>(_a[1]))); break;
         case 4: _t->onErroDeRede((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 5: _t->editarLancamento((*reinterpret_cast< std::add_pointer_t<Lancamento>>(_a[1]))); break;
+        case 6: _t->excluirLancamento((*reinterpret_cast< std::add_pointer_t<Lancamento>>(_a[1]))); break;
         default: ;
         }
     }
@@ -122,14 +136,14 @@ int pageLancamentos::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 7;
     }
     return _id;
 }

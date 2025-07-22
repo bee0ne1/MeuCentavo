@@ -25,6 +25,7 @@ public:
     void obterRecentes(const QString& token, int limite = 10);
     void obterResumosDoMes(const QString& token);
     void obterGastosPorCategoria(const QString& token);
+    void editarLancamento(const Lancamento& lancamento, const QString& token);
     void excluirLancamento(int idLancamento, const QString& token);
     void obterTodasCategorias(const QString& token);
     void adicionarCategoria(const Categoria& categoria, const QString& token);
@@ -44,6 +45,7 @@ signals:
     void resumosRecebidos(double receitas, double despesas);
     void gastosPorCategoriaRecebidos(const QHash<QString, double>& dadosGrafico);
     void erroOcorrido(const QString& mensagem); // Um único sinal de erro genérico
+    void lancamentoModificadoComSucesso();
     void lancamentoExcluidoComSucesso();
     void contasRecebidas(const QVector<Conta>& contas);
     void categoriasRecebidas(const QVector<Categoria>& categorias);

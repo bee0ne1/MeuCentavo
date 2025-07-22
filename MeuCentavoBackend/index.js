@@ -232,12 +232,20 @@ app.get('/api/lancamentos', authenticateToken, async (req, res) => {
     try {
         const usuarioId = req.user.userId;
 
-        // ALTERAÇÃO AQUI: de 'lancamento' para 'lancamentos'
+         // Usamos LEFT JOIN para juntar as tabelas e pegar os nomes da conta e da categoria
         const [lancamentos] = await pool.query(
-            'SELECT * FROM lancamentos WHERE id_usuario = ? ORDER BY data_lancamento DESC',
+            `SELECT
+                l.*,
+                c.nome as nome_conta,
+                cat.nome as nome_categoria
+             FROM lancamentos l
+             LEFT JOIN contas c ON l.id_conta = c.id_conta
+             LEFT JOIN categorias cat ON l.id_categoria = cat.id_categoria
+             WHERE l.id_usuario = ?
+             ORDER BY l.data_lancamento DESC, l.id DESC`,
             [usuarioId]
         );
-
+        
         res.json(lancamentos);
 
     } catch (error) {
@@ -330,15 +338,44 @@ app.get('/api/lancamentos/resumo/mes', authenticateToken, async (req, res) => {
     }
 });
 
-// Rota para EXCLUIR um lançamento específico
+// Rota para EDITAR (Atualizar) um lançamento existente
+app.put('/api/lancamentos/:id', authenticateToken, async (req, res) => {
+    try {
+        const idLancamento = req.params.id;
+        const idUsuario = req.user.userId;
+        const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria } = req.body;
+
+        // Validação
+        if (!descricao || !valor || !data_lancamento || !tipo || !id_conta || !id_categoria) {
+            return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
+        }
+
+        // A condição 'AND id_usuario = ?' é uma segurança para garantir que um utilizador
+        // só pode editar os seus próprios lançamentos.
+        const [result] = await pool.query(
+            `UPDATE lancamentos SET descricao = ?, valor = ?, data_lancamento = ?, tipo = ?, id_conta = ?, id_categoria = ?
+             WHERE id = ? AND id_usuario = ?`,
+            [descricao, valor, data_lancamento, tipo, id_conta, id_categoria, idLancamento, idUsuario]
+        );
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Lançamento atualizado com sucesso.' });
+        } else {
+            res.status(404).json({ message: 'Lançamento não encontrado ou não autorizado.' });
+        }
+
+    } catch (error) {
+        console.error("Erro ao editar lançamento:", error);
+        res.status(500).json({ message: "Erro interno do servidor ao editar lançamento." });
+    }
+});
+
+// Rota para EXCLUIR um lançamento 
 app.delete('/api/lancamentos/:id', authenticateToken, async (req, res) => {
     try {
         const idLancamento = req.params.id;
         const idUsuario = req.user.userId;
 
-        // Query para deletar o lançamento.
-        // A condição 'id_usuario = ?' é uma camada de segurança CRÍTICA.
-        // Ela garante que um utilizador só pode apagar os seus próprios lançamentos.
         const [result] = await pool.query(
             'DELETE FROM lancamentos WHERE id = ? AND id_usuario = ?',
             [idLancamento, idUsuario]
@@ -347,12 +384,11 @@ app.delete('/api/lancamentos/:id', authenticateToken, async (req, res) => {
         if (result.affectedRows > 0) {
             res.status(200).json({ message: 'Lançamento excluído com sucesso.' });
         } else {
-            // Isso acontece se o lançamento não existe ou não pertence ao usuário.
             res.status(404).json({ message: 'Lançamento não encontrado ou não autorizado.' });
         }
     } catch (error) {
         console.error("Erro ao excluir lançamento:", error);
-        res.status(500).json({ message: 'Erro interno do servidor.' });
+        res.status(500).json({ message: "Erro interno do servidor ao excluir lançamento." });
     }
 });
 

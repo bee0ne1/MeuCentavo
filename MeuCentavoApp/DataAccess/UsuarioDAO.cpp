@@ -74,26 +74,42 @@ void UsuarioDAO::logarUsuario(const QString& username, const QString& password)
 
 void UsuarioDAO::onLoginReply(QNetworkReply *reply)
 {
+    // Lemos sempre o status e o corpo da resposta primeiro
+    int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+    QByteArray responseData = reply->readAll();
 
-    if (reply->error() == QNetworkReply::NoError) {
-        int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-        QByteArray responseData = reply->readAll();
+    // Verificamos se o status code é de SUCESSO
+    if (statusCode == 200) {
         QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
         QJsonObject jsonObj = jsonDoc.object();
 
-        if (statusCode == 200) { // 200 OK
-            QString token = jsonObj["token"].toString();
-            // Supondo que o backend também retorna os dados do usuário no login
-            Usuario usuario;
-            usuario.id = jsonObj["user"].toObject()["userId"].toInt();
-            usuario.nomeUsuario = jsonObj["user"].toObject()["username"].toString();
-            emit loginSucesso(token, usuario);
-        } else { // ex: 401 Unauthorized
-            emit erroDeAutenticacao(jsonObj["message"].toString());
-        }
+        QString token = jsonObj["token"].toString();
+
+        Usuario usuario;
+        // O seu backend retorna um objeto 'user' dentro do JSON no login
+        QJsonObject userObj = jsonObj["user"].toObject();
+        usuario.id = userObj["user_id"].toInt();
+        usuario.nomeUsuario = userObj["user_usuario"].toString();
+
+        emit loginSucesso(token, usuario);
+
     } else {
-        emit erroDeRede(reply->errorString());
+        // Se o status code for qualquer outra coisa (401, 404, 500), tratamos como erro
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
+        QJsonObject jsonObj = jsonDoc.object();
+
+        // Tentamos extrair a mensagem específica do nosso backend
+        QString motivo = jsonObj["message"].toString();
+
+        // Se, por alguma razão, não houver mensagem, usamos o erro padrão do Qt
+        if (motivo.isEmpty()) {
+            motivo = reply->errorString();
+        }
+
+        // Emitimos o sinal específico de falha de autenticação
+        emit erroDeAutenticacao(motivo);
     }
+
     reply->deleteLater();
 }
 

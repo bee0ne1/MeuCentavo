@@ -31,6 +31,8 @@ private slots:
     // Slots para receber as respostas da API através do DAO
     void onLancamentosRecebidos(const QVector<Lancamento>& lancamentos);
     void onErroDeRede(const QString& motivo);
+    void editarLancamento(const Lancamento& lancamento);
+    void excluirLancamento(const Lancamento& lancamento);
 
 private:
     Ui::pageLancamentos *ui;

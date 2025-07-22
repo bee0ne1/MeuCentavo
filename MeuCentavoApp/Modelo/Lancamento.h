@@ -19,6 +19,8 @@ struct Lancamento {
     int id_usuario;
     int id_conta;
     int id_categoria;
+    QString nome_conta;
+    QString nome_categoria;
 };
 
 #endif //MEUCENTAVOAPP_LANCAMENTO_H
