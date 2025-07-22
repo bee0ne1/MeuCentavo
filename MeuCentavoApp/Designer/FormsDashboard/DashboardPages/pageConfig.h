@@ -21,6 +21,7 @@ public:
 
 private slots:
     void on_buttonCategorias_clicked();
+    void on_buttonContas_clicked();
 
 private:
     Ui::pageConfig *ui;

@@ -358,18 +358,6 @@ app.delete('/api/lancamentos/:id', authenticateToken, async (req, res) => {
 
 // --- ROTAS PARA CONTAS E CATEGORIAS ---
 
-// Rota para BUSCAR TODAS as contas do usuário logado
-app.get('/api/contas', authenticateToken, async (req, res) => {
-    try {
-        const idUsuario = req.user.userId;
-        const [contas] = await pool.query('SELECT * FROM contas WHERE id_usuario = ?', [idUsuario]);
-        res.json(contas);
-    } catch (error) {
-        console.error("Erro ao buscar contas:", error);
-        res.status(500).json({ message: "Erro interno do servidor" });
-    }
-});
-
 // Rota para BUSCAR TODAS as categorias do usuário logado
 app.get('/api/categorias', authenticateToken, async (req, res) => {
     try {
@@ -462,6 +450,105 @@ app.delete('/api/categorias/:id', authenticateToken, async (req, res) => {
     } catch (error) {
         console.error("Erro ao excluir categoria:", error);
         res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para BUSCAR TODAS as contas do usuário logado
+app.get('/api/contas', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+        // Busca todas as contas que pertencem ao usuário, ordenadas por nome
+        const [contas] = await pool.query(
+            'SELECT * FROM contas WHERE id_usuario = ? ORDER BY nome ASC', 
+            [idUsuario]
+        );
+        res.json(contas);
+    } catch (error) {
+        console.error("Erro ao buscar contas:", error);
+        res.status(500).json({ message: "Erro interno do servidor ao buscar contas." });
+    }
+});
+
+// Rota para ADICIONAR uma nova conta
+app.post('/api/contas', authenticateToken, async (req, res) => {
+    try {
+        const { nome, tipo_conta, saldo_inicial } = req.body;
+        const idUsuario = req.user.userId;
+
+        // Validação
+        if (!nome || !tipo_conta) {
+            return res.status(400).json({ message: 'O nome e o tipo da conta são obrigatórios.' });
+        }
+
+        const [result] = await pool.query(
+            'INSERT INTO contas (nome, tipo_conta, saldo_inicial, id_usuario) VALUES (?, ?, ?, ?)',
+            [nome, tipo_conta, saldo_inicial || 0.00, idUsuario]
+        );
+
+        res.status(201).json({
+            id_conta: result.insertId,
+            nome,
+            tipo_conta,
+            saldo_inicial: saldo_inicial || 0.00,
+            id_usuario: idUsuario
+        });
+    } catch (error) {
+        console.error("Erro ao adicionar conta:", error);
+        res.status(500).json({ message: "Erro interno do servidor ao adicionar conta." });
+    }
+});
+
+// Rota para EDITAR (Atualizar) uma conta existente
+app.put('/api/contas/:id', authenticateToken, async (req, res) => {
+    try {
+        const { nome, tipo_conta, saldo_inicial } = req.body;
+        const idConta = req.params.id;
+        const idUsuario = req.user.userId;
+
+        if (!nome || !tipo_conta || saldo_inicial === undefined) {
+            return res.status(400).json({ message: 'Todos os campos (nome, tipo, saldo) são obrigatórios.' });
+        }
+
+        // A condição 'AND id_usuario = ?' é uma camada de segurança CRÍTICA.
+        // Ela garante que um utilizador só pode editar as suas próprias contas.
+        const [result] = await pool.query(
+            'UPDATE contas SET nome = ?, tipo_conta = ?, saldo_inicial = ? WHERE id_conta = ? AND id_usuario = ?',
+            [nome, tipo_conta, saldo_inicial, idConta, idUsuario]
+        );
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Conta atualizada com sucesso.' });
+        } else {
+            res.status(404).json({ message: 'Conta não encontrada ou não autorizada.' });
+        }
+    } catch (error) {
+        console.error("Erro ao editar conta:", error);
+        res.status(500).json({ message: "Erro interno do servidor ao editar conta." });
+    }
+});
+
+// Rota para EXCLUIR uma conta existente
+app.delete('/api/contas/:id', authenticateToken, async (req, res) => {
+    try {
+        const idConta = req.params.id;
+        const idUsuario = req.user.userId;
+
+        // A condição 'AND id_usuario = ?' também é CRÍTICA aqui.
+        const [result] = await pool.query(
+            'DELETE FROM contas WHERE id_conta = ? AND id_usuario = ?',
+            [idConta, idUsuario]
+        );
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Conta excluída com sucesso.' });
+        } else {
+            res.status(404).json({ message: 'Conta não encontrada ou não autorizada.' });
+        }
+    } catch (error) {
+        // Se a conta tiver lançamentos associados, poderá dar um erro de Foreign Key.
+        // É importante tratar isso no futuro, mas por agora esta é a base.
+        console.error("Erro ao excluir conta:", error);
+        res.status(500).json({ message: "Erro interno do servidor ao excluir conta." });
     }
 });
 

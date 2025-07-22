@@ -299,6 +299,30 @@ Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
 .PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
 
+Designer/FormsDashboard/dialogAddEditConta.o: Designer/FormsDashboard/dialogAddEditConta.cpp.o
+.PHONY : Designer/FormsDashboard/dialogAddEditConta.o
+
+# target to build an object file
+Designer/FormsDashboard/dialogAddEditConta.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/dialogAddEditConta.cpp.o
+.PHONY : Designer/FormsDashboard/dialogAddEditConta.cpp.o
+
+Designer/FormsDashboard/dialogAddEditConta.i: Designer/FormsDashboard/dialogAddEditConta.cpp.i
+.PHONY : Designer/FormsDashboard/dialogAddEditConta.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/dialogAddEditConta.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/dialogAddEditConta.cpp.i
+.PHONY : Designer/FormsDashboard/dialogAddEditConta.cpp.i
+
+Designer/FormsDashboard/dialogAddEditConta.s: Designer/FormsDashboard/dialogAddEditConta.cpp.s
+.PHONY : Designer/FormsDashboard/dialogAddEditConta.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/dialogAddEditConta.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/dialogAddEditConta.cpp.s
+.PHONY : Designer/FormsDashboard/dialogAddEditConta.cpp.s
+
 Designer/FormsDashboard/formAdicionarLancamento.o: Designer/FormsDashboard/formAdicionarLancamento.cpp.o
 .PHONY : Designer/FormsDashboard/formAdicionarLancamento.o
 
@@ -346,6 +370,30 @@ Designer/FormsDashboard/formGerenciarCategorias.s: Designer/FormsDashboard/formG
 Designer/FormsDashboard/formGerenciarCategorias.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarCategorias.cpp.s
 .PHONY : Designer/FormsDashboard/formGerenciarCategorias.cpp.s
+
+Designer/FormsDashboard/formGerenciarContas.o: Designer/FormsDashboard/formGerenciarContas.cpp.o
+.PHONY : Designer/FormsDashboard/formGerenciarContas.o
+
+# target to build an object file
+Designer/FormsDashboard/formGerenciarContas.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarContas.cpp.o
+.PHONY : Designer/FormsDashboard/formGerenciarContas.cpp.o
+
+Designer/FormsDashboard/formGerenciarContas.i: Designer/FormsDashboard/formGerenciarContas.cpp.i
+.PHONY : Designer/FormsDashboard/formGerenciarContas.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/formGerenciarContas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarContas.cpp.i
+.PHONY : Designer/FormsDashboard/formGerenciarContas.cpp.i
+
+Designer/FormsDashboard/formGerenciarContas.s: Designer/FormsDashboard/formGerenciarContas.cpp.s
+.PHONY : Designer/FormsDashboard/formGerenciarContas.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/formGerenciarContas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarContas.cpp.s
+.PHONY : Designer/FormsDashboard/formGerenciarContas.cpp.s
 
 Designer/FormsDashboard/formMainDashboard.o: Designer/FormsDashboard/formMainDashboard.cpp.o
 .PHONY : Designer/FormsDashboard/formMainDashboard.o
@@ -664,12 +712,18 @@ help:
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.s"
+	@echo "... Designer/FormsDashboard/dialogAddEditConta.o"
+	@echo "... Designer/FormsDashboard/dialogAddEditConta.i"
+	@echo "... Designer/FormsDashboard/dialogAddEditConta.s"
 	@echo "... Designer/FormsDashboard/formAdicionarLancamento.o"
 	@echo "... Designer/FormsDashboard/formAdicionarLancamento.i"
 	@echo "... Designer/FormsDashboard/formAdicionarLancamento.s"
 	@echo "... Designer/FormsDashboard/formGerenciarCategorias.o"
 	@echo "... Designer/FormsDashboard/formGerenciarCategorias.i"
 	@echo "... Designer/FormsDashboard/formGerenciarCategorias.s"
+	@echo "... Designer/FormsDashboard/formGerenciarContas.o"
+	@echo "... Designer/FormsDashboard/formGerenciarContas.i"
+	@echo "... Designer/FormsDashboard/formGerenciarContas.s"
 	@echo "... Designer/FormsDashboard/formMainDashboard.o"
 	@echo "... Designer/FormsDashboard/formMainDashboard.i"
 	@echo "... Designer/FormsDashboard/formMainDashboard.s"

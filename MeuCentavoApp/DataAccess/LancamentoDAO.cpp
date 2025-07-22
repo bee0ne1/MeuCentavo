@@ -157,25 +157,6 @@ void LancamentoDAO::obterTodasContas(const QString& token)
     connect(reply, &QNetworkReply::finished, this, [=](){ onObterContasReply(reply); });
 }
 
-void LancamentoDAO::onObterContasReply(QNetworkReply *reply)
-{
-    if (reply->error() == QNetworkReply::NoError) {
-        QVector<Conta> lista;
-        QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
-        for (const QJsonValue &value : jsonArray) {
-            QJsonObject obj = value.toObject();
-            Conta c;
-            c.id = obj["id_conta"].toInt();
-            c.nome = obj["nome"].toString();
-            // Preencha outros campos se necessário
-            lista.append(c);
-        }
-        emit contasRecebidas(lista);
-    } else {
-        emit erroOcorrido("Falha ao buscar contas: " + reply->errorString());
-    }
-    reply->deleteLater();
-}
 
 void LancamentoDAO::obterTodasCategorias(const QString& token)
 {
@@ -260,4 +241,94 @@ void LancamentoDAO::onModificarCategoriaReply(QNetworkReply *reply)
         emit erroOcorrido("Falha ao modificar categoria: " + reply->errorString());
     }
     reply->deleteLater();
+}
+
+// --- MÉTODOS PARA GESTÃO DE CONTAS ---
+
+void LancamentoDAO::onObterContasReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QVector<Conta> lista;
+        QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
+        for (const QJsonValue &value : jsonArray) {
+            QJsonObject obj = value.toObject();
+            Conta c;
+            c.id = obj["id_conta"].toInt();
+            c.nome = obj["nome"].toString();
+
+            // Adicionamos as duas linhas que faltavam para ler o tipo e o saldo.
+            // Os nomes das chaves ("tipo_conta", "saldo_inicial") devem corresponder
+            // exatamente aos nomes das colunas na sua tabela 'contas'.
+            c.tipo_conta = obj["tipo_conta"].toString();
+            c.saldo_inicial = obj["saldo_inicial"].toDouble();
+            
+            // Preencha outros campos se necessário
+            lista.append(c);
+        }
+        emit contasRecebidas(lista);
+    } else {
+        emit erroOcorrido("Falha ao buscar contas: " + reply->errorString());
+    }
+    reply->deleteLater();
+}
+
+
+void LancamentoDAO::adicionarConta(const Conta& conta, const QString& token)
+{
+    QJsonObject json;
+    json["nome"] = conta.nome;
+    json["tipo_conta"] = conta.tipo_conta;
+    json["saldo_inicial"] = conta.saldo_inicial;
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/contas"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(json).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        if (reply->error() == QNetworkReply::NoError) {
+            emit contaModificadaComSucesso();
+        } else {
+            emit erroOcorrido("Falha ao adicionar conta: " + reply->errorString());
+        }
+        reply->deleteLater();
+    });
+}
+
+void LancamentoDAO::editarConta(const Conta& conta, const QString& token)
+{
+    QJsonObject json;
+    json["nome"] = conta.nome;
+    json["tipo_conta"] = conta.tipo_conta;
+    json["saldo_inicial"] = conta.saldo_inicial;
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/contas/" + QString::number(conta.id)));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->put(request, QJsonDocument(json).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        if (reply->error() == QNetworkReply::NoError) {
+            emit contaModificadaComSucesso();
+        } else {
+            emit erroOcorrido("Falha ao editar conta: " + reply->errorString());
+        }
+        reply->deleteLater();
+    });
+}
+
+void LancamentoDAO::excluirConta(int idConta, const QString& token)
+{
+    QNetworkRequest request(QUrl("http://localhost:3000/api/contas/" + QString::number(idConta)));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+
+    QNetworkReply *reply = m_manager->deleteResource(request);
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        if (reply->error() == QNetworkReply::NoError) {
+            emit contaModificadaComSucesso();
+        } else {
+            emit erroOcorrido("Falha ao excluir conta: " + reply->errorString());
+        }
+        reply->deleteLater();
+    });
 }

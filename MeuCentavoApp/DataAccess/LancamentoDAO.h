@@ -26,11 +26,15 @@ public:
     void obterResumosDoMes(const QString& token);
     void obterGastosPorCategoria(const QString& token);
     void excluirLancamento(int idLancamento, const QString& token);
-    void obterTodasContas(const QString& token);
     void obterTodasCategorias(const QString& token);
     void adicionarCategoria(const Categoria& categoria, const QString& token);
     void editarCategoria(int idCategoria, const QString& novoNome, const QString& token);
     void excluirCategoria(int idCategoria, const QString& token);
+    void obterTodasContas(const QString& token);
+    void adicionarConta(const Conta& conta, const QString& token);
+    void editarConta(const Conta& conta, const QString& token);
+    void excluirConta(int idConta, const QString& token);
+
 
 
 signals:
@@ -44,6 +48,7 @@ signals:
     void contasRecebidas(const QVector<Conta>& contas);
     void categoriasRecebidas(const QVector<Categoria>& categorias);
     void categoriaModificadaComSucesso(); // Um único sinal para add, edit, delete
+    void contaModificadaComSucesso();
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---

@@ -12,7 +12,7 @@ struct Conta
     int id;
     QString nome;
     QString tipo_conta;
-    int saldo_inicial;
+    double saldo_inicial;
     int id_usuario;
 };
 
