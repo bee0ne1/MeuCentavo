@@ -6,8 +6,8 @@
 
 #include "pageConfig.h"
 #include "ui_pageConfig.h"
-#include "Designer/FormsDashboard/formGerenciarCategorias.h"
-#include "Designer/FormsDashboard/formGerenciarContas.h"
+#include "Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.h"
+#include "Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h"
 
 pageConfig::pageConfig(QWidget *parent) :
     QWidget(parent), ui(new Ui::pageConfig) {

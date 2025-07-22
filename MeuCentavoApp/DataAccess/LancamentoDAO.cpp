@@ -261,7 +261,7 @@ void LancamentoDAO::onObterContasReply(QNetworkReply *reply)
             // exatamente aos nomes das colunas na sua tabela 'contas'.
             c.tipo_conta = obj["tipo_conta"].toString();
             c.saldo_inicial = obj["saldo_inicial"].toDouble();
-            
+
             // Preencha outros campos se necessário
             lista.append(c);
         }

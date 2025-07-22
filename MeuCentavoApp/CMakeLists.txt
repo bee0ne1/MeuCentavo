@@ -18,22 +18,22 @@ set(PROJECT_SOURCES
         DataAccess/LancamentoDAO.cpp
         DataAccess/UsuarioDAO.cpp
         Designer/formInicio.cpp
-        Designer/FormsLogin/formCadastro.cpp
-        Designer/FormsLogin/formExcluirUsuario.cpp
-        Designer/FormsLogin/formUsuario.cpp
-        Designer/FormsLogin/formBoasVindas.cpp
-        Designer/FormsLogin/formLoginSenha.cpp
+        Designer/FormsUsuarios/formCadastro.cpp
+        Designer/FormsUsuarios/formExcluirUsuario.cpp
+        Designer/FormsUsuarios/formUsuario.cpp
+        Designer/FormsUsuarios/formBoasVindas.cpp
+        Designer/FormsUsuarios/formLoginSenha.cpp
         Composicoes/PasswordFormHelper.cpp
         Designer/FormsDashboard/formMainDashboard.cpp
         Designer/FormsDashboard/DashboardPages/pageHome.cpp
         Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp
-        Designer/FormsDashboard/formAdicionarLancamento.cpp
+        Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp
         Gerenciamento/SessionManager.cpp
         Gerenciamento/AppController.cpp
         Designer/FormsDashboard/DashboardPages/pageConfig.cpp
-        Designer/FormsDashboard/formGerenciarCategorias.cpp
-        Designer/FormsDashboard/formGerenciarContas.cpp
-        Designer/FormsDashboard/dialogAddEditConta.cpp
+        Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.cpp
+        Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp
+        Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp
 )
 
 # 2. Lista COMPLETA de Ficheiros de Cabeçalho (.h)
@@ -41,16 +41,16 @@ set(PROJECT_HEADERS
         DataAccess/LancamentoDAO.h
         DataAccess/UsuarioDAO.h
         Designer/formInicio.h
-        Designer/FormsLogin/formCadastro.h
-        Designer/FormsLogin/formExcluirUsuario.h
-        Designer/FormsLogin/formUsuario.h
-        Designer/FormsLogin/formBoasVindas.h
-        Designer/FormsLogin/formLoginSenha.h
+        Designer/FormsUsuarios/formCadastro.h
+        Designer/FormsUsuarios/formExcluirUsuario.h
+        Designer/FormsUsuarios/formUsuario.h
+        Designer/FormsUsuarios/formBoasVindas.h
+        Designer/FormsUsuarios/formLoginSenha.h
         Composicoes/PasswordFormHelper.h
         Designer/FormsDashboard/formMainDashboard.h
         Designer/FormsDashboard/DashboardPages/pageHome.h
         Designer/FormsDashboard/DashboardPages/pageLancamentos.h
-        Designer/FormsDashboard/formAdicionarLancamento.h
+        Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.h
         Gerenciamento/SessionManager.h
         Gerenciamento/AppController.h
         Modelo/Usuario.h
@@ -58,27 +58,27 @@ set(PROJECT_HEADERS
         Modelo/Conta.h
         Modelo/Categoria.h
         Designer/FormsDashboard/DashboardPages/pageConfig.h
-        Designer/FormsDashboard/formGerenciarCategorias.h
-        Designer/FormsDashboard/formGerenciarContas.h
-        Designer/FormsDashboard/dialogAddEditConta.h
+        Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.h
+        Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h
+        Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.h
 )
 
 # 3. Lista de Ficheiros de Interface (.ui)
 set(PROJECT_FORMS
         Designer/formInicio.ui
-        Designer/FormsLogin/formCadastro.ui
-        Designer/FormsLogin/formExcluirUsuario.ui
-        Designer/FormsLogin/formUsuario.ui
-        Designer/FormsLogin/formBoasVindas.ui
-        Designer/FormsLogin/formLoginSenha.ui
+        Designer/FormsUsuarios/formCadastro.ui
+        Designer/FormsUsuarios/formExcluirUsuario.ui
+        Designer/FormsUsuarios/formUsuario.ui
+        Designer/FormsUsuarios/formBoasVindas.ui
+        Designer/FormsUsuarios/formLoginSenha.ui
         Designer/FormsDashboard/formMainDashboard.ui
         Designer/FormsDashboard/DashboardPages/pageHome.ui
         Designer/FormsDashboard/DashboardPages/pageLancamentos.ui
-        Designer/FormsDashboard/formAdicionarLancamento.ui
+        Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.ui
         Designer/FormsDashboard/DashboardPages/pageConfig.ui
-        Designer/FormsDashboard/formGerenciarCategorias.ui
-        Designer/FormsDashboard/formGerenciarContas.ui
-        Designer/FormsDashboard/dialogAddEditConta.ui
+        Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.ui
+        Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.ui
+        Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.ui
 )
 
 # 4. Criamos o executável, agora passando TODAS as listas de ficheiros

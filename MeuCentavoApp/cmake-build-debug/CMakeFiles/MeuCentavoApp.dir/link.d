@@ -7,22 +7,22 @@ MeuCentavoApp: \
   CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formCadastro.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formExcluirUsuario.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formLoginSenha.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formCadastro.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formExcluirUsuario.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formUsuario.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formBoasVindas.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formLoginSenha.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarCategorias.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarContas.cpp.o \
-  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/dialogAddEditConta.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o \
   /usr/lib/libQt6Sql.so.6.9.1 \
   /usr/lib/libQt6Charts.so.6.9.1 \
@@ -137,15 +137,15 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formCadastro.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formCadastro.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formExcluirUsuario.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formExcluirUsuario.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formUsuario.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formUsuario.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formBoasVindas.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formBoasVindas.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsLogin/formLoginSenha.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formLoginSenha.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o:
 
@@ -155,7 +155,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formAdicionarLancamento.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o:
 
@@ -163,11 +163,11 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarCategorias.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formGerenciarContas.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/dialogAddEditConta.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o:
 

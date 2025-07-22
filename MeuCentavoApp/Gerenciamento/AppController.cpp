@@ -2,7 +2,7 @@
 #include "DataAccess/UsuarioDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include "Designer/formInicio.h"
-#include "Designer/FormsLogin/formBoasVindas.h"
+#include "Designer/FormsUsuarios/formBoasVindas.h"
 #include "Designer/FormsDashboard/formMainDashboard.h"
 #include <QApplication>
 #include <QDebug>

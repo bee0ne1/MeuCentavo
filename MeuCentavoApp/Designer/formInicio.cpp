@@ -1,9 +1,9 @@
 #include "formInicio.h"
 #include "ui_formInicio.h"
 #include "DataAccess/UsuarioDAO.h"
-#include "FormsLogin/formUsuario.h"
-#include "FormsLogin/formBoasVindas.h"
-#include "FormsLogin/formLoginSenha.h"
+#include "FormsUsuarios/formUsuario.h"
+#include "FormsUsuarios/formBoasVindas.h"
+#include "FormsUsuarios/formLoginSenha.h"
 #include "FormsDashboard/formMainDashboard.h"
 #include "Gerenciamento/SessionManager.h"
 #include <QSettings>

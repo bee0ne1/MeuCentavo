@@ -1,7 +1,7 @@
 #include "formMainDashboard.h"
 #include "ui_formMainDashboard.h"
 #include "Gerenciamento/SessionManager.h" // Inclui nosso novo "cofre"
-#include "Designer/FormsLogin/formUsuario.h"
+#include "Designer/FormsUsuarios/formUsuario.h"
 #include "DashboardPages/pageHome.h"
 #include "DashboardPages/pageLancamentos.h"
 //#include "DashboardPages/pageRelatorios.h

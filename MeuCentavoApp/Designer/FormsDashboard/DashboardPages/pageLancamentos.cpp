@@ -1,6 +1,6 @@
 #include "pageLancamentos.h"
 #include "ui_pageLancamentos.h"
-#include "Designer/FormsDashboard/formAdicionarLancamento.h"
+#include "Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.h"
 #include "DataAccess/LancamentoDAO.h"
 #include "Gerenciamento/SessionManager.h" // Inclui nosso "cofre" de sessão
 #include <QHeaderView>
