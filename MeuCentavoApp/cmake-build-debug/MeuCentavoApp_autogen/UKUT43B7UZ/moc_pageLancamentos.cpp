@@ -52,7 +52,10 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
         "editarLancamento",
         "Lancamento",
         "lancamento",
-        "excluirLancamento"
+        "excluirLancamento",
+        "onContasRecebidas",
+        "QList<Conta>",
+        "contas"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -77,6 +80,10 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
         // Slot 'excluirLancamento'
         QtMocHelpers::SlotData<void(const Lancamento &)>(13, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { 0x80000000 | 11, 12 },
+        }}),
+        // Slot 'onContasRecebidas'
+        QtMocHelpers::SlotData<void(const QVector<Conta> &)>(14, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 15, 16 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -108,6 +115,7 @@ void pageLancamentos::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 4: _t->onErroDeRede((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 5: _t->editarLancamento((*reinterpret_cast< std::add_pointer_t<Lancamento>>(_a[1]))); break;
         case 6: _t->excluirLancamento((*reinterpret_cast< std::add_pointer_t<Lancamento>>(_a[1]))); break;
+        case 7: _t->onContasRecebidas((*reinterpret_cast< std::add_pointer_t<QList<Conta>>>(_a[1]))); break;
         default: ;
         }
     }
@@ -136,14 +144,14 @@ int pageLancamentos::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

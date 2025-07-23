@@ -1,34 +1,6 @@
 /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp -B /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug
--- The CXX compiler identification is GNU 15.1.1
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE
--- Performing Test HAVE_STDATOMIC
--- Performing Test HAVE_STDATOMIC - Success
--- Found WrapAtomic: TRUE
--- Found OpenGL: /usr/lib/libOpenGL.so
--- Found WrapOpenGL: TRUE
 -- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
 -- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
--- Configuring done (1.3s)
-CMake Error at /usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:690 (add_executable):
-  Cannot find source file:
-
-    /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/Designer/FormsDashboard/formAdicionarLancamento.cpp
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
-  .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
-  .f95 .f03 .hip .ispc
-Call Stack (most recent call first):
-  /usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:639 (_qt_internal_create_executable)
-  /usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:935 (qt6_add_executable)
-  CMakeLists.txt:85 (qt_add_executable)
-
-
--- Generating done (0.0s)
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Configuring done (0.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug

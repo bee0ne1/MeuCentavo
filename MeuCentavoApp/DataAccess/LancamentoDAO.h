@@ -21,10 +21,10 @@ public:
     // --- MÉTODOS PÚBLICOS (INICIAM AS REQUISIÇÕES) ---
     // Todos recebem o 'token' para autenticação
     void adicionarLancamento(const Lancamento& lancamento, const QString& token);
-    void obterTodos(const QString& token);
+    void obterTodos(const QString& token, const QDate& dataInicio, const QDate& dataFim, int idConta);
     void obterRecentes(const QString& token, int limite = 10);
     void obterResumosDoMes(const QString& token);
-    void obterGastosPorCategoria(const QString& token);
+    void obterGastosPorCategoria(const QString& token, const QDate& dataInicio, const QDate& dataFim, int idConta);
     void editarLancamento(const Lancamento& lancamento, const QString& token);
     void excluirLancamento(int idLancamento, const QString& token);
     void obterTodasCategorias(const QString& token);
@@ -35,7 +35,7 @@ public:
     void adicionarConta(const Conta& conta, const QString& token);
     void editarConta(const Conta& conta, const QString& token);
     void excluirConta(int idConta, const QString& token);
-
+    void obterComparativoMensal(const QString& token, const QDate& dataInicio, const QDate& dataFim, int idConta);
 
 
 signals:
@@ -51,7 +51,7 @@ signals:
     void categoriasRecebidas(const QVector<Categoria>& categorias);
     void categoriaModificadaComSucesso(); // Um único sinal para add, edit, delete
     void contaModificadaComSucesso();
-
+    void comparativoMensalRecebido(const QVector<ResumoMensal>& resumo);
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---
     void onAdicionarLancamentoReply(QNetworkReply *reply);
@@ -61,7 +61,7 @@ private slots:
     void onObterContasReply(QNetworkReply *reply);
     void onObterCategoriasReply(QNetworkReply *reply);
     void onModificarCategoriaReply(QNetworkReply *reply);
-
+    void onObterComparativoMensalReply(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *m_manager;

@@ -4,8 +4,8 @@
 #include "Designer/FormsUsuarios/formUsuario.h"
 #include "DashboardPages/pageHome.h"
 #include "DashboardPages/pageLancamentos.h"
-//#include "DashboardPages/pageRelatorios.h
 #include "DashboardPages/pageConfig.h"
+#include "DashboardPages/pageRelatorios.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -40,12 +40,14 @@ void formMainDashboard::setupPaginas()
     m_pageLancamentos = new pageLancamentos(this);
     //m_pageRelatorios = new pageRelatorios(this);
     m_pageConfig = new pageConfig(this);
+    m_pageRelatorios = new pageRelatorios(this);
 
     // Adiciona as páginas ao "baralho"
     ui->stackedWidgetConteudo->addWidget(m_pageHome);          // Índice 0
     ui->stackedWidgetConteudo->addWidget(m_pageLancamentos);    // Índice 1
-    ui->stackedWidgetConteudo->addWidget(m_pageConfig);         // indice 2
-    //ui->stackedWidgetConteudo->addWidget(m_pageRelatorios);     // Índice 3
+    ui->stackedWidgetConteudo->addWidget(m_pageRelatorios);     // Índice 2
+    ui->stackedWidgetConteudo->addWidget(m_pageConfig);         // indice 3
+
 
     connect(m_pageLancamentos, &pageLancamentos::dadosAtualizados, m_pageHome, &pageHome::atualizarDados);
 
@@ -67,12 +69,12 @@ void formMainDashboard::on_buttonLancamentos_clicked()
 
 void formMainDashboard::on_buttonRelatorios_clicked()
 {
-    //ui->stackedWidgetConteudo->setCurrentIndex(2);
+    ui->stackedWidgetConteudo->setCurrentIndex(2);
 }
 
 void formMainDashboard::on_buttonConfiguracoes_clicked()
 {
-    ui->stackedWidgetConteudo->setCurrentIndex(2);
+    ui->stackedWidgetConteudo->setCurrentIndex(3);
 }
 
 void formMainDashboard::on_buttonSwitchUsuario_clicked()

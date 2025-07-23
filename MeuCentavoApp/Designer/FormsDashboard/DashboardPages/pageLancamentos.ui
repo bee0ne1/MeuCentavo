@@ -16,39 +16,6 @@
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="0">
-      <widget class="QTableWidget" name="tabelaTodosLancamentos">
-       <property name="columnCount">
-        <number>6</number>
-       </property>
-       <column>
-        <property name="text">
-         <string>Data</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Descrição</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Tipo</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Valor</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Excluir</string>
-        </property>
-       </column>
-       <column/>
-      </widget>
-     </item>
      <item row="0" column="0">
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
@@ -85,6 +52,93 @@
         </spacer>
        </item>
       </layout>
+     </item>
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="layoutFiltros">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Período: </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDateEdit" name="dateEditInicio"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string> até </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDateEdit" name="dateEditFim"/>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Conta: </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxConta"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonFiltrar">
+         <property name="text">
+          <string>Filtrar</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="0">
+      <widget class="QTableWidget" name="tabelaTodosLancamentos">
+       <property name="columnCount">
+        <number>6</number>
+       </property>
+       <column>
+        <property name="text">
+         <string>Data</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Descrição</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Tipo</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Valor</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Excluir</string>
+        </property>
+       </column>
+       <column/>
+      </widget>
      </item>
     </layout>
    </item>

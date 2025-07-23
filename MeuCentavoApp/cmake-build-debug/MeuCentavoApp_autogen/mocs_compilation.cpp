@@ -5,6 +5,7 @@
 #include "UKUT43B7UZ/moc_pageConfig.cpp"
 #include "UKUT43B7UZ/moc_pageHome.cpp"
 #include "UKUT43B7UZ/moc_pageLancamentos.cpp"
+#include "UKUT43B7UZ/moc_pageRelatorios.cpp"
 #include "2EK4JB7KXY/moc_dialogAddEditConta.cpp"
 #include "2EK4JB7KXY/moc_formGerenciarCategorias.cpp"
 #include "2EK4JB7KXY/moc_formGerenciarContas.cpp"

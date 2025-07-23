@@ -299,6 +299,30 @@ Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
 .PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
 
+Designer/FormsDashboard/DashboardPages/pageRelatorios.o: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.o
+
+# target to build an object file
+Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
+
+Designer/FormsDashboard/DashboardPages/pageRelatorios.i: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.i
+
+Designer/FormsDashboard/DashboardPages/pageRelatorios.s: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
+
 Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.o: Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.o
 .PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.o
 
@@ -712,6 +736,9 @@ help:
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.s"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.o"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.i"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.s"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.o"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.i"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.s"

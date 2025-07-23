@@ -9,7 +9,6 @@
 #ifndef UI_PAGEHOME_H
 #define UI_PAGEHOME_H
 
-#include <QtCharts/QChartView>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -26,7 +25,7 @@ QT_BEGIN_NAMESPACE
 class Ui_pageHome
 {
 public:
-    QHBoxLayout *horizontalLayout_3;
+    QHBoxLayout *horizontalLayout_2;
     QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout;
     QGroupBox *groupBox;
@@ -41,8 +40,8 @@ public:
     QVBoxLayout *verticalLayout_3;
     QLabel *label_4;
     QLabel *labelSaldoMes;
-    QChartView *graficoGastos;
     QTableWidget *tabelaLancamentosRecentes;
+    QVBoxLayout *layoutGraficoResumo;
 
     void setupUi(QWidget *pageHome)
     {
@@ -55,8 +54,8 @@ public:
         sizePolicy.setHeightForWidth(pageHome->sizePolicy().hasHeightForWidth());
         pageHome->setSizePolicy(sizePolicy);
         pageHome->setStyleSheet(QString::fromUtf8("background-color: rgb(76, 88, 255)"));
-        horizontalLayout_3 = new QHBoxLayout(pageHome);
-        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalLayout_2 = new QHBoxLayout(pageHome);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
         gridLayout = new QGridLayout();
         gridLayout->setObjectName("gridLayout");
         horizontalLayout = new QHBoxLayout();
@@ -120,11 +119,6 @@ public:
 
         gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
 
-        graficoGastos = new QChartView(pageHome);
-        graficoGastos->setObjectName("graficoGastos");
-
-        gridLayout->addWidget(graficoGastos, 0, 1, 1, 1);
-
         tabelaLancamentosRecentes = new QTableWidget(pageHome);
         if (tabelaLancamentosRecentes->columnCount() < 5)
             tabelaLancamentosRecentes->setColumnCount(5);
@@ -139,11 +133,16 @@ public:
 
         gridLayout->addWidget(tabelaLancamentosRecentes, 2, 0, 1, 2);
 
+        layoutGraficoResumo = new QVBoxLayout();
+        layoutGraficoResumo->setObjectName("layoutGraficoResumo");
+
+        gridLayout->addLayout(layoutGraficoResumo, 0, 1, 2, 1);
+
         gridLayout->setRowStretch(2, 1);
         gridLayout->setColumnStretch(0, 1);
         gridLayout->setColumnStretch(1, 1);
 
-        horizontalLayout_3->addLayout(gridLayout);
+        horizontalLayout_2->addLayout(gridLayout);
 
 
         retranslateUi(pageHome);

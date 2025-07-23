@@ -648,6 +648,12 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h",
+			"MU",
+			"UKUT43B7UZ/moc_pageRelatorios.cpp",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.h",
 			"MU",
 			"2EK4JB7KXY/moc_dialogAddEditConta.cpp",
@@ -852,6 +858,11 @@
 		],
 		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp",
 			"MU",
 			null
 		],

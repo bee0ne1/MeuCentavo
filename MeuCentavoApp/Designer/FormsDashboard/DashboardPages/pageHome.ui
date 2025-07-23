@@ -22,7 +22,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(76, 88, 255)</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_3">
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,1" columnstretch="1,1">
      <item row="0" column="0">
@@ -113,9 +113,6 @@
        </item>
       </layout>
      </item>
-     <item row="0" column="1">
-      <widget class="QChartView" name="graficoGastos"/>
-     </item>
      <item row="2" column="0" colspan="2">
       <widget class="QTableWidget" name="tabelaLancamentosRecentes">
        <property name="columnCount">
@@ -140,17 +137,13 @@
        <column/>
       </widget>
      </item>
+     <item row="0" column="1" rowspan="2">
+      <layout class="QVBoxLayout" name="layoutGraficoResumo"/>
+     </item>
     </layout>
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QChartView</class>
-   <extends>QGraphicsView</extends>
-   <header>QtCharts</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

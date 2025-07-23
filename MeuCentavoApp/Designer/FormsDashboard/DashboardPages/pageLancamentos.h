@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QVector>
 #include "Modelo/Lancamento.h"
+#include "Modelo/Conta.h"
 
 // Forward declarations
 namespace Ui { class pageLancamentos; }
@@ -33,6 +34,7 @@ private slots:
     void onErroDeRede(const QString& motivo);
     void editarLancamento(const Lancamento& lancamento);
     void excluirLancamento(const Lancamento& lancamento);
+    void onContasRecebidas(const QVector<Conta>& contas);
 
 private:
     Ui::pageLancamentos *ui;

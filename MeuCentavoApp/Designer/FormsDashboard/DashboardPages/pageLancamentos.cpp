@@ -22,6 +22,8 @@ pageLancamentos::pageLancamentos(QWidget *parent) :
     connect(m_dao, &LancamentoDAO::lancamentosRecebidos, this, &pageLancamentos::onLancamentosRecebidos);
     connect(m_dao, &LancamentoDAO::erroOcorrido, this, &pageLancamentos::onErroDeRede);
     connect(m_dao, &LancamentoDAO::lancamentoExcluidoComSucesso, this, &pageLancamentos::carregarTabela);
+    // Conecta o slot para popular o ComboBox de contas
+    connect(m_dao, &LancamentoDAO::contasRecebidas, this, &pageLancamentos::onContasRecebidas);
 
     // Conecta o botão da UI ao slot que abre o diálogo
     connect(ui->buttonAdicionarLancamento, &QPushButton::clicked, this, &pageLancamentos::abrirDialogoAdicionar);
@@ -40,6 +42,16 @@ pageLancamentos::pageLancamentos(QWidget *parent) :
 
     //AUMENTO DA COLUNA VALOR
     ui->tabelaTodosLancamentos->setColumnWidth(5, 120);
+
+
+    // Define datas padrão
+    ui->dateEditInicio->setDate(QDate::currentDate().addMonths(-1));
+    ui->dateEditFim->setDate(QDate::currentDate());
+    // O botão Filtrar agora que chama o carregamento da tabela
+    connect(ui->buttonFiltrar, &QPushButton::clicked, this, &pageLancamentos::carregarTabela);
+    // Carrega a lista de contas para o filtro ao iniciar
+    QString token = SessionManager::instance().getToken();
+    m_dao->obterTodasContas(token);
 
     // Inicia a busca por dados assim que a página é criada
     carregarTabela();
@@ -69,11 +81,16 @@ void pageLancamentos::abrirDialogoAdicionar()
 void pageLancamentos::carregarTabela()
 {
     qDebug() << "pageLancamentos: Requisitando lista de lançamentos da API...";
-    // Pega o token do nosso "cofre" de sessão
     QString token = SessionManager::instance().getToken();
+    if (token.isEmpty()) return;
 
-    // Inicia a requisição de rede e espera a resposta chegar no slot 'onLancamentosRecebidos'
-    m_dao->obterTodos(token);
+    // Lê os valores dos filtros da UI
+    QDate dataInicio = ui->dateEditInicio->date();
+    QDate dataFim = ui->dateEditFim->date();
+    int idConta = ui->comboBoxConta->currentData().toInt();
+
+    // Chama a versão CORRETA da função, com todos os parâmetros
+    m_dao->obterTodos(token, dataInicio, dataFim, idConta);
     emit dadosAtualizados();
 }
 
@@ -165,6 +182,15 @@ void pageLancamentos::excluirLancamento(const Lancamento& lancamento)
     if (resposta == QMessageBox::Yes) {
         QString token = SessionManager::instance().getToken();
         m_dao->excluirLancamento(lancamento.id, token);
+    }
+}
+
+void pageLancamentos::onContasRecebidas(const QVector<Conta>& contas)
+{
+    ui->comboBoxConta->clear();
+    ui->comboBoxConta->addItem("Todas as Contas", -1);
+    for (const auto& conta : contas) {
+        ui->comboBoxConta->addItem(conta.nome, conta.id);
     }
 }
 

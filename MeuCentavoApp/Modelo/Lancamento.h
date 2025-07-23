@@ -23,4 +23,10 @@ struct Lancamento {
     QString nome_categoria;
 };
 
+struct ResumoMensal {
+    QString mes; // Ex: "2025-07"
+    double receitas;
+    double despesas;
+};
+
 #endif //MEUCENTAVOAPP_LANCAMENTO_H

@@ -234,25 +234,43 @@ app.delete('/api/usuarios/:id', authenticateToken, async (req, res) => {
 
 //------ROTAS DE LANÇAMENTO---------
 
-// Rota para BUSCAR TODOS os lançamentos do usuário logado
+
+// Rota para BUSCAR TODOS os lançamentos do usuário logado (VERSÃO COM FILTROS)
 app.get('/api/lancamentos', authenticateToken, async (req, res) => {
     try {
         const usuarioId = req.user.userId;
+        const { data_inicio, data_fim, id_conta } = req.query;
 
-         // Usamos LEFT JOIN para juntar as tabelas e pegar os nomes da conta e da categoria
-        const [lancamentos] = await pool.query(
-            `SELECT
+        // --- Lógica para montar a query dinâmica ---
+        let whereClauses = [`l.id_usuario = ?`];
+        let params = [usuarioId];
+
+        if (data_inicio) {
+            whereClauses.push(`l.data_lancamento >= ?`);
+            params.push(data_inicio);
+        }
+        if (data_fim) {
+            whereClauses.push(`l.data_lancamento <= ?`);
+            params.push(data_fim);
+        }
+        if (id_conta && id_conta != -1) {
+            whereClauses.push(`l.id_conta = ?`);
+            params.push(id_conta);
+        }
+
+        const query = `
+             SELECT
                 l.*,
                 c.nome as nome_conta,
                 cat.nome as nome_categoria
              FROM lancamentos l
              LEFT JOIN contas c ON l.id_conta = c.id_conta
              LEFT JOIN categorias cat ON l.id_categoria = cat.id_categoria
-             WHERE l.id_usuario = ?
-             ORDER BY l.data_lancamento DESC, l.id DESC`,
-            [usuarioId]
-        );
+             WHERE ${whereClauses.join(' AND ')}
+             ORDER BY l.data_lancamento DESC, l.id DESC`;
+        // -----------------------------------------
 
+        const [lancamentos] = await pool.query(query, params);
         res.json(lancamentos);
 
     } catch (error) {
@@ -345,6 +363,52 @@ app.get('/api/lancamentos/resumo/mes', authenticateToken, async (req, res) => {
     }
 });
 
+// Rota para BUSCAR gastos agrupados por categoria (VERSÃO COM FILTROS)
+app.get('/api/lancamentos/gastos/categoria', authenticateToken, async (req, res) => {
+    try {
+        const usuarioId = req.user.userId;
+
+        // Extrai os filtros da query string da URL
+        const { data_inicio, data_fim, id_conta } = req.query;
+
+        // --- Lógica para montar a query dinâmica ---
+        let whereClauses = [`l.id_usuario = ?`, `l.tipo = 'Despesa'`];
+        let params = [usuarioId];
+
+        if (data_inicio) {
+            whereClauses.push(`l.data_lancamento >= ?`);
+            params.push(data_inicio);
+        }
+        if (data_fim) {
+            whereClauses.push(`l.data_lancamento <= ?`);
+            params.push(data_fim);
+        }
+        // Se id_conta for enviado e não for o de "todas as contas"
+        if (id_conta && id_conta != -1) {
+            whereClauses.push(`l.id_conta = ?`);
+            params.push(id_conta);
+        }
+
+        const query = `
+            SELECT cat.nome, SUM(l.valor) as total
+            FROM lancamentos l
+            JOIN categorias cat ON l.id_categoria = cat.id_categoria
+            WHERE ${whereClauses.join(' AND ')}
+            GROUP BY l.id_categoria, cat.nome
+            ORDER BY total DESC
+        `;
+        // -----------------------------------------
+
+        const [gastos] = await pool.query(query, params);
+
+        res.json(gastos);
+
+    } catch (error) {
+        console.error("Erro ao buscar gastos por categoria:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
 // Rota para EDITAR (Atualizar) um lançamento existente
 app.put('/api/lancamentos/:id', authenticateToken, async (req, res) => {
     try {
@@ -396,6 +460,55 @@ app.delete('/api/lancamentos/:id', authenticateToken, async (req, res) => {
     } catch (error) {
         console.error("Erro ao excluir lançamento:", error);
         res.status(500).json({ message: "Erro interno do servidor ao excluir lançamento." });
+    }
+});
+
+// Rota para buscar o comparativo mensal de receitas e despesas
+app.get('/api/lancamentos/comparativo/mensal', authenticateToken, async (req, res) => {
+    try {
+        const usuarioId = req.user.userId;
+        const { data_inicio, data_fim, id_conta } = req.query;
+
+        // Montagem da query dinâmica (mesma lógica dos outros endpoints)
+        let whereClauses = [`id_usuario = ?`];
+        let params = [usuarioId];
+
+        if (data_inicio) {
+            whereClauses.push(`data_lancamento >= ?`);
+            params.push(data_inicio);
+        }
+        if (data_fim) {
+            whereClauses.push(`data_lancamento <= ?`);
+            params.push(data_fim);
+        }
+        if (id_conta && id_conta != -1) {
+            whereClauses.push(`id_conta = ?`);
+            params.push(id_conta);
+        }
+
+        // Esta é a query principal. Ela agrupa por ano/mês e usa SUM(CASE...)
+        // para "pivotar" as linhas de receita e despesa em colunas.
+        const query = `
+            SELECT
+                DATE_FORMAT(data_lancamento, '%Y-%m') as mes,
+                SUM(CASE WHEN tipo = 'Receita' THEN valor ELSE 0 END) as receitas,
+                SUM(CASE WHEN tipo = 'Despesa' THEN valor ELSE 0 END) as despesas
+            FROM
+                lancamentos
+            WHERE
+                ${whereClauses.join(' AND ')}
+            GROUP BY
+                YEAR(data_lancamento), MONTH(data_lancamento)
+            ORDER BY
+                mes ASC;
+        `;
+
+        const [results] = await pool.query(query, params);
+        res.json(results);
+
+    } catch (error) {
+        console.error("Erro ao buscar comparativo mensal:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
     }
 });
 

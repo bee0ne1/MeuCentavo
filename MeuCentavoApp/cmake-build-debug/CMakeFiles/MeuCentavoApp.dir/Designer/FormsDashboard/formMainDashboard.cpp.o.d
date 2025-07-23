@@ -390,8 +390,48 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o: \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
  /usr/include/qt6/QtCore/QDate /usr/include/qt6/QtCore/qdatetime.h \
- /usr/include/qt6/QtCore/qcalendar.h \
+ /usr/include/qt6/QtCore/qcalendar.h /usr/include/qt6/QtCharts/QChartView \
+ /usr/include/qt6/QtCharts/qchartview.h \
+ /usr/include/qt6/QtCharts/QAbstractAxis \
+ /usr/include/qt6/QtCharts/qabstractaxis.h \
+ /usr/include/qt6/QtCharts/QChartGlobal \
+ /usr/include/qt6/QtCharts/qchartglobal.h \
+ /usr/include/qt6/QtCharts/qtcharts-config.h \
+ /usr/include/qt6/QtCharts/qtchartsexports.h /usr/include/qt6/QtGui/QPen \
+ /usr/include/qt6/QtGui/qpen.h /usr/include/qt6/QtGui/QFont \
+ /usr/include/qt6/QtGui/qfont.h /usr/include/qt6/QtCore/QObject \
+ /usr/include/qt6/QtCharts/QAbstractSeries \
+ /usr/include/qt6/QtCharts/qabstractseries.h \
+ /usr/include/qt6/QtCharts/QChart /usr/include/qt6/QtCharts/qchart.h \
+ /usr/include/qt6/QtCharts/QLegend /usr/include/qt6/QtCharts/qlegend.h \
+ /usr/include/qt6/QtWidgets/QGraphicsWidget \
+ /usr/include/qt6/QtWidgets/qgraphicswidget.h \
+ /usr/include/qt6/QtWidgets/qgraphicslayoutitem.h \
+ /usr/include/qt6/QtGui/qevent.h /usr/include/qt6/QtCore/qiodevice.h \
+ /usr/include/qt6/QtCore/qurl.h /usr/include/qt6/QtGui/qeventpoint.h \
+ /usr/include/qt6/QtGui/qvector2d.h /usr/include/qt6/QtGui/qvectornd.h \
+ /usr/include/qt6/QtGui/qpointingdevice.h \
+ /usr/include/qt6/QtGui/qinputdevice.h /usr/include/qt6/QtGui/qscreen.h \
+ /usr/include/qt6/QtCore/QList /usr/include/qt6/QtCore/qlist.h \
+ /usr/include/qt6/QtCore/QRect /usr/include/qt6/QtCore/qrect.h \
+ /usr/include/qt6/QtCore/QSize /usr/include/qt6/QtCore/qsize.h \
+ /usr/include/qt6/QtCore/QSizeF /usr/include/qt6/QtGui/QTransform \
+ /usr/include/qt6/QtGui/qtransform.h \
+ /usr/include/qt6/QtGui/qscreen_platform.h \
+ /usr/include/qt6/QtWidgets/qgraphicsitem.h \
+ /usr/include/qt6/QtGui/qpainterpath.h /usr/include/qt6/QtGui/QBrush \
+ /usr/include/qt6/QtGui/qbrush.h /usr/include/qt6/QtCore/QMargins \
+ /usr/include/qt6/QtCore/qmargins.h \
+ /usr/include/qt6/QtWidgets/QGraphicsView \
+ /usr/include/qt6/QtWidgets/qgraphicsview.h \
+ /usr/include/qt6/QtGui/qpainter.h /usr/include/qt6/QtGui/qtextoption.h \
+ /usr/include/qt6/QtGui/qpen.h /usr/include/qt6/QtWidgets/qscrollarea.h \
+ /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
+ /usr/include/qt6/QtWidgets/qgraphicsscene.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Conta.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h \
+ /usr/include/qt6/QtCore/QHash /usr/include/qt6/QtCore/qhash.h \
  /usr/include/qt6/QtCore/QDebug /usr/include/qt6/QtCore/qdebug.h \
  /usr/include/qt6/QtWidgets/QMessageBox \
  /usr/include/qt6/QtWidgets/qmessagebox.h \

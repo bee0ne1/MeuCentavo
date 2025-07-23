@@ -50,9 +50,16 @@ void LancamentoDAO::onAdicionarLancamentoReply(QNetworkReply *reply)
 }
 
 // --- OBTER TODOS OS LANÇAMENTOS ---
-void LancamentoDAO::obterTodos(const QString& token)
+void LancamentoDAO::obterTodos(const QString& token, const QDate& dataInicio, const QDate& dataFim, int idConta)
 {
-    QNetworkRequest request(QUrl(m_baseUrl + "/"));
+    QUrl url(m_baseUrl + "/"); // A rota é a raiz dos lançamentos
+    QUrlQuery query;
+    query.addQueryItem("data_inicio", dataInicio.toString(Qt::ISODate));
+    query.addQueryItem("data_fim", dataFim.toString(Qt::ISODate));
+    query.addQueryItem("id_conta", QString::number(idConta));
+    url.setQuery(query);
+
+    QNetworkRequest request(url);
     request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
     QNetworkReply *reply = m_manager->get(request);
     connect(reply, &QNetworkReply::finished, this, [=](){ onObterLancamentosReply(reply); });
@@ -120,17 +127,40 @@ void LancamentoDAO::onObterResumosReply(QNetworkReply *reply)
 }
 
 // --- OBTER GASTOS POR CATEGORIA (PARA O GRÁFICO) ---
-void LancamentoDAO::obterGastosPorCategoria(const QString& token)
+void LancamentoDAO::obterGastosPorCategoria(const QString& token, const QDate& dataInicio, const QDate& dataFim, int idConta)
 {
-    // Este método dependerá de uma rota como GET /api/lancamentos/gastos/categoria
-    // A implementação seguirá o mesmo padrão das outras funções GET.
-    // O slot onObterGastosCategoriaReply irá processar a resposta e emitir
-    // o sinal gastosPorCategoriaRecebidos(dadosDoGrafico).
+    // A URL base continua a mesma
+    QUrl url(m_baseUrl + "/gastos/categoria");
+
+    // Usamos QUrlQuery para adicionar os parâmetros de forma segura
+    QUrlQuery query;
+    query.addQueryItem("data_inicio", dataInicio.toString(Qt::ISODate));
+    query.addQueryItem("data_fim", dataFim.toString(Qt::ISODate));
+    // O id -1 será ignorado pelo backend, representando "todas as contas"
+    query.addQueryItem("id_conta", QString::number(idConta));
+    url.setQuery(query);
+
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=](){ onObterGastosCategoriaReply(reply); });
 }
 
 void LancamentoDAO::onObterGastosCategoriaReply(QNetworkReply *reply)
 {
-    // Implementação futura, similar a onObterLancamentosReply
+    if (reply->error() == QNetworkReply::NoError && reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 200) {
+        QHash<QString, double> dadosGrafico;
+        QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
+        for (const QJsonValue &value : jsonArray) {
+            QJsonObject obj = value.toObject();
+            QString nomeCategoria = obj["nome"].toString();
+            double total = obj["total"].toDouble();
+            dadosGrafico[nomeCategoria] = total;
+        }
+        emit gastosPorCategoriaRecebidos(dadosGrafico);
+    } else {
+        emit erroOcorrido("Falha ao buscar gastos por categoria: " + reply->errorString());
+    }
     reply->deleteLater();
 }
 
@@ -358,4 +388,41 @@ void LancamentoDAO::excluirConta(int idConta, const QString& token)
         }
         reply->deleteLater();
     });
+}
+
+void LancamentoDAO::obterComparativoMensal(const QString& token, const QDate& dataInicio, const QDate& dataFim, int idConta)
+{
+    QUrl url(m_baseUrl + "/comparativo/mensal"); // Nova rota
+    QUrlQuery query;
+    query.addQueryItem("data_inicio", dataInicio.toString(Qt::ISODate));
+    query.addQueryItem("data_fim", dataFim.toString(Qt::ISODate));
+    query.addQueryItem("id_conta", QString::number(idConta));
+    url.setQuery(query);
+
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onObterComparativoMensalReply(reply);
+    });
+}
+
+void LancamentoDAO::onObterComparativoMensalReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QVector<ResumoMensal> lista;
+        QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
+        for (const QJsonValue &value : jsonArray) {
+            QJsonObject obj = value.toObject();
+            ResumoMensal r;
+            r.mes = obj["mes"].toString();
+            r.receitas = obj["receitas"].toDouble();
+            r.despesas = obj["despesas"].toDouble();
+            lista.append(r);
+        }
+        emit comparativoMensalRecebido(lista);
+    } else {
+        emit erroOcorrido("Falha ao buscar comparativo mensal: " + reply->errorString());
+    }
+    reply->deleteLater();
 }

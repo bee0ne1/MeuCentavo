@@ -4,6 +4,9 @@
 #include <QWidget>
 #include "Modelo/Lancamento.h" // Inclui a struct
 #include <QVector>
+#include <QtCharts/QChartView>
+#include <QtCharts/QChart>
+
 
 // Forward declarations
 namespace Ui { class pageHome; }
@@ -30,6 +33,8 @@ private:
 
     Ui::pageHome *ui;
     LancamentoDAO* m_dao;
+    QChartView *m_chartView;
+    QChart *m_chart;
 };
 
 #endif // PAGEHOME_H
