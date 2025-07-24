@@ -708,6 +708,89 @@ app.delete('/api/contas/:id', authenticateToken, async (req, res) => {
     }
 });
 
+// --- ROTAS PARA METAS ---
+
+// Rota para BUSCAR TODAS as metas do usuário logado
+app.get('/api/metas', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+        const [metas] = await pool.query('SELECT * FROM metas WHERE id_usuario = ? ORDER BY data_alvo ASC', [idUsuario]);
+        res.json(metas);
+    } catch (error) {
+        console.error("Erro ao buscar metas:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para ADICIONAR uma nova meta
+app.post('/api/metas', authenticateToken, async (req, res) => {
+    try {
+        const { nome, valor_alvo, data_alvo } = req.body;
+        const idUsuario = req.user.userId;
+
+        if (!nome || !valor_alvo) {
+            return res.status(400).json({ message: 'O nome e o valor alvo da meta são obrigatórios.' });
+        }
+
+        const [result] = await pool.query(
+            'INSERT INTO metas (id_usuario, nome, valor_alvo, data_alvo) VALUES (?, ?, ?, ?)',
+            [idUsuario, nome, valor_alvo, data_alvo || null]
+        );
+
+        res.status(201).json({ message: 'Meta criada com sucesso!', id_meta: result.insertId });
+
+    } catch (error) {
+        console.error("Erro ao adicionar meta:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para EDITAR (Atualizar) uma meta existente
+app.put('/api/metas/:id', authenticateToken, async (req, res) => {
+    try {
+        const { nome, valor_alvo, valor_atual, data_alvo } = req.body;
+        const idMeta = req.params.id;
+        const idUsuario = req.user.userId;
+
+        const [result] = await pool.query(
+            'UPDATE metas SET nome = ?, valor_alvo = ?, valor_atual = ?, data_alvo = ? WHERE id_meta = ? AND id_usuario = ?',
+            [nome, valor_alvo, valor_atual, data_alvo || null, idMeta, idUsuario]
+        );
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Meta atualizada com sucesso.' });
+        } else {
+            res.status(404).json({ message: 'Meta não encontrada ou não autorizada.' });
+        }
+    } catch (error) {
+        console.error("Erro ao editar meta:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para EXCLUIR uma meta
+app.delete('/api/metas/:id', authenticateToken, async (req, res) => {
+    try {
+        const idMeta = req.params.id;
+        const idUsuario = req.user.userId;
+
+        const [result] = await pool.query(
+            'DELETE FROM metas WHERE id_meta = ? AND id_usuario = ?',
+            [idMeta, idUsuario]
+        );
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Meta excluída com sucesso.' });
+        } else {
+            res.status(404).json({ message: 'Meta não encontrada ou não autorizada.' });
+        }
+    } catch (error) {
+        console.error("Erro ao excluir meta:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+
 // Inicia o servidor
 app.listen(port, () => {
   console.log(`Servidor escutando em http://localhost:${port}`);

@@ -7,7 +7,7 @@
 #include "Modelo/Lancamento.h"
 #include "Modelo/Conta.h" // Crie estes ficheiros de modelo se necessário
 #include "Modelo/Categoria.h"
-
+#include "Modelo/Meta.h"
 // Forward declarations para as classes de rede
 class QNetworkAccessManager;
 class QNetworkReply;
@@ -36,6 +36,10 @@ public:
     void editarConta(const Conta& conta, const QString& token);
     void excluirConta(int idConta, const QString& token);
     void obterComparativoMensal(const QString& token, const QDate& dataInicio, const QDate& dataFim, int idConta);
+    void obterTodasMetas(const QString& token);
+    void adicionarMeta(const Meta& meta, const QString& token);
+    void editarMeta(const Meta& meta, const QString& token);
+    void excluirMeta(int idMeta, const QString& token);
 
 
 signals:
@@ -52,6 +56,9 @@ signals:
     void categoriaModificadaComSucesso(); // Um único sinal para add, edit, delete
     void contaModificadaComSucesso();
     void comparativoMensalRecebido(const QVector<ResumoMensal>& resumo);
+    void metasRecebidas(const QVector<Meta>& metas);
+    void metaModificadaComSucesso();
+
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---
     void onAdicionarLancamentoReply(QNetworkReply *reply);
@@ -62,6 +69,8 @@ private slots:
     void onObterCategoriasReply(QNetworkReply *reply);
     void onModificarCategoriaReply(QNetworkReply *reply);
     void onObterComparativoMensalReply(QNetworkReply *reply);
+    void onMetasReply(QNetworkReply *reply);
+    void onModificarMetaReply(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *m_manager;

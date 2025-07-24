@@ -38,15 +38,16 @@ void formMainDashboard::setupPaginas()
     // serão simplificados, pois elas mesmas podem acessar o SessionManager.
     m_pageHome = new pageHome(this);
     m_pageLancamentos = new pageLancamentos(this);
-    //m_pageRelatorios = new pageRelatorios(this);
-    m_pageConfig = new pageConfig(this);
     m_pageRelatorios = new pageRelatorios(this);
+    m_pageMetas = new pageMetas(this);
+    m_pageConfig = new pageConfig(this);
 
     // Adiciona as páginas ao "baralho"
     ui->stackedWidgetConteudo->addWidget(m_pageHome);          // Índice 0
     ui->stackedWidgetConteudo->addWidget(m_pageLancamentos);    // Índice 1
     ui->stackedWidgetConteudo->addWidget(m_pageRelatorios);     // Índice 2
-    ui->stackedWidgetConteudo->addWidget(m_pageConfig);         // indice 3
+    ui->stackedWidgetConteudo->addWidget(m_pageMetas);          //indice 3
+    ui->stackedWidgetConteudo->addWidget(m_pageConfig);         // indice 4
 
 
     connect(m_pageLancamentos, &pageLancamentos::dadosAtualizados, m_pageHome, &pageHome::atualizarDados);
@@ -72,9 +73,14 @@ void formMainDashboard::on_buttonRelatorios_clicked()
     ui->stackedWidgetConteudo->setCurrentIndex(2);
 }
 
-void formMainDashboard::on_buttonConfiguracoes_clicked()
+void formMainDashboard::on_buttonMetas_clicked()
 {
     ui->stackedWidgetConteudo->setCurrentIndex(3);
+}
+
+void formMainDashboard::on_buttonConfiguracoes_clicked()
+{
+    ui->stackedWidgetConteudo->setCurrentIndex(4);
 }
 
 void formMainDashboard::on_buttonSwitchUsuario_clicked()
@@ -112,3 +118,4 @@ void formMainDashboard::on_buttonSwitchUsuario_clicked()
     // A dashboard (this) continua visível no fundo.
     m_formUsuario->show();
 }
+

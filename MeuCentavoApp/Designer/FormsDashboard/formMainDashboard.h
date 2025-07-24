@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 #include "DashboardPages/pageConfig.h"
+#include "DashboardPages/pageMetas.h"
 #include "Modelo/Usuario.h"
 
 // Forward declarations
@@ -13,6 +14,7 @@ class pageLancamentos;
 class pageRelatorios;
 class formUsuario;
 class pageConfig;
+class pageMetas;
 
 class formMainDashboard : public QMainWindow
 {
@@ -29,6 +31,7 @@ private slots:
     void on_buttonLancamentos_clicked();
     void on_buttonConfiguracoes_clicked();
     void on_buttonSwitchUsuario_clicked();
+    void on_buttonMetas_clicked();
 
 private:
     void setupPaginas();
@@ -42,6 +45,7 @@ private:
     pageRelatorios* m_pageRelatorios;
     formUsuario* m_formUsuario;
     pageConfig* m_pageConfig;
+    pageMetas* m_pageMetas;
 };
 
 #endif // FORMMAINDASHBOARD_H

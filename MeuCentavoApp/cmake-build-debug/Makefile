@@ -299,6 +299,30 @@ Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
 .PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.s
 
+Designer/FormsDashboard/DashboardPages/pageMetas.o: Designer/FormsDashboard/DashboardPages/pageMetas.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageMetas.o
+
+# target to build an object file
+Designer/FormsDashboard/DashboardPages/pageMetas.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageMetas.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageMetas.cpp.o
+
+Designer/FormsDashboard/DashboardPages/pageMetas.i: Designer/FormsDashboard/DashboardPages/pageMetas.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageMetas.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/DashboardPages/pageMetas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageMetas.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageMetas.cpp.i
+
+Designer/FormsDashboard/DashboardPages/pageMetas.s: Designer/FormsDashboard/DashboardPages/pageMetas.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageMetas.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/DashboardPages/pageMetas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageMetas.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageMetas.cpp.s
+
 Designer/FormsDashboard/DashboardPages/pageRelatorios.o: Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o
 .PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.o
 
@@ -418,6 +442,30 @@ Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.s: Designer/For
 Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp.s
 .PHONY : Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp.s
+
+Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.o: Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.o
+.PHONY : Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.o
+.PHONY : Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.o
+
+Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.i: Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.i
+.PHONY : Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.i
+.PHONY : Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.i
+
+Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.s: Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.s
+.PHONY : Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.s
+.PHONY : Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.s
 
 Designer/FormsDashboard/formMainDashboard.o: Designer/FormsDashboard/formMainDashboard.cpp.o
 .PHONY : Designer/FormsDashboard/formMainDashboard.o
@@ -736,6 +784,9 @@ help:
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.s"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageMetas.o"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageMetas.i"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageMetas.s"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.s"
@@ -751,6 +802,9 @@ help:
 	@echo "... Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.o"
 	@echo "... Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.i"
 	@echo "... Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.s"
+	@echo "... Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.o"
+	@echo "... Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.i"
+	@echo "... Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.s"
 	@echo "... Designer/FormsDashboard/formMainDashboard.o"
 	@echo "... Designer/FormsDashboard/formMainDashboard.i"
 	@echo "... Designer/FormsDashboard/formMainDashboard.s"

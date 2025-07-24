@@ -648,6 +648,12 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageMetas.h",
+			"MU",
+			"UKUT43B7UZ/moc_pageMetas.cpp",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h",
 			"MU",
 			"UKUT43B7UZ/moc_pageRelatorios.cpp",
@@ -675,6 +681,12 @@
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.h",
 			"MU",
 			"JGBQRWFFYH/moc_formAdicionarLancamento.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.h",
+			"MU",
+			"FML5FN576F/moc_dialogAddEditMeta.cpp",
 			null
 		],
 		[
@@ -747,6 +759,12 @@
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h",
 			"MU",
 			"PLWGSIEO4M/moc_Lancamento.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h",
+			"MU",
+			"PLWGSIEO4M/moc_Meta.cpp",
 			null
 		],
 		[
@@ -862,6 +880,11 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageMetas.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp",
 			"MU",
 			null
@@ -883,6 +906,11 @@
 		],
 		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp",
 			"MU",
 			null
 		],

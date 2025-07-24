@@ -35,6 +35,8 @@ set(PROJECT_SOURCES
         Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp
         Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp
         Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp
+        Designer/FormsDashboard/DashboardPages/pageMetas.cpp
+        Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp
 )
 
 # 2. Lista COMPLETA de Ficheiros de Cabeçalho (.h)
@@ -63,6 +65,9 @@ set(PROJECT_HEADERS
         Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h
         Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.h
         Designer/FormsDashboard/DashboardPages/pageRelatorios.h
+        Modelo/Meta.h
+        Designer/FormsDashboard/DashboardPages/pageMetas.h
+        Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.h
 )
 
 # 3. Lista de Ficheiros de Interface (.ui)
@@ -82,6 +87,8 @@ set(PROJECT_FORMS
         Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.ui
         Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.ui
         Designer/FormsDashboard/DashboardPages/pageRelatorios.ui
+        Designer/FormsDashboard/DashboardPages/pageMetas.ui
+        Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.ui
 )
 
 # 4. Criamos o executável, agora passando TODAS as listas de ficheiros

@@ -426,3 +426,96 @@ void LancamentoDAO::onObterComparativoMensalReply(QNetworkReply *reply)
     }
     reply->deleteLater();
 }
+
+// --- MÉTODOS PARA GESTÃO DE METAS ---
+
+void LancamentoDAO::obterTodasMetas(const QString& token)
+{
+    QNetworkRequest request(QUrl("http://localhost:3000/api/metas"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onMetasReply(reply);
+    });
+}
+
+void LancamentoDAO::onMetasReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QVector<Meta> lista;
+        QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
+        for (const QJsonValue &value : jsonArray) {
+            QJsonObject obj = value.toObject();
+            Meta m;
+            m.id_meta = obj["id_meta"].toInt();
+            m.nome = obj["nome"].toString();
+            m.valor_alvo = obj["valor_alvo"].toDouble();
+            m.valor_atual = obj["valor_atual"].toDouble();
+            m.data_alvo = QDate::fromString(obj["data_alvo"].toString().left(10), Qt::ISODate);
+            lista.append(m);
+        }
+        emit metasRecebidas(lista);
+    } else {
+        emit erroOcorrido("Falha ao buscar metas: " + reply->errorString());
+    }
+    reply->deleteLater();
+}
+
+void LancamentoDAO::adicionarMeta(const Meta& meta, const QString& token)
+{
+    QJsonObject json;
+    json["nome"] = meta.nome;
+    json["valor_alvo"] = meta.valor_alvo;
+    if (meta.data_alvo.isValid()) {
+        json["data_alvo"] = meta.data_alvo.toString(Qt::ISODate);
+    }
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/metas"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(json).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onModificarMetaReply(reply);
+    });
+}
+
+void LancamentoDAO::editarMeta(const Meta& meta, const QString& token)
+{
+    QJsonObject json;
+    json["nome"] = meta.nome;
+    json["valor_alvo"] = meta.valor_alvo;
+    json["valor_atual"] = meta.valor_atual;
+    if (meta.data_alvo.isValid()) {
+        json["data_alvo"] = meta.data_alvo.toString(Qt::ISODate);
+    }
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/metas/" + QString::number(meta.id_meta)));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->put(request, QJsonDocument(json).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onModificarMetaReply(reply);
+    });
+}
+
+void LancamentoDAO::excluirMeta(int idMeta, const QString& token)
+{
+    QNetworkRequest request(QUrl("http://localhost:3000/api/metas/" + QString::number(idMeta)));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->deleteResource(request);
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onModificarMetaReply(reply);
+    });
+}
+
+void LancamentoDAO::onModificarMetaReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        emit metaModificadaComSucesso();
+    } else {
+        emit erroOcorrido("Falha ao modificar meta: " + reply->readAll());
+    }
+    reply->deleteLater();
+}
