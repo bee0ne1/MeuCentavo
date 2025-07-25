@@ -21,6 +21,7 @@ struct Lancamento {
     int id_categoria;
     QString nome_conta;
     QString nome_categoria;
+    int id_meta;
 };
 
 struct ResumoMensal {

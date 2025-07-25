@@ -34,6 +34,7 @@ formAdicionarLancamento::formAdicionarLancamento(QWidget *parent) :
     connect(m_dao, &LancamentoDAO::lancamentoAdicionado, this, &formAdicionarLancamento::onLancamentoAdicionado);
     connect(m_dao, &LancamentoDAO::lancamentoModificadoComSucesso, this, &formAdicionarLancamento::onLancamentoAdicionado);
     connect(m_dao, &LancamentoDAO::erroOcorrido, this, &formAdicionarLancamento::onErroDeRede);
+    connect(m_dao, &LancamentoDAO::metasRecebidas, this, &formAdicionarLancamento::onMetasRecebidas);
 
     // Conecta o combobox de tipo ao nosso novo slot de filtro
     connect(ui->comboBoxTipo, &QComboBox::currentTextChanged, this, &formAdicionarLancamento::filtrarCategoriasPorTipo);
@@ -42,6 +43,7 @@ formAdicionarLancamento::formAdicionarLancamento(QWidget *parent) :
     QString token = SessionManager::instance().getToken();
     m_dao->obterTodasContas(token);
     m_dao->obterTodasCategorias(token);
+    m_dao->obterTodasMetas(token);
 }
 
 formAdicionarLancamento::~formAdicionarLancamento()
@@ -99,6 +101,7 @@ void formAdicionarLancamento::salvarLancamento()
     lancamento.tipo = ui->comboBoxTipo->currentText();
     lancamento.id_conta = ui->comboBoxConta->currentData().toInt();
     lancamento.id_categoria = ui->comboBoxCategoria->currentData().toInt();
+    lancamento.id_meta = ui->comboBoxMeta->currentData().toInt();
 
     QString token = SessionManager::instance().getToken();
 
@@ -138,9 +141,18 @@ void formAdicionarLancamento::setLancamentoParaEdicao(const Lancamento& lancamen
     ui->spinBoxValor->setValue(lancamento.valor);
     ui->dateEditData->setDate(lancamento.data_lancamento);
     ui->comboBoxTipo->setCurrentText(lancamento.tipo);
-
-    // Encontra e seleciona a conta e categoria corretas nos comboboxes
     ui->comboBoxConta->setCurrentIndex(ui->comboBoxConta->findData(lancamento.id_conta));
     ui->comboBoxCategoria->setCurrentIndex(ui->comboBoxCategoria->findData(lancamento.id_categoria));
+    ui->comboBoxMeta->setCurrentIndex(ui->comboBoxMeta->findData(lancamento.id_meta));
 }
 
+
+void formAdicionarLancamento::onMetasRecebidas(const QVector<Meta>& metas)
+{
+    ui->comboBoxMeta->clear();
+    // A primeira opção permite não vincular o lançamento a nenhuma meta
+    ui->comboBoxMeta->addItem("Nenhuma", -1); // -1 é um valor sentinela
+    for (const auto& meta : metas) {
+        ui->comboBoxMeta->addItem(meta.nome, meta.id_meta);
+    }
+}

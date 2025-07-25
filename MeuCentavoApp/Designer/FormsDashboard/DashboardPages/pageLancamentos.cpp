@@ -43,18 +43,18 @@ pageLancamentos::pageLancamentos(QWidget *parent) :
     //AUMENTO DA COLUNA VALOR
     ui->tabelaTodosLancamentos->setColumnWidth(5, 120);
 
-
     // Define datas padrão
-    ui->dateEditInicio->setDate(QDate::currentDate().addMonths(-1));
-    ui->dateEditFim->setDate(QDate::currentDate());
+    QDate dataAtual = QDate::currentDate();
+    QDate primeiroDiaDoMes = QDate(dataAtual.year(), dataAtual.month(), 1);
+    ui->dateEditInicio->setDate(primeiroDiaDoMes);
+    ui->dateEditFim->setDate(dataAtual);
+
     // O botão Filtrar agora que chama o carregamento da tabela
     connect(ui->buttonFiltrar, &QPushButton::clicked, this, &pageLancamentos::carregarTabela);
     // Carrega a lista de contas para o filtro ao iniciar
     QString token = SessionManager::instance().getToken();
     m_dao->obterTodasContas(token);
 
-    // Inicia a busca por dados assim que a página é criada
-    carregarTabela();
 }
 
 pageLancamentos::~pageLancamentos()
@@ -192,6 +192,8 @@ void pageLancamentos::onContasRecebidas(const QVector<Conta>& contas)
     for (const auto& conta : contas) {
         ui->comboBoxConta->addItem(conta.nome, conta.id);
     }
+    // Agora que o ComboBox está pronto, fazemos o carregamento inicial dos dados.
+    carregarTabela();
 }
 
 void pageLancamentos::onErroDeRede(const QString& motivo)

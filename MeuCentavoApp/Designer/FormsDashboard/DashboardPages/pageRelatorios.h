@@ -35,6 +35,9 @@ private slots:
     void onComparativoRecebido(const QVector<ResumoMensal>& resumo);
     void popularTabelaDetalhes(const QVector<Lancamento>& lancamentos);
     void filtrarTabelaPorCategoria(const QString& nomeCategoria);
+    // Novo slot para reagir à seleção do ComboBox de período
+    void onPeriodoSelecionado(int index);
+
 private:
     // Função auxiliar para iniciar o carregamento dos dados
     void carregarDados();

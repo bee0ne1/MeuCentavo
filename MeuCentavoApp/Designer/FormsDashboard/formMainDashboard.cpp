@@ -75,6 +75,9 @@ void formMainDashboard::on_buttonRelatorios_clicked()
 
 void formMainDashboard::on_buttonMetas_clicked()
 {
+    // Chama a função pública para recarregar os dados da página de metas.
+    m_pageMetas->carregarMetas();
+
     ui->stackedWidgetConteudo->setCurrentIndex(3);
 }
 

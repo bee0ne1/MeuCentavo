@@ -286,7 +286,7 @@ app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
         console.log("Backend recebeu o corpo da requisição:", req.body);
 
         // Agora também extraímos id_conta e id_categoria
-        const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria } = req.body;
+        const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria, id_meta } = req.body;
         const id_usuario = req.user.userId;
 
         // Validação para os novos campos
@@ -296,8 +296,8 @@ app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
 
         // Adicionamos os novos campos à consulta INSERT
         const [result] = await pool.query(
-            'INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria) VALUES (?, ?, ?, ?, ?, ?, ?)',
-            [descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria]
+            'INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria, id_meta) VALUES (?, ?, ?, ?, ?, ?, ?,?)',
+            [descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria,id_meta || null]
         );
 
         res.status(201).json({ message: 'Lançamento adicionado com sucesso!', insertId: result.insertId });
@@ -714,13 +714,33 @@ app.delete('/api/contas/:id', authenticateToken, async (req, res) => {
 app.get('/api/metas', authenticateToken, async (req, res) => {
     try {
         const idUsuario = req.user.userId;
-        const [metas] = await pool.query('SELECT * FROM metas WHERE id_usuario = ? ORDER BY data_alvo ASC', [idUsuario]);
+        // A query agora calcula o valor_atual somando os lançamentos vinculados
+        const query = `
+            SELECT
+                m.id_meta,
+                m.nome,
+                m.valor_alvo,
+                COALESCE(SUM(l.valor), 0) as valor_atual,
+                m.data_alvo
+            FROM
+                metas m
+            LEFT JOIN
+                lancamentos l ON m.id_meta = l.id_meta
+            WHERE
+                m.id_usuario = ?
+            GROUP BY
+                m.id_meta  -- CORREÇÃO: Agrupar apenas pelo ID da meta é mais robusto
+            ORDER BY
+                m.data_alvo ASC;
+        `;
+        const [metas] = await pool.query(query, [idUsuario]);
         res.json(metas);
     } catch (error) {
         console.error("Erro ao buscar metas:", error);
         res.status(500).json({ message: "Erro interno do servidor" });
     }
 });
+
 
 // Rota para ADICIONAR uma nova meta
 app.post('/api/metas', authenticateToken, async (req, res) => {
@@ -753,8 +773,8 @@ app.put('/api/metas/:id', authenticateToken, async (req, res) => {
         const idUsuario = req.user.userId;
 
         const [result] = await pool.query(
-            'UPDATE metas SET nome = ?, valor_alvo = ?, valor_atual = ?, data_alvo = ? WHERE id_meta = ? AND id_usuario = ?',
-            [nome, valor_alvo, valor_atual, data_alvo || null, idMeta, idUsuario]
+            'UPDATE metas SET nome = ?, valor_alvo = ?, data_alvo = ? WHERE id_meta = ? AND id_usuario = ?',
+            [nome, valor_alvo, data_alvo || null, idMeta, idUsuario]
         );
 
         if (result.affectedRows > 0) {

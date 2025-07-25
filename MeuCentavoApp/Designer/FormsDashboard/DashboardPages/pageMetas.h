@@ -19,6 +19,8 @@ class pageMetas : public QWidget
 public:
     explicit pageMetas(QWidget *parent = nullptr);
     ~pageMetas();
+public slots:
+    void carregarMetas();
 
 private slots:
     // Slot para receber a lista de metas vinda do DAO
@@ -34,7 +36,6 @@ private slots:
 
 private:
     // Funções auxiliares
-    void carregarMetas();
     void popularTabela(const QVector<Meta>& metas);
 
     Ui::pageMetas *ui;

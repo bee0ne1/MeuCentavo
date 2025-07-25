@@ -57,8 +57,22 @@ pageRelatorios::pageRelatorios(QWidget *parent) :
     connect(m_dao, &LancamentoDAO::comparativoMensalRecebido, this, &pageRelatorios::onComparativoRecebido);
 
     // Define as datas padrão nos QDateEdit
-    ui->dateEditInicio->setDate(QDate::currentDate().addMonths(-1));
-    ui->dateEditFim->setDate(QDate::currentDate());
+    QDate dataAtual = QDate::currentDate();
+    QDate primeiroDiaDoMes = QDate(dataAtual.year(), dataAtual.month(), 1);
+
+    ui->dateEditInicio->setDate(primeiroDiaDoMes);
+    ui->dateEditFim->setDate(dataAtual);
+
+    // --- CONFIGURAÇÃO DO NOVO FILTRO DE PERÍODO ---
+    // Conecta o novo ComboBox de Período ao nosso novo slot
+    connect(ui->comboBoxPeriodo, &QComboBox::currentIndexChanged, this, &pageRelatorios::onPeriodoSelecionado);
+    // Preenche o ComboBox com as opções de período
+    ui->comboBoxPeriodo->addItem("Mês Atual", 0); // O segundo parâmetro é um ID que usaremos
+    ui->comboBoxPeriodo->addItem("Mês Passado", 1);
+    ui->comboBoxPeriodo->addItem("Últimos 3 Meses", 2);
+    ui->comboBoxPeriodo->addItem("Este Ano", 3);
+    ui->comboBoxPeriodo->addItem("Período Personalizado", 4);
+
     // Conecta o botão "Filtrar" para recarregar os dados
     connect(ui->buttonFiltrar, &QPushButton::clicked, this, &pageRelatorios::carregarDados);
 
@@ -66,9 +80,6 @@ pageRelatorios::pageRelatorios(QWidget *parent) :
     ui->tableWidgetDetalhes->setColumnCount(4);
     ui->tableWidgetDetalhes->setHorizontalHeaderLabels({"Data", "Descrição", "Categoria", "Valor"});
     ui->tableWidgetDetalhes->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
-
-    // 5. Inicia o carregamento dos dados
-    carregarDados();
 
     // No final do construtor, peça a lista de contas para preencher o combobox
     QString token = SessionManager::instance().getToken();
@@ -83,6 +94,18 @@ pageRelatorios::~pageRelatorios()
 
 void pageRelatorios::carregarDados()
 {
+    // --- LÓGICA PARA TÍTULO DINÂMICO ---
+    QString periodoTexto = ui->comboBoxPeriodo->currentText();
+    QString novoTituloPizza;
+
+    if (periodoTexto == "Período Personalizado") {
+        novoTituloPizza = "Gastos por Categoria (Personalizado)";
+    } else {
+        novoTituloPizza = QString("Gastos por Categoria (%1)").arg(periodoTexto);
+    }
+    m_chart->setTitle(novoTituloPizza);
+    // ------------------------------------
+
     qDebug() << "pageRelatorios: Requisitando dados de gastos por categoria...";
     QString token = SessionManager::instance().getToken();
     if (token.isEmpty()) {
@@ -153,6 +176,7 @@ void pageRelatorios::onContasRecebidas(const QVector<Conta>& contas)
     for (const auto& conta : contas) {
         ui->comboBoxConta->addItem(conta.nome, conta.id);
     }
+    carregarDados();
 }
 
 void pageRelatorios::onErroDeRede(const QString& motivo)
@@ -235,4 +259,47 @@ void pageRelatorios::filtrarTabelaPorCategoria(const QString& nomeCategoria)
         }
     }
     popularTabelaDetalhes(lancamentosFiltrados); // Usa a mesma função de popular
+}
+
+
+void pageRelatorios::onPeriodoSelecionado(int index)
+{
+    QDate dataAtual = QDate::currentDate();
+    QDate dataInicio;
+    QDate dataFim = dataAtual;
+
+    int idPeriodo = ui->comboBoxPeriodo->itemData(index).toInt();
+
+    switch (idPeriodo) {
+    case 0: // Mês Atual
+        dataInicio = QDate(dataAtual.year(), dataAtual.month(), 1);
+        break;
+    case 1: // Mês Passado
+        {
+            QDate mesPassado = dataAtual.addMonths(-1);
+            dataInicio = QDate(mesPassado.year(), mesPassado.month(), 1);
+            dataFim = QDate(mesPassado.year(), mesPassado.month(), mesPassado.daysInMonth());
+        }
+        break;
+    case 2: // Últimos 3 Meses
+        dataInicio = dataAtual.addMonths(-3);
+        break;
+    case 3: // Este Ano
+        dataInicio = QDate(dataAtual.year(), 1, 1);
+        break;
+    case 4: // Período Personalizado
+        // Habilita os QDateEdits e não faz nada, deixa o usuário escolher
+        ui->dateEditInicio->setEnabled(true);
+        ui->dateEditFim->setEnabled(true);
+        return; // Sai da função para não chamar carregarDados() ainda
+    }
+
+    // Para os períodos pré-definidos, atualiza os QDateEdits e os desabilita
+    ui->dateEditInicio->setDate(dataInicio);
+    ui->dateEditFim->setDate(dataFim);
+    ui->dateEditInicio->setEnabled(false);
+    ui->dateEditFim->setEnabled(false);
+
+    // Chama a função para recarregar os gráficos e a tabela
+    carregarDados();
 }

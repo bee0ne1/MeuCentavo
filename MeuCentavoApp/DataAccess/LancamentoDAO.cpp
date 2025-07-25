@@ -29,6 +29,11 @@ void LancamentoDAO::adicionarLancamento(const Lancamento& lancamento, const QStr
     json["id_conta"] = lancamento.id_conta;
     json["id_categoria"] = lancamento.id_categoria;
 
+    // Apenas inclui o id_meta no JSON se ele for válido (>0)
+    if (lancamento.id_meta > 0) {
+        json["id_meta"] = lancamento.id_meta;
+    }
+
     QNetworkRequest request(QUrl(m_baseUrl + "/adicionar"));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
@@ -173,6 +178,10 @@ void LancamentoDAO::editarLancamento(const Lancamento& lancamento, const QString
     json["tipo"] = lancamento.tipo;
     json["id_conta"] = lancamento.id_conta;
     json["id_categoria"] = lancamento.id_categoria;
+
+    if (lancamento.id_meta > 0) {
+        json["id_meta"] = lancamento.id_meta;
+    }
 
     QNetworkRequest request(QUrl(m_baseUrl + "/" + QString::number(lancamento.id)));
     request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());

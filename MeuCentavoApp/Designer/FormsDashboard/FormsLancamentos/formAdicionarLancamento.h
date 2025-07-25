@@ -5,6 +5,7 @@
 #include "Modelo/Lancamento.h"
 #include "Modelo/Conta.h"
 #include "Modelo/Categoria.h"
+#include "Modelo/Meta.h"
 
 // Forward declaration
 class LancamentoDAO;
@@ -29,6 +30,7 @@ private slots:
     void onLancamentoAdicionado();
     void onErroDeRede(const QString& motivo);
     void filtrarCategoriasPorTipo(); // Novo slot para o filtro inteligente
+    void onMetasRecebidas(const QVector<Meta>& metas);
 
 
 private:
