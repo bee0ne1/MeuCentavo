@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_dialogAddEditConta.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_formGerenciarCategorias.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_formGerenciarContas.h"
+  "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsLancamentos/ui_dialogImportarExtrato.h"
+  "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsLancamentos/ui_dialogMapeamento.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsLancamentos/ui_formAdicionarLancamento.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsMetas/ui_dialogAddEditMeta.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/ui_formMainDashboard.h"

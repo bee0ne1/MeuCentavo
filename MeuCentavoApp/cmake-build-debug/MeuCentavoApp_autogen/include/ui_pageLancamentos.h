@@ -32,6 +32,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QPushButton *buttonAdicionarLancamento;
+    QPushButton *buttonImportarExtrato;
     QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *layoutFiltros;
     QLabel *label;
@@ -63,6 +64,11 @@ public:
         buttonAdicionarLancamento->setObjectName("buttonAdicionarLancamento");
 
         horizontalLayout->addWidget(buttonAdicionarLancamento);
+
+        buttonImportarExtrato = new QPushButton(pageLancamentos);
+        buttonImportarExtrato->setObjectName("buttonImportarExtrato");
+
+        horizontalLayout->addWidget(buttonImportarExtrato);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
@@ -146,6 +152,7 @@ public:
     {
         pageLancamentos->setWindowTitle(QCoreApplication::translate("pageLancamentos", "pageLancamentos", nullptr));
         buttonAdicionarLancamento->setText(QCoreApplication::translate("pageLancamentos", "Adicionar Novo Lan\303\247amento", nullptr));
+        buttonImportarExtrato->setText(QCoreApplication::translate("pageLancamentos", "Importar Extrato (.CSV)", nullptr));
         label->setText(QCoreApplication::translate("pageLancamentos", "Per\303\255odo: ", nullptr));
         label_2->setText(QCoreApplication::translate("pageLancamentos", " at\303\251 ", nullptr));
         label_3->setText(QCoreApplication::translate("pageLancamentos", "Conta: ", nullptr));

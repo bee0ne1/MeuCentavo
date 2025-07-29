@@ -37,6 +37,7 @@ private slots:
     void filtrarTabelaPorCategoria(const QString& nomeCategoria);
     // Novo slot para reagir à seleção do ComboBox de período
     void onPeriodoSelecionado(int index);
+    void on_buttonExportarCSV_clicked();
 
 private:
     // Função auxiliar para iniciar o carregamento dos dados

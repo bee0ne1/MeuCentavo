@@ -37,6 +37,8 @@ set(PROJECT_SOURCES
         Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp
         Designer/FormsDashboard/DashboardPages/pageMetas.cpp
         Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp
+        Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp
+        Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp
 )
 
 # 2. Lista COMPLETA de Ficheiros de Cabeçalho (.h)
@@ -68,6 +70,9 @@ set(PROJECT_HEADERS
         Modelo/Meta.h
         Designer/FormsDashboard/DashboardPages/pageMetas.h
         Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.h
+        Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.h
+        Modelo/TransacaoImportada.h
+        Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.h
 )
 
 # 3. Lista de Ficheiros de Interface (.ui)
@@ -89,6 +94,8 @@ set(PROJECT_FORMS
         Designer/FormsDashboard/DashboardPages/pageRelatorios.ui
         Designer/FormsDashboard/DashboardPages/pageMetas.ui
         Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.ui
+        Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.ui
+        Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.ui
 )
 
 # 4. Criamos o executável, agora passando TODAS as listas de ficheiros

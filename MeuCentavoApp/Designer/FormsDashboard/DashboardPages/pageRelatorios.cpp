@@ -11,6 +11,9 @@
 #include <QPainter>
 #include <QDebug>
 #include <QTimer>
+#include <QFileDialog>
+#include <QFile>
+#include <QTextStream>
 
 pageRelatorios::pageRelatorios(QWidget *parent) :
     QWidget(parent),
@@ -302,4 +305,52 @@ void pageRelatorios::onPeriodoSelecionado(int index)
 
     // Chama a função para recarregar os gráficos e a tabela
     carregarDados();
+}
+
+void pageRelatorios::on_buttonExportarCSV_clicked()
+{
+    if (ui->tableWidgetDetalhes->rowCount() == 0) {
+        QMessageBox::information(this, "Exportar", "Não há dados na tabela para exportar.");
+        return;
+    }
+
+    // Pede ao usuário para escolher onde salvar o arquivo
+    QString caminhoArquivo = QFileDialog::getSaveFileName(this, "Salvar como", QDir::homePath(), "Arquivos CSV (*.csv)");
+
+    if (caminhoArquivo.isEmpty()) {
+        return; // O usuário cancelou
+    }
+
+    QFile file(caminhoArquivo);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, "Erro", "Não foi possível criar ou abrir o arquivo para escrita.");
+        return;
+    }
+
+    QTextStream stream(&file);
+
+    // Escreve o cabeçalho
+    QStringList headers;
+    for (int i = 0; i < ui->tableWidgetDetalhes->columnCount(); ++i) {
+        headers << "\"" + ui->tableWidgetDetalhes->horizontalHeaderItem(i)->text() + "\"";
+    }
+    stream << headers.join(',') << "\n";
+
+    // Escreve os dados das linhas
+    for (int i = 0; i < ui->tableWidgetDetalhes->rowCount(); ++i) {
+        QStringList rowData;
+        for (int j = 0; j < ui->tableWidgetDetalhes->columnCount(); ++j) {
+            QTableWidgetItem* item = ui->tableWidgetDetalhes->item(i, j);
+            if (item) {
+                // Coloca o texto entre aspas para tratar vírgulas e outros caracteres especiais
+                rowData << "\"" + item->text().replace("\"", "\"\"") + "\"";
+            } else {
+                rowData << "\"\"";
+            }
+        }
+        stream << rowData.join(',') << "\n";
+    }
+
+    file.close();
+    QMessageBox::information(this, "Sucesso", "Dados exportados com sucesso para:\n" + caminhoArquivo);
 }

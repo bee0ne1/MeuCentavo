@@ -39,6 +39,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QPushButton" name="buttonImportarExtrato">
+         <property name="text">
+          <string>Importar Extrato (.CSV)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="horizontalSpacer_2">
          <property name="orientation">
           <enum>Qt::Orientation::Horizontal</enum>

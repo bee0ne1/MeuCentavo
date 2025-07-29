@@ -35,6 +35,7 @@ private slots:
     void editarLancamento(const Lancamento& lancamento);
     void excluirLancamento(const Lancamento& lancamento);
     void onContasRecebidas(const QVector<Conta>& contas);
+    void on_buttonImportarExtrato_clicked();
 
 private:
     Ui::pageLancamentos *ui;

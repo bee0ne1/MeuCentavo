@@ -33,6 +33,7 @@ private slots:
     void onMetasRecebidas(const QVector<Meta>& metas);
 
 
+
 private:
     Ui::formAdicionarLancamento *ui;
     LancamentoDAO* m_dao; // DAO como membro da classe

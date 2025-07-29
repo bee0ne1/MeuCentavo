@@ -1,12 +1,18 @@
 #include "pageLancamentos.h"
 #include "ui_pageLancamentos.h"
 #include "Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.h"
+#include "Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.h"
+#include "Modelo/TransacaoImportada.h"
+#include "Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.h"
 #include "DataAccess/LancamentoDAO.h"
 #include "Gerenciamento/SessionManager.h" // Inclui nosso "cofre" de sessão
 #include <QHeaderView>
 #include <QMessageBox>
 #include <QDebug>
 #include <QIcon>
+#include <QTextStream>
+#include <QFile>
+#include <QLocale>
 
 pageLancamentos::pageLancamentos(QWidget *parent) :
     QWidget(parent),
@@ -199,4 +205,125 @@ void pageLancamentos::onContasRecebidas(const QVector<Conta>& contas)
 void pageLancamentos::onErroDeRede(const QString& motivo)
 {
     QMessageBox::critical(this, "Erro de Rede", "Não foi possível buscar os lançamentos:\n" + motivo);
+}
+
+void pageLancamentos::on_buttonImportarExtrato_clicked()
+{
+    dialogImportarExtrato dialogoInicial(this);
+    if (dialogoInicial.exec() == QDialog::Accepted)
+    {
+        QString caminho = dialogoInicial.caminhoArquivoSelecionado();
+        int idConta = dialogoInicial.idContaSelecionada();
+
+        if (caminho.isEmpty() || idConta <= 0) {
+            QMessageBox::warning(this, "Seleção Inválida", "Por favor, selecione um arquivo e uma conta de destino.");
+            return;
+        }
+
+        // --- ETAPA 2: LER O ARQUIVO CSV ---
+        QVector<TransacaoImportada> transacoesLidas;
+        QFile file(caminho);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QMessageBox::critical(this, "Erro", "Não foi possível abrir o arquivo CSV.");
+            return;
+        }
+
+        QTextStream in(&file);
+        in.readLine(); // Pula a linha do cabeçalho
+
+        while (!in.atEnd()) {
+            QString linha = in.readLine();
+            QStringList campos = linha.split(',');
+
+            if (campos.size() >= 4) {
+                TransacaoImportada t;
+                // ATENÇÃO: Ajuste os números abaixo para a ordem correta do seu arquivo
+                t.dataStr = campos[0];
+                t.descricaoStr = campos[1];
+                t.valorEntradaStr = campos[2];
+                t.valorSaidaStr = campos[3];
+                transacoesLidas.append(t);
+            }
+        }
+        file.close();
+
+        if (transacoesLidas.isEmpty()) {
+            QMessageBox::information(this, "Importação", "Nenhuma transação encontrada no arquivo.");
+            return;
+        }
+
+        dialogMapeamento dialogoMap(transacoesLidas, this);
+        if (dialogoMap.exec() == QDialog::Accepted) {
+            // --- ETAPA FINAL: PROCESSAR E SALVAR NO BANCO ---
+            QVector<TransacaoImportada> transacoesFinalizadas = dialogoMap.getTransacoesFinalizadas();
+            QString token = SessionManager::instance().getToken();
+            int sucessoCount = 0;
+            int ignoradoCount = 0;
+
+            for (const auto& transacaoImportada : transacoesFinalizadas) {
+                if (transacaoImportada.id_categoria <= 0) {
+                    ignoradoCount++;
+                    continue;
+                }
+
+                Lancamento novoLancamento;
+                novoLancamento.id_conta = idConta;
+                novoLancamento.id_categoria = transacaoImportada.id_categoria;
+
+                // --- CORREÇÃO DE CONSTÂNCIA APLICADA A TODAS AS STRINGS ---
+
+                // 1. Crie cópias locais e não-constantes das strings que serão modificadas
+                QString descricaoLimpa = transacaoImportada.descricaoStr;
+                QString dataLimpa = transacaoImportada.dataStr;
+                QString valorEntradaLimpo = transacaoImportada.valorEntradaStr;
+                QString valorSaidaLimpo = transacaoImportada.valorSaidaStr;
+
+                // 2. Agora, modifique e use as cópias
+                novoLancamento.descricao = descricaoLimpa.remove('"');
+                novoLancamento.data_lancamento = QDate::fromString(dataLimpa.remove('"'), "dd/MM/yyyy");
+
+                // Lógica de limpeza de valores usando as cópias
+                valorEntradaLimpo.remove('"').remove('R').remove('$').trimmed();
+                valorSaidaLimpo.remove('"').remove('R').remove('$').trimmed();
+
+                if (valorEntradaLimpo.contains(',')) {
+                    valorEntradaLimpo.remove('.');
+                    valorEntradaLimpo.replace(',', '.');
+                }
+                if (valorSaidaLimpo.contains(',')) {
+                    valorSaidaLimpo.remove('.');
+                    valorSaidaLimpo.replace(',', '.');
+                }
+
+                // O resto da lógica de conversão continua igual, pois já usa as cópias
+                bool ok;
+                double valorEntrada = valorEntradaLimpo.toDouble(&ok);
+                if (ok && valorEntrada > 0) {
+                    novoLancamento.valor = valorEntrada;
+                    novoLancamento.tipo = "Receita";
+                } else {
+                    double valorSaida = valorSaidaLimpo.toDouble(&ok);
+                    if (ok && valorSaida > 0) {
+                        novoLancamento.valor = valorSaida;
+                        novoLancamento.tipo = "Despesa";
+                    } else {
+                        ignoradoCount++;
+                        continue;
+                    }
+                }
+
+                m_dao->adicionarLancamento(novoLancamento, token);
+                sucessoCount++;
+            }
+
+
+
+            QMessageBox::information(this, "Importação Concluída",
+                QString("Importação finalizada com sucesso!\n\n%1 lançamentos importados.\n%2 linhas ignoradas.")
+                .arg(sucessoCount)
+                .arg(ignoradoCount));
+
+            carregarTabela();
+        }
+    }
 }

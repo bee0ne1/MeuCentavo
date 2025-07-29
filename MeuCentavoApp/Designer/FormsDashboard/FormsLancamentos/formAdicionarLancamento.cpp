@@ -156,3 +156,4 @@ void formAdicionarLancamento::onMetasRecebidas(const QVector<Meta>& metas)
         ui->comboBoxMeta->addItem(meta.nome, meta.id_meta);
     }
 }
+

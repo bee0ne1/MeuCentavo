@@ -419,6 +419,54 @@ Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s
 .PHONY : Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s
 
+Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.o: Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.o
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.o
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.o
+
+Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.i: Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.i
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.i
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.i
+
+Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.s: Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.s
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.s
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.s
+
+Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.o: Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.o
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.o
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.o
+
+Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.i: Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.i
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.i
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.i
+
+Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.s: Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.s
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.s
+.PHONY : Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.s
+
 Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.o: Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp.o
 .PHONY : Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.o
 
@@ -799,6 +847,12 @@ help:
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.o"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.i"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.s"
+	@echo "... Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.o"
+	@echo "... Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.i"
+	@echo "... Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.s"
+	@echo "... Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.o"
+	@echo "... Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.i"
+	@echo "... Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.s"
 	@echo "... Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.o"
 	@echo "... Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.i"
 	@echo "... Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.s"

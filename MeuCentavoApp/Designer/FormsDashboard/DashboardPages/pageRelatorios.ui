@@ -13,9 +13,9 @@
   <property name="windowTitle">
    <string>pageRelatorios</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout">
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,1,1">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,1,1,0">
      <item>
       <layout class="QHBoxLayout" name="layoutFiltros">
        <item>
@@ -81,6 +81,17 @@
      </item>
      <item>
       <widget class="QTableWidget" name="tableWidgetDetalhes"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="buttonExportarCSV">
+         <property name="text">
+          <string>Exportar para CSV</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>

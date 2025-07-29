@@ -55,7 +55,8 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
         "excluirLancamento",
         "onContasRecebidas",
         "QList<Conta>",
-        "contas"
+        "contas",
+        "on_buttonImportarExtrato_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -85,6 +86,8 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
         QtMocHelpers::SlotData<void(const QVector<Conta> &)>(14, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { 0x80000000 | 15, 16 },
         }}),
+        // Slot 'on_buttonImportarExtrato_clicked'
+        QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -116,6 +119,7 @@ void pageLancamentos::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 5: _t->editarLancamento((*reinterpret_cast< std::add_pointer_t<Lancamento>>(_a[1]))); break;
         case 6: _t->excluirLancamento((*reinterpret_cast< std::add_pointer_t<Lancamento>>(_a[1]))); break;
         case 7: _t->onContasRecebidas((*reinterpret_cast< std::add_pointer_t<QList<Conta>>>(_a[1]))); break;
+        case 8: _t->on_buttonImportarExtrato_clicked(); break;
         default: ;
         }
     }
@@ -144,14 +148,14 @@ int pageLancamentos::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }

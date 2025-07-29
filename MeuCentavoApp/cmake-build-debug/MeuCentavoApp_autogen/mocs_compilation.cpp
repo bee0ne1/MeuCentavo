@@ -10,6 +10,8 @@
 #include "2EK4JB7KXY/moc_dialogAddEditConta.cpp"
 #include "2EK4JB7KXY/moc_formGerenciarCategorias.cpp"
 #include "2EK4JB7KXY/moc_formGerenciarContas.cpp"
+#include "JGBQRWFFYH/moc_dialogImportarExtrato.cpp"
+#include "JGBQRWFFYH/moc_dialogMapeamento.cpp"
 #include "JGBQRWFFYH/moc_formAdicionarLancamento.cpp"
 #include "FML5FN576F/moc_dialogAddEditMeta.cpp"
 #include "JUEWMI7LB7/moc_formMainDashboard.cpp"
