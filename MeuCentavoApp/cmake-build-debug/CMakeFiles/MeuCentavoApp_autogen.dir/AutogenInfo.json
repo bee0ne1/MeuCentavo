@@ -642,6 +642,12 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageInvestimentos.h",
+			"MU",
+			"UKUT43B7UZ/moc_pageInvestimentos.cpp",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.h",
 			"MU",
 			"UKUT43B7UZ/moc_pageLancamentos.cpp",
@@ -675,6 +681,18 @@
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h",
 			"MU",
 			"2EK4JB7KXY/moc_formGerenciarContas.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.h",
+			"MU",
+			"VE35X4DZIU/moc_dialogAddEditAtivo.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.h",
+			"MU",
+			"VE35X4DZIU/moc_dialogAddEditOperacao.cpp",
 			null
 		],
 		[
@@ -756,6 +774,12 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Ativo.h",
+			"MU",
+			"PLWGSIEO4M/moc_Ativo.cpp",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Categoria.h",
 			"MU",
 			"PLWGSIEO4M/moc_Categoria.cpp",
@@ -777,6 +801,12 @@
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h",
 			"MU",
 			"PLWGSIEO4M/moc_Meta.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h",
+			"MU",
+			"PLWGSIEO4M/moc_OperacaoInvestimento.cpp",
 			null
 		],
 		[
@@ -893,6 +923,11 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp",
 			"MU",
 			null
@@ -919,6 +954,16 @@
 		],
 		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp",
 			"MU",
 			null
 		],

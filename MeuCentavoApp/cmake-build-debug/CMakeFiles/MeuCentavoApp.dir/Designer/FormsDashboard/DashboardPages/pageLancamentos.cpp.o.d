@@ -416,6 +416,8 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamen
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
  /usr/include/qt6/QtCore/QHash /usr/include/qt6/QtCore/qhash.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Ativo.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
  /usr/include/qt6/QtWidgets/QHeaderView \

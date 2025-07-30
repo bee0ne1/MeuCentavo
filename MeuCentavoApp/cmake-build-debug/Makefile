@@ -275,6 +275,30 @@ Designer/FormsDashboard/DashboardPages/pageHome.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.s
 .PHONY : Designer/FormsDashboard/DashboardPages/pageHome.cpp.s
 
+Designer/FormsDashboard/DashboardPages/pageInvestimentos.o: Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageInvestimentos.o
+
+# target to build an object file
+Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.o
+
+Designer/FormsDashboard/DashboardPages/pageInvestimentos.i: Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageInvestimentos.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.i
+
+Designer/FormsDashboard/DashboardPages/pageInvestimentos.s: Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageInvestimentos.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.s
+
 Designer/FormsDashboard/DashboardPages/pageLancamentos.o: Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o
 .PHONY : Designer/FormsDashboard/DashboardPages/pageLancamentos.o
 
@@ -418,6 +442,54 @@ Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.s: Designer/Forms
 Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s
 .PHONY : Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s
+
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.o: Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o
+
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.i: Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.i
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.i
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.i
+
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.s: Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.s
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.s
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.s
+
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.o: Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.o
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.o
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.o
+
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.i: Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.i
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.i
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.i
+
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.s: Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.s
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.s
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.s
 
 Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.o: Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.o
 .PHONY : Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.o
@@ -829,6 +901,9 @@ help:
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.s"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageInvestimentos.o"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageInvestimentos.i"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageInvestimentos.s"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageLancamentos.s"
@@ -847,6 +922,12 @@ help:
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.o"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.i"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.s"
+	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.o"
+	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.i"
+	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.s"
+	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.o"
+	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.i"
+	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.s"
 	@echo "... Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.o"
 	@echo "... Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.i"
 	@echo "... Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.s"

@@ -7,7 +7,10 @@
 #include "Modelo/Lancamento.h"
 #include "Modelo/Conta.h" // Crie estes ficheiros de modelo se necessário
 #include "Modelo/Categoria.h"
+#include "Modelo/OperacaoInvestimento.h"
 #include "Modelo/Meta.h"
+#include "Modelo/Ativo.h"
+
 // Forward declarations para as classes de rede
 class QNetworkAccessManager;
 class QNetworkReply;
@@ -40,6 +43,15 @@ public:
     void adicionarMeta(const Meta& meta, const QString& token);
     void editarMeta(const Meta& meta, const QString& token);
     void excluirMeta(int idMeta, const QString& token);
+    void obterTodosAtivos(const QString& token);
+    void adicionarAtivo(const Ativo& ativo, const QString& token);
+    void editarAtivo(const Ativo& ativo, const QString& token);
+    void excluirAtivo(int idAtivo, const QString& token);
+    void obterOperacoesDeAtivo(int idAtivo, const QString& token);
+    void adicionarOperacao(const OperacaoInvestimento& operacao, const QString& token);
+
+    signals:
+
 
 
 signals:
@@ -58,6 +70,11 @@ signals:
     void comparativoMensalRecebido(const QVector<ResumoMensal>& resumo);
     void metasRecebidas(const QVector<Meta>& metas);
     void metaModificadaComSucesso();
+    void ativosRecebidos(const QVector<Ativo>& ativos);
+    void ativoModificadoComSucesso();
+    void operacoesRecebidas(const QVector<OperacaoInvestimento>& operacoes);
+    void operacaoModificadaComSucesso();
+
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---
@@ -71,6 +88,10 @@ private slots:
     void onObterComparativoMensalReply(QNetworkReply *reply);
     void onMetasReply(QNetworkReply *reply);
     void onModificarMetaReply(QNetworkReply *reply);
+    void onAtivosReply(QNetworkReply *reply);
+    void onModificarAtivoReply(QNetworkReply *reply);
+    void onOperacoesReply(QNetworkReply *reply);
+    void onModificarOperacaoReply(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *m_manager;

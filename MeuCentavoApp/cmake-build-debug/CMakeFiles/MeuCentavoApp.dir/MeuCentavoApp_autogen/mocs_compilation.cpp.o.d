@@ -335,7 +335,9 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtCore/q20utility.h /usr/include/qt6/QtCore/qobject.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Conta.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Categoria.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Ativo.h \
  /usr/include/qt6/QtCore/QList /usr/include/qt6/QtCore/qlist.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/V5IIWBEYZM/../../../DataAccess/UsuarioDAO.h \
@@ -420,6 +422,8 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
  /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qgraphicsscene.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageInvestimentos.cpp \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/UKUT43B7UZ/../../../Designer/FormsDashboard/DashboardPages/pageInvestimentos.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageLancamentos.cpp \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/UKUT43B7UZ/../../../Designer/FormsDashboard/DashboardPages/pageLancamentos.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageMetas.cpp \
@@ -433,6 +437,10 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/2EK4JB7KXY/../../../Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/2EK4JB7KXY/moc_formGerenciarContas.cpp \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/2EK4JB7KXY/../../../Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/VE35X4DZIU/moc_dialogAddEditAtivo.cpp \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/VE35X4DZIU/../../../Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/VE35X4DZIU/moc_dialogAddEditOperacao.cpp \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/VE35X4DZIU/../../../Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/JGBQRWFFYH/moc_dialogImportarExtrato.cpp \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/JGBQRWFFYH/../../../Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/JGBQRWFFYH/moc_dialogMapeamento.cpp \
@@ -448,6 +456,7 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/JUEWMI7LB7/../../../Designer/FormsDashboard/DashboardPages/pageConfig.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/JUEWMI7LB7/../../../Designer/FormsDashboard/DashboardPages/pageInvestimentos.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/JUEWMI7LB7/../../../Designer/FormsDashboard/DashboardPages/pageMetas.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/IMH5DCT4WY/moc_formBoasVindas.cpp \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/IMH5DCT4WY/../../../Designer/FormsUsuarios/formBoasVindas.h \

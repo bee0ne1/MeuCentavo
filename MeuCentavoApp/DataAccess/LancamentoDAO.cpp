@@ -528,3 +528,138 @@ void LancamentoDAO::onModificarMetaReply(QNetworkReply *reply)
     }
     reply->deleteLater();
 }
+
+// --- MÉTODOS PARA GESTÃO DE ATIVOS ---
+
+void LancamentoDAO::obterTodosAtivos(const QString& token)
+{
+    QNetworkRequest request(QUrl("http://localhost:3000/api/ativos"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=](){ onAtivosReply(reply); });
+}
+
+void LancamentoDAO::onAtivosReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QVector<Ativo> lista;
+        QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
+        for (const QJsonValue &value : jsonArray) {
+            QJsonObject obj = value.toObject();
+            Ativo a;
+            a.id_ativo = obj["id_ativo"].toInt();
+            a.ticker = obj["ticker"].toString();
+            a.nome = obj["nome"].toString();
+            a.tipo_ativo = obj["tipo_ativo"].toString();
+            lista.append(a);
+        }
+        emit ativosRecebidos(lista);
+    } else {
+        emit erroOcorrido("Falha ao buscar ativos: " + reply->errorString());
+    }
+    reply->deleteLater();
+}
+
+void LancamentoDAO::adicionarAtivo(const Ativo& ativo, const QString& token)
+{
+    QJsonObject json;
+    json["ticker"] = ativo.ticker;
+    json["nome"] = ativo.nome;
+    json["tipo_ativo"] = ativo.tipo_ativo;
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/ativos"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(json).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=](){ onModificarAtivoReply(reply); });
+}
+
+void LancamentoDAO::editarAtivo(const Ativo& ativo, const QString& token)
+{
+    QJsonObject json;
+    json["nome"] = ativo.nome;
+    json["tipo_ativo"] = ativo.tipo_ativo;
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/ativos/" + QString::number(ativo.id_ativo)));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    QNetworkReply *reply = m_manager->put(request, QJsonDocument(json).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=](){ onModificarAtivoReply(reply); });
+}
+
+void LancamentoDAO::excluirAtivo(int idAtivo, const QString& token)
+{
+    QNetworkRequest request(QUrl("http://localhost:3000/api/ativos/" + QString::number(idAtivo)));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->deleteResource(request);
+    connect(reply, &QNetworkReply::finished, this, [=](){ onModificarAtivoReply(reply); });
+}
+
+void LancamentoDAO::onModificarAtivoReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        emit ativoModificadoComSucesso();
+    } else {
+        emit erroOcorrido("Falha ao modificar ativo: " + reply->readAll());
+    }
+    reply->deleteLater();
+}
+
+void LancamentoDAO::obterOperacoesDeAtivo(int idAtivo, const QString& token)
+{
+    QNetworkRequest request(QUrl(QString("http://localhost:3000/api/ativos/%1/operacoes").arg(idAtivo)));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=](){ onOperacoesReply(reply); });
+}
+
+void LancamentoDAO::adicionarOperacao(const OperacaoInvestimento& operacao, const QString& token)
+{
+    QJsonObject json;
+    json["id_ativo"] = operacao.id_ativo;
+    json["tipo_operacao"] = operacao.tipo_operacao;
+    json["data_operacao"] = operacao.data_operacao.toString(Qt::ISODate);
+    json["quantidade"] = operacao.quantidade;
+    json["preco_unitario"] = operacao.preco_unitario;
+    json["custos"] = operacao.custos;
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/operacoes"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(json).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=](){ onModificarOperacaoReply(reply); });
+}
+
+void LancamentoDAO::onOperacoesReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QVector<OperacaoInvestimento> lista;
+        QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
+        for (const QJsonValue &value : jsonArray) {
+            QJsonObject obj = value.toObject();
+            OperacaoInvestimento o;
+            o.id_operacao = obj["id_operacao"].toInt();
+            o.id_ativo = obj["id_ativo"].toInt();
+            o.tipo_operacao = obj["tipo_operacao"].toString();
+            o.data_operacao = QDate::fromString(obj["data_operacao"].toString().left(10), Qt::ISODate);
+            o.quantidade = obj["quantidade"].toDouble();
+            o.preco_unitario = obj["preco_unitario"].toDouble();
+            o.custos = obj["custos"].toDouble();
+            lista.append(o);
+        }
+        emit operacoesRecebidas(lista);
+    } else {
+        emit erroOcorrido("Falha ao buscar operações: " + reply->errorString());
+    }
+    reply->deleteLater();
+}
+
+void LancamentoDAO::onModificarOperacaoReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        emit operacaoModificadaComSucesso(); // Podemos reutilizar este sinal
+    } else {
+        emit erroOcorrido("Falha ao modificar operação: " + reply->readAll());
+    }
+    reply->deleteLater();
+}

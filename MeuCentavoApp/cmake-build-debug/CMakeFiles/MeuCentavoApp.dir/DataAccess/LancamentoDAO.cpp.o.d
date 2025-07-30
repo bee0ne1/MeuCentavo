@@ -329,7 +329,9 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: \
  /usr/include/qt6/QtCore/q20utility.h /usr/include/qt6/QtCore/qobject.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Conta.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Categoria.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
+ /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Ativo.h \
  /usr/include/qt6/QtNetwork/QNetworkAccessManager \
  /usr/include/qt6/QtNetwork/qnetworkaccessmanager.h \
  /usr/include/qt6/QtNetwork/qtnetworkglobal.h \

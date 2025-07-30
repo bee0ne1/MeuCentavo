@@ -28,6 +28,9 @@ MeuCentavoApp: \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o \
   /usr/lib/libQt6Sql.so.6.9.1 \
   /usr/lib/libQt6Charts.so.6.9.1 \
@@ -183,6 +186,12 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsMetas/dialogAddEditMet
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o:
 

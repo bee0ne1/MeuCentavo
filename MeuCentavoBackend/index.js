@@ -810,6 +810,142 @@ app.delete('/api/metas/:id', authenticateToken, async (req, res) => {
     }
 });
 
+// --- ROTAS PARA INVESTIMENTOS (ATIVOS) ---
+
+// Rota para BUSCAR TODOS os ativos da carteira do usuário
+app.get('/api/ativos', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+        const [ativos] = await pool.query('SELECT * FROM ativos WHERE id_usuario = ? ORDER BY tipo_ativo, ticker ASC', [idUsuario]);
+        res.json(ativos);
+    } catch (error) {
+        console.error("Erro ao buscar ativos:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para ADICIONAR um novo ativo na carteira
+app.post('/api/ativos', authenticateToken, async (req, res) => {
+    try {
+        const { ticker, nome, tipo_ativo } = req.body;
+        const idUsuario = req.user.userId;
+
+        if (!ticker || !tipo_ativo) {
+            return res.status(400).json({ message: 'O ticker e o tipo do ativo são obrigatórios.' });
+        }
+
+        const [result] = await pool.query(
+            'INSERT INTO ativos (id_usuario, ticker, nome, tipo_ativo) VALUES (?, ?, ?, ?)',
+            [idUsuario, ticker.toUpperCase(), nome, tipo_ativo]
+        );
+
+        res.status(201).json({ message: 'Ativo adicionado com sucesso!', id_ativo: result.insertId });
+
+    } catch (error) {
+        // Trata o erro de chave única (usuário tentando adicionar o mesmo ticker duas vezes)
+        if (error.code === 'ER_DUP_ENTRY') {
+            return res.status(409).json({ message: 'Este ticker já está cadastrado na sua carteira.' });
+        }
+        console.error("Erro ao adicionar ativo:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para EDITAR um ativo existente (ex: corrigir o nome)
+app.put('/api/ativos/:id', authenticateToken, async (req, res) => {
+    try {
+        const { nome, tipo_ativo } = req.body; // O ticker não deve ser editável
+        const idAtivo = req.params.id;
+        const idUsuario = req.user.userId;
+
+        if (!nome || !tipo_ativo) {
+            return res.status(400).json({ message: 'O nome e o tipo do ativo são obrigatórios.' });
+        }
+
+        const [result] = await pool.query(
+            'UPDATE ativos SET nome = ?, tipo_ativo = ? WHERE id_ativo = ? AND id_usuario = ?',
+            [nome, tipo_ativo, idAtivo, idUsuario]
+        );
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Ativo atualizado com sucesso.' });
+        } else {
+            res.status(404).json({ message: 'Ativo não encontrado ou não autorizado.' });
+        }
+    } catch (error) {
+        console.error("Erro ao editar ativo:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para EXCLUIR um ativo (e todas as suas operações, devido ao ON DELETE CASCADE)
+app.delete('/api/ativos/:id', authenticateToken, async (req, res) => {
+    try {
+        const idAtivo = req.params.id;
+        const idUsuario = req.user.userId;
+
+        const [result] = await pool.query(
+            'DELETE FROM ativos WHERE id_ativo = ? AND id_usuario = ?',
+            [idAtivo, idUsuario]
+        );
+
+        if (result.affectedRows > 0) {
+            res.status(200).json({ message: 'Ativo excluído com sucesso.' });
+        } else {
+            res.status(404).json({ message: 'Ativo não encontrado ou não autorizado.' });
+        }
+    } catch (error) {
+        console.error("Erro ao excluir ativo:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// --- ROTAS PARA OPERAÇÕES DE INVESTIMENTOS ---
+
+// Rota para BUSCAR TODAS as operações de um ATIVO específico
+app.get('/api/ativos/:id/operacoes', authenticateToken, async (req, res) => {
+    try {
+        const idAtivo = req.params.id;
+        const idUsuario = req.user.userId;
+
+        // Query para garantir que o ativo pertence ao usuário logado antes de buscar as operações
+        const [operacoes] = await pool.query(
+            `SELECT op.* FROM operacoes_investimentos op
+             JOIN ativos a ON op.id_ativo = a.id_ativo
+             WHERE op.id_ativo = ? AND a.id_usuario = ?
+             ORDER BY op.data_operacao DESC`,
+            [idAtivo, idUsuario]
+        );
+
+        res.json(operacoes);
+    } catch (error) {
+        console.error("Erro ao buscar operações do ativo:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para ADICIONAR uma nova operação (compra/venda)
+app.post('/api/operacoes', authenticateToken, async (req, res) => {
+    try {
+        const { id_ativo, tipo_operacao, data_operacao, quantidade, preco_unitario, custos } = req.body;
+        // (Aqui, idealmente, também verificaríamos se o id_ativo pertence ao usuário logado)
+
+        if (!id_ativo || !tipo_operacao || !data_operacao || !quantidade || !preco_unitario) {
+            return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
+        }
+
+        const [result] = await pool.query(
+            'INSERT INTO operacoes_investimentos (id_ativo, tipo_operacao, data_operacao, quantidade, preco_unitario, custos) VALUES (?, ?, ?, ?, ?, ?)',
+            [id_ativo, tipo_operacao, data_operacao, quantidade, preco_unitario, custos || 0]
+        );
+
+        res.status(201).json({ message: 'Operação registrada com sucesso!', id_operacao: result.insertId });
+
+    } catch (error) {
+        console.error("Erro ao adicionar operação:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
 
 // Inicia o servidor
 app.listen(port, () => {
