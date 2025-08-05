@@ -13,6 +13,8 @@ struct OperacaoInvestimento {
     double quantidade;
     double preco_unitario;
     double custos;
+    QString moeda_codigo;
+    double taxa_cambio_usada;
 };
 
 #endif // OPERACAOINVESTIMENTO_H

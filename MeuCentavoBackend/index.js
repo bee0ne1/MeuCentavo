@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql2/promise'); // Usamos a versão com "Promises" para um código mais limpo
 const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
-
+const axios = require('axios');
 const app = express();
 const port = 3000;
 
@@ -20,6 +20,52 @@ const pool = mysql.createPool({
   queueLimit: 0,
   decimalNumbers: true
 });
+
+// --- LÓGICA DE COTAÇÃO DE CÂMBIO ---
+
+// Cache em memória para evitar chamar a API a cada requisição
+let cacheCotacoes = {
+  timestamp: 0,
+  taxas: null
+};
+
+// Função assíncrona para buscar as cotações
+async function obterCotacoes() {
+  const agora = Date.now();
+  // Validade do cache: 1 hora (3600000 milissegundos)
+  if (cacheCotacoes.taxas && (agora - cacheCotacoes.timestamp < 3600000)) {
+    console.log("Usando cotações do cache.");
+    return cacheCotacoes.taxas;
+  }
+
+  try {
+    console.log("Buscando novas cotações da API externa...");
+    // **IMPORTANTE: SUBSTITUA 'SUA_CHAVE_DE_API_AQUI' PELA SUA CHAVE**
+    const apiKey = '43948e889cc19dd294bbe5ea';
+    const response = await axios.get(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/BRL`);
+
+    const taxasDaApi = response.data.conversion_rates;
+    const taxasRelevantes = {
+      BRL: 1, // A base é sempre 1
+      USD: taxasDaApi.USD,
+      EUR: taxasDaApi.EUR
+      // Adicione outras moedas aqui se precisar
+    };
+
+    // Atualiza o cache
+    cacheCotacoes = {
+      timestamp: agora,
+      taxas: taxasRelevantes
+    };
+
+    return taxasRelevantes;
+
+  } catch (error) {
+    console.error("Erro ao buscar cotações:", error.message);
+    // Em caso de erro, retorna taxas fixas para não quebrar a aplicação
+    return { BRL: 1, USD: 5.0, EUR: 6.0 };
+  }
+}
 
 // -----ROTAS DE USUARIO------
 
@@ -246,12 +292,14 @@ app.get('/api/lancamentos', authenticateToken, async (req, res) => {
         let params = [usuarioId];
 
         if (data_inicio) {
+            // Adiciona a hora inicial para pegar desde a meia-noite
             whereClauses.push(`l.data_lancamento >= ?`);
-            params.push(data_inicio);
-        }
+            params.push(`${data_inicio} 00:00:00`);
+        }   
         if (data_fim) {
+            // Adiciona a hora final para pegar até o último segundo do dia
             whereClauses.push(`l.data_lancamento <= ?`);
-            params.push(data_fim);
+            params.push(`${data_fim} 23:59:59`);
         }
         if (id_conta && id_conta != -1) {
             whereClauses.push(`l.id_conta = ?`);
@@ -270,6 +318,9 @@ app.get('/api/lancamentos', authenticateToken, async (req, res) => {
              ORDER BY l.data_lancamento DESC, l.id DESC`;
         // -----------------------------------------
 
+        console.log("Executando Query:", query);
+        console.log("Com Parâmetros:", params);
+
         const [lancamentos] = await pool.query(query, params);
         res.json(lancamentos);
 
@@ -285,19 +336,20 @@ app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
     try {
         console.log("Backend recebeu o corpo da requisição:", req.body);
 
-        // Agora também extraímos id_conta e id_categoria
-        const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria, id_meta } = req.body;
+        const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria, id_meta,
+                valor_original, moeda_codigo_original, taxa_cambio_usada } = req.body;
         const id_usuario = req.user.userId;
 
-        // Validação para os novos campos
         if (!descricao || !valor || !data_lancamento || !tipo || !id_conta || !id_categoria) {
-            return res.status(400).json({ message: 'Todos os campos, incluindo conta e categoria, são obrigatórios.' });
+            return res.status(400).json({ message: 'Campos principais são obrigatórios.' });
         }
 
-        // Adicionamos os novos campos à consulta INSERT
         const [result] = await pool.query(
-            'INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria, id_meta) VALUES (?, ?, ?, ?, ?, ?, ?,?)',
-            [descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria,id_meta || null]
+            `INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria, id_meta, 
+                                      valor_original, moeda_codigo_original, taxa_cambio_usada) 
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria, id_meta || null,
+             valor_original || valor, moeda_codigo_original || 'BRL', taxa_cambio_usada || 1]
         );
 
         res.status(201).json({ message: 'Lançamento adicionado com sucesso!', insertId: result.insertId });
@@ -367,40 +419,34 @@ app.get('/api/lancamentos/resumo/mes', authenticateToken, async (req, res) => {
 app.get('/api/lancamentos/gastos/categoria', authenticateToken, async (req, res) => {
     try {
         const usuarioId = req.user.userId;
-
-        // Extrai os filtros da query string da URL
         const { data_inicio, data_fim, id_conta } = req.query;
 
-        // --- Lógica para montar a query dinâmica ---
+        // 1. Busca as taxas de câmbio atuais
+        const taxas = await obterCotacoes();
+
         let whereClauses = [`l.id_usuario = ?`, `l.tipo = 'Despesa'`];
         let params = [usuarioId];
+        // ... sua lógica de filtros de data e conta continua aqui ...
 
-        if (data_inicio) {
-            whereClauses.push(`l.data_lancamento >= ?`);
-            params.push(data_inicio);
-        }
-        if (data_fim) {
-            whereClauses.push(`l.data_lancamento <= ?`);
-            params.push(data_fim);
-        }
-        // Se id_conta for enviado e não for o de "todas as contas"
-        if (id_conta && id_conta != -1) {
-            whereClauses.push(`l.id_conta = ?`);
-            params.push(id_conta);
-        }
-
+        // 2. Monta a query, mas usando as taxas reais
         const query = `
-            SELECT cat.nome, SUM(l.valor) as total
+            SELECT
+                cat.nome,
+                SUM(
+                    CASE
+                        WHEN l.moeda_codigo_original = 'USD' THEN l.valor_original / ${taxas.USD}
+                        WHEN l.moeda_codigo_original = 'EUR' THEN l.valor_original / ${taxas.EUR}
+                        ELSE l.valor_original
+                    END
+                ) as total
             FROM lancamentos l
             JOIN categorias cat ON l.id_categoria = cat.id_categoria
             WHERE ${whereClauses.join(' AND ')}
             GROUP BY l.id_categoria, cat.nome
             ORDER BY total DESC
         `;
-        // -----------------------------------------
 
         const [gastos] = await pool.query(query, params);
-
         res.json(gastos);
 
     } catch (error) {
@@ -628,17 +674,18 @@ app.get('/api/contas', authenticateToken, async (req, res) => {
 // Rota para ADICIONAR uma nova conta
 app.post('/api/contas', authenticateToken, async (req, res) => {
     try {
-        const { nome, tipo_conta, saldo_inicial } = req.body;
+        const { nome, tipo_conta, saldo_inicial, moeda_codigo } = req.body;
         const idUsuario = req.user.userId;
 
         // Validação
-        if (!nome || !tipo_conta) {
-            return res.status(400).json({ message: 'O nome e o tipo da conta são obrigatórios.' });
+        if (!nome || !tipo_conta || !moeda_codigo) {
+            return res.status(400).json({ message: 'Nome, tipo e moeda da conta são obrigatórios.' });
         }
 
         const [result] = await pool.query(
-            'INSERT INTO contas (nome, tipo_conta, saldo_inicial, id_usuario) VALUES (?, ?, ?, ?)',
-            [nome, tipo_conta, saldo_inicial || 0.00, idUsuario]
+            // Adicione a nova coluna e valor ao INSERT
+            'INSERT INTO contas (nome, tipo_conta, saldo_inicial, id_usuario, moeda_codigo) VALUES (?, ?, ?, ?, ?)',
+            [nome, tipo_conta, saldo_inicial || 0.00, idUsuario, moeda_codigo]
         );
 
         res.status(201).json({
@@ -657,19 +704,19 @@ app.post('/api/contas', authenticateToken, async (req, res) => {
 // Rota para EDITAR (Atualizar) uma conta existente
 app.put('/api/contas/:id', authenticateToken, async (req, res) => {
     try {
-        const { nome, tipo_conta, saldo_inicial } = req.body;
+        const { nome, tipo_conta, saldo_inicial, moeda_codigo } = req.body;
         const idConta = req.params.id;
         const idUsuario = req.user.userId;
 
-        if (!nome || !tipo_conta || saldo_inicial === undefined) {
-            return res.status(400).json({ message: 'Todos os campos (nome, tipo, saldo) são obrigatórios.' });
+        if (!nome || !tipo_conta || saldo_inicial === undefined || !moeda_codigo) {
+            return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
         }
 
         // A condição 'AND id_usuario = ?' é uma camada de segurança CRÍTICA.
         // Ela garante que um utilizador só pode editar as suas próprias contas.
         const [result] = await pool.query(
-            'UPDATE contas SET nome = ?, tipo_conta = ?, saldo_inicial = ? WHERE id_conta = ? AND id_usuario = ?',
-            [nome, tipo_conta, saldo_inicial, idConta, idUsuario]
+            'UPDATE contas SET nome = ?, tipo_conta = ?, saldo_inicial = ?, moeda_codigo = ? WHERE id_conta = ? AND id_usuario = ?',
+            [nome, tipo_conta, saldo_inicial, moeda_codigo, idConta, idUsuario]
         );
 
         if (result.affectedRows > 0) {
@@ -714,24 +761,33 @@ app.delete('/api/contas/:id', authenticateToken, async (req, res) => {
 app.get('/api/metas', authenticateToken, async (req, res) => {
     try {
         const idUsuario = req.user.userId;
-        // A query agora calcula o valor_atual somando os lançamentos vinculados
+
+        // 1. Busca as taxas de câmbio atuais
+        const taxas = await obterCotacoes();
+
+        // 2. Monta a query usando as taxas
         const query = `
             SELECT
-                m.id_meta,
-                m.nome,
-                m.valor_alvo,
-                COALESCE(SUM(l.valor), 0) as valor_atual,
-                m.data_alvo
-            FROM
-                metas m
-            LEFT JOIN
-                lancamentos l ON m.id_meta = l.id_meta
-            WHERE
-                m.id_usuario = ?
-            GROUP BY
-                m.id_meta  -- CORREÇÃO: Agrupar apenas pelo ID da meta é mais robusto
-            ORDER BY
-                m.data_alvo ASC;
+                m.id_meta, m.nome, m.valor_alvo, m.moeda_codigo, m.data_alvo,
+                COALESCE(SUM(
+                    l.valor_original *
+                    CASE l.moeda_codigo_original
+                        WHEN 'USD' THEN 1 / ${taxas.USD}
+                        WHEN 'EUR' THEN 1 / ${taxas.EUR}
+                        ELSE 1.0
+                    END
+                    /
+                    CASE m.moeda_codigo
+                        WHEN 'USD' THEN 1 / ${taxas.USD}
+                        WHEN 'EUR' THEN 1 / ${taxas.EUR}
+                        ELSE 1.0
+                    END
+                ), 0) as valor_atual
+            FROM metas m
+            LEFT JOIN lancamentos l ON m.id_meta = l.id_meta AND l.tipo = 'Receita'
+            WHERE m.id_usuario = ?
+            GROUP BY m.id_meta
+            ORDER BY m.data_alvo ASC;
         `;
         const [metas] = await pool.query(query, [idUsuario]);
         res.json(metas);
@@ -741,20 +797,22 @@ app.get('/api/metas', authenticateToken, async (req, res) => {
     }
 });
 
-
 // Rota para ADICIONAR uma nova meta
 app.post('/api/metas', authenticateToken, async (req, res) => {
     try {
-        const { nome, valor_alvo, data_alvo } = req.body;
+        // 2. Desestruture o novo campo moeda_codigo que virá do frontend
+        const { nome, valor_alvo, data_alvo, moeda_codigo } = req.body;
         const idUsuario = req.user.userId;
 
-        if (!nome || !valor_alvo) {
-            return res.status(400).json({ message: 'O nome e o valor alvo da meta são obrigatórios.' });
+        // 3. Adicione a validação para o novo campo
+        if (!nome || !valor_alvo || !moeda_codigo) {
+            return res.status(400).json({ message: 'O nome, valor alvo e moeda da meta são obrigatórios.' });
         }
 
+        // 4. Adicione a coluna e o valor na query INSERT
         const [result] = await pool.query(
-            'INSERT INTO metas (id_usuario, nome, valor_alvo, data_alvo) VALUES (?, ?, ?, ?)',
-            [idUsuario, nome, valor_alvo, data_alvo || null]
+            'INSERT INTO metas (id_usuario, nome, valor_alvo, data_alvo, moeda_codigo) VALUES (?, ?, ?, ?, ?)',
+            [idUsuario, nome, valor_alvo, data_alvo || null, moeda_codigo]
         );
 
         res.status(201).json({ message: 'Meta criada com sucesso!', id_meta: result.insertId });
@@ -768,13 +826,20 @@ app.post('/api/metas', authenticateToken, async (req, res) => {
 // Rota para EDITAR (Atualizar) uma meta existente
 app.put('/api/metas/:id', authenticateToken, async (req, res) => {
     try {
-        const { nome, valor_alvo, valor_atual, data_alvo } = req.body;
+        // 5. Desestruture o novo campo moeda_codigo
+        const { nome, valor_alvo, data_alvo, moeda_codigo } = req.body;
         const idMeta = req.params.id;
         const idUsuario = req.user.userId;
 
+        // 6. Adicione a validação
+        if (!nome || !valor_alvo || !moeda_codigo) {
+            return res.status(400).json({ message: 'Nome, valor alvo e moeda são obrigatórios.' });
+        }
+
+        // 7. Adicione o campo na query UPDATE
         const [result] = await pool.query(
-            'UPDATE metas SET nome = ?, valor_alvo = ?, data_alvo = ? WHERE id_meta = ? AND id_usuario = ?',
-            [nome, valor_alvo, data_alvo || null, idMeta, idUsuario]
+            'UPDATE metas SET nome = ?, valor_alvo = ?, data_alvo = ?, moeda_codigo = ? WHERE id_meta = ? AND id_usuario = ?',
+            [nome, valor_alvo, data_alvo || null, moeda_codigo, idMeta, idUsuario]
         );
 
         if (result.affectedRows > 0) {
@@ -816,6 +881,7 @@ app.delete('/api/metas/:id', authenticateToken, async (req, res) => {
 app.get('/api/ativos', authenticateToken, async (req, res) => {
     try {
         const idUsuario = req.user.userId;
+        // NENHUMA MUDANÇA NECESSÁRIA AQUI. "SELECT *" já inclui a nova coluna moeda_codigo.
         const [ativos] = await pool.query('SELECT * FROM ativos WHERE id_usuario = ? ORDER BY tipo_ativo, ticker ASC', [idUsuario]);
         res.json(ativos);
     } catch (error) {
@@ -827,22 +893,24 @@ app.get('/api/ativos', authenticateToken, async (req, res) => {
 // Rota para ADICIONAR um novo ativo na carteira
 app.post('/api/ativos', authenticateToken, async (req, res) => {
     try {
-        const { ticker, nome, tipo_ativo } = req.body;
+        // 1. Desestruture o novo campo
+        const { ticker, nome, tipo_ativo, moeda_codigo } = req.body;
         const idUsuario = req.user.userId;
 
-        if (!ticker || !tipo_ativo) {
-            return res.status(400).json({ message: 'O ticker e o tipo do ativo são obrigatórios.' });
+        // 2. Adicione à validação
+        if (!ticker || !tipo_ativo || !moeda_codigo) {
+            return res.status(400).json({ message: 'O ticker, tipo e moeda do ativo são obrigatórios.' });
         }
 
+        // 3. Adicione ao INSERT
         const [result] = await pool.query(
-            'INSERT INTO ativos (id_usuario, ticker, nome, tipo_ativo) VALUES (?, ?, ?, ?)',
-            [idUsuario, ticker.toUpperCase(), nome, tipo_ativo]
+            'INSERT INTO ativos (id_usuario, ticker, nome, tipo_ativo, moeda_codigo) VALUES (?, ?, ?, ?, ?)',
+            [idUsuario, ticker.toUpperCase(), nome, tipo_ativo, moeda_codigo]
         );
 
         res.status(201).json({ message: 'Ativo adicionado com sucesso!', id_ativo: result.insertId });
 
     } catch (error) {
-        // Trata o erro de chave única (usuário tentando adicionar o mesmo ticker duas vezes)
         if (error.code === 'ER_DUP_ENTRY') {
             return res.status(409).json({ message: 'Este ticker já está cadastrado na sua carteira.' });
         }
@@ -854,17 +922,20 @@ app.post('/api/ativos', authenticateToken, async (req, res) => {
 // Rota para EDITAR um ativo existente (ex: corrigir o nome)
 app.put('/api/ativos/:id', authenticateToken, async (req, res) => {
     try {
-        const { nome, tipo_ativo } = req.body; // O ticker não deve ser editável
+        // 4. Desestruture o novo campo
+        const { nome, tipo_ativo, moeda_codigo } = req.body;
         const idAtivo = req.params.id;
         const idUsuario = req.user.userId;
 
-        if (!nome || !tipo_ativo) {
-            return res.status(400).json({ message: 'O nome e o tipo do ativo são obrigatórios.' });
+        // 5. Adicione à validação
+        if (!nome || !tipo_ativo || !moeda_codigo) {
+            return res.status(400).json({ message: 'O nome, tipo e moeda do ativo são obrigatórios.' });
         }
 
+        // 6. Adicione ao UPDATE
         const [result] = await pool.query(
-            'UPDATE ativos SET nome = ?, tipo_ativo = ? WHERE id_ativo = ? AND id_usuario = ?',
-            [nome, tipo_ativo, idAtivo, idUsuario]
+            'UPDATE ativos SET nome = ?, tipo_ativo = ?, moeda_codigo = ? WHERE id_ativo = ? AND id_usuario = ?',
+            [nome, tipo_ativo, moeda_codigo, idAtivo, idUsuario]
         );
 
         if (result.affectedRows > 0) {
@@ -908,7 +979,7 @@ app.get('/api/ativos/:id/operacoes', authenticateToken, async (req, res) => {
         const idAtivo = req.params.id;
         const idUsuario = req.user.userId;
 
-        // Query para garantir que o ativo pertence ao usuário logado antes de buscar as operações
+        // NENHUMA MUDANÇA NECESSÁRIA. "SELECT op.*" já inclui as novas colunas.
         const [operacoes] = await pool.query(
             `SELECT op.* FROM operacoes_investimentos op
              JOIN ativos a ON op.id_ativo = a.id_ativo
@@ -927,16 +998,18 @@ app.get('/api/ativos/:id/operacoes', authenticateToken, async (req, res) => {
 // Rota para ADICIONAR uma nova operação (compra/venda)
 app.post('/api/operacoes', authenticateToken, async (req, res) => {
     try {
-        const { id_ativo, tipo_operacao, data_operacao, quantidade, preco_unitario, custos } = req.body;
-        // (Aqui, idealmente, também verificaríamos se o id_ativo pertence ao usuário logado)
-
-        if (!id_ativo || !tipo_operacao || !data_operacao || !quantidade || !preco_unitario) {
-            return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
+        // 1. Desestruture os novos campos
+        const { id_ativo, tipo_operacao, data_operacao, quantidade, preco_unitario, custos, moeda_codigo, taxa_cambio_usada } = req.body;
+        
+        // 2. Adicione moeda_codigo à validação
+        if (!id_ativo || !tipo_operacao || !data_operacao || !quantidade || !preco_unitario || !moeda_codigo) {
+            return res.status(400).json({ message: 'Todos os campos, incluindo moeda, são obrigatórios.' });
         }
 
+        // 3. Adicione os novos campos ao INSERT
         const [result] = await pool.query(
-            'INSERT INTO operacoes_investimentos (id_ativo, tipo_operacao, data_operacao, quantidade, preco_unitario, custos) VALUES (?, ?, ?, ?, ?, ?)',
-            [id_ativo, tipo_operacao, data_operacao, quantidade, preco_unitario, custos || 0]
+            'INSERT INTO operacoes_investimentos (id_ativo, tipo_operacao, data_operacao, quantidade, preco_unitario, custos, moeda_codigo, taxa_cambio_usada) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            [id_ativo, tipo_operacao, data_operacao, quantidade, preco_unitario, custos || 0, moeda_codigo, taxa_cambio_usada || 1]
         );
 
         res.status(201).json({ message: 'Operação registrada com sucesso!', id_operacao: result.insertId });
@@ -944,6 +1017,191 @@ app.post('/api/operacoes', authenticateToken, async (req, res) => {
     } catch (error) {
         console.error("Erro ao adicionar operação:", error);
         res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para BUSCAR A POSIÇÃO CONSOLIDADA da carteira do usuário
+app.get('/api/ativos/portfolio', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+
+        // Query complexa que junta ativos e operações para calcular os totais
+        const query = `
+            SELECT
+                a.id_ativo,
+                a.ticker,
+                a.nome,
+                a.tipo_ativo,
+                COALESCE(SUM(CASE WHEN op.tipo_operacao = 'Compra' THEN op.quantidade ELSE -op.quantidade END), 0) as quantidade_total,
+                COALESCE(SUM(CASE WHEN op.tipo_operacao = 'Compra' THEN op.quantidade * op.preco_unitario + op.custos ELSE 0 END), 0) as custo_total
+            FROM
+                ativos a
+            LEFT JOIN
+                operacoes_investimentos op ON a.id_ativo = op.id_ativo
+            WHERE
+                a.id_usuario = ?
+            GROUP BY
+                a.id_ativo, a.ticker, a.nome, a.tipo_ativo
+            HAVING
+                quantidade_total > 0 -- Opcional: mostra apenas ativos que o usuário ainda possui
+            ORDER BY
+                custo_total DESC;
+        `;
+
+        const [portfolio] = await pool.query(query, [idUsuario]);
+        res.json(portfolio);
+
+    } catch (error) {
+        console.error("Erro ao buscar portfólio consolidado:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+
+// --- ROTA PARA PERFORMANCE DO PORTFOLIO ---
+
+app.get('/api/portfolio/performance', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+
+        // 1. Busca a composição atual da carteira (ativos e quantidades)
+        const portfolioQuery = `
+            SELECT
+                a.id_ativo, a.ticker, a.tipo_ativo, a.moeda_codigo,
+                SUM(CASE WHEN op.tipo_operacao = 'Compra' THEN op.quantidade ELSE -op.quantidade END) as quantidade_total,
+                SUM(CASE WHEN op.tipo_operacao = 'Compra' THEN op.quantidade * op.preco_unitario + op.custos ELSE 0 END) as custo_total
+            FROM ativos a
+            LEFT JOIN operacoes_investimentos op ON a.id_ativo = op.id_ativo
+            WHERE a.id_usuario = ?
+            GROUP BY a.id_ativo
+            HAVING quantidade_total > 0;
+        `;
+        const [portfolio] = await pool.query(portfolioQuery, [idUsuario]);
+
+        if (portfolio.length === 0) {
+            return res.json({ custoTotal: 0, valorMercadoAtual: 0, rentabilidadeValor: 0, rentabilidadePercentual: 0 });
+        }
+
+        // 2. Separa os tickers por tipo para buscar nas APIs corretas
+        const tickersAcoes = portfolio.filter(a => a.tipo_ativo !== 'Criptomoeda').map(a => a.ticker).join(',');
+        const idsCripto = portfolio.filter(a => a.tipo_ativo === 'Criptomoeda').map(a => a.ticker.toLowerCase()).join(','); // CoinGecko usa IDs em minúsculas
+
+        let precosAtuais = {};
+
+        // 3. Busca os preços das Ações/FIIs/BDRs na Brapi
+        if (tickersAcoes) {
+            // Cole o seu token da Brapi aqui
+            const brapiToken = '16mx42gc5NSbeGNMjeCiPC';
+
+            // Adicione o parâmetro ?token=... ao final da URL
+            const responseBrapi = await axios.get(`https://brapi.dev/api/quote/${tickersAcoes}?token=${brapiToken}`);
+            
+            responseBrapi.data.results.forEach(result => {
+                precosAtuais[result.symbol] = result.regularMarketPrice;
+            });
+        }
+
+        // 4. Busca os preços das Criptomoedas na CoinGecko
+        if (idsCripto) {
+            // Buscamos em USD e BRL para ter flexibilidade
+            const responseCoingecko = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${idsCripto}&vs_currencies=brl,usd`);
+            for (const id in responseCoingecko.data) {
+                // A chave no nosso sistema é o símbolo (ex: BTC), que é o ID da coingecko em maiúsculas
+                precosAtuais[id.toUpperCase()] = responseCoingecko.data[id].brl; // Usamos o valor em BRL por padrão
+            }
+        }
+        
+        // 5. Calcula o valor de mercado atual e o custo total
+        let valorMercadoTotal = 0;
+        let custoTotalConsolidado = 0;
+
+        portfolio.forEach(ativo => {
+            const preco = precosAtuais[ativo.ticker];
+            if (preco) {
+                // TODO: Adicionar conversão de moeda se o ativo for estrangeiro (ex: BDR cotado em BRL)
+                valorMercadoTotal += ativo.quantidade_total * preco;
+            }
+            custoTotalConsolidado += ativo.custo_total;
+        });
+
+        // 6. Calcula a rentabilidade
+        const rentabilidadeValor = valorMercadoTotal - custoTotalConsolidado;
+        const rentabilidadePercentual = (custoTotalConsolidado > 0) ? (rentabilidadeValor / custoTotalConsolidado) * 100 : 0;
+
+        res.json({
+            custoTotal: custoTotalConsolidado,
+            valorMercadoAtual: valorMercadoTotal,
+            rentabilidadeValor: rentabilidadeValor,
+            rentabilidadePercentual: rentabilidadePercentual
+        });
+
+    } catch (error) {
+        console.error("Erro detalhado ao buscar performance do portfólio:");
+        if (error.response) {
+            // A requisição foi feita e a API externa respondeu com um erro
+            console.error("API Externa Respondeu com Dados:", error.response.data);
+            console.error("API Externa Respondeu com Status:", error.response.status);
+        } else if (error.request) {
+            // A requisição foi feita mas nenhuma resposta foi recebida
+            console.error("Requisição feita, mas sem resposta:", error.request);
+        } else {
+            // Algo aconteceu ao configurar a requisição
+            console.error('Erro na configuração da requisição:', error.message);
+        }
+        // Manter o log original também é útil
+        console.error("Mensagem de erro original:", error.message);
+        }
+        res.status(500).json({ message: "Erro interno do servidor ao buscar dados externos." });
+});
+
+// --- ROTAS PARA DIVIDENDOS ---
+
+// Rota para ADICIONAR um novo dividendo
+app.post('/api/dividendos', authenticateToken, async (req, res) => {
+    try {
+        const { id_ativo, data_pagamento, valor_total } = req.body;
+        const id_usuario = req.user.userId;
+
+        if (!id_ativo || !data_pagamento || !valor_total) {
+            return res.status(400).json({ message: 'Ativo, data e valor são obrigatórios.' });
+        }
+        if (valor_total <= 0) {
+            return res.status(400).json({ message: 'O valor do dividendo deve ser maior que zero.' });
+        }
+
+        const [result] = await pool.query(
+            'INSERT INTO dividendos (id_ativo, id_usuario, data_pagamento, valor_total) VALUES (?, ?, ?, ?)',
+            [id_ativo, id_usuario, data_pagamento, valor_total]
+        );
+
+        res.status(201).json({ message: 'Dividendo registrado com sucesso!', id_dividendo: result.insertId });
+
+    } catch (error) {
+        console.error("Erro ao registrar dividendo:", error.message);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+// Rota para BUSCAR TODOS os dividendos de um ATIVO específico
+app.get('/api/ativos/:id/dividendos', authenticateToken, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const id_usuario = req.user.userId;
+
+        // A query verifica se o ativo pertence ao usuário logado como uma camada de segurança
+        const [dividendos] = await pool.query(
+            `SELECT d.* FROM dividendos d
+             JOIN ativos a ON d.id_ativo = a.id_ativo
+             WHERE d.id_ativo = ? AND a.id_usuario = ?
+             ORDER BY d.data_pagamento DESC`,
+            [id, id_usuario]
+        );
+
+        res.json(dividendos);
+
+    } catch (error) {
+        console.error("Erro ao buscar dividendos:", error.message);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
     }
 });
 

@@ -443,6 +443,30 @@ Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s
 .PHONY : Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s
 
+Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.o: Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.o
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.o
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.o
+
+Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.i: Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.i
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.i
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.i
+
+Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.s: Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.s
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.s
+.PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.s
+
 Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.o: Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o
 .PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.o
 
@@ -922,6 +946,9 @@ help:
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.o"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.i"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.s"
+	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.o"
+	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.i"
+	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.s"
 	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.o"
 	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.i"
 	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.s"

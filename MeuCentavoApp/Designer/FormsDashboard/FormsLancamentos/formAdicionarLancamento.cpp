@@ -53,6 +53,7 @@ formAdicionarLancamento::~formAdicionarLancamento()
 
 void formAdicionarLancamento::onContasRecebidas(const QVector<Conta>& contas)
 {
+    m_contasDisponiveis = contas; // <-- ADICIONE: Salva a lista de contas
     for (const auto& conta : contas) {
         ui->comboBoxConta->addItem(conta.nome, conta.id);
     }
@@ -74,6 +75,15 @@ void formAdicionarLancamento::filtrarCategoriasPorTipo()
         if (categoria.tipo == tipoSelecionado) {
             ui->comboBoxCategoria->addItem(categoria.nome, categoria.id);
         }
+    }
+    // --- LÓGICA DE BLOQUEIO DE METAS (ADICIONAR ESTE BLOCO) ---
+    if (tipoSelecionado == "Despesa") {
+        // Se for despesa, desabilita o campo de metas e seleciona "Nenhuma"
+        ui->comboBoxMeta->setEnabled(false);
+        ui->comboBoxMeta->setCurrentIndex(ui->comboBoxMeta->findData(-1)); // O -1 corresponde a "Nenhuma"
+    } else {
+        // Se for receita, habilita o campo de metas
+        ui->comboBoxMeta->setEnabled(true);
     }
 }
 
@@ -102,6 +112,33 @@ void formAdicionarLancamento::salvarLancamento()
     lancamento.id_conta = ui->comboBoxConta->currentData().toInt();
     lancamento.id_categoria = ui->comboBoxCategoria->currentData().toInt();
     lancamento.id_meta = ui->comboBoxMeta->currentData().toInt();
+    // --- LÓGICA CRÍTICA PARA MÚLTIPLAS MOEDAS ---
+    lancamento.valor_original = ui->spinBoxValor->value();
+
+    // Encontra a moeda da conta selecionada
+    QString moedaDaConta = "BRL"; // Padrão
+    for(const auto& conta : m_contasDisponiveis) {
+        if (conta.id == lancamento.id_conta) {
+            moedaDaConta = conta.moeda_codigo;
+            break;
+        }
+    }
+    lancamento.moeda_codigo_original = moedaDaConta;
+
+    // TODO: No futuro, se a moeda for diferente da principal,
+    // buscar a cotação e calcular o campo 'lancamento.valor' convertido.
+    // Por agora, podemos deixar ambos iguais.
+    lancamento.valor = lancamento.valor_original;
+    lancamento.taxa_cambio_usada = 1;
+
+    // --- LINHA DE DEBUG CRÍTICA ---
+    qDebug() << "--- DADOS DO LANÇAMENTO A SER SALVO ---";
+    qDebug() << "Descrição:" << lancamento.descricao;
+    qDebug() << "Valor Original:" << lancamento.valor_original;
+    qDebug() << "Moeda Original:" << lancamento.moeda_codigo_original;
+    qDebug() << "ID da Conta:" << lancamento.id_conta;
+    qDebug() << "------------------------------------";
+    // --- FIM DO DEBUG ---
 
     QString token = SessionManager::instance().getToken();
 

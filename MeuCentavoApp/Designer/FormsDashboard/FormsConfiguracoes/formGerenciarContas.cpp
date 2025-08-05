@@ -23,7 +23,7 @@ formGerenciarContas::formGerenciarContas(QWidget *parent) :
     // Conexões do DAO
     connect(m_dao, &LancamentoDAO::contasRecebidas, this, &formGerenciarContas::onContasRecebidas);
     connect(m_dao, &LancamentoDAO::contaModificadaComSucesso, this, &formGerenciarContas::onContaModificada);
-    // ... conectar sinal de erro ...
+    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &formGerenciarContas::onErro);
 
     // Conexão da tabela
     connect(ui->tableWidgetContas, &QTableWidget::itemSelectionChanged, this, &formGerenciarContas::onSelectionChanged);
@@ -73,7 +73,18 @@ void formGerenciarContas::onContasRecebidas(const QVector<Conta>& contas)
         ui->tableWidgetContas->setItem(linha, 1, new QTableWidgetItem(conta.tipo_conta));
 
         // Coluna 2: Saldo
-        ui->tableWidgetContas->setItem(linha, 2, new QTableWidgetItem(QString("R$ %1").arg(conta.saldo_inicial, 0, 'f', 2)));
+        // --- LÓGICA PARA SÍMBOLO DINÂMICO DA MOEDA ---
+        QString simbolo = "R$"; // Define "R$" como padrão
+        if (conta.moeda_codigo == "USD") {
+            simbolo = "$";
+        } else if (conta.moeda_codigo == "EUR") {
+            simbolo = "€";
+        } // Adicione outros 'else if' para mais moedas aqui
+        // Monta a string final com o símbolo correto
+        QString saldoFormatado = QString("%1 %2").arg(simbolo).arg(conta.saldo_inicial, 0, 'f', 2);
+        QTableWidgetItem* itemSaldo = new QTableWidgetItem(saldoFormatado);
+        itemSaldo->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter); // Alinha o valor à direita
+        ui->tableWidgetContas->setItem(linha, 2, itemSaldo);
 
         // Coluna 3: Ações
         QWidget* pWidget = new QWidget();
@@ -154,4 +165,9 @@ void formGerenciarContas::onSelectionChanged()
     bool hasSelection = !ui->tableWidgetContas->selectedItems().isEmpty();
     ui->buttonEditConta->setEnabled(hasSelection);
     ui->buttonExcluirConta->setEnabled(hasSelection);
+}
+
+void formGerenciarContas::onErro(const QString& motivo)
+{
+    QMessageBox::warning(this, "Erro ao Modificar Conta", motivo);
 }

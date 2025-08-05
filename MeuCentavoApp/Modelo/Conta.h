@@ -14,6 +14,7 @@ struct Conta
     QString tipo_conta;
     double saldo_inicial;
     int id_usuario;
+    QString moeda_codigo;
 };
 
 

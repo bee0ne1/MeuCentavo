@@ -10,6 +10,9 @@ struct Ativo {
     QString ticker;
     QString nome;
     QString tipo_ativo;
+    double quantidade_total;
+    double custo_total;
+    QString moeda_codigo;
 };
 
 #endif // ATIVO_H

@@ -42,6 +42,7 @@ set(PROJECT_SOURCES
         Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp
         Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp
         Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp
+        Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp
 )
 
 # 2. Lista COMPLETA de Ficheiros de Cabeçalho (.h)
@@ -81,6 +82,8 @@ set(PROJECT_HEADERS
         Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.h
         Modelo/OperacaoInvestimento.h
         Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.h
+        Modelo/Dividendo.h
+        Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.h
 )
 
 # 3. Lista de Ficheiros de Interface (.ui)
@@ -107,6 +110,7 @@ set(PROJECT_FORMS
         Designer/FormsDashboard/DashboardPages/pageInvestimentos.ui
         Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.ui
         Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.ui
+        Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.ui
 )
 
 # 4. Criamos o executável, agora passando TODAS as listas de ficheiros

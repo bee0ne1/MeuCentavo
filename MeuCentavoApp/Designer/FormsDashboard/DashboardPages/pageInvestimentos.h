@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "Modelo/Ativo.h"
 #include "Modelo/OperacaoInvestimento.h"
+#include "Modelo/Dividendo.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class pageInvestimentos; }
@@ -27,9 +28,14 @@ private slots:
     void on_buttonAdicionarAtivo_clicked();
     void on_buttonEditarAtivo_clicked();
     void on_buttonExcluirAtivo_clicked();
+    void on_buttonRegistrarDividendo_clicked();
+    void on_buttonRegistrarOperacao_clicked();
+
     void onAtivoSelecionado(); // Será chamado quando o usuário clicar em uma linha da tabela de ativos
     void onOperacoesRecebidas(const QVector<OperacaoInvestimento>& operacoes);
-    void on_buttonRegistrarOperacao_clicked();
+    void onPerformanceRecebida(double custoTotal, double valorMercado, double rentabilidadeValor, double rentabilidadePercentual);
+    void onDividendosRecebidos(const QVector<Dividendo>& dividendos);
+
 
     // Adicionaremos os outros botões depois
 

@@ -35,6 +35,9 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.ui \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.ui \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.ui \
@@ -81,6 +84,7 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Ativo.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Categoria.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Conta.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Dividendo.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
@@ -1547,8 +1551,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake:
 
-/usr/lib/cmake/Qt6/QtPublicTestHelpers.cmake:
-
 /usr/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake:
 
 /usr/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake:
@@ -1659,8 +1661,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/qt6/QtWidgets/qabstractscrollarea.h:
 
-/usr/include/qt6/QtWidgets/QMainWindow:
-
 /usr/lib/cmake/Qt6Gui/Qt6QMngPluginAdditionalTargetInfo.cmake:
 
 /usr/include/qt6/QtWidgets/QGraphicsWidget:
@@ -1695,9 +1695,11 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/qt6/QtGui/qpalette.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandEglPlatformIntegrationPluginConfig.cmake:
+/usr/include/qt6/QtGui/qpainter.h:
 
-/usr/include/c++/15.1.1/bits/uses_allocator.h:
+/usr/lib/cmake/Qt6/QtFeature.cmake:
+
+/usr/include/qt6/QtGui/qpaintdevice.h:
 
 /usr/include/c++/15.1.1/bits/stringfwd.h:
 
@@ -1849,12 +1851,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/c++/15.1.1/backward/binders.h:
 
-/usr/include/c++/15.1.1/bits/unique_ptr.h:
-
-/usr/include/c++/15.1.1/array:
-
-/usr/include/c++/15.1.1/bits/list.tcc:
-
 /usr/include/c++/15.1.1/algorithm:
 
 /usr/include/qt6/QtCore/qabstracteventdispatcher.h:
@@ -1898,6 +1894,10 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.ui:
 
 /usr/include/qt6/QtCore/qvariant.h:
+
+/usr/include/c++/15.1.1/bits/list.tcc:
+
+/usr/include/c++/15.1.1/array:
 
 /usr/include/qt6/QtCore/qiterable.h:
 
@@ -1957,9 +1957,9 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/bits/thread-shared-types.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formBoasVindas.h:
-
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.ui:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formBoasVindas.h:
 
 /usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateDependencies.cmake:
 
@@ -1977,9 +1977,17 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/bits/struct_mutex.h:
 
-/usr/lib/cmake/Qt6/QtInstallPaths.cmake:
+/usr/include/bits/types/__mbstate_t.h:
 
-/usr/include/bits/types/clockid_t.h:
+/usr/include/c++/15.1.1/tr1/bessel_function.tcc:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets-relwithdebinfo.cmake:
+
+/usr/include/bits/time.h:
+
+/usr/include/bits/setjmp.h:
 
 /usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersion.cmake:
 
@@ -2067,6 +2075,24 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageInvestimentos.ui:
 
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.h:
+
+/usr/include/qt6/QtCore/QRect:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:
+
+/usr/include/bits/locale.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.cpp:
+
+/usr/lib/cmake/Qt6/QtPublicTestHelpers.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.ui:
+
+/usr/include/c++/15.1.1/stdexcept:
+
+/usr/include/bits/long-double.h:
+
 /usr/include/c++/15.1.1/bit:
 
 /usr/include/qt6/QtWidgets/qgraphicsscene.h:
@@ -2103,6 +2129,10 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/qt6/QtCore/qtformat_impl.h:
 
+/usr/include/qt6/QtWidgets/QMainWindow:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp:
+
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargets-relwithdebinfo.cmake:
@@ -2120,12 +2150,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /usr/include/c++/15.1.1/bits/exception_defines.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake:
-
-/usr/include/c++/15.1.1/bits/unordered_map.h:
-
-/usr/include/linux/errno.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.ui:
 
@@ -2317,8 +2341,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /usr/include/c++/15.1.1/functional:
 
-/usr/include/c++/15.1.1/bits/stl_set.h:
-
 /usr/include/c++/15.1.1/bits/locale_classes.h:
 
 /usr/include/c++/15.1.1/bits/parse_numbers.h:
@@ -2353,11 +2375,11 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h:
 
-/usr/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:
+/usr/include/c++/15.1.1/bits/stl_set.h:
 
-/usr/include/bits/locale.h:
+/usr/lib/cmake/Qt6/QtInstallPaths.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.cpp:
+/usr/include/bits/types/clockid_t.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formCadastro.ui:
 
@@ -2419,16 +2441,6 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.cpp:
 
-/usr/include/bits/types/__mbstate_t.h:
-
-/usr/include/c++/15.1.1/tr1/bessel_function.tcc:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets-relwithdebinfo.cmake:
-
-/usr/include/bits/time.h:
-
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginTargets.cmake:
 
 MeuCentavoApp_autogen/moc_predefs.h:
@@ -2459,6 +2471,18 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/qt6/QtCore/qobject_impl.h:
 
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Dividendo.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets.cmake:
+
+/usr/include/c++/15.1.1/bits/locale_classes.tcc:
+
+/usr/include/qt6/QtCore/qlogging.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp:
+
+/usr/include/bits/endian.h:
+
 /usr/include/c++/15.1.1/bits/refwrap.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h:
@@ -2474,10 +2498,6 @@ MeuCentavoApp_autogen/moc_predefs.h:
 /usr/include/c++/15.1.1/bits/stl_list.h:
 
 /usr/include/qt6/QtCore/qpoint.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp:
-
-/usr/include/bits/endian.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets-relwithdebinfo.cmake:
 
@@ -2535,6 +2555,14 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/qt6/QtCore/qttypetraits.h:
 
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtGui/qkeysequence.h:
+
+/usr/include/c++/15.1.1/bits/version.h:
+
+CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QJp2PluginTargets.cmake:
@@ -2547,15 +2575,21 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/bits/timex.h:
 
-/usr/include/c++/15.1.1/stdexcept:
-
-/usr/include/bits/long-double.h:
-
 /usr/include/c++/15.1.1/backward/auto_ptr.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp:
 
-/usr/include/bits/setjmp.h:
+/usr/include/c++/15.1.1/bits/unique_ptr.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake:
+
+/usr/include/c++/15.1.1/bits/unordered_map.h:
+
+/usr/include/linux/errno.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandEglPlatformIntegrationPluginConfig.cmake:
+
+/usr/include/c++/15.1.1/bits/uses_allocator.h:
 
 /usr/include/c++/15.1.1/bits/uses_allocator_args.h:
 
@@ -2733,14 +2767,6 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/c++/15.1.1/tr1/gamma.tcc:
 
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersionImpl.cmake:
-
-/usr/include/c++/15.1.1/bits/version.h:
-
-CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
-
-/usr/include/qt6/QtGui/qkeysequence.h:
-
 /usr/include/c++/15.1.1/tr1/modified_bessel_func.tcc:
 
 /usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake:
@@ -2869,8 +2895,6 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/include/qt6/QtCore/QList:
 
-/usr/include/qt6/QtCore/QRect:
-
 /usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake:
 
 /usr/include/qt6/QtCore/q17memory.h:
@@ -2987,12 +3011,6 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/include/qt6/QtCore/qlocale.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets.cmake:
-
-/usr/include/c++/15.1.1/bits/locale_classes.tcc:
-
-/usr/include/qt6/QtCore/qlogging.h:
-
 /usr/include/qt6/QtCore/qmalloc.h:
 
 /usr/include/qt6/QtCore/qmap.h:
@@ -3066,8 +3084,6 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/qt6/QtCore/qtcore-config.h:
 
 /usr/include/qt6/QtCore/qtcoreglobal.h:
-
-/usr/include/qt6/QtGui/qpainter.h:
 
 /usr/include/asm/posix_types.h:
 
@@ -3154,7 +3170,3 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/qt6/QtGui/qicon.h:
 
 /usr/include/qt6/QtGui/qinputmethod.h:
-
-/usr/lib/cmake/Qt6/QtFeature.cmake:
-
-/usr/include/qt6/QtGui/qpaintdevice.h:

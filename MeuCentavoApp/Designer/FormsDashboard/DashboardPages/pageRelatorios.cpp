@@ -148,10 +148,13 @@ void pageRelatorios::onGastosRecebidos(const QHash<QString, double>& dados)
     for(QPieSlice *slice : series->slices()) {
         slice->setLabelVisible(); // Garante que o rótulo seja visível
         slice->setLabelColor(Qt::white);
-        slice->setLabel(QString("%1\n R$ %2 \n (%3%)")
+        // Assume que o valor total do gráfico está na moeda principal (BRL)
+        QString simboloPrincipal = "R$";
+        slice->setLabel(QString("%1\n %2 %3 \n (%4%)")
             .arg(slice->label())
-            .arg(slice->value())
-            .arg(slice->percentage() * 100, 0, 'f', 1)); // Formato: Nome \n R$ Valor \n (XX.X%)
+            .arg(simboloPrincipal) // Usa a variável
+            .arg(slice->value(), 0, 'f', 2) // Formata com 2 casas decimais
+            .arg(slice->percentage() * 100, 0, 'f', 1));
 
         // Efeito visual: ao passar o mouse, a fatia "explode" e a cor muda
         connect(slice, &QPieSlice::hovered, this, [=](bool hovered){
@@ -242,7 +245,15 @@ void pageRelatorios::popularTabelaDetalhes(const QVector<Lancamento>& lancamento
         ui->tableWidgetDetalhes->setItem(linha, 1, new QTableWidgetItem(lancamento.descricao));
         ui->tableWidgetDetalhes->setItem(linha, 2, new QTableWidgetItem(lancamento.nome_categoria));
 
-        QTableWidgetItem *itemValor = new QTableWidgetItem(QString::number(lancamento.valor, 'f', 2));
+        QString simbolo = "R$"; // Padrão
+        if (lancamento.moeda_codigo_original == "USD") {
+            simbolo = "$";
+        } else if (lancamento.moeda_codigo_original == "EUR") {
+            simbolo = "€";
+        } // Adicione mais moedas aqui
+
+        QString valorFormatado = QString("%1 %2").arg(simbolo).arg(lancamento.valor_original, 0, 'f', 2);
+        QTableWidgetItem *itemValor = new QTableWidgetItem(valorFormatado);
         itemValor->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         if (lancamento.tipo == "Receita") {
             itemValor->setForeground(QColor("#2ecc71"));

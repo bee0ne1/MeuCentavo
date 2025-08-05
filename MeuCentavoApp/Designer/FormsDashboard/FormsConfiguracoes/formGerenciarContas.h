@@ -26,7 +26,7 @@ private slots:
     void on_buttonEditConta_clicked();
     void on_buttonExcluirConta_clicked();
     void onSelectionChanged();
-
+    void onErro(const QString& motivo);
 private:
     void carregarContas();
     void configurarTabela();

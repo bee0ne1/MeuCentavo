@@ -10,6 +10,7 @@
 #include "Modelo/OperacaoInvestimento.h"
 #include "Modelo/Meta.h"
 #include "Modelo/Ativo.h"
+#include "Modelo/Dividendo.h"
 
 // Forward declarations para as classes de rede
 class QNetworkAccessManager;
@@ -49,9 +50,10 @@ public:
     void excluirAtivo(int idAtivo, const QString& token);
     void obterOperacoesDeAtivo(int idAtivo, const QString& token);
     void adicionarOperacao(const OperacaoInvestimento& operacao, const QString& token);
-
-    signals:
-
+    void obterPortfolioConsolidado(const QString& token);
+    void obterPerformancePortfolio(const QString& token);
+    void adicionarDividendo(const Dividendo& dividendo, const QString& token);
+    void obterDividendosDeAtivo(int idAtivo, const QString& token);
 
 
 signals:
@@ -74,7 +76,9 @@ signals:
     void ativoModificadoComSucesso();
     void operacoesRecebidas(const QVector<OperacaoInvestimento>& operacoes);
     void operacaoModificadaComSucesso();
-
+    void performancePortfolioRecebida(double custoTotal, double valorMercado, double rentabilidadeValor, double rentabilidadePercentual);
+    void dividendoAdicionadoComSucesso();
+    void dividendosRecebidos(const QVector<Dividendo>& dividendos);
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---
@@ -92,6 +96,7 @@ private slots:
     void onModificarAtivoReply(QNetworkReply *reply);
     void onOperacoesReply(QNetworkReply *reply);
     void onModificarOperacaoReply(QNetworkReply *reply);
+    void onDividendosReply(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *m_manager;

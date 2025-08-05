@@ -22,6 +22,10 @@ struct Lancamento {
     QString nome_conta;
     QString nome_categoria;
     int id_meta;
+    double valor_original;
+    QString moeda_codigo_original;
+    double taxa_cambio_usada;
+
 };
 
 struct ResumoMensal {

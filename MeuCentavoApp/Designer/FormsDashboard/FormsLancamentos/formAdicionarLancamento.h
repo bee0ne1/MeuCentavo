@@ -37,6 +37,7 @@ private slots:
 private:
     Ui::formAdicionarLancamento *ui;
     LancamentoDAO* m_dao; // DAO como membro da classe
+    QVector<Conta> m_contasDisponiveis;
     QVector<Categoria> m_todasCategorias; // Guardamos todas as categorias aqui
     int m_idLancamentoEdicao; // Guarda o ID do lançamento a ser editado
 };

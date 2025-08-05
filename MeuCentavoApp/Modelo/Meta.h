@@ -12,6 +12,7 @@ struct Meta {
     double valor_alvo;
     double valor_atual;
     QDate data_alvo;
+    QString moeda_codigo;
 };
 
 #endif // META_H

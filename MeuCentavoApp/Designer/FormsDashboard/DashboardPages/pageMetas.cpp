@@ -77,11 +77,25 @@ void pageMetas::popularTabela(const QVector<Meta>& metas)
         progressBar->setAlignment(Qt::AlignCenter);
         ui->tableWidgetMetas->setCellWidget(linha, 1, progressBar); // Adiciona o widget na célula
 
+        // Lógica para símbolo dinâmico
+        QString simbolo = "R$";
+        if (meta.moeda_codigo == "USD") {
+            simbolo = "$";
+        } else if (meta.moeda_codigo == "EUR") {
+            simbolo = "€";
+        } // Adicione mais moedas aqui
+
         // Coluna 2: Valor Atual
-        ui->tableWidgetMetas->setItem(linha, 2, new QTableWidgetItem(QString("R$ %1").arg(meta.valor_atual, 0, 'f', 2)));
-        
+        QString valorAtualFormatado = QString("%1 %2").arg(simbolo).arg(meta.valor_atual, 0, 'f', 2);
+        QTableWidgetItem* itemValorAtual = new QTableWidgetItem(valorAtualFormatado);
+        itemValorAtual->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
+        ui->tableWidgetMetas->setItem(linha, 2, itemValorAtual);
+
         // Coluna 3: Valor Alvo
-        ui->tableWidgetMetas->setItem(linha, 3, new QTableWidgetItem(QString("R$ %1").arg(meta.valor_alvo, 0, 'f', 2)));
+        QString valorAlvoFormatado = QString("%1 %2").arg(simbolo).arg(meta.valor_alvo, 0, 'f', 2);
+        QTableWidgetItem* itemValorAlvo = new QTableWidgetItem(valorAlvoFormatado);
+        itemValorAlvo->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
+        ui->tableWidgetMetas->setItem(linha, 3, itemValorAlvo);
 
         // Coluna 4: Data Alvo
         ui->tableWidgetMetas->setItem(linha, 4, new QTableWidgetItem(meta.data_alvo.toString("dd/MM/yyyy")));

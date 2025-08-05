@@ -78,6 +78,15 @@ template <> constexpr inline auto LancamentoDAO::qt_create_metaobjectdata<qt_met
         "QList<OperacaoInvestimento>",
         "operacoes",
         "operacaoModificadaComSucesso",
+        "performancePortfolioRecebida",
+        "custoTotal",
+        "valorMercado",
+        "rentabilidadeValor",
+        "rentabilidadePercentual",
+        "dividendoAdicionadoComSucesso",
+        "dividendosRecebidos",
+        "QList<Dividendo>",
+        "dividendos",
         "onAdicionarLancamentoReply",
         "QNetworkReply*",
         "reply",
@@ -93,7 +102,8 @@ template <> constexpr inline auto LancamentoDAO::qt_create_metaobjectdata<qt_met
         "onAtivosReply",
         "onModificarAtivoReply",
         "onOperacoesReply",
-        "onModificarOperacaoReply"
+        "onModificarOperacaoReply",
+        "onDividendosReply"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -153,61 +163,75 @@ template <> constexpr inline auto LancamentoDAO::qt_create_metaobjectdata<qt_met
         }}),
         // Signal 'operacaoModificadaComSucesso'
         QtMocHelpers::SignalData<void()>(38, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'performancePortfolioRecebida'
+        QtMocHelpers::SignalData<void(double, double, double, double)>(39, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Double, 40 }, { QMetaType::Double, 41 }, { QMetaType::Double, 42 }, { QMetaType::Double, 43 },
+        }}),
+        // Signal 'dividendoAdicionadoComSucesso'
+        QtMocHelpers::SignalData<void()>(44, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'dividendosRecebidos'
+        QtMocHelpers::SignalData<void(const QVector<Dividendo> &)>(45, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 46, 47 },
+        }}),
         // Slot 'onAdicionarLancamentoReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(39, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(48, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onObterLancamentosReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(42, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(51, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onObterResumosReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(43, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(52, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onObterGastosCategoriaReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(44, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(53, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onObterContasReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(45, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(54, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onObterCategoriasReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(46, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(55, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onModificarCategoriaReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(47, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(56, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onObterComparativoMensalReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(48, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(57, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onMetasReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(49, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(58, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onModificarMetaReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(50, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(59, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onAtivosReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(51, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(60, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onModificarAtivoReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(52, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(61, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onOperacoesReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(53, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(62, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
         // Slot 'onModificarOperacaoReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(54, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 40, 41 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(63, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
+        }}),
+        // Slot 'onDividendosReply'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(64, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 49, 50 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -250,20 +274,24 @@ void LancamentoDAO::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 15: _t->ativoModificadoComSucesso(); break;
         case 16: _t->operacoesRecebidas((*reinterpret_cast< std::add_pointer_t<QList<OperacaoInvestimento>>>(_a[1]))); break;
         case 17: _t->operacaoModificadaComSucesso(); break;
-        case 18: _t->onAdicionarLancamentoReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 19: _t->onObterLancamentosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 20: _t->onObterResumosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 21: _t->onObterGastosCategoriaReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 22: _t->onObterContasReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 23: _t->onObterCategoriasReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 24: _t->onModificarCategoriaReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 25: _t->onObterComparativoMensalReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 26: _t->onMetasReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 27: _t->onModificarMetaReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 28: _t->onAtivosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 29: _t->onModificarAtivoReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 30: _t->onOperacoesReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 31: _t->onModificarOperacaoReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 18: _t->performancePortfolioRecebida((*reinterpret_cast< std::add_pointer_t<double>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[4]))); break;
+        case 19: _t->dividendoAdicionadoComSucesso(); break;
+        case 20: _t->dividendosRecebidos((*reinterpret_cast< std::add_pointer_t<QList<Dividendo>>>(_a[1]))); break;
+        case 21: _t->onAdicionarLancamentoReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 22: _t->onObterLancamentosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 23: _t->onObterResumosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 24: _t->onObterGastosCategoriaReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 25: _t->onObterContasReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 26: _t->onObterCategoriasReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 27: _t->onModificarCategoriaReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 28: _t->onObterComparativoMensalReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 29: _t->onMetasReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 30: _t->onModificarMetaReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 31: _t->onAtivosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 32: _t->onModificarAtivoReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 33: _t->onOperacoesReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 34: _t->onModificarOperacaoReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 35: _t->onDividendosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
         default: ;
         }
     }
@@ -304,6 +332,12 @@ void LancamentoDAO::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
             return;
         if (QtMocHelpers::indexOfMethod<void (LancamentoDAO::*)()>(_a, &LancamentoDAO::operacaoModificadaComSucesso, 17))
             return;
+        if (QtMocHelpers::indexOfMethod<void (LancamentoDAO::*)(double , double , double , double )>(_a, &LancamentoDAO::performancePortfolioRecebida, 18))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (LancamentoDAO::*)()>(_a, &LancamentoDAO::dividendoAdicionadoComSucesso, 19))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (LancamentoDAO::*)(const QVector<Dividendo> & )>(_a, &LancamentoDAO::dividendosRecebidos, 20))
+            return;
     }
 }
 
@@ -326,14 +360,14 @@ int LancamentoDAO::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 32)
+        if (_id < 36)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 32;
+        _id -= 36;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 32)
+        if (_id < 36)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 32;
+        _id -= 36;
     }
     return _id;
 }
@@ -444,5 +478,23 @@ void LancamentoDAO::operacoesRecebidas(const QVector<OperacaoInvestimento> & _t1
 void LancamentoDAO::operacaoModificadaComSucesso()
 {
     QMetaObject::activate(this, &staticMetaObject, 17, nullptr);
+}
+
+// SIGNAL 18
+void LancamentoDAO::performancePortfolioRecebida(double _t1, double _t2, double _t3, double _t4)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 18, nullptr, _t1, _t2, _t3, _t4);
+}
+
+// SIGNAL 19
+void LancamentoDAO::dividendoAdicionadoComSucesso()
+{
+    QMetaObject::activate(this, &staticMetaObject, 19, nullptr);
+}
+
+// SIGNAL 20
+void LancamentoDAO::dividendosRecebidos(const QVector<Dividendo> & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 20, nullptr, _t1);
 }
 QT_WARNING_POP

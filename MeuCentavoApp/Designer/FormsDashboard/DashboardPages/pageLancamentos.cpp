@@ -94,7 +94,10 @@ void pageLancamentos::carregarTabela()
     QDate dataInicio = ui->dateEditInicio->date();
     QDate dataFim = ui->dateEditFim->date();
     int idConta = ui->comboBoxConta->currentData().toInt();
-
+    // Imprime os filtros exatos que estão sendo enviados para o DAO
+    qDebug() << "Filtros enviados -> Início:" << dataInicio.toString("yyyy-MM-dd")
+             << "| Fim:" << dataFim.toString("yyyy-MM-dd")
+             << "| ID da Conta:" << idConta;
     // Chama a versão CORRETA da função, com todos os parâmetros
     m_dao->obterTodos(token, dataInicio, dataFim, idConta);
     emit dadosAtualizados();
@@ -135,7 +138,16 @@ void pageLancamentos::onLancamentosRecebidos(const QVector<Lancamento>& lancamen
         ui->tabelaTodosLancamentos->setItem(linha, 4, itemTipo);
 
         // --- Coluna 5: Valor ---
-        QTableWidgetItem *itemValor = new QTableWidgetItem(QString::number(lancamento.valor, 'f', 2));
+        QString simbolo = "R$"; // Padrão
+        if (lancamento.moeda_codigo_original == "USD") {
+            simbolo = "$";
+        } else if (lancamento.moeda_codigo_original == "EUR") {
+            simbolo = "€";
+        } // Adicione mais moedas aqui
+
+        // Usa o valor_original que está na moeda correta
+        QString valorFormatado = QString("%1 %2").arg(simbolo).arg(lancamento.valor_original, 0, 'f', 2);
+        QTableWidgetItem *itemValor = new QTableWidgetItem(valorFormatado);
         itemValor->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         if (lancamento.tipo == "Receita") {
             itemValor->setForeground(QColor("#2ecc71")); // Verde

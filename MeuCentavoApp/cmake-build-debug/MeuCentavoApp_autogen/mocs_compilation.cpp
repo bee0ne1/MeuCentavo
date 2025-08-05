@@ -11,6 +11,7 @@
 #include "2EK4JB7KXY/moc_dialogAddEditConta.cpp"
 #include "2EK4JB7KXY/moc_formGerenciarCategorias.cpp"
 #include "2EK4JB7KXY/moc_formGerenciarContas.cpp"
+#include "VE35X4DZIU/moc_dialogAddDividendo.cpp"
 #include "VE35X4DZIU/moc_dialogAddEditAtivo.cpp"
 #include "VE35X4DZIU/moc_dialogAddEditOperacao.cpp"
 #include "JGBQRWFFYH/moc_dialogImportarExtrato.cpp"
