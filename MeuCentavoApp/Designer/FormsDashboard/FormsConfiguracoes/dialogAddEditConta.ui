@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>DialogAddEditConta</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
@@ -30,12 +30,9 @@
       </spacer>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0">
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0,0">
        <item>
         <layout class="QGridLayout" name="gridLayout">
-         <item row="3" column="1">
-          <widget class="QComboBox" name="comboMoeda"/>
-         </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_3">
            <property name="text">
@@ -45,6 +42,29 @@
             <set>Qt::AlignmentFlag::AlignCenter</set>
            </property>
           </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Nome da Conta:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Tipo de Conta:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QDoubleSpinBox" name="spinBoxSaldo"/>
          </item>
          <item row="0" column="1">
           <widget class="QLineEdit" name="lineEditNome"/>
@@ -59,33 +79,126 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
-          <widget class="QDoubleSpinBox" name="spinBoxSaldo"/>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string>Tipo de Conta:</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="1">
-          <widget class="QComboBox" name="comboBoxTipo"/>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>Nome da Conta:</string>
+          <widget class="QComboBox" name="comboBoxTipo">
+           <property name="editable">
+            <bool>true</bool>
            </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
+           <item>
+            <property name="text">
+             <string>Conta Corrente</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Poupança</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Cartão de Crédito</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Investimentos</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dinheiro</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Financiamento</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Empréstimo</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Outros</string>
+            </property>
+           </item>
           </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="comboMoeda"/>
          </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxDivida">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>120</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Detalhes da Dívida</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QFormLayout" name="formLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>Taxa de Juros Anual (%):</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QDoubleSpinBox" name="spinBoxJuros">
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Valor Total Original:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Data de Vencimento/Quitação:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QDoubleSpinBox" name="spinBoxValorTotalDivida">
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QDateEdit" name="dateEditVencimento"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">

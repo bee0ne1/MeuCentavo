@@ -22,6 +22,12 @@ public:
     // Função para obter os dados preenchidos pelo usuário
     Conta getConta() const;
 
+public slots:
+    void accept() override; // 'override' indica que estamos substituindo uma função da classe base
+
+private slots:
+    void onTipoContaChanged(const QString& tipo);
+
 private:
     Ui::DialogAddEditConta *ui;
     int m_idConta; // Para guardar o ID quando estivermos a editar

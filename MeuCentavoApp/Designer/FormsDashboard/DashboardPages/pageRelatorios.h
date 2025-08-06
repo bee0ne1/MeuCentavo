@@ -7,6 +7,8 @@
 #include <QtCharts/QChart>
 #include "Modelo/Conta.h"
 #include "Modelo/Lancamento.h"
+#include "Modelo/Categoria.h"
+#include "DataAccess/LancamentoDAO.h"
 // Forward declarations para Qt Charts e nossas classes
 QT_BEGIN_NAMESPACE
 namespace Ui { class pageRelatorios; }
@@ -38,6 +40,9 @@ private slots:
     // Novo slot para reagir à seleção do ComboBox de período
     void onPeriodoSelecionado(int index);
     void on_buttonExportarCSV_clicked();
+    void onCategoriasDespesaRecebidas(const QVector<Categoria>& categorias);
+    void onTendenciaRecebida(const QVector<PontoTendencia>& tendencia);
+    void on_buttonAnalisarTendencia_clicked();
 
 private:
     // Função auxiliar para iniciar o carregamento dos dados
@@ -54,6 +59,9 @@ private:
     // Ponteiros para o NOVO gráfico de barras
     QChartView *m_chartViewBarras;
     QChart *m_chartBarras;
+    // Ponteiros para o NOVO gráfico de tendência
+    QChartView *m_chartViewTendencia;
+    QChart *m_chartTendencia;
 };
 
 #endif // PAGERELATORIOS_H

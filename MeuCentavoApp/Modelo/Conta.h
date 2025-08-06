@@ -6,7 +6,7 @@
 #define CONTA_H
 
 #include <QString>
-
+#include <QDate>
 struct Conta
 {
     int id;
@@ -15,6 +15,10 @@ struct Conta
     double saldo_inicial;
     int id_usuario;
     QString moeda_codigo;
+    // --- NOVOS CAMPOS PARA DÍVIDAS ---
+    double taxa_juros;
+    double valor_total_divida;
+    QDate data_vencimento;
 };
 
 

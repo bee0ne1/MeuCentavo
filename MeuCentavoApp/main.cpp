@@ -1,6 +1,7 @@
 #include <QApplication>
 #include "Gerenciamento/AppController.h"
 #include "Modelo/Usuario.h" // Para registrar o metatype
+#include "DataAccess/LancamentoDAO.h"
 #include <optional>
 
 int main(int argc, char *argv[])
@@ -13,6 +14,8 @@ int main(int argc, char *argv[])
     // Registra os tipos customizados para o sistema de Sinais e Slots
     qRegisterMetaType<Usuario>();
     qRegisterMetaType<std::optional<Usuario>>();
+    qRegisterMetaType<QVector<HistoricoPatrimonio>>();
+    qRegisterMetaType<QVector<PontoTendencia>>();
 
     // Cria o controlador e inicia a aplicação
     AppController controller;

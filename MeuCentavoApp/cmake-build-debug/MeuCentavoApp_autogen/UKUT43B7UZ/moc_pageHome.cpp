@@ -48,7 +48,10 @@ template <> constexpr inline auto pageHome::qt_create_metaobjectdata<qt_meta_tag
         "QList<Lancamento>",
         "lancamentos",
         "onErroDeRede",
-        "erro"
+        "erro",
+        "onHistoricoPatrimonioRecebido",
+        "QList<HistoricoPatrimonio>",
+        "historico"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -63,6 +66,10 @@ template <> constexpr inline auto pageHome::qt_create_metaobjectdata<qt_meta_tag
         // Slot 'onErroDeRede'
         QtMocHelpers::SlotData<void(const QString &)>(8, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::QString, 9 },
+        }}),
+        // Slot 'onHistoricoPatrimonioRecebido'
+        QtMocHelpers::SlotData<void(const QVector<HistoricoPatrimonio> &)>(10, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 11, 12 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -90,6 +97,7 @@ void pageHome::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 0: _t->onResumosRecebidos((*reinterpret_cast< std::add_pointer_t<double>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2]))); break;
         case 1: _t->onLancamentosRecentesRecebidos((*reinterpret_cast< std::add_pointer_t<QList<Lancamento>>>(_a[1]))); break;
         case 2: _t->onErroDeRede((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 3: _t->onHistoricoPatrimonioRecebido((*reinterpret_cast< std::add_pointer_t<QList<HistoricoPatrimonio>>>(_a[1]))); break;
         default: ;
         }
     }
@@ -114,14 +122,14 @@ int pageHome::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

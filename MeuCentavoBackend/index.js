@@ -558,6 +558,45 @@ app.get('/api/lancamentos/comparativo/mensal', authenticateToken, async (req, re
     }
 });
 
+// --- ROTA PARA TENDÊNCIA DE GASTOS POR CATEGORIA ---
+app.get('/api/relatorios/tendencia-categoria', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+        const { id_categoria, meses_atras } = req.query;
+
+        if (!id_categoria) {
+            return res.status(400).json({ message: 'O ID da categoria é obrigatório.' });
+        }
+
+        const numMeses = parseInt(meses_atras) || 6; // Padrão de 6 meses se não for especificado
+
+        // Query que busca os gastos da categoria especificada, agrupados por mês
+        const query = `
+            SELECT
+                DATE_FORMAT(data_lancamento, '%Y-%m') as mes,
+                SUM(valor) as total_gasto -- Assume que 'valor' está na moeda principal (BRL)
+            FROM
+                lancamentos
+            WHERE
+                id_usuario = ?
+                AND id_categoria = ?
+                AND tipo = 'Despesa'
+                AND data_lancamento >= CURDATE() - INTERVAL ? MONTH
+            GROUP BY
+                YEAR(data_lancamento), MONTH(data_lancamento)
+            ORDER BY
+                mes ASC;
+        `;
+
+        const [tendencia] = await pool.query(query, [idUsuario, id_categoria, numMeses]);
+        res.json(tendencia);
+
+    } catch (error) {
+        console.error("Erro ao buscar tendência da categoria:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
 // --- ROTAS PARA CONTAS E CATEGORIAS ---
 
 // Rota para BUSCAR TODAS as categorias do usuário logado
@@ -671,56 +710,53 @@ app.get('/api/contas', authenticateToken, async (req, res) => {
     }
 });
 
-// Rota para ADICIONAR uma nova conta
+// Rota para ADICIONAR uma nova conta (agora com campos de dívida)
 app.post('/api/contas', authenticateToken, async (req, res) => {
     try {
-        const { nome, tipo_conta, saldo_inicial, moeda_codigo } = req.body;
+        // 1. Desestruture os novos campos opcionais
+        const { nome, tipo_conta, saldo_inicial, moeda_codigo, taxa_juros, valor_total_divida, data_vencimento } = req.body;
         const idUsuario = req.user.userId;
 
-        // Validação
+        // Validação principal (continua a mesma)
         if (!nome || !tipo_conta || !moeda_codigo) {
             return res.status(400).json({ message: 'Nome, tipo e moeda da conta são obrigatórios.' });
         }
 
+        // 2. Adicione as novas colunas e valores ao INSERT
         const [result] = await pool.query(
-            // Adicione a nova coluna e valor ao INSERT
-            'INSERT INTO contas (nome, tipo_conta, saldo_inicial, id_usuario, moeda_codigo) VALUES (?, ?, ?, ?, ?)',
-            [nome, tipo_conta, saldo_inicial || 0.00, idUsuario, moeda_codigo]
+            'INSERT INTO contas (nome, tipo_conta, saldo_inicial, id_usuario, moeda_codigo, taxa_juros, valor_total_divida, data_vencimento) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            [nome, tipo_conta, saldo_inicial || 0.00, idUsuario, moeda_codigo, taxa_juros || null, valor_total_divida || null, data_vencimento || null]
         );
 
-        res.status(201).json({
-            id_conta: result.insertId,
-            nome,
-            tipo_conta,
-            saldo_inicial: saldo_inicial || 0.00,
-            id_usuario: idUsuario
-        });
+        res.status(201).json({ message: 'Conta/Dívida adicionada com sucesso!', insertId: result.insertId });
+
     } catch (error) {
         console.error("Erro ao adicionar conta:", error);
         res.status(500).json({ message: "Erro interno do servidor ao adicionar conta." });
     }
 });
 
-// Rota para EDITAR (Atualizar) uma conta existente
+// Rota para EDITAR (Atualizar) uma conta existente (agora com campos de dívida)
 app.put('/api/contas/:id', authenticateToken, async (req, res) => {
     try {
-        const { nome, tipo_conta, saldo_inicial, moeda_codigo } = req.body;
+        // 1. Desestruture os novos campos opcionais
+        const { nome, tipo_conta, saldo_inicial, moeda_codigo, taxa_juros, valor_total_divida, data_vencimento } = req.body;
         const idConta = req.params.id;
         const idUsuario = req.user.userId;
 
+        // Validação principal (continua a mesma)
         if (!nome || !tipo_conta || saldo_inicial === undefined || !moeda_codigo) {
             return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
         }
 
-        // A condição 'AND id_usuario = ?' é uma camada de segurança CRÍTICA.
-        // Ela garante que um utilizador só pode editar as suas próprias contas.
+        // 2. Adicione as novas colunas e valores ao UPDATE
         const [result] = await pool.query(
-            'UPDATE contas SET nome = ?, tipo_conta = ?, saldo_inicial = ?, moeda_codigo = ? WHERE id_conta = ? AND id_usuario = ?',
-            [nome, tipo_conta, saldo_inicial, moeda_codigo, idConta, idUsuario]
+            'UPDATE contas SET nome = ?, tipo_conta = ?, saldo_inicial = ?, moeda_codigo = ?, taxa_juros = ?, valor_total_divida = ?, data_vencimento = ? WHERE id_conta = ? AND id_usuario = ?',
+            [nome, tipo_conta, saldo_inicial, moeda_codigo, taxa_juros || null, valor_total_divida || null, data_vencimento || null, idConta, idUsuario]
         );
 
         if (result.affectedRows > 0) {
-            res.status(200).json({ message: 'Conta atualizada com sucesso.' });
+            res.status(200).json({ message: 'Conta/Dívida atualizada com sucesso.' });
         } else {
             res.status(404).json({ message: 'Conta não encontrada ou não autorizada.' });
         }
@@ -1204,6 +1240,52 @@ app.get('/api/ativos/:id/dividendos', authenticateToken, async (req, res) => {
         res.status(500).json({ message: 'Erro interno do servidor.' });
     }
 });
+
+// --- ROTA PARA EVOLUÇÃO DO PATRIMÔNIO LÍQUIDO ---
+app.get('/api/patrimonio/historico', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+        const mesesAtras = 6; // Vamos calcular para os últimos 6 meses
+
+        // Esta query é mais complexa. Ela calcula o saldo final de cada mês.
+        // Ela une os lançamentos de entrada/saída com os saldos iniciais das contas.
+        const query = `
+            WITH RECURSIVE meses (mes) AS (
+                SELECT DATE_FORMAT(CURDATE(), '%Y-%m-01')
+                UNION ALL
+                SELECT mes - INTERVAL 1 MONTH
+                FROM meses
+                WHERE mes > CURDATE() - INTERVAL ? MONTH
+            ),
+            saldos_mensais AS (
+                SELECT
+                    DATE_FORMAT(l.data_lancamento, '%Y-%m-01') as mes_lancamento,
+                    SUM(CASE WHEN l.tipo = 'Receita' THEN l.valor ELSE -l.valor END) as fluxo_liquido
+                FROM lancamentos l
+                WHERE l.id_usuario = ? AND l.data_lancamento < CURDATE() + INTERVAL 1 DAY
+                GROUP BY mes_lancamento
+            )
+            SELECT
+                DATE_FORMAT(m.mes, '%Y-%m') as mes,
+                (SELECT COALESCE(SUM(saldo_inicial), 0) FROM contas WHERE id_usuario = ?) +
+                (SELECT COALESCE(SUM(fluxo_liquido), 0) FROM saldos_mensais WHERE mes_lancamento <= m.mes) as patrimonio
+            FROM meses m
+            ORDER BY mes ASC;
+        `;
+
+        const [historico] = await pool.query(query, [mesesAtras, idUsuario, idUsuario]);
+
+        // O ideal seria adicionar o valor dos investimentos aqui também, mas vamos começar
+        // apenas com as contas para simplificar. Podemos adicionar isso depois.
+
+        res.json(historico);
+
+    } catch (error) {
+        console.error("Erro ao buscar histórico de patrimônio:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
 
 // Inicia o servidor
 app.listen(port, () => {

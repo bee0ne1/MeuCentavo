@@ -25,10 +25,23 @@ pageHome::pageHome(QWidget *parent) :
     m_chartView->setRenderHint(QPainter::Antialiasing);
     m_chartView->setMinimumHeight(250);
 
+    // --- SETUP DO NOVO GRÁFICO DE PATRIMÔNIO ---
+    m_chartPatrimonio = new QChart();
+    m_chartPatrimonio->setTitle("Evolução do Patrimônio");
+    m_chartPatrimonio->setTheme(QChart::ChartThemeDark);
+    m_chartPatrimonio->setAnimationOptions(QChart::SeriesAnimations);
+
+    m_chartViewPatrimonio = new QChartView(m_chartPatrimonio);
+    m_chartViewPatrimonio->setRenderHint(QPainter::Antialiasing);
+    ui->layoutGraficoPatrimonio->addWidget(m_chartViewPatrimonio); // Adiciona ao novo layout
+
+
     // Conecta os sinais de resultado do DAO aos nossos slots
     connect(m_dao, &LancamentoDAO::resumosRecebidos, this, &pageHome::onResumosRecebidos);
     connect(m_dao, &LancamentoDAO::lancamentosRecebidos, this, &pageHome::onLancamentosRecentesRecebidos);
     connect(m_dao, &LancamentoDAO::erroOcorrido, this, &pageHome::onErroDeRede);
+    connect(m_dao, &LancamentoDAO::historicoPatrimonioRecebido, this, &pageHome::onHistoricoPatrimonioRecebido);
+
 
     // Configuração inicial da tabela
     ui->tabelaLancamentosRecentes->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
@@ -59,6 +72,7 @@ void pageHome::atualizarDados()
     // Inicia as requisições de rede. As respostas virão depois, nos slots.
     m_dao->obterResumosDoMes(token);
     m_dao->obterRecentes(token, 5);
+    m_dao->obterHistoricoPatrimonio(token);
 }
 
 void pageHome::onResumosRecebidos(double receitas, double despesas)
@@ -141,4 +155,45 @@ void pageHome::onLancamentosRecentesRecebidos(const QVector<Lancamento>& lancame
 void pageHome::onErroDeRede(const QString& erro)
 {
     QMessageBox::critical(this, "Erro de Rede", "Não foi possível buscar os dados da dashboard:\n" + erro);
+}
+
+void pageHome::onHistoricoPatrimonioRecebido(const QVector<HistoricoPatrimonio>& historico)
+{
+    m_chartPatrimonio->removeAllSeries();
+    if(m_chartPatrimonio->axisX()) m_chartPatrimonio->removeAxis(m_chartPatrimonio->axisX());
+    if(m_chartPatrimonio->axisY()) m_chartPatrimonio->removeAxis(m_chartPatrimonio->axisY());
+
+    QLineSeries *series = new QLineSeries();
+    series->setName("Patrimônio Líquido");
+
+    QStringList categories;
+    double minVal = 0, maxVal = 0;
+
+    if (!historico.isEmpty()) {
+        minVal = historico.first().valor;
+        maxVal = historico.first().valor;
+    }
+
+    for (const auto& ponto : historico) {
+        series->append(categories.size(), ponto.valor);
+        categories << ponto.mes;
+        if (ponto.valor < minVal) minVal = ponto.valor;
+        if (ponto.valor > maxVal) maxVal = ponto.valor;
+    }
+
+    m_chartPatrimonio->addSeries(series);
+
+    QBarCategoryAxis *axisX = new QBarCategoryAxis();
+    axisX->append(categories);
+    m_chartPatrimonio->addAxis(axisX, Qt::AlignBottom);
+    series->attachAxis(axisX);
+
+    QValueAxis *axisY = new QValueAxis();
+    axisY->setRange(minVal, maxVal); // Define o range para melhor visualização
+    axisY->setLabelFormat("R$ %.0f");
+    m_chartPatrimonio->addAxis(axisY, Qt::AlignLeft);
+    series->attachAxis(axisY);
+
+    m_chartPatrimonio->legend()->setVisible(true);
+    m_chartPatrimonio->legend()->setAlignment(Qt::AlignBottom);
 }

@@ -52,12 +52,24 @@ pageRelatorios::pageRelatorios(QWidget *parent) :
     m_chartViewBarras->setMinimumHeight(300);
     ui->layoutGraficoBarras->addWidget(m_chartViewBarras); // Adiciona ao novo layout
 
+    // --- SETUP DO NOVO GRÁFICO DE TENDÊNCIA ---
+    m_chartTendencia = new QChart();
+    m_chartTendencia->setTitle("Evolução de Gastos na Categoria");
+    m_chartTendencia->setTheme(QChart::ChartThemeDark);
+    m_chartTendencia->setAnimationOptions(QChart::SeriesAnimations);
+
+    m_chartViewTendencia = new QChartView(m_chartTendencia);
+    m_chartViewTendencia->setRenderHint(QPainter::Antialiasing);
+    ui->layoutGraficoTendencia->addWidget(m_chartViewTendencia);
+
     // 4. Conecta os sinais do DAO aos slots desta classe
     connect(m_dao, &LancamentoDAO::contasRecebidas, this, &pageRelatorios::onContasRecebidas);
     connect(m_dao, &LancamentoDAO::gastosPorCategoriaRecebidos, this, &pageRelatorios::onGastosRecebidos);
     connect(m_dao, &LancamentoDAO::erroOcorrido, this, &pageRelatorios::onErroDeRede);
     connect(m_dao, &LancamentoDAO::lancamentosRecebidos, this, &pageRelatorios::onDetalhesRecebidos);
     connect(m_dao, &LancamentoDAO::comparativoMensalRecebido, this, &pageRelatorios::onComparativoRecebido);
+    connect(m_dao, &LancamentoDAO::categoriasRecebidas, this, &pageRelatorios::onCategoriasDespesaRecebidas); // Reutilizamos o sinal
+    connect(m_dao, &LancamentoDAO::tendenciaCategoriaRecebida, this, &pageRelatorios::onTendenciaRecebida);
 
     // Define as datas padrão nos QDateEdit
     QDate dataAtual = QDate::currentDate();
@@ -87,6 +99,7 @@ pageRelatorios::pageRelatorios(QWidget *parent) :
     // No final do construtor, peça a lista de contas para preencher o combobox
     QString token = SessionManager::instance().getToken();
     m_dao->obterTodasContas(token);
+    m_dao->obterTodasCategorias(token);
 
 }
 
@@ -364,4 +377,58 @@ void pageRelatorios::on_buttonExportarCSV_clicked()
 
     file.close();
     QMessageBox::information(this, "Sucesso", "Dados exportados com sucesso para:\n" + caminhoArquivo);
+}
+
+void pageRelatorios::onCategoriasDespesaRecebidas(const QVector<Categoria>& categorias)
+{
+    // Popula o ComboBox de tendência apenas com categorias de despesa
+    ui->comboCategoriaTendencia->clear();
+    for (const auto& categoria : categorias) {
+        if (categoria.tipo == "Despesa") {
+            ui->comboCategoriaTendencia->addItem(categoria.nome, categoria.id);
+        }
+    }
+}
+
+void pageRelatorios::on_buttonAnalisarTendencia_clicked()
+{
+    int idCategoria = ui->comboCategoriaTendencia->currentData().toInt();
+    if (idCategoria > 0) {
+        QString token = SessionManager::instance().getToken();
+        m_dao->obterTendenciaCategoria(idCategoria, token);
+    }
+}
+
+void pageRelatorios::onTendenciaRecebida(const QVector<PontoTendencia>& tendencia)
+{
+    m_chartTendencia->removeAllSeries();
+    if(m_chartTendencia->axisX()) m_chartTendencia->removeAxis(m_chartTendencia->axisX());
+    if(m_chartTendencia->axisY()) m_chartTendencia->removeAxis(m_chartTendencia->axisY());
+
+    QLineSeries *series = new QLineSeries();
+    QString nomeCategoria = ui->comboCategoriaTendencia->currentText();
+    series->setName(nomeCategoria);
+
+    QStringList categories;
+    double maxVal = 0;
+
+    for (const auto& ponto : tendencia) {
+        series->append(categories.size(), ponto.total);
+        categories << ponto.mes;
+        if (ponto.total > maxVal) maxVal = ponto.total;
+    }
+
+    m_chartTendencia->addSeries(series);
+
+    QBarCategoryAxis *axisX = new QBarCategoryAxis();
+    axisX->append(categories);
+    m_chartTendencia->addAxis(axisX, Qt::AlignBottom);
+    series->attachAxis(axisX);
+
+    QValueAxis *axisY = new QValueAxis();
+    axisY->setRange(0, maxVal * 1.1); // Range com uma folga de 10%
+    axisY->setLabelFormat("R$ %.0f");
+    m_chartTendencia->addAxis(axisY, Qt::AlignLeft);
+    series->attachAxis(axisY);
+    m_chartTendencia->legend()->setVisible(true);
 }

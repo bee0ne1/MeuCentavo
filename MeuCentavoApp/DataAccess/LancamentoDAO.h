@@ -16,8 +16,19 @@
 class QNetworkAccessManager;
 class QNetworkReply;
 
+struct HistoricoPatrimonio {
+    QString mes; // "2025-08"
+    double valor;
+};
+
+struct PontoTendencia {
+    QString mes; // "2025-08"
+    double total;
+};
+
 class LancamentoDAO : public QObject
 {
+
     Q_OBJECT
 public:
     explicit LancamentoDAO(QObject *parent = nullptr);
@@ -54,6 +65,8 @@ public:
     void obterPerformancePortfolio(const QString& token);
     void adicionarDividendo(const Dividendo& dividendo, const QString& token);
     void obterDividendosDeAtivo(int idAtivo, const QString& token);
+    void obterHistoricoPatrimonio(const QString& token);
+    void obterTendenciaCategoria(int idCategoria, const QString& token);
 
 
 signals:
@@ -79,6 +92,9 @@ signals:
     void performancePortfolioRecebida(double custoTotal, double valorMercado, double rentabilidadeValor, double rentabilidadePercentual);
     void dividendoAdicionadoComSucesso();
     void dividendosRecebidos(const QVector<Dividendo>& dividendos);
+    void historicoPatrimonioRecebido(const QVector<HistoricoPatrimonio>& historico);
+    void tendenciaCategoriaRecebida(const QVector<PontoTendencia>& tendencia);
+
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---

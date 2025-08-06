@@ -6,6 +6,7 @@
 #include <QVector>
 #include <QtCharts/QChartView>
 #include <QtCharts/QChart>
+#include "DataAccess/LancamentoDAO.h"
 
 
 // Forward declarations
@@ -27,6 +28,8 @@ private slots:
     void onResumosRecebidos(double receitas, double despesas);
     void onLancamentosRecentesRecebidos(const QVector<Lancamento>& lancamentos);
     void onErroDeRede(const QString& erro);
+    void onHistoricoPatrimonioRecebido(const QVector<HistoricoPatrimonio>& historico);
+
 
 
 private:
@@ -35,6 +38,9 @@ private:
     LancamentoDAO* m_dao;
     QChartView *m_chartView;
     QChart *m_chart;
+    // Ponteiros para o NOVO gráfico de patrimônio
+    QChartView *m_chartViewPatrimonio;
+    QChart *m_chartPatrimonio;
 };
 
 #endif // PAGEHOME_H

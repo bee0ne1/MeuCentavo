@@ -26,6 +26,7 @@ class Ui_pageHome
 {
 public:
     QHBoxLayout *horizontalLayout_2;
+    QVBoxLayout *verticalLayout_4;
     QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout;
     QGroupBox *groupBox;
@@ -40,8 +41,10 @@ public:
     QVBoxLayout *verticalLayout_3;
     QLabel *label_4;
     QLabel *labelSaldoMes;
-    QTableWidget *tabelaLancamentosRecentes;
+    QHBoxLayout *QHBoxGraficos;
     QVBoxLayout *layoutGraficoResumo;
+    QVBoxLayout *layoutGraficoPatrimonio;
+    QTableWidget *tabelaLancamentosRecentes;
 
     void setupUi(QWidget *pageHome)
     {
@@ -56,6 +59,8 @@ public:
         pageHome->setStyleSheet(QString::fromUtf8("background-color: rgb(76, 88, 255)"));
         horizontalLayout_2 = new QHBoxLayout(pageHome);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setObjectName("verticalLayout_4");
         gridLayout = new QGridLayout();
         gridLayout->setObjectName("gridLayout");
         horizontalLayout = new QHBoxLayout();
@@ -119,6 +124,24 @@ public:
 
         gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
 
+
+        verticalLayout_4->addLayout(gridLayout);
+
+        QHBoxGraficos = new QHBoxLayout();
+        QHBoxGraficos->setObjectName("QHBoxGraficos");
+        layoutGraficoResumo = new QVBoxLayout();
+        layoutGraficoResumo->setObjectName("layoutGraficoResumo");
+
+        QHBoxGraficos->addLayout(layoutGraficoResumo);
+
+        layoutGraficoPatrimonio = new QVBoxLayout();
+        layoutGraficoPatrimonio->setObjectName("layoutGraficoPatrimonio");
+
+        QHBoxGraficos->addLayout(layoutGraficoPatrimonio);
+
+
+        verticalLayout_4->addLayout(QHBoxGraficos);
+
         tabelaLancamentosRecentes = new QTableWidget(pageHome);
         if (tabelaLancamentosRecentes->columnCount() < 5)
             tabelaLancamentosRecentes->setColumnCount(5);
@@ -129,20 +152,14 @@ public:
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         tabelaLancamentosRecentes->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         tabelaLancamentosRecentes->setObjectName("tabelaLancamentosRecentes");
+        tabelaLancamentosRecentes->setMaximumSize(QSize(16777215, 150));
         tabelaLancamentosRecentes->setColumnCount(5);
 
-        gridLayout->addWidget(tabelaLancamentosRecentes, 2, 0, 1, 2);
+        verticalLayout_4->addWidget(tabelaLancamentosRecentes);
 
-        layoutGraficoResumo = new QVBoxLayout();
-        layoutGraficoResumo->setObjectName("layoutGraficoResumo");
+        verticalLayout_4->setStretch(1, 1);
 
-        gridLayout->addLayout(layoutGraficoResumo, 0, 1, 2, 1);
-
-        gridLayout->setRowStretch(2, 1);
-        gridLayout->setColumnStretch(0, 1);
-        gridLayout->setColumnStretch(1, 1);
-
-        horizontalLayout_2->addLayout(gridLayout);
+        horizontalLayout_2->addLayout(verticalLayout_4);
 
 
         retranslateUi(pageHome);

@@ -825,3 +825,52 @@ void LancamentoDAO::onDividendosReply(QNetworkReply *reply)
     }
     reply->deleteLater();
 }
+
+void LancamentoDAO::obterHistoricoPatrimonio(const QString& token)
+{
+    QNetworkRequest request(QUrl("http://localhost:3000/api/patrimonio/historico"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        if (reply->error() == QNetworkReply::NoError) {
+            QVector<HistoricoPatrimonio> historico;
+            QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
+            for (const QJsonValue &value : jsonArray) {
+                QJsonObject obj = value.toObject();
+                historico.append({obj["mes"].toString(), obj["patrimonio"].toDouble()});
+            }
+            emit historicoPatrimonioRecebido(historico);
+        } else {
+            emit erroOcorrido("Falha ao buscar histórico de patrimônio: " + reply->readAll());
+        }
+        reply->deleteLater();
+    });
+}
+
+void LancamentoDAO::obterTendenciaCategoria(int idCategoria, const QString& token)
+{
+    QUrl url("http://localhost:3000/api/relatorios/tendencia-categoria");
+    QUrlQuery query;
+    query.addQueryItem("id_categoria", QString::number(idCategoria));
+    url.setQuery(query);
+
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        if (reply->error() == QNetworkReply::NoError) {
+            QVector<PontoTendencia> tendencia;
+            QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
+            for (const QJsonValue &value : jsonArray) {
+                QJsonObject obj = value.toObject();
+                tendencia.append({obj["mes"].toString(), obj["total_gasto"].toDouble()});
+            }
+            emit tendenciaCategoriaRecebida(tendencia);
+        } else {
+            emit erroOcorrido("Falha ao buscar tendência da categoria: " + reply->readAll());
+        }
+        reply->deleteLater();
+    });
+}
