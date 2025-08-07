@@ -3,6 +3,7 @@ const mysql = require('mysql2/promise'); // Usamos a versão com "Promises" para
 const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
 const axios = require('axios');
+const jwt = require('jsonwebtoken');
 const app = express();
 const port = 3000;
 
@@ -77,6 +78,24 @@ async function obterCotacoes() {
   return cacheCotacoes.promessaPendente;
 }
 
+// Middleware para verificar o Token JWT
+const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // Formato "Bearer TOKEN"
+
+    if (token == null) {
+        return res.sendStatus(401); // Unauthorized - Nenhum token enviado
+    }
+
+    jwt.verify(token, 'sua_chave_super_secreta_pode_ser_qualquer_coisa', (err, user) => {
+        if (err) {
+            return res.sendStatus(403); // Forbidden - Token inválido ou expirado
+        }
+        req.user = user; // Salva os dados do usuário na requisição para uso futuro
+        next(); // Continua para a rota
+    });
+};
+
 // -----ROTAS DE USUARIO------
 
 app.get('/', (req, res) => {
@@ -96,26 +115,7 @@ app.get('/api/usuarios/inicial', async (req, res) => {
     }
 });
 
-// Rota para BUSCAR um usuário específico pelo ID
-app.get('/api/usuarios/:id', async (req, res) => {
-    try {
-        const { id } = req.params; // Captura o ID da URL (ex: o "22" de "/api/usuarios/22")
 
-        // Busca no banco de dados pelo usuário com o ID correspondente
-        const [users] = await pool.query('SELECT user_id, user_usuario FROM usuario WHERE user_id = ?', [id]);
-
-        if (users.length > 0) {
-            // Se encontrou, retorna o usuário como um objeto JSON
-            res.json(users[0]);
-        } else {
-            // Se não encontrou nenhum usuário com esse ID, retorna 404 Not Found
-            res.status(404).json({ message: 'Usuário não encontrado.' });
-        }
-    } catch (error) {
-        console.error("Erro ao buscar usuário por ID:", error);
-        res.status(500).json({ message: 'Erro interno do servidor.' });
-    }
-});
 
 // Rota para REGISTRAR um novo usuário
 app.post(
@@ -165,40 +165,6 @@ app.post(
         }
     }
 );
-
-const jwt = require('jsonwebtoken'); // Importa a nova biblioteca
-
-// Middleware para verificar o Token JWT
-const authenticateToken = (req, res, next) => {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; // Formato "Bearer TOKEN"
-
-    if (token == null) {
-        return res.sendStatus(401); // Unauthorized - Nenhum token enviado
-    }
-
-    jwt.verify(token, 'sua_chave_super_secreta_pode_ser_qualquer_coisa', (err, user) => {
-        if (err) {
-            return res.sendStatus(403); // Forbidden - Token inválido ou expirado
-        }
-        req.user = user; // Salva os dados do usuário na requisição para uso futuro
-        next(); // Continua para a rota
-    });
-};
-
-
-// Rota para BUSCAR TODOS os usuários (protegida por autenticação)
-app.get('/api/usuarios', authenticateToken, async (req, res) => {
-    try {
-        // Busca todos os usuários, selecionando apenas os campos necessários
-        const [users] = await pool.query('SELECT user_id, user_usuario FROM usuario');
-        res.json(users); // Retorna a lista de usuários como um array JSON
-    } catch (error) {
-        console.error("Erro ao buscar usuários:", error);
-        res.status(500).json({ message: 'Erro interno do servidor.' });
-    }
-});
-
 
 // Rota para LOGAR um usuário existente
 app.post(
@@ -259,6 +225,39 @@ app.post(
 );
 
 
+// Rota para BUSCAR TODOS os usuários (protegida por autenticação)
+app.get('/api/usuarios', authenticateToken, async (req, res) => {
+    try {
+        // Busca todos os usuários, selecionando apenas os campos necessários
+        const [users] = await pool.query('SELECT user_id, user_usuario FROM usuario');
+        res.json(users); // Retorna a lista de usuários como um array JSON
+    } catch (error) {
+        console.error("Erro ao buscar usuários:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+// Rota para BUSCAR um usuário específico pelo ID
+app.get('/api/usuarios/:id', async (req, res) => {
+    try {
+        const { id } = req.params; // Captura o ID da URL (ex: o "22" de "/api/usuarios/22")
+
+        // Busca no banco de dados pelo usuário com o ID correspondente
+        const [users] = await pool.query('SELECT user_id, user_usuario FROM usuario WHERE user_id = ?', [id]);
+
+        if (users.length > 0) {
+            // Se encontrou, retorna o usuário como um objeto JSON
+            res.json(users[0]);
+        } else {
+            // Se não encontrou nenhum usuário com esse ID, retorna 404 Not Found
+            res.status(404).json({ message: 'Usuário não encontrado.' });
+        }
+    } catch (error) {
+        console.error("Erro ao buscar usuário por ID:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
 // Rota para EXCLUIR um usuário (protegida por autenticação) - VERSÃO CORRIGIDA
 app.delete('/api/usuarios/:id', authenticateToken, async (req, res) => {
     try {
@@ -289,86 +288,6 @@ app.delete('/api/usuarios/:id', authenticateToken, async (req, res) => {
 });
 
 //------ROTAS DE LANÇAMENTO---------
-
-
-// Rota para BUSCAR TODOS os lançamentos do usuário logado (VERSÃO COM FILTROS)
-app.get('/api/lancamentos', authenticateToken, async (req, res) => {
-    try {
-        const usuarioId = req.user.userId;
-        const { data_inicio, data_fim, id_conta } = req.query;
-
-        // --- Lógica para montar a query dinâmica ---
-        let whereClauses = [`l.id_usuario = ?`];
-        let params = [usuarioId];
-
-        if (data_inicio) {
-            // Adiciona a hora inicial para pegar desde a meia-noite
-            whereClauses.push(`l.data_lancamento >= ?`);
-            params.push(`${data_inicio} 00:00:00`);
-        }   
-        if (data_fim) {
-            // Adiciona a hora final para pegar até o último segundo do dia
-            whereClauses.push(`l.data_lancamento <= ?`);
-            params.push(`${data_fim} 23:59:59`);
-        }
-        if (id_conta && id_conta != -1) {
-            whereClauses.push(`l.id_conta = ?`);
-            params.push(id_conta);
-        }
-
-        const query = `
-             SELECT
-                l.*,
-                c.nome as nome_conta,
-                cat.nome as nome_categoria
-             FROM lancamentos l
-             LEFT JOIN contas c ON l.id_conta = c.id_conta
-             LEFT JOIN categorias cat ON l.id_categoria = cat.id_categoria
-             WHERE ${whereClauses.join(' AND ')}
-             ORDER BY l.data_lancamento DESC, l.id DESC`;
-        // -----------------------------------------
-
-        console.log("Executando Query:", query);
-        console.log("Com Parâmetros:", params);
-
-        const [lancamentos] = await pool.query(query, params);
-        res.json(lancamentos);
-
-    } catch (error) {
-        console.error("Erro ao buscar lançamentos:", error);
-        res.status(500).json({ message: 'Erro interno do servidor.' });
-    }
-});
-
-
-// Rota para ADICIONAR um novo lançamento (VERSÃO ATUALIZADA)
-app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
-    try {
-        console.log("Backend recebeu o corpo da requisição:", req.body);
-
-        const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria, id_meta,
-                valor_original, moeda_codigo_original, taxa_cambio_usada } = req.body;
-        const id_usuario = req.user.userId;
-
-        if (!descricao || !valor || !data_lancamento || !tipo || !id_conta || !id_categoria) {
-            return res.status(400).json({ message: 'Campos principais são obrigatórios.' });
-        }
-
-        const [result] = await pool.query(
-            `INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria, id_meta, 
-                                      valor_original, moeda_codigo_original, taxa_cambio_usada) 
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-            [descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria, id_meta || null,
-             valor_original || valor, moeda_codigo_original || 'BRL', taxa_cambio_usada || 1]
-        );
-
-        res.status(201).json({ message: 'Lançamento adicionado com sucesso!', insertId: result.insertId });
-
-    } catch (error) {
-        console.error("Erro ao adicionar lançamento:", error);
-        res.status(500).json({ message: 'Erro interno do servidor.' });
-    }
-});
 
 // Rota para BUSCAR os lançamentos mais recentes de um usuário
 app.get('/api/lancamentos/recentes', authenticateToken, async (req, res) => {
@@ -465,6 +384,134 @@ app.get('/api/lancamentos/gastos/categoria', authenticateToken, async (req, res)
     }
 });
 
+// Rota para buscar o comparativo mensal de receitas e despesas
+app.get('/api/lancamentos/comparativo/mensal', authenticateToken, async (req, res) => {
+    try {
+        const usuarioId = req.user.userId;
+        const { data_inicio, data_fim, id_conta } = req.query;
+
+        // Montagem da query dinâmica (mesma lógica dos outros endpoints)
+        let whereClauses = [`id_usuario = ?`];
+        let params = [usuarioId];
+
+        if (data_inicio) {
+            whereClauses.push(`data_lancamento >= ?`);
+            params.push(data_inicio);
+        }
+        if (data_fim) {
+            whereClauses.push(`data_lancamento <= ?`);
+            params.push(data_fim);
+        }
+        if (id_conta && id_conta != -1) {
+            whereClauses.push(`id_conta = ?`);
+            params.push(id_conta);
+        }
+
+        // Esta é a query principal. Ela agrupa por ano/mês e usa SUM(CASE...)
+        // para "pivotar" as linhas de receita e despesa em colunas.
+        const query = `
+            SELECT
+                DATE_FORMAT(data_lancamento, '%Y-%m') as mes,
+                SUM(CASE WHEN tipo = 'Receita' THEN valor ELSE 0 END) as receitas,
+                SUM(CASE WHEN tipo = 'Despesa' THEN valor ELSE 0 END) as despesas
+            FROM
+                lancamentos
+            WHERE
+                ${whereClauses.join(' AND ')}
+            GROUP BY
+                YEAR(data_lancamento), MONTH(data_lancamento)
+            ORDER BY
+                mes ASC;
+        `;
+
+        const [results] = await pool.query(query, params);
+        res.json(results);
+
+    } catch (error) {
+        console.error("Erro ao buscar comparativo mensal:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+// Rota para ADICIONAR um novo lançamento (VERSÃO ATUALIZADA)
+app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
+    try {
+        console.log("Backend recebeu o corpo da requisição:", req.body);
+
+        const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria, id_meta,
+                valor_original, moeda_codigo_original, taxa_cambio_usada } = req.body;
+        const id_usuario = req.user.userId;
+
+        if (!descricao || !valor || !data_lancamento || !tipo || !id_conta || !id_categoria) {
+            return res.status(400).json({ message: 'Campos principais são obrigatórios.' });
+        }
+
+        const [result] = await pool.query(
+            `INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria, id_meta, 
+                                      valor_original, moeda_codigo_original, taxa_cambio_usada) 
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria, id_meta || null,
+             valor_original || valor, moeda_codigo_original || 'BRL', taxa_cambio_usada || 1]
+        );
+
+        res.status(201).json({ message: 'Lançamento adicionado com sucesso!', insertId: result.insertId });
+
+    } catch (error) {
+        console.error("Erro ao adicionar lançamento:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+// Rota para BUSCAR TODOS os lançamentos do usuário logado (VERSÃO COM FILTROS)
+app.get('/api/lancamentos', authenticateToken, async (req, res) => {
+    try {
+        const usuarioId = req.user.userId;
+        const { data_inicio, data_fim, id_conta } = req.query;
+
+        // --- Lógica para montar a query dinâmica ---
+        let whereClauses = [`l.id_usuario = ?`];
+        let params = [usuarioId];
+
+        if (data_inicio) {
+            // Adiciona a hora inicial para pegar desde a meia-noite
+            whereClauses.push(`l.data_lancamento >= ?`);
+            params.push(`${data_inicio} 00:00:00`);
+        }   
+        if (data_fim) {
+            // Adiciona a hora final para pegar até o último segundo do dia
+            whereClauses.push(`l.data_lancamento <= ?`);
+            params.push(`${data_fim} 23:59:59`);
+        }
+        if (id_conta && id_conta != -1) {
+            whereClauses.push(`l.id_conta = ?`);
+            params.push(id_conta);
+        }
+
+        const query = `
+             SELECT
+                l.*,
+                c.nome as nome_conta,
+                cat.nome as nome_categoria
+             FROM lancamentos l
+             LEFT JOIN contas c ON l.id_conta = c.id_conta
+             LEFT JOIN categorias cat ON l.id_categoria = cat.id_categoria
+             WHERE ${whereClauses.join(' AND ')}
+             ORDER BY l.data_lancamento DESC, l.id DESC`;
+        // -----------------------------------------
+
+        console.log("Executando Query:", query);
+        console.log("Com Parâmetros:", params);
+
+        const [lancamentos] = await pool.query(query, params);
+        res.json(lancamentos);
+
+    } catch (error) {
+        console.error("Erro ao buscar lançamentos:", error);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+
 // Rota para EDITAR (Atualizar) um lançamento existente
 app.put('/api/lancamentos/:id', authenticateToken, async (req, res) => {
     try {
@@ -519,55 +566,6 @@ app.delete('/api/lancamentos/:id', authenticateToken, async (req, res) => {
     }
 });
 
-// Rota para buscar o comparativo mensal de receitas e despesas
-app.get('/api/lancamentos/comparativo/mensal', authenticateToken, async (req, res) => {
-    try {
-        const usuarioId = req.user.userId;
-        const { data_inicio, data_fim, id_conta } = req.query;
-
-        // Montagem da query dinâmica (mesma lógica dos outros endpoints)
-        let whereClauses = [`id_usuario = ?`];
-        let params = [usuarioId];
-
-        if (data_inicio) {
-            whereClauses.push(`data_lancamento >= ?`);
-            params.push(data_inicio);
-        }
-        if (data_fim) {
-            whereClauses.push(`data_lancamento <= ?`);
-            params.push(data_fim);
-        }
-        if (id_conta && id_conta != -1) {
-            whereClauses.push(`id_conta = ?`);
-            params.push(id_conta);
-        }
-
-        // Esta é a query principal. Ela agrupa por ano/mês e usa SUM(CASE...)
-        // para "pivotar" as linhas de receita e despesa em colunas.
-        const query = `
-            SELECT
-                DATE_FORMAT(data_lancamento, '%Y-%m') as mes,
-                SUM(CASE WHEN tipo = 'Receita' THEN valor ELSE 0 END) as receitas,
-                SUM(CASE WHEN tipo = 'Despesa' THEN valor ELSE 0 END) as despesas
-            FROM
-                lancamentos
-            WHERE
-                ${whereClauses.join(' AND ')}
-            GROUP BY
-                YEAR(data_lancamento), MONTH(data_lancamento)
-            ORDER BY
-                mes ASC;
-        `;
-
-        const [results] = await pool.query(query, params);
-        res.json(results);
-
-    } catch (error) {
-        console.error("Erro ao buscar comparativo mensal:", error);
-        res.status(500).json({ message: 'Erro interno do servidor.' });
-    }
-});
-
 // --- ROTA PARA TENDÊNCIA DE GASTOS POR CATEGORIA ---
 app.get('/api/relatorios/tendencia-categoria', authenticateToken, async (req, res) => {
     try {
@@ -607,7 +605,7 @@ app.get('/api/relatorios/tendencia-categoria', authenticateToken, async (req, re
     }
 });
 
-// --- ROTAS PARA CONTAS E CATEGORIAS ---
+// --- ROTAS DE CATEGORIAS  ---
 
 // Rota para BUSCAR TODAS as categorias do usuário logado
 app.get('/api/categorias', authenticateToken, async (req, res) => {
@@ -923,6 +921,43 @@ app.delete('/api/metas/:id', authenticateToken, async (req, res) => {
 
 // --- ROTAS PARA INVESTIMENTOS (ATIVOS) ---
 
+// Rota para BUSCAR A POSIÇÃO CONSOLIDADA da carteira do usuário
+app.get('/api/ativos/portfolio', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+
+        // Query complexa que junta ativos e operações para calcular os totais
+        const query = `
+            SELECT
+                a.id_ativo,
+                a.ticker,
+                a.nome,
+                a.tipo_ativo,
+                COALESCE(SUM(CASE WHEN op.tipo_operacao = 'Compra' THEN op.quantidade ELSE -op.quantidade END), 0) as quantidade_total,
+                COALESCE(SUM(CASE WHEN op.tipo_operacao = 'Compra' THEN op.quantidade * op.preco_unitario + op.custos ELSE 0 END), 0) as custo_total
+            FROM
+                ativos a
+            LEFT JOIN
+                operacoes_investimentos op ON a.id_ativo = op.id_ativo
+            WHERE
+                a.id_usuario = ?
+            GROUP BY
+                a.id_ativo, a.ticker, a.nome, a.tipo_ativo
+            HAVING
+                quantidade_total > 0 -- Opcional: mostra apenas ativos que o usuário ainda possui
+            ORDER BY
+                custo_total DESC;
+        `;
+
+        const [portfolio] = await pool.query(query, [idUsuario]);
+        res.json(portfolio);
+
+    } catch (error) {
+        console.error("Erro ao buscar portfólio consolidado:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
 // Rota para BUSCAR TODOS os ativos da carteira do usuário
 app.get('/api/ativos', authenticateToken, async (req, res) => {
     try {
@@ -962,6 +997,51 @@ app.post('/api/ativos', authenticateToken, async (req, res) => {
         }
         console.error("Erro ao adicionar ativo:", error);
         res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para BUSCAR TODAS as operações de um ATIVO específico
+app.get('/api/ativos/:id/operacoes', authenticateToken, async (req, res) => {
+    try {
+        const idAtivo = req.params.id;
+        const idUsuario = req.user.userId;
+
+        // NENHUMA MUDANÇA NECESSÁRIA. "SELECT op.*" já inclui as novas colunas.
+        const [operacoes] = await pool.query(
+            `SELECT op.* FROM operacoes_investimentos op
+             JOIN ativos a ON op.id_ativo = a.id_ativo
+             WHERE op.id_ativo = ? AND a.id_usuario = ?
+             ORDER BY op.data_operacao DESC`,
+            [idAtivo, idUsuario]
+        );
+
+        res.json(operacoes);
+    } catch (error) {
+        console.error("Erro ao buscar operações do ativo:", error);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para BUSCAR TODOS os dividendos de um ATIVO específico
+app.get('/api/ativos/:id/dividendos', authenticateToken, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const id_usuario = req.user.userId;
+
+        // A query verifica se o ativo pertence ao usuário logado como uma camada de segurança
+        const [dividendos] = await pool.query(
+            `SELECT d.* FROM dividendos d
+             JOIN ativos a ON d.id_ativo = a.id_ativo
+             WHERE d.id_ativo = ? AND a.id_usuario = ?
+             ORDER BY d.data_pagamento DESC`,
+            [id, id_usuario]
+        );
+
+        res.json(dividendos);
+
+    } catch (error) {
+        console.error("Erro ao buscar dividendos:", error.message);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
     }
 });
 
@@ -1019,27 +1099,6 @@ app.delete('/api/ativos/:id', authenticateToken, async (req, res) => {
 
 // --- ROTAS PARA OPERAÇÕES DE INVESTIMENTOS ---
 
-// Rota para BUSCAR TODAS as operações de um ATIVO específico
-app.get('/api/ativos/:id/operacoes', authenticateToken, async (req, res) => {
-    try {
-        const idAtivo = req.params.id;
-        const idUsuario = req.user.userId;
-
-        // NENHUMA MUDANÇA NECESSÁRIA. "SELECT op.*" já inclui as novas colunas.
-        const [operacoes] = await pool.query(
-            `SELECT op.* FROM operacoes_investimentos op
-             JOIN ativos a ON op.id_ativo = a.id_ativo
-             WHERE op.id_ativo = ? AND a.id_usuario = ?
-             ORDER BY op.data_operacao DESC`,
-            [idAtivo, idUsuario]
-        );
-
-        res.json(operacoes);
-    } catch (error) {
-        console.error("Erro ao buscar operações do ativo:", error);
-        res.status(500).json({ message: "Erro interno do servidor" });
-    }
-});
 
 // Rota para ADICIONAR uma nova operação (compra/venda)
 app.post('/api/operacoes', authenticateToken, async (req, res) => {
@@ -1066,46 +1125,7 @@ app.post('/api/operacoes', authenticateToken, async (req, res) => {
     }
 });
 
-// Rota para BUSCAR A POSIÇÃO CONSOLIDADA da carteira do usuário
-app.get('/api/ativos/portfolio', authenticateToken, async (req, res) => {
-    try {
-        const idUsuario = req.user.userId;
-
-        // Query complexa que junta ativos e operações para calcular os totais
-        const query = `
-            SELECT
-                a.id_ativo,
-                a.ticker,
-                a.nome,
-                a.tipo_ativo,
-                COALESCE(SUM(CASE WHEN op.tipo_operacao = 'Compra' THEN op.quantidade ELSE -op.quantidade END), 0) as quantidade_total,
-                COALESCE(SUM(CASE WHEN op.tipo_operacao = 'Compra' THEN op.quantidade * op.preco_unitario + op.custos ELSE 0 END), 0) as custo_total
-            FROM
-                ativos a
-            LEFT JOIN
-                operacoes_investimentos op ON a.id_ativo = op.id_ativo
-            WHERE
-                a.id_usuario = ?
-            GROUP BY
-                a.id_ativo, a.ticker, a.nome, a.tipo_ativo
-            HAVING
-                quantidade_total > 0 -- Opcional: mostra apenas ativos que o usuário ainda possui
-            ORDER BY
-                custo_total DESC;
-        `;
-
-        const [portfolio] = await pool.query(query, [idUsuario]);
-        res.json(portfolio);
-
-    } catch (error) {
-        console.error("Erro ao buscar portfólio consolidado:", error);
-        res.status(500).json({ message: "Erro interno do servidor" });
-    }
-});
-
-
-// --- ROTA PARA PERFORMANCE DO PORTFOLIO ---
-
+// --- ROTA PARA PERFORMANCE DO PORTFOLIO 
 app.get('/api/portfolio/performance', authenticateToken, async (req, res) => {
     try {
         const idUsuario = req.user.userId;
@@ -1128,52 +1148,41 @@ app.get('/api/portfolio/performance', authenticateToken, async (req, res) => {
             return res.json({ custoTotal: 0, valorMercadoAtual: 0, rentabilidadeValor: 0, rentabilidadePercentual: 0 });
         }
 
-        // 2. Separa os tickers por tipo para buscar nas APIs corretas
         const tickersAcoes = portfolio.filter(a => a.tipo_ativo !== 'Criptomoeda').map(a => a.ticker).join(',');
-        const idsCripto = portfolio.filter(a => a.tipo_ativo === 'Criptomoeda').map(a => a.ticker.toLowerCase()).join(','); // CoinGecko usa IDs em minúsculas
+        const idsCripto = portfolio.filter(a => a.tipo_ativo === 'Criptomoeda').map(a => a.ticker.toLowerCase()).join(',');
 
         let precosAtuais = {};
 
-        // 3. Busca os preços das Ações/FIIs/BDRs na Brapi
         if (tickersAcoes) {
-            // Cole o seu token da Brapi aqui
             const brapiToken = '16mx42gc5NSbeGNMjeCiPC';
-
-            // Adicione o parâmetro ?token=... ao final da URL
             const responseBrapi = await axios.get(`https://brapi.dev/api/quote/${tickersAcoes}?token=${brapiToken}`);
-            
             responseBrapi.data.results.forEach(result => {
                 precosAtuais[result.symbol] = result.regularMarketPrice;
             });
         }
 
-        // 4. Busca os preços das Criptomoedas na CoinGecko
         if (idsCripto) {
-            // Buscamos em USD e BRL para ter flexibilidade
             const responseCoingecko = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${idsCripto}&vs_currencies=brl,usd`);
             for (const id in responseCoingecko.data) {
-                // A chave no nosso sistema é o símbolo (ex: BTC), que é o ID da coingecko em maiúsculas
-                precosAtuais[id.toUpperCase()] = responseCoingecko.data[id].brl; // Usamos o valor em BRL por padrão
+                precosAtuais[id.toUpperCase()] = responseCoingecko.data[id].brl;
             }
         }
         
-        // 5. Calcula o valor de mercado atual e o custo total
         let valorMercadoTotal = 0;
         let custoTotalConsolidado = 0;
 
         portfolio.forEach(ativo => {
             const preco = precosAtuais[ativo.ticker];
             if (preco) {
-                // TODO: Adicionar conversão de moeda se o ativo for estrangeiro (ex: BDR cotado em BRL)
                 valorMercadoTotal += ativo.quantidade_total * preco;
             }
             custoTotalConsolidado += ativo.custo_total;
         });
 
-        // 6. Calcula a rentabilidade
         const rentabilidadeValor = valorMercadoTotal - custoTotalConsolidado;
         const rentabilidadePercentual = (custoTotalConsolidado > 0) ? (rentabilidadeValor / custoTotalConsolidado) * 100 : 0;
 
+        // Resposta de sucesso enviada AQUI
         res.json({
             custoTotal: custoTotalConsolidado,
             valorMercadoAtual: valorMercadoTotal,
@@ -1184,20 +1193,19 @@ app.get('/api/portfolio/performance', authenticateToken, async (req, res) => {
     } catch (error) {
         console.error("Erro detalhado ao buscar performance do portfólio:");
         if (error.response) {
-            // A requisição foi feita e a API externa respondeu com um erro
             console.error("API Externa Respondeu com Dados:", error.response.data);
             console.error("API Externa Respondeu com Status:", error.response.status);
         } else if (error.request) {
-            // A requisição foi feita mas nenhuma resposta foi recebida
             console.error("Requisição feita, mas sem resposta:", error.request);
         } else {
-            // Algo aconteceu ao configurar a requisição
             console.error('Erro na configuração da requisição:', error.message);
         }
-        // Manter o log original também é útil
         console.error("Mensagem de erro original:", error.message);
-        }
+        
+        // CORREÇÃO: A resposta de erro agora está DENTRO do bloco catch
         res.status(500).json({ message: "Erro interno do servidor ao buscar dados externos." });
+    }
+    
 });
 
 // --- ROTAS PARA DIVIDENDOS ---
@@ -1228,28 +1236,6 @@ app.post('/api/dividendos', authenticateToken, async (req, res) => {
     }
 });
 
-// Rota para BUSCAR TODOS os dividendos de um ATIVO específico
-app.get('/api/ativos/:id/dividendos', authenticateToken, async (req, res) => {
-    try {
-        const { id } = req.params;
-        const id_usuario = req.user.userId;
-
-        // A query verifica se o ativo pertence ao usuário logado como uma camada de segurança
-        const [dividendos] = await pool.query(
-            `SELECT d.* FROM dividendos d
-             JOIN ativos a ON d.id_ativo = a.id_ativo
-             WHERE d.id_ativo = ? AND a.id_usuario = ?
-             ORDER BY d.data_pagamento DESC`,
-            [id, id_usuario]
-        );
-
-        res.json(dividendos);
-
-    } catch (error) {
-        console.error("Erro ao buscar dividendos:", error.message);
-        res.status(500).json({ message: 'Erro interno do servidor.' });
-    }
-});
 
 // --- ROTA PARA EVOLUÇÃO DO PATRIMÔNIO LÍQUIDO ---
 app.get('/api/patrimonio/historico', authenticateToken, async (req, res) => {
