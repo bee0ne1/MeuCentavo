@@ -6,6 +6,7 @@
 #include "DashboardPages/pageLancamentos.h"
 #include "DashboardPages/pageConfig.h"
 #include "DashboardPages/pageRelatorios.h"
+#include "DashboardPages/pageDividas.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -41,6 +42,7 @@ void formMainDashboard::setupPaginas()
     m_pageRelatorios = new pageRelatorios(this);
     m_pageMetas = new pageMetas(this);
     m_pageInvestimentos = new pageInvestimentos(this);
+    m_pageDividas = new pageDividas(this);
     m_pageConfig = new pageConfig(this);
 
     // Adiciona as páginas ao "baralho"
@@ -49,7 +51,8 @@ void formMainDashboard::setupPaginas()
     ui->stackedWidgetConteudo->addWidget(m_pageRelatorios);     // Índice 2
     ui->stackedWidgetConteudo->addWidget(m_pageMetas);          //indice 3
     ui->stackedWidgetConteudo->addWidget(m_pageInvestimentos); //indice 4
-    ui->stackedWidgetConteudo->addWidget(m_pageConfig);         // indice 5
+    ui->stackedWidgetConteudo->addWidget(m_pageDividas); //indice 5
+    ui->stackedWidgetConteudo->addWidget(m_pageConfig);         // indice 6
 
 
     connect(m_pageLancamentos, &pageLancamentos::dadosAtualizados, m_pageHome, &pageHome::atualizarDados);
@@ -88,9 +91,18 @@ void formMainDashboard::on_buttonInvestimentos_clicked()
     ui->stackedWidgetConteudo->setCurrentIndex(4);
 }
 
+void formMainDashboard::on_buttonDividas_clicked()
+{
+    // Pede para a página carregar/atualizar seus dados
+    m_pageDividas->carregarDados();
+    // Muda para o índice correto da página de dívidas
+    ui->stackedWidgetConteudo->setCurrentIndex(5);
+}
+
+
 void formMainDashboard::on_buttonConfiguracoes_clicked()
 {
-    ui->stackedWidgetConteudo->setCurrentIndex(5);
+    ui->stackedWidgetConteudo->setCurrentIndex(6);
 }
 
 void formMainDashboard::on_buttonSwitchUsuario_clicked()

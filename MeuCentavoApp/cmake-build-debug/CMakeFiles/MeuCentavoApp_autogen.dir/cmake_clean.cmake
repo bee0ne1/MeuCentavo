@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MeuCentavoApp_autogen"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/DashboardPages/ui_pageConfig.h"
+  "MeuCentavoApp_autogen/include/Designer/FormsDashboard/DashboardPages/ui_pageDividas.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/DashboardPages/ui_pageHome.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/DashboardPages/ui_pageInvestimentos.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/DashboardPages/ui_pageLancamentos.h"
@@ -9,6 +10,7 @@ file(REMOVE_RECURSE
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_dialogAddEditConta.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_formGerenciarCategorias.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_formGerenciarContas.h"
+  "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsDividas/ui_dialogSimularPlano.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsInvestimentos/ui_dialogAddDividendo.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsInvestimentos/ui_dialogAddEditAtivo.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsInvestimentos/ui_dialogAddEditOperacao.h"

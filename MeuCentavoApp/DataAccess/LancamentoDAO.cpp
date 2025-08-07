@@ -874,3 +874,57 @@ void LancamentoDAO::obterTendenciaCategoria(int idCategoria, const QString& toke
         reply->deleteLater();
     });
 }
+
+void LancamentoDAO::simularPlanoQuitacao(double valorExtra, const QString& estrategia, const QString& token)
+{
+    QJsonObject jsonBody;
+    jsonBody["valorExtraMensal"] = valorExtra;
+    jsonBody["estrategia"] = estrategia;
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/dividas/simular-plano"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(jsonBody).toJson());
+
+    // Conectamos a resposta ao nosso novo slot de processamento
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onPlanoSimuladoReply(reply);
+    });
+}
+
+void LancamentoDAO::onPlanoSimuladoReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QJsonObject resultadoJson = QJsonDocument::fromJson(reply->readAll()).object();
+
+        QJsonArray cronogramaArray = resultadoJson["cronograma"].toArray();
+        int mesesTotais = resultadoJson["mesesTotais"].toInt();
+        QVector<LinhaCronograma> cronogramaProcessado;
+
+        for (const QJsonValue& mesValue : cronogramaArray) {
+            QJsonObject mesObj = mesValue.toObject();
+            int mesAtual = mesObj["mes"].toInt();
+
+            QJsonArray pagamentosArray = mesObj["pagamentos"].toArray();
+            for (const QJsonValue& pagValue : pagamentosArray) {
+                QJsonObject pagObj = pagValue.toObject();
+
+                LinhaCronograma linha;
+                linha.mes = mesAtual;
+                linha.nomeDivida = pagObj["nome"].toString();
+                linha.valorPago = pagObj["valorPago"].toDouble();
+                linha.saldoRestante = pagObj["saldoRestante"].toDouble();
+
+                cronogramaProcessado.append(linha);
+            }
+        }
+
+        // Emitimos o sinal com os dados já "traduzidos" para C++
+        emit planoSimuladoRecebido(cronogramaProcessado, mesesTotais);
+
+    } else {
+        emit erroOcorrido("Falha ao simular plano: " + reply->readAll());
+    }
+    reply->deleteLater();
+}

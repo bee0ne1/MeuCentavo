@@ -58,6 +58,13 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="buttonDividas">
+             <property name="text">
+              <string>Dívidas</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="buttonConfiguracoes">
              <property name="text">
               <string>Configurações</string>

@@ -21,15 +21,15 @@ const pool = mysql.createPool({
   decimalNumbers: true
 });
 
-// --- LÓGICA DE COTAÇÃO DE CÂMBIO ---
+// --- LÓGICA DE COTAÇÃO DE CÂMBIO (VERSÃO CORRIGIDA) ---
 
 // Cache em memória para evitar chamar a API a cada requisição
 let cacheCotacoes = {
   timestamp: 0,
-  taxas: null
+  taxas: null,
+  promessaPendente: null // Guarda a requisição que está em andamento
 };
 
-// Função assíncrona para buscar as cotações
 async function obterCotacoes() {
   const agora = Date.now();
   // Validade do cache: 1 hora (3600000 milissegundos)
@@ -38,33 +38,43 @@ async function obterCotacoes() {
     return cacheCotacoes.taxas;
   }
 
-  try {
-    console.log("Buscando novas cotações da API externa...");
-    // **IMPORTANTE: SUBSTITUA 'SUA_CHAVE_DE_API_AQUI' PELA SUA CHAVE**
-    const apiKey = '43948e889cc19dd294bbe5ea';
-    const response = await axios.get(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/BRL`);
-
-    const taxasDaApi = response.data.conversion_rates;
-    const taxasRelevantes = {
-      BRL: 1, // A base é sempre 1
-      USD: taxasDaApi.USD,
-      EUR: taxasDaApi.EUR
-      // Adicione outras moedas aqui se precisar
-    };
-
-    // Atualiza o cache
-    cacheCotacoes = {
-      timestamp: agora,
-      taxas: taxasRelevantes
-    };
-
-    return taxasRelevantes;
-
-  } catch (error) {
-    console.error("Erro ao buscar cotações:", error.message);
-    // Em caso de erro, retorna taxas fixas para não quebrar a aplicação
-    return { BRL: 1, USD: 5.0, EUR: 6.0 };
+  // Se já existe uma requisição em andamento, não faça uma nova, apenas espere a existente terminar.
+  if (cacheCotacoes.promessaPendente) {
+    console.log("Aguardando requisição de cotação já em andamento...");
+    return cacheCotacoes.promessaPendente;
   }
+
+  // Cria a promessa da requisição e a armazena no cache
+  cacheCotacoes.promessaPendente = (async () => {
+    try {
+      console.log("Buscando novas cotações da API externa...");
+      const apiKey = '43948e889cc19dd294bbe5ea';
+      const response = await axios.get(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/BRL`);
+
+      const taxasDaApi = response.data.conversion_rates;
+      const taxasRelevantes = {
+        BRL: 1,
+        USD: taxasDaApi.USD,
+        EUR: taxasDaApi.EUR
+      };
+
+      // Atualiza o cache com os dados e o tempo
+      cacheCotacoes.taxas = taxasRelevantes;
+      cacheCotacoes.timestamp = Date.now();
+      
+      return taxasRelevantes;
+
+    } catch (error) {
+      console.error("Erro ao buscar cotações:", error.message);
+      // Em caso de erro, retorna taxas fixas para não quebrar a aplicação
+      return { BRL: 1, USD: 5.0, EUR: 6.0 };
+    } finally {
+        // Independentemente de sucesso ou falha, limpa a promessa pendente
+        cacheCotacoes.promessaPendente = null;
+    }
+  })();
+
+  return cacheCotacoes.promessaPendente;
 }
 
 // -----ROTAS DE USUARIO------
@@ -1286,6 +1296,84 @@ app.get('/api/patrimonio/historico', authenticateToken, async (req, res) => {
     }
 });
 
+// --- ROTA PARA SIMULAR PLANO DE QUITAÇÃO DE DÍVIDAS ---
+app.post('/api/dividas/simular-plano', authenticateToken, async (req, res) => {
+    
+    console.log("Backend recebeu para simulação:", req.body);
+    const idUsuario = req.user.userId;
+    const { valorExtraMensal, estrategia } = req.body;
+
+    if (!estrategia || !valorExtraMensal || valorExtraMensal < 0) {
+        return res.status(400).json({ message: 'Estratégia e valor extra mensal são obrigatórios.' });
+    }
+
+    try {
+        // 1. Busca todas as dívidas ativas do usuário
+        const [dividas] = await pool.query(
+            "SELECT id_conta, nome, saldo_inicial as saldo_devedor, taxa_juros FROM contas WHERE id_usuario = ? AND tipo_conta IN ('Financiamento', 'Empréstimo', 'Cartão de Crédito') AND saldo_inicial > 0",
+            [idUsuario]
+        );
+
+        if (dividas.length === 0) {
+            return res.json({ cronograma: [], mesesTotais: 0, totalPago: 0, jurosEconomizados: 0 });
+        }
+
+        // 2. Ordena as dívidas de acordo com a estratégia escolhida
+        if (estrategia === 'Avalanche') {
+            // Maior taxa de juros primeiro
+            dividas.sort((a, b) => b.taxa_juros - a.taxa_juros);
+        } else if (estrategia === 'Bola de Neve') {
+            // Menor saldo devedor primeiro
+            dividas.sort((a, b) => a.saldo_devedor - b.saldo_devedor);
+        }
+
+        // 3. Inicia a simulação
+        let cronograma = [];
+        let meses = 0;
+        let pagamentoExtraDisponivel = parseFloat(valorExtraMensal);
+        let dividasAtivas = JSON.parse(JSON.stringify(dividas)); // Cópia profunda para simulação
+
+        while (dividasAtivas.some(d => d.saldo_devedor > 0) && meses < 360) { // Limite de 30 anos
+            meses++;
+            let pagamentoEsteMes = { mes: meses, pagamentos: [] };
+            
+            // Foca todo o pagamento extra na primeira dívida da lista (a prioritária)
+            dividasAtivas[0].saldo_devedor -= pagamentoExtraDisponivel;
+
+            pagamentoEsteMes.pagamentos.push({
+                nome: dividasAtivas[0].nome,
+                valorPago: pagamentoExtraDisponivel,
+                saldoRestante: Math.max(0, dividasAtivas[0].saldo_devedor)
+            });
+
+            // Se uma dívida foi quitada, o valor pago a ela se torna parte da "bola de neve"
+            if (dividasAtivas[0].saldo_devedor <= 0) {
+                const pagamentoRemanescente = Math.abs(dividasAtivas[0].saldo_devedor);
+                // No mundo real, aqui entraria o pagamento mínimo da próxima dívida.
+                // Para simplificar, vamos assumir que o "pagamento mínimo" é o juro.
+                // Esta é uma simplificação para V1. O valor extra se aplica à próxima.
+                dividasAtivas.shift(); // Remove a dívida quitada
+                if (dividasAtivas.length > 0) {
+                    dividasAtivas[0].saldo_devedor -= pagamentoRemanescente;
+                }
+            }
+
+            // Recalcula juros para o próximo mês (simplificado)
+            dividasAtivas.forEach(d => {
+                const jurosMensal = (d.taxa_juros / 100) / 12;
+                d.saldo_devedor *= (1 + jurosMensal);
+            });
+            
+            cronograma.push(pagamentoEsteMes);
+        }
+
+        res.json({ cronograma: cronograma, mesesTotais: meses });
+
+    } catch (error) {
+        console.error("Erro ao simular plano de quitação:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
 
 // Inicia o servidor
 app.listen(port, () => {

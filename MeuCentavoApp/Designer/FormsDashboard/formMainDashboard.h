@@ -17,6 +17,7 @@ class formUsuario;
 class pageConfig;
 class pageMetas;
 class pageInvestimentos;
+class pageDividas;
 
 class formMainDashboard : public QMainWindow
 {
@@ -35,9 +36,11 @@ private slots:
     void on_buttonSwitchUsuario_clicked();
     void on_buttonMetas_clicked();
     void on_buttonInvestimentos_clicked();
+    void on_buttonDividas_clicked();
 
 private:
     void setupPaginas();
+    pageDividas *m_pageDividas;
 
     Ui::formMainDashboard *ui;
     // Não precisamos mais de m_db ou m_usuarioAtual aqui!

@@ -251,6 +251,30 @@ Designer/FormsDashboard/DashboardPages/pageConfig.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.s
 .PHONY : Designer/FormsDashboard/DashboardPages/pageConfig.cpp.s
 
+Designer/FormsDashboard/DashboardPages/pageDividas.o: Designer/FormsDashboard/DashboardPages/pageDividas.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageDividas.o
+
+# target to build an object file
+Designer/FormsDashboard/DashboardPages/pageDividas.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageDividas.cpp.o
+.PHONY : Designer/FormsDashboard/DashboardPages/pageDividas.cpp.o
+
+Designer/FormsDashboard/DashboardPages/pageDividas.i: Designer/FormsDashboard/DashboardPages/pageDividas.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageDividas.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/DashboardPages/pageDividas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageDividas.cpp.i
+.PHONY : Designer/FormsDashboard/DashboardPages/pageDividas.cpp.i
+
+Designer/FormsDashboard/DashboardPages/pageDividas.s: Designer/FormsDashboard/DashboardPages/pageDividas.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageDividas.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/DashboardPages/pageDividas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageDividas.cpp.s
+.PHONY : Designer/FormsDashboard/DashboardPages/pageDividas.cpp.s
+
 Designer/FormsDashboard/DashboardPages/pageHome.o: Designer/FormsDashboard/DashboardPages/pageHome.cpp.o
 .PHONY : Designer/FormsDashboard/DashboardPages/pageHome.o
 
@@ -442,6 +466,30 @@ Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.s: Designer/Forms
 Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s
 .PHONY : Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.s
+
+Designer/FormsDashboard/FormsDividas/dialogSimularPlano.o: Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.o
+.PHONY : Designer/FormsDashboard/FormsDividas/dialogSimularPlano.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.o
+.PHONY : Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.o
+
+Designer/FormsDashboard/FormsDividas/dialogSimularPlano.i: Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.i
+.PHONY : Designer/FormsDashboard/FormsDividas/dialogSimularPlano.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.i
+.PHONY : Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.i
+
+Designer/FormsDashboard/FormsDividas/dialogSimularPlano.s: Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.s
+.PHONY : Designer/FormsDashboard/FormsDividas/dialogSimularPlano.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.s
+.PHONY : Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.s
 
 Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.o: Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.o
 .PHONY : Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.o
@@ -922,6 +970,9 @@ help:
 	@echo "... Designer/FormsDashboard/DashboardPages/pageConfig.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageConfig.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageConfig.s"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageDividas.o"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageDividas.i"
+	@echo "... Designer/FormsDashboard/DashboardPages/pageDividas.s"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageHome.s"
@@ -946,6 +997,9 @@ help:
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.o"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.i"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.s"
+	@echo "... Designer/FormsDashboard/FormsDividas/dialogSimularPlano.o"
+	@echo "... Designer/FormsDashboard/FormsDividas/dialogSimularPlano.i"
+	@echo "... Designer/FormsDashboard/FormsDividas/dialogSimularPlano.s"
 	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.o"
 	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.i"
 	@echo "... Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.s"

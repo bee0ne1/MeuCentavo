@@ -26,6 +26,14 @@ struct PontoTendencia {
     double total;
 };
 
+// DEFINIÇÃO DA STRUCT PARA O RESULTADO DA SIMULAÇÃO
+struct LinhaCronograma {
+    int mes;
+    QString nomeDivida;
+    double valorPago;
+    double saldoRestante;
+};
+
 class LancamentoDAO : public QObject
 {
 
@@ -67,7 +75,7 @@ public:
     void obterDividendosDeAtivo(int idAtivo, const QString& token);
     void obterHistoricoPatrimonio(const QString& token);
     void obterTendenciaCategoria(int idCategoria, const QString& token);
-
+    void simularPlanoQuitacao(double valorExtra, const QString& estrategia, const QString& token);
 
 signals:
         // --- SINAIS DE RESULTADO (A RESPOSTA PARA A INTERFACE) ---
@@ -94,7 +102,7 @@ signals:
     void dividendosRecebidos(const QVector<Dividendo>& dividendos);
     void historicoPatrimonioRecebido(const QVector<HistoricoPatrimonio>& historico);
     void tendenciaCategoriaRecebida(const QVector<PontoTendencia>& tendencia);
-
+    void planoSimuladoRecebido(const QVector<LinhaCronograma>& cronograma, int mesesTotais);
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---
@@ -113,6 +121,7 @@ private slots:
     void onOperacoesReply(QNetworkReply *reply);
     void onModificarOperacaoReply(QNetworkReply *reply);
     void onDividendosReply(QNetworkReply *reply);
+    void onPlanoSimuladoReply(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *m_manager;

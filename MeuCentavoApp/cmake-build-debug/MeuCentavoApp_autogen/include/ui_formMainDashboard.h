@@ -36,6 +36,7 @@ public:
     QPushButton *buttonRelatorios;
     QPushButton *buttonMetas;
     QPushButton *buttonInvestimentos;
+    QPushButton *buttonDividas;
     QPushButton *buttonConfiguracoes;
     QPushButton *buttonSwitchUsuario;
     QStackedWidget *stackedWidgetConteudo;
@@ -85,6 +86,11 @@ public:
         buttonInvestimentos->setObjectName("buttonInvestimentos");
 
         verticalLayout->addWidget(buttonInvestimentos);
+
+        buttonDividas = new QPushButton(menuContainer);
+        buttonDividas->setObjectName("buttonDividas");
+
+        verticalLayout->addWidget(buttonDividas);
 
         buttonConfiguracoes = new QPushButton(menuContainer);
         buttonConfiguracoes->setObjectName("buttonConfiguracoes");
@@ -149,6 +155,7 @@ public:
         buttonRelatorios->setText(QCoreApplication::translate("formMainDashboard", "Relat\303\263rios", nullptr));
         buttonMetas->setText(QCoreApplication::translate("formMainDashboard", "Metas", nullptr));
         buttonInvestimentos->setText(QCoreApplication::translate("formMainDashboard", "Investimentos", nullptr));
+        buttonDividas->setText(QCoreApplication::translate("formMainDashboard", "D\303\255vidas", nullptr));
         buttonConfiguracoes->setText(QCoreApplication::translate("formMainDashboard", "Configura\303\247\303\265es", nullptr));
         buttonSwitchUsuario->setText(QCoreApplication::translate("formMainDashboard", "Trocar Usu\303\241rio", nullptr));
     } // retranslateUi
