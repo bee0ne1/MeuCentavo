@@ -135,6 +135,7 @@ void formGerenciarContas::editarConta(const Conta& conta)
     dialog.setConta(conta); // Pré-preenche o diálogo com os dados da conta
     if (dialog.exec() == QDialog::Accepted) {
         Conta contaEditada = dialog.getConta();
+
         QString token = SessionManager::instance().getToken();
         m_dao->editarConta(contaEditada, token);
     }

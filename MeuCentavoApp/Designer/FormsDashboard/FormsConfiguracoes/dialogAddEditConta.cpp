@@ -46,10 +46,14 @@ void DialogAddEditConta::setConta(const Conta& conta)
     if (index != -1) { // -1 significa que não encontrou
         ui->comboMoeda->setCurrentIndex(index);
     }
+    // 1. Verifica diretamente se o tipo da CONTA recebida é uma dívida
+    bool isDivida = (conta.tipo_conta == "Financiamento" || conta.tipo_conta == "Empréstimo" || conta.tipo_conta == "Cartão de Crédito");
 
-    // --- PREENCHE OS NOVOS CAMPOS SE FOREM UMA DÍVIDA ---
-    onTipoContaChanged(conta.tipo_conta); // Garante que o groupBox apareça se for uma dívida
-    if (ui->groupBoxDivida->isVisible()) {
+    // 2. Torna o group box visível com base nessa verificação
+    ui->groupBoxDivida->setVisible(isDivida);
+
+    // 3. Se for uma dívida, preenche os campos com os dados do objeto 'conta'
+    if (isDivida) {
         ui->spinBoxJuros->setValue(conta.taxa_juros);
         ui->spinBoxValorTotalDivida->setValue(conta.valor_total_divida);
         if (conta.data_vencimento.isValid()) {
@@ -70,15 +74,17 @@ Conta DialogAddEditConta::getConta() const
     c.saldo_inicial = ui->spinBoxSaldo->value();
     c.moeda_codigo = ui->comboMoeda->currentData().toString();
 
-    // --- COLETA OS DADOS DOS NOVOS CAMPOS SE FOREM UMA DÍVIDA ---
-    if (ui->groupBoxDivida->isVisible()) {
+    // Verifica se o tipo de conta é uma dívida para decidir se lê os campos extras.
+    if (c.tipo_conta == "Financiamento" || c.tipo_conta == "Empréstimo" || c.tipo_conta == "Cartão de Crédito") {
+        // Se for uma dívida, LÊ os valores dos campos do groupBoxDivida
         c.taxa_juros = ui->spinBoxJuros->value();
         c.valor_total_divida = ui->spinBoxValorTotalDivida->value();
         c.data_vencimento = ui->dateEditVencimento->date();
     } else {
-        // Garante que os campos sejam nulos se não for uma dívida
+        // Se NÃO for uma dívida, garante que os campos sejam zerados/nulos
         c.taxa_juros = 0;
         c.valor_total_divida = 0;
+        // Definir uma data inválida para campos não aplicáveis
         c.data_vencimento = QDate();
     }
 

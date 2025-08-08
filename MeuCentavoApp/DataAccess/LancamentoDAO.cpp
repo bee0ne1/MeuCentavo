@@ -349,9 +349,14 @@ void LancamentoDAO::onObterContasReply(QNetworkReply *reply)
             c.tipo_conta = obj["tipo_conta"].toString();
             c.saldo_inicial = obj["saldo_inicial"].toDouble();
             c.id_usuario = obj["id_usuario"].toInt();
-
-            // <-- ALTERAÇÃO MÚLTIPLA MOEDA -->
             c.moeda_codigo = obj["moeda_codigo"].toString();
+
+            // --- CORREÇÃO: LEIA OS CAMPOS DA DÍVIDA DO JSON ---
+            c.taxa_juros = obj["taxa_juros"].toDouble();
+            c.valor_total_divida = obj["valor_total_divida"].toDouble();
+            if (obj.contains("data_vencimento") && !obj["data_vencimento"].isNull()) {
+                c.data_vencimento = QDate::fromString(obj["data_vencimento"].toString().left(10), Qt::ISODate);
+            }
 
             lista.append(c);
         }
@@ -369,8 +374,16 @@ void LancamentoDAO::adicionarConta(const Conta& conta, const QString& token)
     json["nome"] = conta.nome;
     json["tipo_conta"] = conta.tipo_conta;
     json["saldo_inicial"] = conta.saldo_inicial;
-    // <-- ALTERAÇÃO MÚLTIPLA MOEDA -->
     json["moeda_codigo"] = conta.moeda_codigo;
+
+    // --- CORREÇÃO: ADICIONE ESTES CAMPOS DA DÍVIDA ---
+    if (conta.valor_total_divida > 0) { // Enviamos apenas se for uma dívida
+        json["taxa_juros"] = conta.taxa_juros;
+        json["valor_total_divida"] = conta.valor_total_divida;
+        if (conta.data_vencimento.isValid()) {
+            json["data_vencimento"] = conta.data_vencimento.toString(Qt::ISODate);
+        }
+    }
 
     QNetworkRequest request(QUrl("http://localhost:3000/api/contas"));
     request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
@@ -393,8 +406,17 @@ void LancamentoDAO::editarConta(const Conta& conta, const QString& token)
     json["nome"] = conta.nome;
     json["tipo_conta"] = conta.tipo_conta;
     json["saldo_inicial"] = conta.saldo_inicial;
-    // <-- ALTERAÇÃO MÚLTIPLA MOEDA -->
     json["moeda_codigo"] = conta.moeda_codigo;
+
+
+    // --- CORREÇÃO: ADICIONE ESTES CAMPOS DA DÍVIDA TAMBÉM AQUI ---
+    if (conta.tipo_conta == "Financiamento" || conta.tipo_conta == "Empréstimo" || conta.tipo_conta == "Cartão de Crédito") {
+        json["taxa_juros"] = conta.taxa_juros;
+        json["valor_total_divida"] = conta.valor_total_divida;
+        if (conta.data_vencimento.isValid()) {
+            json["data_vencimento"] = conta.data_vencimento.toString(Qt::ISODate);
+        }
+    }
 
     // Debug para confirmar o JSON
     qDebug() << "JSON enviado para editar conta:" << QJsonDocument(json).toJson(QJsonDocument::Indented);
