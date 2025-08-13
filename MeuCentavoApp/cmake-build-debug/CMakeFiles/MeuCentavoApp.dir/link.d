@@ -34,6 +34,8 @@ MeuCentavoApp: \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageDividas.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o \
   /usr/lib/libQt6Sql.so.6.9.1 \
   /usr/lib/libQt6Charts.so.6.9.1 \
@@ -201,6 +203,10 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAd
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageDividas.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o:
 

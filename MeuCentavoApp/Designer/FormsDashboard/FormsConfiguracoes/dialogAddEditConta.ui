@@ -218,7 +218,10 @@
          <item>
           <widget class="QDialogButtonBox" name="buttonBox">
            <property name="standardButtons">
-            <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+            <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Save</set>
+           </property>
+           <property name="centerButtons">
+            <bool>false</bool>
            </property>
           </widget>
          </item>

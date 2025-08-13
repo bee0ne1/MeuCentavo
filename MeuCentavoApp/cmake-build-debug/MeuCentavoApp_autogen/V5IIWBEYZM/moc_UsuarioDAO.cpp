@@ -58,13 +58,24 @@ template <> constexpr inline auto UsuarioDAO::qt_create_metaobjectdata<qt_meta_t
         "registroFalhou",
         "motivo",
         "remocaoSucesso",
+        "perfisRecebidos",
+        "QList<Perfil>",
+        "perfis",
+        "perfilAdicionadoComSucesso",
+        "novoTokenRecebido",
+        "novoToken",
+        "perfilExcluidoComSucesso",
         "onRegistroReply",
         "QNetworkReply*",
         "reply",
         "onLoginReply",
         "onObterTodosReply",
         "onUsuarioPreferencialReply",
-        "onRemoverUsuarioReply"
+        "onRemoverUsuarioReply",
+        "onObterPerfisReply",
+        "onAdicionarPerfilReply",
+        "onSelecionarPerfilReply",
+        "onExcluirPerfilReply"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -98,25 +109,53 @@ template <> constexpr inline auto UsuarioDAO::qt_create_metaobjectdata<qt_meta_t
         }}),
         // Signal 'remocaoSucesso'
         QtMocHelpers::SignalData<void()>(18, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'onRegistroReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(19, 2, QMC::AccessPrivate, QMetaType::Void, {{
+        // Signal 'perfisRecebidos'
+        QtMocHelpers::SignalData<void(const QVector<Perfil> &)>(19, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 20, 21 },
+        }}),
+        // Signal 'perfilAdicionadoComSucesso'
+        QtMocHelpers::SignalData<void()>(22, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'novoTokenRecebido'
+        QtMocHelpers::SignalData<void(const QString &, const Usuario &)>(23, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 24 }, { 0x80000000 | 3, 7 },
+        }}),
+        // Signal 'perfilExcluidoComSucesso'
+        QtMocHelpers::SignalData<void()>(25, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'onRegistroReply'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(26, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 },
         }}),
         // Slot 'onLoginReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(22, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 20, 21 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(29, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 },
         }}),
         // Slot 'onObterTodosReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(23, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 20, 21 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(30, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 },
         }}),
         // Slot 'onUsuarioPreferencialReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(24, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 20, 21 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(31, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 },
         }}),
         // Slot 'onRemoverUsuarioReply'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(25, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 20, 21 },
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(32, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 },
+        }}),
+        // Slot 'onObterPerfisReply'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(33, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 },
+        }}),
+        // Slot 'onAdicionarPerfilReply'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(34, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 },
+        }}),
+        // Slot 'onSelecionarPerfilReply'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(35, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 },
+        }}),
+        // Slot 'onExcluirPerfilReply'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(36, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -149,12 +188,32 @@ void UsuarioDAO::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 5: _t->usuarioInicialRecebido((*reinterpret_cast< std::add_pointer_t<std::optional<Usuario>>>(_a[1]))); break;
         case 6: _t->registroFalhou((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 7: _t->remocaoSucesso(); break;
-        case 8: _t->onRegistroReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 9: _t->onLoginReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 10: _t->onObterTodosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 11: _t->onUsuarioPreferencialReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
-        case 12: _t->onRemoverUsuarioReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 8: _t->perfisRecebidos((*reinterpret_cast< std::add_pointer_t<QList<Perfil>>>(_a[1]))); break;
+        case 9: _t->perfilAdicionadoComSucesso(); break;
+        case 10: _t->novoTokenRecebido((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<Usuario>>(_a[2]))); break;
+        case 11: _t->perfilExcluidoComSucesso(); break;
+        case 12: _t->onRegistroReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 13: _t->onLoginReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 14: _t->onObterTodosReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 15: _t->onUsuarioPreferencialReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 16: _t->onRemoverUsuarioReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 17: _t->onObterPerfisReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 18: _t->onAdicionarPerfilReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 19: _t->onSelecionarPerfilReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 20: _t->onExcluirPerfilReply((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
         default: ;
+        }
+    }
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+        case 8:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QList<Perfil> >(); break;
+            }
+            break;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
@@ -173,6 +232,14 @@ void UsuarioDAO::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         if (QtMocHelpers::indexOfMethod<void (UsuarioDAO::*)(const QString & )>(_a, &UsuarioDAO::registroFalhou, 6))
             return;
         if (QtMocHelpers::indexOfMethod<void (UsuarioDAO::*)()>(_a, &UsuarioDAO::remocaoSucesso, 7))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (UsuarioDAO::*)(const QVector<Perfil> & )>(_a, &UsuarioDAO::perfisRecebidos, 8))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (UsuarioDAO::*)()>(_a, &UsuarioDAO::perfilAdicionadoComSucesso, 9))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (UsuarioDAO::*)(const QString & , const Usuario & )>(_a, &UsuarioDAO::novoTokenRecebido, 10))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (UsuarioDAO::*)()>(_a, &UsuarioDAO::perfilExcluidoComSucesso, 11))
             return;
     }
 }
@@ -196,14 +263,14 @@ int UsuarioDAO::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 21;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
-            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 13;
+        if (_id < 21)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 21;
     }
     return _id;
 }
@@ -254,5 +321,29 @@ void UsuarioDAO::registroFalhou(const QString & _t1)
 void UsuarioDAO::remocaoSucesso()
 {
     QMetaObject::activate(this, &staticMetaObject, 7, nullptr);
+}
+
+// SIGNAL 8
+void UsuarioDAO::perfisRecebidos(const QVector<Perfil> & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 8, nullptr, _t1);
+}
+
+// SIGNAL 9
+void UsuarioDAO::perfilAdicionadoComSucesso()
+{
+    QMetaObject::activate(this, &staticMetaObject, 9, nullptr);
+}
+
+// SIGNAL 10
+void UsuarioDAO::novoTokenRecebido(const QString & _t1, const Usuario & _t2)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 10, nullptr, _t1, _t2);
+}
+
+// SIGNAL 11
+void UsuarioDAO::perfilExcluidoComSucesso()
+{
+    QMetaObject::activate(this, &staticMetaObject, 11, nullptr);
 }
 QT_WARNING_POP

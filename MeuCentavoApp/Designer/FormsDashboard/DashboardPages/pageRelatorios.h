@@ -25,6 +25,10 @@ public:
     explicit pageRelatorios(QWidget *parent = nullptr);
     ~pageRelatorios();
 
+public slots:
+    // Função auxiliar para iniciar o carregamento dos dados
+    void carregarDados();
+
 private slots:
     // Slot para receber os dados do DAO
     void onGastosRecebidos(const QHash<QString, double>& dados);
@@ -45,8 +49,7 @@ private slots:
     void on_buttonAnalisarTendencia_clicked();
 
 private:
-    // Função auxiliar para iniciar o carregamento dos dados
-    void carregarDados();
+
 
     Ui::pageRelatorios *ui;
     LancamentoDAO* m_dao;

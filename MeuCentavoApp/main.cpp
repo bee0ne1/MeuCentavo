@@ -2,6 +2,7 @@
 #include "Gerenciamento/AppController.h"
 #include "Modelo/Usuario.h" // Para registrar o metatype
 #include "DataAccess/LancamentoDAO.h"
+#include "Modelo/Perfil.h"
 #include <optional>
 
 int main(int argc, char *argv[])
@@ -17,6 +18,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<QVector<HistoricoPatrimonio>>();
     qRegisterMetaType<QVector<PontoTendencia>>();
     qRegisterMetaType<QVector<LinhaCronograma>>();
+    qRegisterMetaType<Perfil>();
 
     // Cria o controlador e inicia a aplicação
     AppController controller;

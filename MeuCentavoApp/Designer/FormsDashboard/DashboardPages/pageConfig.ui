@@ -41,14 +41,14 @@
        <item>
         <widget class="QPushButton" name="buttonContas">
          <property name="text">
-          <string>Minhas Contas</string>
+          <string>Gerenciar Contas</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="buttonPerfil">
          <property name="text">
-          <string>Editar Perfil</string>
+          <string>Gerenciar Perfis</string>
          </property>
         </widget>
        </item>

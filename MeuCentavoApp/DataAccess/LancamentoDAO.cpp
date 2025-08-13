@@ -267,14 +267,8 @@ void LancamentoDAO::onObterCategoriasReply(QNetworkReply *reply)
             Categoria c;
             c.id = obj["id_categoria"].toInt();
             c.nome = obj["nome"].toString();
-
-            // --- PONTO CRÍTICO DA CORREÇÃO ---
-            // Esta linha garante que estamos a ler a chave "tipo" (minúsculas),
-            // que corresponde ao nome da sua coluna no banco de dados.
             c.tipo = obj["tipo"].toString();
-
-            // --- LINHA DE DEBUG PARA CONFIRMAR ---
-            qDebug() << "DAO PARSING -> Nome:" << c.nome << "| Tipo Lido do JSON:" << "'" + c.tipo + "'";
+            c.classificacao_contabil = obj["classificacao_contabil"].toString();
 
             // Preencha outros campos se necessário
             lista.append(c);
@@ -288,9 +282,11 @@ void LancamentoDAO::onObterCategoriasReply(QNetworkReply *reply)
 
 void LancamentoDAO::adicionarCategoria(const Categoria& categoria, const QString& token)
 {
+
     QJsonObject json;
     json["nome"] = categoria.nome;
     json["tipo"] = categoria.tipo;
+    json["classificacao_contabil"] = categoria.classificacao_contabil;
 
     QNetworkRequest request(QUrl("http://localhost:3000/api/categorias"));
     request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
@@ -300,12 +296,13 @@ void LancamentoDAO::adicionarCategoria(const Categoria& categoria, const QString
     connect(reply, &QNetworkReply::finished, this, [=]() { onModificarCategoriaReply(reply); });
 }
 
-void LancamentoDAO::editarCategoria(int idCategoria, const QString& novoNome, const QString& token)
+void LancamentoDAO::editarCategoria(const Categoria& categoria, const QString& token)
 {
     QJsonObject json;
-    json["nome"] = novoNome;
+    json["nome"] = categoria.nome;
+    json["classificacao_contabil"] = categoria.classificacao_contabil;
 
-    QNetworkRequest request(QUrl("http://localhost:3000/api/categorias/" + QString::number(idCategoria)));
+    QNetworkRequest request(QUrl("http://localhost:3000/api/categorias/" + QString::number(categoria.id)));
     request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
@@ -384,6 +381,7 @@ void LancamentoDAO::adicionarConta(const Conta& conta, const QString& token)
             json["data_vencimento"] = conta.data_vencimento.toString(Qt::ISODate);
         }
     }
+    qDebug() << "DAO: JSON enviado para adicionar conta:" << QJsonDocument(json).toJson(QJsonDocument::Compact);
 
     QNetworkRequest request(QUrl("http://localhost:3000/api/contas"));
     request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
@@ -392,6 +390,7 @@ void LancamentoDAO::adicionarConta(const Conta& conta, const QString& token)
     QNetworkReply *reply = m_manager->post(request, QJsonDocument(json).toJson());
     connect(reply, &QNetworkReply::finished, this, [=]() {
         if (reply->error() == QNetworkReply::NoError) {
+            qDebug() << "DAO: Resposta de sucesso do backend. Emitindo sinal.";
             emit contaModificadaComSucesso();
         } else {
             emit erroOcorrido("Falha ao adicionar conta: " + reply->errorString() + " | " + reply->readAll());

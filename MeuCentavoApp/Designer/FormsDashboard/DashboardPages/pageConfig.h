@@ -22,6 +22,10 @@ public:
 private slots:
     void on_buttonCategorias_clicked();
     void on_buttonContas_clicked();
+    void on_buttonPerfil_clicked();
+
+signals:
+    void listaDePerfisAtualizada();
 
 private:
     Ui::pageConfig *ui;

@@ -52,7 +52,7 @@ public:
     void excluirLancamento(int idLancamento, const QString& token);
     void obterTodasCategorias(const QString& token);
     void adicionarCategoria(const Categoria& categoria, const QString& token);
-    void editarCategoria(int idCategoria, const QString& novoNome, const QString& token);
+    void editarCategoria(const Categoria& categoria, const QString& token);
     void excluirCategoria(int idCategoria, const QString& token);
     void obterTodasContas(const QString& token);
     void adicionarConta(const Conta& conta, const QString& token);

@@ -11,10 +11,13 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
@@ -26,8 +29,17 @@ class Ui_formMainDashboard
 {
 public:
     QWidget *centralwidget;
+    QVBoxLayout *verticalLayout_2;
+    QWidget *Cabecalho;
     QHBoxLayout *horizontalLayout_3;
-    QHBoxLayout *horizontalLayout;
+    QLabel *label;
+    QLabel *label_2;
+    QComboBox *comboPerfisAtivos;
+    QSpacerItem *horizontalSpacer;
+    QLabel *labelNomeUsuario;
+    QPushButton *buttonSwitchUsuario;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_4;
     QWidget *menuContainer;
     QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout;
@@ -38,7 +50,6 @@ public:
     QPushButton *buttonInvestimentos;
     QPushButton *buttonDividas;
     QPushButton *buttonConfiguracoes;
-    QPushButton *buttonSwitchUsuario;
     QStackedWidget *stackedWidgetConteudo;
     QWidget *page;
     QWidget *page_2;
@@ -52,11 +63,51 @@ public:
         formMainDashboard->resize(874, 688);
         centralwidget = new QWidget(formMainDashboard);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_3 = new QHBoxLayout(centralwidget);
+        verticalLayout_2 = new QVBoxLayout(centralwidget);
+        verticalLayout_2->setObjectName("verticalLayout_2");
+        Cabecalho = new QWidget(centralwidget);
+        Cabecalho->setObjectName("Cabecalho");
+        horizontalLayout_3 = new QHBoxLayout(Cabecalho);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName("horizontalLayout");
-        menuContainer = new QWidget(centralwidget);
+        label = new QLabel(Cabecalho);
+        label->setObjectName("label");
+
+        horizontalLayout_3->addWidget(label);
+
+        label_2 = new QLabel(Cabecalho);
+        label_2->setObjectName("label_2");
+
+        horizontalLayout_3->addWidget(label_2);
+
+        comboPerfisAtivos = new QComboBox(Cabecalho);
+        comboPerfisAtivos->setObjectName("comboPerfisAtivos");
+
+        horizontalLayout_3->addWidget(comboPerfisAtivos);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer);
+
+        labelNomeUsuario = new QLabel(Cabecalho);
+        labelNomeUsuario->setObjectName("labelNomeUsuario");
+
+        horizontalLayout_3->addWidget(labelNomeUsuario);
+
+        buttonSwitchUsuario = new QPushButton(Cabecalho);
+        buttonSwitchUsuario->setObjectName("buttonSwitchUsuario");
+        buttonSwitchUsuario->setMinimumSize(QSize(200, 0));
+        buttonSwitchUsuario->setMaximumSize(QSize(200, 16777215));
+
+        horizontalLayout_3->addWidget(buttonSwitchUsuario);
+
+
+        verticalLayout_2->addWidget(Cabecalho);
+
+        widget = new QWidget(centralwidget);
+        widget->setObjectName("widget");
+        horizontalLayout_4 = new QHBoxLayout(widget);
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        menuContainer = new QWidget(widget);
         menuContainer->setObjectName("menuContainer");
         horizontalLayout_2 = new QHBoxLayout(menuContainer);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
@@ -97,20 +148,13 @@ public:
 
         verticalLayout->addWidget(buttonConfiguracoes);
 
-        buttonSwitchUsuario = new QPushButton(menuContainer);
-        buttonSwitchUsuario->setObjectName("buttonSwitchUsuario");
-        buttonSwitchUsuario->setMinimumSize(QSize(200, 0));
-        buttonSwitchUsuario->setMaximumSize(QSize(200, 16777215));
-
-        verticalLayout->addWidget(buttonSwitchUsuario);
-
 
         horizontalLayout_2->addLayout(verticalLayout);
 
 
-        horizontalLayout->addWidget(menuContainer);
+        horizontalLayout_4->addWidget(menuContainer);
 
-        stackedWidgetConteudo = new QStackedWidget(centralwidget);
+        stackedWidgetConteudo = new QStackedWidget(widget);
         stackedWidgetConteudo->setObjectName("stackedWidgetConteudo");
         QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
         sizePolicy.setHorizontalStretch(0);
@@ -124,11 +168,10 @@ public:
         page_2->setObjectName("page_2");
         stackedWidgetConteudo->addWidget(page_2);
 
-        horizontalLayout->addWidget(stackedWidgetConteudo);
+        horizontalLayout_4->addWidget(stackedWidgetConteudo);
 
-        horizontalLayout->setStretch(1, 1);
 
-        horizontalLayout_3->addLayout(horizontalLayout);
+        verticalLayout_2->addWidget(widget);
 
         formMainDashboard->setCentralWidget(centralwidget);
         menubar = new QMenuBar(formMainDashboard);
@@ -150,6 +193,10 @@ public:
     void retranslateUi(QMainWindow *formMainDashboard)
     {
         formMainDashboard->setWindowTitle(QCoreApplication::translate("formMainDashboard", "formMainDashboard", nullptr));
+        label->setText(QCoreApplication::translate("formMainDashboard", "Meu Centavo (logo)", nullptr));
+        label_2->setText(QCoreApplication::translate("formMainDashboard", "Perfil: ", nullptr));
+        labelNomeUsuario->setText(QCoreApplication::translate("formMainDashboard", "nome usuario", nullptr));
+        buttonSwitchUsuario->setText(QCoreApplication::translate("formMainDashboard", "Trocar Usu\303\241rio / Sair", nullptr));
         buttonHome->setText(QCoreApplication::translate("formMainDashboard", "Home", nullptr));
         buttonLancamentos->setText(QCoreApplication::translate("formMainDashboard", "Lan\303\247amentos", nullptr));
         buttonRelatorios->setText(QCoreApplication::translate("formMainDashboard", "Relat\303\263rios", nullptr));
@@ -157,7 +204,6 @@ public:
         buttonInvestimentos->setText(QCoreApplication::translate("formMainDashboard", "Investimentos", nullptr));
         buttonDividas->setText(QCoreApplication::translate("formMainDashboard", "D\303\255vidas", nullptr));
         buttonConfiguracoes->setText(QCoreApplication::translate("formMainDashboard", "Configura\303\247\303\265es", nullptr));
-        buttonSwitchUsuario->setText(QCoreApplication::translate("formMainDashboard", "Trocar Usu\303\241rio", nullptr));
     } // retranslateUi
 
 };

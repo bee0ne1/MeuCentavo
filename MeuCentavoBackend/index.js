@@ -166,13 +166,11 @@ app.post(
     }
 );
 
-// Rota para LOGAR um usuário existente
+// Rota para LOGAR um usuário existente (VERSÃO CORRIGIDA COM PERFIS)
 app.post(
     '/api/usuarios/login',
-    // Validações básicas
     body('username').notEmpty().withMessage('O nome de usuário é obrigatório.'),
     body('password').notEmpty().withMessage('A senha é obrigatória.'),
-
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -182,36 +180,46 @@ app.post(
         try {
             const { username, password } = req.body;
 
-            // 1. Encontra o usuário no banco de dados pelo nome
+            // 1. Encontra o usuário no banco de dados
             const [users] = await pool.query('SELECT * FROM usuario WHERE user_usuario = ?', [username]);
-
-            // Se não encontrou nenhum usuário com aquele nome, o login falha
             if (users.length === 0) {
-                return res.status(401).json({ message: 'Credenciais inválidas.' }); // 401 Unauthorized
+                return res.status(401).json({ message: 'Credenciais inválidas.' });
             }
-
             const user = users[0];
 
-            // 2. Compara a senha fornecida com o hash salvo no banco
-            // bcrypt.compare é a função segura para fazer isso
+            // 2. Compara a senha
             const isPasswordCorrect = await bcrypt.compare(password, user.user_password);
-
             if (!isPasswordCorrect) {
-                // Se as senhas (hashes) não baterem, o login falha
-                return res.status(401).json({ message: 'Credenciais inválidas.' }); // 401 Unauthorized
+                return res.status(401).json({ message: 'Credenciais inválidas.' });
             }
 
-            // 3. Se a senha está correta, o LOGIN FOI UM SUCESSO!
-            // Agora, criamos o "passe de acesso" (JWT Token)
-            const payload = { userId: user.user_id, username: user.user_usuario };
-            const secretKey = 'sua_chave_super_secreta_pode_ser_qualquer_coisa'; // Guarde isso em um lugar seguro!
-            const token = jwt.sign(payload, secretKey, { expiresIn: '1h' }); // Token expira em 1 hora
+            // 3. Busca o perfil padrão (PF) do usuário para incluir no token
+            const [perfis] = await pool.query(
+                "SELECT id_perfil FROM perfis WHERE id_usuario = ? AND tipo_perfil = 'PF' LIMIT 1",
+                [user.user_id]
+            );
 
-            // 4. Envia o token de volta para o cliente
+            if (perfis.length === 0) {
+                // Isso não deveria acontecer para usuários existentes após a migração
+                return res.status(500).json({ message: 'Erro: Perfil de usuário não encontrado.' });
+            }
+            const perfilPadraoId = perfis[0].id_perfil;
+
+
+            // 4. Se a senha está correta, cria o JWT Token (agora com o perfilId)
+            const payload = {
+                userId: user.user_id,
+                username: user.user_usuario,
+                perfilId: perfilPadraoId // <-- USA A VARIÁVEL CORRETA
+            };
+            const secretKey = 'sua_chave_super_secreta_pode_ser_qualquer_coisa';
+            const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+
+            // 5. Envia o token de volta para o cliente
             res.json({
                 message: 'Login bem-sucedido!',
                 token: token,
-                user: { // <-- Objeto que o C++ espera
+                user: {
                     user_id: user.user_id,
                     user_usuario: user.user_usuario
                 }
@@ -223,6 +231,7 @@ app.post(
         }
     }
 );
+
 
 
 // Rota para BUSCAR TODOS os usuários (protegida por autenticação)
@@ -284,6 +293,120 @@ app.delete('/api/usuarios/:id', authenticateToken, async (req, res) => {
         // A mensagem de erro que você viu no log do servidor vem daqui.
         console.error("Erro ao excluir usuário:", error);
         res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+// --- ROTAS PARA PERFIS (PF/PJ) ---
+app.post('/api/perfis/selecionar/:id', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+        const idPerfilSelecionado = req.params.id;
+
+        // --- CORREÇÃO AQUI ---
+        // Agora também selecionamos o tipo_perfil para colocar no novo token
+        const [perfis] = await pool.query(
+            'SELECT id_perfil, tipo_perfil FROM perfis WHERE id_perfil = ? AND id_usuario = ?',
+            [idPerfilSelecionado, idUsuario]
+        );
+        // --------------------
+
+        if (perfis.length === 0) {
+            return res.status(403).json({ message: 'Acesso ao perfil negado.' });
+        }
+        const perfilSelecionado = perfis[0];
+
+        // Gera um novo token com o perfilId E o tipoPerfil atualizados
+        const payload = {
+            userId: req.user.userId,
+            username: req.user.username,
+            perfilId: perfilSelecionado.id_perfil,
+            tipoPerfil: perfilSelecionado.tipo_perfil // <-- CAMPO ADICIONADO!
+        };
+        const secretKey = 'sua_chave_super_secreta_pode_ser_qualquer_coisa';
+        const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+
+        res.json({ token: token });
+
+    } catch (error) {
+        console.error("Erro ao selecionar perfil:", error.message);
+        res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+
+// Rota para BUSCAR TODOS os perfis do usuário logado
+app.get('/api/perfis', authenticateToken, async (req, res) => {
+    try {
+        const idUsuario = req.user.userId;
+        const [perfis] = await pool.query('SELECT * FROM perfis WHERE id_usuario = ?', [idUsuario]);
+        res.json(perfis);
+    } catch (error) {
+        console.error("Erro ao buscar perfis:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para ADICIONAR um novo perfil PJ
+app.post('/api/perfis', authenticateToken, async (req, res) => {
+    try {
+        const { nome_perfil, documento, razao_social } = req.body;
+        const idUsuario = req.user.userId;
+
+        // Validação dos campos obrigatórios
+        if (!nome_perfil) {
+            return res.status(400).json({ message: 'O nome do perfil é obrigatório.' });
+        }
+
+        // Insere o novo perfil no banco de dados. O tipo 'PJ' é fixo.
+        const [result] = await pool.query(
+            'INSERT INTO perfis (id_usuario, nome_perfil, tipo_perfil, documento, razao_social) VALUES (?, ?, ?, ?, ?)',
+            [idUsuario, nome_perfil, 'PJ', documento || null, razao_social || null]
+        );
+
+        // Retorna o perfil recém-criado
+        res.status(201).json({
+            id_perfil: result.insertId,
+            id_usuario: idUsuario,
+            nome_perfil: nome_perfil,
+            tipo_perfil: 'PJ',
+            documento: documento || null,
+            razao_social: razao_social || null
+        });
+
+    } catch (error) {
+        console.error("Erro ao adicionar perfil:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// Rota para EXCLUIR um perfil PJ
+app.delete('/api/perfis/:id', authenticateToken, async (req, res) => {
+    try {
+        const idPerfilParaExcluir = req.params.id;
+        const idUsuario = req.user.userId;
+
+        // 1. Busca o perfil para garantir que ele pertence ao usuário e que não é o perfil PF
+        const [perfis] = await pool.query(
+            'SELECT tipo_perfil FROM perfis WHERE id_perfil = ? AND id_usuario = ?',
+            [idPerfilParaExcluir, idUsuario]
+        );
+
+        if (perfis.length === 0) {
+            return res.status(404).json({ message: 'Perfil não encontrado ou não autorizado.' });
+        }
+
+        if (perfis[0].tipo_perfil === 'PF') {
+            return res.status(403).json({ message: 'Não é permitido excluir o perfil principal de Pessoa Física.' });
+        }
+
+        // 2. Procede com a exclusão
+        await pool.query('DELETE FROM perfis WHERE id_perfil = ?', [idPerfilParaExcluir]);
+
+        res.status(200).json({ message: 'Perfil excluído com sucesso.' });
+
+    } catch (error) {
+        console.error("Erro ao excluir perfil:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor." });
     }
 });
 
@@ -607,11 +730,24 @@ app.get('/api/relatorios/tendencia-categoria', authenticateToken, async (req, re
 
 // --- ROTAS DE CATEGORIAS  ---
 
-// Rota para BUSCAR TODAS as categorias do usuário logado
+// Rota para BUSCAR TODAS as categorias do usuário logado (VERSÃO CORRIGIDA COM FILTRO DE PERFIL)
 app.get('/api/categorias', authenticateToken, async (req, res) => {
     try {
         const idUsuario = req.user.userId;
-        const [categorias] = await pool.query('SELECT * FROM categorias WHERE id_usuario = ?', [idUsuario]);
+        const idPerfil = req.user.perfilId; // Pega o perfil ativo do token
+
+        // Segurança extra para garantir que o perfil existe na sessão
+        if (!idPerfil) {
+            return res.status(400).json({ message: "Nenhum perfil ativo na sessão. Faça login novamente." });
+        }
+
+        // --- CORREÇÃO AQUI ---
+        // Adiciona o filtro "AND id_perfil = ?" para buscar apenas as categorias do perfil ativo.
+        const [categorias] = await pool.query(
+            'SELECT * FROM categorias WHERE id_usuario = ? AND id_perfil = ?',
+            [idUsuario, idPerfil]
+        );
+
         res.json(categorias);
     } catch (error) {
         console.error("Erro ao buscar categorias:", error);
@@ -619,32 +755,33 @@ app.get('/api/categorias', authenticateToken, async (req, res) => {
     }
 });
 
-// Rota para ADICIONAR uma nova categoria para o usuário logado
+
+// Rota para ADICIONAR uma nova categoria (VERSÃO ATUALIZADA PARA PJ)
 app.post('/api/categorias', authenticateToken, async (req, res) => {
     try {
-        const { nome, tipo } = req.body; // 'tipo' será "Receita" ou "Despesa"
+        // 1. Extrai o novo campo opcional do corpo da requisição
+        const { nome, tipo, classificacao_contabil } = req.body;
         const idUsuario = req.user.userId;
+        const idPerfil = req.user.perfilId; // Pega o perfil ativo
 
-        // Validação
+        // Validações básicas
         if (!nome || !tipo) {
             return res.status(400).json({ message: 'O nome e o tipo da categoria são obrigatórios.' });
         }
-        if (tipo !== 'Receita' && tipo !== 'Despesa') {
-            return res.status(400).json({ message: 'O tipo da categoria deve ser "Receita" ou "Despesa".' });
-        }
 
-        // Insere a nova categoria no banco de dados
+        // 2. Adiciona a coluna e o valor na query INSERT
         const [result] = await pool.query(
-            'INSERT INTO categorias (nome, tipo, id_usuario) VALUES (?, ?, ?)',
-            [nome, tipo, idUsuario]
+            'INSERT INTO categorias (nome, tipo, id_usuario, id_perfil, classificacao_contabil) VALUES (?, ?, ?, ?, ?)',
+            [nome, tipo, idUsuario, idPerfil, classificacao_contabil || null]
         );
 
-        // Retorna a categoria recém-criada
         res.status(201).json({
             id_categoria: result.insertId,
             nome: nome,
             tipo: tipo,
-            id_usuario: idUsuario
+            id_usuario: idUsuario,
+            id_perfil: idPerfil,
+            classificacao_contabil: classificacao_contabil || null
         });
 
     } catch (error) {
@@ -653,32 +790,35 @@ app.post('/api/categorias', authenticateToken, async (req, res) => {
     }
 });
 
-// Rota para EDITAR (Atualizar) uma categoria existente
+// Rota para EDITAR uma categoria existente (VERSÃO ATUALIZADA PARA PJ)
 app.put('/api/categorias/:id', authenticateToken, async (req, res) => {
     try {
-        const { nome } = req.body;
+        // 1. Extrai o novo campo opcional
+        const { nome, classificacao_contabil } = req.body;
         const idCategoria = req.params.id;
-        const idUsuario = req.user.userId;
-
+        const idPerfil = req.user.perfilId;
+        
         if (!nome) {
             return res.status(400).json({ message: 'O novo nome é obrigatório.' });
         }
 
+        // 2. Adiciona o novo campo à query UPDATE
         const [result] = await pool.query(
-            'UPDATE categorias SET nome = ? WHERE id_categoria = ? AND id_usuario = ?',
-            [nome, idCategoria, idUsuario]
+            'UPDATE categorias SET nome = ?, classificacao_contabil = ? WHERE id_categoria = ? AND id_perfil = ?',
+            [nome, classificacao_contabil || null, idCategoria, idPerfil]
         );
 
         if (result.affectedRows > 0) {
             res.status(200).json({ message: 'Categoria atualizada com sucesso.' });
         } else {
-            res.status(404).json({ message: 'Categoria não encontrada ou não autorizada.' });
+            res.status(404).json({ message: 'Categoria não encontrada ou não autorizada para este perfil.' });
         }
     } catch (error) {
         console.error("Erro ao editar categoria:", error);
         res.status(500).json({ message: "Erro interno do servidor" });
     }
 });
+
 
 // Rota para EXCLUIR uma categoria existente
 app.delete('/api/categorias/:id', authenticateToken, async (req, res) => {
@@ -706,10 +846,11 @@ app.delete('/api/categorias/:id', authenticateToken, async (req, res) => {
 app.get('/api/contas', authenticateToken, async (req, res) => {
     try {
         const idUsuario = req.user.userId;
+        const idPerfil = req.user.perfilId;
         // Busca todas as contas que pertencem ao usuário, ordenadas por nome
         const [contas] = await pool.query(
-            'SELECT * FROM contas WHERE id_usuario = ? ORDER BY nome ASC', 
-            [idUsuario]
+            'SELECT * FROM contas WHERE id_usuario = ? AND id_perfil = ? ORDER BY nome ASC', 
+            [idUsuario, idPerfil] 
         );
         res.json(contas);
     } catch (error) {
@@ -718,22 +859,30 @@ app.get('/api/contas', authenticateToken, async (req, res) => {
     }
 });
 
-// Rota para ADICIONAR uma nova conta (agora com campos de dívida)
+
+// Rota para ADICIONAR uma nova conta (VERSÃO FINAL E CORRIGIDA COM PERFIS)
 app.post('/api/contas', authenticateToken, async (req, res) => {
     try {
-        // 1. Desestruture os novos campos opcionais
+        // Pega os dados enviados pelo formulário
         const { nome, tipo_conta, saldo_inicial, moeda_codigo, taxa_juros, valor_total_divida, data_vencimento } = req.body;
+        
+        // Pega o id_usuario E o id_perfil DO TOKEN da sessão ativa
         const idUsuario = req.user.userId;
+        const idPerfil = req.user.perfilId; // <-- PONTO CRÍTICO 1
 
-        // Validação principal (continua a mesma)
+        // Validação
         if (!nome || !tipo_conta || !moeda_codigo) {
             return res.status(400).json({ message: 'Nome, tipo e moeda da conta são obrigatórios.' });
         }
+        if (!idPerfil) { // Segurança extra para garantir que o perfil existe no token
+             return res.status(400).json({ message: 'Perfil de usuário inválido na sessão. Faça login novamente.' });
+        }
 
-        // 2. Adicione as novas colunas e valores ao INSERT
+        // --- CORREÇÃO AQUI ---
+        // Adicionamos a coluna `id_perfil` à query INSERT
         const [result] = await pool.query(
-            'INSERT INTO contas (nome, tipo_conta, saldo_inicial, id_usuario, moeda_codigo, taxa_juros, valor_total_divida, data_vencimento) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-            [nome, tipo_conta, saldo_inicial || 0.00, idUsuario, moeda_codigo, taxa_juros || null, valor_total_divida || null, data_vencimento || null]
+            'INSERT INTO contas (nome, tipo_conta, saldo_inicial, id_usuario, moeda_codigo, taxa_juros, valor_total_divida, data_vencimento, id_perfil) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            [nome, tipo_conta, saldo_inicial || 0.00, idUsuario, moeda_codigo, taxa_juros || null, valor_total_divida || null, data_vencimento || null, idPerfil] // <-- PONTO CRÍTICO 2: Passa o idPerfil para a query
         );
 
         res.status(201).json({ message: 'Conta/Dívida adicionada com sucesso!', insertId: result.insertId });

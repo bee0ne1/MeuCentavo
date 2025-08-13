@@ -2,6 +2,7 @@
 #include "ui_formGerenciarCategorias.h"
 #include "DataAccess/LancamentoDAO.h"
 #include "Gerenciamento/SessionManager.h"
+#include "dialogAddEditCategoria.h"
 #include <QMessageBox>
 #include <QInputDialog>
 #include <QPushButton>
@@ -15,14 +16,15 @@ formGerenciarCategorias::formGerenciarCategorias(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Gerir Categorias");
-
+    m_tipoPerfilAtivo = SessionManager::instance().getTipoPerfil();
     m_dao = new LancamentoDAO(this);
     ui->tabWidget->setTabText(0, "Despesas");
     ui->tabWidget->setTabText(1, "Receitas");
     configurarTabelas();
 
-    connect(ui->buttonFechar, &QPushButton::clicked, this, &QDialog::accept);
+    connect(&SessionManager::instance(), &SessionManager::sessaoAtualizada, this, &formGerenciarCategorias::onSessaoAtualizada);
 
+    connect(ui->buttonFechar, &QPushButton::clicked, this, &QDialog::accept);
     connect(m_dao, &LancamentoDAO::categoriasRecebidas, this, &formGerenciarCategorias::onCategoriasRecebidas);
     connect(m_dao, &LancamentoDAO::categoriaModificadaComSucesso, this, &formGerenciarCategorias::onCategoriaModificada);
     connect(m_dao, &LancamentoDAO::erroOcorrido, this, [](const QString& erro){
@@ -43,28 +45,28 @@ formGerenciarCategorias::~formGerenciarCategorias()
 
 void formGerenciarCategorias::configurarTabelas()
 {
-    // Usa a lista de tabelas para aplicar a mesma configuração a ambas
     QList<QTableWidget*> tabelas = {ui->tableWidget, ui->tableWidget_2};
     for (QTableWidget* tabela : tabelas) {
-        tabela->setColumnCount(2);
-        tabela->setHorizontalHeaderLabels({"Nome", "Ações"});
 
-        // Pega o cabeçalho horizontal da tabela
-        QHeaderView* header = tabela->horizontalHeader();
+        if (m_tipoPerfilAtivo == "PJ") {
+            // --- CONFIGURAÇÃO PARA PERFIL PJ (COM 3 COLUNAS) ---
+            tabela->setColumnCount(3);
+            tabela->setHorizontalHeaderLabels({"Nome", "Classificação Contábil", "Ações"});
+            tabela->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch); // Nome
+            tabela->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents); // Classificação
+            tabela->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Fixed); // Ações
+            tabela->setColumnWidth(2, 170); // Largura fixa para os botões
 
-        // --- AQUI ESTÁ A CORREÇÃO ---
-        // Coluna 0 (Nome): continua a esticar para preencher o espaço
-        header->setSectionResizeMode(0, QHeaderView::Stretch);
+        } else {
+            // --- CONFIGURAÇÃO PARA PERFIL PF (COMO ESTAVA ANTES) ---
+            tabela->setColumnCount(2);
+            tabela->setHorizontalHeaderLabels({"Nome", "Ações"});
+            tabela->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch); // Nome
+            tabela->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed); // Ações
+            tabela->setColumnWidth(1, 170);
+        }
 
-        // Coluna 1 (Ações): agora tem um tamanho FIXO
-        header->setSectionResizeMode(1, QHeaderView::Fixed);
-
-        // Definimos a largura exata da coluna de Ações em pixels.
-        // 170px deve ser suficiente para dois botões de 75px mais as margens.
-        // Ajuste este valor se necessário.
-        tabela->setColumnWidth(1, 170);
-        // -----------------------------
-
+        // Configurações comuns a ambos os modos
         tabela->setSelectionBehavior(QAbstractItemView::SelectRows);
         tabela->setSelectionMode(QAbstractItemView::SingleSelection);
         tabela->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -86,17 +88,18 @@ void formGerenciarCategorias::onCategoriasRecebidas(const QVector<Categoria>& ca
     ui->tableWidget->setRowCount(0);
     ui->tableWidget_2->setRowCount(0);
 
-    for (const auto& categoria : categorias) {
-        qDebug() << "Processando Categoria:" << categoria.nome << "| Tipo:" << categoria.tipo;
-
+    for (const auto& categoria : categorias)
+    {
         QTableWidget* tabelaAlvo = (categoria.tipo == "Despesa") ? ui->tableWidget : ui->tableWidget_2;
         int linha = tabelaAlvo->rowCount();
         tabelaAlvo->insertRow(linha);
 
+        // Coluna 0: Nome (comum a ambos os perfis)
         QTableWidgetItem* itemNome = new QTableWidgetItem(categoria.nome);
         itemNome->setData(Qt::UserRole, QVariant::fromValue(categoria));
         tabelaAlvo->setItem(linha, 0, itemNome);
 
+        // Cria o widget de botões, que será usado em ambos os casos
         QWidget* pWidget = new QWidget();
         QHBoxLayout* pLayout = new QHBoxLayout(pWidget);
         QPushButton* btnEdit = new QPushButton("Editar");
@@ -106,10 +109,30 @@ void formGerenciarCategorias::onCategoriasRecebidas(const QVector<Categoria>& ca
         pLayout->addWidget(btnEdit);
         pLayout->addWidget(btnDelete);
         pLayout->setAlignment(Qt::AlignCenter);
-        pLayout->setContentsMargins(5, 0, 5, 0); // Margens para não ficarem colados
+        pLayout->setContentsMargins(5, 0, 5, 0);
         pWidget->setLayout(pLayout);
-        tabelaAlvo->setCellWidget(linha, 1, pWidget);
 
+        if (m_tipoPerfilAtivo == "PJ")
+        {
+            // --- LÓGICA PARA PERFIL PJ ---
+
+            // Coluna 1: Classificação Contábil
+            // --- CORREÇÃO AQUI: Adiciona o item à tabela ---
+            QTableWidgetItem* itemClassificacao = new QTableWidgetItem(categoria.classificacao_contabil);
+            tabelaAlvo->setItem(linha, 1, itemClassificacao);
+            // --- FIM DA CORREÇÃO ---
+
+            // Coluna 2: Ações
+            tabelaAlvo->setCellWidget(linha, 2, pWidget);
+        }
+        else
+        {
+            // --- LÓGICA PARA PERFIL PF ---
+            // Coluna 1: Ações
+            tabelaAlvo->setCellWidget(linha, 1, pWidget);
+        }
+
+        // Conecta os botões (esta parte já estava correta)
         connect(btnEdit, &QPushButton::clicked, this, [this, categoria](){ editarCategoria(categoria); });
         connect(btnDelete, &QPushButton::clicked, this, [this, categoria](){ excluirCategoria(categoria); });
     }
@@ -138,13 +161,13 @@ void formGerenciarCategorias::onSelectionChanged()
 
 void formGerenciarCategorias::on_buttonAddCategoria_clicked()
 {
-    bool ok;
-    QString nome = QInputDialog::getText(this, "Adicionar Categoria", "Nome da nova categoria:", QLineEdit::Normal, "", &ok);
-    if (ok && !nome.isEmpty())
-    {
-        Categoria novaCat;
-        novaCat.nome = nome;
+    dialogAddEditCategoria dialogo(m_tipoPerfilAtivo, this);
+    dialogo.setWindowTitle("Adicionar Nova Categoria");
+
+    if (dialogo.exec() == QDialog::Accepted) {
+        Categoria novaCat = dialogo.getDados();
         novaCat.tipo = (ui->tabWidget->currentIndex() == 0) ? "Despesa" : "Receita";
+
         QString token = SessionManager::instance().getToken();
         m_dao->adicionarCategoria(novaCat, token);
     }
@@ -170,12 +193,19 @@ void formGerenciarCategorias::on_buttonExcluirCategoria_clicked()
 
 void formGerenciarCategorias::editarCategoria(const Categoria& categoria)
 {
-    bool ok;
-    QString novoNome = QInputDialog::getText(this, "Editar Categoria", "Novo nome:", QLineEdit::Normal, categoria.nome, &ok);
-    if (ok && !novoNome.isEmpty() && novoNome != categoria.nome)
-    {
+    dialogAddEditCategoria dialogo(m_tipoPerfilAtivo, this);
+    dialogo.setWindowTitle("Editar Categoria");
+    dialogo.setDados(categoria);
+
+    if (dialogo.exec() == QDialog::Accepted) {
+        Categoria catEditada = dialogo.getDados();
+        // O ID e o tipo não mudam, então os pegamos do objeto original
+        catEditada.id = categoria.id;
+        catEditada.tipo = categoria.tipo;
+
         QString token = SessionManager::instance().getToken();
-        m_dao->editarCategoria(categoria.id, novoNome, token);
+        // O DAO precisa de uma função editarCategoria(Categoria, token)
+        m_dao->editarCategoria(catEditada, token);
     }
 }
 
@@ -189,4 +219,18 @@ void formGerenciarCategorias::excluirCategoria(const Categoria& categoria)
         QString token = SessionManager::instance().getToken();
         m_dao->excluirCategoria(categoria.id, token);
     }
+}
+
+void formGerenciarCategorias::onSessaoAtualizada()
+{
+    qDebug() << "formGerenciarCategorias: Detectou atualização da sessão. Reconfigurando e recarregando...";
+
+    // 1. Atualiza o estado interno da janela com o tipo do novo perfil.
+    m_tipoPerfilAtivo = SessionManager::instance().getTipoPerfil();
+
+    // 2. Reconfigura a aparência da tabela (adiciona/remove a coluna de classificação).
+    configurarTabelas();
+
+    // 3. Busca a nova lista de categorias para o perfil que agora está ativo.
+    carregarCategorias();
 }

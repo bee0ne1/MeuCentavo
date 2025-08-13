@@ -7,7 +7,7 @@
 #include "DashboardPages/pageConfig.h"
 #include "DashboardPages/pageRelatorios.h"
 #include "DashboardPages/pageDividas.h"
-
+#include "DataAccess/UsuarioDAO.h"
 #include <QDebug>
 #include <QMessageBox>
 
@@ -16,9 +16,19 @@ formMainDashboard::formMainDashboard(QWidget *parent) :
     ui(new Ui::formMainDashboard)
 {
     ui->setupUi(this);
-    m_formUsuario = nullptr;
     setWindowTitle("Meu Centavo - Dashboard");
-    setupPaginas(); // Chama a função para configurar as páginas
+    m_formUsuario = nullptr;
+    m_usuarioDAO = new UsuarioDAO(this); // Crie a instância do DAO
+    setupPaginas();
+
+    // --- CONEXÕES PARA GESTÃO DE PERFIS ---
+    connect(m_usuarioDAO, &UsuarioDAO::perfisRecebidos, this, &formMainDashboard::onPerfisRecebidos);
+    connect(m_usuarioDAO, &UsuarioDAO::novoTokenRecebido, this, &formMainDashboard::onNovoTokenRecebido);
+    connect(ui->comboPerfisAtivos, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &formMainDashboard::onPerfilAlterado);
+    connect(m_pageConfig, &pageConfig::listaDePerfisAtualizada, this, &formMainDashboard::onListaDePerfisModificada);
+
+    carregarPerfisDoUsuario();
+
 }
 
 formMainDashboard::~formMainDashboard()
@@ -139,4 +149,127 @@ void formMainDashboard::on_buttonSwitchUsuario_clicked()
     // 5. Mostra a janela de gerenciamento.
     // A dashboard (this) continua visível no fundo.
     m_formUsuario->show();
+}
+
+void formMainDashboard::recarregarTodasAsPaginas()
+{
+    qDebug() << "Dashboard: Recarregando dados de todas as páginas...";
+    m_pageHome->atualizarDados();
+    m_pageLancamentos->carregarTabela();
+    m_pageRelatorios->carregarDados();
+    m_pageMetas->carregarMetas();
+    m_pageInvestimentos->carregarAtivos();
+    m_pageDividas->carregarDados();
+}
+
+void formMainDashboard::onPerfisRecebidos(const QVector<Perfil>& perfis)
+{
+    int perfilAtivoId = SessionManager::instance().getPerfilId();
+    bool perfilAtivoAindaExiste = false;
+    int perfilPessoalId = -1;
+
+    // 1. Itera sobre a nova lista de perfis para verificar duas coisas:
+    //    - Se o perfil que ESTÁ ATIVO na sessão ainda existe.
+    //    - Qual é o ID do perfil de Pessoa Física (nosso porto seguro).
+    for (const auto& perfil : perfis) {
+        if (perfil.id_perfil == perfilAtivoId) {
+            perfilAtivoAindaExiste = true;
+        }
+        if (perfil.tipo_perfil == "PF") {
+            perfilPessoalId = perfil.id_perfil;
+        }
+    }
+
+    // 2. LÓGICA DE CORREÇÃO DE ESTADO
+    // Se o perfil ativo foi excluído E nós encontramos um perfil PF para onde voltar...
+    if (!perfilAtivoAindaExiste && perfilPessoalId != -1) {
+        qDebug() << "Dashboard: Perfil ativo foi excluído! Forçando troca para o perfil Pessoal (ID:" << perfilPessoalId << ")";
+        // Dispara a troca de perfil. O resto do fluxo (onNovoTokenRecebido -> recarregarTudo)
+        // cuidará da atualização de dados.
+        onPerfilAlterado(ui->comboPerfisAtivos->findData(perfilPessoalId));
+        // A função para aqui, pois a troca de perfil irá recarregar tudo.
+        return;
+    }
+
+    // 3. Se o estado estiver normal, apenas atualiza o ComboBox
+    qDebug() << "Dashboard: Atualizando o ComboBox de perfis.";
+    ui->comboPerfisAtivos->blockSignals(true);
+    ui->comboPerfisAtivos->clear();
+    int indexParaSelecionar = 0;
+    for (int i = 0; i < perfis.size(); ++i) {
+        const auto& perfil = perfis[i];
+        QString textoItem = QString("%1 (%2)").arg(perfil.nome_perfil).arg(perfil.tipo_perfil);
+        ui->comboPerfisAtivos->addItem(textoItem, perfil.id_perfil);
+        if (perfil.id_perfil == perfilAtivoId) {
+            indexParaSelecionar = i;
+        }
+    }
+    ui->comboPerfisAtivos->setCurrentIndex(indexParaSelecionar);
+    ui->comboPerfisAtivos->blockSignals(false);
+}
+
+
+void formMainDashboard::onPerfilAlterado(int index)
+{
+    if (index < 0) return;
+    int idPerfil = ui->comboPerfisAtivos->currentData().toInt();
+
+    // Evita recarregar se o usuário acidentalmente selecionar o mesmo perfil
+    if (idPerfil == SessionManager::instance().getPerfilId()) return;
+
+    // Desconecta temporariamente o sinal para evitar múltiplos disparos enquanto trocamos
+    disconnect(ui->comboPerfisAtivos, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &formMainDashboard::onPerfilAlterado);
+
+    // Conecta o sinal do DAO a uma lambda que irá ATUALIZAR a sessão e RECARREGAR as páginas
+    connect(m_usuarioDAO, &UsuarioDAO::novoTokenRecebido, this,
+        [this](const QString& novoToken, const Usuario& usuario) {
+
+            // 1. Salva o novo token na sessão. Agora o app usará este token para todas as futuras requisições.
+            SessionManager::instance().salvarNovoToken(novoToken);
+
+            // 2. Chama as funções de recarregamento de cada página para buscar os dados do novo perfil
+            qDebug() << "Trocando para novo perfil. Recarregando todas as páginas...";
+            m_pageHome->atualizarDados();
+            m_pageLancamentos->carregarTabela();
+            m_pageRelatorios->carregarDados(); // Supondo que esta seja a função de recarregar
+            m_pageMetas->carregarMetas();
+            m_pageInvestimentos->carregarAtivos();
+            m_pageDividas->carregarDados();
+
+            // 3. Reconecta o sinal do ComboBox para futuras trocas de perfil
+            connect(ui->comboPerfisAtivos, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &formMainDashboard::onPerfilAlterado);
+    });
+
+    // Inicia o processo pedindo ao DAO um novo token para o perfil selecionado
+    m_usuarioDAO->selecionarPerfil(idPerfil, SessionManager::instance().getToken());
+}
+
+void formMainDashboard::onNovoTokenRecebido(const QString& novoToken, const Usuario& usuario)
+{
+    qDebug() << "Dashboard: Novo token recebido. Atualizando sessão e recarregando páginas.";
+    SessionManager::instance().salvarNovoToken(novoToken);
+
+    // Atualiza o ComboBox para refletir a nova sessão
+    carregarPerfisDoUsuario();
+
+    // Recarrega os dados de todas as páginas
+    recarregarTodasAsPaginas();
+}
+
+void formMainDashboard::onListaDePerfisModificada()
+{
+    qDebug() << "Dashboard: Detectou que a tela de perfis foi usada. Verificando estado da sessão...";
+    // Apenas inicia o processo de recarregar a lista de perfis.
+    // A lógica de correção acontecerá em onPerfisRecebidos.
+    carregarPerfisDoUsuario();
+}
+
+
+void formMainDashboard::carregarPerfisDoUsuario()
+{
+    qDebug() << "Dashboard: Carregando perfis do usuário...";
+    QString token = SessionManager::instance().getToken();
+    if (!token.isEmpty()) {
+        m_usuarioDAO->obterPerfis(token);
+    }
 }

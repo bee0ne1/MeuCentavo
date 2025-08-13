@@ -9,11 +9,14 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QDebug>
+#include "Gerenciamento/SessionManager.h"
 
 UsuarioDAO::UsuarioDAO(QObject *parent)
     : QObject(parent)
 {
     m_manager = new QNetworkAccessManager(this);
+    m_baseUrl = "http://localhost:3000/api/usuarios";
+    m_perfisUrl = "http://localhost:3000/api/perfis";
 }
 
 // --- REGISTRO ---
@@ -216,6 +219,131 @@ void UsuarioDAO::onRemoverUsuarioReply(QNetworkReply *reply)
         QString motivo = jsonDoc.object()["message"].toString();
         if(motivo.isEmpty()) motivo = "Não foi possível remover o usuário: " + reply->errorString();
         emit erroDeRede(motivo);
+    }
+    reply->deleteLater();
+}
+
+void UsuarioDAO::obterPerfis(const QString& token)
+{
+    QNetworkRequest request{QUrl(m_perfisUrl)};
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onObterPerfisReply(reply);
+    });
+}
+
+void UsuarioDAO::onObterPerfisReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QVector<Perfil> listaDePerfis;
+        QJsonArray jsonArray = QJsonDocument::fromJson(reply->readAll()).array();
+        for (const QJsonValue &value : jsonArray) {
+            QJsonObject obj = value.toObject();
+            Perfil p;
+            p.id_perfil = obj["id_perfil"].toInt();
+            p.id_usuario = obj["id_usuario"].toInt();
+            p.nome_perfil = obj["nome_perfil"].toString();
+            p.tipo_perfil = obj["tipo_perfil"].toString();
+            p.documento = obj["documento"].toString();
+            p.razao_social = obj["razao_social"].toString();
+            listaDePerfis.append(p);
+        }
+        emit perfisRecebidos(listaDePerfis);
+    } else {
+        emit erroDeRede("Falha ao carregar perfis: " + reply->readAll());
+    }
+    reply->deleteLater();
+}
+
+void UsuarioDAO::adicionarPerfil(const Perfil& perfil, const QString& token)
+{
+    QJsonObject json;
+    json["nome_perfil"] = perfil.nome_perfil;
+    json["documento"] = perfil.documento;
+    json["razao_social"] = perfil.razao_social;
+    // O tipo 'PJ' é definido no backend, não precisamos enviar
+
+    QNetworkRequest request{QUrl(m_perfisUrl)};
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(json).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onAdicionarPerfilReply(reply);
+    });
+}
+
+void UsuarioDAO::onAdicionarPerfilReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError && reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 201) {
+        emit perfilAdicionadoComSucesso();
+    } else {
+        QJsonObject errorObj = QJsonDocument::fromJson(reply->readAll()).object();
+        emit erroDeRede("Falha ao adicionar perfil: " + errorObj["message"].toString());
+    }
+    reply->deleteLater();
+}
+
+void UsuarioDAO::selecionarPerfil(int idPerfil, const QString& token)
+{
+    // A URL aponta para a nova rota que criamos, incluindo o ID do perfil
+    QUrl url(m_perfisUrl + "/selecionar/" + QString::number(idPerfil));
+    QNetworkRequest request{url}; // Usando {} para evitar o "most vexing parse"
+
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    // Para POST, é bom definir o Content-Type, mesmo com corpo vazio
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    // Fazemos uma requisição POST sem corpo (QByteArray() é um corpo vazio)
+    QNetworkReply *reply = m_manager->post(request, QByteArray());
+
+    // Conectamos a finalização da requisição ao nosso novo slot de resposta
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onSelecionarPerfilReply(reply);
+    });
+}
+
+// Este slot processa a resposta do servidor contendo o novo token
+void UsuarioDAO::onSelecionarPerfilReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        // Lê a resposta JSON do servidor
+        QJsonObject jsonObj = QJsonDocument::fromJson(reply->readAll()).object();
+        QString novoToken = jsonObj["token"].toString();
+
+        if (!novoToken.isEmpty()) {
+            // Pega o usuário da sessão atual para enviar junto com o novo token
+            Usuario usuarioAtual = SessionManager::instance().getUsuario();
+            // Emite o sinal com o novo token para quem estiver ouvindo (o AppController via formMainDashboard)
+            emit novoTokenRecebido(novoToken, usuarioAtual);
+        } else {
+            emit erroDeRede("Falha ao selecionar perfil: o servidor não retornou um novo token.");
+        }
+
+    } else {
+        QJsonObject errorObj = QJsonDocument::fromJson(reply->readAll()).object();
+        emit erroDeRede("Falha ao selecionar perfil: " + errorObj["message"].toString());
+    }
+    reply->deleteLater();
+}
+
+void UsuarioDAO::excluirPerfil(int idPerfil, const QString& token)
+{
+    QNetworkRequest request(QUrl(m_perfisUrl + "/" + QString::number(idPerfil)));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->deleteResource(request);
+    connect(reply, &QNetworkReply::finished, this, [=]() { onExcluirPerfilReply(reply); });
+}
+
+void UsuarioDAO::onExcluirPerfilReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        emit perfilExcluidoComSucesso();
+    } else {
+        QJsonObject errorObj = QJsonDocument::fromJson(reply->readAll()).object();
+        emit erroDeRede("Falha ao excluir perfil: " + errorObj["message"].toString());
     }
     reply->deleteLater();
 }

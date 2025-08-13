@@ -20,6 +20,9 @@ public:
     explicit pageInvestimentos(QWidget *parent = nullptr);
     ~pageInvestimentos();
 
+public slots:
+    void carregarAtivos();
+
 private slots:
     void onAtivosRecebidos(const QVector<Ativo>& ativos);
     void onAtivoModificado();
@@ -40,7 +43,6 @@ private slots:
     // Adicionaremos os outros botões depois
 
 private:
-    void carregarAtivos();
 
     Ui::pageInvestimentos *ui;
     LancamentoDAO* m_dao;

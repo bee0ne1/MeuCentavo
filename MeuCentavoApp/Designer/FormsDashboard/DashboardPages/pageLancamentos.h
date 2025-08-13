@@ -22,12 +22,14 @@ public:
 signals:
     void dadosAtualizados();
 
+public slots:
+    // Slot para (re)carregar os dados da tabela, agora ele apenas inicia a requisição.
+    void carregarTabela();
+
 private slots:
     // Slot para o botão "Adicionar Lançamento"
     void abrirDialogoAdicionar();
-    
-    // Slot para (re)carregar os dados da tabela, agora ele apenas inicia a requisição.
-    void carregarTabela();
+
 
     // Slots para receber as respostas da API através do DAO
     void onLancamentosRecebidos(const QVector<Lancamento>& lancamentos);

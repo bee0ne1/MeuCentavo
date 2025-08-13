@@ -108,6 +108,7 @@ void formGerenciarContas::onContasRecebidas(const QVector<Conta>& contas)
 
 void formGerenciarContas::onContaModificada()
 {
+    qDebug() << "formGerenciarContas: Sinal 'contaModificadaComSucesso' recebido. Recarregando a tabela de contas...";
     carregarContas(); // Recarrega a lista após qualquer alteração
 }
 
@@ -116,6 +117,7 @@ void formGerenciarContas::on_buttonAddConta_clicked()
     DialogAddEditConta dialog(this);
     if (dialog.exec() == QDialog::Accepted) {
         Conta novaConta = dialog.getConta();
+        qDebug() << "formGerenciarContas: Tentando chamar m_dao->adicionarConta()";
         QString token = SessionManager::instance().getToken();
         m_dao->adicionarConta(novaConta, token);
     }

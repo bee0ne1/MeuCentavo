@@ -42,8 +42,8 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
         "pageLancamentos",
         "dadosAtualizados",
         "",
-        "abrirDialogoAdicionar",
         "carregarTabela",
+        "abrirDialogoAdicionar",
         "onLancamentosRecebidos",
         "QList<Lancamento>",
         "lancamentos",
@@ -62,9 +62,9 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
     QtMocHelpers::UintData qt_methods {
         // Signal 'dadosAtualizados'
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'abrirDialogoAdicionar'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'carregarTabela'
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'abrirDialogoAdicionar'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onLancamentosRecebidos'
         QtMocHelpers::SlotData<void(const QVector<Lancamento> &)>(5, 2, QMC::AccessPrivate, QMetaType::Void, {{
@@ -112,8 +112,8 @@ void pageLancamentos::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->dadosAtualizados(); break;
-        case 1: _t->abrirDialogoAdicionar(); break;
-        case 2: _t->carregarTabela(); break;
+        case 1: _t->carregarTabela(); break;
+        case 2: _t->abrirDialogoAdicionar(); break;
         case 3: _t->onLancamentosRecebidos((*reinterpret_cast< std::add_pointer_t<QList<Lancamento>>>(_a[1]))); break;
         case 4: _t->onErroDeRede((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 5: _t->editarLancamento((*reinterpret_cast< std::add_pointer_t<Lancamento>>(_a[1]))); break;

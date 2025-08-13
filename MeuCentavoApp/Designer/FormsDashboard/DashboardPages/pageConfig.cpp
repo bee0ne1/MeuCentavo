@@ -8,6 +8,7 @@
 #include "ui_pageConfig.h"
 #include "Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.h"
 #include "Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h"
+#include "Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.h"
 
 pageConfig::pageConfig(QWidget *parent) :
     QWidget(parent), ui(new Ui::pageConfig) {
@@ -38,4 +39,17 @@ void pageConfig::on_buttonContas_clicked()
     formGerenciarContas *formContas = new formGerenciarContas(this);
     formContas->setAttribute(Qt::WA_DeleteOnClose);
     formContas->exec();
+}
+
+void pageConfig::on_buttonPerfil_clicked()
+{
+    // 1. Cria e abre o diálogo de forma modal (bloqueia a janela de trás).
+    // O código aqui vai PAUSAR até que o diálogo seja fechado.
+    dialogGerenciarPerfis dialogo(this);
+    dialogo.exec();
+
+    // 2. DEPOIS que o diálogo é fechado, nós emitimos o sinal.
+    // Isso garante que qualquer mudança na sessão já terá sido comandada
+    // antes de tentarmos atualizar a UI principal.
+    emit listaDePerfisAtualizada();
 }

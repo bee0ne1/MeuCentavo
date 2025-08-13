@@ -27,11 +27,15 @@ public:
     QString getToken() const;
     Usuario getUsuario() const;
     int getUsuarioId() const;
+    int getPerfilId() const;
+    QString getTipoPerfil() const;
     int obterIdUsuarioPreferencial() const;
+    void salvarNovoToken(const QString& novoToken);
+    void reiniciarSessao();
 
 signals:
     void precisaReiniciarParaLogin();
-
+    void sessaoAtualizada();
 
 
 private:
@@ -40,6 +44,8 @@ private:
 
     QString m_token;
     std::optional<Usuario> m_usuarioAtual;
+    int m_perfilIdAtivo;
+    QString m_tipoPerfilAtivo;
 };
 
 #endif // SESSIONMANAGER_H

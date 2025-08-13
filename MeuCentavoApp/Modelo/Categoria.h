@@ -13,6 +13,8 @@ struct Categoria
     QString nome;
     QString tipo;
     int id_usuario;
+    int id_perfil;
+    QString classificacao_contabil;
 };
 
 

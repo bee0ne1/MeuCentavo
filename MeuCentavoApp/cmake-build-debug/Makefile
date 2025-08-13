@@ -395,6 +395,30 @@ Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
 .PHONY : Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.s
 
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.o: Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o
+
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.i: Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.i
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.i
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.i
+
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.s: Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.s
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.s
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.s
+
 Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.o: Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.o
 .PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.o
 
@@ -418,6 +442,30 @@ Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.s: Designer/FormsD
 Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.s
 .PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.s
+
+Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.o: Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o
+
+Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.i: Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.i
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.i
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.i
+
+Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.s: Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.s
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.s
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.s
 
 Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.o: Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.cpp.o
 .PHONY : Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.o
@@ -988,9 +1036,15 @@ help:
 	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.o"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.i"
 	@echo "... Designer/FormsDashboard/DashboardPages/pageRelatorios.s"
+	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.o"
+	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.i"
+	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.s"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.o"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.i"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.s"
+	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.o"
+	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.i"
+	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.s"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.o"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.i"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.s"

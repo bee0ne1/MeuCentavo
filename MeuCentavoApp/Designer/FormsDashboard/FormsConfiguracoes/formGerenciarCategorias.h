@@ -26,6 +26,8 @@ private slots:
     // Slot que é chamado após uma modificação (add, edit, delete) ser bem-sucedida
     void onCategoriaModificada();
 
+    void onSessaoAtualizada();
+
     // Slots para os botões principais da UI
     void on_buttonAddCategoria_clicked();
     void on_buttonEditCategoria_clicked();
@@ -40,6 +42,7 @@ private:
     void configurarTabelas();
     void editarCategoria(const Categoria& categoria);
     void excluirCategoria(const Categoria& categoria);
+    QString m_tipoPerfilAtivo;
     QTableWidget* tabelaAtual(); // Retorna um ponteiro para a tabela da aba ativa
 
     Ui::formGerenciarCategorias *ui;
