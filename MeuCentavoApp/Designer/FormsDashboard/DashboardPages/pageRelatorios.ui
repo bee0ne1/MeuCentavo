@@ -17,9 +17,9 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
-     <widget class="QWidget" name="tab">
+     <widget class="QWidget" name="tabVisaoGeral">
       <attribute name="title">
        <string>Visão Geral</string>
       </attribute>
@@ -111,7 +111,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_2">
+     <widget class="QWidget" name="tabAnaliseTendencia">
       <attribute name="title">
        <string>Análise de Tendência</string>
       </attribute>
@@ -160,6 +160,26 @@
           </item>
          </layout>
         </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabDre">
+      <attribute name="title">
+       <string>DRE</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QTableWidget" name="tableWidgetDre"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabFluxoCaixa">
+      <attribute name="title">
+       <string>Fluxo de Caixa</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QTableWidget" name="tableWidgetFluxoCaixa"/>
        </item>
       </layout>
      </widget>

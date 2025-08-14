@@ -19,6 +19,8 @@ int main(int argc, char *argv[])
     qRegisterMetaType<QVector<PontoTendencia>>();
     qRegisterMetaType<QVector<LinhaCronograma>>();
     qRegisterMetaType<Perfil>();
+    qRegisterMetaType<DreData>();
+    qRegisterMetaType<FluxoCaixaData>();
 
     // Cria o controlador e inicia a aplicação
     AppController controller;

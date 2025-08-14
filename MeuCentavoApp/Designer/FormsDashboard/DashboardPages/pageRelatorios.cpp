@@ -14,6 +14,7 @@
 #include <QFileDialog>
 #include <QFile>
 #include <QTextStream>
+#include "Gerenciamento/SessionManager.h"
 
 pageRelatorios::pageRelatorios(QWidget *parent) :
     QWidget(parent),
@@ -62,6 +63,15 @@ pageRelatorios::pageRelatorios(QWidget *parent) :
     m_chartViewTendencia->setRenderHint(QPainter::Antialiasing);
     ui->layoutGraficoTendencia->addWidget(m_chartViewTendencia);
 
+    // --- LÓGICA DE VISIBILIDADE INICIAL ---
+    // Verifica o perfil no momento da criação e ajusta a visibilidade da aba DRE.
+    QString tipoPerfil = SessionManager::instance().getTipoPerfil();
+    bool isPerfilPJ = (tipoPerfil == "PJ");
+    ui->tabDre->setVisible(isPerfilPJ);
+    ui->tabFluxoCaixa->setVisible(isPerfilPJ);
+    configurarTabelaDre();
+    configurarTabelaFluxoCaixa();
+
     // 4. Conecta os sinais do DAO aos slots desta classe
     connect(m_dao, &LancamentoDAO::contasRecebidas, this, &pageRelatorios::onContasRecebidas);
     connect(m_dao, &LancamentoDAO::gastosPorCategoriaRecebidos, this, &pageRelatorios::onGastosRecebidos);
@@ -70,6 +80,8 @@ pageRelatorios::pageRelatorios(QWidget *parent) :
     connect(m_dao, &LancamentoDAO::comparativoMensalRecebido, this, &pageRelatorios::onComparativoRecebido);
     connect(m_dao, &LancamentoDAO::categoriasRecebidas, this, &pageRelatorios::onCategoriasDespesaRecebidas); // Reutilizamos o sinal
     connect(m_dao, &LancamentoDAO::tendenciaCategoriaRecebida, this, &pageRelatorios::onTendenciaRecebida);
+    connect(m_dao, &LancamentoDAO::dreRecebido, this, &pageRelatorios::onDreRecebido);
+    connect(m_dao, &LancamentoDAO::fluxoCaixaRecebido, this, &pageRelatorios::onFluxoCaixaRecebido);
 
     // Define as datas padrão nos QDateEdit
     QDate dataAtual = QDate::currentDate();
@@ -110,6 +122,17 @@ pageRelatorios::~pageRelatorios()
 
 void pageRelatorios::carregarDados()
 {
+    // --- LÓGICA DE VISIBILIDADE ATUALIZADA ---
+    // Reavalia a visibilidade da aba DRE toda vez que os dados são carregados.
+    QString tipoPerfil = SessionManager::instance().getTipoPerfil();
+    bool isPerfilPJ = (tipoPerfil == "PJ");
+
+    int dreIndex = ui->tabWidget->indexOf(ui->tabDre);
+    if (dreIndex != -1) ui->tabWidget->setTabVisible(dreIndex, isPerfilPJ);
+
+    int fluxoCaixaIndex = ui->tabWidget->indexOf(ui->tabFluxoCaixa);
+    if (fluxoCaixaIndex != -1) ui->tabWidget->setTabVisible(fluxoCaixaIndex, isPerfilPJ);
+
     // --- LÓGICA PARA TÍTULO DINÂMICO ---
     QString periodoTexto = ui->comboBoxPeriodo->currentText();
     QString novoTituloPizza;
@@ -141,6 +164,11 @@ void pageRelatorios::carregarDados()
     m_dao->obterTodos(token, dataInicio, dataFim, idConta);
     // Adiciona a chamada para o novo gráfico
     m_dao->obterComparativoMensal(token, dataInicio, dataFim, idConta);
+
+    if (isPerfilPJ) {
+        m_dao->obterDre(token, dataInicio, dataFim);
+        m_dao->obterFluxoCaixa(token, dataInicio, dataFim); // <-- ADICIONE A CHAMADA
+    }
 }
 
 void pageRelatorios::onGastosRecebidos(const QHash<QString, double>& dados)
@@ -431,4 +459,120 @@ void pageRelatorios::onTendenciaRecebida(const QVector<PontoTendencia>& tendenci
     m_chartTendencia->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
     m_chartTendencia->legend()->setVisible(true);
+}
+
+void pageRelatorios::configurarTabelaDre()
+{
+    ui->tableWidgetDre->setColumnCount(2);
+    ui->tableWidgetDre->setHorizontalHeaderLabels({"Conta", "Valor"});
+    ui->tableWidgetDre->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    ui->tableWidgetDre->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    ui->tableWidgetDre->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tableWidgetDre->verticalHeader()->setVisible(false);
+}
+
+void pageRelatorios::onDreRecebido(const DreData& dre)
+{
+    popularTabelaDre(dre);
+}
+
+void pageRelatorios::popularTabelaDre(const DreData& dre)
+{
+    ui->tableWidgetDre->setRowCount(0);
+    QLocale brLocale(QLocale::Portuguese, QLocale::Brazil);
+
+    // Função auxiliar para adicionar uma linha na tabela
+    auto adicionarLinha = [&](const QString& conta, double valor, bool isSubtotal = false, bool isResultado = false) {
+        int linha = ui->tableWidgetDre->rowCount();
+        ui->tableWidgetDre->insertRow(linha);
+
+        QTableWidgetItem* itemConta = new QTableWidgetItem(conta);
+        QTableWidgetItem* itemValor = new QTableWidgetItem(brLocale.toCurrencyString(valor));
+        itemValor->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
+
+        if (isSubtotal || isResultado) {
+            QFont font;
+            font.setBold(true);
+            itemConta->setFont(font);
+            itemValor->setFont(font);
+        }
+        if (isResultado) {
+            QColor cor = (valor >= 0) ? QColor("#2ecc71") : QColor("#e74c3c"); // Verde ou Vermelho
+            itemValor->setForeground(cor);
+        }
+
+        ui->tableWidgetDre->setItem(linha, 0, itemConta);
+        ui->tableWidgetDre->setItem(linha, 1, itemValor);
+    };
+
+    // Popula a tabela na ordem correta do DRE
+    adicionarLinha("Receita Bruta", dre["Receita Bruta"]);
+    adicionarLinha("(-) Deduções da Receita", -dre["Dedução da Receita"]);
+    adicionarLinha("= Receita Líquida", dre["Receita Líquida"], true);
+    adicionarLinha("(-) Custo do Serviço/Produto", -dre["Custo do Serviço/Produto"]);
+    adicionarLinha("= Lucro Bruto", dre["Lucro Bruto"], true);
+    adicionarLinha("(-) Despesa Operacional", -dre["Despesa Operacional"]);
+    adicionarLinha("= Lucro Operacional", dre["Lucro Operacional"], true);
+    adicionarLinha("(+) Receita Financeira", dre["Receita Financeira"]);
+    adicionarLinha("(-) Despesa Financeira", -dre["Despesa Financeira"]);
+    adicionarLinha("= Resultado Antes dos Impostos", dre["Resultado Antes dos Impostos"], true);
+    adicionarLinha("(-) Imposto sobre o Lucro", -dre["Imposto sobre o Lucro"]);
+    adicionarLinha("= Lucro Líquido", dre["Lucro Líquido"], false, true);
+}
+
+void pageRelatorios::configurarTabelaFluxoCaixa()
+{
+    ui->tableWidgetFluxoCaixa->setColumnCount(2);
+    ui->tableWidgetFluxoCaixa->setHorizontalHeaderLabels({"Descrição", "Valor (BRL)"});
+    ui->tableWidgetFluxoCaixa->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    ui->tableWidgetFluxoCaixa->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    ui->tableWidgetFluxoCaixa->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tableWidgetFluxoCaixa->verticalHeader()->setVisible(false);
+}
+
+void pageRelatorios::onFluxoCaixaRecebido(const FluxoCaixaData& fluxoCaixa)
+{
+    popularTabelaFluxoCaixa(fluxoCaixa);
+}
+
+void pageRelatorios::popularTabelaFluxoCaixa(const FluxoCaixaData& fluxoCaixa)
+{
+    // --- CORREÇÃO CRÍTICA AQUI ---
+    // Garante que estamos limpando e usando a tabela correta: tableWidgetFluxoCaixa
+    ui->tableWidgetFluxoCaixa->setRowCount(0);
+    QLocale brLocale(QLocale::Portuguese, QLocale::Brazil);
+
+    // A função auxiliar agora aponta para a tabela correta
+    auto adicionarLinha = [&](const QString& conta, double valor, bool isSubtotal = false, bool isResultado = false) {
+        // Aponta para a tabela correta
+        int linha = ui->tableWidgetFluxoCaixa->rowCount();
+        ui->tableWidgetFluxoCaixa->insertRow(linha);
+
+        QTableWidgetItem* itemConta = new QTableWidgetItem(conta);
+        QTableWidgetItem* itemValor = new QTableWidgetItem(brLocale.toCurrencyString(valor));
+        itemValor->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
+
+        if (isSubtotal || isResultado) {
+            QFont font;
+            font.setBold(true);
+            itemConta->setFont(font);
+            itemValor->setFont(font);
+        }
+        if (isResultado) {
+            QColor cor = (valor >= 0) ? QColor("#2ecc71") : QColor("#e74c3c");
+            itemValor->setForeground(cor);
+        }
+
+        // Adiciona os itens à tabela correta
+        ui->tableWidgetFluxoCaixa->setItem(linha, 0, itemConta);
+        ui->tableWidgetFluxoCaixa->setItem(linha, 1, itemValor);
+    };
+    // --- FIM DA CORREÇÃO ---
+
+    // A lógica para popular as linhas continua a mesma
+    adicionarLinha("Saldo Inicial do Período", fluxoCaixa.value("Saldo Inicial"));
+    adicionarLinha("(+) Total de Entradas", fluxoCaixa.value("Total de Entradas"));
+    adicionarLinha("(-) Total de Saídas", -fluxoCaixa.value("Total de Saídas"));
+    adicionarLinha("= Fluxo de Caixa Líquido", fluxoCaixa.value("Fluxo de Caixa Líquido"), true, true);
+    adicionarLinha("= Saldo Final do Período", fluxoCaixa.value("Saldo Final"), true);
 }

@@ -386,6 +386,7 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QList \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QMargins \
   /usr/include/qt6/QtCore/QMetaType \
   /usr/include/qt6/QtCore/QObject \
@@ -1840,6 +1841,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/qt6/QtCore/QJsonDocument \
   /usr/include/qt6/QtCore/QJsonObject \
   /usr/include/qt6/QtCore/QList \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QMetaType \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QSharedDataPointer \
@@ -3304,6 +3306,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageDividas.
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QLocale \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVariant \
@@ -4988,6 +4991,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageInvestim
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVariant \
@@ -5565,6 +5569,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamen
   /usr/include/qt6/QtCore/QFile \
   /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QLocale \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QTextStream \
@@ -6112,6 +6117,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageMetas.cp
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QDebug \
   /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVariant \
@@ -9385,6 +9391,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGere
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QDebug \
   /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVariant \
@@ -9929,6 +9936,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGere
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVariant \
@@ -10463,6 +10471,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularP
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QLocale \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVariant \
@@ -12592,6 +12601,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogImpo
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVariant \
@@ -13136,6 +13146,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogMape
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVariant \
@@ -13667,6 +13678,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/formAdicio
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QDebug \
   /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVariant \
@@ -14748,6 +14760,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o: /h
   /usr/include/qt6/QtCore/QDebug \
   /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QList \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QMargins \
   /usr/include/qt6/QtCore/QMetaType \
   /usr/include/qt6/QtCore/QObject \
@@ -19443,6 +19456,7 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: MeuCe
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QList \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QMargins \
   /usr/include/qt6/QtCore/QMetaType \
   /usr/include/qt6/QtCore/QObject \
@@ -19975,6 +19989,7 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: /home/bruno/Documentos/gestaoFinanceira
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QMetaType \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
@@ -21006,8 +21021,6 @@ MeuCentavoApp_autogen/IMH5DCT4WY/moc_formUsuario.cpp:
 
 /usr/include/qt6/QtCore/QStringList:
 
-/usr/include/qt6/QtCore/QMap:
-
 /usr/include/qt6/QtCharts/qxyseries.h:
 
 /usr/include/qt6/QtCharts/qvxymodelmapper.h:
@@ -21304,7 +21317,7 @@ MeuCentavoApp_autogen/include/ui_pageConfig.h:
 
 /usr/include/qt6/QtCore/QUrl:
 
-/usr/include/c++/15.1.1/bits/enable_special_members.h:
+/usr/include/qt6/QtCore/QJsonObject:
 
 /usr/include/qt6/QtGui/qbitmap.h:
 
@@ -21734,6 +21747,8 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGere
 
 /usr/include/qt6/QtCore/qanystringview.h:
 
+/usr/include/qt6/QtCore/QMap:
+
 /usr/include/c++/15.1.1/iosfwd:
 
 /usr/include/c++/15.1.1/initializer_list:
@@ -22113,6 +22128,8 @@ MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageDividas.cpp:
 /usr/include/qt6/QtWidgets/QVBoxLayout:
 
 /usr/include/bits/types/struct_sched_param.h:
+
+/usr/include/c++/15.1.1/bits/enable_special_members.h:
 
 /usr/include/c++/15.1.1/bits/stl_tempbuf.h:
 
@@ -24155,5 +24172,3 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp
 /usr/include/qt6/QtCore/qcborcommon.h:
 
 /usr/include/qt6/QtCore/QJsonDocument:
-
-/usr/include/qt6/QtCore/QJsonObject:

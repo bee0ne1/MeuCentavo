@@ -949,3 +949,63 @@ void LancamentoDAO::onPlanoSimuladoReply(QNetworkReply *reply)
     }
     reply->deleteLater();
 }
+
+
+void LancamentoDAO::obterDre(const QString& token, const QDate& dataInicio, const QDate& dataFim)
+{
+    QUrl url("http://localhost:3000/api/relatorios/dre");
+    QUrlQuery query;
+    query.addQueryItem("data_inicio", dataInicio.toString(Qt::ISODate));
+    query.addQueryItem("data_fim", dataFim.toString(Qt::ISODate));
+    url.setQuery(query);
+
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        if (reply->error() == QNetworkReply::NoError) {
+            QJsonObject obj = QJsonDocument::fromJson(reply->readAll()).object();
+            DreData dre;
+            for (auto it = obj.constBegin(); it != obj.constEnd(); ++it) {
+                dre[it.key()] = it.value().toDouble();
+            }
+            emit dreRecebido(dre);
+        } else {
+            emit erroOcorrido("Falha ao buscar DRE: " + reply->readAll());
+        }
+        reply->deleteLater();
+    });
+}
+
+void LancamentoDAO::obterFluxoCaixa(const QString& token, const QDate& dataInicio, const QDate& dataFim)
+{
+    QUrl url("http://localhost:3000/api/relatorios/fluxo-caixa");
+    QUrlQuery query;
+    query.addQueryItem("data_inicio", dataInicio.toString(Qt::ISODate));
+    query.addQueryItem("data_fim", dataFim.toString(Qt::ISODate));
+    url.setQuery(query);
+
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    QNetworkReply *reply = m_manager->get(request);
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        QByteArray responseData = reply->readAll();
+        qDebug() << "DAO: Resposta recebida de /api/relatorios/fluxo-caixa:" << responseData;
+
+        if (reply->error() == QNetworkReply::NoError) {
+
+            QJsonObject obj = QJsonDocument::fromJson(reply->readAll()).object();
+            FluxoCaixaData fluxoCaixa;
+            // Itera sobre as chaves do JSON e as adiciona ao QMap
+            for (auto it = obj.constBegin(); it != obj.constEnd(); ++it) {
+                fluxoCaixa[it.key()] = it.value().toDouble();
+            }
+            emit fluxoCaixaRecebido(fluxoCaixa);
+        } else {
+            emit erroOcorrido("Falha ao buscar Fluxo de Caixa: " + reply->readAll());
+        }
+        reply->deleteLater();
+    });
+}

@@ -412,17 +412,19 @@ app.delete('/api/perfis/:id', authenticateToken, async (req, res) => {
 
 //------ROTAS DE LANÇAMENTO---------
 
-// Rota para BUSCAR os lançamentos mais recentes de um usuário
+// Rota para BUSCAR os lançamentos mais recentes (VERSÃO CORRIGIDA COM FILTRO DE PERFIL)
 app.get('/api/lancamentos/recentes', authenticateToken, async (req, res) => {
     try {
         const usuarioId = req.user.userId;
-        // Pega o limite da query string, ou usa 5 como padrão.
+        const idPerfil = req.user.perfilId; 
         const limite = parseInt(req.query.limite) || 5;
 
+        // Adiciona o filtro AND id_perfil = ?
         const [lancamentos] = await pool.query(
-            'SELECT * FROM lancamentos WHERE id_usuario = ? ORDER BY data_lancamento DESC, id DESC LIMIT ?',
-            [usuarioId, limite]
+            'SELECT * FROM lancamentos WHERE id_usuario = ? AND id_perfil = ? ORDER BY data_lancamento DESC, id DESC LIMIT ?',
+            [usuarioId, idPerfil, limite]
         );
+    
         res.json(lancamentos);
 
     } catch (error) {
@@ -431,19 +433,22 @@ app.get('/api/lancamentos/recentes', authenticateToken, async (req, res) => {
     }
 });
 
+
 // Rota para BUSCAR um resumo de receitas e despesas do mês atual
 app.get('/api/lancamentos/resumo/mes', authenticateToken, async (req, res) => {
     try {
         const usuarioId = req.user.userId;
-
-        // Query que soma os valores, agrupados por tipo, apenas para o mês e ano atuais.
+        const idPerfil = req.user.perfilId;
+        
+        // Adiciona o filtro AND id_perfil = ? à cláusula WHERE
         const [rows] = await pool.query(
             `SELECT tipo, SUM(valor) as total
              FROM lancamentos
-             WHERE id_usuario = ? AND MONTH(data_lancamento) = MONTH(CURRENT_DATE()) AND YEAR(data_lancamento) = YEAR(CURRENT_DATE())
+             WHERE id_usuario = ? AND id_perfil = ? AND MONTH(data_lancamento) = MONTH(CURRENT_DATE()) AND YEAR(data_lancamento) = YEAR(CURRENT_DATE())
              GROUP BY tipo`,
-            [usuarioId]
+            [usuarioId, idPerfil]
         );
+        
 
         // Processa o resultado para enviar um JSON limpo para o C++
         let resumo = {
@@ -471,14 +476,15 @@ app.get('/api/lancamentos/resumo/mes', authenticateToken, async (req, res) => {
 app.get('/api/lancamentos/gastos/categoria', authenticateToken, async (req, res) => {
     try {
         const usuarioId = req.user.userId;
+        const idPerfil = req.user.perfilId; // Pega o perfil ativo
         const { data_inicio, data_fim, id_conta } = req.query;
 
         // 1. Busca as taxas de câmbio atuais
         const taxas = await obterCotacoes();
 
-        let whereClauses = [`l.id_usuario = ?`, `l.tipo = 'Despesa'`];
-        let params = [usuarioId];
-        // ... sua lógica de filtros de data e conta continua aqui ...
+        // Adiciona l.id_perfil = ? à lista de filtros
+        let whereClauses = [`l.id_usuario = ?`, `l.id_perfil = ?`, `l.tipo = 'Despesa'`];
+        let params = [usuarioId, idPerfil];
 
         // 2. Monta a query, mas usando as taxas reais
         const query = `
@@ -508,30 +514,33 @@ app.get('/api/lancamentos/gastos/categoria', authenticateToken, async (req, res)
 });
 
 // Rota para buscar o comparativo mensal de receitas e despesas
+// Rota para buscar o comparativo mensal (VERSÃO FINAL E CORRIGIDA)
 app.get('/api/lancamentos/comparativo/mensal', authenticateToken, async (req, res) => {
     try {
         const usuarioId = req.user.userId;
-        const { data_inicio, data_fim, id_conta } = req.query;
+        const idPerfil = req.user.perfilId;
 
-        // Montagem da query dinâmica (mesma lógica dos outros endpoints)
-        let whereClauses = [`id_usuario = ?`];
-        let params = [usuarioId];
+        // --- CORREÇÃO CRÍTICA AQUI ---
+        // Extrai os filtros da query string da URL. Esta linha estava faltando.
+        const { data_inicio, data_fim, id_conta } = req.query;
+        // --------------------------------
+
+        let whereClauses = [`id_usuario = ?`, `id_perfil = ?`];
+        let params = [usuarioId, idPerfil];
 
         if (data_inicio) {
             whereClauses.push(`data_lancamento >= ?`);
-            params.push(data_inicio);
+            params.push(`${data_inicio} 00:00:00`);
         }
         if (data_fim) {
             whereClauses.push(`data_lancamento <= ?`);
-            params.push(data_fim);
+            params.push(`${data_fim} 23:59:59`);
         }
         if (id_conta && id_conta != -1) {
             whereClauses.push(`id_conta = ?`);
             params.push(id_conta);
         }
 
-        // Esta é a query principal. Ela agrupa por ano/mês e usa SUM(CASE...)
-        // para "pivotar" as linhas de receita e despesa em colunas.
         const query = `
             SELECT
                 DATE_FORMAT(data_lancamento, '%Y-%m') as mes,
@@ -539,8 +548,7 @@ app.get('/api/lancamentos/comparativo/mensal', authenticateToken, async (req, re
                 SUM(CASE WHEN tipo = 'Despesa' THEN valor ELSE 0 END) as despesas
             FROM
                 lancamentos
-            WHERE
-                ${whereClauses.join(' AND ')}
+            WHERE ${whereClauses.join(' AND ')}
             GROUP BY
                 YEAR(data_lancamento), MONTH(data_lancamento)
             ORDER BY
@@ -551,30 +559,35 @@ app.get('/api/lancamentos/comparativo/mensal', authenticateToken, async (req, re
         res.json(results);
 
     } catch (error) {
-        console.error("Erro ao buscar comparativo mensal:", error);
+        console.error("Erro ao buscar comparativo mensal:", error.message);
         res.status(500).json({ message: 'Erro interno do servidor.' });
     }
 });
 
-// Rota para ADICIONAR um novo lançamento (VERSÃO ATUALIZADA)
+// Rota para ADICIONAR um novo lançamento (VERSÃO FINAL E CORRIGIDA COM PERFIS)
 app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
     try {
-        console.log("Backend recebeu o corpo da requisição:", req.body);
-
         const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria, id_meta,
                 valor_original, moeda_codigo_original, taxa_cambio_usada } = req.body;
+        
+        // Pega o id_usuario E o id_perfil DO TOKEN da sessão ativa
         const id_usuario = req.user.userId;
+        const id_perfil = req.user.perfilId; // <-- PONTO CRÍTICO 1
 
         if (!descricao || !valor || !data_lancamento || !tipo || !id_conta || !id_categoria) {
             return res.status(400).json({ message: 'Campos principais são obrigatórios.' });
         }
+        if (!id_perfil) { // Segurança extra
+            return res.status(400).json({ message: 'Perfil de usuário inválido na sessão.' });
+        }
 
+        // Adicionamos a coluna `id_perfil` à query INSERT
         const [result] = await pool.query(
             `INSERT INTO lancamentos (descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria, id_meta, 
-                                      valor_original, moeda_codigo_original, taxa_cambio_usada) 
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                                      valor_original, moeda_codigo_original, taxa_cambio_usada, id_perfil) 
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
             [descricao, valor, data_lancamento, tipo, id_usuario, id_conta, id_categoria, id_meta || null,
-             valor_original || valor, moeda_codigo_original || 'BRL', taxa_cambio_usada || 1]
+             valor_original || valor, moeda_codigo_original || 'BRL', taxa_cambio_usada || 1, id_perfil] // <-- Passa o id_perfil para a query
         );
 
         res.status(201).json({ message: 'Lançamento adicionado com sucesso!', insertId: result.insertId });
@@ -585,23 +598,28 @@ app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
     }
 });
 
-// Rota para BUSCAR TODOS os lançamentos do usuário logado (VERSÃO COM FILTROS)
+// Rota para BUSCAR TODOS os lançamentos do usuário logado (VERSÃO FINAL COM FILTRO DE PERFIL)
 app.get('/api/lancamentos', authenticateToken, async (req, res) => {
     try {
         const usuarioId = req.user.userId;
+        const idPerfil = req.user.perfilId; // <-- Pega o perfil ativo do token
+
+        if (!idPerfil) {
+            return res.status(400).json({ message: "Nenhum perfil ativo na sessão." });
+        }
+
         const { data_inicio, data_fim, id_conta } = req.query;
 
-        // --- Lógica para montar a query dinâmica ---
-        let whereClauses = [`l.id_usuario = ?`];
-        let params = [usuarioId];
+        // Adicionamos l.id_perfil = ? à lista de filtros
+        let whereClauses = [`l.id_usuario = ?`, `l.id_perfil = ?`];
+        let params = [usuarioId, idPerfil];
+
 
         if (data_inicio) {
-            // Adiciona a hora inicial para pegar desde a meia-noite
             whereClauses.push(`l.data_lancamento >= ?`);
             params.push(`${data_inicio} 00:00:00`);
         }   
         if (data_fim) {
-            // Adiciona a hora final para pegar até o último segundo do dia
             whereClauses.push(`l.data_lancamento <= ?`);
             params.push(`${data_fim} 23:59:59`);
         }
@@ -620,7 +638,6 @@ app.get('/api/lancamentos', authenticateToken, async (req, res) => {
              LEFT JOIN categorias cat ON l.id_categoria = cat.id_categoria
              WHERE ${whereClauses.join(' AND ')}
              ORDER BY l.data_lancamento DESC, l.id DESC`;
-        // -----------------------------------------
 
         console.log("Executando Query:", query);
         console.log("Com Parâmetros:", params);
@@ -640,6 +657,7 @@ app.put('/api/lancamentos/:id', authenticateToken, async (req, res) => {
     try {
         const idLancamento = req.params.id;
         const idUsuario = req.user.userId;
+        const idPerfil = req.user.perfilId;
         const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria } = req.body;
 
         // Validação
@@ -650,9 +668,8 @@ app.put('/api/lancamentos/:id', authenticateToken, async (req, res) => {
         // A condição 'AND id_usuario = ?' é uma segurança para garantir que um utilizador
         // só pode editar os seus próprios lançamentos.
         const [result] = await pool.query(
-            `UPDATE lancamentos SET descricao = ?, valor = ?, data_lancamento = ?, tipo = ?, id_conta = ?, id_categoria = ?
-             WHERE id = ? AND id_usuario = ?`,
-            [descricao, valor, data_lancamento, tipo, id_conta, id_categoria, idLancamento, idUsuario]
+            `UPDATE lancamentos SET ... WHERE id = ? AND id_usuario = ? AND id_perfil = ?`,
+            [descricao, valor, data_lancamento, tipo, id_conta, id_categoria, idLancamento, idUsuario, idPerfil]
         );
 
         if (result.affectedRows > 0) {
@@ -672,10 +689,11 @@ app.delete('/api/lancamentos/:id', authenticateToken, async (req, res) => {
     try {
         const idLancamento = req.params.id;
         const idUsuario = req.user.userId;
+        const idPerfil = req.user.perfilId;
 
         const [result] = await pool.query(
-            'DELETE FROM lancamentos WHERE id = ? AND id_usuario = ?',
-            [idLancamento, idUsuario]
+            'DELETE FROM lancamentos WHERE id = ? AND id_usuario = ? AND id_perfil = ?',
+            [idLancamento, idUsuario, idPerfil]
         );
 
         if (result.affectedRows > 0) {
@@ -693,6 +711,7 @@ app.delete('/api/lancamentos/:id', authenticateToken, async (req, res) => {
 app.get('/api/relatorios/tendencia-categoria', authenticateToken, async (req, res) => {
     try {
         const idUsuario = req.user.userId;
+        const idPerfil = req.user.perfilId;
         const { id_categoria, meses_atras } = req.query;
 
         if (!id_categoria) {
@@ -710,6 +729,7 @@ app.get('/api/relatorios/tendencia-categoria', authenticateToken, async (req, re
                 lancamentos
             WHERE
                 id_usuario = ?
+                AND id_perfil = ?
                 AND id_categoria = ?
                 AND tipo = 'Despesa'
                 AND data_lancamento >= CURDATE() - INTERVAL ? MONTH
@@ -719,11 +739,125 @@ app.get('/api/relatorios/tendencia-categoria', authenticateToken, async (req, re
                 mes ASC;
         `;
 
-        const [tendencia] = await pool.query(query, [idUsuario, id_categoria, numMeses]);
+        const [tendencia] = await pool.query(query, [idUsuario, idPerfil, id_categoria, numMeses]);
         res.json(tendencia);
 
     } catch (error) {
         console.error("Erro ao buscar tendência da categoria:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// --- ROTA PARA O RELATÓRIO DRE (DEMONSTRATIVO DE RESULTADOS) ---
+app.get('/api/relatorios/dre', authenticateToken, async (req, res) => {
+    try {
+        const idPerfil = req.user.perfilId;
+        const { data_inicio, data_fim } = req.query;
+
+        // Validação
+        if (!data_inicio || !data_fim) {
+            return res.status(400).json({ message: 'Data de início e fim são obrigatórias.' });
+        }
+        if (!idPerfil) {
+            return res.status(400).json({ message: 'Nenhum perfil ativo na sessão.' });
+        }
+
+        // 1. Busca todos os totais agrupados pela classificação contábil no período
+        const query = `
+            SELECT
+                c.classificacao_contabil,
+                SUM(l.valor_original) as total
+            FROM lancamentos l
+            JOIN categorias c ON l.id_categoria = c.id_categoria
+            WHERE l.id_perfil = ? AND l.data_lancamento BETWEEN ? AND ?
+            GROUP BY c.classificacao_contabil;
+        `;
+        const [resultados] = await pool.query(query, [idPerfil, `${data_inicio} 00:00:00`, `${data_fim} 23:59:59`]);
+
+        // 2. Estrutura os resultados no formato de um DRE
+        const dre = {
+            'Receita Bruta': 0,
+            'Dedução da Receita': 0,
+            'Receita Líquida': 0,
+            'Custo do Serviço/Produto': 0,
+            'Lucro Bruto': 0,
+            'Despesa Operacional': 0,
+            'Lucro Operacional': 0,
+            'Receita Financeira': 0,
+            'Despesa Financeira': 0,
+            'Resultado Antes dos Impostos': 0,
+            'Imposto sobre o Lucro': 0,
+            'Lucro Líquido': 0
+        };
+
+        // Preenche o DRE com os dados do banco
+        resultados.forEach(r => {
+            if (dre.hasOwnProperty(r.classificacao_contabil)) {
+                dre[r.classificacao_contabil] = parseFloat(r.total);
+            }
+        });
+
+        // 3. Calcula os subtotais
+        dre['Receita Líquida'] = dre['Receita Bruta'] - dre['Dedução da Receita'];
+        dre['Lucro Bruto'] = dre['Receita Líquida'] - dre['Custo do Serviço/Produto'];
+        dre['Lucro Operacional'] = dre['Lucro Bruto'] - dre['Despesa Operacional'];
+        dre['Resultado Antes dos Impostos'] = dre['Lucro Operacional'] + dre['Receita Financeira'] - dre['Despesa Financeira'];
+        dre['Lucro Líquido'] = dre['Resultado Antes dos Impostos'] - dre['Imposto sobre o Lucro'];
+
+        res.json(dre);
+
+    } catch (error) {
+        console.error("Erro ao gerar DRE:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// --- ROTA PARA O RELATÓRIO DE FLUXO DE CAIXA ---
+app.get('/api/relatorios/fluxo-caixa', authenticateToken, async (req, res) => {
+    try {
+        const idPerfil = req.user.perfilId;
+        const { data_inicio, data_fim } = req.query;
+
+        if (!data_inicio || !data_fim) {
+            return res.status(400).json({ message: 'Data de início e fim são obrigatórias.' });
+        }
+
+        // 1. Calcula o Saldo Inicial (soma de todos os saldos de contas no início do período)
+        // Esta é uma query simplificada; uma versão mais complexa calcularia o saldo exato.
+        const [saldoInicialData] = await pool.query(
+            'SELECT SUM(saldo_inicial) as total FROM contas WHERE id_perfil = ?',
+            [idPerfil]
+        );
+        const saldoInicial = parseFloat(saldoInicialData[0].total) || 0;
+        
+        // 2. Calcula o total de Entradas (Receitas) e Saídas (Despesas) no período
+        const [fluxoData] = await pool.query(
+            `SELECT
+                SUM(CASE WHEN tipo = 'Receita' THEN valor_original ELSE 0 END) as total_entradas,
+                SUM(CASE WHEN tipo = 'Despesa' THEN valor_original ELSE 0 END) as total_saidas
+            FROM lancamentos
+            WHERE id_perfil = ? AND data_lancamento BETWEEN ? AND ?`,
+            [idPerfil, `${data_inicio} 00:00:00`, `${data_fim} 23:59:59`]
+        );
+
+        const totalEntradas = parseFloat(fluxoData[0].total_entradas) || 0;
+        const totalSaidas = parseFloat(fluxoData[0].total_saidas) || 0;
+
+        // 3. Monta o resultado final
+        const fluxoDeCaixa = {
+            'Saldo Inicial': saldoInicial,
+            'Total de Entradas': totalEntradas,
+            'Total de Saídas': totalSaidas,
+            'Fluxo de Caixa Líquido': totalEntradas - totalSaidas,
+            'Saldo Final': saldoInicial + totalEntradas - totalSaidas
+        };
+        
+        console.log(`Backend: Enviando dados do Fluxo de Caixa para o perfil ${idPerfil}:`, fluxoDeCaixa);
+        
+        res.json(fluxoDeCaixa);
+
+    } catch (error) {
+        console.error("Erro ao gerar Fluxo de Caixa:", error.message);
         res.status(500).json({ message: "Erro interno do servidor" });
     }
 });
@@ -954,6 +1088,7 @@ app.delete('/api/contas/:id', authenticateToken, async (req, res) => {
 app.get('/api/metas', authenticateToken, async (req, res) => {
     try {
         const idUsuario = req.user.userId;
+        const idPerfil = req.user.perfilId;
 
         // 1. Busca as taxas de câmbio atuais
         const taxas = await obterCotacoes();
@@ -977,12 +1112,12 @@ app.get('/api/metas', authenticateToken, async (req, res) => {
                     END
                 ), 0) as valor_atual
             FROM metas m
-            LEFT JOIN lancamentos l ON m.id_meta = l.id_meta AND l.tipo = 'Receita'
-            WHERE m.id_usuario = ?
+            LEFT JOIN lancamentos l ON m.id_meta = l.id_meta AND l.tipo = 'Receita' AND l.id_perfil = m.id_perfil            
+            WHERE m.id_usuario = ? AND m.id_perfil = ?
             GROUP BY m.id_meta
             ORDER BY m.data_alvo ASC;
         `;
-        const [metas] = await pool.query(query, [idUsuario]);
+        const [metas] = await pool.query(query, [idUsuario, idPerfil]);
         res.json(metas);
     } catch (error) {
         console.error("Erro ao buscar metas:", error);
@@ -993,6 +1128,7 @@ app.get('/api/metas', authenticateToken, async (req, res) => {
 // Rota para ADICIONAR uma nova meta
 app.post('/api/metas', authenticateToken, async (req, res) => {
     try {
+        
         // 2. Desestruture o novo campo moeda_codigo que virá do frontend
         const { nome, valor_alvo, data_alvo, moeda_codigo } = req.body;
         const idUsuario = req.user.userId;
@@ -1004,8 +1140,9 @@ app.post('/api/metas', authenticateToken, async (req, res) => {
 
         // 4. Adicione a coluna e o valor na query INSERT
         const [result] = await pool.query(
-            'INSERT INTO metas (id_usuario, nome, valor_alvo, data_alvo, moeda_codigo) VALUES (?, ?, ?, ?, ?)',
-            [idUsuario, nome, valor_alvo, data_alvo || null, moeda_codigo]
+            'INSERT INTO metas (id_usuario, nome, valor_alvo, data_alvo, moeda_codigo, id_perfil) VALUES (?, ?, ?, ?, ?, ?)', // Coluna adicionada
+            [req.user.userId, nome, valor_alvo, data_alvo || null, moeda_codigo, req.user.perfilId] // Valor adicionado
+        
         );
 
         res.status(201).json({ message: 'Meta criada com sucesso!', id_meta: result.insertId });
@@ -1031,8 +1168,8 @@ app.put('/api/metas/:id', authenticateToken, async (req, res) => {
 
         // 7. Adicione o campo na query UPDATE
         const [result] = await pool.query(
-            'UPDATE metas SET nome = ?, valor_alvo = ?, data_alvo = ?, moeda_codigo = ? WHERE id_meta = ? AND id_usuario = ?',
-            [nome, valor_alvo, data_alvo || null, moeda_codigo, idMeta, idUsuario]
+            'UPDATE metas SET nome = ?, valor_alvo = ?, data_alvo = ?, moeda_codigo = ? WHERE id_meta = ? AND id_usuario = ? AND id_perfil = ?', 
+            [nome, valor_alvo, data_alvo || null, moeda_codigo, req.params.id, req.user.userId, req.user.perfilId]
         );
 
         if (result.affectedRows > 0) {
@@ -1074,6 +1211,7 @@ app.delete('/api/metas/:id', authenticateToken, async (req, res) => {
 app.get('/api/ativos/portfolio', authenticateToken, async (req, res) => {
     try {
         const idUsuario = req.user.userId;
+        const idPerfil = req.user.perfilId;
 
         // Query complexa que junta ativos e operações para calcular os totais
         const query = `
@@ -1089,7 +1227,7 @@ app.get('/api/ativos/portfolio', authenticateToken, async (req, res) => {
             LEFT JOIN
                 operacoes_investimentos op ON a.id_ativo = op.id_ativo
             WHERE
-                a.id_usuario = ?
+                a.id_usuario = ? AND a.id_perfil = ?
             GROUP BY
                 a.id_ativo, a.ticker, a.nome, a.tipo_ativo
             HAVING
@@ -1098,7 +1236,7 @@ app.get('/api/ativos/portfolio', authenticateToken, async (req, res) => {
                 custo_total DESC;
         `;
 
-        const [portfolio] = await pool.query(query, [idUsuario]);
+        const [portfolio] = await pool.query(query, [idUsuario, idPerfil]);
         res.json(portfolio);
 
     } catch (error) {
@@ -1134,8 +1272,8 @@ app.post('/api/ativos', authenticateToken, async (req, res) => {
 
         // 3. Adicione ao INSERT
         const [result] = await pool.query(
-            'INSERT INTO ativos (id_usuario, ticker, nome, tipo_ativo, moeda_codigo) VALUES (?, ?, ?, ?, ?)',
-            [idUsuario, ticker.toUpperCase(), nome, tipo_ativo, moeda_codigo]
+            'INSERT INTO ativos (id_usuario, ticker, nome, tipo_ativo, moeda_codigo, id_perfil) VALUES (?, ?, ?, ?, ?, ?)', 
+            [req.user.userId, ticker.toUpperCase(), nome, tipo_ativo, moeda_codigo, req.user.perfilId] 
         );
 
         res.status(201).json({ message: 'Ativo adicionado com sucesso!', id_ativo: result.insertId });
@@ -1209,8 +1347,8 @@ app.put('/api/ativos/:id', authenticateToken, async (req, res) => {
 
         // 6. Adicione ao UPDATE
         const [result] = await pool.query(
-            'UPDATE ativos SET nome = ?, tipo_ativo = ?, moeda_codigo = ? WHERE id_ativo = ? AND id_usuario = ?',
-            [nome, tipo_ativo, moeda_codigo, idAtivo, idUsuario]
+            'UPDATE ativos SET nome = ?, tipo_ativo = ?, moeda_codigo = ? WHERE id_ativo = ? AND id_usuario = ? AND id_perfil = ?', 
+            [nome, tipo_ativo, moeda_codigo, req.params.id, req.user.userId, req.user.perfilId]
         );
 
         if (result.affectedRows > 0) {
@@ -1386,14 +1524,17 @@ app.post('/api/dividendos', authenticateToken, async (req, res) => {
 });
 
 
-// --- ROTA PARA EVOLUÇÃO DO PATRIMÔNIO LÍQUIDO ---
+// --- ROTA PARA EVOLUÇÃO DO PATRIMÔNIO LÍQUIDO (VERSÃO CORRIGIDA) ---
 app.get('/api/patrimonio/historico', authenticateToken, async (req, res) => {
     try {
         const idUsuario = req.user.userId;
-        const mesesAtras = 6; // Vamos calcular para os últimos 6 meses
+        const idPerfil = req.user.perfilId; // Pega o perfil ativo
+        const mesesAtras = 6;
 
-        // Esta query é mais complexa. Ela calcula o saldo final de cada mês.
-        // Ela une os lançamentos de entrada/saída com os saldos iniciais das contas.
+        if (!idPerfil) {
+            return res.status(400).json({ message: "Nenhum perfil ativo na sessão." });
+        }
+
         const query = `
             WITH RECURSIVE meses (mes) AS (
                 SELECT DATE_FORMAT(CURDATE(), '%Y-%m-01')
@@ -1407,18 +1548,21 @@ app.get('/api/patrimonio/historico', authenticateToken, async (req, res) => {
                     DATE_FORMAT(l.data_lancamento, '%Y-%m-01') as mes_lancamento,
                     SUM(CASE WHEN l.tipo = 'Receita' THEN l.valor ELSE -l.valor END) as fluxo_liquido
                 FROM lancamentos l
-                WHERE l.id_usuario = ? AND l.data_lancamento < CURDATE() + INTERVAL 1 DAY
+                WHERE l.id_usuario = ? AND l.id_perfil = ? AND l.data_lancamento < CURDATE() + INTERVAL 1 DAY
                 GROUP BY mes_lancamento
             )
             SELECT
                 DATE_FORMAT(m.mes, '%Y-%m') as mes,
-                (SELECT COALESCE(SUM(saldo_inicial), 0) FROM contas WHERE id_usuario = ?) +
-                (SELECT COALESCE(SUM(fluxo_liquido), 0) FROM saldos_mensais WHERE mes_lancamento <= m.mes) as patrimonio
+                -- --- CORREÇÃO AQUI ---
+                -- A subquery agora filtra por c.id_perfil (contas) e não l.id_perfil
+                (SELECT COALESCE(SUM(c.saldo_inicial), 0) FROM contas c WHERE c.id_usuario = ? AND c.id_perfil = ?) +
+                -- --------------------
+                (SELECT COALESCE(SUM(s.fluxo_liquido), 0) FROM saldos_mensais s WHERE s.mes_lancamento <= m.mes) as patrimonio
             FROM meses m
             ORDER BY mes ASC;
         `;
 
-        const [historico] = await pool.query(query, [mesesAtras, idUsuario, idUsuario]);
+        const [historico] = await pool.query(query, [mesesAtras, idUsuario, idPerfil, idUsuario, idPerfil]);
 
         // O ideal seria adicionar o valor dos investimentos aqui também, mas vamos começar
         // apenas com as contas para simplificar. Podemos adicionar isso depois.
@@ -1430,6 +1574,7 @@ app.get('/api/patrimonio/historico', authenticateToken, async (req, res) => {
         res.status(500).json({ message: "Erro interno do servidor" });
     }
 });
+
 
 // --- ROTA PARA SIMULAR PLANO DE QUITAÇÃO DE DÍVIDAS ---
 app.post('/api/dividas/simular-plano', authenticateToken, async (req, res) => {

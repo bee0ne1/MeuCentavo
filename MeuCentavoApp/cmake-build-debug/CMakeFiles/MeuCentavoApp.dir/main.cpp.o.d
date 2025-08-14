@@ -363,5 +363,6 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Ativo.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Dividendo.h \
+ /usr/include/qt6/QtCore/QMap /usr/include/qt6/QtCore/qmap.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Perfil.h \
  /usr/include/qt6/QtCore/QMetaType /usr/include/qt6/QtCore/qmetatype.h

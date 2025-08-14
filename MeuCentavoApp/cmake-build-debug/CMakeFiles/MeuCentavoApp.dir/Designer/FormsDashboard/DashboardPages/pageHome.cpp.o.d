@@ -408,6 +408,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Ativo.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Dividendo.h \
+ /usr/include/qt6/QtCore/QMap /usr/include/qt6/QtCore/qmap.h \
  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/include/ui_pageHome.h \
  /usr/include/qt6/QtWidgets/QApplication \
  /usr/include/qt6/QtWidgets/qapplication.h \
@@ -614,8 +615,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp
  /usr/include/qt6/QtCore/qtyperevision.h /usr/include/qt6/QtCore/qline.h \
  /usr/include/qt6/QtCore/qlocale.h /usr/include/qt6/QtCore/qlockfile.h \
  /usr/include/qt6/QtCore/qloggingcategory.h \
- /usr/include/qt6/QtCore/qmalloc.h /usr/include/qt6/QtCore/qmap.h \
- /usr/include/qt6/QtCore/qmath.h \
+ /usr/include/qt6/QtCore/qmalloc.h /usr/include/qt6/QtCore/qmath.h \
  /usr/include/qt6/QtCore/qmessageauthenticationcode.h \
  /usr/include/qt6/QtCore/qcryptographichash.h \
  /usr/include/qt6/QtCore/qmetacontainer.h \

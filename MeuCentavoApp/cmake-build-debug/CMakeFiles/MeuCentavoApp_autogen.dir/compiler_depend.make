@@ -386,6 +386,7 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QList \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QMargins \
   /usr/include/qt6/QtCore/QMetaType \
   /usr/include/qt6/QtCore/QObject \
@@ -2467,6 +2468,10 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/c++/15.1.1/bits/stl_tempbuf.h:
 
+/usr/include/qt6/QtGui/qbrush.h:
+
+/usr/include/c++/15.1.1/bits/enable_special_members.h:
+
 /usr/include/bits/types/struct_sched_param.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginTargets-relwithdebinfo.cmake:
@@ -2788,6 +2793,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/c++/15.1.1/initializer_list:
 
 /usr/include/c++/15.1.1/iosfwd:
+
+/usr/include/qt6/QtCore/QMap:
 
 /usr/include/qt6/QtCore/qanystringview.h:
 
@@ -3208,7 +3215,3 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/qt6/QtCore/qcoreevent.h:
 
 /usr/include/qt6/QtGui/qbitmap.h:
-
-/usr/include/c++/15.1.1/bits/enable_special_members.h:
-
-/usr/include/qt6/QtGui/qbrush.h:

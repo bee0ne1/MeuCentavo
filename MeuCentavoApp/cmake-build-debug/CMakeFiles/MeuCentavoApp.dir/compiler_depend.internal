@@ -387,6 +387,7 @@
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QHash
  /usr/include/qt6/QtCore/QList
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QMargins
  /usr/include/qt6/QtCore/QMetaType
  /usr/include/qt6/QtCore/QObject
@@ -1843,6 +1844,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o
  /usr/include/qt6/QtCore/QJsonDocument
  /usr/include/qt6/QtCore/QJsonObject
  /usr/include/qt6/QtCore/QList
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QMetaType
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QSharedDataPointer
@@ -3310,6 +3312,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageDividas.
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QHash
  /usr/include/qt6/QtCore/QLocale
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QVariant
@@ -4996,6 +4999,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageInvestim
  /usr/include/pthread.h
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QHash
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QVariant
@@ -5574,6 +5578,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamen
  /usr/include/qt6/QtCore/QFile
  /usr/include/qt6/QtCore/QHash
  /usr/include/qt6/QtCore/QLocale
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QTextStream
@@ -6122,6 +6127,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageMetas.cp
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QDebug
  /usr/include/qt6/QtCore/QHash
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QVariant
@@ -9400,6 +9406,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGere
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QDebug
  /usr/include/qt6/QtCore/QHash
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QVariant
@@ -9945,6 +9952,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGere
  /usr/include/pthread.h
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QHash
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QVariant
@@ -10480,6 +10488,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularP
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QHash
  /usr/include/qt6/QtCore/QLocale
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QVariant
@@ -12613,6 +12622,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogImpo
  /usr/include/pthread.h
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QHash
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QVariant
@@ -13158,6 +13168,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogMape
  /usr/include/pthread.h
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QHash
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QVariant
@@ -13690,6 +13701,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/formAdicio
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QDebug
  /usr/include/qt6/QtCore/QHash
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString
  /usr/include/qt6/QtCore/QVariant
@@ -14773,6 +14785,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o
  /usr/include/qt6/QtCore/QDebug
  /usr/include/qt6/QtCore/QHash
  /usr/include/qt6/QtCore/QList
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QMargins
  /usr/include/qt6/QtCore/QMetaType
  /usr/include/qt6/QtCore/QObject
@@ -19478,6 +19491,7 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QHash
  /usr/include/qt6/QtCore/QList
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QMargins
  /usr/include/qt6/QtCore/QMetaType
  /usr/include/qt6/QtCore/QObject
@@ -20011,6 +20025,7 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o
  /usr/include/pthread.h
  /usr/include/qt6/QtCore/QDate
  /usr/include/qt6/QtCore/QHash
+ /usr/include/qt6/QtCore/QMap
  /usr/include/qt6/QtCore/QMetaType
  /usr/include/qt6/QtCore/QObject
  /usr/include/qt6/QtCore/QString

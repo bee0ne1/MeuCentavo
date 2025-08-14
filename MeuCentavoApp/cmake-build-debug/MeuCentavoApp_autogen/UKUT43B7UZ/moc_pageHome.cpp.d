@@ -285,6 +285,7 @@
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QList \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QMargins \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QRect \

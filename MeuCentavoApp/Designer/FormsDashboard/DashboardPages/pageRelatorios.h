@@ -47,6 +47,13 @@ private slots:
     void onCategoriasDespesaRecebidas(const QVector<Categoria>& categorias);
     void onTendenciaRecebida(const QVector<PontoTendencia>& tendencia);
     void on_buttonAnalisarTendencia_clicked();
+    void onDreRecebido(const DreData& dre);
+    void configurarTabelaDre();
+    void popularTabelaDre(const DreData& dre);
+    void onFluxoCaixaRecebido(const FluxoCaixaData& fluxoCaixa);
+    void configurarTabelaFluxoCaixa();
+    void popularTabelaFluxoCaixa(const FluxoCaixaData& fluxoCaixa);
+
 
 private:
 

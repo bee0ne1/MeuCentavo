@@ -11,6 +11,9 @@
 #include "Modelo/Meta.h"
 #include "Modelo/Ativo.h"
 #include "Modelo/Dividendo.h"
+#include <QMap>
+typedef QMap<QString, double> DreData;
+typedef QMap<QString, double> FluxoCaixaData;
 
 // Forward declarations para as classes de rede
 class QNetworkAccessManager;
@@ -76,6 +79,8 @@ public:
     void obterHistoricoPatrimonio(const QString& token);
     void obterTendenciaCategoria(int idCategoria, const QString& token);
     void simularPlanoQuitacao(double valorExtra, const QString& estrategia, const QString& token);
+    void obterDre(const QString& token, const QDate& dataInicio, const QDate& dataFim);
+    void obterFluxoCaixa(const QString& token, const QDate& dataInicio, const QDate& dataFim);
 
 signals:
         // --- SINAIS DE RESULTADO (A RESPOSTA PARA A INTERFACE) ---
@@ -103,6 +108,8 @@ signals:
     void historicoPatrimonioRecebido(const QVector<HistoricoPatrimonio>& historico);
     void tendenciaCategoriaRecebida(const QVector<PontoTendencia>& tendencia);
     void planoSimuladoRecebido(const QVector<LinhaCronograma>& cronograma, int mesesTotais);
+    void dreRecebido(const DreData& dre);
+    void fluxoCaixaRecebido(const FluxoCaixaData& fluxoCaixa);
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---

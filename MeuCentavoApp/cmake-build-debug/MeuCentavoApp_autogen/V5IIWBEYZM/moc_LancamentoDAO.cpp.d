@@ -268,6 +268,7 @@
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QVector \
