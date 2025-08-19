@@ -42,7 +42,10 @@ int dialogImportarExtrato::idContaSelecionada() const
 
 void dialogImportarExtrato::on_buttonSelecionarArquivo_clicked()
 {
-    m_caminhoArquivo = QFileDialog::getOpenFileName(this, "Selecionar Extrato", QDir::homePath(), "Arquivos CSV (*.csv)");
+    // O filtro agora aceita tanto CSV quanto PDF
+    QString filtroArquivos = "Extratos Bancários (*.csv *.pdf)";
+    m_caminhoArquivo = QFileDialog::getOpenFileName(this, "Selecionar Extrato", QDir::homePath(), filtroArquivos);
+
     if (!m_caminhoArquivo.isEmpty()) {
         ui->lineEditCaminhoArquivo->setText(m_caminhoArquivo);
     }

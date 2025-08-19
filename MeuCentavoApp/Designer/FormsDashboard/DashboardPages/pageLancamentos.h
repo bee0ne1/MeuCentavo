@@ -5,6 +5,7 @@
 #include <QVector>
 #include "Modelo/Lancamento.h"
 #include "Modelo/Conta.h"
+#include "Modelo/TransacaoImportada.h"
 
 // Forward declarations
 namespace Ui { class pageLancamentos; }
@@ -25,6 +26,7 @@ signals:
 public slots:
     // Slot para (re)carregar os dados da tabela, agora ele apenas inicia a requisição.
     void carregarTabela();
+    void onOcrConcluido(const QVector<TransacaoImportada>& transacoes);
 
 private slots:
     // Slot para o botão "Adicionar Lançamento"

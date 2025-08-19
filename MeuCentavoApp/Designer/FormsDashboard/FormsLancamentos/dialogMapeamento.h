@@ -36,7 +36,9 @@ private:
     Ui::dialogMapeamento *ui;
     LancamentoDAO* m_dao;
     QVector<TransacaoImportada>& m_transacoes; // Uma referência para a lista original
-    QVector<Categoria> m_categorias; // Armazena as categorias do usuário
+    QVector<Categoria> m_categorias;
+    QVector<Categoria> m_categoriasReceita; // <-- ADICIONE ESTA LINHA
+    QVector<Categoria> m_categoriasDespesa; // <-- ADICIONE ESTA LINHA
 };
 
 #endif // DIALOGOMAPEAMENTO_H

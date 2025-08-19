@@ -361,52 +361,51 @@ void pageRelatorios::onPeriodoSelecionado(int index)
 
 void pageRelatorios::on_buttonExportarCSV_clicked()
 {
-    if (ui->tableWidgetDetalhes->rowCount() == 0) {
-        QMessageBox::information(this, "Exportar", "Não há dados na tabela para exportar.");
+    if (m_lancamentosDoPeriodo.isEmpty()) {
+        QMessageBox::information(this, "Exportar", "Não há dados para exportar.");
         return;
     }
 
-    // Pede ao usuário para escolher onde salvar o arquivo
     QString caminhoArquivo = QFileDialog::getSaveFileName(this, "Salvar como", QDir::homePath(), "Arquivos CSV (*.csv)");
 
     if (caminhoArquivo.isEmpty()) {
-        return; // O usuário cancelou
+        return; // O utilizador cancelou
     }
 
     QFile file(caminhoArquivo);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        QMessageBox::critical(this, "Erro", "Não foi possível criar ou abrir o arquivo para escrita.");
+        QMessageBox::critical(this, "Erro", "Não foi possível criar ou abrir o ficheiro para escrita.");
         return;
     }
 
     QTextStream stream(&file);
 
-    // Escreve o cabeçalho
-    QStringList headers;
-    for (int i = 0; i < ui->tableWidgetDetalhes->columnCount(); ++i) {
-        headers << "\"" + ui->tableWidgetDetalhes->horizontalHeaderItem(i)->text() + "\"";
-    }
-    stream << headers.join(',') << "\n";
+    // Cabeçalho corrigido
+    stream << "\"Data\",\"Descrição\",\"Categoria\",\"Valor\",\"Tipo\"\n";
 
-    // Escreve os dados das linhas
-    for (int i = 0; i < ui->tableWidgetDetalhes->rowCount(); ++i) {
+    QLocale brLocale(QLocale::Portuguese, QLocale::Brazil);
+
+    // --- ESCRITA DOS DADOS COM CORREÇÃO DE CONSTÂNCIA ---
+    for (const auto& lancamento : m_lancamentosDoPeriodo) {
+        // 1. Cria cópias locais e não-constantes das strings
+        QString descricaoLimpa = lancamento.descricao;
+        QString nomeCategoriaLimpo = lancamento.nome_categoria;
+
+        // 2. Modifica e usa as cópias
         QStringList rowData;
-        for (int j = 0; j < ui->tableWidgetDetalhes->columnCount(); ++j) {
-            QTableWidgetItem* item = ui->tableWidgetDetalhes->item(i, j);
-            if (item) {
-                // Coloca o texto entre aspas para tratar vírgulas e outros caracteres especiais
-                rowData << "\"" + item->text().replace("\"", "\"\"") + "\"";
-            } else {
-                rowData << "\"\"";
-            }
-        }
+        rowData << "\"" + lancamento.data_lancamento.toString("dd/MM/yyyy") + "\"";
+        rowData << "\"" + descricaoLimpa.replace("\"", "\"\"") + "\"";
+        rowData << "\"" + nomeCategoriaLimpo.replace("\"", "\"\"") + "\"";
+        rowData << "\"" + brLocale.toCurrencyString(lancamento.valor_original) + "\"";
+        rowData << "\"" + lancamento.tipo + "\"";
+
         stream << rowData.join(',') << "\n";
     }
+    // --- FIM DA CORREÇÃO ---
 
     file.close();
     QMessageBox::information(this, "Sucesso", "Dados exportados com sucesso para:\n" + caminhoArquivo);
 }
-
 void pageRelatorios::onCategoriasDespesaRecebidas(const QVector<Categoria>& categorias)
 {
     // Popula o ComboBox de tendência apenas com categorias de despesa

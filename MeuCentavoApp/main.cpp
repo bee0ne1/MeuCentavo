@@ -3,6 +3,7 @@
 #include "Modelo/Usuario.h" // Para registrar o metatype
 #include "DataAccess/LancamentoDAO.h"
 #include "Modelo/Perfil.h"
+#include "Modelo/TransacaoImportada.h"
 #include <optional>
 
 int main(int argc, char *argv[])
@@ -21,6 +22,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<Perfil>();
     qRegisterMetaType<DreData>();
     qRegisterMetaType<FluxoCaixaData>();
+    qRegisterMetaType<QVector<TransacaoImportada>>();
 
     // Cria o controlador e inicia a aplicação
     AppController controller;

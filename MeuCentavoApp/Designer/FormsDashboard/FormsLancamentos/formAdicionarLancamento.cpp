@@ -158,7 +158,6 @@ void formAdicionarLancamento::onLancamentoAdicionado()
 {
     qDebug() << "Lançamento adicionado com sucesso, fechando diálogo.";
     emit lancamentoSalvo();
-    this->accept();
 }
 
 void formAdicionarLancamento::onErroDeRede(const QString& motivo)

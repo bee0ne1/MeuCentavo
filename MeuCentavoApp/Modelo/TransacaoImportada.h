@@ -9,12 +9,12 @@
 struct TransacaoImportada {
     QString dataStr;
     QString descricaoStr;
-    QString valorEntradaStr; // Coluna de créditos/receitas
-    QString valorSaidaStr;   // Coluna de débitos/despesas
+    QString categoriaStr;
+    QString valorStr;
+    QString tipoStr;
 
     // Campos que o usuário irá preencher na tela de mapeamento
     int id_categoria = -1;
-    bool ignorar = false;
 };
 
 #endif // TRANSACAOIMPORTADA_H

@@ -13,6 +13,7 @@
 #include <QTextStream>
 #include <QFile>
 #include <QLocale>
+#include <QRegularExpression>
 
 pageLancamentos::pageLancamentos(QWidget *parent) :
     QWidget(parent),
@@ -27,9 +28,11 @@ pageLancamentos::pageLancamentos(QWidget *parent) :
     // Conecta os sinais de resultado do DAO aos nossos slots
     connect(m_dao, &LancamentoDAO::lancamentosRecebidos, this, &pageLancamentos::onLancamentosRecebidos);
     connect(m_dao, &LancamentoDAO::erroOcorrido, this, &pageLancamentos::onErroDeRede);
+    connect(m_dao, &LancamentoDAO::lancamentoModificadoComSucesso, this, &pageLancamentos::carregarTabela);
     connect(m_dao, &LancamentoDAO::lancamentoExcluidoComSucesso, this, &pageLancamentos::carregarTabela);
     // Conecta o slot para popular o ComboBox de contas
     connect(m_dao, &LancamentoDAO::contasRecebidas, this, &pageLancamentos::onContasRecebidas);
+    connect(m_dao, &LancamentoDAO::ocrProcessadoComSucesso, this, &pageLancamentos::onOcrConcluido);
 
     // Conecta o botão da UI ao slot que abre o diálogo
     connect(ui->buttonAdicionarLancamento, &QPushButton::clicked, this, &pageLancamentos::abrirDialogoAdicionar);
@@ -74,6 +77,14 @@ void pageLancamentos::abrirDialogoAdicionar()
         // O diálogo agora também não precisa de parâmetros, pois ele pegará o ID do SessionManager
         m_dialogoAdicionar = new formAdicionarLancamento(this);
         m_dialogoAdicionar->setAttribute(Qt::WA_DeleteOnClose);
+
+        // Agora, quando o lançamento for salvo, nós recarregamos a tabela E fechamos o diálogo.
+        connect(m_dialogoAdicionar, &formAdicionarLancamento::lancamentoSalvo, this, [this]() {
+            this->carregarTabela();
+            if (m_dialogoAdicionar) {
+                m_dialogoAdicionar->accept(); // Fecha o diálogo com sucesso
+            }
+        });
 
         // Conectamos o sinal de sucesso do diálogo ao nosso slot que recarrega a tabela
         connect(m_dialogoAdicionar, &formAdicionarLancamento::lancamentoSalvo, this, &pageLancamentos::carregarTabela);
@@ -185,8 +196,11 @@ void pageLancamentos::editarLancamento(const Lancamento& lancamento)
     formAdicionarLancamento* form = new formAdicionarLancamento(this);
     form->setLancamentoParaEdicao(lancamento); // Nova função para pré-preencher
 
-    // Conectamos o sinal de sucesso para recarregar a tabela
-    connect(form, &formAdicionarLancamento::lancamentoSalvo, this, &pageLancamentos::carregarTabela);
+    // A mesma lógica de recarregar e depois fechar
+    connect(form, &formAdicionarLancamento::lancamentoSalvo, this, [this, form]() {
+        this->carregarTabela();
+        form->accept();
+    });
 
     form->exec();
 }
@@ -232,110 +246,136 @@ void pageLancamentos::on_buttonImportarExtrato_clicked()
             return;
         }
 
-        // --- ETAPA 2: LER O ARQUIVO CSV ---
-        QVector<TransacaoImportada> transacoesLidas;
-        QFile file(caminho);
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QMessageBox::critical(this, "Erro", "Não foi possível abrir o arquivo CSV.");
-            return;
-        }
-
-        QTextStream in(&file);
-        in.readLine(); // Pula a linha do cabeçalho
-
-        while (!in.atEnd()) {
-            QString linha = in.readLine();
-            QStringList campos = linha.split(',');
-
-            if (campos.size() >= 4) {
-                TransacaoImportada t;
-                // ATENÇÃO: Ajuste os números abaixo para a ordem correta do seu arquivo
-                t.dataStr = campos[0];
-                t.descricaoStr = campos[1];
-                t.valorEntradaStr = campos[2];
-                t.valorSaidaStr = campos[3];
-                transacoesLidas.append(t);
-            }
-        }
-        file.close();
-
-        if (transacoesLidas.isEmpty()) {
-            QMessageBox::information(this, "Importação", "Nenhuma transação encontrada no arquivo.");
-            return;
-        }
-
-        dialogMapeamento dialogoMap(transacoesLidas, this);
-        if (dialogoMap.exec() == QDialog::Accepted) {
-            // --- ETAPA FINAL: PROCESSAR E SALVAR NO BANCO ---
-            QVector<TransacaoImportada> transacoesFinalizadas = dialogoMap.getTransacoesFinalizadas();
+        if (caminho.endsWith(".pdf", Qt::CaseInsensitive))
+        {
+            // A sua lógica para processar PDFs continua aqui, sem alterações...
+            qDebug() << "Arquivo PDF selecionado. Enviando para o servidor para processamento OCR...";
+            QMessageBox* msgBox = new QMessageBox(QMessageBox::Information, "Processando Extrato", "Aguarde, o sistema está lendo o seu extrato em PDF...", QMessageBox::NoButton, this);
+            msgBox->setAttribute(Qt::WA_DeleteOnClose);
+            msgBox->show();
+            disconnect(m_dao, &LancamentoDAO::ocrProcessadoComSucesso, this, &pageLancamentos::onOcrConcluido);
+            connect(m_dao, &LancamentoDAO::ocrProcessadoComSucesso, this, [=](const QVector<TransacaoImportada>& transacoes) {
+                msgBox->close();
+                onOcrConcluido(transacoes);
+            });
             QString token = SessionManager::instance().getToken();
-            int sucessoCount = 0;
-            int ignoradoCount = 0;
+            m_dao->processarExtratoOcr(caminho, token);
+        }
+        else if (caminho.endsWith(".csv", Qt::CaseInsensitive))
+        {
+            qDebug() << "Arquivo CSV selecionado. Lendo o arquivo localmente...";
 
-            for (const auto& transacaoImportada : transacoesFinalizadas) {
-                if (transacaoImportada.id_categoria <= 0) {
-                    ignoradoCount++;
-                    continue;
+            QVector<TransacaoImportada> transacoesLidas;
+            QFile file(caminho);
+            if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                QMessageBox::critical(this, "Erro", "Não foi possível abrir o arquivo CSV.");
+                return;
+            }
+
+            QTextStream in(&file);
+            in.readLine(); // Pula a linha do cabeçalho
+
+            while (!in.atEnd()) {
+                QString linha = in.readLine();
+                QStringList campos = linha.split(QRegularExpression(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
+                if (campos.size() >= 5) { // É uma boa prática ajustar a verificação para o número correto de campos
+                    TransacaoImportada t;
+                    t.dataStr = campos[0];
+                    t.descricaoStr = campos[1];
+                    t.categoriaStr = campos[2];
+                    t.valorStr = campos[3];     // Agora receberá "R$ 3,03" corretamente
+                    t.tipoStr = campos[4];      // Pega o tipo do campo correto
+                    transacoesLidas.append(t);
                 }
+            }
+            file.close();
 
-                Lancamento novoLancamento;
-                novoLancamento.id_conta = idConta;
-                novoLancamento.id_categoria = transacaoImportada.id_categoria;
+            // --- FIM DA LÓGICA DE LEITURA ---
 
-                // --- CORREÇÃO DE CONSTÂNCIA APLICADA A TODAS AS STRINGS ---
+            if (transacoesLidas.isEmpty()) {
+                QMessageBox::information(this, "Importação", "Nenhuma transação válida encontrada no arquivo.");
+                return;
+            }
 
-                // 1. Crie cópias locais e não-constantes das strings que serão modificadas
-                QString descricaoLimpa = transacaoImportada.descricaoStr;
-                QString dataLimpa = transacaoImportada.dataStr;
-                QString valorEntradaLimpo = transacaoImportada.valorEntradaStr;
-                QString valorSaidaLimpo = transacaoImportada.valorSaidaStr;
+            dialogMapeamento dialogoMap(transacoesLidas, this);
+            if (dialogoMap.exec() == QDialog::Accepted)
+            {
+                // --- ETAPA FINAL: PROCESSAR E SALVAR NO BANCO (VERSÃO FINAL E CORRIGIDA) ---
+                QVector<TransacaoImportada> transacoesFinalizadas = dialogoMap.getTransacoesFinalizadas();
+                QString token = SessionManager::instance().getToken();
+                int sucessoCount = 0;
+                int ignoradoCount = 0;
+                QLocale brLocale(QLocale::Portuguese, QLocale::Brazil);
 
-                // 2. Agora, modifique e use as cópias
-                novoLancamento.descricao = descricaoLimpa.remove('"');
-                novoLancamento.data_lancamento = QDate::fromString(dataLimpa.remove('"'), "dd/MM/yyyy");
-
-                // Lógica de limpeza de valores usando as cópias
-                valorEntradaLimpo.remove('"').remove('R').remove('$').trimmed();
-                valorSaidaLimpo.remove('"').remove('R').remove('$').trimmed();
-
-                if (valorEntradaLimpo.contains(',')) {
-                    valorEntradaLimpo.remove('.');
-                    valorEntradaLimpo.replace(',', '.');
-                }
-                if (valorSaidaLimpo.contains(',')) {
-                    valorSaidaLimpo.remove('.');
-                    valorSaidaLimpo.replace(',', '.');
-                }
-
-                // O resto da lógica de conversão continua igual, pois já usa as cópias
-                bool ok;
-                double valorEntrada = valorEntradaLimpo.toDouble(&ok);
-                if (ok && valorEntrada > 0) {
-                    novoLancamento.valor = valorEntrada;
-                    novoLancamento.tipo = "Receita";
-                } else {
-                    double valorSaida = valorSaidaLimpo.toDouble(&ok);
-                    if (ok && valorSaida > 0) {
-                        novoLancamento.valor = valorSaida;
-                        novoLancamento.tipo = "Despesa";
-                    } else {
+                for (const auto& transacaoImportada : transacoesFinalizadas) {
+                    if (transacaoImportada.id_categoria <= 0) {
                         ignoradoCount++;
                         continue;
                     }
+
+                    Lancamento novoLancamento;
+                    novoLancamento.id_conta = idConta;
+                    novoLancamento.id_categoria = transacaoImportada.id_categoria;
+                    novoLancamento.id_meta = -1;
+
+                    // Cria cópias locais para modificação segura
+                    QString descricaoLimpa = transacaoImportada.descricaoStr;
+                    QString dataLimpa = transacaoImportada.dataStr;
+                    novoLancamento.descricao = descricaoLimpa.remove('"').trimmed();
+                    novoLancamento.data_lancamento = QDate::fromString(dataLimpa.remove('"').trimmed(), "dd/MM/yyyy");
+                    QString tipoLimpo = transacaoImportada.tipoStr; // 1. Crie uma cópia local e modificável
+                    novoLancamento.tipo = tipoLimpo.remove('"').trimmed(); // 2. Modifique e atribua a cópia
+
+                    // --- LÓGICA DE VALOR CORRIGIDA ---
+                    // 1. Limpa a string do valor, removendo tudo exceto dígitos, ponto e vírgula
+                    QString valorStr = transacaoImportada.valorStr;
+                    valorStr = valorStr.remove(QRegularExpression("[^\\d,.-]")); // Mantém o sinal de menos
+
+                    // 2. Padroniza o separador decimal para PONTO
+                    valorStr.replace(',', '.');
+
+                    // 3. Converte a string limpa e padronizada
+                    bool ok;
+                    double valor = valorStr.toDouble(&ok);
+
+                    if (!ok) {
+                        qDebug() << "Falha ao converter o valor '" << transacaoImportada.valorStr << "' -> '" << valorStr << "'";
+                        ignoradoCount++;
+                        continue;
+                    }
+
+                    novoLancamento.valor = valor;
+                    novoLancamento.valor_original = valor;
+                    // --- FIM DA CORREÇÃO ---
+
+                    novoLancamento.moeda_codigo_original = "BRL";
+                    novoLancamento.taxa_cambio_usada = 1;
+
+                    m_dao->adicionarLancamento(novoLancamento, token);
+                    sucessoCount++;
                 }
 
-                m_dao->adicionarLancamento(novoLancamento, token);
-                sucessoCount++;
+                QMessageBox::information(this, "Importação Concluída",
+                    QString("Importação finalizada com sucesso!\n\n%1 lançamentos importados.\n%2 linhas ignoradas.")
+                    .arg(sucessoCount)
+                    .arg(ignoradoCount));
+
+                carregarTabela();
             }
-
-
-
-            QMessageBox::information(this, "Importação Concluída",
-                QString("Importação finalizada com sucesso!\n\n%1 lançamentos importados.\n%2 linhas ignoradas.")
-                .arg(sucessoCount)
-                .arg(ignoradoCount));
-
-            carregarTabela();
+        }
+        else
+        {
+            QMessageBox::warning(this, "Arquivo Inválido", "Por favor, selecione um arquivo com formato válido (.csv ou .pdf).");
         }
     }
+}
+
+// Adicione o novo slot para lidar com a resposta do OCR
+void pageLancamentos::onOcrConcluido(const QVector<TransacaoImportada>& transacoes)
+{
+    QMessageBox::information(this, "OCR Concluído", "O texto do PDF foi extraído com sucesso! (Verifique o console de depuração). O próximo passo será analisar este texto para encontrar as transações.");
+
+    // No futuro, aqui abriremos o dialogMapeamento com as 'transacoes'
+    // dialogMapeamento dialogoMap(transacoes, this);
+    // if (dialogoMap.exec() == QDialog::Accepted) { ... }
 }

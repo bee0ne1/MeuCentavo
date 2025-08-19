@@ -66,6 +66,7 @@ void formMainDashboard::setupPaginas()
 
 
     connect(m_pageLancamentos, &pageLancamentos::dadosAtualizados, m_pageHome, &pageHome::atualizarDados);
+    connect(m_pageLancamentos, &pageLancamentos::dadosAtualizados, m_pageRelatorios, &pageRelatorios::carregarDados);
 
     // Define a página inicial
     ui->stackedWidgetConteudo->setCurrentIndex(0);
@@ -212,35 +213,14 @@ void formMainDashboard::onPerfisRecebidos(const QVector<Perfil>& perfis)
 void formMainDashboard::onPerfilAlterado(int index)
 {
     if (index < 0) return;
-    int idPerfil = ui->comboPerfisAtivos->currentData().toInt();
+    int idPerfil = ui->comboPerfisAtivos->itemData(index).toInt();
 
     // Evita recarregar se o usuário acidentalmente selecionar o mesmo perfil
     if (idPerfil == SessionManager::instance().getPerfilId()) return;
 
-    // Desconecta temporariamente o sinal para evitar múltiplos disparos enquanto trocamos
-    disconnect(ui->comboPerfisAtivos, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &formMainDashboard::onPerfilAlterado);
+    // A única responsabilidade deste slot é iniciar a troca.
+    // A resposta será tratada pelo slot 'onNovoTokenRecebido' que já está conectado.
 
-    // Conecta o sinal do DAO a uma lambda que irá ATUALIZAR a sessão e RECARREGAR as páginas
-    connect(m_usuarioDAO, &UsuarioDAO::novoTokenRecebido, this,
-        [this](const QString& novoToken, const Usuario& usuario) {
-
-            // 1. Salva o novo token na sessão. Agora o app usará este token para todas as futuras requisições.
-            SessionManager::instance().salvarNovoToken(novoToken);
-
-            // 2. Chama as funções de recarregamento de cada página para buscar os dados do novo perfil
-            qDebug() << "Trocando para novo perfil. Recarregando todas as páginas...";
-            m_pageHome->atualizarDados();
-            m_pageLancamentos->carregarTabela();
-            m_pageRelatorios->carregarDados(); // Supondo que esta seja a função de recarregar
-            m_pageMetas->carregarMetas();
-            m_pageInvestimentos->carregarAtivos();
-            m_pageDividas->carregarDados();
-
-            // 3. Reconecta o sinal do ComboBox para futuras trocas de perfil
-            connect(ui->comboPerfisAtivos, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &formMainDashboard::onPerfilAlterado);
-    });
-
-    // Inicia o processo pedindo ao DAO um novo token para o perfil selecionado
     m_usuarioDAO->selecionarPerfil(idPerfil, SessionManager::instance().getToken());
 }
 

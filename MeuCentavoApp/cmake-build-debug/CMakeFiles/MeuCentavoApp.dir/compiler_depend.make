@@ -1552,6 +1552,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -1638,6 +1639,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
+  /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
   /usr/include/bits/xopen_lim.h \
   /usr/include/c++/15.1.1/algorithm \
@@ -1653,11 +1655,14 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/c++/15.1.1/bits/allocator.h \
   /usr/include/c++/15.1.1/bits/atomic_base.h \
   /usr/include/c++/15.1.1/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/15.1.1/bits/basic_ios.h \
+  /usr/include/c++/15.1.1/bits/basic_ios.tcc \
   /usr/include/c++/15.1.1/bits/basic_string.h \
   /usr/include/c++/15.1.1/bits/basic_string.tcc \
   /usr/include/c++/15.1.1/bits/char_traits.h \
   /usr/include/c++/15.1.1/bits/charconv.h \
   /usr/include/c++/15.1.1/bits/chrono.h \
+  /usr/include/c++/15.1.1/bits/codecvt.h \
   /usr/include/c++/15.1.1/bits/concept_check.h \
   /usr/include/c++/15.1.1/bits/cpp_type_traits.h \
   /usr/include/c++/15.1.1/bits/cxxabi_forced.h \
@@ -1667,6 +1672,10 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/c++/15.1.1/bits/exception.h \
   /usr/include/c++/15.1.1/bits/exception_defines.h \
   /usr/include/c++/15.1.1/bits/exception_ptr.h \
+  /usr/include/c++/15.1.1/bits/fs_dir.h \
+  /usr/include/c++/15.1.1/bits/fs_fwd.h \
+  /usr/include/c++/15.1.1/bits/fs_ops.h \
+  /usr/include/c++/15.1.1/bits/fs_path.h \
   /usr/include/c++/15.1.1/bits/functexcept.h \
   /usr/include/c++/15.1.1/bits/functional_hash.h \
   /usr/include/c++/15.1.1/bits/hash_bytes.h \
@@ -1674,9 +1683,15 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/c++/15.1.1/bits/hashtable_policy.h \
   /usr/include/c++/15.1.1/bits/invoke.h \
   /usr/include/c++/15.1.1/bits/ios_base.h \
+  /usr/include/c++/15.1.1/bits/istream.tcc \
   /usr/include/c++/15.1.1/bits/list.tcc \
   /usr/include/c++/15.1.1/bits/locale_classes.h \
   /usr/include/c++/15.1.1/bits/locale_classes.tcc \
+  /usr/include/c++/15.1.1/bits/locale_conv.h \
+  /usr/include/c++/15.1.1/bits/locale_facets.h \
+  /usr/include/c++/15.1.1/bits/locale_facets.tcc \
+  /usr/include/c++/15.1.1/bits/locale_facets_nonio.h \
+  /usr/include/c++/15.1.1/bits/locale_facets_nonio.tcc \
   /usr/include/c++/15.1.1/bits/localefwd.h \
   /usr/include/c++/15.1.1/bits/memory_resource.h \
   /usr/include/c++/15.1.1/bits/memoryfwd.h \
@@ -1685,11 +1700,14 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/c++/15.1.1/bits/nested_exception.h \
   /usr/include/c++/15.1.1/bits/new_allocator.h \
   /usr/include/c++/15.1.1/bits/node_handle.h \
+  /usr/include/c++/15.1.1/bits/ostream.h \
+  /usr/include/c++/15.1.1/bits/ostream.tcc \
   /usr/include/c++/15.1.1/bits/ostream_insert.h \
   /usr/include/c++/15.1.1/bits/parse_numbers.h \
   /usr/include/c++/15.1.1/bits/postypes.h \
   /usr/include/c++/15.1.1/bits/predefined_ops.h \
   /usr/include/c++/15.1.1/bits/ptr_traits.h \
+  /usr/include/c++/15.1.1/bits/quoted_string.h \
   /usr/include/c++/15.1.1/bits/range_access.h \
   /usr/include/c++/15.1.1/bits/refwrap.h \
   /usr/include/c++/15.1.1/bits/requires_hosted.h \
@@ -1697,6 +1715,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/c++/15.1.1/bits/shared_ptr_atomic.h \
   /usr/include/c++/15.1.1/bits/shared_ptr_base.h \
   /usr/include/c++/15.1.1/bits/specfun.h \
+  /usr/include/c++/15.1.1/bits/sstream.tcc \
   /usr/include/c++/15.1.1/bits/std_abs.h \
   /usr/include/c++/15.1.1/bits/std_function.h \
   /usr/include/c++/15.1.1/bits/stl_algo.h \
@@ -1742,6 +1761,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/c++/15.1.1/climits \
   /usr/include/c++/15.1.1/clocale \
   /usr/include/c++/15.1.1/cmath \
+  /usr/include/c++/15.1.1/codecvt \
   /usr/include/c++/15.1.1/compare \
   /usr/include/c++/15.1.1/concepts \
   /usr/include/c++/15.1.1/cstddef \
@@ -1751,6 +1771,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/c++/15.1.1/cstring \
   /usr/include/c++/15.1.1/ctime \
   /usr/include/c++/15.1.1/cwchar \
+  /usr/include/c++/15.1.1/cwctype \
   /usr/include/c++/15.1.1/debug/assertions.h \
   /usr/include/c++/15.1.1/debug/debug.h \
   /usr/include/c++/15.1.1/exception \
@@ -1761,17 +1782,23 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/c++/15.1.1/ext/numeric_traits.h \
   /usr/include/c++/15.1.1/ext/string_conversions.h \
   /usr/include/c++/15.1.1/ext/type_traits.h \
+  /usr/include/c++/15.1.1/filesystem \
   /usr/include/c++/15.1.1/functional \
   /usr/include/c++/15.1.1/initializer_list \
+  /usr/include/c++/15.1.1/iomanip \
+  /usr/include/c++/15.1.1/ios \
   /usr/include/c++/15.1.1/iosfwd \
+  /usr/include/c++/15.1.1/istream \
   /usr/include/c++/15.1.1/iterator \
   /usr/include/c++/15.1.1/limits \
   /usr/include/c++/15.1.1/list \
+  /usr/include/c++/15.1.1/locale \
   /usr/include/c++/15.1.1/map \
   /usr/include/c++/15.1.1/memory \
   /usr/include/c++/15.1.1/new \
   /usr/include/c++/15.1.1/numeric \
   /usr/include/c++/15.1.1/optional \
+  /usr/include/c++/15.1.1/ostream \
   /usr/include/c++/15.1.1/pstl/execution_defs.h \
   /usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h \
   /usr/include/c++/15.1.1/pstl/glue_memory_defs.h \
@@ -1779,6 +1806,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/c++/15.1.1/pstl/pstl_config.h \
   /usr/include/c++/15.1.1/ratio \
   /usr/include/c++/15.1.1/set \
+  /usr/include/c++/15.1.1/sstream \
   /usr/include/c++/15.1.1/stdexcept \
   /usr/include/c++/15.1.1/stdlib.h \
   /usr/include/c++/15.1.1/streambuf \
@@ -1811,10 +1839,14 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
   /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++locale.h \
   /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/cpu_defines.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
   /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/error_constants.h \
   /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
   /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/gthr.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/messages_members.h \
   /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -1822,6 +1854,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
+  /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
@@ -1832,8 +1865,11 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
+  /usr/include/qt6/QtCore/QByteArray \
   /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QDebug \
+  /usr/include/qt6/QtCore/QFile \
+  /usr/include/qt6/QtCore/QFileInfo \
   /usr/include/qt6/QtCore/QFlags \
   /usr/include/qt6/QtCore/QHash \
   /usr/include/qt6/QtCore/QIODevice \
@@ -1893,6 +1929,9 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/qt6/QtCore/qdebug.h \
   /usr/include/qt6/QtCore/qendian.h \
   /usr/include/qt6/QtCore/qexceptionhandling.h \
+  /usr/include/qt6/QtCore/qfile.h \
+  /usr/include/qt6/QtCore/qfiledevice.h \
+  /usr/include/qt6/QtCore/qfileinfo.h \
   /usr/include/qt6/QtCore/qflags.h \
   /usr/include/qt6/QtCore/qfloat16.h \
   /usr/include/qt6/QtCore/qforeach.h \
@@ -1968,6 +2007,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/qt6/QtCore/qtenvironmentvariables.h \
   /usr/include/qt6/QtCore/qtextstream.h \
   /usr/include/qt6/QtCore/qtformat_impl.h \
+  /usr/include/qt6/QtCore/qtimezone.h \
   /usr/include/qt6/QtCore/qtmetamacros.h \
   /usr/include/qt6/QtCore/qtnoop.h \
   /usr/include/qt6/QtCore/qtpreprocessorsupport.h \
@@ -1988,6 +2028,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/qt6/QtCore/qversiontagging.h \
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \
+  /usr/include/qt6/QtNetwork/QHttpMultiPart \
   /usr/include/qt6/QtNetwork/QNetworkAccessManager \
   /usr/include/qt6/QtNetwork/QNetworkReply \
   /usr/include/qt6/QtNetwork/QNetworkRequest \
@@ -1996,6 +2037,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/qt6/QtNetwork/qabstractsocket.h \
   /usr/include/qt6/QtNetwork/qhostaddress.h \
   /usr/include/qt6/QtNetwork/qhttpheaders.h \
+  /usr/include/qt6/QtNetwork/qhttpmultipart.h \
   /usr/include/qt6/QtNetwork/qnetworkaccessmanager.h \
   /usr/include/qt6/QtNetwork/qnetworkreply.h \
   /usr/include/qt6/QtNetwork/qnetworkrequest.h \
@@ -2022,6 +2064,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o: /home/bruno/Documen
   /usr/include/sys/types.h \
   /usr/include/time.h \
   /usr/include/wchar.h \
+  /usr/include/wctype.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
@@ -3021,6 +3064,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageDividas.
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_pageDividas.h \
   /usr/include/alloca.h \
@@ -3557,6 +3601,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_pageHome.h \
   /usr/include/GL/gl.h \
@@ -4707,6 +4752,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageInvestim
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_pageInvestimentos.h \
   /usr/include/alloca.h \
@@ -5571,6 +5617,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamen
   /usr/include/qt6/QtCore/QLocale \
   /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QRegularExpression \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QTextStream \
   /usr/include/qt6/QtCore/QVariant \
@@ -5832,6 +5879,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageMetas.cp
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_pageMetas.h \
   /usr/include/alloca.h \
@@ -6364,6 +6412,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatori
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_pageRelatorios.h \
   /usr/include/GL/gl.h \
@@ -9106,6 +9155,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGere
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_formGerenciarCategorias.h \
   /usr/include/alloca.h \
@@ -9652,6 +9702,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGere
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_formGerenciarContas.h \
   /usr/include/alloca.h \
@@ -10186,6 +10237,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularP
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_dialogSimularPlano.h \
   /usr/include/alloca.h \
@@ -12285,6 +12337,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogImpo
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_dialogImportarExtrato.h \
   /usr/include/alloca.h \
@@ -13393,6 +13446,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/formAdicio
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h \
   /usr/include/alloca.h \
@@ -14460,6 +14514,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o: /h
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Perfil.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   MeuCentavoApp_autogen/include/ui_formMainDashboard.h \
   /usr/include/alloca.h \
@@ -19706,6 +19761,7 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o: /home/bruno/Documentos/gestaoFinanceira
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Perfil.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -20303,8 +20359,6 @@ CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o:
-
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp.o:
@@ -20449,8 +20503,6 @@ MeuCentavoApp_autogen/include/ui_dialogGerenciarPerfis.h:
 
 /usr/include/qt6/QtWidgets/QFileDialog:
 
-/usr/include/qt6/QtCore/QFile:
-
 MeuCentavoApp_autogen/include/ui_pageLancamentos.h:
 
 MeuCentavoApp_autogen/include/ui_pageInvestimentos.h:
@@ -20566,10 +20618,6 @@ CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o:
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxfp8intrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxfp16intrin.h:
-
-MeuCentavoApp_autogen/include/ui_formBoasVindas.h:
-
-/usr/include/wctype.h:
 
 /usr/include/qt6/QtWidgets/qundoview.h:
 
@@ -20753,10 +20801,6 @@ MeuCentavoApp_autogen/mocs_compilation.cpp:
 
 /usr/include/qt6/QtGui/qpaintdevicewindow.h:
 
-/usr/lib/libkrb5.so.3:
-
-/usr/include/qt6/QtGui/qpagesize.h:
-
 /usr/lib/libxcb.so.1:
 
 /usr/include/qt6/QtGui/qpageranges.h:
@@ -20865,8 +20909,6 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formUsuario.cpp.o:
 
 /usr/include/qt6/QtCore/qtmocconstants.h:
 
-/usr/include/qt6/QtCore/qtimezone.h:
-
 /usr/include/qt6/QtCore/qtimeline.h:
 
 /usr/include/qt6/QtCore/qthreadpool.h:
@@ -20936,16 +20978,6 @@ MeuCentavoApp_autogen/FML5FN576F/moc_dialogAddEditMeta.cpp:
 /usr/include/qt6/QtCore/qlibrary.h:
 
 /usr/include/qt6/QtCore/qidentityproxymodel.h:
-
-CMakeFiles/MeuCentavoApp.dir/main.cpp.o:
-
-/usr/include/qt6/QtCore/qfileinfo.h:
-
-/usr/include/qt6/QtGui/QFileSystemModel:
-
-/usr/include/qt6/QtCore/qfiledevice.h:
-
-/usr/include/qt6/QtCore/qfile.h:
 
 /usr/include/qt6/QtCore/qfactoryinterface.h:
 
@@ -21129,67 +21161,15 @@ MeuCentavoApp_autogen/include/ui_dialogAddEditAtivo.h:
 
 /usr/include/qt6/QtCharts/QBarModelMapper:
 
-/usr/include/libintl.h:
-
 /usr/include/inttypes.h:
-
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/time_members.h:
 
 /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/opt_random.h:
 
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
-
-/usr/include/c++/15.1.1/sstream:
-
-/usr/include/qt6/QtCore/qlockfile.h:
-
-/usr/include/c++/15.1.1/ostream:
-
-/usr/include/c++/15.1.1/locale:
-
 /usr/include/c++/15.1.1/experimental/source_location:
-
-/usr/include/c++/15.1.1/cwctype:
-
-/usr/include/c++/15.1.1/codecvt:
 
 /usr/include/c++/15.1.1/bits/std_thread.h:
 
 /usr/include/c++/15.1.1/bits/std_mutex.h:
-
-/usr/include/qt6/QtCore/qtranslator.h:
-
-/usr/include/qt6/QtCore/qtemporarydir.h:
-
-/usr/include/c++/15.1.1/bits/sstream.tcc:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o:
-
-/usr/include/c++/15.1.1/bits/ostream.tcc:
-
-/usr/include/c++/15.1.1/bits/ostream.h:
-
-/usr/include/c++/15.1.1/bits/locale_facets_nonio.tcc:
-
-/usr/include/c++/15.1.1/bits/locale_facets_nonio.h:
-
-/usr/include/c++/15.1.1/bits/locale_facets.h:
-
-/usr/include/c++/15.1.1/bits/locale_conv.h:
-
-/usr/include/c++/15.1.1/bits/istream.tcc:
-
-/usr/include/qt6/QtCore/qsharedmemory.h:
-
-/usr/include/c++/15.1.1/bits/fs_path.h:
-
-/usr/include/c++/15.1.1/bits/fs_ops.h:
-
-/usr/include/c++/15.1.1/bits/fs_fwd.h:
-
-/usr/include/c++/15.1.1/bits/basic_ios.tcc:
-
-/usr/include/c++/15.1.1/bits/basic_ios.h:
 
 /usr/include/qt6/QtWidgets/qaction.h:
 
@@ -21220,14 +21200,6 @@ MeuCentavoApp_autogen/include/ui_pageRelatorios.h:
 /usr/include/qt6/QtWidgets/qlabel.h:
 
 /usr/include/qt6/QtWidgets/qabstractitemview.h:
-
-/usr/lib/libduktape.so.207:
-
-/usr/include/qt6/QtGui/qvector3d.h:
-
-/usr/include/c++/15.1.1/bits/locale_facets.tcc:
-
-/usr/include/qt6/QtWidgets/qabstractitemdelegate.h:
 
 /usr/include/qt6/QtWidgets/QProgressBar:
 
@@ -21267,6 +21239,10 @@ MeuCentavoApp_autogen/include/ui_pageDividas.h:
 
 MeuCentavoApp_autogen/include/ui_pageConfig.h:
 
+MeuCentavoApp_autogen/include/ui_formBoasVindas.h:
+
+/usr/include/wctype.h:
+
 /usr/include/qt6/QtNetwork/qtnetworkglobal.h:
 
 /usr/include/qt6/QtGui/qimagewriter.h:
@@ -21295,17 +21271,35 @@ MeuCentavoApp_autogen/include/ui_pageConfig.h:
 
 /usr/include/qt6/QtNetwork/QSslConfiguration:
 
+/usr/lib/libkrb5.so.3:
+
+/usr/include/qt6/QtGui/qpagesize.h:
+
+/usr/include/qt6/QtNetwork/QHttpMultiPart:
+
 /usr/lib/libgcc_s.so.1:
 
 /usr/include/qt6/QtCore/quuid.h:
 
 /usr/include/qt6/QtCore/qurlquery.h:
 
+/usr/include/qt6/QtCore/qtimezone.h:
+
 /usr/include/qt6/QtCore/qabstractitemmodel.h:
 
 /usr/include/qt6/QtCore/qjsonparseerror.h:
 
 /usr/include/qt6/QtCore/qjsonobject.h:
+
+CMakeFiles/MeuCentavoApp.dir/main.cpp.o:
+
+/usr/include/qt6/QtCore/qfileinfo.h:
+
+/usr/include/qt6/QtGui/QFileSystemModel:
+
+/usr/include/qt6/QtCore/qfiledevice.h:
+
+/usr/include/qt6/QtCore/qfile.h:
 
 /usr/include/qt6/QtGui/QIcon:
 
@@ -21319,6 +21313,76 @@ MeuCentavoApp_autogen/include/ui_pageConfig.h:
 
 /usr/include/qt6/QtCore/QJsonObject:
 
+/usr/include/qt6/QtWidgets/QTabWidget:
+
+/usr/include/qt6/QtCore/qcborcommon.h:
+
+/usr/include/qt6/QtCore/QJsonDocument:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o:
+
+/usr/include/qt6/QtCore/QFileInfo:
+
+/usr/include/qt6/QtCore/QFile:
+
+/usr/include/qt6/QtCore/QDebug:
+
+/usr/include/libintl.h:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/time_members.h:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
+
+/usr/include/c++/15.1.1/sstream:
+
+/usr/include/qt6/QtCore/qlockfile.h:
+
+/usr/include/c++/15.1.1/ostream:
+
+/usr/include/c++/15.1.1/locale:
+
+/usr/include/c++/15.1.1/cwctype:
+
+/usr/include/c++/15.1.1/codecvt:
+
+/usr/include/qt6/QtCore/qtranslator.h:
+
+/usr/include/qt6/QtCore/qtemporarydir.h:
+
+/usr/include/c++/15.1.1/bits/sstream.tcc:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o:
+
+/usr/include/c++/15.1.1/bits/ostream.tcc:
+
+/usr/include/c++/15.1.1/bits/ostream.h:
+
+/usr/include/c++/15.1.1/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/15.1.1/bits/locale_facets_nonio.h:
+
+/usr/lib/libduktape.so.207:
+
+/usr/include/qt6/QtGui/qvector3d.h:
+
+/usr/include/qt6/QtWidgets/qabstractitemdelegate.h:
+
+/usr/include/c++/15.1.1/bits/locale_facets.tcc:
+
+/usr/include/c++/15.1.1/bits/locale_facets.h:
+
+/usr/include/c++/15.1.1/bits/locale_conv.h:
+
+/usr/include/c++/15.1.1/bits/istream.tcc:
+
+/usr/include/qt6/QtCore/qsharedmemory.h:
+
+/usr/include/c++/15.1.1/bits/fs_path.h:
+
+/usr/include/c++/15.1.1/bits/fs_ops.h:
+
+/usr/include/c++/15.1.1/bits/fs_fwd.h:
+
 /usr/include/qt6/QtGui/qbitmap.h:
 
 /usr/include/qt6/QtGui/qaction.h:
@@ -21326,6 +21390,8 @@ MeuCentavoApp_autogen/include/ui_pageConfig.h:
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.cpp:
 
 /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/QRegularExpression:
 
 /usr/include/qt6/QtCore/qtypes.h:
 
@@ -21470,10 +21536,6 @@ MeuCentavoApp_autogen/include/ui_dialogAddEditOperacao.h:
 /usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake:
 
 /usr/include/qt6/QtCore/qdebug.h:
-
-/usr/include/c++/15.1.1/bits/fs_dir.h:
-
-/usr/include/qt6/QtCore/qdeadlinetimer.h:
 
 /usr/include/qt6/QtCharts/qcandlestickmodelmapper.h:
 
@@ -21784,10 +21846,6 @@ MeuCentavoApp_autogen/include/ui_dialogAddEditConta.h:
 /usr/include/qt6/QtGui/qfontmetrics.h:
 
 /usr/include/c++/15.1.1/exception:
-
-/usr/include/bits/wctype-wchar.h:
-
-/usr/include/c++/15.1.1/bits/stl_algo.h:
 
 /usr/include/c++/15.1.1/tr1/poly_hermite.tcc:
 
@@ -22293,6 +22351,10 @@ MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake:
 
+/usr/include/c++/15.1.1/bits/stl_algo.h:
+
+/usr/include/bits/wctype-wchar.h:
+
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake:
@@ -22370,6 +22432,10 @@ MeuCentavoApp_autogen/include/ui_formGerenciarCategorias.h:
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp:
+
+/usr/include/qt6/QtCore/qdeadlinetimer.h:
+
+/usr/include/c++/15.1.1/bits/fs_dir.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.h:
 
@@ -22498,6 +22564,8 @@ MeuCentavoApp_autogen/IMH5DCT4WY/moc_formExcluirUsuario.cpp:
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.ui:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.ui:
+
+/usr/include/qt6/QtCore/QByteArray:
 
 /usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets-relwithdebinfo.cmake:
 
@@ -23035,6 +23103,12 @@ MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogGerenciarPerfis.cpp:
 
 /usr/include/c++/15.1.1/bits/stl_multiset.h:
 
+/usr/include/qt6/QtCore/QFlags:
+
+/usr/include/bits/locale.h:
+
+/usr/include/qt6/QtWidgets/QDialog:
+
 /usr/include/qt6/QtCore/qlogging.h:
 
 /usr/include/qt6/QtGui/qcolor.h:
@@ -23074,6 +23148,12 @@ MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogGerenciarPerfis.cpp:
 /usr/include/bits/types/FILE.h:
 
 /usr/include/qt6/QtGui/qicon.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/sm3intrin.h:
+
+/usr/include/qt6/QtCore/QJsonArray:
+
+/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateTargets.cmake:
 
 /usr/include/qt6/QtWidgets/qmessagebox.h:
 
@@ -23317,13 +23397,9 @@ MeuCentavoApp_autogen/IMH5DCT4WY/moc_formLoginSenha.cpp:
 
 /usr/lib/cmake/Qt6Charts/Qt6ChartsAdditionalTargetInfo.cmake:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/sm3intrin.h:
-
-/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateTargets.cmake:
-
-/usr/include/qt6/QtCore/QJsonArray:
-
 /usr/lib/cmake/Qt6Charts/Qt6ChartsConfigVersion.cmake:
+
+/usr/include/qt6/QtNetwork/qhttpmultipart.h:
 
 /usr/lib/cmake/Qt6Charts/Qt6ChartsDependencies.cmake:
 
@@ -23566,8 +23642,6 @@ MeuCentavoApp_autogen/VE35X4DZIU/moc_dialogAddEditAtivo.cpp:
 /usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake:
-
-/usr/include/qt6/QtCore/QDebug:
 
 /usr/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake:
 
@@ -23895,6 +23969,8 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o
 
 /usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersion.cmake:
 
+/usr/include/c++/15.1.1/bits/basic_ios.h:
+
 /usr/include/qt6/QtCore/q20iterator.h:
 
 /usr/lib/cmake/Qt6Charts/Qt6ChartsTargets-relwithdebinfo.cmake:
@@ -24161,14 +24237,4 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h:
 
-/usr/include/bits/locale.h:
-
-/usr/include/qt6/QtWidgets/QDialog:
-
-/usr/include/qt6/QtCore/QFlags:
-
-/usr/include/qt6/QtWidgets/QTabWidget:
-
-/usr/include/qt6/QtCore/qcborcommon.h:
-
-/usr/include/qt6/QtCore/QJsonDocument:
+/usr/include/c++/15.1.1/bits/basic_ios.tcc:

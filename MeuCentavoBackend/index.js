@@ -6,6 +6,9 @@ const axios = require('axios');
 const jwt = require('jsonwebtoken');
 const app = express();
 const port = 3000;
+const multer = require('multer');
+const { createWorker } = require('tesseract.js');
+const upload = multer({ storage: multer.memoryStorage() }); // Configuração do Multer para guardar o ficheiro temporariamente em memória
 
 // Middleware para interpretar o corpo de requisições como JSON
 app.use(express.json());
@@ -652,30 +655,49 @@ app.get('/api/lancamentos', authenticateToken, async (req, res) => {
 });
 
 
-// Rota para EDITAR (Atualizar) um lançamento existente
+// Rota para EDITAR (Atualizar) um lançamento existente (VERSÃO FINAL E CORRIGIDA)
 app.put('/api/lancamentos/:id', authenticateToken, async (req, res) => {
     try {
+        // 1. Coleta TODOS os dados do corpo da requisição, incluindo os de moeda
+        const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria,
+                valor_original, moeda_codigo_original, taxa_cambio_usada } = req.body;
+        
         const idLancamento = req.params.id;
         const idUsuario = req.user.userId;
         const idPerfil = req.user.perfilId;
-        const { descricao, valor, data_lancamento, tipo, id_conta, id_categoria } = req.body;
 
         // Validação
         if (!descricao || !valor || !data_lancamento || !tipo || !id_conta || !id_categoria) {
             return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
         }
 
-        // A condição 'AND id_usuario = ?' é uma segurança para garantir que um utilizador
-        // só pode editar os seus próprios lançamentos.
-        const [result] = await pool.query(
-            `UPDATE lancamentos SET ... WHERE id = ? AND id_usuario = ? AND id_perfil = ?`,
-            [descricao, valor, data_lancamento, tipo, id_conta, id_categoria, idLancamento, idUsuario, idPerfil]
-        );
+        // --- CORREÇÃO CRÍTICA AQUI ---
+        // A query UPDATE agora inclui os campos valor_original e moeda_codigo_original
+        const query = `
+            UPDATE lancamentos 
+            SET 
+                descricao = ?, valor = ?, data_lancamento = ?, tipo = ?, 
+                id_conta = ?, id_categoria = ?, valor_original = ?, moeda_codigo_original = ?, 
+                taxa_cambio_usada = ?
+            WHERE 
+                id = ? AND id_usuario = ? AND id_perfil = ?
+        `;
+        
+        const params = [
+            descricao, valor, data_lancamento, tipo, id_conta, id_categoria,
+            valor_original || valor, // Usa o valor_original se existir, senão o valor principal
+            moeda_codigo_original || 'BRL',
+            taxa_cambio_usada || 1,
+            idLancamento, idUsuario, idPerfil
+        ];
+
+        const [result] = await pool.query(query, params);
+        // --- FIM DA CORREÇÃO ---
 
         if (result.affectedRows > 0) {
             res.status(200).json({ message: 'Lançamento atualizado com sucesso.' });
         } else {
-            res.status(404).json({ message: 'Lançamento não encontrado ou não autorizado.' });
+            res.status(404).json({ message: 'Lançamento não encontrado ou não autorizado para este perfil.' });
         }
 
     } catch (error) {
@@ -683,6 +705,7 @@ app.put('/api/lancamentos/:id', authenticateToken, async (req, res) => {
         res.status(500).json({ message: "Erro interno do servidor ao editar lançamento." });
     }
 });
+
 
 // Rota para EXCLUIR um lançamento 
 app.delete('/api/lancamentos/:id', authenticateToken, async (req, res) => {
@@ -1652,6 +1675,45 @@ app.post('/api/dividas/simular-plano', authenticateToken, async (req, res) => {
     } catch (error) {
         console.error("Erro ao simular plano de quitação:", error.message);
         res.status(500).json({ message: "Erro interno do servidor" });
+    }
+});
+
+// A rota usa o middleware 'upload.single('extrato')' para processar um ficheiro
+// que virá do frontend no campo 'extrato'.
+app.post('/api/extratos/ocr', authenticateToken, upload.single('extrato'), async (req, res) => {
+    try {
+        console.log("Backend: Recebido ficheiro para processamento OCR.");
+
+        if (!req.file) {
+            return res.status(400).json({ message: 'Nenhum ficheiro PDF foi enviado.' });
+        }
+
+        // 1. Inicializa o "trabalhador" do Tesseract
+        const worker = await createWorker('por'); // 'por' para o idioma Português
+
+        // 2. Pede ao Tesseract para reconhecer o texto no buffer do ficheiro
+        // req.file.buffer contém os dados do PDF que o multer guardou na memória
+        const ret = await worker.recognize(req.file.buffer);
+
+        // 3. O resultado está em ret.data.text
+        const textoExtraido = ret.data.text;
+        console.log("Backend: Texto extraído do PDF com sucesso.");
+        
+        // 4. Encerra o "trabalhador" para libertar memória
+        await worker.terminate();
+
+        // --- PRÓXIMO PASSO: O PARSER ---
+        // Por agora, vamos apenas enviar o texto bruto de volta para o frontend.
+        // No futuro, aqui chamaremos a função que irá analisar este texto
+        // e extrair as transações.
+        // const transacoes = parseTextoDoExtrato(textoExtraido);
+        // res.json(transacoes);
+
+        res.json({ texto: textoExtraido });
+
+    } catch (error) {
+        console.error("Erro no processamento OCR:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor ao processar o PDF." });
     }
 });
 

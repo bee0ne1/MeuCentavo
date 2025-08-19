@@ -11,6 +11,8 @@
 #include "Modelo/Meta.h"
 #include "Modelo/Ativo.h"
 #include "Modelo/Dividendo.h"
+#include "Modelo/TransacaoImportada.h"
+
 #include <QMap>
 typedef QMap<QString, double> DreData;
 typedef QMap<QString, double> FluxoCaixaData;
@@ -81,6 +83,7 @@ public:
     void simularPlanoQuitacao(double valorExtra, const QString& estrategia, const QString& token);
     void obterDre(const QString& token, const QDate& dataInicio, const QDate& dataFim);
     void obterFluxoCaixa(const QString& token, const QDate& dataInicio, const QDate& dataFim);
+    void processarExtratoOcr(const QString& caminhoPdf, const QString& token);
 
 signals:
         // --- SINAIS DE RESULTADO (A RESPOSTA PARA A INTERFACE) ---
@@ -110,6 +113,7 @@ signals:
     void planoSimuladoRecebido(const QVector<LinhaCronograma>& cronograma, int mesesTotais);
     void dreRecebido(const DreData& dre);
     void fluxoCaixaRecebido(const FluxoCaixaData& fluxoCaixa);
+    void ocrProcessadoComSucesso(const QVector<TransacaoImportada>& transacoes);
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---

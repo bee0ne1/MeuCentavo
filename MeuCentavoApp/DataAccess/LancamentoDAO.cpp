@@ -10,6 +10,10 @@
 #include <QDebug>
 #include "Modelo/Conta.h"
 #include "Modelo/Categoria.h"
+#include <QHttpMultiPart>
+#include <QFile>
+#include <QFileInfo>
+#include "Modelo/TransacaoImportada.h"
 
 
 LancamentoDAO::LancamentoDAO(QObject *parent)
@@ -1005,6 +1009,59 @@ void LancamentoDAO::obterFluxoCaixa(const QString& token, const QDate& dataInici
             emit fluxoCaixaRecebido(fluxoCaixa);
         } else {
             emit erroOcorrido("Falha ao buscar Fluxo de Caixa: " + reply->readAll());
+        }
+        reply->deleteLater();
+    });
+}
+
+void LancamentoDAO::processarExtratoOcr(const QString& caminhoPdf, const QString& token)
+{
+    // 1. Cria um objeto "multipart" que irá conter as partes do nosso upload
+    QHttpMultiPart *multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+
+    // 2. Cria a parte do ficheiro
+    QHttpPart filePart;
+    QFile *file = new QFile(caminhoPdf);
+    if (!file->open(QIODevice::ReadOnly)) {
+        emit erroOcorrido("Não foi possível abrir o ficheiro PDF para leitura.");
+        delete multiPart;
+        delete file;
+        return;
+    }
+    // O backend espera o ficheiro no campo 'extrato'
+    filePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant(QString("form-data; name=\"extrato\"; filename=\"%1\"").arg(QFileInfo(caminhoPdf).fileName())));
+    filePart.setBodyDevice(file);
+    file->setParent(multiPart); // Garante que o ficheiro será fechado e eliminado corretamente
+
+    // 3. Adiciona a parte do ficheiro ao corpo da requisição
+    multiPart->append(filePart);
+
+    // 4. Configura e envia a requisição POST
+    QUrl url("http://localhost:3000/api/extratos/ocr");
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+
+    QNetworkReply *reply = m_manager->post(request, multiPart);
+    multiPart->setParent(reply); // Garante que o multipart será eliminado com a resposta
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        if (reply->error() == QNetworkReply::NoError) {
+            // --- PARTE IMPORTANTE: Processar a resposta do OCR ---
+            // Por agora, o backend envia {"texto": "..."}. No futuro, enviará transações.
+            QJsonObject obj = QJsonDocument::fromJson(reply->readAll()).object();
+            QString textoExtraido = obj["texto"].toString();
+
+            qDebug() << "--- TEXTO EXTRAÍDO PELO OCR ---";
+            qDebug().noquote() << textoExtraido;
+            qDebug() << "-----------------------------";
+
+            // TODO: Aqui chamaremos o parser que transforma o texto em transações.
+            // Por agora, vamos emitir um sinal de sucesso com uma lista vazia, apenas para teste.
+            QVector<TransacaoImportada> transacoes; // Lista vazia por enquanto
+            emit ocrProcessadoComSucesso(transacoes);
+
+        } else {
+            emit erroOcorrido("Falha no processamento OCR: " + reply->readAll());
         }
         reply->deleteLater();
     });

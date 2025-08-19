@@ -40,13 +40,28 @@ dialogMapeamento::~dialogMapeamento()
 
 void dialogMapeamento::onCategoriasRecebidas(const QVector<Categoria>& categorias)
 {
-    m_categorias = categorias;
-    popularTabela(); // Popula a tabela assim que as categorias chegam
+    m_categorias = categorias; // Guarda a lista completa
+    m_categoriasReceita.clear();
+    m_categoriasDespesa.clear();
+
+    // Separa as categorias nas listas de Receita e Despesa
+    for (const auto& cat : categorias) {
+        if (cat.tipo == "Receita") {
+            m_categoriasReceita.append(cat);
+        } else {
+            m_categoriasDespesa.append(cat);
+        }
+    }
+
+    // Popula a tabela apenas DEPOIS de ter separado as categorias
+    popularTabela();
 }
+
 
 void dialogMapeamento::popularTabela()
 {
     ui->tableWidgetTransacoes->setRowCount(0);
+
 
     for (const auto& transacao : m_transacoes) {
         int linha = ui->tableWidgetTransacoes->rowCount();
@@ -54,18 +69,72 @@ void dialogMapeamento::popularTabela()
 
         ui->tableWidgetTransacoes->setItem(linha, 0, new QTableWidgetItem(transacao.dataStr));
         ui->tableWidgetTransacoes->setItem(linha, 1, new QTableWidgetItem(transacao.descricaoStr));
-        ui->tableWidgetTransacoes->setItem(linha, 2, new QTableWidgetItem(transacao.valorEntradaStr));
-        ui->tableWidgetTransacoes->setItem(linha, 3, new QTableWidgetItem(transacao.valorSaidaStr));
 
-        // Adiciona um ComboBox de Categorias na coluna 4
-        QComboBox *comboCategoria = new QComboBox(this);
-        comboCategoria->addItem("Selecione...", -1); // Opção padrão
-        for (const auto& cat : m_categorias) {
-            comboCategoria->addItem(cat.nome, cat.id);
+        // --- LÓGICA CORRIGIDA PARA SEPARAR ENTRADA E SAÍDA ---
+        // Remove as aspas do tipo para uma comparação segura.
+        QString tipoLimpo = transacao.tipoStr;
+        tipoLimpo = tipoLimpo.remove('"').trimmed();
+
+        if (tipoLimpo.compare("Receita", Qt::CaseInsensitive) == 0) {
+            // Se for Receita, coloca o valor na coluna "Valor Entrada" (índice 2)
+            ui->tableWidgetTransacoes->setItem(linha, 2, new QTableWidgetItem(transacao.valorStr));
+            ui->tableWidgetTransacoes->setItem(linha, 3, new QTableWidgetItem("")); // Deixa a saída vazia
+        } else {
+            // Caso contrário (Despesa), coloca o valor na coluna "Valor Saída" (índice 3)
+            ui->tableWidgetTransacoes->setItem(linha, 2, new QTableWidgetItem("")); // Deixa a entrada vazia
+            ui->tableWidgetTransacoes->setItem(linha, 3, new QTableWidgetItem(transacao.valorStr));
         }
+        // --- FIM DA CORREÇÃO ---
+
+        QComboBox *comboCategoria = new QComboBox(this);
+        comboCategoria->addItem("Ignorar esta transação", -1);
+
+        // --- LÓGICA DE MAPEAMENTO INTELIGENTE ---
+
+        Categoria categoriaCorrespondente;
+        bool matchEncontrado = false;
+
+        // Cria uma cópia local para modificação segura
+        QString categoriaCsv = transacao.categoriaStr;
+        categoriaCsv = categoriaCsv.remove('"').trimmed();
+
+        // 1. Procura a categoria do CSV na lista COMPLETA de categorias do utilizador
+        for(const auto& cat : m_categorias) {
+            if (cat.nome.compare(categoriaCsv, Qt::CaseInsensitive) == 0) {
+                categoriaCorrespondente = cat;
+                matchEncontrado = true;
+                break;
+            }
+        }
+
+        // 2. Decide qual lista de categorias mostrar com base no TIPO da categoria encontrada
+        if (matchEncontrado && categoriaCorrespondente.tipo == "Receita") {
+            // Se encontrou e é do tipo Receita, mostra apenas categorias de receita
+            for (const auto& cat : m_categoriasReceita) {
+                comboCategoria->addItem(cat.nome, cat.id);
+            }
+        } else {
+            // Em qualquer outro caso (é despesa, ou não encontrou), mostra as de despesa
+            for (const auto& cat : m_categoriasDespesa) {
+                comboCategoria->addItem(cat.nome, cat.id);
+            }
+        }
+
+        // 3. Se encontrou uma correspondência, pré-seleciona-a no ComboBox
+        if (matchEncontrado) {
+            int index = comboCategoria->findData(categoriaCorrespondente.id);
+            if (index != -1) {
+                comboCategoria->setCurrentIndex(index);
+            }
+        }
+        // --- FIM DA LÓGICA ---
+
         ui->tableWidgetTransacoes->setCellWidget(linha, 4, comboCategoria);
     }
 }
+
+
+
 
 QVector<TransacaoImportada> dialogMapeamento::getTransacoesFinalizadas()
 {
