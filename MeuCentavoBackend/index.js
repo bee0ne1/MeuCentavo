@@ -1932,6 +1932,56 @@ app.post('/api/extratos/ocr', authenticateToken, upload.single('extrato'), async
     }
 });
 
+// --- ROTA PARA SIMULADOR DE APOSENTADORIA ---
+app.post('/api/simuladores/aposentadoria', authenticateToken, async (req, res) => {
+    try {
+        // 1. Recebe os dados do frontend
+        const {
+            idadeAtual,
+            idadeAposentadoria,
+            saldoInicial,
+            aporteMensal,
+            rentabilidadeAnual
+        } = req.body;
+
+        // Validação básica
+        if (idadeAtual >= idadeAposentadoria) {
+            return res.status(400).json({ message: 'A idade de aposentadoria deve ser maior que a idade atual.' });
+        }
+
+        // 2. Prepara as variáveis para o cálculo financeiro
+        const anosContribuicao = idadeAposentadoria - idadeAtual;
+        const n = anosContribuicao * 12; // Número total de meses (períodos)
+        const P = parseFloat(saldoInicial); // Valor Presente (Principal)
+        const A = parseFloat(aporteMensal); // Aporte (Anuidade)
+        
+        // Converte a taxa de juros anual para uma taxa mensal efetiva.
+        // Isso é mais preciso do que simplesmente dividir por 12.
+        const i = Math.pow((1 + rentabilidadeAnual / 100), (1/12)) - 1;
+
+        // 3. Aplica a fórmula de juros compostos com aportes mensais
+        // M = P * (1+i)^n + A * [((1+i)^n - 1) / i]
+        const montanteJurosPrincipal = P * Math.pow((1 + i), n);
+        const montanteJurosAportes = A * ((Math.pow((1 + i), n) - 1) / i);
+        
+        const valorFinal = montanteJurosPrincipal + montanteJurosAportes;
+        const totalAportes = A * n;
+        const totalInvestido = P + totalAportes;
+        const jurosTotais = valorFinal - totalInvestido;
+
+        // 4. Retorna o resultado em um JSON claro
+        res.json({
+            valorFinal: valorFinal,
+            totalInvestido: totalInvestido,
+            jurosTotais: jurosTotais
+        });
+
+    } catch (error) {
+        console.error("Erro no simulador de aposentadoria:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor ao calcular a simulação." });
+    }
+});
+
 // Inicia o servidor
 app.listen(port, () => {
   console.log(`Servidor escutando em http://localhost:${port}`);

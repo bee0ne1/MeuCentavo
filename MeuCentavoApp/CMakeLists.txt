@@ -47,7 +47,7 @@ set(PROJECT_SOURCES
         Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp
         Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp
         Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp
-
+        Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp
 )
 
 # 2. Lista COMPLETA de Ficheiros de Cabeçalho (.h)
@@ -94,6 +94,7 @@ set(PROJECT_HEADERS
         Modelo/Perfil.h
         Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.h
         Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.h
+        Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.h
 )
 
 # 3. Lista de Ficheiros de Interface (.ui)
@@ -125,6 +126,7 @@ set(PROJECT_FORMS
         Designer/FormsDashboard/FormsDividas/dialogSimularPlano.ui
         Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.ui
         Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.ui
+        Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.ui
 )
 
 # 4. Criamos o executável, agora passando TODAS as listas de ficheiros

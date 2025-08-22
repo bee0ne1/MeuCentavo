@@ -2,6 +2,7 @@
 #include "ui_pageRelatorios.h"
 #include "DataAccess/LancamentoDAO.h"
 #include "Gerenciamento/SessionManager.h"
+#include "Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.h"
 
 // Includes do Qt Charts
 #include <QtCharts>
@@ -623,4 +624,14 @@ void pageRelatorios::on_buttonExportarPDF_clicked()
     if (msgBox.exec() == QMessageBox::Yes) {
         QDesktopServices::openUrl(QUrl::fromLocalFile(caminhoArquivo));
     }
+}
+
+void pageRelatorios::on_buttonSimuladorAposentadoria_clicked()
+{
+    // Cria uma instância do seu novo diálogo de simulação
+    dialogSimuladorAposentadoria* dialogo = new dialogSimuladorAposentadoria(this);
+    dialogo->setAttribute(Qt::WA_DeleteOnClose); // Garante que a memória seja liberada
+
+    // Abre o diálogo. Usamos open() ou exec() dependendo se queremos que ele bloqueie a janela principal.
+    dialogo->exec();
 }

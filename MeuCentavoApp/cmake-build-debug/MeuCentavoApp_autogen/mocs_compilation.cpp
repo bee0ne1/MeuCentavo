@@ -22,6 +22,7 @@
 #include "JGBQRWFFYH/moc_dialogMapeamento.cpp"
 #include "JGBQRWFFYH/moc_formAdicionarLancamento.cpp"
 #include "FML5FN576F/moc_dialogAddEditMeta.cpp"
+#include "73MS7PNRZQ/moc_dialogSimuladorAposentadoria.cpp"
 #include "JUEWMI7LB7/moc_formMainDashboard.cpp"
 #include "IMH5DCT4WY/moc_formBoasVindas.cpp"
 #include "IMH5DCT4WY/moc_formCadastro.cpp"

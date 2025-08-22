@@ -45,6 +45,7 @@ private slots:
     void onPeriodoSelecionado(int index);
     void on_buttonExportarCSV_clicked();
     void on_buttonExportarPDF_clicked();
+    void on_buttonSimuladorAposentadoria_clicked();
     void onCategoriasDespesaRecebidas(const QVector<Categoria>& categorias);
     void onTendenciaRecebida(const QVector<PontoTendencia>& tendencia);
     void on_buttonAnalisarTendencia_clicked();

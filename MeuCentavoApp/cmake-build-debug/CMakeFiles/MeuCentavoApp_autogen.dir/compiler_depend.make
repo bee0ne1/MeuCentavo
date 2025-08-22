@@ -68,6 +68,9 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.ui \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.ui \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.ui \
@@ -1420,10 +1423,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginTargets-relwithdebinfo.cmake:
 
-/usr/share/cmake/Modules/CheckIncludeFileCXX.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginConfig.cmake:
-
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginAdditionalTargetInfo.cmake:
@@ -1744,10 +1743,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/qt6/QtGui/qcolor.h:
 
-/usr/include/qt6/QtWidgets/QDialog:
-
-/usr/include/c++/15.1.1/bits/stl_multiset.h:
-
 /usr/include/qt6/QtCore/qvector.h:
 
 /usr/include/c++/15.1.1/bits/stl_iterator_base_types.h:
@@ -1762,11 +1757,15 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 
 /usr/include/c++/15.1.1/bits/std_abs.h:
 
+/usr/include/qt6/QtGui/QTransform:
+
+/usr/include/c++/15.1.1/memory:
+
 /usr/include/c++/15.1.1/bits/specfun.h:
 
-/usr/include/c++/15.1.1/bits/exception.h:
-
 /usr/include/bits/errno.h:
+
+/usr/include/c++/15.1.1/bits/exception.h:
 
 /usr/include/c++/15.1.1/bits/predefined_ops.h:
 
@@ -1869,10 +1868,6 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.ui:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.h:
-
-/usr/include/c++/15.1.1/memory:
-
-/usr/include/qt6/QtGui/QTransform:
 
 /usr/include/bits/uintn-identity.h:
 
@@ -2176,6 +2171,16 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageInvestimentos.h:
 
+/usr/include/bits/endianness.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/QBrush:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.h:
+
+/usr/include/qt6/QtCore/qswap.h:
+
 /usr/include/c++/15.1.1/bits/stl_function.h:
 
 /usr/include/bits/pthreadtypes-arch.h:
@@ -2221,6 +2226,12 @@ CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
 /usr/include/qt6/QtGui/qtgui-config.h:
 
 /usr/include/c++/15.1.1/numeric:
+
+/usr/share/cmake/Modules/CheckIncludeFileCXX.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginConfig.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.cpp:
 
@@ -2326,6 +2337,22 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp:
 
+/usr/include/bits/endian.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake:
+
+/usr/include/qt6/QtGui/qaction.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.cpp:
+
+/usr/include/bits/types/struct_FILE.h:
+
+/usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h:
+
 /usr/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h:
@@ -2416,6 +2443,8 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/qt6/QtGui/QPen:
 
+/usr/include/c++/15.1.1/bits/refwrap.h:
+
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.cpp:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.ui:
@@ -2439,16 +2468,6 @@ MeuCentavoApp_autogen/moc_predefs.h:
 /usr/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/qt6/QtCore/qnumeric.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.h:
-
-/usr/include/qt6/QtCore/qswap.h:
-
-/usr/include/bits/endianness.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtGui/QBrush:
 
 /usr/include/qt6/QtGui/qtextoption.h:
 
@@ -2477,6 +2496,10 @@ MeuCentavoApp_autogen/moc_predefs.h:
 /usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginTargets-relwithdebinfo.cmake:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.cpp:
+
+/usr/include/c++/15.1.1/bits/stl_iterator.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formExcluirUsuario.cpp:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp:
 
@@ -2538,12 +2561,6 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/qt6/QtCore/qlogging.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp:
-
-/usr/include/bits/endian.h:
-
-/usr/include/c++/15.1.1/bits/refwrap.h:
-
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
@@ -2576,6 +2593,10 @@ MeuCentavoApp_autogen/moc_predefs.h:
 
 /usr/include/linux/limits.h:
 
+/usr/include/qt6/QtGui/qbitmap.h:
+
+/usr/include/qt6/QtCore/qcoreevent.h:
+
 /usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateVersionlessAliasTargets.cmake:
 
 /usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake:
@@ -2599,14 +2620,6 @@ MeuCentavoApp_autogen/moc_predefs.h:
 /usr/include/bits/atomic_wide_counter.h:
 
 /usr/include/asm/errno.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formExcluirUsuario.cpp:
-
-/usr/include/c++/15.1.1/bits/stl_iterator.h:
-
-/usr/include/bits/types/struct_FILE.h:
-
-/usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake:
 
@@ -2636,7 +2649,13 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QJp2PluginTargets.cmake:
 
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.h:
+
 /usr/include/qt6/QtCore/qhashfunctions.h:
+
+/usr/include/qt6/QtWidgets/QDialog:
+
+/usr/include/c++/15.1.1/bits/stl_multiset.h:
 
 /usr/include/c++/15.1.1/bits/stl_set.h:
 
@@ -2751,6 +2770,8 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /usr/include/c++/15.1.1/ctime:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.ui:
 
 /usr/include/qt6/QtCore/qconstructormacros.h:
 
@@ -3203,15 +3224,3 @@ CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formLoginSenha.h:
 
 /usr/include/qt6/QtCore/qtypes.h:
-
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.cpp:
-
-/usr/include/qt6/QtGui/qaction.h:
-
-/usr/include/qt6/QtCore/qcoreevent.h:
-
-/usr/include/qt6/QtGui/qbitmap.h:

@@ -182,6 +182,30 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tabSimuladores">
+      <attribute name="title">
+       <string>Simuladores</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QPushButton" name="buttonSimuladorAposentadoria">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Simulador de Aposentadoria</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="tabDre">
       <attribute name="title">
        <string>DRE</string>

@@ -49,6 +49,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp.o.d"
   "CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.o"
   "CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.o.d"
+  "CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o"
+  "CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o.d"
   "CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o"
   "CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o.d"
   "CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formBoasVindas.cpp.o"

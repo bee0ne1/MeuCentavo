@@ -563,10 +563,24 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAd
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp -o CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.s
 
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o: CMakeFiles/MeuCentavoApp.dir/flags.make
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o: CMakeFiles/MeuCentavoApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o -MF CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o.d -o CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o -c /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp > CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.i
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp -o CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.s
+
 CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o: CMakeFiles/MeuCentavoApp.dir/flags.make
 CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o: MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp
 CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o: CMakeFiles/MeuCentavoApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o -MF CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o.d -o CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o -c /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp
 
 CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.i: cmake_force
@@ -613,6 +627,7 @@ MeuCentavoApp_OBJECTS = \
 "CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.o" \
 "CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o" \
 "CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o" \
+"CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o" \
 "CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o"
 
 # External object files for target MeuCentavoApp
@@ -652,6 +667,7 @@ MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPag
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.o
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o
+MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/build.make
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/compiler_depend.ts
@@ -666,7 +682,7 @@ MeuCentavoApp: /usr/lib/libGLX.so
 MeuCentavoApp: /usr/lib/libOpenGL.so
 MeuCentavoApp: /usr/lib/libQt6Core.so.6.9.1
 MeuCentavoApp: CMakeFiles/MeuCentavoApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Linking CXX executable MeuCentavoApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Linking CXX executable MeuCentavoApp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MeuCentavoApp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

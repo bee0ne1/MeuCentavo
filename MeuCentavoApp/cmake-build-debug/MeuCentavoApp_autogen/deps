@@ -46,6 +46,8 @@ MeuCentavoApp_autogen/timestamp: \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.h \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.h \
+	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp \
+	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.h \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.cpp \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.h \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formBoasVindas.cpp \
@@ -1062,6 +1064,7 @@ MeuCentavoApp_autogen/timestamp: \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.ui \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.ui \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.ui \
+	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.ui \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.ui \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formBoasVindas.ui \
 	/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formCadastro.ui \

@@ -86,6 +86,7 @@ public:
     void obterFluxoCaixa(const QString& token, const QDate& dataInicio, const QDate& dataFim);
     void processarExtratoOcr(const QString& caminhoPdf, const QString& token);
     void obterSugestoesCategorias(const QVector<QString>& descricoes, const QString& token);
+    void simularAposentadoria(int idadeAtual, int idadeAposentadoria, double saldoInicial, double aporteMensal, double rentabilidadeAnual, const QString& token);
 
 signals:
         // --- SINAIS DE RESULTADO (A RESPOSTA PARA A INTERFACE) ---
@@ -117,6 +118,7 @@ signals:
     void fluxoCaixaRecebido(const FluxoCaixaData& fluxoCaixa);
     void ocrProcessadoComSucesso(const QVector<TransacaoImportada>& transacoes);
     void sugestoesRecebidas(const QMap<QString, int>& mapaDeSugestoes);
+    void simulacaoAposentadoriaRecebida(double valorFinal, double totalInvestido, double jurosTotais);
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---
@@ -137,6 +139,7 @@ private slots:
     void onDividendosReply(QNetworkReply *reply);
     void onPlanoSimuladoReply(QNetworkReply *reply);
     void onSugestoesReply(QNetworkReply *reply);
+    void onSimulacaoAposentadoriaReply(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *m_manager;

@@ -1128,3 +1128,38 @@ void LancamentoDAO::onSugestoesReply(QNetworkReply *reply)
     }
     reply->deleteLater();
 }
+
+void LancamentoDAO::simularAposentadoria(int idadeAtual, int idadeAposentadoria, double saldoInicial, double aporteMensal, double rentabilidadeAnual, const QString& token)
+{
+    QJsonObject jsonBody;
+    jsonBody["idadeAtual"] = idadeAtual;
+    jsonBody["idadeAposentadoria"] = idadeAposentadoria;
+    jsonBody["saldoInicial"] = saldoInicial;
+    jsonBody["aporteMensal"] = aporteMensal;
+    jsonBody["rentabilidadeAnual"] = rentabilidadeAnual;
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/simuladores/aposentadoria"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(jsonBody).toJson());
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onSimulacaoAposentadoriaReply(reply);
+    });
+}
+
+void LancamentoDAO::onSimulacaoAposentadoriaReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QJsonObject resultado = QJsonDocument::fromJson(reply->readAll()).object();
+        emit simulacaoAposentadoriaRecebida(
+            resultado["valorFinal"].toDouble(),
+            resultado["totalInvestido"].toDouble(),
+            resultado["jurosTotais"].toDouble()
+        );
+    } else {
+        emit erroOcorrido("Falha ao simular aposentadoria: " + reply->readAll());
+    }
+    reply->deleteLater();
+}
