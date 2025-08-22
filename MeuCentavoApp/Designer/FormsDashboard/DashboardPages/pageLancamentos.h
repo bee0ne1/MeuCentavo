@@ -6,6 +6,7 @@
 #include "Modelo/Lancamento.h"
 #include "Modelo/Conta.h"
 #include "Modelo/TransacaoImportada.h"
+#include <QMap>
 
 // Forward declarations
 namespace Ui { class pageLancamentos; }
@@ -40,11 +41,14 @@ private slots:
     void excluirLancamento(const Lancamento& lancamento);
     void onContasRecebidas(const QVector<Conta>& contas);
     void on_buttonImportarExtrato_clicked();
+    void onSugestoesParaMapeamentoRecebidas(const QMap<QString, int>& sugestoes);
 
 private:
     Ui::pageLancamentos *ui;
     LancamentoDAO* m_dao;
     formAdicionarLancamento* m_dialogoAdicionar;
+    QVector<TransacaoImportada> m_transacoesLidas;
+    int m_idContaImportacao;
 };
 
 #endif // PAGELANCAMENTOS_H

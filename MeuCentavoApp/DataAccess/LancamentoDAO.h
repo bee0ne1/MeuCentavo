@@ -12,6 +12,7 @@
 #include "Modelo/Ativo.h"
 #include "Modelo/Dividendo.h"
 #include "Modelo/TransacaoImportada.h"
+#include <QMap>
 
 #include <QMap>
 typedef QMap<QString, double> DreData;
@@ -84,6 +85,7 @@ public:
     void obterDre(const QString& token, const QDate& dataInicio, const QDate& dataFim);
     void obterFluxoCaixa(const QString& token, const QDate& dataInicio, const QDate& dataFim);
     void processarExtratoOcr(const QString& caminhoPdf, const QString& token);
+    void obterSugestoesCategorias(const QVector<QString>& descricoes, const QString& token);
 
 signals:
         // --- SINAIS DE RESULTADO (A RESPOSTA PARA A INTERFACE) ---
@@ -114,6 +116,7 @@ signals:
     void dreRecebido(const DreData& dre);
     void fluxoCaixaRecebido(const FluxoCaixaData& fluxoCaixa);
     void ocrProcessadoComSucesso(const QVector<TransacaoImportada>& transacoes);
+    void sugestoesRecebidas(const QMap<QString, int>& mapaDeSugestoes);
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---
@@ -133,6 +136,7 @@ private slots:
     void onModificarOperacaoReply(QNetworkReply *reply);
     void onDividendosReply(QNetworkReply *reply);
     void onPlanoSimuladoReply(QNetworkReply *reply);
+    void onSugestoesReply(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *m_manager;

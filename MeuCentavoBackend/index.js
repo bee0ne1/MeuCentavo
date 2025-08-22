@@ -593,11 +593,89 @@ app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
              valor_original || valor, moeda_codigo_original || 'BRL', taxa_cambio_usada || 1, id_perfil] // <-- Passa o id_perfil para a query
         );
 
+        // --- INÍCIO DA NOVA LÓGICA DE APRENDIZADO ---
+        // Esta lógica roda "em segundo plano" e não precisa atrasar a resposta ao usuário.
+        (async () => {
+            try {
+                // 1. Pega a primeira palavra da descrição, em maiúsculas, como palavra-chave.
+                // Ex: "Pagamento Uber" -> "UBER"
+                const palavraChave = descricao.split(' ')[0].toUpperCase().replace(/[^A-Z0-9]/g, '');
+
+                if (palavraChave && palavraChave.length > 2) {
+                    // 2. Insere ou atualiza o mapeamento no banco.
+                    // Se a palavra_chave já existir para o perfil, apenas atualiza a categoria sugerida.
+                    // Se não existir, cria uma nova regra.
+                    const mapeamentoQuery = `
+                        INSERT INTO mapeamentos_categorias (id_perfil, palavra_chave, id_categoria_sugerida)
+                        VALUES (?, ?, ?)
+                        ON DUPLICATE KEY UPDATE id_categoria_sugerida = ?;
+                    `;
+                    await pool.query(mapeamentoQuery, [id_perfil, palavraChave, id_categoria, id_categoria]);
+                    console.log(`Backend: Mapeamento para '${palavraChave}' -> Categoria ID ${id_categoria} foi aprendido/atualizado.`);
+                }
+            } catch (learnError) {
+                // Um erro aqui não deve quebrar a aplicação principal.
+                console.error("Erro no processo de aprendizado de categoria:", learnError.message);
+            }
+        })();
+
         res.status(201).json({ message: 'Lançamento adicionado com sucesso!', insertId: result.insertId });
 
     } catch (error) {
         console.error("Erro ao adicionar lançamento:", error);
         res.status(500).json({ message: 'Erro interno do servidor.' });
+    }
+});
+
+// --- ROTA PARA SUGERIR CATEGORIAS (VERSÃO MELHORADA) ---
+app.post('/api/categorias/sugerir', authenticateToken, async (req, res) => {
+    try {
+        const idPerfil = req.user.perfilId;
+        const { descricoes } = req.body;
+
+        if (!descricoes || !Array.isArray(descricoes)) {
+            return res.status(400).json({ message: 'O corpo da requisição deve conter um array de "descricoes".' });
+        }
+
+        // 1. Pega TODOS os mapeamentos que o sistema já aprendeu para este perfil.
+        const [mapeamentos] = await pool.query(
+            'SELECT palavra_chave, id_categoria_sugerida FROM mapeamentos_categorias WHERE id_perfil = ?',
+            [idPerfil]
+        );
+
+        if (mapeamentos.length === 0) {
+            // Se não aprendeu nada ainda, retorna uma resposta vazia rapidamente.
+            return res.json({ sugestoes: [] });
+        }
+
+        const sugestoes = [];
+
+        // 2. Para cada descrição nova que o frontend enviou...
+        for (const descricao of descricoes) {
+            let idCategoriaSugerida = null;
+            const descricaoUpper = descricao.toUpperCase(); // Converte a descrição para maiúsculas uma vez.
+
+            // 3. ...procure por CADA palavra-chave que o sistema já conhece.
+            for (const mapeamento of mapeamentos) {
+                // 4. Se a descrição contiver a palavra-chave...
+                if (descricaoUpper.includes(mapeamento.palavra_chave)) {
+                    // ...encontramos uma sugestão!
+                    idCategoriaSugerida = mapeamento.id_categoria_sugerida;
+                    break; // Para o loop interno e vai para a próxima descrição.
+                }
+            }
+
+            sugestoes.push({
+                descricaoOriginal: descricao,
+                idCategoriaSugerida: idCategoriaSugerida
+            });
+        }
+
+        res.json({ sugestoes });
+
+    } catch (error) {
+        console.error("Erro ao sugerir categorias:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor" });
     }
 });
 

@@ -59,7 +59,10 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
         "onContasRecebidas",
         "QList<Conta>",
         "contas",
-        "on_buttonImportarExtrato_clicked"
+        "on_buttonImportarExtrato_clicked",
+        "onSugestoesParaMapeamentoRecebidas",
+        "QMap<QString,int>",
+        "sugestoes"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -95,6 +98,10 @@ template <> constexpr inline auto pageLancamentos::qt_create_metaobjectdata<qt_m
         }}),
         // Slot 'on_buttonImportarExtrato_clicked'
         QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onSugestoesParaMapeamentoRecebidas'
+        QtMocHelpers::SlotData<void(const QMap<QString,int> &)>(21, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 22, 23 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -128,6 +135,7 @@ void pageLancamentos::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 7: _t->excluirLancamento((*reinterpret_cast< std::add_pointer_t<Lancamento>>(_a[1]))); break;
         case 8: _t->onContasRecebidas((*reinterpret_cast< std::add_pointer_t<QList<Conta>>>(_a[1]))); break;
         case 9: _t->on_buttonImportarExtrato_clicked(); break;
+        case 10: _t->onSugestoesParaMapeamentoRecebidas((*reinterpret_cast< std::add_pointer_t<QMap<QString,int>>>(_a[1]))); break;
         default: ;
         }
     }
@@ -156,14 +164,14 @@ int pageLancamentos::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 11)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }

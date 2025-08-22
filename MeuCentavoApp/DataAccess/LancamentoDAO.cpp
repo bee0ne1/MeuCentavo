@@ -1066,3 +1066,57 @@ void LancamentoDAO::processarExtratoOcr(const QString& caminhoPdf, const QString
         reply->deleteLater();
     });
 }
+
+void LancamentoDAO::obterSugestoesCategorias(const QVector<QString>& descricoes, const QString& token)
+{
+    // 1. Monta o corpo JSON que a API espera
+    QJsonObject jsonBody;
+    QJsonArray jsonArrayDescricoes;
+    for (const QString& desc : descricoes) {
+        jsonArrayDescricoes.append(desc);
+    }
+    jsonBody["descricoes"] = jsonArrayDescricoes;
+
+    // 2. Configura a requisição POST
+    QNetworkRequest request(QUrl("http://localhost:3000/api/categorias/sugerir"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(jsonBody).toJson());
+
+    // 3. Conecta a resposta ao nosso novo slot
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onSugestoesReply(reply);
+    });
+}
+
+void LancamentoDAO::onSugestoesReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        // 1. Mapa para guardar o resultado: "Descrição da Transação" -> ID da Categoria Sugerida
+        QMap<QString, int> mapaDeSugestoes;
+
+        // 2. Processa a resposta JSON do backend
+        QJsonObject jsonObj = QJsonDocument::fromJson(reply->readAll()).object();
+        QJsonArray sugestoesArray = jsonObj["sugestoes"].toArray();
+
+        for (const QJsonValue& val : sugestoesArray) {
+            QJsonObject sugestaoObj = val.toObject();
+            QString descricao = sugestaoObj["descricaoOriginal"].toString();
+            // Se o ID for nulo no JSON, toInt() retorna 0. Usamos -1 como nosso "não encontrado".
+            int idCategoria = sugestaoObj["idCategoriaSugerida"].isNull() ? -1 : sugestaoObj["idCategoriaSugerida"].toInt();
+
+            if (idCategoria > 0) { // Apenas armazena sugestões válidas
+                mapaDeSugestoes[descricao] = idCategoria;
+            }
+        }
+
+        // 3. Emite o sinal com o mapa de sugestões pronto para uso
+        emit sugestoesRecebidas(mapaDeSugestoes);
+
+    } else {
+        // Em caso de erro, emite o sinal de erro genérico
+        emit erroOcorrido("Falha ao buscar sugestões de categorias: " + reply->readAll());
+    }
+    reply->deleteLater();
+}

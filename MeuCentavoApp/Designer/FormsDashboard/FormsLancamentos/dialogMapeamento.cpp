@@ -8,10 +8,10 @@
 #include <QCheckBox>
 #include <QHeaderView>
 
-dialogMapeamento::dialogMapeamento(QVector<TransacaoImportada>& transacoes, QWidget *parent) :
-    QDialog(parent),
+dialogMapeamento::dialogMapeamento(QVector<TransacaoImportada>& transacoes, const QMap<QString, int>& sugestoes, QWidget *parent) :    QDialog(parent),
     ui(new Ui::dialogMapeamento),
-    m_transacoes(transacoes)
+    m_transacoes(transacoes),
+    m_sugestoes(sugestoes) // <-- Armazena as sugestões
 {
     ui->setupUi(this);
     setWindowTitle("Mapear e Confirmar Transações");
@@ -62,7 +62,6 @@ void dialogMapeamento::popularTabela()
 {
     ui->tableWidgetTransacoes->setRowCount(0);
 
-
     for (const auto& transacao : m_transacoes) {
         int linha = ui->tableWidgetTransacoes->rowCount();
         ui->tableWidgetTransacoes->insertRow(linha);
@@ -70,64 +69,71 @@ void dialogMapeamento::popularTabela()
         ui->tableWidgetTransacoes->setItem(linha, 0, new QTableWidgetItem(transacao.dataStr));
         ui->tableWidgetTransacoes->setItem(linha, 1, new QTableWidgetItem(transacao.descricaoStr));
 
-        // --- LÓGICA CORRIGIDA PARA SEPARAR ENTRADA E SAÍDA ---
-        // Remove as aspas do tipo para uma comparação segura.
-        QString tipoLimpo = transacao.tipoStr;
-        tipoLimpo = tipoLimpo.remove('"').trimmed();
+        // A sua lógica para separar Entradas e Saídas (que já estava correta)
+        QString tipoLimpoParaValor = transacao.tipoStr;
+        tipoLimpoParaValor = tipoLimpoParaValor.remove('"').trimmed();
 
-        if (tipoLimpo.compare("Receita", Qt::CaseInsensitive) == 0) {
-            // Se for Receita, coloca o valor na coluna "Valor Entrada" (índice 2)
+        if (tipoLimpoParaValor.compare("Receita", Qt::CaseInsensitive) == 0) {
             ui->tableWidgetTransacoes->setItem(linha, 2, new QTableWidgetItem(transacao.valorStr));
-            ui->tableWidgetTransacoes->setItem(linha, 3, new QTableWidgetItem("")); // Deixa a saída vazia
+            ui->tableWidgetTransacoes->setItem(linha, 3, new QTableWidgetItem(""));
         } else {
-            // Caso contrário (Despesa), coloca o valor na coluna "Valor Saída" (índice 3)
-            ui->tableWidgetTransacoes->setItem(linha, 2, new QTableWidgetItem("")); // Deixa a entrada vazia
+            ui->tableWidgetTransacoes->setItem(linha, 2, new QTableWidgetItem(""));
             ui->tableWidgetTransacoes->setItem(linha, 3, new QTableWidgetItem(transacao.valorStr));
         }
-        // --- FIM DA CORREÇÃO ---
 
         QComboBox *comboCategoria = new QComboBox(this);
         comboCategoria->addItem("Ignorar esta transação", -1);
 
-        // --- LÓGICA DE MAPEAMENTO INTELIGENTE ---
 
-        Categoria categoriaCorrespondente;
-        bool matchEncontrado = false;
 
-        // Cria uma cópia local para modificação segura
-        QString categoriaCsv = transacao.categoriaStr;
-        categoriaCsv = categoriaCsv.remove('"').trimmed();
+        // --- LÓGICA DE MAPEAMENTO INTELIGENTE (VERSÃO CORRIGIDA) ---
 
-        // 1. Procura a categoria do CSV na lista COMPLETA de categorias do utilizador
-        for(const auto& cat : m_categorias) {
-            if (cat.nome.compare(categoriaCsv, Qt::CaseInsensitive) == 0) {
-                categoriaCorrespondente = cat;
-                matchEncontrado = true;
-                break;
+        // 1. Determine qual lista de categorias é válida para esta transação específica
+        QString tipoLimpo = transacao.tipoStr;
+        tipoLimpo = tipoLimpo.remove('"').trimmed();
+        const auto& listaDeCategoriasValidas = (tipoLimpo.compare("Receita", Qt::CaseInsensitive) == 0)
+                                               ? m_categoriasReceita
+                                               : m_categoriasDespesa;
+
+        // 2. Popule o ComboBox APENAS com as categorias válidas
+        for (const auto& cat : listaDeCategoriasValidas) {
+            comboCategoria->addItem(cat.nome, cat.id);
+        }
+
+        // 3. Agora, com o ComboBox já preenchido, tente encontrar uma sugestão para pré-selecionar
+        int idParaSelecionar = -1;
+
+        // Primeiro, tente a sugestão da API
+        QString descricaoLimpa = transacao.descricaoStr;
+        descricaoLimpa = descricaoLimpa.remove('"').trimmed();
+
+
+        if (m_sugestoes.contains(descricaoLimpa)) {
+            idParaSelecionar = m_sugestoes.value(descricaoLimpa);
+        }
+
+        // Se a API não sugeriu nada, tente o fallback do nome da categoria no arquivo CSV
+        if (idParaSelecionar <= 0) {
+            QString categoriaCsv = transacao.categoriaStr;
+            categoriaCsv = categoriaCsv.remove('"').trimmed();
+            // Procure o nome da categoria SOMENTE na lista de categorias válidas
+            for(const auto& cat : listaDeCategoriasValidas) {
+                if (cat.nome.compare(categoriaCsv, Qt::CaseInsensitive) == 0) {
+                    idParaSelecionar = cat.id;
+                    break;
+                }
             }
         }
 
-        // 2. Decide qual lista de categorias mostrar com base no TIPO da categoria encontrada
-        if (matchEncontrado && categoriaCorrespondente.tipo == "Receita") {
-            // Se encontrou e é do tipo Receita, mostra apenas categorias de receita
-            for (const auto& cat : m_categoriasReceita) {
-                comboCategoria->addItem(cat.nome, cat.id);
-            }
-        } else {
-            // Em qualquer outro caso (é despesa, ou não encontrou), mostra as de despesa
-            for (const auto& cat : m_categoriasDespesa) {
-                comboCategoria->addItem(cat.nome, cat.id);
-            }
-        }
-
-        // 3. Se encontrou uma correspondência, pré-seleciona-a no ComboBox
-        if (matchEncontrado) {
-            int index = comboCategoria->findData(categoriaCorrespondente.id);
-            if (index != -1) {
+        // 4. Finalmente, tente definir o índice no ComboBox
+        if (idParaSelecionar > 0) {
+            // O findData agora buscará o ID somente entre as opções válidas que foram adicionadas
+            int index = comboCategoria->findData(idParaSelecionar);
+            if (index != -1) { // Se o ID foi encontrado na lista
                 comboCategoria->setCurrentIndex(index);
             }
         }
-        // --- FIM DA LÓGICA ---
+        // --- FIM DA CORREÇÃO ---
 
         ui->tableWidgetTransacoes->setCellWidget(linha, 4, comboCategoria);
     }
