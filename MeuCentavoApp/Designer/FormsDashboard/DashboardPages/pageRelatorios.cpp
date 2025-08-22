@@ -15,6 +15,7 @@
 #include <QFile>
 #include <QTextStream>
 #include "Gerenciamento/SessionManager.h"
+#include <QDesktopServices>
 
 pageRelatorios::pageRelatorios(QWidget *parent) :
     QWidget(parent),
@@ -574,4 +575,52 @@ void pageRelatorios::popularTabelaFluxoCaixa(const FluxoCaixaData& fluxoCaixa)
     adicionarLinha("(-) Total de Saídas", -fluxoCaixa.value("Total de Saídas"));
     adicionarLinha("= Fluxo de Caixa Líquido", fluxoCaixa.value("Fluxo de Caixa Líquido"), true, true);
     adicionarLinha("= Saldo Final do Período", fluxoCaixa.value("Saldo Final"), true);
+}
+
+void pageRelatorios::on_buttonExportarPDF_clicked()
+{
+    QString caminhoArquivo = QFileDialog::getSaveFileName(this, "Salvar Relatório PDF", QDir::homePath(), "Arquivos PDF (*.pdf)");
+    if (caminhoArquivo.isEmpty()) return;
+
+    QPdfWriter pdfWriter(caminhoArquivo);
+    pdfWriter.setPageSize(QPageSize(QPageSize::A4));
+    pdfWriter.setPageMargins(QMarginsF(15, 15, 15, 15));
+    pdfWriter.setTitle("Relatório Financeiro");
+
+    QPainter painter(&pdfWriter);
+
+    // --- A NOVA ESTRATÉGIA: CAPTURA DE ALTA RESOLUÇÃO ---
+
+    // 1. Identifica os widgets que queremos capturar (use os nomes que você definiu no Designer)
+    QWidget* containerGraficos = ui->containerGraficos;
+    QWidget* containerTabela = ui->containerTabela;
+
+    // 2. Tira uma "foto" (QPixmap) de alta qualidade do container dos gráficos
+    QPixmap pixmapGraficos = containerGraficos->grab();
+
+    // 3. Tira uma "foto" de alta qualidade do container da tabela
+    QPixmap pixmapTabela = containerTabela->grab();
+
+    // 4. Desenha as imagens capturadas no PDF, ajustando a escala para caber na página
+
+    // Desenha os gráficos
+    // Pega as dimensões da imagem capturada e calcula a altura proporcional na página A4
+    QRectF rectGraficos(0, 0, pdfWriter.width(), 0);
+    rectGraficos.setHeight(pixmapGraficos.height() * pdfWriter.width() / pixmapGraficos.width());
+    painter.drawPixmap(rectGraficos.toRect(), pixmapGraficos);
+
+    // Desenha a tabela logo abaixo dos gráficos
+    QRectF rectTabela(0, rectGraficos.height(), pdfWriter.width(), 0);
+    rectTabela.setHeight(pixmapTabela.height() * pdfWriter.width() / pixmapTabela.width());
+    painter.drawPixmap(rectTabela.toRect(), pixmapTabela);
+    painter.end();
+    // --- FIM DA NOVA ESTRATÉGIA ---
+
+    QMessageBox msgBox;
+    msgBox.setText("Relatório PDF gerado com sucesso!");
+    msgBox.setInformativeText("Deseja abrir o arquivo agora?");
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    if (msgBox.exec() == QMessageBox::Yes) {
+        QDesktopServices::openUrl(QUrl::fromLocalFile(caminhoArquivo));
+    }
 }

@@ -1042,23 +1042,31 @@ void LancamentoDAO::processarExtratoOcr(const QString& caminhoPdf, const QString
     request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
 
     QNetworkReply *reply = m_manager->post(request, multiPart);
-    multiPart->setParent(reply); // Garante que o multipart será eliminado com a resposta
+    multiPart->setParent(reply);
 
     connect(reply, &QNetworkReply::finished, this, [=]() {
         if (reply->error() == QNetworkReply::NoError) {
-            // --- PARTE IMPORTANTE: Processar a resposta do OCR ---
-            // Por agora, o backend envia {"texto": "..."}. No futuro, enviará transações.
+            // --- INÍCIO DA MUDANÇA ---
+            QVector<TransacaoImportada> transacoes;
             QJsonObject obj = QJsonDocument::fromJson(reply->readAll()).object();
-            QString textoExtraido = obj["texto"].toString();
 
-            qDebug() << "--- TEXTO EXTRAÍDO PELO OCR ---";
-            qDebug().noquote() << textoExtraido;
-            qDebug() << "-----------------------------";
+            // Lê o array "transacoes" da resposta do backend
+            QJsonArray transacoesArray = obj["transacoes"].toArray();
 
-            // TODO: Aqui chamaremos o parser que transforma o texto em transações.
-            // Por agora, vamos emitir um sinal de sucesso com uma lista vazia, apenas para teste.
-            QVector<TransacaoImportada> transacoes; // Lista vazia por enquanto
+            for (const QJsonValue& val : transacoesArray) {
+                QJsonObject tObj = val.toObject();
+                TransacaoImportada t;
+                t.dataStr = tObj["dataStr"].toString();
+                t.descricaoStr = tObj["descricaoStr"].toString();
+                t.categoriaStr = tObj["categoriaStr"].toString();
+                t.valorStr = tObj["valorStr"].toString();
+                t.tipoStr = tObj["tipoStr"].toString();
+                transacoes.append(t);
+            }
+
+            // Emite o sinal com o vetor de transações prontas
             emit ocrProcessadoComSucesso(transacoes);
+            // --- FIM DA MUDANÇA ---
 
         } else {
             emit erroOcorrido("Falha no processamento OCR: " + reply->readAll());

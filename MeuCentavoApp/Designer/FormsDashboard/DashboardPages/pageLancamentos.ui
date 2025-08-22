@@ -41,7 +41,7 @@
        <item>
         <widget class="QPushButton" name="buttonImportarExtrato">
          <property name="text">
-          <string>Importar Extrato (.CSV)</string>
+          <string>Importar Extrato</string>
          </property>
         </widget>
        </item>

@@ -152,7 +152,7 @@ public:
     {
         pageLancamentos->setWindowTitle(QCoreApplication::translate("pageLancamentos", "pageLancamentos", nullptr));
         buttonAdicionarLancamento->setText(QCoreApplication::translate("pageLancamentos", "Adicionar Novo Lan\303\247amento", nullptr));
-        buttonImportarExtrato->setText(QCoreApplication::translate("pageLancamentos", "Importar Extrato (.CSV)", nullptr));
+        buttonImportarExtrato->setText(QCoreApplication::translate("pageLancamentos", "Importar Extrato", nullptr));
         label->setText(QCoreApplication::translate("pageLancamentos", "Per\303\255odo: ", nullptr));
         label_2->setText(QCoreApplication::translate("pageLancamentos", " at\303\251 ", nullptr));
         label_3->setText(QCoreApplication::translate("pageLancamentos", "Conta: ", nullptr));

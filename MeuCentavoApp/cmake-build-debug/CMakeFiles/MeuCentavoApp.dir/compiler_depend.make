@@ -7123,6 +7123,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatori
   /usr/include/qt6/QtGui/QAction \
   /usr/include/qt6/QtGui/QActionGroup \
   /usr/include/qt6/QtGui/QBrush \
+  /usr/include/qt6/QtGui/QDesktopServices \
   /usr/include/qt6/QtGui/QFileSystemModel \
   /usr/include/qt6/QtGui/QFont \
   /usr/include/qt6/QtGui/QImage \
@@ -20502,6 +20503,8 @@ MeuCentavoApp_autogen/include/ui_dialogGerenciarPerfis.h:
 /usr/include/qt6/QtWidgets/QAbstractButton:
 
 /usr/include/qt6/QtWidgets/QFileDialog:
+
+/usr/include/qt6/QtGui/QDesktopServices:
 
 MeuCentavoApp_autogen/include/ui_pageLancamentos.h:
 

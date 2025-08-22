@@ -9,6 +9,9 @@ const port = 3000;
 const multer = require('multer');
 const { createWorker } = require('tesseract.js');
 const upload = multer({ storage: multer.memoryStorage() }); // Configuração do Multer para guardar o ficheiro temporariamente em memória
+const pdfjsLib = require('pdfjs-dist/legacy/build/pdf.js');
+const { createCanvas } = require('canvas');
+
 
 // Middleware para interpretar o corpo de requisições como JSON
 app.use(express.json());
@@ -98,6 +101,7 @@ const authenticateToken = (req, res, next) => {
         next(); // Continua para a rota
     });
 };
+
 
 // -----ROTAS DE USUARIO------
 
@@ -593,31 +597,36 @@ app.post('/api/lancamentos/adicionar', authenticateToken, async (req, res) => {
              valor_original || valor, moeda_codigo_original || 'BRL', taxa_cambio_usada || 1, id_perfil] // <-- Passa o id_perfil para a query
         );
 
-        // --- INÍCIO DA NOVA LÓGICA DE APRENDIZADO ---
-        // Esta lógica roda "em segundo plano" e não precisa atrasar a resposta ao usuário.
+        // --- INÍCIO DA LÓGICA DE APRENDIZADO (VERSÃO APRIMORADA) ---
         (async () => {
             try {
-                // 1. Pega a primeira palavra da descrição, em maiúsculas, como palavra-chave.
-                // Ex: "Pagamento Uber" -> "UBER"
-                const palavraChave = descricao.split(' ')[0].toUpperCase().replace(/[^A-Z0-9]/g, '');
+                // Palavras comuns a serem ignoradas (stopwords)
+                const stopwords = new Set(['DE', 'DO', 'DA', 'A', 'O', 'E', 'NO', 'NA', 'PARA', 'COM', 'EM']);
+                
+                // 1. Limpa a descrição e a divide em palavras-chave potenciais
+                const palavrasChave = descricao.toUpperCase()
+                                            .replace(/[^A-Z0-9\s]/g, '') // Remove pontuação
+                                            .split(' ')
+                                            .filter(p => p.length > 3 && !stopwords.has(p)); // Filtra palavras curtas e stopwords
 
-                if (palavraChave && palavraChave.length > 2) {
-                    // 2. Insere ou atualiza o mapeamento no banco.
-                    // Se a palavra_chave já existir para o perfil, apenas atualiza a categoria sugerida.
-                    // Se não existir, cria uma nova regra.
-                    const mapeamentoQuery = `
-                        INSERT INTO mapeamentos_categorias (id_perfil, palavra_chave, id_categoria_sugerida)
-                        VALUES (?, ?, ?)
-                        ON DUPLICATE KEY UPDATE id_categoria_sugerida = ?;
-                    `;
-                    await pool.query(mapeamentoQuery, [id_perfil, palavraChave, id_categoria, id_categoria]);
-                    console.log(`Backend: Mapeamento para '${palavraChave}' -> Categoria ID ${id_categoria} foi aprendido/atualizado.`);
+                if (palavrasChave.length > 0) {
+                    console.log(`Backend: Aprendendo com as palavras-chave: [${palavrasChave.join(', ')}] para a categoria ID ${id_categoria}`);
+                    
+                    // 2. Para cada palavra-chave encontrada, cria ou atualiza uma regra de mapeamento
+                    for (const palavra of palavrasChave) {
+                        const mapeamentoQuery = `
+                            INSERT INTO mapeamentos_categorias (id_perfil, palavra_chave, id_categoria_sugerida)
+                            VALUES (?, ?, ?)
+                            ON DUPLICATE KEY UPDATE id_categoria_sugerida = ?;
+                        `;
+                        await pool.query(mapeamentoQuery, [id_perfil, palavra, id_categoria, id_categoria]);
+                    }
                 }
             } catch (learnError) {
-                // Um erro aqui não deve quebrar a aplicação principal.
                 console.error("Erro no processo de aprendizado de categoria:", learnError.message);
             }
         })();
+        // --- FIM DA LÓGICA DE APRENDIZADO ---
 
         res.status(201).json({ message: 'Lançamento adicionado com sucesso!', insertId: result.insertId });
 
@@ -1756,41 +1765,169 @@ app.post('/api/dividas/simular-plano', authenticateToken, async (req, res) => {
     }
 });
 
+
+function parseTextoDoExtrato(texto) {
+    const transacoes = [];
+    // A limpeza inicial remove aspas e normaliza quebras de linha.
+    const textoLimpo = texto.replace(/[“”"]/g, '');
+    const linhas = textoLimpo.split('\n').filter(linha => linha.trim() !== '');
+
+    const regexData = /(\d{2})\s+de\s+(\w+)\s+de\s+(\d{4})/;
+    // Voltamos para a RegEx que busca por NÚMEROS, pois é mais flexível.
+    const regexTransacao = /^(.*?)\s+(-?[\d,.]+)\s+(-?[\d,.]+)\s*$/;
+
+    const meses = {
+        'janeiro': '01', 'fevereiro': '02', 'marco': '03', 'abril': '04', 'maio': '05', 'junho': '06',
+        'julho': '07', 'agosto': '08', 'setembro': '09', 'outubro': '10', 'novembro': '11', 'dezembro': '12'
+    };
+
+    let dataAtual = null;
+
+    for (const linha of linhas) {
+        if (/SAC:|Ouvidoria:|Fale com a gente|solicitado em:/i.test(linha)) {
+            continue;
+        }
+
+        const matchData = linha.match(regexData);
+        if (matchData) {
+            const dia = matchData[1];
+            const mesNome = matchData[2].toLowerCase();
+            const ano = matchData[3];
+            const mesNumero = meses[mesNome];
+            if (mesNumero) {
+                dataAtual = `${dia}/${mesNumero}/${ano}`;
+            }
+            continue;
+        }
+
+        if (!dataAtual) continue;
+        
+        // A estratégia robusta: removemos o "R$" ANTES de tentar o match.
+        const linhaSemMoeda = linha.replace(/R\$\s?/g, '');
+        const matchTransacao = linhaSemMoeda.match(regexTransacao);
+
+        if (matchTransacao) {
+            let descricao = matchTransacao[1].trim();
+            // O valor agora é capturado sem o "R$"
+            let valorStr = matchTransacao[2].trim();
+            
+            if (descricao && !descricao.toLowerCase().includes('saldo do dia')) {
+                processarTransacao(descricao, valorStr, dataAtual, transacoes);
+            }
+        }
+    }
+    return transacoes;
+}
+
+function processarTransacao(descricao, valorStr, dataAtual, transacoes) {
+    try {
+        let tipo;
+        const descricaoNormalizada = descricao.toLowerCase().replace(/\s+/g, ' ');
+
+        if (descricaoNormalizada.includes('pix enviado') || descricaoNormalizada.includes('compra no debito')) {
+            tipo = 'Despesa';
+        } else if (descricaoNormalizada.includes('pix recebido') || descricaoNormalizada.includes('estorno')) {
+            tipo = 'Receita';
+        } else {
+            // O valor que chega aqui (valorStr) já não tem "R$"
+            tipo = valorStr.startsWith('-') ? 'Despesa' : 'Receita';
+        }
+        
+        // A lógica de limpeza do valor agora é mais simples e correta
+        const valorNumericoStr = valorStr.replace(/\./g, '').replace(',', '.');
+        const valor = parseFloat(valorNumericoStr);
+
+        if (isNaN(valor)) return;
+
+        transacoes.push({
+            dataStr: dataAtual,
+            descricaoStr: descricao,
+            categoriaStr: "",
+            // Usamos toFixed(2) para garantir a formatação com duas casas decimais
+            valorStr: Math.abs(valor).toFixed(2),
+            tipoStr: tipo
+        });
+    } catch(e) {
+        console.error("Erro ao processar transação montada:", descricao);
+    }
+}
+
+// Crie esta função auxiliar para simular o ambiente de um navegador para a pdf.js
+class NodeCanvasFactory {
+  create(width, height) {
+    const canvas = createCanvas(width, height);
+    const context = canvas.getContext("2d");
+    return {
+      canvas,
+      context,
+    };
+  }
+  reset(canvasAndContext, width, height) {
+    canvasAndContext.canvas.width = width;
+    canvasAndContext.canvas.height = height;
+  }
+  destroy(canvasAndContext) {
+    canvasAndContext.canvas.width = 0;
+    canvasAndContext.canvas.height = 0;
+    canvasAndContext.canvas = null;
+    canvasAndContext.context = null;
+  }
+}
+
 // A rota usa o middleware 'upload.single('extrato')' para processar um ficheiro
 // que virá do frontend no campo 'extrato'.
 app.post('/api/extratos/ocr', authenticateToken, upload.single('extrato'), async (req, res) => {
     try {
         console.log("Backend: Recebido ficheiro para processamento OCR.");
-
         if (!req.file) {
             return res.status(400).json({ message: 'Nenhum ficheiro PDF foi enviado.' });
         }
 
-        // 1. Inicializa o "trabalhador" do Tesseract
-        const worker = await createWorker('por'); // 'por' para o idioma Português
+        const worker = await createWorker('por');
+        let textoCompleto = '';
 
-        // 2. Pede ao Tesseract para reconhecer o texto no buffer do ficheiro
-        // req.file.buffer contém os dados do PDF que o multer guardou na memória
-        const ret = await worker.recognize(req.file.buffer);
+        // 1. Carrega o PDF a partir do buffer recebido
+        const data = new Uint8Array(req.file.buffer);
+        const pdfDoc = await pdfjsLib.getDocument(data).promise;
 
-        // 3. O resultado está em ret.data.text
-        const textoExtraido = ret.data.text;
-        console.log("Backend: Texto extraído do PDF com sucesso.");
-        
-        // 4. Encerra o "trabalhador" para libertar memória
+        // 2. Itera sobre cada página do PDF
+        for (let i = 1; i <= pdfDoc.numPages; i++) {
+            const page = await pdfDoc.getPage(i);
+            const viewport = page.getViewport({ scale: 2.0 }); // Aumenta a escala para melhor qualidade do OCR
+            const canvasFactory = new NodeCanvasFactory();
+            const canvasAndContext = canvasFactory.create(viewport.width, viewport.height);
+            
+            const renderContext = {
+                canvasContext: canvasAndContext.context,
+                viewport: viewport,
+                canvasFactory: canvasFactory,
+            };
+
+            // 3. "Desenha" a página do PDF em um canvas na memória
+            await page.render(renderContext).promise;
+
+            // 4. Converte o canvas para uma imagem PNG em buffer
+            const imageBuffer = canvasAndContext.canvas.toBuffer();
+
+            // 5. Envia a IMAGEM para o Tesseract ler
+            console.log(`Processando OCR da página ${i}...`);
+            const { data: { text } } = await worker.recognize(imageBuffer);
+            textoCompleto += text + '\n'; // Adiciona o texto da página ao resultado final
+        }
+
         await worker.terminate();
+        console.log("Backend: Texto extraído de todas as páginas com sucesso.");
 
-        // --- PRÓXIMO PASSO: O PARSER ---
-        // Por agora, vamos apenas enviar o texto bruto de volta para o frontend.
-        // No futuro, aqui chamaremos a função que irá analisar este texto
-        // e extrair as transações.
-        // const transacoes = parseTextoDoExtrato(textoExtraido);
-        // res.json(transacoes);
-
-        res.json({ texto: textoExtraido });
+        // 6. Agora, com o texto completo, chame o seu parser que já criamos
+        const transacoesEstruturadas = parseTextoDoExtrato(textoCompleto);
+        console.log(`Backend: ${transacoesEstruturadas.length} transações encontradas no texto.`);
+        
+        res.json({ transacoes: transacoesEstruturadas });
 
     } catch (error) {
-        console.error("Erro no processamento OCR:", error.message);
+        console.error("Erro no processamento OCR:", error);
+        // Garante que o worker seja encerrado mesmo em caso de erro
+        if (worker) await worker.terminate().catch(e => console.error("Erro ao encerrar worker:", e));
         res.status(500).json({ message: "Erro interno do servidor ao processar o PDF." });
     }
 });

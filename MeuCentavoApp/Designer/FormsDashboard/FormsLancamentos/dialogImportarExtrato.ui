@@ -34,7 +34,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Arquivo de Extrato (.csv):</string>
+          <string>Arquivo de Extrato (.csv ou .pdf):</string>
          </property>
         </widget>
        </item>

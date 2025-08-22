@@ -323,7 +323,7 @@ void pageLancamentos::on_buttonImportarExtrato_clicked()
 
 void pageLancamentos::onSugestoesParaMapeamentoRecebidas(const QMap<QString, int>& sugestoes)
 {
-    
+
 
     // 1. Abre o diálogo de mapeamento, AGORA com as sugestões recebidas da API
     dialogMapeamento dialogoMap(m_transacoesLidas, sugestoes, this);
@@ -398,11 +398,26 @@ void pageLancamentos::onSugestoesParaMapeamentoRecebidas(const QMap<QString, int
 // Adicione o novo slot para lidar com a resposta do OCR
 void pageLancamentos::onOcrConcluido(const QVector<TransacaoImportada>& transacoes)
 {
-    QMessageBox::information(this, "OCR Concluído", "O texto do PDF foi extraído com sucesso! (Verifique o console de depuração). O próximo passo será analisar este texto para encontrar as transações.");
+    if (transacoes.isEmpty()) {
+        QMessageBox::information(this, "Processamento OCR", "O extrato foi lido, mas nenhuma transação foi encontrada no texto.\n\nTente usar um extrato com um layout mais simples ou verifique o parser no backend.");
+        return;
+    }
 
-    // No futuro, aqui abriremos o dialogMapeamento com as 'transacoes'
-    // dialogMapeamento dialogoMap(transacoes, this);
-    // if (dialogoMap.exec() == QDialog::Accepted) { ... }
+    QMessageBox::information(this, "OCR Concluído", QString("%1 transações foram encontradas no PDF! Agora, vamos categorizá-las.").arg(transacoes.size()));
+
+    // --- LÓGICA IDÊNTICA À DO CSV ---
+    // Inicia o mesmo fluxo de pedido de sugestões que já usamos para o CSV.
+    m_transacoesLidas = transacoes;
+
+    QVector<QString> descricoes;
+    for (const auto& t : m_transacoesLidas) {
+        QString descricaoLimpa = t.descricaoStr;
+        descricoes.append(descricaoLimpa.remove('"').trimmed());
+    }
+
+    QString token = SessionManager::instance().getToken();
+    m_dao->obterSugestoesCategorias(descricoes, token);
+    // O processo continua no slot onSugestoesParaMapeamentoRecebidas...
 }
 
 
