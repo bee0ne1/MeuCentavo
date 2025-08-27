@@ -15,7 +15,6 @@
 #include <QFileInfo>
 #include "Modelo/TransacaoImportada.h"
 
-
 LancamentoDAO::LancamentoDAO(QObject *parent)
     : QObject(parent)
 {
@@ -1160,6 +1159,100 @@ void LancamentoDAO::onSimulacaoAposentadoriaReply(QNetworkReply *reply)
         );
     } else {
         emit erroOcorrido("Falha ao simular aposentadoria: " + reply->readAll());
+    }
+    reply->deleteLater();
+}
+
+void LancamentoDAO::simularFinanciamento(double valorBem, double valorEntrada, double taxaJurosAnual, int numParcelas, const QString& token)
+{
+    QJsonObject jsonBody;
+    jsonBody["valorBem"] = valorBem;
+    jsonBody["valorEntrada"] = valorEntrada;
+    jsonBody["taxaJurosAnual"] = taxaJurosAnual;
+    jsonBody["numParcelas"] = numParcelas;
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/simuladores/financiamento"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(jsonBody).toJson());
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onSimulacaoFinanciamentoReply(reply);
+    });
+}
+
+void LancamentoDAO::onSimulacaoFinanciamentoReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QJsonObject resultado = QJsonDocument::fromJson(reply->readAll()).object();
+        emit simulacaoFinanciamentoRecebida(
+            resultado["valorParcela"].toDouble(),
+            resultado["totalPago"].toDouble(),
+            resultado["totalJuros"].toDouble()
+        );
+    } else {
+        emit erroOcorrido("Falha ao simular financiamento: " + reply->readAll());
+    }
+    reply->deleteLater();
+}
+
+void LancamentoDAO::simularCambio(const QString& moedaOrigem, const QString& moedaDestino, double valor, const QString& token)
+{
+    QUrl url("http://localhost:3000/api/simuladores/cambio");
+    QUrlQuery query;
+    query.addQueryItem("from", moedaOrigem);
+    query.addQueryItem("to", moedaDestino);
+    query.addQueryItem("amount", QString::number(valor));
+    url.setQuery(query);
+
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onSimulacaoCambioReply(reply);
+    });
+}
+
+void LancamentoDAO::onSimulacaoCambioReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QJsonObject resultado = QJsonDocument::fromJson(reply->readAll()).object();
+        emit simulacaoCambioRecebida(resultado["valorConvertido"].toDouble());
+    } else {
+        emit erroOcorrido("Falha ao simular câmbio: " + reply->readAll());
+    }
+    reply->deleteLater();
+}
+
+void LancamentoDAO::calcularIRsobreAcoes(int mes, int ano, const QString& token)
+{
+    QUrl url("http://localhost:3000/api/impostos/acoes");
+    QUrlQuery query;
+    query.addQueryItem("mes", QString::number(mes));
+    query.addQueryItem("ano", QString::number(ano));
+    url.setQuery(query);
+
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+
+    QNetworkReply *reply = m_manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=]() { onCalculoIRReply(reply); });
+}
+
+void LancamentoDAO::onCalculoIRReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QJsonObject obj = QJsonDocument::fromJson(reply->readAll()).object();
+        ResultadoIR res;
+        res.totalVendas = obj["totalVendasNoMes"].toDouble();
+        res.lucroApurado = obj["lucroApurado"].toDouble();
+        res.isento = obj["isento"].toBool();
+        res.impostoDevido = obj["impostoDevido"].toDouble();
+        emit calculoIRRecebido(res);
+    } else {
+        emit erroOcorrido("Falha ao calcular IR: " + reply->readAll());
     }
     reply->deleteLater();
 }

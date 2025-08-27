@@ -707,6 +707,30 @@ Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.s
 .PHONY : Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.s
 
+Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.o: Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.o
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.o
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.o
+
+Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.i: Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.i
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.i
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.i
+
+Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.s: Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.s
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.s
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.s
+
 Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.o: Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.o
 .PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.o
 
@@ -730,6 +754,54 @@ Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.s: Designer
 Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.s
 .PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp.s
+
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.o: Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.o
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.o
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.o
+
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.i: Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.i
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.i
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.i
+
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.s: Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.s
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.s
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.s
+
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.o: Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.o
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.o
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.o
+
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.i: Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.i
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.i
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.i
+
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.s: Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.s
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.s
+.PHONY : Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.s
 
 Designer/FormsDashboard/formMainDashboard.o: Designer/FormsDashboard/formMainDashboard.cpp.o
 .PHONY : Designer/FormsDashboard/formMainDashboard.o
@@ -1099,9 +1171,18 @@ help:
 	@echo "... Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.o"
 	@echo "... Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.i"
 	@echo "... Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.s"
+	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.o"
+	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.i"
+	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.s"
 	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.o"
 	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.i"
 	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.s"
+	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.o"
+	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.i"
+	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.s"
+	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.o"
+	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.i"
+	@echo "... Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.s"
 	@echo "... Designer/FormsDashboard/formMainDashboard.o"
 	@echo "... Designer/FormsDashboard/formMainDashboard.i"
 	@echo "... Designer/FormsDashboard/formMainDashboard.s"

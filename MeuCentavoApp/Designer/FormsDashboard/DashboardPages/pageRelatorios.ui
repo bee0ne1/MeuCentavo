@@ -202,6 +202,27 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="buttonSimuladorFinanciamento">
+           <property name="text">
+            <string>Simulador de Financiamento</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonSimuladorCambio">
+           <property name="text">
+            <string>Simulador de Câmbio</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonCalculadoraIR">
+           <property name="text">
+            <string>Calculadora de IR (Ações)</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
       </layout>

@@ -1982,6 +1982,177 @@ app.post('/api/simuladores/aposentadoria', authenticateToken, async (req, res) =
     }
 });
 
+// --- ROTA PARA SIMULADOR DE FINANCIAMENTO ---
+app.post('/api/simuladores/financiamento', authenticateToken, async (req, res) => {
+    try {
+        // 1. Recebe os dados do frontend
+        const {
+            valorBem,
+            valorEntrada,
+            taxaJurosAnual,
+            numParcelas
+        } = req.body;
+
+        // Validação
+        if (valorEntrada >= valorBem) {
+            return res.status(400).json({ message: 'O valor da entrada não pode ser maior ou igual ao valor do bem.' });
+        }
+        if (numParcelas <= 0) {
+            return res.status(400).json({ message: 'O número de parcelas deve ser maior que zero.' });
+        }
+
+        // 2. Prepara as variáveis para a fórmula da Tabela Price
+        const L = parseFloat(valorBem) - parseFloat(valorEntrada); // L = Valor Financiado
+        const n = parseInt(numParcelas); // n = número de parcelas
+        // Para financiamentos, a prática de mercado é dividir a taxa anual por 12
+        const i = (parseFloat(taxaJurosAnual) / 100) / 12; // i = taxa de juros mensal
+
+        // 3. Aplica a fórmula da Tabela Price para calcular a parcela (P)
+        // P = L * [i * (1+i)^n] / [(1+i)^n - 1]
+        const numerador = i * Math.pow((1 + i), n);
+        const denominador = Math.pow((1 + i), n) - 1;
+        const valorParcela = L * (numerador / denominador);
+
+        // 4. Calcula os totais
+        const totalPago = valorParcela * n;
+        const totalJuros = totalPago - L;
+
+        // 5. Retorna o resultado
+        res.json({
+            valorParcela: valorParcela,
+            totalPago: totalPago,
+            totalJuros: totalJuros
+        });
+
+    } catch (error) {
+        console.error("Erro no simulador de financiamento:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor ao calcular a simulação." });
+    }
+});
+
+// --- ROTA PARA SIMULADOR DE CÂMBIO ---
+app.get('/api/simuladores/cambio', authenticateToken, async (req, res) => {
+    try {
+        // 1. Pega os parâmetros da URL. Ex: /cambio?from=USD&to=EUR&amount=100
+        const { from, to, amount } = req.query;
+        const valor = parseFloat(amount);
+
+        // Validação
+        if (!from || !to || !valor) {
+            return res.status(400).json({ message: 'Os parâmetros "from", "to" e "amount" são obrigatórios.' });
+        }
+
+        // 2. Busca as cotações mais recentes (usando nossa função com cache)
+        const taxas = await obterCotacoes(); // Ex: { BRL: 1, USD: 0.20, EUR: 0.18 }
+
+        if (!taxas[from] || !taxas[to]) {
+            return res.status(400).json({ message: 'Uma das moedas selecionadas é inválida.' });
+        }
+
+        // 3. Realiza a conversão
+        // A fórmula é: (Valor / Taxa da Moeda de Origem) * Taxa da Moeda de Destino
+        // Como a base da nossa API é BRL (taxa = 1), isso converte qualquer moeda para BRL e depois para a moeda de destino.
+        const taxaOrigem = taxas[from];
+        const taxaDestino = taxas[to];
+        const valorConvertido = (valor / taxaOrigem) * taxaDestino;
+
+        // 4. Retorna o resultado
+        res.json({
+            valorConvertido: valorConvertido
+        });
+
+    } catch (error) {
+        console.error("Erro no simulador de câmbio:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor ao simular câmbio." });
+    }
+});
+
+// --- ROTA PARA CALCULADORA DE IR SOBRE AÇÕES (SWING TRADE) ---
+app.get('/api/impostos/acoes', authenticateToken, async (req, res) => {
+    try {
+        const idPerfil = req.user.perfilId;
+        const { mes, ano } = req.query;
+
+        if (!mes || !ano) {
+            return res.status(400).json({ message: 'Mês e ano são obrigatórios.' });
+        }
+
+        const [operacoes] = await pool.query(
+            `SELECT a.ticker, op.tipo_operacao, op.data_operacao, op.quantidade, op.preco_unitario, op.custos
+             FROM operacoes_investimentos op
+             JOIN ativos a ON op.id_ativo = a.id_ativo
+             WHERE a.id_perfil = ? AND a.tipo_ativo LIKE '%Ação%'
+             ORDER BY op.data_operacao ASC, op.id_operacao ASC`,
+            [idPerfil]
+        );
+        
+        const carteira = {};
+        let totalVendasNoMes = 0;
+        let lucroApuradoNoMes = 0;
+
+        for (const op of operacoes) {
+        
+            if (!carteira[op.ticker]) {
+                carteira[op.ticker] = { quantidade: 0, custoTotal: 0 };
+            }
+
+            if (op.tipo_operacao === 'Compra') {
+                carteira[op.ticker].quantidade += op.quantidade;
+                carteira[op.ticker].custoTotal += (op.quantidade * op.preco_unitario) + op.custos;
+            } else if (op.tipo_operacao === 'Venda') {
+                if (carteira[op.ticker].quantidade === 0) continue;
+
+                const precoMedio = carteira[op.ticker].custoTotal / carteira[op.ticker].quantidade;
+                const custoDaVenda = precoMedio * op.quantidade;
+
+                carteira[op.ticker].quantidade -= op.quantidade;
+                carteira[op.ticker].custoTotal -= custoDaVenda;
+
+                // --- INÍCIO DA CORREÇÃO DE DATA ---
+                // Trabalhamos com a string da data para evitar problemas de timezone.
+                // O mysql2 retorna um objeto que pode ser convertido para string 'YYYY-MM-DD...'
+                const dataString = op.data_operacao.toISOString ? op.data_operacao.toISOString() : String(op.data_operacao);
+                const anoOp = parseInt(dataString.substring(0, 4));
+                const mesOp = parseInt(dataString.substring(5, 7));
+
+                // Comparamos os números diretamente, sem usar o objeto Date do JS.
+                if (mesOp === parseInt(mes) && anoOp === parseInt(ano)) {
+                    const valorDaVenda = (op.quantidade * op.preco_unitario) - op.custos;
+                    totalVendasNoMes += valorDaVenda;
+                    lucroApuradoNoMes += valorDaVenda - custoDaVenda;
+                }
+                // --- FIM DA CORREÇÃO DE DATA ---
+            }
+        }
+
+        let isento = false;
+        let impostoDevido = 0;
+
+        if (totalVendasNoMes <= 20000) {
+            isento = true;
+        }
+
+        if (!isento && lucroApuradoNoMes > 0) {
+            impostoDevido = lucroApuradoNoMes * 0.15;
+        }
+        
+        if (impostoDevido < 0) {
+            impostoDevido = 0;
+        }
+
+        res.json({
+            totalVendasNoMes: totalVendasNoMes,
+            lucroApurado: lucroApuradoNoMes,
+            isento: isento,
+            impostoDevido: impostoDevido
+        });
+
+    } catch (error) {
+        console.error("Erro na calculadora de IR:", error.message);
+        res.status(500).json({ message: "Erro interno do servidor ao calcular IR." });
+    }
+});
+
 // Inicia o servidor
 app.listen(port, () => {
   console.log(`Servidor escutando em http://localhost:${port}`);

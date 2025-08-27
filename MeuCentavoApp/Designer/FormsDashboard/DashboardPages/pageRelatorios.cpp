@@ -3,6 +3,9 @@
 #include "DataAccess/LancamentoDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include "Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.h"
+#include "Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.h"
+#include "Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.h"
+#include "Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.h"
 
 // Includes do Qt Charts
 #include <QtCharts>
@@ -633,5 +636,26 @@ void pageRelatorios::on_buttonSimuladorAposentadoria_clicked()
     dialogo->setAttribute(Qt::WA_DeleteOnClose); // Garante que a memória seja liberada
 
     // Abre o diálogo. Usamos open() ou exec() dependendo se queremos que ele bloqueie a janela principal.
+    dialogo->exec();
+}
+
+void pageRelatorios::on_buttonSimuladorFinanciamento_clicked()
+{
+    dialogSimuladorFinanciamento* dialogo = new dialogSimuladorFinanciamento(this);
+    dialogo->setAttribute(Qt::WA_DeleteOnClose);
+    dialogo->exec();
+}
+
+void pageRelatorios::on_buttonSimuladorCambio_clicked()
+{
+    dialogSimuladorCambio* dialogo = new dialogSimuladorCambio(this);
+    dialogo->setAttribute(Qt::WA_DeleteOnClose);
+    dialogo->exec();
+}
+
+void pageRelatorios::on_buttonCalculadoraIR_clicked()
+{
+    dialogCalculadoraIR* dialogo = new dialogCalculadoraIR(this);
+    dialogo->setAttribute(Qt::WA_DeleteOnClose);
     dialogo->exec();
 }

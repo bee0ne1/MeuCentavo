@@ -14,7 +14,6 @@
 #include "Modelo/TransacaoImportada.h"
 #include <QMap>
 
-#include <QMap>
 typedef QMap<QString, double> DreData;
 typedef QMap<QString, double> FluxoCaixaData;
 
@@ -39,6 +38,16 @@ struct LinhaCronograma {
     double valorPago;
     double saldoRestante;
 };
+
+struct ResultadoIR {
+    double totalVendas;
+    double lucroApurado;
+    bool isento;
+    double impostoDevido;
+};
+
+Q_DECLARE_METATYPE(ResultadoIR)
+
 
 class LancamentoDAO : public QObject
 {
@@ -87,6 +96,9 @@ public:
     void processarExtratoOcr(const QString& caminhoPdf, const QString& token);
     void obterSugestoesCategorias(const QVector<QString>& descricoes, const QString& token);
     void simularAposentadoria(int idadeAtual, int idadeAposentadoria, double saldoInicial, double aporteMensal, double rentabilidadeAnual, const QString& token);
+    void simularFinanciamento(double valorBem, double valorEntrada, double taxaJurosAnual, int numParcelas, const QString& token);
+    void simularCambio(const QString& moedaOrigem, const QString& moedaDestino, double valor, const QString& token);
+    void calcularIRsobreAcoes(int mes, int ano, const QString& token);
 
 signals:
         // --- SINAIS DE RESULTADO (A RESPOSTA PARA A INTERFACE) ---
@@ -119,6 +131,9 @@ signals:
     void ocrProcessadoComSucesso(const QVector<TransacaoImportada>& transacoes);
     void sugestoesRecebidas(const QMap<QString, int>& mapaDeSugestoes);
     void simulacaoAposentadoriaRecebida(double valorFinal, double totalInvestido, double jurosTotais);
+    void simulacaoFinanciamentoRecebida(double valorParcela, double totalPago, double totalJuros);
+    void simulacaoCambioRecebida(double valorConvertido);
+    void calculoIRRecebido(const ResultadoIR& resultado);
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---
@@ -140,10 +155,14 @@ private slots:
     void onPlanoSimuladoReply(QNetworkReply *reply);
     void onSugestoesReply(QNetworkReply *reply);
     void onSimulacaoAposentadoriaReply(QNetworkReply *reply);
+    void onSimulacaoFinanciamentoReply(QNetworkReply *reply);
+    void onSimulacaoCambioReply(QNetworkReply *reply);
+    void onCalculoIRReply(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *m_manager;
     QString m_baseUrl = "http://localhost:3000/api/lancamentos";
+
 };
 
 #endif // LANCAMENTODAO_H

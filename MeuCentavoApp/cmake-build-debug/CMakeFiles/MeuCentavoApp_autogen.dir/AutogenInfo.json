@@ -750,9 +750,27 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.h",
+			"MU",
+			"73MS7PNRZQ/moc_dialogCalculadoraIR.cpp",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.h",
 			"MU",
 			"73MS7PNRZQ/moc_dialogSimuladorAposentadoria.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.h",
+			"MU",
+			"73MS7PNRZQ/moc_dialogSimuladorCambio.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.h",
+			"MU",
+			"73MS7PNRZQ/moc_dialogSimuladorFinanciamento.cpp",
 			null
 		],
 		[
@@ -1061,7 +1079,22 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp",
 			"MU",
 			null
 		],

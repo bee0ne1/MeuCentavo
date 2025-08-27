@@ -46,6 +46,9 @@ private slots:
     void on_buttonExportarCSV_clicked();
     void on_buttonExportarPDF_clicked();
     void on_buttonSimuladorAposentadoria_clicked();
+    void on_buttonSimuladorFinanciamento_clicked();
+    void on_buttonSimuladorCambio_clicked();
+    void on_buttonCalculadoraIR_clicked();
     void onCategoriasDespesaRecebidas(const QVector<Categoria>& categorias);
     void onTendenciaRecebida(const QVector<PontoTendencia>& tendencia);
     void on_buttonAnalisarTendencia_clicked();
@@ -55,6 +58,7 @@ private slots:
     void onFluxoCaixaRecebido(const FluxoCaixaData& fluxoCaixa);
     void configurarTabelaFluxoCaixa();
     void popularTabelaFluxoCaixa(const FluxoCaixaData& fluxoCaixa);
+
 
 
 private:

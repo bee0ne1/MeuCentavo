@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<DreData>();
     qRegisterMetaType<FluxoCaixaData>();
     qRegisterMetaType<QVector<TransacaoImportada>>();
+    qRegisterMetaType<ResultadoIR>();
 
     // Cria o controlador e inicia a aplicação
     AppController controller;
