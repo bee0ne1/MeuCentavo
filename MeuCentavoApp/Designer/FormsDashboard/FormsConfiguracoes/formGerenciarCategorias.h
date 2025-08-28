@@ -5,7 +5,7 @@
 #include "Modelo/Categoria.h"
 
 // Forward declarations
-class LancamentoDAO;
+class ContaDAO;
 class QTableWidget;
 namespace Ui {
     class formGerenciarCategorias;
@@ -46,7 +46,7 @@ private:
     QTableWidget* tabelaAtual(); // Retorna um ponteiro para a tabela da aba ativa
 
     Ui::formGerenciarCategorias *ui;
-    LancamentoDAO* m_dao;
+    ContaDAO* m_dao;
 };
 
 #endif // FORMGERENCIARCATEGORIAS_H

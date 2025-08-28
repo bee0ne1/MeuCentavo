@@ -1,6 +1,6 @@
 #include "dialogSimuladorAposentadoria.h"
 #include "ui_dialogSimuladorAposentadoria.h"
-#include "DataAccess/LancamentoDAO.h"   // Inclui o DAO completo
+#include "DataAccess/RelatorioDAO.h"   // Inclui o DAO completo
 #include "Gerenciamento/SessionManager.h" // Para pegar o token de autenticação
 #include <QMessageBox>
 #include <QLocale> // Para formatar os valores em Reais
@@ -13,12 +13,12 @@ dialogSimuladorAposentadoria::dialogSimuladorAposentadoria(QWidget *parent) :
     setWindowTitle("Simulador de Aposentadoria");
 
     // Instancia o DAO que fará a requisição à API
-    m_dao = new LancamentoDAO(this);
+    m_dao = new RelatorioDAO(this);
 
     // --- CONEXÕES ---
     // Conecta os sinais do DAO aos nossos slots que tratarão as respostas
-    connect(m_dao, &LancamentoDAO::simulacaoAposentadoriaRecebida, this, &dialogSimuladorAposentadoria::onSimulacaoRecebida);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &dialogSimuladorAposentadoria::onErro);
+    connect(m_dao, &RelatorioDAO::simulacaoAposentadoriaRecebida, this, &dialogSimuladorAposentadoria::onSimulacaoRecebida);
+    connect(m_dao, &RelatorioDAO::onRelatorioError, this, &dialogSimuladorAposentadoria::onErro);
 }
 
 dialogSimuladorAposentadoria::~dialogSimuladorAposentadoria()

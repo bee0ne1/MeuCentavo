@@ -6,6 +6,10 @@ MeuCentavoApp: \
   CMakeFiles/MeuCentavoApp.dir/main.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/DataAccess/InvestimentoDAO.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/DataAccess/RelatorioDAO.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/DataAccess/ContaDAO.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/DataAccess/MetaDAO.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formCadastro.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formExcluirUsuario.cpp.o \
@@ -342,6 +346,14 @@ CMakeFiles/MeuCentavoApp.dir/main.cpp.o:
 CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/DataAccess/InvestimentoDAO.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/DataAccess/RelatorioDAO.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/DataAccess/ContaDAO.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/DataAccess/MetaDAO.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o:
 

@@ -2,8 +2,9 @@
 #define DIALOGSIMULADORCAMBIO_H
 
 #include <QDialog>
+#include "DataAccess/RelatorioDAO.h"
 
-class LancamentoDAO;
+
 namespace Ui { class dialogSimuladorCambio; }
 
 class dialogSimuladorCambio : public QDialog
@@ -23,7 +24,7 @@ private:
     void popularComboBoxes();
 
     Ui::dialogSimuladorCambio *ui;
-    LancamentoDAO* m_dao;
+    RelatorioDAO* m_dao;
 };
 
 #endif // DIALOGSIMULADORCAMBIO_H

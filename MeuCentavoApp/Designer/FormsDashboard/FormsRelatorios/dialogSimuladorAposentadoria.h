@@ -2,12 +2,12 @@
 #define DIALOGSIMULADORAPOSENTADORIA_H
 
 #include <QDialog>
+#include "DataAccess/RelatorioDAO.h"
 
 // Forward declarations
 namespace Ui {
     class dialogSimuladorAposentadoria;
 }
-class LancamentoDAO; // Usamos forward declaration pois só precisamos do ponteiro
 
 class dialogSimuladorAposentadoria : public QDialog
 {
@@ -29,7 +29,7 @@ private slots:
 
 private:
     Ui::dialogSimuladorAposentadoria *ui;
-    LancamentoDAO* m_dao; // O DAO que fará a comunicação com a API
+    RelatorioDAO* m_dao; // O DAO que fará a comunicação com a API
 };
 
 #endif // DIALOGSIMULADORAPOSENTADORIA_H

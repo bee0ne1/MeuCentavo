@@ -7,6 +7,7 @@
 #include <QtCharts/QChartView>
 #include <QtCharts/QChart>
 #include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/RelatorioDAO.h"
 
 
 // Forward declarations
@@ -36,6 +37,7 @@ private:
 
     Ui::pageHome *ui;
     LancamentoDAO* m_dao;
+    RelatorioDAO* m_relatorio;
     QChartView *m_chartView;
     QChart *m_chart;
     // Ponteiros para o NOVO gráfico de patrimônio

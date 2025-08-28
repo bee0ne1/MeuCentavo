@@ -7,13 +7,13 @@
 #include <QVector>
 #include "Modelo/TransacaoImportada.h"
 #include "Modelo/Categoria.h"
+#include "DataAccess/ContaDAO.h"
 #include <QMap>
 
 namespace Ui {
     class dialogMapeamento;
 }
 
-class LancamentoDAO;
 
 class dialogMapeamento : public QDialog
 {
@@ -35,7 +35,7 @@ private:
     void popularTabela();
 
     Ui::dialogMapeamento *ui;
-    LancamentoDAO* m_dao;
+    ContaDAO* m_dao;
     QVector<TransacaoImportada>& m_transacoes; // Uma referência para a lista original
     QVector<Categoria> m_categorias;
     QVector<Categoria> m_categoriasReceita; // <-- ADICIONE ESTA LINHA

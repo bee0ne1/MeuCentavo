@@ -1522,9 +1522,33 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/ContaDAO.h",
+			"MU",
+			"V5IIWBEYZM/moc_ContaDAO.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/InvestimentoDAO.h",
+			"MU",
+			"V5IIWBEYZM/moc_InvestimentoDAO.cpp",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.h",
 			"MU",
 			"V5IIWBEYZM/moc_LancamentoDAO.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/MetaDAO.h",
+			"MU",
+			"V5IIWBEYZM/moc_MetaDAO.cpp",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/RelatorioDAO.h",
+			"MU",
+			"V5IIWBEYZM/moc_RelatorioDAO.cpp",
 			null
 		],
 		[
@@ -1901,7 +1925,27 @@
 			null
 		],
 		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/ContaDAO.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/InvestimentoDAO.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/MetaDAO.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/RelatorioDAO.cpp",
 			"MU",
 			null
 		],

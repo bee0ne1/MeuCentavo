@@ -17,6 +17,10 @@ set(PROJECT_SOURCES
         main.cpp
         DataAccess/LancamentoDAO.cpp
         DataAccess/UsuarioDAO.cpp
+        DataAccess/InvestimentoDAO.cpp
+        DataAccess/RelatorioDAO.cpp
+        DataAccess/ContaDAO.cpp
+        DataAccess/MetaDAO.cpp
         Designer/formInicio.cpp
         Designer/FormsUsuarios/formCadastro.cpp
         Designer/FormsUsuarios/formExcluirUsuario.cpp
@@ -52,13 +56,16 @@ set(PROJECT_SOURCES
         Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp
         Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp
         Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp
-
 )
 
 # 2. Lista COMPLETA de Ficheiros de Cabeçalho (.h)
 set(PROJECT_HEADERS
         DataAccess/LancamentoDAO.h
         DataAccess/UsuarioDAO.h
+        DataAccess/InvestimentoDAO.h
+        DataAccess/RelatorioDAO.h
+        DataAccess/ContaDAO.h
+        DataAccess/MetaDAO.h
         Designer/formInicio.h
         Designer/FormsUsuarios/formCadastro.h
         Designer/FormsUsuarios/formExcluirUsuario.h
@@ -104,6 +111,7 @@ set(PROJECT_HEADERS
         Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.h
         Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.h
         Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.h
+
 )
 
 # 3. Lista de Ficheiros de Interface (.ui)

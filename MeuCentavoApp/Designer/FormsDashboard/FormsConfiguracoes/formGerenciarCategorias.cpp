@@ -1,6 +1,6 @@
 #include "formGerenciarCategorias.h"
 #include "ui_formGerenciarCategorias.h"
-#include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/ContaDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include "dialogAddEditCategoria.h"
 #include <QMessageBox>
@@ -17,7 +17,7 @@ formGerenciarCategorias::formGerenciarCategorias(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Gerir Categorias");
     m_tipoPerfilAtivo = SessionManager::instance().getTipoPerfil();
-    m_dao = new LancamentoDAO(this);
+    m_dao = new ContaDAO(this);
     ui->tabWidget->setTabText(0, "Despesas");
     ui->tabWidget->setTabText(1, "Receitas");
     configurarTabelas();
@@ -25,11 +25,12 @@ formGerenciarCategorias::formGerenciarCategorias(QWidget *parent) :
     connect(&SessionManager::instance(), &SessionManager::sessaoAtualizada, this, &formGerenciarCategorias::onSessaoAtualizada);
 
     connect(ui->buttonFechar, &QPushButton::clicked, this, &QDialog::accept);
-    connect(m_dao, &LancamentoDAO::categoriasRecebidas, this, &formGerenciarCategorias::onCategoriasRecebidas);
-    connect(m_dao, &LancamentoDAO::categoriaModificadaComSucesso, this, &formGerenciarCategorias::onCategoriaModificada);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, [](const QString& erro){
+    connect(m_dao, &ContaDAO::categoriasRecebidas, this, &formGerenciarCategorias::onCategoriasRecebidas);
+    connect(m_dao, &ContaDAO::categoriaModificadaComSucesso, this, &formGerenciarCategorias::onCategoriaModificada);
+    connect(m_dao, &ContaDAO::onContaError, this, [](const QString& erro){
         QMessageBox::warning(nullptr, "Erro de Rede", erro);
     });
+
 
     connect(ui->tableWidget, &QTableWidget::itemSelectionChanged, this, &formGerenciarCategorias::onSelectionChanged);
     connect(ui->tableWidget_2, &QTableWidget::itemSelectionChanged, this, &formGerenciarCategorias::onSelectionChanged);

@@ -1,6 +1,8 @@
 #include <QApplication>
 #include "Gerenciamento/AppController.h"
 #include "Modelo/Usuario.h" // Para registrar o metatype
+#include "DataAccess/InvestimentoDAO.h"
+#include "DataAccess/RelatorioDAO.h"
 #include "DataAccess/LancamentoDAO.h"
 #include "Modelo/Perfil.h"
 #include "Modelo/TransacaoImportada.h"

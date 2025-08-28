@@ -1,6 +1,7 @@
 #include "dialogCalculadoraIR.h"
 #include "ui_dialogCalculadoraIR.h"
 #include "Gerenciamento/SessionManager.h"
+#include "DataAccess/InvestimentoDAO.h"
 #include <QMessageBox>
 #include <QLocale>
 #include <QDate>
@@ -12,11 +13,11 @@ dialogCalculadoraIR::dialogCalculadoraIR(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Calculadora de IR (Ações - Swing Trade)");
 
-    m_dao = new LancamentoDAO(this);
+    m_dao = new InvestimentoDAO(this);
     popularCamposData();
 
-    connect(m_dao, &LancamentoDAO::calculoIRRecebido, this, &dialogCalculadoraIR::onCalculoRecebido);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &dialogCalculadoraIR::onErro);
+    connect(m_dao, &InvestimentoDAO::calculoIRRecebido, this, &dialogCalculadoraIR::onCalculoRecebido);
+    connect(m_dao, &InvestimentoDAO::onInvestimentoError, this, &dialogCalculadoraIR::onErro);
 }
 
 dialogCalculadoraIR::~dialogCalculadoraIR()

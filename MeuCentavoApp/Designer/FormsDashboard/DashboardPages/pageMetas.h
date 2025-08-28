@@ -4,13 +4,13 @@
 #include <QWidget>
 #include <QVector>
 #include "Modelo/Meta.h"
+#include "DataAccess/MetaDAO.h"
 
 // Forward declarations
 QT_BEGIN_NAMESPACE
 namespace Ui { class pageMetas; }
 QT_END_NAMESPACE
 
-class LancamentoDAO;
 
 class pageMetas : public QWidget
 {
@@ -39,7 +39,7 @@ private:
     void popularTabela(const QVector<Meta>& metas);
 
     Ui::pageMetas *ui;
-    LancamentoDAO* m_dao;
+    MetaDAO* m_dao;
     QVector<Meta> m_metas; // Armazena a lista de metas atual
 };
 

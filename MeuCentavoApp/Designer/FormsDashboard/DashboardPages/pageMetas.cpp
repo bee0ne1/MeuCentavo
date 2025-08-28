@@ -1,6 +1,6 @@
 #include "pageMetas.h"
 #include "ui_pageMetas.h"
-#include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/MetaDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include "Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.h"
 
@@ -17,7 +17,7 @@ pageMetas::pageMetas(QWidget *parent) :
     ui->setupUi(this);
 
     // Instancia o DAO
-    m_dao = new LancamentoDAO(this);
+    m_dao = new MetaDAO(this);
 
     // Configura a tabela
     ui->tableWidgetMetas->setColumnCount(5);
@@ -29,9 +29,9 @@ pageMetas::pageMetas(QWidget *parent) :
 
 
     // Conecta os sinais do DAO aos nossos slots
-    connect(m_dao, &LancamentoDAO::metasRecebidas, this, &pageMetas::onMetasRecebidas);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &pageMetas::onErroDeRede);
-    connect(m_dao, &LancamentoDAO::metaModificadaComSucesso, this, &pageMetas::onMetaModificada);
+    connect(m_dao, &MetaDAO::metasRecebidas, this, &pageMetas::onMetasRecebidas);
+    connect(m_dao, &MetaDAO::onMetaError, this, &pageMetas::onErroDeRede);
+    connect(m_dao, &MetaDAO::metaModificadaComSucesso, this, &pageMetas::onMetaModificada);
     // Conectaremos o sinal de 'metaModificada' quando implementarmos a adição/edição
 
     // Carrega os dados iniciais

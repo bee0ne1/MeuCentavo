@@ -1,6 +1,6 @@
 #include "../FormsLancamentos/dialogImportarExtrato.h"
 #include "ui_dialogImportarExtrato.h"
-#include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/ContaDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include <QFileDialog>
 
@@ -11,14 +11,14 @@ dialogImportarExtrato::dialogImportarExtrato(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Iniciar Importação de Extrato");
 
-    m_dao = new LancamentoDAO(this);
+    m_dao = new ContaDAO(this);
 
     // Conecta o botão "OK" (Importar) ao slot que fecha o diálogo com sucesso.
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
     // Conecta o botão "Cancelar" ao slot que fecha o diálogo como cancelado.
     connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 
-    connect(m_dao, &LancamentoDAO::contasRecebidas, this, &dialogImportarExtrato::onContasRecebidas);
+    connect(m_dao, &ContaDAO::contasRecebidas, this, &dialogImportarExtrato::onContasRecebidas);
 
     // Carrega as contas do usuário para preencher o ComboBox
     QString token = SessionManager::instance().getToken();

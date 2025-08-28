@@ -1,6 +1,8 @@
 #include "pageRelatorios.h"
 #include "ui_pageRelatorios.h"
 #include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/RelatorioDAO.h"
+#include "DataAccess/ContaDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include "Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.h"
 #include "Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.h"
@@ -29,6 +31,8 @@ pageRelatorios::pageRelatorios(QWidget *parent) :
 
     // Instancia o DAO para comunicação com a API
     m_dao = new LancamentoDAO(this);
+    m_relatorioDAO = new RelatorioDAO(this);
+    m_contaDAO = new ContaDAO(this);
 
     // --- SETUP DO GRÁFICO DE PIZZA ---
     m_chart = new QChart();
@@ -78,15 +82,17 @@ pageRelatorios::pageRelatorios(QWidget *parent) :
     configurarTabelaFluxoCaixa();
 
     // 4. Conecta os sinais do DAO aos slots desta classe
-    connect(m_dao, &LancamentoDAO::contasRecebidas, this, &pageRelatorios::onContasRecebidas);
-    connect(m_dao, &LancamentoDAO::gastosPorCategoriaRecebidos, this, &pageRelatorios::onGastosRecebidos);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &pageRelatorios::onErroDeRede);
+    connect(m_contaDAO, &ContaDAO::contasRecebidas, this, &pageRelatorios::onContasRecebidas);
+    connect(m_relatorioDAO, &RelatorioDAO::gastosPorCategoriaRecebidos, this, &pageRelatorios::onGastosRecebidos);
     connect(m_dao, &LancamentoDAO::lancamentosRecebidos, this, &pageRelatorios::onDetalhesRecebidos);
-    connect(m_dao, &LancamentoDAO::comparativoMensalRecebido, this, &pageRelatorios::onComparativoRecebido);
-    connect(m_dao, &LancamentoDAO::categoriasRecebidas, this, &pageRelatorios::onCategoriasDespesaRecebidas); // Reutilizamos o sinal
-    connect(m_dao, &LancamentoDAO::tendenciaCategoriaRecebida, this, &pageRelatorios::onTendenciaRecebida);
-    connect(m_dao, &LancamentoDAO::dreRecebido, this, &pageRelatorios::onDreRecebido);
-    connect(m_dao, &LancamentoDAO::fluxoCaixaRecebido, this, &pageRelatorios::onFluxoCaixaRecebido);
+    connect(m_relatorioDAO, &RelatorioDAO::comparativoMensalRecebido, this, &pageRelatorios::onComparativoRecebido);
+    connect(m_contaDAO, &ContaDAO::categoriasRecebidas, this, &pageRelatorios::onCategoriasDespesaRecebidas); // Reutilizamos o sinal
+    connect(m_relatorioDAO, &RelatorioDAO::tendenciaCategoriaRecebida, this, &pageRelatorios::onTendenciaRecebida);
+    connect(m_relatorioDAO, &RelatorioDAO::dreRecebido, this, &pageRelatorios::onDreRecebido);
+    connect(m_relatorioDAO, &RelatorioDAO::fluxoCaixaRecebido, this, &pageRelatorios::onFluxoCaixaRecebido);
+    connect(m_dao, &LancamentoDAO::onLancamentoError, this, &pageRelatorios::onErroDeRede);
+    connect(m_relatorioDAO, &RelatorioDAO::onRelatorioError, this, &pageRelatorios::onErroDeRede);
+    connect(m_contaDAO, &ContaDAO::onContaError, this, &pageRelatorios::onErroDeRede);
 
     // Define as datas padrão nos QDateEdit
     QDate dataAtual = QDate::currentDate();
@@ -115,8 +121,8 @@ pageRelatorios::pageRelatorios(QWidget *parent) :
 
     // No final do construtor, peça a lista de contas para preencher o combobox
     QString token = SessionManager::instance().getToken();
-    m_dao->obterTodasContas(token);
-    m_dao->obterTodasCategorias(token);
+    m_contaDAO->obterTodasContas(token);
+    m_contaDAO->obterTodasCategorias(token);
 
 }
 
@@ -164,15 +170,15 @@ void pageRelatorios::carregarDados()
     int idConta = ui->comboBoxConta->currentData().toInt();
 
     // Chama o método do DAO com os filtros
-    m_dao->obterGastosPorCategoria(token, dataInicio, dataFim, idConta);
+    m_relatorioDAO->obterGastosPorCategoria(token, dataInicio, dataFim, idConta);
     //busca os dados da tabela
     m_dao->obterTodos(token, dataInicio, dataFim, idConta);
     // Adiciona a chamada para o novo gráfico
-    m_dao->obterComparativoMensal(token, dataInicio, dataFim, idConta);
+    m_relatorioDAO->obterComparativoMensal(token, dataInicio, dataFim, idConta);
 
     if (isPerfilPJ) {
-        m_dao->obterDre(token, dataInicio, dataFim);
-        m_dao->obterFluxoCaixa(token, dataInicio, dataFim); // <-- ADICIONE A CHAMADA
+        m_relatorioDAO->obterDre(token, dataInicio, dataFim);
+        m_relatorioDAO->obterFluxoCaixa(token, dataInicio, dataFim); // <-- ADICIONE A CHAMADA
     }
 }
 
@@ -427,7 +433,7 @@ void pageRelatorios::on_buttonAnalisarTendencia_clicked()
     int idCategoria = ui->comboCategoriaTendencia->currentData().toInt();
     if (idCategoria > 0) {
         QString token = SessionManager::instance().getToken();
-        m_dao->obterTendenciaCategoria(idCategoria, token);
+        m_relatorioDAO->obterTendenciaCategoria(idCategoria, token);
     }
 }
 

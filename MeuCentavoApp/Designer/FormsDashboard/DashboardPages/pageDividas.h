@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include "Modelo/Conta.h"
-#include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/ContaDAO.h"
 
 namespace Ui {
     class pageDividas;
@@ -28,7 +28,7 @@ private slots:
 
 private:
     Ui::pageDividas *ui;
-    LancamentoDAO* m_dao;
+    ContaDAO* m_dao;
 };
 
 #endif // PAGEDIVIDAS_H

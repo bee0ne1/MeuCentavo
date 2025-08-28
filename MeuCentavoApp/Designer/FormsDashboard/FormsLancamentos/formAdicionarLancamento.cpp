@@ -1,6 +1,8 @@
 #include "formAdicionarLancamento.h"
 #include "ui_formAdicionarLancamento.h"
 #include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/ContaDAO.h"
+#include "DataAccess/MetaDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include <QMessageBox>
 #include <QDate>
@@ -17,6 +19,8 @@ formAdicionarLancamento::formAdicionarLancamento(QWidget *parent) :
 
     // --- Instanciamos o DAO UMA ÚNICA VEZ ---
     m_dao = new LancamentoDAO(this);
+    m_contaDao = new ContaDAO(this);
+    m_metaDao = new MetaDAO(this);
 
     // --- Configurações iniciais dos campos ---
     ui->comboBoxTipo->addItems({"Despesa", "Receita"});
@@ -29,21 +33,24 @@ formAdicionarLancamento::formAdicionarLancamento(QWidget *parent) :
     connect(ui->buttonCancelar, &QPushButton::clicked, this, &QDialog::reject);
 
     // Conecta o DAO
-    connect(m_dao, &LancamentoDAO::contasRecebidas, this, &formAdicionarLancamento::onContasRecebidas);
-    connect(m_dao, &LancamentoDAO::categoriasRecebidas, this, &formAdicionarLancamento::onCategoriasRecebidas);
+    connect(m_contaDao, &ContaDAO::contasRecebidas, this, &formAdicionarLancamento::onContasRecebidas);
+    connect(m_contaDao, &ContaDAO::categoriasRecebidas, this, &formAdicionarLancamento::onCategoriasRecebidas);
     connect(m_dao, &LancamentoDAO::lancamentoAdicionado, this, &formAdicionarLancamento::onLancamentoAdicionado);
     connect(m_dao, &LancamentoDAO::lancamentoModificadoComSucesso, this, &formAdicionarLancamento::onLancamentoAdicionado);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &formAdicionarLancamento::onErroDeRede);
-    connect(m_dao, &LancamentoDAO::metasRecebidas, this, &formAdicionarLancamento::onMetasRecebidas);
+    connect(m_contaDao, &ContaDAO::onContaError, this, &formAdicionarLancamento::onErroDeRede);
+    connect(m_metaDao,&MetaDAO::onMetaError,this,&formAdicionarLancamento::onErroDeRede);
+    connect(m_dao, &LancamentoDAO::onLancamentoError, this, &formAdicionarLancamento::onErroDeRede);
+
+    connect(m_metaDao, &MetaDAO::metasRecebidas, this, &formAdicionarLancamento::onMetasRecebidas);
 
     // Conecta o combobox de tipo ao nosso novo slot de filtro
     connect(ui->comboBoxTipo, &QComboBox::currentTextChanged, this, &formAdicionarLancamento::filtrarCategoriasPorTipo);
 
     // --- Inicia o carregamento dos dados ---
     QString token = SessionManager::instance().getToken();
-    m_dao->obterTodasContas(token);
-    m_dao->obterTodasCategorias(token);
-    m_dao->obterTodasMetas(token);
+    m_contaDao->obterTodasContas(token);
+    m_contaDao->obterTodasCategorias(token);
+    m_metaDao->obterTodasMetas(token);
 }
 
 formAdicionarLancamento::~formAdicionarLancamento()

@@ -1,6 +1,6 @@
 #include "dialogSimuladorFinanciamento.h"
 #include "ui_dialogSimuladorFinanciamento.h"
-#include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/RelatorioDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include <QMessageBox>
 #include <QLocale>
@@ -17,11 +17,11 @@ dialogSimuladorFinanciamento::dialogSimuladorFinanciamento(QWidget *parent) :
     ui->spinBoxValorEntrada->setMaximum(999999999.99);
     ui->spinBoxNumParcelas->setMaximum(1200); // Limite de 100 anos
 
-    m_dao = new LancamentoDAO(this);
+    m_dao = new RelatorioDAO(this);
 
     // Conecta os sinais do DAO aos slots deste diálogo
-    connect(m_dao, &LancamentoDAO::simulacaoFinanciamentoRecebida, this, &dialogSimuladorFinanciamento::onSimulacaoRecebida);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &dialogSimuladorFinanciamento::onErro);
+    connect(m_dao, &RelatorioDAO::simulacaoFinanciamentoRecebida, this, &dialogSimuladorFinanciamento::onSimulacaoRecebida);
+    connect(m_dao, &RelatorioDAO::onRelatorioError, this, &dialogSimuladorFinanciamento::onErro);
 }
 
 dialogSimuladorFinanciamento::~dialogSimuladorFinanciamento()

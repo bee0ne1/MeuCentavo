@@ -5,7 +5,7 @@
 #include "Modelo/Conta.h"
 
 // Forward declarations
-class LancamentoDAO;
+class ContaDAO;
 class QTableWidget;
 namespace Ui {
     class formGerenciarContas;
@@ -34,7 +34,7 @@ private:
     void excluirConta(const Conta& conta);
 
     Ui::formGerenciarContas *ui;
-    LancamentoDAO* m_dao;
+    ContaDAO* m_dao;
 };
 
 #endif // FORMGERENCIARCONTAS_H

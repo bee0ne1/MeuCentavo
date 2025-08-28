@@ -1,6 +1,6 @@
 #include "dialogSimuladorCambio.h"
 #include "ui_dialogSimuladorCambio.h"
-#include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/RelatorioDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include <QMessageBox>
 #include <QLocale>
@@ -12,11 +12,11 @@ dialogSimuladorCambio::dialogSimuladorCambio(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Simulador de Câmbio");
 
-    m_dao = new LancamentoDAO(this);
+    m_dao = new RelatorioDAO(this);
     popularComboBoxes();
 
-    connect(m_dao, &LancamentoDAO::simulacaoCambioRecebida, this, &dialogSimuladorCambio::onSimulacaoRecebida);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &dialogSimuladorCambio::onErro);
+    connect(m_dao, &RelatorioDAO::simulacaoCambioRecebida, this, &dialogSimuladorCambio::onSimulacaoRecebida);
+    connect(m_dao, &RelatorioDAO::onRelatorioError, this, &dialogSimuladorCambio::onErro);
 }
 
 dialogSimuladorCambio::~dialogSimuladorCambio()

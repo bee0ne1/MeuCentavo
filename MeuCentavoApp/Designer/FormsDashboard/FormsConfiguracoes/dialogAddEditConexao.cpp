@@ -28,7 +28,7 @@ dialogAddEditConexao::dialogAddEditConexao(QWidget *parent) :
     m_dao = new LancamentoDAO(this);
 
     connect(m_dao, &LancamentoDAO::connectTokenRecebido, this, &dialogAddEditConexao::onConnectTokenRecebido);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &dialogAddEditConexao::onErro);
+    connect(m_dao, &LancamentoDAO::onLancamentoError, this, &dialogAddEditConexao::onErro);
     connect(m_webView, &QWebEngineView::urlChanged, this, &dialogAddEditConexao::onUrlChanged);
 
     // Inicia o processo imediatamente ao abrir o diálogo

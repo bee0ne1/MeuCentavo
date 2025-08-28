@@ -3,6 +3,7 @@
 #include "dialogMapeamento.h"
 #include "ui_dialogMapeamento.h"
 #include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/ContaDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include <QComboBox>
 #include <QCheckBox>
@@ -22,8 +23,8 @@ dialogMapeamento::dialogMapeamento(QVector<TransacaoImportada>& transacoes, cons
     ui->tableWidgetTransacoes->setHorizontalHeaderLabels({"Data", "Descrição", "Valor Entrada", "Valor Saída", "Categoria"});
     ui->tableWidgetTransacoes->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
 
-    m_dao = new LancamentoDAO(this);
-    connect(m_dao, &LancamentoDAO::categoriasRecebidas, this, &dialogMapeamento::onCategoriasRecebidas);
+    m_dao = new ContaDAO(this);
+    connect(m_dao, &ContaDAO::categoriasRecebidas, this, &dialogMapeamento::onCategoriasRecebidas);
 
     // Busca as categorias do usuário para preencher os ComboBoxes
     QString token = SessionManager::instance().getToken();

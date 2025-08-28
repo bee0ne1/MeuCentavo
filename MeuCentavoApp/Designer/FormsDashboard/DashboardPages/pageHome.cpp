@@ -1,6 +1,7 @@
 #include "pageHome.h"
 #include "ui_pageHome.h"
 #include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/RelatorioDAO.h"
 #include "Gerenciamento/SessionManager.h" // Nosso "cofre" de sessão
 #include <QHeaderView>
 #include <QMessageBox>
@@ -16,6 +17,7 @@ pageHome::pageHome(QWidget *parent) :
 
     // Cria uma única instância do DAO para esta página
     m_dao = new LancamentoDAO(this);
+    m_relatorio = new RelatorioDAO(this);
     m_chart = new QChart();
     m_chart->setTitle("Resumo Mensal");
     m_chart->setTheme(QChart::ChartThemeDark);
@@ -37,10 +39,11 @@ pageHome::pageHome(QWidget *parent) :
 
 
     // Conecta os sinais de resultado do DAO aos nossos slots
-    connect(m_dao, &LancamentoDAO::resumosRecebidos, this, &pageHome::onResumosRecebidos);
+    connect(m_relatorio, &RelatorioDAO::resumosRecebidos, this, &pageHome::onResumosRecebidos);
     connect(m_dao, &LancamentoDAO::lancamentosRecebidos, this, &pageHome::onLancamentosRecentesRecebidos);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &pageHome::onErroDeRede);
-    connect(m_dao, &LancamentoDAO::historicoPatrimonioRecebido, this, &pageHome::onHistoricoPatrimonioRecebido);
+    connect(m_dao, &LancamentoDAO::onLancamentoError, this, &pageHome::onErroDeRede);
+    connect(m_relatorio, &RelatorioDAO::historicoPatrimonioRecebido, this, &pageHome::onHistoricoPatrimonioRecebido);
+    connect(m_relatorio, &RelatorioDAO::onRelatorioError, this, &pageHome::onErroDeRede);
 
 
     // Configuração inicial da tabela
@@ -70,9 +73,9 @@ void pageHome::atualizarDados()
     }
 
     // Inicia as requisições de rede. As respostas virão depois, nos slots.
-    m_dao->obterResumosDoMes(token);
+    m_relatorio->obterResumosDoMes(token);
     m_dao->obterRecentes(token, 5);
-    m_dao->obterHistoricoPatrimonio(token);
+    m_relatorio->obterHistoricoPatrimonio(token);
 }
 
 void pageHome::onResumosRecebidos(double receitas, double despesas)

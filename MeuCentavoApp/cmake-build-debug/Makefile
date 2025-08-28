@@ -192,6 +192,54 @@ Composicoes/PasswordFormHelper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.s
 .PHONY : Composicoes/PasswordFormHelper.cpp.s
 
+DataAccess/ContaDAO.o: DataAccess/ContaDAO.cpp.o
+.PHONY : DataAccess/ContaDAO.o
+
+# target to build an object file
+DataAccess/ContaDAO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/ContaDAO.cpp.o
+.PHONY : DataAccess/ContaDAO.cpp.o
+
+DataAccess/ContaDAO.i: DataAccess/ContaDAO.cpp.i
+.PHONY : DataAccess/ContaDAO.i
+
+# target to preprocess a source file
+DataAccess/ContaDAO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/ContaDAO.cpp.i
+.PHONY : DataAccess/ContaDAO.cpp.i
+
+DataAccess/ContaDAO.s: DataAccess/ContaDAO.cpp.s
+.PHONY : DataAccess/ContaDAO.s
+
+# target to generate assembly for a file
+DataAccess/ContaDAO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/ContaDAO.cpp.s
+.PHONY : DataAccess/ContaDAO.cpp.s
+
+DataAccess/InvestimentoDAO.o: DataAccess/InvestimentoDAO.cpp.o
+.PHONY : DataAccess/InvestimentoDAO.o
+
+# target to build an object file
+DataAccess/InvestimentoDAO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/InvestimentoDAO.cpp.o
+.PHONY : DataAccess/InvestimentoDAO.cpp.o
+
+DataAccess/InvestimentoDAO.i: DataAccess/InvestimentoDAO.cpp.i
+.PHONY : DataAccess/InvestimentoDAO.i
+
+# target to preprocess a source file
+DataAccess/InvestimentoDAO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/InvestimentoDAO.cpp.i
+.PHONY : DataAccess/InvestimentoDAO.cpp.i
+
+DataAccess/InvestimentoDAO.s: DataAccess/InvestimentoDAO.cpp.s
+.PHONY : DataAccess/InvestimentoDAO.s
+
+# target to generate assembly for a file
+DataAccess/InvestimentoDAO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/InvestimentoDAO.cpp.s
+.PHONY : DataAccess/InvestimentoDAO.cpp.s
+
 DataAccess/LancamentoDAO.o: DataAccess/LancamentoDAO.cpp.o
 .PHONY : DataAccess/LancamentoDAO.o
 
@@ -215,6 +263,54 @@ DataAccess/LancamentoDAO.s: DataAccess/LancamentoDAO.cpp.s
 DataAccess/LancamentoDAO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.s
 .PHONY : DataAccess/LancamentoDAO.cpp.s
+
+DataAccess/MetaDAO.o: DataAccess/MetaDAO.cpp.o
+.PHONY : DataAccess/MetaDAO.o
+
+# target to build an object file
+DataAccess/MetaDAO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/MetaDAO.cpp.o
+.PHONY : DataAccess/MetaDAO.cpp.o
+
+DataAccess/MetaDAO.i: DataAccess/MetaDAO.cpp.i
+.PHONY : DataAccess/MetaDAO.i
+
+# target to preprocess a source file
+DataAccess/MetaDAO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/MetaDAO.cpp.i
+.PHONY : DataAccess/MetaDAO.cpp.i
+
+DataAccess/MetaDAO.s: DataAccess/MetaDAO.cpp.s
+.PHONY : DataAccess/MetaDAO.s
+
+# target to generate assembly for a file
+DataAccess/MetaDAO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/MetaDAO.cpp.s
+.PHONY : DataAccess/MetaDAO.cpp.s
+
+DataAccess/RelatorioDAO.o: DataAccess/RelatorioDAO.cpp.o
+.PHONY : DataAccess/RelatorioDAO.o
+
+# target to build an object file
+DataAccess/RelatorioDAO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/RelatorioDAO.cpp.o
+.PHONY : DataAccess/RelatorioDAO.cpp.o
+
+DataAccess/RelatorioDAO.i: DataAccess/RelatorioDAO.cpp.i
+.PHONY : DataAccess/RelatorioDAO.i
+
+# target to preprocess a source file
+DataAccess/RelatorioDAO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/RelatorioDAO.cpp.i
+.PHONY : DataAccess/RelatorioDAO.cpp.i
+
+DataAccess/RelatorioDAO.s: DataAccess/RelatorioDAO.cpp.s
+.PHONY : DataAccess/RelatorioDAO.s
+
+# target to generate assembly for a file
+DataAccess/RelatorioDAO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/DataAccess/RelatorioDAO.cpp.s
+.PHONY : DataAccess/RelatorioDAO.cpp.s
 
 DataAccess/UsuarioDAO.o: DataAccess/UsuarioDAO.cpp.o
 .PHONY : DataAccess/UsuarioDAO.o
@@ -1143,9 +1239,21 @@ help:
 	@echo "... Composicoes/PasswordFormHelper.o"
 	@echo "... Composicoes/PasswordFormHelper.i"
 	@echo "... Composicoes/PasswordFormHelper.s"
+	@echo "... DataAccess/ContaDAO.o"
+	@echo "... DataAccess/ContaDAO.i"
+	@echo "... DataAccess/ContaDAO.s"
+	@echo "... DataAccess/InvestimentoDAO.o"
+	@echo "... DataAccess/InvestimentoDAO.i"
+	@echo "... DataAccess/InvestimentoDAO.s"
 	@echo "... DataAccess/LancamentoDAO.o"
 	@echo "... DataAccess/LancamentoDAO.i"
 	@echo "... DataAccess/LancamentoDAO.s"
+	@echo "... DataAccess/MetaDAO.o"
+	@echo "... DataAccess/MetaDAO.i"
+	@echo "... DataAccess/MetaDAO.s"
+	@echo "... DataAccess/RelatorioDAO.o"
+	@echo "... DataAccess/RelatorioDAO.i"
+	@echo "... DataAccess/RelatorioDAO.s"
 	@echo "... DataAccess/UsuarioDAO.o"
 	@echo "... DataAccess/UsuarioDAO.i"
 	@echo "... DataAccess/UsuarioDAO.s"

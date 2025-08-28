@@ -5,6 +5,7 @@
 #include "Modelo/TransacaoImportada.h"
 #include "Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.h"
 #include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/ContaDAO.h"
 #include "Gerenciamento/SessionManager.h" // Inclui nosso "cofre" de sessão
 #include <QHeaderView>
 #include <QMessageBox>
@@ -24,14 +25,16 @@ pageLancamentos::pageLancamentos(QWidget *parent) :
 
     // Cria uma única instância do DAO para esta página
     m_dao = new LancamentoDAO(this);
+    m_contaDAO = new ContaDAO(this);
 
     // Conecta os sinais de resultado do DAO aos nossos slots
     connect(m_dao, &LancamentoDAO::lancamentosRecebidos, this, &pageLancamentos::onLancamentosRecebidos);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &pageLancamentos::onErroDeRede);
+    connect(m_dao, &LancamentoDAO::onLancamentoError, this, &pageLancamentos::onErroDeRede);
+    connect(m_contaDAO, &ContaDAO::onContaError, this, &pageLancamentos::onErroDeRede);
     connect(m_dao, &LancamentoDAO::lancamentoModificadoComSucesso, this, &pageLancamentos::carregarTabela);
     connect(m_dao, &LancamentoDAO::lancamentoExcluidoComSucesso, this, &pageLancamentos::carregarTabela);
     // Conecta o slot para popular o ComboBox de contas
-    connect(m_dao, &LancamentoDAO::contasRecebidas, this, &pageLancamentos::onContasRecebidas);
+    connect(m_contaDAO, &ContaDAO::contasRecebidas, this, &pageLancamentos::onContasRecebidas);
     connect(m_dao, &LancamentoDAO::ocrProcessadoComSucesso, this, &pageLancamentos::onOcrConcluido);
     connect(m_dao, &LancamentoDAO::sugestoesRecebidas, this, &pageLancamentos::onSugestoesParaMapeamentoRecebidas);
 
@@ -63,7 +66,7 @@ pageLancamentos::pageLancamentos(QWidget *parent) :
     connect(ui->buttonFiltrar, &QPushButton::clicked, this, &pageLancamentos::carregarTabela);
     // Carrega a lista de contas para o filtro ao iniciar
     QString token = SessionManager::instance().getToken();
-    m_dao->obterTodasContas(token);
+    m_contaDAO->obterTodasContas(token);
 
 }
 

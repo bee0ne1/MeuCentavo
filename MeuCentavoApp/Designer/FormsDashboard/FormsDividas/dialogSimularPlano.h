@@ -2,7 +2,7 @@
 #define DIALOGSIMULARPLANO_H
 
 #include <QDialog>
-#include "DataAccess/LancamentoDAO.h" // Necessário para a struct LinhaCronograma e o DAO
+#include "DataAccess/RelatorioDAO.h" // Necessário para a struct LinhaCronograma e o DAO
 
 namespace Ui {
     class dialogSimularPlano;
@@ -28,7 +28,7 @@ private slots:
 
 private:
     Ui::dialogSimularPlano *ui;
-    LancamentoDAO* m_dao;
+    RelatorioDAO* m_dao;
 };
 
 #endif // DIALOGSIMULARPLANO_H

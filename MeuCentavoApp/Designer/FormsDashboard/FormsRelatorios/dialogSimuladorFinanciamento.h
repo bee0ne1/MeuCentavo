@@ -2,12 +2,12 @@
 #define DIALOGSIMULADORFINANCIAMENTO_H
 
 #include <QDialog>
+#include "DataAccess/RelatorioDAO.h"
 
 // Forward declarations para evitar includes desnecessários no .h
 namespace Ui {
     class dialogSimuladorFinanciamento;
 }
-class LancamentoDAO;
 
 class dialogSimuladorFinanciamento : public QDialog
 {
@@ -29,7 +29,7 @@ private slots:
 
 private:
     Ui::dialogSimuladorFinanciamento *ui;
-    LancamentoDAO* m_dao;
+    RelatorioDAO* m_dao;
 };
 
 #endif // DIALOGSIMULADORFINANCIAMENTO_H

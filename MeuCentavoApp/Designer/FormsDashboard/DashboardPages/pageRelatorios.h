@@ -9,13 +9,13 @@
 #include "Modelo/Lancamento.h"
 #include "Modelo/Categoria.h"
 #include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/RelatorioDAO.h"
+#include "DataAccess/ContaDAO.h"
+
 // Forward declarations para Qt Charts e nossas classes
 QT_BEGIN_NAMESPACE
 namespace Ui { class pageRelatorios; }
 QT_END_NAMESPACE
-
-
-class LancamentoDAO;
 
 class pageRelatorios : public QWidget
 {
@@ -66,6 +66,8 @@ private:
 
     Ui::pageRelatorios *ui;
     LancamentoDAO* m_dao;
+    RelatorioDAO* m_relatorioDAO;
+    ContaDAO* m_contaDAO;
     QVector<Lancamento> m_lancamentosDoPeriodo;
 
     // Ponteiros para os gráfico de pizza

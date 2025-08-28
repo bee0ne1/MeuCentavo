@@ -2,7 +2,7 @@
 #define DIALOGCALCULADORAIR_H
 
 #include <QDialog>
-#include "DataAccess/LancamentoDAO.h" // Para a struct
+#include "DataAccess/InvestimentoDAO.h"
 
 class LancamentoDAO;
 namespace Ui { class dialogCalculadoraIR; }
@@ -24,7 +24,7 @@ private:
     void popularCamposData();
 
     Ui::dialogCalculadoraIR *ui;
-    LancamentoDAO* m_dao;
+    InvestimentoDAO* m_dao;
 };
 
 #endif // DIALOGCALCULADORAIR_H

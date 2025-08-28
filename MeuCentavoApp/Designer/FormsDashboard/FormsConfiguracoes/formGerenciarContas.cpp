@@ -1,6 +1,6 @@
 #include "formGerenciarContas.h"
 #include "ui_formGerenciarContas.h"
-#include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/ContaDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include "dialogAddEditConta.h" // O nosso novo diálogo de edição
 #include <QMessageBox>
@@ -15,15 +15,15 @@ formGerenciarContas::formGerenciarContas(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Gerir Contas");
 
-    m_dao = new LancamentoDAO(this);
+    m_dao = new ContaDAO(this);
     configurarTabela();
 
     connect(ui->buttonFechar, &QPushButton::clicked, this, &QDialog::accept);
 
     // Conexões do DAO
-    connect(m_dao, &LancamentoDAO::contasRecebidas, this, &formGerenciarContas::onContasRecebidas);
-    connect(m_dao, &LancamentoDAO::contaModificadaComSucesso, this, &formGerenciarContas::onContaModificada);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &formGerenciarContas::onErro);
+    connect(m_dao, &ContaDAO::contasRecebidas, this, &formGerenciarContas::onContasRecebidas);
+    connect(m_dao, &ContaDAO::contaModificadaComSucesso, this, &formGerenciarContas::onContaModificada);
+    connect(m_dao, &ContaDAO::onContaError, this, &formGerenciarContas::onErro);
 
     // Conexão da tabela
     connect(ui->tableWidgetContas, &QTableWidget::itemSelectionChanged, this, &formGerenciarContas::onSelectionChanged);

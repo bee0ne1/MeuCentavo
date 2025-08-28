@@ -9,6 +9,9 @@
 
 // Forward declaration
 class LancamentoDAO;
+class ContaDAO;
+class MetaDAO;
+
 namespace Ui { class formAdicionarLancamento; }
 
 class formAdicionarLancamento : public QDialog
@@ -37,6 +40,9 @@ private slots:
 private:
     Ui::formAdicionarLancamento *ui;
     LancamentoDAO* m_dao; // DAO como membro da classe
+    ContaDAO* m_contaDao;
+    MetaDAO* m_metaDao;
+
     QVector<Conta> m_contasDisponiveis;
     QVector<Categoria> m_todasCategorias; // Guardamos todas as categorias aqui
     int m_idLancamentoEdicao; // Guarda o ID do lançamento a ser editado

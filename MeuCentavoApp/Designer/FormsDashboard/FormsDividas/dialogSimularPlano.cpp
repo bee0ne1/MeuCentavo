@@ -1,6 +1,7 @@
 #include "dialogSimularPlano.h"
 #include "ui_dialogSimularPlano.h"
 #include "Gerenciamento/SessionManager.h"
+#include "DataAccess/RelatorioDAO.h"
 #include <QMessageBox>
 #include <QLocale>
 
@@ -12,7 +13,7 @@ dialogSimularPlano::dialogSimularPlano(QWidget *parent) :
     setWindowTitle("Planejamento de Quitação de Dívidas");
 
     // Instancia o DAO para fazer a requisição à API
-    m_dao = new LancamentoDAO(this);
+    m_dao = new RelatorioDAO(this);
 
     // Configura a tabela de resultados
     ui->tableResultadoSimulacao->setColumnCount(4);
@@ -21,8 +22,8 @@ dialogSimularPlano::dialogSimularPlano(QWidget *parent) :
     ui->tableResultadoSimulacao->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
     // Conecta os sinais do DAO aos slots deste diálogo
-    connect(m_dao, &LancamentoDAO::planoSimuladoRecebido, this, &dialogSimularPlano::onPlanoRecebido);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &dialogSimularPlano::onErro);
+    connect(m_dao, &RelatorioDAO::planoSimuladoRecebido, this, &dialogSimularPlano::onPlanoRecebido);
+    connect(m_dao, &RelatorioDAO::onRelatorioError, this, &dialogSimularPlano::onErro);
 }
 
 dialogSimularPlano::~dialogSimularPlano()

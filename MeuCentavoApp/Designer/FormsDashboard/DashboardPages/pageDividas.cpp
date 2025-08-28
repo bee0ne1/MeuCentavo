@@ -1,6 +1,7 @@
 #include "pageDividas.h"
 #include "ui_pageDividas.h"
 #include "Gerenciamento/SessionManager.h"
+#include "DataAccess/ContaDAO.h"
 #include "Designer/FormsDashboard/FormsDividas/dialogSimularPlano.h"
 #include <QHeaderView>
 #include <QProgressBar>
@@ -11,7 +12,7 @@ pageDividas::pageDividas(QWidget *parent) :
     ui(new Ui::pageDividas)
 {
     ui->setupUi(this);
-    m_dao = new LancamentoDAO(this);
+    m_dao = new ContaDAO(this);
 
     // Configura a tabela
     ui->tableWidgetDividas->setColumnCount(6);
@@ -21,7 +22,7 @@ pageDividas::pageDividas(QWidget *parent) :
     ui->tableWidgetDividas->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
     // Conecta o sinal do DAO ao slot que processa os dados
-    connect(m_dao, &LancamentoDAO::contasRecebidas, this, &pageDividas::onDadosRecebidos);
+    connect(m_dao, &ContaDAO::contasRecebidas, this, &pageDividas::onDadosRecebidos);
 }
 
 pageDividas::~pageDividas()

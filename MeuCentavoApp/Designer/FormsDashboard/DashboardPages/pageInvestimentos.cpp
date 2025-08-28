@@ -1,6 +1,6 @@
 #include "pageInvestimentos.h"
 #include "ui_pageInvestimentos.h"
-#include "DataAccess/LancamentoDAO.h"
+#include "DataAccess/InvestimentoDAO.h"
 #include "Gerenciamento/SessionManager.h"
 #include "Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.h"
 #include "Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.h"
@@ -14,7 +14,7 @@ pageInvestimentos::pageInvestimentos(QWidget *parent) :
     ui(new Ui::pageInvestimentos)
 {
     ui->setupUi(this);
-    m_dao = new LancamentoDAO(this);
+    m_dao = new InvestimentoDAO(this);
 
     ui->tableWidgetAtivos->setColumnCount(5);
     ui->tableWidgetAtivos->setHorizontalHeaderLabels({"Ticker", "Nome", "Quantidade Total", "Preço Médio", "Custo Total"});
@@ -31,20 +31,20 @@ pageInvestimentos::pageInvestimentos(QWidget *parent) :
 
 
 
-    connect(m_dao, &LancamentoDAO::ativosRecebidos, this, &pageInvestimentos::onAtivosRecebidos);
-    connect(m_dao, &LancamentoDAO::ativoModificadoComSucesso, this, &pageInvestimentos::onAtivoModificado);
-    connect(m_dao, &LancamentoDAO::erroOcorrido, this, &pageInvestimentos::onErroDeRede);
-    connect(m_dao, &LancamentoDAO::operacaoModificadaComSucesso, this, &pageInvestimentos::onAtivoSelecionado);
-    connect(m_dao, &LancamentoDAO::ativoModificadoComSucesso, this, &pageInvestimentos::carregarAtivos);
-    connect(m_dao, &LancamentoDAO::performancePortfolioRecebida, this, &pageInvestimentos::onPerformanceRecebida);
-    connect(m_dao, &LancamentoDAO::dividendosRecebidos, this, &pageInvestimentos::onDividendosRecebidos);
-    connect(m_dao, &LancamentoDAO::dividendoAdicionadoComSucesso, this, &pageInvestimentos::onAtivoSelecionado); // Recarrega a lista após adicionar
+    connect(m_dao, &InvestimentoDAO::ativosRecebidos, this, &pageInvestimentos::onAtivosRecebidos);
+    connect(m_dao, &InvestimentoDAO::ativoModificadoComSucesso, this, &pageInvestimentos::onAtivoModificado);
+    connect(m_dao, &InvestimentoDAO::onInvestimentoError, this, &pageInvestimentos::onErroDeRede);
+    connect(m_dao, &InvestimentoDAO::operacaoModificadaComSucesso, this, &pageInvestimentos::onAtivoSelecionado);
+    connect(m_dao, &InvestimentoDAO::ativoModificadoComSucesso, this, &pageInvestimentos::carregarAtivos);
+    connect(m_dao, &InvestimentoDAO::performancePortfolioRecebida, this, &pageInvestimentos::onPerformanceRecebida);
+    connect(m_dao, &InvestimentoDAO::dividendosRecebidos, this, &pageInvestimentos::onDividendosRecebidos);
+    connect(m_dao, &InvestimentoDAO::dividendoAdicionadoComSucesso, this, &pageInvestimentos::onAtivoSelecionado); // Recarrega a lista após adicionar
 
     // Conecta o clique na tabela de ativos ao nosso novo slot
     connect(ui->tableWidgetAtivos, &QTableWidget::itemSelectionChanged, this, &pageInvestimentos::onAtivoSelecionado);
 
     // Conecta o sinal do DAO que trará as operações ao nosso slot
-    connect(m_dao, &LancamentoDAO::operacoesRecebidas, this, &pageInvestimentos::onOperacoesRecebidas);
+    connect(m_dao, &InvestimentoDAO::operacoesRecebidas, this, &pageInvestimentos::onOperacoesRecebidas);
 
     carregarAtivos();
 }

@@ -5,12 +5,11 @@
 #include "Modelo/Ativo.h"
 #include "Modelo/OperacaoInvestimento.h"
 #include "Modelo/Dividendo.h"
+#include "DataAccess/InvestimentoDAO.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class pageInvestimentos; }
 QT_END_NAMESPACE
-
-class LancamentoDAO;
 
 class pageInvestimentos : public QWidget
 {
@@ -45,7 +44,7 @@ private slots:
 private:
 
     Ui::pageInvestimentos *ui;
-    LancamentoDAO* m_dao;
+    InvestimentoDAO* m_dao;
     QVector<Ativo> m_ativos;
 };
 

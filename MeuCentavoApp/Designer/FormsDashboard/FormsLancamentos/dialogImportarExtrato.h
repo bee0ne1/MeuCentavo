@@ -4,12 +4,12 @@
 #include <QDialog>
 #include <QVector>
 #include "Modelo/Conta.h"
+#include "DataAccess/ContaDAO.h"
 
 namespace Ui {
     class dialogImportarExtrato;
 }
 
-class LancamentoDAO;
 
 class dialogImportarExtrato : public QDialog
 {
@@ -29,7 +29,7 @@ private slots:
 
 private:
     Ui::dialogImportarExtrato *ui;
-    LancamentoDAO* m_dao;
+    ContaDAO* m_dao;
     QString m_caminhoArquivo;
 };
 

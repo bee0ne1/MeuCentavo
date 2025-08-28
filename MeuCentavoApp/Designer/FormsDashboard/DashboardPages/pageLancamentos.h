@@ -11,6 +11,7 @@
 // Forward declarations
 namespace Ui { class pageLancamentos; }
 class LancamentoDAO;
+class ContaDAO;
 class formAdicionarLancamento;
 
 class pageLancamentos : public QWidget
@@ -46,6 +47,7 @@ private slots:
 private:
     Ui::pageLancamentos *ui;
     LancamentoDAO* m_dao;
+    ContaDAO* m_contaDAO;
     formAdicionarLancamento* m_dialogoAdicionar;
     QVector<TransacaoImportada> m_transacoesLidas;
     int m_idContaImportacao;
