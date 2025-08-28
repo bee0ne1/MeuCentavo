@@ -130,6 +130,19 @@ MeuCentavoApp/fast:
 .PHONY : MeuCentavoApp/fast
 
 #=============================================================================
+# Target rules for targets named MeuCentavoApp_qmlimportscan
+
+# Build rule for target.
+MeuCentavoApp_qmlimportscan: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MeuCentavoApp_qmlimportscan
+.PHONY : MeuCentavoApp_qmlimportscan
+
+# fast build rule for target.
+MeuCentavoApp_qmlimportscan/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp_qmlimportscan.dir/build.make CMakeFiles/MeuCentavoApp_qmlimportscan.dir/build
+.PHONY : MeuCentavoApp_qmlimportscan/fast
+
+#=============================================================================
 # Target rules for targets named MeuCentavoApp_autogen_timestamp_deps
 
 # Build rule for target.
@@ -418,6 +431,30 @@ Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.s: Designer/Fo
 Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.s
 .PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.s
+
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.o: Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.o
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.o
+
+# target to build an object file
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.o
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.o
+
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.i: Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.i
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.i
+
+# target to preprocess a source file
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.i
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.i
+
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.s: Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.s
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.s
+
+# target to generate assembly for a file
+Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuCentavoApp.dir/build.make CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.s
+.PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.s
 
 Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.o: Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.o
 .PHONY : Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.o
@@ -1101,6 +1138,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... MeuCentavoApp_autogen"
 	@echo "... MeuCentavoApp_autogen_timestamp_deps"
+	@echo "... MeuCentavoApp_qmlimportscan"
 	@echo "... MeuCentavoApp"
 	@echo "... Composicoes/PasswordFormHelper.o"
 	@echo "... Composicoes/PasswordFormHelper.i"
@@ -1135,6 +1173,9 @@ help:
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.o"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.i"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.s"
+	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.o"
+	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.i"
+	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.s"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.o"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.i"
 	@echo "... Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.s"

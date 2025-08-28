@@ -23,6 +23,7 @@ private slots:
     void on_buttonCategorias_clicked();
     void on_buttonContas_clicked();
     void on_buttonPerfil_clicked();
+    void on_buttonAdicionarConexao_clicked();
 
 signals:
     void listaDePerfisAtualizada();

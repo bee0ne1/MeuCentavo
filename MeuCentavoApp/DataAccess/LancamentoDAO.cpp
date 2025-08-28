@@ -1256,3 +1256,29 @@ void LancamentoDAO::onCalculoIRReply(QNetworkReply *reply)
     }
     reply->deleteLater();
 }
+
+void LancamentoDAO::obterConnectToken(const QString& token)
+{
+    QJsonObject jsonBody; // O corpo pode ser vazio para uma nova conexão
+
+    QNetworkRequest request(QUrl("http://localhost:3000/api/openfinance/connect-token"));
+    request.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QNetworkReply *reply = m_manager->post(request, QJsonDocument(jsonBody).toJson());
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        onConnectTokenReply(reply);
+    });
+}
+
+void LancamentoDAO::onConnectTokenReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QJsonObject resultado = QJsonDocument::fromJson(reply->readAll()).object();
+        emit connectTokenRecebido(resultado["accessToken"].toString());
+    } else {
+        emit erroOcorrido("Falha ao obter o token de conexão: " + reply->readAll());
+    }
+    reply->deleteLater();
+}
+

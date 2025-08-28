@@ -46,8 +46,6 @@ struct ResultadoIR {
     double impostoDevido;
 };
 
-Q_DECLARE_METATYPE(ResultadoIR)
-
 
 class LancamentoDAO : public QObject
 {
@@ -99,6 +97,7 @@ public:
     void simularFinanciamento(double valorBem, double valorEntrada, double taxaJurosAnual, int numParcelas, const QString& token);
     void simularCambio(const QString& moedaOrigem, const QString& moedaDestino, double valor, const QString& token);
     void calcularIRsobreAcoes(int mes, int ano, const QString& token);
+    void obterConnectToken(const QString& token);
 
 signals:
         // --- SINAIS DE RESULTADO (A RESPOSTA PARA A INTERFACE) ---
@@ -134,6 +133,7 @@ signals:
     void simulacaoFinanciamentoRecebida(double valorParcela, double totalPago, double totalJuros);
     void simulacaoCambioRecebida(double valorConvertido);
     void calculoIRRecebido(const ResultadoIR& resultado);
+    void connectTokenRecebido(const QString& connectToken);
 
 private slots:
     // --- SLOTS PRIVADOS (PROCESSAM AS RESPOSTAS DO SERVIDOR) ---
@@ -158,6 +158,7 @@ private slots:
     void onSimulacaoFinanciamentoReply(QNetworkReply *reply);
     void onSimulacaoCambioReply(QNetworkReply *reply);
     void onCalculoIRReply(QNetworkReply *reply);
+    void onConnectTokenReply(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *m_manager;

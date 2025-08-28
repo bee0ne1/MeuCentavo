@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/DashboardPages/ui_pageMetas.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/DashboardPages/ui_pageRelatorios.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_dialogAddEditCategoria.h"
+  "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_dialogAddEditConexao.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_dialogAddEditConta.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_dialogGerenciarPerfis.h"
   "MeuCentavoApp_autogen/include/Designer/FormsDashboard/FormsConfiguracoes/ui_formGerenciarCategorias.h"

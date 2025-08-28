@@ -53,6 +53,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QPushButton" name="buttonAdicionarConexao">
+         <property name="text">
+          <string>Adicionar Conexão</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="buttonPrefs">
          <property name="text">
           <string>Preferências</string>

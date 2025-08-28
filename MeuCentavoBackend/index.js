@@ -11,6 +11,7 @@ const { createWorker } = require('tesseract.js');
 const upload = multer({ storage: multer.memoryStorage() }); // Configuração do Multer para guardar o ficheiro temporariamente em memória
 const pdfjsLib = require('pdfjs-dist/legacy/build/pdf.js');
 const { createCanvas } = require('canvas');
+const { PluggyClient } = require('pluggy-sdk');
 
 
 // Middleware para interpretar o corpo de requisições como JSON
@@ -27,6 +28,12 @@ const pool = mysql.createPool({
   queueLimit: 0,
   decimalNumbers: true
 });
+
+const pluggyClient = new PluggyClient({
+    clientId: "95b329d1-7fc7-43a6-9c75-900e60b0140d",       // <-- COLE SEU CLIENT ID AQUI
+    clientSecret: "5c7dc638-cda7-41cb-a7b2-916540bd6f94", // <-- COLE SEU CLIENT SECRET AQUI
+});
+
 
 // --- LÓGICA DE COTAÇÃO DE CÂMBIO (VERSÃO CORRIGIDA) ---
 
@@ -102,6 +109,45 @@ const authenticateToken = (req, res, next) => {
     });
 };
 
+// ROTA PARA CRIAR UM "CONNECT TOKEN" PARA O WIDGET DA PLUGGY
+app.post('/api/openfinance/connect-token', authenticateToken, async (req, res) => {
+    try {
+        const { itemId } = req.body; // Opcional, usado para atualizar uma conexão existente
+
+        const token = await pluggyClient.createConnectToken(itemId);
+        res.json(token);
+    } catch (error) {
+        console.error("Erro ao criar connect token:", error.message);
+        res.status(500).json({ message: "Não foi possível iniciar a conexão com o banco." });
+    }
+});
+
+// ROTA QUE RECEBE NOTIFICAÇÕES (WEBHOOKS) DA PLUGGY
+app.post('/api/openfinance/webhook', async (req, res) => {
+    const { event, itemId, data } = req.body;
+    console.log(`Webhook recebido: Evento '${event}' para o item ${itemId}`);
+
+    // O evento mais importante é o TRANSACTIONS_UPDATED
+    if (event === 'TRANSACTIONS_UPDATED') {
+        try {
+            // Com o ID do item, buscamos as transações reais
+            const transactions = await pluggyClient.fetchTransactions(itemId);
+            console.log(`Encontradas ${transactions.results.length} novas transações.`);
+
+            // TODO: LÓGICA PRINCIPAL
+            // 1. Achar a qual id_perfil este 'itemId' pertence na nossa tabela 'openfinance_conexoes'.
+            // 2. Iterar sobre 'transactions.results'.
+            // 3. Para cada transação, formatar os dados (descrição, valor, data, tipo).
+            // 4. Inserir a transação na nossa tabela 'lancamentos' do banco de dados.
+            // 5. Chamar a nossa lógica de aprendizado de categoria que já está pronta!
+
+        } catch (error) {
+            console.error("Erro ao processar webhook de transações:", error.message);
+        }
+    }
+
+    res.sendStatus(200); // Responde à Pluggy que recebemos a notificação com sucesso
+});
 
 // -----ROTAS DE USUARIO------
 

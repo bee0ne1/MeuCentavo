@@ -4,7 +4,7 @@ project(MeuCentavoApp LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 COMPONENTS Widgets Sql Charts Network REQUIRED)
+find_package(Qt6 COMPONENTS Widgets Sql Charts Network WebEngineWidgets REQUIRED)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -51,6 +51,7 @@ set(PROJECT_SOURCES
         Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp
         Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp
         Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp
+        Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp
 
 )
 
@@ -102,6 +103,7 @@ set(PROJECT_HEADERS
         Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.h
         Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.h
         Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.h
+        Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.h
 )
 
 # 3. Lista de Ficheiros de Interface (.ui)
@@ -137,6 +139,7 @@ set(PROJECT_FORMS
         Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.ui
         Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.ui
         Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.ui
+        Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.ui
 )
 
 # 4. Criamos o executável, agora passando TODAS as listas de ficheiros
@@ -156,6 +159,7 @@ target_link_libraries(MeuCentavoApp PRIVATE
         Qt6::Sql
         Qt6::Charts
         Qt6::Network
+        Qt6::WebEngineWidgets
 )
 
 # 6. Finaliza as configurações

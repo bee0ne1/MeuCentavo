@@ -10,6 +10,7 @@
 #include "UKUT43B7UZ/moc_pageMetas.cpp"
 #include "UKUT43B7UZ/moc_pageRelatorios.cpp"
 #include "2EK4JB7KXY/moc_dialogAddEditCategoria.cpp"
+#include "2EK4JB7KXY/moc_dialogAddEditConexao.cpp"
 #include "2EK4JB7KXY/moc_dialogAddEditConta.cpp"
 #include "2EK4JB7KXY/moc_dialogGerenciarPerfis.cpp"
 #include "2EK4JB7KXY/moc_formGerenciarCategorias.cpp"

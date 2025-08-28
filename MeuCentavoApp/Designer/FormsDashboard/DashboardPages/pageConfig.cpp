@@ -9,6 +9,7 @@
 #include "Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.h"
 #include "Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h"
 #include "Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.h"
+#include "Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.h"
 
 pageConfig::pageConfig(QWidget *parent) :
     QWidget(parent), ui(new Ui::pageConfig) {
@@ -52,4 +53,16 @@ void pageConfig::on_buttonPerfil_clicked()
     // Isso garante que qualquer mudança na sessão já terá sido comandada
     // antes de tentarmos atualizar a UI principal.
     emit listaDePerfisAtualizada();
+}
+
+
+void pageConfig::on_buttonAdicionarConexao_clicked()
+{
+    dialogAddEditConexao* dialogo = new dialogAddEditConexao(this);
+    dialogo->setAttribute(Qt::WA_DeleteOnClose);
+
+    // Opcional: conectar o sinal de sucesso para recarregar a lista de conexões
+     //connect(dialogo, &dialogAddEditConexao::conexaoSucedida, this, &pageConfig::carregarConexoes);
+
+    dialogo->exec();
 }

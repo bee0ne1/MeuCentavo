@@ -32,6 +32,9 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.ui \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.ui \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.ui \
@@ -115,6 +118,7 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Perfil.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
+  .qt/qml_imports/MeuCentavoApp_conf.cmake \
   CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake \
   CMakeFiles/4.0.3-dirty/CMakeSystem.cmake \
   MeuCentavoApp_autogen/moc_predefs.h \
@@ -406,6 +410,7 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/include/qt6/QtCore/QSize \
   /usr/include/qt6/QtCore/QSizeF \
   /usr/include/qt6/QtCore/QString \
+  /usr/include/qt6/QtCore/QUrl \
   /usr/include/qt6/QtCore/QVariant \
   /usr/include/qt6/QtCore/QVector \
   /usr/include/qt6/QtCore/q17memory.h \
@@ -681,6 +686,21 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateDependencies.cmake \
   /usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateTargets.cmake \
   /usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfig.cmake \
+  /usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersion.cmake \
+  /usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentDependencies.cmake \
+  /usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets.cmake \
+  /usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateVersionlessAliasTargets.cmake \
   /usr/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake \
   /usr/lib/cmake/Qt6Core/Qt6CoreConfig.cmake \
   /usr/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake \
@@ -730,6 +750,14 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets-relwithdebinfo.cmake \
   /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets.cmake \
   /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake \
+  /usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateVersionlessAliasTargets.cmake \
   /usr/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake \
   /usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake \
   /usr/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake \
@@ -980,6 +1008,595 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateDependencies.cmake \
   /usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateTargets.cmake \
   /usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6PositioningAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6PositioningConfig.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6PositioningConfigVersion.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6PositioningConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6PositioningDependencies.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6PositioningPlugins.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6PositioningTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6PositioningTargets.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6PositioningVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginConfig.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginTargets.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginTargets.cmake \
+  /usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfig.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersion.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportDependencies.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportPlugins.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginConfig.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginTargets.cmake \
+  /usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsPlatformpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsPlatformpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsPlatformpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsPlatformpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderpluginDependencies.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2AdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Config.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Targets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Targets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dassetutilspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dassetutilspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dassetutilspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dassetutilspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3styleimplpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3styleimplpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3styleimplpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3styleimplpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbcomponentspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbcomponentspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbcomponentspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbcomponentspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhangulpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhangulpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhangulpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhangulpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhunspellpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhunspellpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhunspellpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhunspellpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkblayoutspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkblayoutspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkblayoutspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkblayoutspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpinyinpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpinyinpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpinyinpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpinyinpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbsettingspluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbsettingspluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbsettingspluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbsettingspluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbstylespluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbstylespluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbstylespluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbstylespluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbthaipluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbthaipluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbthaipluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbthaipluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickdelegatespluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickdelegatespluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickdelegatespluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickdelegatespluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qwaylandcompositorpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qwaylandcompositorpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qwaylandcompositorpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qwaylandcompositorpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQuick3DProfilerAdapterFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQuick3DProfilerAdapterFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQuick3DProfilerAdapterFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQuick3DProfilerAdapterFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlConfig.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlConfigExtras.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlConfigVersion.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlDependencies.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlFindQmlscInternal.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlPlugins.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlPublicCMakeHelpers.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlTargets.cmake \
+  /usr/lib/cmake/Qt6Qml/Qt6QmlVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderConfig.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderTargets.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationConfig.cmake \
+  /usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationTargets.cmake \
+  /usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaConfig.cmake \
+  /usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaTargets.cmake \
+  /usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsConfig.cmake \
+  /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsTargets.cmake \
+  /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsConfig.cmake \
+  /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsTargets.cmake \
+  /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsVersionlessTargets.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptConfig.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptTargets.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6Quick/Qt6QuickAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake \
+  /usr/lib/cmake/Qt6Quick/Qt6QuickConfigVersion.cmake \
+  /usr/lib/cmake/Qt6Quick/Qt6QuickConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake \
+  /usr/lib/cmake/Qt6Quick/Qt6QuickPlugins.cmake \
+  /usr/lib/cmake/Qt6Quick/Qt6QuickTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6Quick/Qt6QuickTargets.cmake \
+  /usr/lib/cmake/Qt6Quick/Qt6QuickVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsConfig.cmake \
+  /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsDependencies.cmake \
+  /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets.cmake \
+  /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake \
+  /usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsConfig.cmake \
+  /usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsDependencies.cmake \
+  /usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsTargets.cmake \
+  /usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateVersionlessAliasTargets.cmake \
   /usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake \
   /usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake \
   /usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake \
@@ -1016,6 +1633,60 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateDependencies.cmake \
   /usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateTargets.cmake \
   /usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6WebChannel/Qt6WebChannelAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6WebChannel/Qt6WebChannelConfig.cmake \
+  /usr/lib/cmake/Qt6WebChannel/Qt6WebChannelConfigVersion.cmake \
+  /usr/lib/cmake/Qt6WebChannel/Qt6WebChannelConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6WebChannel/Qt6WebChannelDependencies.cmake \
+  /usr/lib/cmake/Qt6WebChannel/Qt6WebChannelTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6WebChannel/Qt6WebChannelTargets.cmake \
+  /usr/lib/cmake/Qt6WebChannel/Qt6WebChannelVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfig.cmake \
+  /usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfigVersion.cmake \
+  /usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreDependencies.cmake \
+  /usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreMacros.cmake \
+  /usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets.cmake \
+  /usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfig.cmake \
+  /usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateTargets.cmake \
+  /usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfig.cmake \
+  /usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfigVersion.cmake \
+  /usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsDependencies.cmake \
+  /usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsTargets.cmake \
+  /usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsVersionlessTargets.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsConfig.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsConfigVersion.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsDependencies.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsTargets-relwithdebinfo.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsTargets.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsVersionlessAliasTargets.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateAdditionalTargetInfo.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfig.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfigVersion.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfigVersionImpl.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateDependencies.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateTargets.cmake \
+  /usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateVersionlessAliasTargets.cmake \
   /usr/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake \
   /usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake \
   /usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake \
@@ -1061,6 +1732,7 @@ MeuCentavoApp_autogen/timestamp: /home/bruno/Documentos/gestaoFinanceira/MeuCent
   /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake \
   /usr/share/cmake/Modules/Compiler/GNU.cmake \
   /usr/share/cmake/Modules/FeatureSummary.cmake \
+  /usr/share/cmake/Modules/FindCups.cmake \
   /usr/share/cmake/Modules/FindOpenGL.cmake \
   /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake \
   /usr/share/cmake/Modules/FindPackageMessage.cmake \
@@ -2564,6 +3236,7 @@ CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o: /home/bruno/Documentos
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageConfig.cpp \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageConfig.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h \
@@ -2856,6 +3529,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.c
   /usr/include/qt6/QtCore/QMetaType \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
+  /usr/include/qt6/QtCore/QUrl \
   /usr/include/qt6/QtCore/QVariant \
   /usr/include/qt6/QtCore/QVector \
   /usr/include/qt6/QtCore/q17memory.h \
@@ -2989,6 +3663,7 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.c
   /usr/include/qt6/QtCore/qtversionchecks.h \
   /usr/include/qt6/QtCore/qtypeinfo.h \
   /usr/include/qt6/QtCore/qtypes.h \
+  /usr/include/qt6/QtCore/qurl.h \
   /usr/include/qt6/QtCore/qutf8stringview.h \
   /usr/include/qt6/QtCore/qvariant.h \
   /usr/include/qt6/QtCore/qvarlengtharray.h \
@@ -8072,6 +8747,546 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAd
   /usr/include/qt6/QtWidgets/qstyleoption.h \
   /usr/include/qt6/QtWidgets/qtabbar.h \
   /usr/include/qt6/QtWidgets/qtabwidget.h \
+  /usr/include/qt6/QtWidgets/qtwidgets-config.h \
+  /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
+  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
+  /usr/include/qt6/QtWidgets/qwidget.h \
+  /usr/include/sched.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/sys/cdefs.h \
+  /usr/include/sys/select.h \
+  /usr/include/sys/single_threaded.h \
+  /usr/include/sys/types.h \
+  /usr/include/time.h \
+  /usr/include/wchar.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.o: /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Ativo.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Categoria.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Conta.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Dividendo.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
+  MeuCentavoApp_autogen/include/ui_dialogAddEditConexao.h \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/int-ll64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/asm-generic/types.h \
+  /usr/include/asm/bitsperlong.h \
+  /usr/include/asm/errno.h \
+  /usr/include/asm/posix_types.h \
+  /usr/include/asm/posix_types_64.h \
+  /usr/include/asm/types.h \
+  /usr/include/assert.h \
+  /usr/include/bits/atomic_wide_counter.h \
+  /usr/include/bits/byteswap.h \
+  /usr/include/bits/cpu-set.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
+  /usr/include/bits/errno.h \
+  /usr/include/bits/floatn-common.h \
+  /usr/include/bits/floatn.h \
+  /usr/include/bits/flt-eval-method.h \
+  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/fp-logb.h \
+  /usr/include/bits/iscanonical.h \
+  /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
+  /usr/include/bits/locale.h \
+  /usr/include/bits/long-double.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls-macros.h \
+  /usr/include/bits/mathcalls-narrow.h \
+  /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/pthread_stack_min-dynamic.h \
+  /usr/include/bits/pthreadtypes-arch.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h \
+  /usr/include/bits/select.h \
+  /usr/include/bits/setjmp.h \
+  /usr/include/bits/stdint-intn.h \
+  /usr/include/bits/stdint-least.h \
+  /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-float.h \
+  /usr/include/bits/struct_mutex.h \
+  /usr/include/bits/struct_rwlock.h \
+  /usr/include/bits/thread-shared-types.h \
+  /usr/include/bits/time.h \
+  /usr/include/bits/time64.h \
+  /usr/include/bits/timesize.h \
+  /usr/include/bits/timex.h \
+  /usr/include/bits/types.h \
+  /usr/include/bits/types/FILE.h \
+  /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/__fpos64_t.h \
+  /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__locale_t.h \
+  /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/__sigset_t.h \
+  /usr/include/bits/types/clock_t.h \
+  /usr/include/bits/types/clockid_t.h \
+  /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/types/error_t.h \
+  /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/mbstate_t.h \
+  /usr/include/bits/types/sigset_t.h \
+  /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/bits/types/struct_itimerspec.h \
+  /usr/include/bits/types/struct_sched_param.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/types/struct_timeval.h \
+  /usr/include/bits/types/struct_tm.h \
+  /usr/include/bits/types/time_t.h \
+  /usr/include/bits/types/timer_t.h \
+  /usr/include/bits/types/wint_t.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
+  /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h \
+  /usr/include/bits/wchar.h \
+  /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
+  /usr/include/c++/15.1.1/algorithm \
+  /usr/include/c++/15.1.1/array \
+  /usr/include/c++/15.1.1/atomic \
+  /usr/include/c++/15.1.1/backward/auto_ptr.h \
+  /usr/include/c++/15.1.1/backward/binders.h \
+  /usr/include/c++/15.1.1/bit \
+  /usr/include/c++/15.1.1/bits/algorithmfwd.h \
+  /usr/include/c++/15.1.1/bits/align.h \
+  /usr/include/c++/15.1.1/bits/alloc_traits.h \
+  /usr/include/c++/15.1.1/bits/allocated_ptr.h \
+  /usr/include/c++/15.1.1/bits/allocator.h \
+  /usr/include/c++/15.1.1/bits/atomic_base.h \
+  /usr/include/c++/15.1.1/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/15.1.1/bits/basic_string.h \
+  /usr/include/c++/15.1.1/bits/basic_string.tcc \
+  /usr/include/c++/15.1.1/bits/char_traits.h \
+  /usr/include/c++/15.1.1/bits/charconv.h \
+  /usr/include/c++/15.1.1/bits/chrono.h \
+  /usr/include/c++/15.1.1/bits/concept_check.h \
+  /usr/include/c++/15.1.1/bits/cpp_type_traits.h \
+  /usr/include/c++/15.1.1/bits/cxxabi_forced.h \
+  /usr/include/c++/15.1.1/bits/cxxabi_init_exception.h \
+  /usr/include/c++/15.1.1/bits/enable_special_members.h \
+  /usr/include/c++/15.1.1/bits/erase_if.h \
+  /usr/include/c++/15.1.1/bits/exception.h \
+  /usr/include/c++/15.1.1/bits/exception_defines.h \
+  /usr/include/c++/15.1.1/bits/exception_ptr.h \
+  /usr/include/c++/15.1.1/bits/functexcept.h \
+  /usr/include/c++/15.1.1/bits/functional_hash.h \
+  /usr/include/c++/15.1.1/bits/hash_bytes.h \
+  /usr/include/c++/15.1.1/bits/hashtable.h \
+  /usr/include/c++/15.1.1/bits/hashtable_policy.h \
+  /usr/include/c++/15.1.1/bits/invoke.h \
+  /usr/include/c++/15.1.1/bits/ios_base.h \
+  /usr/include/c++/15.1.1/bits/list.tcc \
+  /usr/include/c++/15.1.1/bits/locale_classes.h \
+  /usr/include/c++/15.1.1/bits/locale_classes.tcc \
+  /usr/include/c++/15.1.1/bits/localefwd.h \
+  /usr/include/c++/15.1.1/bits/memory_resource.h \
+  /usr/include/c++/15.1.1/bits/memoryfwd.h \
+  /usr/include/c++/15.1.1/bits/monostate.h \
+  /usr/include/c++/15.1.1/bits/move.h \
+  /usr/include/c++/15.1.1/bits/nested_exception.h \
+  /usr/include/c++/15.1.1/bits/new_allocator.h \
+  /usr/include/c++/15.1.1/bits/node_handle.h \
+  /usr/include/c++/15.1.1/bits/ostream_insert.h \
+  /usr/include/c++/15.1.1/bits/parse_numbers.h \
+  /usr/include/c++/15.1.1/bits/postypes.h \
+  /usr/include/c++/15.1.1/bits/predefined_ops.h \
+  /usr/include/c++/15.1.1/bits/ptr_traits.h \
+  /usr/include/c++/15.1.1/bits/range_access.h \
+  /usr/include/c++/15.1.1/bits/refwrap.h \
+  /usr/include/c++/15.1.1/bits/requires_hosted.h \
+  /usr/include/c++/15.1.1/bits/shared_ptr.h \
+  /usr/include/c++/15.1.1/bits/shared_ptr_atomic.h \
+  /usr/include/c++/15.1.1/bits/shared_ptr_base.h \
+  /usr/include/c++/15.1.1/bits/specfun.h \
+  /usr/include/c++/15.1.1/bits/std_abs.h \
+  /usr/include/c++/15.1.1/bits/std_function.h \
+  /usr/include/c++/15.1.1/bits/stl_algo.h \
+  /usr/include/c++/15.1.1/bits/stl_algobase.h \
+  /usr/include/c++/15.1.1/bits/stl_bvector.h \
+  /usr/include/c++/15.1.1/bits/stl_construct.h \
+  /usr/include/c++/15.1.1/bits/stl_function.h \
+  /usr/include/c++/15.1.1/bits/stl_heap.h \
+  /usr/include/c++/15.1.1/bits/stl_iterator.h \
+  /usr/include/c++/15.1.1/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/15.1.1/bits/stl_iterator_base_types.h \
+  /usr/include/c++/15.1.1/bits/stl_list.h \
+  /usr/include/c++/15.1.1/bits/stl_map.h \
+  /usr/include/c++/15.1.1/bits/stl_multimap.h \
+  /usr/include/c++/15.1.1/bits/stl_multiset.h \
+  /usr/include/c++/15.1.1/bits/stl_numeric.h \
+  /usr/include/c++/15.1.1/bits/stl_pair.h \
+  /usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/15.1.1/bits/stl_relops.h \
+  /usr/include/c++/15.1.1/bits/stl_set.h \
+  /usr/include/c++/15.1.1/bits/stl_tempbuf.h \
+  /usr/include/c++/15.1.1/bits/stl_tree.h \
+  /usr/include/c++/15.1.1/bits/stl_uninitialized.h \
+  /usr/include/c++/15.1.1/bits/stl_vector.h \
+  /usr/include/c++/15.1.1/bits/stream_iterator.h \
+  /usr/include/c++/15.1.1/bits/streambuf.tcc \
+  /usr/include/c++/15.1.1/bits/streambuf_iterator.h \
+  /usr/include/c++/15.1.1/bits/string_view.tcc \
+  /usr/include/c++/15.1.1/bits/stringfwd.h \
+  /usr/include/c++/15.1.1/bits/uniform_int_dist.h \
+  /usr/include/c++/15.1.1/bits/unique_ptr.h \
+  /usr/include/c++/15.1.1/bits/unordered_map.h \
+  /usr/include/c++/15.1.1/bits/unordered_set.h \
+  /usr/include/c++/15.1.1/bits/uses_allocator.h \
+  /usr/include/c++/15.1.1/bits/uses_allocator_args.h \
+  /usr/include/c++/15.1.1/bits/utility.h \
+  /usr/include/c++/15.1.1/bits/vector.tcc \
+  /usr/include/c++/15.1.1/bits/version.h \
+  /usr/include/c++/15.1.1/cassert \
+  /usr/include/c++/15.1.1/cctype \
+  /usr/include/c++/15.1.1/cerrno \
+  /usr/include/c++/15.1.1/chrono \
+  /usr/include/c++/15.1.1/climits \
+  /usr/include/c++/15.1.1/clocale \
+  /usr/include/c++/15.1.1/cmath \
+  /usr/include/c++/15.1.1/compare \
+  /usr/include/c++/15.1.1/concepts \
+  /usr/include/c++/15.1.1/cstddef \
+  /usr/include/c++/15.1.1/cstdint \
+  /usr/include/c++/15.1.1/cstdio \
+  /usr/include/c++/15.1.1/cstdlib \
+  /usr/include/c++/15.1.1/cstring \
+  /usr/include/c++/15.1.1/ctime \
+  /usr/include/c++/15.1.1/cwchar \
+  /usr/include/c++/15.1.1/debug/assertions.h \
+  /usr/include/c++/15.1.1/debug/debug.h \
+  /usr/include/c++/15.1.1/exception \
+  /usr/include/c++/15.1.1/ext/aligned_buffer.h \
+  /usr/include/c++/15.1.1/ext/alloc_traits.h \
+  /usr/include/c++/15.1.1/ext/atomicity.h \
+  /usr/include/c++/15.1.1/ext/concurrence.h \
+  /usr/include/c++/15.1.1/ext/numeric_traits.h \
+  /usr/include/c++/15.1.1/ext/string_conversions.h \
+  /usr/include/c++/15.1.1/ext/type_traits.h \
+  /usr/include/c++/15.1.1/functional \
+  /usr/include/c++/15.1.1/initializer_list \
+  /usr/include/c++/15.1.1/iosfwd \
+  /usr/include/c++/15.1.1/iterator \
+  /usr/include/c++/15.1.1/limits \
+  /usr/include/c++/15.1.1/list \
+  /usr/include/c++/15.1.1/map \
+  /usr/include/c++/15.1.1/memory \
+  /usr/include/c++/15.1.1/new \
+  /usr/include/c++/15.1.1/numeric \
+  /usr/include/c++/15.1.1/optional \
+  /usr/include/c++/15.1.1/pstl/execution_defs.h \
+  /usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/15.1.1/pstl/glue_memory_defs.h \
+  /usr/include/c++/15.1.1/pstl/glue_numeric_defs.h \
+  /usr/include/c++/15.1.1/pstl/pstl_config.h \
+  /usr/include/c++/15.1.1/ratio \
+  /usr/include/c++/15.1.1/set \
+  /usr/include/c++/15.1.1/stdexcept \
+  /usr/include/c++/15.1.1/stdlib.h \
+  /usr/include/c++/15.1.1/streambuf \
+  /usr/include/c++/15.1.1/string \
+  /usr/include/c++/15.1.1/string_view \
+  /usr/include/c++/15.1.1/system_error \
+  /usr/include/c++/15.1.1/tr1/bessel_function.tcc \
+  /usr/include/c++/15.1.1/tr1/beta_function.tcc \
+  /usr/include/c++/15.1.1/tr1/ell_integral.tcc \
+  /usr/include/c++/15.1.1/tr1/exp_integral.tcc \
+  /usr/include/c++/15.1.1/tr1/gamma.tcc \
+  /usr/include/c++/15.1.1/tr1/hypergeometric.tcc \
+  /usr/include/c++/15.1.1/tr1/legendre_function.tcc \
+  /usr/include/c++/15.1.1/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/15.1.1/tr1/poly_hermite.tcc \
+  /usr/include/c++/15.1.1/tr1/poly_laguerre.tcc \
+  /usr/include/c++/15.1.1/tr1/riemann_zeta.tcc \
+  /usr/include/c++/15.1.1/tr1/special_function_util.h \
+  /usr/include/c++/15.1.1/tuple \
+  /usr/include/c++/15.1.1/type_traits \
+  /usr/include/c++/15.1.1/typeinfo \
+  /usr/include/c++/15.1.1/unordered_map \
+  /usr/include/c++/15.1.1/unordered_set \
+  /usr/include/c++/15.1.1/utility \
+  /usr/include/c++/15.1.1/variant \
+  /usr/include/c++/15.1.1/vector \
+  /usr/include/c++/15.1.1/version \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++locale.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/cpu_defines.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/error_constants.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/gthr.h \
+  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/gnu/stubs-64.h \
+  /usr/include/gnu/stubs.h \
+  /usr/include/limits.h \
+  /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/sched/types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/linux/types.h \
+  /usr/include/locale.h \
+  /usr/include/math.h \
+  /usr/include/pthread.h \
+  /usr/include/qt6/QtCore/QDate \
+  /usr/include/qt6/QtCore/QFlags \
+  /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QList \
+  /usr/include/qt6/QtCore/QMap \
+  /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QSizeF \
+  /usr/include/qt6/QtCore/QString \
+  /usr/include/qt6/QtCore/QUrl \
+  /usr/include/qt6/QtCore/QUrlQuery \
+  /usr/include/qt6/QtCore/QVariant \
+  /usr/include/qt6/QtCore/QVector \
+  /usr/include/qt6/QtCore/QWeakPointer \
+  /usr/include/qt6/QtCore/q17memory.h \
+  /usr/include/qt6/QtCore/q20functional.h \
+  /usr/include/qt6/QtCore/q20iterator.h \
+  /usr/include/qt6/QtCore/q20memory.h \
+  /usr/include/qt6/QtCore/q20type_traits.h \
+  /usr/include/qt6/QtCore/q20utility.h \
+  /usr/include/qt6/QtCore/q23utility.h \
+  /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
+  /usr/include/qt6/QtCore/qalgorithms.h \
+  /usr/include/qt6/QtCore/qanystringview.h \
+  /usr/include/qt6/QtCore/qarraydata.h \
+  /usr/include/qt6/QtCore/qarraydataops.h \
+  /usr/include/qt6/QtCore/qarraydatapointer.h \
+  /usr/include/qt6/QtCore/qassert.h \
+  /usr/include/qt6/QtCore/qatomic.h \
+  /usr/include/qt6/QtCore/qatomic_cxx11.h \
+  /usr/include/qt6/QtCore/qbasicatomic.h \
+  /usr/include/qt6/QtCore/qbasictimer.h \
+  /usr/include/qt6/QtCore/qbindingstorage.h \
+  /usr/include/qt6/QtCore/qbytearray.h \
+  /usr/include/qt6/QtCore/qbytearrayalgorithms.h \
+  /usr/include/qt6/QtCore/qbytearraylist.h \
+  /usr/include/qt6/QtCore/qbytearrayview.h \
+  /usr/include/qt6/QtCore/qcalendar.h \
+  /usr/include/qt6/QtCore/qchar.h \
+  /usr/include/qt6/QtCore/qcompare.h \
+  /usr/include/qt6/QtCore/qcompare_impl.h \
+  /usr/include/qt6/QtCore/qcomparehelpers.h \
+  /usr/include/qt6/QtCore/qcompilerdetection.h \
+  /usr/include/qt6/QtCore/qconfig.h \
+  /usr/include/qt6/QtCore/qconstructormacros.h \
+  /usr/include/qt6/QtCore/qcontainerfwd.h \
+  /usr/include/qt6/QtCore/qcontainerinfo.h \
+  /usr/include/qt6/QtCore/qcontainertools_impl.h \
+  /usr/include/qt6/QtCore/qcontiguouscache.h \
+  /usr/include/qt6/QtCore/qcoreapplication.h \
+  /usr/include/qt6/QtCore/qcoreapplication_platform.h \
+  /usr/include/qt6/QtCore/qcoreevent.h \
+  /usr/include/qt6/QtCore/qcryptographichash.h \
+  /usr/include/qt6/QtCore/qdarwinhelpers.h \
+  /usr/include/qt6/QtCore/qdatastream.h \
+  /usr/include/qt6/QtCore/qdatetime.h \
+  /usr/include/qt6/QtCore/qdeadlinetimer.h \
+  /usr/include/qt6/QtCore/qdebug.h \
+  /usr/include/qt6/QtCore/qelapsedtimer.h \
+  /usr/include/qt6/QtCore/qendian.h \
+  /usr/include/qt6/QtCore/qeventloop.h \
+  /usr/include/qt6/QtCore/qexceptionhandling.h \
+  /usr/include/qt6/QtCore/qflags.h \
+  /usr/include/qt6/QtCore/qfloat16.h \
+  /usr/include/qt6/QtCore/qforeach.h \
+  /usr/include/qt6/QtCore/qfunctionaltools_impl.h \
+  /usr/include/qt6/QtCore/qfunctionpointer.h \
+  /usr/include/qt6/QtCore/qgenericatomic.h \
+  /usr/include/qt6/QtCore/qglobal.h \
+  /usr/include/qt6/QtCore/qglobalstatic.h \
+  /usr/include/qt6/QtCore/qhash.h \
+  /usr/include/qt6/QtCore/qhashfunctions.h \
+  /usr/include/qt6/QtCore/qiodevicebase.h \
+  /usr/include/qt6/QtCore/qiterable.h \
+  /usr/include/qt6/QtCore/qiterator.h \
+  /usr/include/qt6/QtCore/qlatin1stringview.h \
+  /usr/include/qt6/QtCore/qline.h \
+  /usr/include/qt6/QtCore/qlist.h \
+  /usr/include/qt6/QtCore/qlocale.h \
+  /usr/include/qt6/QtCore/qlogging.h \
+  /usr/include/qt6/QtCore/qmalloc.h \
+  /usr/include/qt6/QtCore/qmap.h \
+  /usr/include/qt6/QtCore/qmargins.h \
+  /usr/include/qt6/QtCore/qmath.h \
+  /usr/include/qt6/QtCore/qmetacontainer.h \
+  /usr/include/qt6/QtCore/qmetatype.h \
+  /usr/include/qt6/QtCore/qminmax.h \
+  /usr/include/qt6/QtCore/qnamespace.h \
+  /usr/include/qt6/QtCore/qnativeinterface.h \
+  /usr/include/qt6/QtCore/qnumeric.h \
+  /usr/include/qt6/QtCore/qobject.h \
+  /usr/include/qt6/QtCore/qobject_impl.h \
+  /usr/include/qt6/QtCore/qobjectdefs.h \
+  /usr/include/qt6/QtCore/qobjectdefs_impl.h \
+  /usr/include/qt6/QtCore/qoverload.h \
+  /usr/include/qt6/QtCore/qpair.h \
+  /usr/include/qt6/QtCore/qpoint.h \
+  /usr/include/qt6/QtCore/qprocessordetection.h \
+  /usr/include/qt6/QtCore/qrect.h \
+  /usr/include/qt6/QtCore/qrefcount.h \
+  /usr/include/qt6/QtCore/qscopedpointer.h \
+  /usr/include/qt6/QtCore/qscopeguard.h \
+  /usr/include/qt6/QtCore/qset.h \
+  /usr/include/qt6/QtCore/qshareddata.h \
+  /usr/include/qt6/QtCore/qshareddata_impl.h \
+  /usr/include/qt6/QtCore/qsharedpointer.h \
+  /usr/include/qt6/QtCore/qsharedpointer_impl.h \
+  /usr/include/qt6/QtCore/qsize.h \
+  /usr/include/qt6/QtCore/qspan.h \
+  /usr/include/qt6/QtCore/qstdlibdetection.h \
+  /usr/include/qt6/QtCore/qstring.h \
+  /usr/include/qt6/QtCore/qstringalgorithms.h \
+  /usr/include/qt6/QtCore/qstringbuilder.h \
+  /usr/include/qt6/QtCore/qstringconverter.h \
+  /usr/include/qt6/QtCore/qstringconverter_base.h \
+  /usr/include/qt6/QtCore/qstringfwd.h \
+  /usr/include/qt6/QtCore/qstringlist.h \
+  /usr/include/qt6/QtCore/qstringliteral.h \
+  /usr/include/qt6/QtCore/qstringmatcher.h \
+  /usr/include/qt6/QtCore/qstringtokenizer.h \
+  /usr/include/qt6/QtCore/qstringview.h \
+  /usr/include/qt6/QtCore/qswap.h \
+  /usr/include/qt6/QtCore/qsysinfo.h \
+  /usr/include/qt6/QtCore/qsystemdetection.h \
+  /usr/include/qt6/QtCore/qtaggedpointer.h \
+  /usr/include/qt6/QtCore/qtclasshelpermacros.h \
+  /usr/include/qt6/QtCore/qtconfiginclude.h \
+  /usr/include/qt6/QtCore/qtconfigmacros.h \
+  /usr/include/qt6/QtCore/qtcore-config.h \
+  /usr/include/qt6/QtCore/qtcoreexports.h \
+  /usr/include/qt6/QtCore/qtcoreglobal.h \
+  /usr/include/qt6/QtCore/qtdeprecationdefinitions.h \
+  /usr/include/qt6/QtCore/qtdeprecationmarkers.h \
+  /usr/include/qt6/QtCore/qtenvironmentvariables.h \
+  /usr/include/qt6/QtCore/qtextstream.h \
+  /usr/include/qt6/QtCore/qtformat_impl.h \
+  /usr/include/qt6/QtCore/qtmetamacros.h \
+  /usr/include/qt6/QtCore/qtnoop.h \
+  /usr/include/qt6/QtCore/qtpreprocessorsupport.h \
+  /usr/include/qt6/QtCore/qtresource.h \
+  /usr/include/qt6/QtCore/qttranslation.h \
+  /usr/include/qt6/QtCore/qttypetraits.h \
+  /usr/include/qt6/QtCore/qtversion.h \
+  /usr/include/qt6/QtCore/qtversionchecks.h \
+  /usr/include/qt6/QtCore/qtypeinfo.h \
+  /usr/include/qt6/QtCore/qtypes.h \
+  /usr/include/qt6/QtCore/qurl.h \
+  /usr/include/qt6/QtCore/qurlquery.h \
+  /usr/include/qt6/QtCore/qutf8stringview.h \
+  /usr/include/qt6/QtCore/qvariant.h \
+  /usr/include/qt6/QtCore/qvarlengtharray.h \
+  /usr/include/qt6/QtCore/qvector.h \
+  /usr/include/qt6/QtCore/qversiontagging.h \
+  /usr/include/qt6/QtCore/qxptype_traits.h \
+  /usr/include/qt6/QtCore/qyieldcpu.h \
+  /usr/include/qt6/QtGui/QPageLayout \
+  /usr/include/qt6/QtGui/qaction.h \
+  /usr/include/qt6/QtGui/qbitmap.h \
+  /usr/include/qt6/QtGui/qbrush.h \
+  /usr/include/qt6/QtGui/qcolor.h \
+  /usr/include/qt6/QtGui/qcursor.h \
+  /usr/include/qt6/QtGui/qfont.h \
+  /usr/include/qt6/QtGui/qfontinfo.h \
+  /usr/include/qt6/QtGui/qfontmetrics.h \
+  /usr/include/qt6/QtGui/qfontvariableaxis.h \
+  /usr/include/qt6/QtGui/qguiapplication.h \
+  /usr/include/qt6/QtGui/qguiapplication_platform.h \
+  /usr/include/qt6/QtGui/qicon.h \
+  /usr/include/qt6/QtGui/qimage.h \
+  /usr/include/qt6/QtGui/qinputmethod.h \
+  /usr/include/qt6/QtGui/qkeysequence.h \
+  /usr/include/qt6/QtGui/qpagelayout.h \
+  /usr/include/qt6/QtGui/qpageranges.h \
+  /usr/include/qt6/QtGui/qpagesize.h \
+  /usr/include/qt6/QtGui/qpaintdevice.h \
+  /usr/include/qt6/QtGui/qpalette.h \
+  /usr/include/qt6/QtGui/qpixelformat.h \
+  /usr/include/qt6/QtGui/qpixmap.h \
+  /usr/include/qt6/QtGui/qpolygon.h \
+  /usr/include/qt6/QtGui/qregion.h \
+  /usr/include/qt6/QtGui/qrgb.h \
+  /usr/include/qt6/QtGui/qrgba64.h \
+  /usr/include/qt6/QtGui/qtgui-config.h \
+  /usr/include/qt6/QtGui/qtguiexports.h \
+  /usr/include/qt6/QtGui/qtguiglobal.h \
+  /usr/include/qt6/QtGui/qtransform.h \
+  /usr/include/qt6/QtGui/qwindowdefs.h \
+  /usr/include/qt6/QtNetwork/qssl.h \
+  /usr/include/qt6/QtNetwork/qsslcertificate.h \
+  /usr/include/qt6/QtNetwork/qtnetwork-config.h \
+  /usr/include/qt6/QtNetwork/qtnetworkexports.h \
+  /usr/include/qt6/QtNetwork/qtnetworkglobal.h \
+  /usr/include/qt6/QtQml/qjsvalue.h \
+  /usr/include/qt6/QtQml/qqmlregistration.h \
+  /usr/include/qt6/QtQml/qtqml-config.h \
+  /usr/include/qt6/QtQml/qtqmlexports.h \
+  /usr/include/qt6/QtQml/qtqmlglobal.h \
+  /usr/include/qt6/QtQmlIntegration/qqmlintegration.h \
+  /usr/include/qt6/QtWebEngineCore/qtwebenginecore-config.h \
+  /usr/include/qt6/QtWebEngineCore/qtwebenginecoreglobal.h \
+  /usr/include/qt6/QtWebEngineCore/qwebengineclientcertificateselection.h \
+  /usr/include/qt6/QtWebEngineCore/qwebenginedownloadrequest.h \
+  /usr/include/qt6/QtWebEngineCore/qwebengineframe.h \
+  /usr/include/qt6/QtWebEngineCore/qwebenginepage.h \
+  /usr/include/qt6/QtWebEngineCore/qwebenginepermission.h \
+  /usr/include/qt6/QtWebEngineCore/qwebenginequotarequest.h \
+  /usr/include/qt6/QtWebEngineWidgets/QWebEngineView \
+  /usr/include/qt6/QtWebEngineWidgets/qtwebenginewidgetsglobal.h \
+  /usr/include/qt6/QtWebEngineWidgets/qwebengineview.h \
+  /usr/include/qt6/QtWidgets/QApplication \
+  /usr/include/qt6/QtWidgets/QDialog \
+  /usr/include/qt6/QtWidgets/QHBoxLayout \
+  /usr/include/qt6/QtWidgets/QMessageBox \
+  /usr/include/qt6/QtWidgets/QVBoxLayout \
+  /usr/include/qt6/QtWidgets/qapplication.h \
+  /usr/include/qt6/QtWidgets/qboxlayout.h \
+  /usr/include/qt6/QtWidgets/qdialog.h \
+  /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
+  /usr/include/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/qt6/QtWidgets/qlayout.h \
+  /usr/include/qt6/QtWidgets/qlayoutitem.h \
+  /usr/include/qt6/QtWidgets/qmessagebox.h \
+  /usr/include/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
   /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -21286,11 +22501,13 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: MeuCe
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.h \
+  /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.h \
   /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h \
   MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogAddEditCategoria.cpp \
+  MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogAddEditConexao.cpp \
   MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogAddEditConta.cpp \
   MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogGerenciarPerfis.cpp \
   MeuCentavoApp_autogen/2EK4JB7KXY/moc_formGerenciarCategorias.cpp \
@@ -21665,6 +22882,7 @@ CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o: MeuCe
   /usr/include/qt6/QtCore/QSize \
   /usr/include/qt6/QtCore/QSizeF \
   /usr/include/qt6/QtCore/QString \
+  /usr/include/qt6/QtCore/QUrl \
   /usr/include/qt6/QtCore/QVariant \
   /usr/include/qt6/QtCore/QVector \
   /usr/include/qt6/QtCore/q17memory.h \
@@ -22392,6 +23610,7 @@ MeuCentavoApp: /usr/lib/Scrt1.o \
   /usr/lib/libEGL.so.1 \
   /usr/lib/libGLX.so \
   /usr/lib/libGLdispatch.so.0 \
+  /usr/lib/libOpenCL.so.1 \
   /usr/lib/libOpenGL.so \
   /usr/lib/libQt6Charts.so.6.9.1 \
   /usr/lib/libQt6Core.so.6.9.1 \
@@ -22400,65 +23619,242 @@ MeuCentavoApp: /usr/lib/Scrt1.o \
   /usr/lib/libQt6Network.so.6.9.1 \
   /usr/lib/libQt6OpenGL.so.6.9.1 \
   /usr/lib/libQt6OpenGLWidgets.so.6.9.1 \
+  /usr/lib/libQt6Positioning.so.6.9.1 \
+  /usr/lib/libQt6PrintSupport.so.6.9.1 \
+  /usr/lib/libQt6Qml.so.6.9.1 \
+  /usr/lib/libQt6QmlMeta.so.6.9.1 \
+  /usr/lib/libQt6QmlModels.so.6.9.1 \
+  /usr/lib/libQt6QmlWorkerScript.so.6.9.1 \
+  /usr/lib/libQt6Quick.so.6.9.1 \
+  /usr/lib/libQt6QuickWidgets.so.6 \
   /usr/lib/libQt6Sql.so.6.9.1 \
+  /usr/lib/libQt6WebChannel.so.6.9.1 \
+  /usr/lib/libQt6WebEngineCore.so.6.9.1 \
+  /usr/lib/libQt6WebEngineWidgets.so.6.9.1 \
   /usr/lib/libQt6Widgets.so.6.9.1 \
+  /usr/lib/libSvtAv1Enc.so.3 \
+  /usr/lib/libX11-xcb.so.1 \
   /usr/lib/libX11.so.6 \
   /usr/lib/libXau.so.6 \
+  /usr/lib/libXcomposite.so.1 \
+  /usr/lib/libXdamage.so.1 \
   /usr/lib/libXdmcp.so.6 \
+  /usr/lib/libXext.so.6 \
+  /usr/lib/libXfixes.so.3 \
+  /usr/lib/libXrandr.so.2 \
+  /usr/lib/libXrender.so.1 \
+  /usr/lib/libXtst.so.6 \
+  /usr/lib/libabsl_base.so.2505.0.0 \
+  /usr/lib/libabsl_city.so.2505.0.0 \
+  /usr/lib/libabsl_civil_time.so.2505.0.0 \
+  /usr/lib/libabsl_cord.so.2505.0.0 \
+  /usr/lib/libabsl_cord_internal.so.2505.0.0 \
+  /usr/lib/libabsl_cordz_functions.so.2505.0.0 \
+  /usr/lib/libabsl_cordz_handle.so.2505.0.0 \
+  /usr/lib/libabsl_cordz_info.so.2505.0.0 \
+  /usr/lib/libabsl_crc32c.so.2505.0.0 \
+  /usr/lib/libabsl_crc_cord_state.so.2505.0.0 \
+  /usr/lib/libabsl_crc_cpu_detect.so.2505.0.0 \
+  /usr/lib/libabsl_crc_internal.so.2505.0.0 \
+  /usr/lib/libabsl_debugging_internal.so.2505.0.0 \
+  /usr/lib/libabsl_decode_rust_punycode.so.2505.0.0 \
+  /usr/lib/libabsl_demangle_internal.so.2505.0.0 \
+  /usr/lib/libabsl_demangle_rust.so.2505.0.0 \
+  /usr/lib/libabsl_examine_stack.so.2505.0.0 \
+  /usr/lib/libabsl_exponential_biased.so.2505.0.0 \
+  /usr/lib/libabsl_flags_commandlineflag.so.2505.0.0 \
+  /usr/lib/libabsl_flags_commandlineflag_internal.so.2505.0.0 \
+  /usr/lib/libabsl_flags_config.so.2505.0.0 \
+  /usr/lib/libabsl_flags_internal.so.2505.0.0 \
+  /usr/lib/libabsl_flags_marshalling.so.2505.0.0 \
+  /usr/lib/libabsl_flags_private_handle_accessor.so.2505.0.0 \
+  /usr/lib/libabsl_flags_program_name.so.2505.0.0 \
+  /usr/lib/libabsl_flags_reflection.so.2505.0.0 \
+  /usr/lib/libabsl_graphcycles_internal.so.2505.0.0 \
+  /usr/lib/libabsl_hash.so.2505.0.0 \
+  /usr/lib/libabsl_hashtablez_sampler.so.2505.0.0 \
+  /usr/lib/libabsl_int128.so.2505.0.0 \
+  /usr/lib/libabsl_kernel_timeout_internal.so.2505.0.0 \
+  /usr/lib/libabsl_leak_check.so.2505.0.0 \
+  /usr/lib/libabsl_log_globals.so.2505.0.0 \
+  /usr/lib/libabsl_log_internal_check_op.so.2505.0.0 \
+  /usr/lib/libabsl_log_internal_conditions.so.2505.0.0 \
+  /usr/lib/libabsl_log_internal_fnmatch.so.2505.0.0 \
+  /usr/lib/libabsl_log_internal_format.so.2505.0.0 \
+  /usr/lib/libabsl_log_internal_globals.so.2505.0.0 \
+  /usr/lib/libabsl_log_internal_log_sink_set.so.2505.0.0 \
+  /usr/lib/libabsl_log_internal_message.so.2505.0.0 \
+  /usr/lib/libabsl_log_internal_nullguard.so.2505.0.0 \
+  /usr/lib/libabsl_log_internal_proto.so.2505.0.0 \
+  /usr/lib/libabsl_log_internal_structured_proto.so.2505.0.0 \
+  /usr/lib/libabsl_log_severity.so.2505.0.0 \
+  /usr/lib/libabsl_log_sink.so.2505.0.0 \
+  /usr/lib/libabsl_low_level_hash.so.2505.0.0 \
+  /usr/lib/libabsl_malloc_internal.so.2505.0.0 \
+  /usr/lib/libabsl_raw_hash_set.so.2505.0.0 \
+  /usr/lib/libabsl_raw_logging_internal.so.2505.0.0 \
+  /usr/lib/libabsl_spinlock_wait.so.2505.0.0 \
+  /usr/lib/libabsl_stacktrace.so.2505.0.0 \
+  /usr/lib/libabsl_str_format_internal.so.2505.0.0 \
+  /usr/lib/libabsl_strerror.so.2505.0.0 \
+  /usr/lib/libabsl_string_view.so.2505.0.0 \
+  /usr/lib/libabsl_strings.so.2505.0.0 \
+  /usr/lib/libabsl_strings_internal.so.2505.0.0 \
+  /usr/lib/libabsl_symbolize.so.2505.0.0 \
+  /usr/lib/libabsl_synchronization.so.2505.0.0 \
+  /usr/lib/libabsl_throw_delegate.so.2505.0.0 \
+  /usr/lib/libabsl_time.so.2505.0.0 \
+  /usr/lib/libabsl_time_zone.so.2505.0.0 \
+  /usr/lib/libabsl_tracing_internal.so.2505.0.0 \
+  /usr/lib/libabsl_utf8_for_code_point.so.2505.0.0 \
+  /usr/lib/libabsl_vlog_config_internal.so.2505.0.0 \
+  /usr/lib/libaom.so.3 \
+  /usr/lib/libasound.so.2 \
+  /usr/lib/libavcodec.so.61 \
+  /usr/lib/libavformat.so.61 \
+  /usr/lib/libavutil.so.59 \
   /usr/lib/libb2.so.1 \
   /usr/lib/libblkid.so.1 \
+  /usr/lib/libbluray.so.2 \
   /usr/lib/libbrotlicommon.so.1 \
   /usr/lib/libbrotlidec.so.1 \
+  /usr/lib/libbrotlienc.so.1 \
   /usr/lib/libbz2.so.1.0 \
   /usr/lib/libc.so.6 \
   /usr/lib/libc_nonshared.a \
+  /usr/lib/libcairo.so.2 \
   /usr/lib/libcap.so.2 \
   /usr/lib/libcom_err.so.2 \
   /usr/lib/libcrypto.so.3 \
   /usr/lib/libcurl.so.4 \
+  /usr/lib/libdatrie.so.1 \
+  /usr/lib/libdav1d.so.7 \
   /usr/lib/libdbus-1.so.3 \
   /usr/lib/libdouble-conversion.so.3 \
+  /usr/lib/libdrm.so.2 \
   /usr/lib/libduktape.so.207 \
+  /usr/lib/libdvdnav.so.4 \
+  /usr/lib/libdvdread.so.8 \
+  /usr/lib/libevent-2.1.so.7 \
   /usr/lib/libexpat.so.1 \
   /usr/lib/libffi.so.8 \
   /usr/lib/libfontconfig.so.1 \
   /usr/lib/libfreetype.so.6 \
+  /usr/lib/libfribidi.so.0 \
+  /usr/lib/libgbm.so.1 \
+  /usr/lib/libgdk_pixbuf-2.0.so.0 \
   /usr/lib/libgio-2.0.so.0 \
   /usr/lib/libglib-2.0.so.0 \
   /usr/lib/libgmodule-2.0.so.0 \
+  /usr/lib/libgmp.so.10 \
+  /usr/lib/libgnutls.so.30 \
   /usr/lib/libgobject-2.0.so.0 \
   /usr/lib/libgomp.so.1 \
   /usr/lib/libgraphite2.so.3 \
+  /usr/lib/libgsm.so.1 \
   /usr/lib/libgssapi_krb5.so.2 \
+  /usr/lib/libharfbuzz-subset.so.0 \
   /usr/lib/libharfbuzz.so.0 \
+  /usr/lib/libhogweed.so.6 \
+  /usr/lib/libhwy.so.1 \
   /usr/lib/libicudata.so.76 \
   /usr/lib/libicui18n.so.76 \
   /usr/lib/libicuuc.so.76 \
   /usr/lib/libidn2.so.0 \
+  /usr/lib/libjbig.so.2.1 \
+  /usr/lib/libjpeg.so.8 \
+  /usr/lib/libjxl.so.0.11 \
+  /usr/lib/libjxl_cms.so.0.11 \
+  /usr/lib/libjxl_threads.so.0.11 \
   /usr/lib/libk5crypto.so.3 \
   /usr/lib/libkeyutils.so.1 \
   /usr/lib/libkrb5.so.3 \
   /usr/lib/libkrb5support.so.0 \
+  /usr/lib/liblcms2.so.2 \
+  /usr/lib/libleancrypto.so.1 \
+  /usr/lib/liblzma.so.5 \
   /usr/lib/libm.so.6 \
   /usr/lib/libmd4c.so.0 \
+  /usr/lib/libminizip.so.1 \
+  /usr/lib/libmodplug.so.1 \
   /usr/lib/libmount.so.1 \
+  /usr/lib/libmp3lame.so.0 \
+  /usr/lib/libmpg123.so.0 \
   /usr/lib/libmvec.so.1 \
+  /usr/lib/libnettle.so.8 \
   /usr/lib/libnghttp2.so.14 \
   /usr/lib/libnghttp3.so.9 \
+  /usr/lib/libnspr4.so \
+  /usr/lib/libnss3.so \
+  /usr/lib/libnssutil3.so \
+  /usr/lib/libogg.so.0 \
+  /usr/lib/libopencore-amrnb.so.0 \
+  /usr/lib/libopencore-amrwb.so.0 \
+  /usr/lib/libopenjp2.so.7 \
+  /usr/lib/libopenmpt.so.0 \
+  /usr/lib/libopus.so.0 \
+  /usr/lib/libp11-kit.so.0 \
+  /usr/lib/libpango-1.0.so.0 \
+  /usr/lib/libpangocairo-1.0.so.0 \
+  /usr/lib/libpangoft2-1.0.so.0 \
   /usr/lib/libpcre2-16.so.0 \
   /usr/lib/libpcre2-8.so.0 \
+  /usr/lib/libpgm-5.3.so.0 \
+  /usr/lib/libpixman-1.so.0 \
+  /usr/lib/libplc4.so \
+  /usr/lib/libplds4.so \
   /usr/lib/libpng16.so.16 \
   /usr/lib/libproxy.so.1 \
   /usr/lib/libproxy/libpxbackend-1.0.so \
   /usr/lib/libpsl.so.5 \
+  /usr/lib/librav1e.so.0.7 \
+  /usr/lib/libre2.so.11 \
   /usr/lib/libresolv.so.2 \
+  /usr/lib/librsvg-2.so.2 \
+  /usr/lib/libsharpyuv.so.0 \
+  /usr/lib/libsmime3.so \
+  /usr/lib/libsnappy.so.1 \
+  /usr/lib/libsodium.so.26 \
+  /usr/lib/libsoxr.so.0 \
+  /usr/lib/libspeex.so.1 \
+  /usr/lib/libsrt.so.1.5 \
+  /usr/lib/libssh.so.4 \
   /usr/lib/libssh2.so.1 \
   /usr/lib/libssl.so.3 \
+  /usr/lib/libswresample.so.5 \
   /usr/lib/libsystemd.so.0 \
+  /usr/lib/libtasn1.so.6 \
+  /usr/lib/libthai.so.0 \
+  /usr/lib/libtheoradec.so.2 \
+  /usr/lib/libtheoraenc.so.2 \
+  /usr/lib/libtiff.so.6 \
+  /usr/lib/libudev.so.1 \
   /usr/lib/libunistring.so.5 \
+  /usr/lib/libva-drm.so.2 \
+  /usr/lib/libva-x11.so.2 \
+  /usr/lib/libva.so.2 \
+  /usr/lib/libvdpau.so.1 \
+  /usr/lib/libvorbis.so.0 \
+  /usr/lib/libvorbisenc.so.2 \
+  /usr/lib/libvorbisfile.so.3 \
+  /usr/lib/libvpl.so.2 \
+  /usr/lib/libvpx.so.9 \
+  /usr/lib/libwebp.so.7 \
+  /usr/lib/libwebpdemux.so.2 \
+  /usr/lib/libwebpmux.so.3 \
+  /usr/lib/libx264.so.164 \
+  /usr/lib/libx265.so.215 \
+  /usr/lib/libxcb-dri3.so.0 \
+  /usr/lib/libxcb-render.so.0 \
+  /usr/lib/libxcb-shm.so.0 \
   /usr/lib/libxcb.so.1 \
   /usr/lib/libxkbcommon.so.0 \
+  /usr/lib/libxkbfile.so.1 \
+  /usr/lib/libxml2.so.16 \
+  /usr/lib/libxslt.so.1 \
+  /usr/lib/libxvidcore.so.4 \
   /usr/lib/libz.so.1 \
+  /usr/lib/libzmq.so.5 \
   /usr/lib/libzstd.so.1 \
   CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o \
@@ -22471,6 +23867,7 @@ MeuCentavoApp: /usr/lib/Scrt1.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageMetas.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o \
+  CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o \
   CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.cpp.o \
@@ -22501,15 +23898,25 @@ MeuCentavoApp: /usr/lib/Scrt1.o \
   CMakeFiles/MeuCentavoApp.dir/main.cpp.o
 
 
+CMakeFiles/MeuCentavoApp.dir/main.cpp.o:
+
 CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/mocs_compilation.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Gerenciamento/SessionManager.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Gerenciamento/AppController.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formUsuario.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formLoginSenha.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formCadastro.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formBoasVindas.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp.o:
 
@@ -22517,143 +23924,433 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimul
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp.o:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formLoginSenha.cpp.o:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.o:
-
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.cpp.o:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageMetas.cpp.o:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp.o:
 
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.o:
+
 CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageDividas.cpp.o:
 
 CMakeFiles/MeuCentavoApp.dir/DataAccess/UsuarioDAO.cpp.o:
 
+CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o:
+
+/usr/lib/libzmq.so.5:
+
 /usr/lib/libz.so.1:
 
+/usr/lib/libxvidcore.so.4:
+
+/usr/lib/libxslt.so.1:
+
+/usr/lib/libxml2.so.16:
+
+/usr/lib/libxkbfile.so.1:
+
+/usr/lib/libxcb-shm.so.0:
+
+/usr/lib/libxcb-render.so.0:
+
+/usr/lib/libx265.so.215:
+
+/usr/lib/libx264.so.164:
+
+/usr/lib/libwebp.so.7:
+
+/usr/lib/libvpx.so.9:
+
+/usr/lib/libvpl.so.2:
+
+/usr/lib/libvorbisfile.so.3:
+
+/usr/lib/libvorbisenc.so.2:
+
+/usr/lib/libvorbis.so.0:
+
+/usr/lib/libvdpau.so.1:
+
+/usr/lib/libva-x11.so.2:
+
+/usr/lib/libudev.so.1:
+
+/usr/lib/libtiff.so.6:
+
+/usr/lib/libtheoraenc.so.2:
+
+/usr/lib/libthai.so.0:
+
+/usr/lib/libtasn1.so.6:
+
+/usr/lib/libsystemd.so.0:
+
 /usr/lib/libssl.so.3:
+
+/usr/lib/libssh2.so.1:
+
+/usr/lib/libssh.so.4:
+
+/usr/lib/libsrt.so.1.5:
+
+/usr/lib/libspeex.so.1:
+
+/usr/lib/libsoxr.so.0:
+
+/usr/lib/libsodium.so.26:
+
+/usr/lib/libsmime3.so:
+
+/usr/lib/libsharpyuv.so.0:
+
+/usr/lib/librsvg-2.so.2:
+
+/usr/lib/libresolv.so.2:
+
+/usr/lib/libre2.so.11:
+
+/usr/lib/librav1e.so.0.7:
 
 /usr/lib/libpsl.so.5:
 
 /usr/lib/libproxy.so.1:
 
-/usr/lib/libpcre2-8.so.0:
+/usr/lib/libpixman-1.so.0:
 
 /usr/lib/libpcre2-16.so.0:
 
-/usr/lib/libmvec.so.1:
+/usr/lib/libpangocairo-1.0.so.0:
+
+/usr/lib/libpango-1.0.so.0:
+
+/usr/lib/libopenjp2.so.7:
+
+/usr/lib/libopencore-amrnb.so.0:
+
+/usr/lib/libogg.so.0:
+
+/usr/lib/libnspr4.so:
+
+/usr/lib/libnettle.so.8:
+
+/usr/lib/libmpg123.so.0:
+
+/usr/lib/libmp3lame.so.0:
 
 /usr/lib/libmount.so.1:
 
+/usr/lib/libmodplug.so.1:
+
+/usr/lib/libminizip.so.1:
+
 /usr/lib/libmd4c.so.0:
+
+/usr/lib/libm.so.6:
+
+/usr/lib/liblzma.so.5:
+
+/usr/lib/libleancrypto.so.1:
+
+/usr/lib/libkeyutils.so.1:
+
+/usr/lib/libjxl_threads.so.0.11:
+
+/usr/lib/libjxl_cms.so.0.11:
+
+/usr/lib/libjxl.so.0.11:
+
+/usr/lib/libjpeg.so.8:
+
+/usr/lib/libjbig.so.2.1:
 
 /usr/lib/libicuuc.so.76:
 
-/usr/lib/libicui18n.so.76:
+/usr/lib/libicudata.so.76:
 
-/usr/lib/libgssapi_krb5.so.2:
+/usr/lib/libhwy.so.1:
+
+/usr/lib/libhogweed.so.6:
+
+/usr/lib/libharfbuzz.so.0:
 
 /usr/lib/libgraphite2.so.3:
 
+/usr/lib/libplc4.so:
+
+/usr/lib/libgomp.so.1:
+
+/usr/lib/libgobject-2.0.so.0:
+
+/usr/lib/libgmp.so.10:
+
 /usr/lib/libgmodule-2.0.so.0:
+
+/usr/lib/libglib-2.0.so.0:
+
+/usr/lib/libgdk_pixbuf-2.0.so.0:
+
+/usr/lib/libfreetype.so.6:
+
+/usr/lib/libfontconfig.so.1:
 
 /usr/lib/libexpat.so.1:
 
-/usr/lib/libcrypto.so.3:
+/usr/lib/libduktape.so.207:
+
+/usr/lib/libdouble-conversion.so.3:
+
+/usr/lib/libdav1d.so.7:
+
+/usr/lib/libdatrie.so.1:
+
+/usr/lib/libcom_err.so.2:
+
+/usr/lib/libcairo.so.2:
+
+/usr/lib/libc_nonshared.a:
 
 /usr/lib/libc.so.6:
 
 /usr/lib/libbz2.so.1.0:
 
+/usr/lib/libbrotlienc.so.1:
+
 /usr/lib/libbrotlidec.so.1:
 
-/usr/lib/libXdmcp.so.6:
+/usr/lib/libbluray.so.2:
+
+/usr/lib/libblkid.so.1:
+
+/usr/lib/libb2.so.1:
+
+/usr/lib/libavcodec.so.61:
+
+/usr/lib/libaom.so.3:
+
+/usr/lib/libabsl_vlog_config_internal.so.2505.0.0:
+
+/usr/lib/libabsl_utf8_for_code_point.so.2505.0.0:
+
+/usr/lib/libabsl_time_zone.so.2505.0.0:
+
+/usr/lib/libabsl_symbolize.so.2505.0.0:
+
+/usr/lib/libabsl_strings_internal.so.2505.0.0:
+
+/usr/lib/libabsl_strings.so.2505.0.0:
+
+/usr/lib/libabsl_string_view.so.2505.0.0:
+
+/usr/lib/libswresample.so.5:
+
+/usr/lib/libabsl_strerror.so.2505.0.0:
+
+/usr/lib/libabsl_str_format_internal.so.2505.0.0:
+
+/usr/lib/libabsl_stacktrace.so.2505.0.0:
+
+/usr/lib/libabsl_raw_logging_internal.so.2505.0.0:
+
+/usr/lib/libabsl_log_sink.so.2505.0.0:
+
+/usr/lib/libabsl_log_internal_structured_proto.so.2505.0.0:
+
+/usr/lib/libabsl_log_internal_nullguard.so.2505.0.0:
+
+/usr/lib/libabsl_log_internal_format.so.2505.0.0:
+
+/usr/lib/libabsl_log_internal_fnmatch.so.2505.0.0:
+
+/usr/lib/libabsl_log_internal_check_op.so.2505.0.0:
+
+/usr/lib/libabsl_log_globals.so.2505.0.0:
+
+/usr/lib/libabsl_leak_check.so.2505.0.0:
+
+/usr/lib/libabsl_int128.so.2505.0.0:
+
+/usr/lib/libabsl_hashtablez_sampler.so.2505.0.0:
+
+/usr/lib/libabsl_graphcycles_internal.so.2505.0.0:
+
+/usr/lib/libabsl_flags_program_name.so.2505.0.0:
+
+/usr/lib/libabsl_flags_marshalling.so.2505.0.0:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp.o:
+
+/usr/lib/libabsl_flags_internal.so.2505.0.0:
+
+/usr/lib/libabsl_flags_config.so.2505.0.0:
+
+/usr/lib/libabsl_flags_commandlineflag_internal.so.2505.0.0:
+
+/usr/lib/libabsl_flags_commandlineflag.so.2505.0.0:
+
+/usr/lib/libabsl_exponential_biased.so.2505.0.0:
+
+/usr/lib/libabsl_examine_stack.so.2505.0.0:
+
+/usr/lib/libabsl_demangle_rust.so.2505.0.0:
+
+/usr/lib/libabsl_demangle_internal.so.2505.0.0:
+
+/usr/lib/libabsl_decode_rust_punycode.so.2505.0.0:
+
+/usr/lib/libabsl_crc_cpu_detect.so.2505.0.0:
+
+/usr/lib/libabsl_cordz_info.so.2505.0.0:
+
+/usr/lib/libabsl_cordz_handle.so.2505.0.0:
+
+/usr/lib/libabsl_cordz_functions.so.2505.0.0:
+
+/usr/lib/libabsl_cord_internal.so.2505.0.0:
+
+/usr/lib/libabsl_cord.so.2505.0.0:
+
+/usr/lib/libabsl_civil_time.so.2505.0.0:
+
+/usr/lib/libabsl_base.so.2505.0.0:
+
+/usr/lib/libXrender.so.1:
+
+/usr/lib/libXrandr.so.2:
+
+/usr/lib/libXfixes.so.3:
+
+/usr/lib/libXcomposite.so.1:
 
 /usr/lib/libXau.so.6:
 
-/usr/lib/libX11.so.6:
+/usr/lib/libSvtAv1Enc.so.3:
 
-/usr/lib/libQt6Widgets.so.6.9.1:
+/usr/lib/libQt6QuickWidgets.so.6:
 
-/usr/lib/libQt6Sql.so.6.9.1:
+/usr/lib/libQt6QmlWorkerScript.so.6.9.1:
+
+/usr/lib/libXdmcp.so.6:
+
+/usr/lib/libQt6Positioning.so.6.9.1:
+
+/usr/lib/libQt6OpenGLWidgets.so.6.9.1:
 
 /usr/lib/libQt6Gui.so.6.9.1:
 
+/usr/lib/libQt6DBus.so.6:
+
+/usr/lib/libQt6Charts.so.6.9.1:
+
 /usr/lib/libOpenGL.so:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp.o:
+/usr/lib/libOpenCL.so.1:
 
-/usr/lib/ld-linux-x86-64.so.2:
+/usr/lib/libGLdispatch.so.0:
+
+/usr/lib/libevent-2.1.so.7:
+
+/usr/lib/libGLX.so:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
 
 /usr/lib/libstdc++.so:
 
-/usr/lib/libm.so:
+/usr/lib/libgcc_s.so.1:
+
+/usr/lib/libgcc_s.so:
+
+/usr/lib/crtn.o:
+
+/usr/lib/crti.o:
 
 /usr/lib/Scrt1.o:
 
-/usr/include/qt6/QtCore/q23type_traits.h:
-
 MeuCentavoApp_autogen/XBHMEMWWJC/moc_PasswordFormHelper.cpp:
+
+MeuCentavoApp_autogen/VE35X4DZIU/moc_dialogAddEditOperacao.cpp:
 
 MeuCentavoApp_autogen/VE35X4DZIU/moc_dialogAddDividendo.cpp:
 
-MeuCentavoApp_autogen/V5IIWBEYZM/moc_LancamentoDAO.cpp:
+MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
 
-MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageRelatorios.cpp:
-
-MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageMetas.cpp:
+MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageLancamentos.cpp:
 
 MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageInvestimentos.cpp:
 
-MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageHome.cpp:
+MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageConfig.cpp:
 
-MeuCentavoApp_autogen/OVWQHZ74WH/moc_formInicio.cpp:
+MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
 
-MeuCentavoApp_autogen/JGBQRWFFYH/moc_formAdicionarLancamento.cpp:
+MeuCentavoApp_autogen/JUEWMI7LB7/moc_formMainDashboard.cpp:
+
+MeuCentavoApp_autogen/JGBQRWFFYH/moc_dialogImportarExtrato.cpp:
+
+MeuCentavoApp_autogen/IMH5DCT4WY/moc_formUsuario.cpp:
+
+MeuCentavoApp_autogen/IMH5DCT4WY/moc_formCadastro.cpp:
 
 MeuCentavoApp_autogen/IMH5DCT4WY/moc_formBoasVindas.cpp:
 
-MeuCentavoApp_autogen/73MS7PNRZQ/moc_dialogSimuladorAposentadoria.cpp:
+MeuCentavoApp_autogen/FML5FN576F/moc_dialogAddEditMeta.cpp:
 
-MeuCentavoApp_autogen/73MS7PNRZQ/moc_dialogCalculadoraIR.cpp:
+MeuCentavoApp_autogen/7ZANJCWOHC/moc_dialogSimularPlano.cpp:
 
-MeuCentavoApp_autogen/2EK4JB7KXY/moc_formGerenciarCategorias.cpp:
+MeuCentavoApp_autogen/73MS7PNRZQ/moc_dialogSimuladorCambio.cpp:
+
+MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogGerenciarPerfis.cpp:
+
+MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogAddEditConta.cpp:
 
 MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogAddEditCategoria.cpp:
+
+MeuCentavoApp_autogen/mocs_compilation.cpp:
 
 MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp:
 
 /usr/include/qt6/QtCore/QSettings:
 
-MeuCentavoApp_autogen/include/ui_formInicio.h:
-
 MeuCentavoApp_autogen/include/ui_formLoginSenha.h:
 
-/usr/include/qt6/QtWidgets/QLayoutItem:
+MeuCentavoApp_autogen/include/ui_formExcluirUsuario.h:
 
-/usr/include/qt6/QtWidgets/QStatusBar:
+/usr/include/qt6/QtWidgets/QMenuBar:
+
+MeuCentavoApp_autogen/include/ui_dialogSimuladorCambio.h:
 
 MeuCentavoApp_autogen/include/ui_dialogSimuladorAposentadoria.h:
 
+/usr/include/qt6/QtWidgets/QSpinBox:
+
+MeuCentavoApp_autogen/include/ui_dialogCalculadoraIR.h:
+
+MeuCentavoApp_autogen/include/ui_dialogAddEditMeta.h:
+
+MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
+
 MeuCentavoApp_autogen/include/ui_dialogImportarExtrato.h:
 
+MeuCentavoApp_autogen/include/ui_dialogAddDividendo.h:
+
 MeuCentavoApp_autogen/include/ui_formGerenciarContas.h:
+
+MeuCentavoApp_autogen/LTMKJI32CL/moc_SessionManager.cpp:
+
+/usr/include/qt6/QtWidgets/QInputDialog:
+
+MeuCentavoApp_autogen/include/ui_formGerenciarCategorias.h:
 
 /usr/include/qt6/QtWidgets/QListWidget:
 
@@ -22661,31 +24358,73 @@ MeuCentavoApp_autogen/include/ui_dialogGerenciarPerfis.h:
 
 /usr/include/qt6/QtWidgets/QFormLayout:
 
-/usr/include/qt6/QtWidgets/QAbstractButton:
+/usr/include/qt6/QtWidgets/QDoubleSpinBox:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.o:
+
+MeuCentavoApp_autogen/include/ui_dialogAddEditConta.h:
+
+/usr/include/qt6/QtWebEngineWidgets/QWebEngineView:
+
+/usr/include/qt6/QtWebEngineCore/qwebenginequotarequest.h:
+
+/usr/include/qt6/QtWebEngineCore/qwebenginepermission.h:
+
+/usr/include/qt6/QtWebEngineCore/qwebengineclientcertificateselection.h:
+
+/usr/lib/libidn2.so.0:
+
+/usr/include/qt6/QtWebEngineCore/qtwebenginecore-config.h:
+
+/usr/include/qt6/QtQmlIntegration/qqmlintegration.h:
+
+/usr/include/qt6/QtQml/qtqmlexports.h:
+
+/usr/include/qt6/QtQml/qjsvalue.h:
+
+/usr/include/qt6/QtGui/QPageLayout:
+
+/usr/include/qt6/QtCore/QWeakPointer:
+
+MeuCentavoApp_autogen/include/ui_dialogAddEditConexao.h:
+
+MeuCentavoApp_autogen/include/ui_dialogAddEditCategoria.h:
+
+/usr/include/qt6/QtWidgets/QGraphicsLayout:
 
 /usr/include/qt6/QtWidgets/QFileDialog:
 
 /usr/include/qt6/QtGui/QDesktopServices:
 
+/usr/include/qt6/QtCore/QTimer:
+
+MeuCentavoApp_autogen/include/ui_pageRelatorios.h:
+
+MeuCentavoApp_autogen/include/ui_pageMetas.h:
+
+/usr/include/qt6/QtGui/QIcon:
+
+/usr/include/qt6/QtCore/QRegularExpression:
+
 MeuCentavoApp_autogen/include/ui_pageLancamentos.h:
 
-MeuCentavoApp_autogen/include/ui_pageInvestimentos.h:
+/usr/include/qt6/QtWidgets/QTabWidget:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xtestintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xsavesintrin.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xsaveintrin.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xsaveoptintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xsavecintrin.h:
+
+/usr/lib/libp11-kit.so.0:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xmmintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/x86gprintrin.h:
 
-/usr/lib/libnghttp2.so.14:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/wmmintrin.h:
-
-/usr/lib/libpng16.so.16:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/wbnoinvdintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/waitpkgintrin.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/vpclmulqdqintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/vaesintrin.h:
 
@@ -22695,21 +24434,27 @@ MeuCentavoApp_autogen/include/ui_pageInvestimentos.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/tsxldtrkintrin.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/tmmintrin.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/smmintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/sm4intrin.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/sm3intrin.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/sha512intrin.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/sgxintrin.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/rtmintrin.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/serializeintrin.h:
+MeuCentavoApp_autogen/OVWQHZ74WH/moc_formInicio.cpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/rdseedintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/raointintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/prfchwintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/pmmintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mwaitxintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/movrsintrin.h:
 
@@ -22717,19 +24462,39 @@ MeuCentavoApp_autogen/include/ui_pageInvestimentos.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mm_malloc.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/lzcntintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/serializeintrin.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/keylockerintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/ia32intrin.h:
+
+/usr/lib/libabsl_crc_internal.so.2505.0.0:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/hresetintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/gfniintrin.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/fmaintrin.h:
+/usr/lib/libdrm.so.2:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/fxsrintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/f16cintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/enqcmdintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/emmintrin.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/cmpccxaddintrin.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/clzerointrin.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/cldemoteintrin.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/clwbintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/cetintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/bmiintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/bmi2intrin.h:
 
@@ -22737,2257 +24502,1823 @@ MeuCentavoApp_autogen/include/ui_pageInvestimentos.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avxneconvertintrin.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avxintrin.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avxifmaintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vpopcntdqvlintrin.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vlintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vbmivlintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vbmiintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vbmi2vlintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512ifmavlintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512fintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512dqintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512cdintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512bwintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512bitalgvlintrin.h:
-
-/usr/lib/libssh2.so.1:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512bitalgintrin.h:
-
-CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512bf16vlintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512bf16intrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2minmaxintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2-512minmaxintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxtransposeintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxtileintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxfp8intrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxfp16intrin.h:
-
-/usr/include/qt6/QtWidgets/qundoview.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/pconfigintrin.h:
-
-/usr/include/qt6/QtWidgets/qtooltip.h:
-
-/usr/include/qt6/QtWidgets/qtoolbox.h:
-
-/usr/include/qt6/QtWidgets/qtoolbar.h:
-
-/usr/lib/libGLX.so:
-
-/usr/include/qt6/QtWidgets/qstylepainter.h:
-
-/usr/lib/libfontconfig.so.1:
-
-/usr/include/qt6/QtWidgets/qstylefactory.h:
-
-/usr/include/qt6/QtWidgets/qstatusbar.h:
-
-/usr/include/qt6/QtWidgets/qstackedwidget.h:
-
-/usr/include/qt6/QtWidgets/qstackedlayout.h:
-
-/usr/include/qt6/QtWidgets/qsplitter.h:
-
-/usr/include/qt6/QtWidgets/qsplashscreen.h:
-
-/usr/include/qt6/QtWidgets/qsizegrip.h:
-
-/usr/include/qt6/QtWidgets/qscroller.h:
-
-/usr/include/qt6/QtWidgets/qscrollbar.h:
-
-/usr/include/qt6/QtWidgets/qrhiwidget.h:
-
-/usr/include/qt6/QtWidgets/qprogressdialog.h:
-
-/usr/include/qt6/QtWidgets/qplaintextedit.h:
-
-/usr/include/qt6/QtWidgets/qmenubar.h:
-
-/usr/include/qt6/QtWidgets/qmenu.h:
-
-/usr/include/qt6/QtWidgets/QMenuBar:
-
-/usr/include/qt6/QtWidgets/qmdiarea.h:
-
-/usr/include/qt6/QtWidgets/qlcdnumber.h:
-
-/usr/include/qt6/QtWidgets/qkeysequenceedit.h:
-
-/usr/include/qt6/QtWidgets/qscrollerproperties.h:
-
-/usr/include/qt6/QtWidgets/qitemdelegate.h:
-
-/usr/include/qt6/QtWidgets/qinputdialog.h:
-
-/usr/include/qt6/QtWidgets/qgroupbox.h:
-
-/usr/include/qt6/QtWidgets/qgraphicstransform.h:
-
-/usr/include/qt6/QtWidgets/qgraphicssceneevent.h:
-
-/usr/include/qt6/QtWidgets/qgraphicslinearlayout.h:
-
-/usr/include/qt6/QtWidgets/qgraphicsanchorlayout.h:
-
-/usr/include/qt6/QtWidgets/qgesturerecognizer.h:
-
-/usr/include/qt6/QtWidgets/qfontdialog.h:
-
-/usr/include/qt6/QtWidgets/qfontcombobox.h:
-
-/usr/include/qt6/QtWidgets/qfocusframe.h:
-
-/usr/include/qt6/QtWidgets/qfiledialog.h:
-
-/usr/include/qt6/QtWidgets/qerrormessage.h:
-
-/usr/include/qt6/QtWidgets/qdrawutil.h:
-
-/usr/include/qt6/QtWidgets/qdockwidget.h:
-
-/usr/include/qt6/QtWidgets/qdialogbuttonbox.h:
-
-/usr/include/qt6/QtWidgets/qdatetimeedit.h:
-
-/usr/include/qt6/QtWidgets/qcommandlinkbutton.h:
-
-/usr/include/qt6/QtWidgets/qcombobox.h:
-
-/usr/include/qt6/QtWidgets/qcolumnview.h:
-
-/usr/include/qt6/QtWidgets/qcolordialog.h:
-
-MeuCentavoApp_autogen/mocs_compilation.cpp:
-
-/usr/include/qt6/QtWidgets/qcheckbox.h:
-
-/usr/include/qt6/QtWidgets/qcalendarwidget.h:
-
-/usr/include/qt6/QtWidgets/qfileiconprovider.h:
-
-/usr/include/qt6/QtWidgets/qbuttongroup.h:
-
-/usr/include/qt6/QtWidgets/QtWidgetsDepends:
-
-/usr/include/qt6/QtWidgets/QScrollerProperties:
-
-/usr/include/qt6/QtWidgets/QMessageBox:
-
-/usr/include/qt6/QtWidgets/QDialogButtonBox:
-
-/usr/include/qt6/QtWidgets/QLayout:
-
-/usr/include/qt6/QtWidgets/QGroupBox:
-
-/usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h:
-
-/usr/include/qt6/QtOpenGLWidgets/QtOpenGLWidgetsDepends:
-
-/usr/include/qt6/QtOpenGLWidgets/QtOpenGLWidgets:
-
-/usr/include/qt6/QtOpenGL/qtopenglglobal.h:
-
-/usr/include/qt6/QtOpenGL/qopenglwindow.h:
-
-/usr/include/qt6/QtOpenGL/qopenglversionfunctions.h:
-
-/usr/include/qt6/QtOpenGL/qopenglpaintdevice.h:
-
-/usr/include/qt6/QtOpenGL/qopenglframebufferobject.h:
-
-/usr/include/qt6/QtOpenGL/qopenglbuffer.h:
-
-/usr/include/qt6/QtOpenGL/QtOpenGLDepends:
-
-/usr/include/qt6/QtWidgets/qdatawidgetmapper.h:
-
-/usr/include/qt6/QtOpenGL/QtOpenGL:
-
-/usr/include/qt6/QtGui/qwindow.h:
-
-/usr/include/qt6/QtWidgets/qradiobutton.h:
-
-/usr/include/qt6/QtGui/qvector4d.h:
-
-/usr/include/qt6/QtGui/qundostack.h:
-
-/usr/include/qt6/QtGui/qundogroup.h:
-
-/usr/include/qt6/QtGui/qtguiversion.h:
-
-/usr/include/qt6/QtGui/qtexttable.h:
-
-/usr/include/qt6/QtGui/qtextlayout.h:
-
-/usr/include/qt6/QtGui/qsyntaxhighlighter.h:
-
-/usr/include/qt6/QtGui/qsurface.h:
-
-/usr/include/qt6/QtGui/qstylehints.h:
-
-/usr/include/qt6/QtGui/qstatictext.h:
-
-/usr/include/qt6/QtGui/qstandarditemmodel.h:
-
-/usr/include/qt6/QtGui/qshortcut.h:
-
-/usr/include/qt6/QtGui/qrgbafloat.h:
-
-/usr/include/qt6/QtGui/qquaternion.h:
-
-/usr/include/qt6/QtGui/qpixmapcache.h:
-
-/usr/include/qt6/QtGui/qpdfoutputintent.h:
-
-/usr/include/qt6/QtGui/qpaintengine.h:
-
-/usr/include/qt6/QtGui/qpaintdevicewindow.h:
-
-/usr/lib/libxcb.so.1:
-
-/usr/include/qt6/QtGui/qpageranges.h:
-
-/usr/include/qt6/QtGui/qpainterstateguard.h:
-
-/usr/include/qt6/QtGui/qopenglcontext_platform.h:
-
-/usr/include/qt6/QtGui/qimagereader.h:
-
-/usr/include/qt6/QtGui/qimageiohandler.h:
-
-/usr/include/qt6/QtGui/qiconengine.h:
-
-/usr/include/qt6/QtGui/qgenericmatrix.h:
-
-/usr/include/qt6/QtGui/qfontdatabase.h:
-
-/usr/include/qt6/QtGui/qfilesystemmodel.h:
-
-/usr/include/qt6/QtGui/qdrag.h:
-
-/usr/include/qt6/QtGui/qdesktopservices.h:
-
-/usr/include/qt6/QtGui/qcolortransform.h:
-
-/usr/include/qt6/QtGui/qcolorspace.h:
-
-/usr/include/qt6/QtGui/qbackingstore.h:
-
-/usr/include/qt6/QtGui/qactiongroup.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2convertintrin.h:
-
-/usr/include/qt6/QtGui/qaccessibleplugin.h:
-
-/usr/include/qt6/QtGui/qaccessibleobject.h:
-
-/usr/include/qt6/QtGui/qaccessiblebridge.h:
-
-/usr/include/qt6/QtGui/qaccessible.h:
-
-/usr/include/qt6/QtGui/qabstracttextdocumentlayout.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o:
-
-/usr/include/qt6/QtOpenGL/qopenglshaderprogram.h:
-
-/usr/include/qt6/QtGui/qabstractfileiconprovider.h:
-
-/usr/include/qt6/QtGui/QtGuiDepends:
-
-/usr/lib/libkeyutils.so.1:
-
-/usr/include/qt6/QtGui/QVector3D:
-
-/usr/include/qt6/QtGui/QShortcut:
-
-/usr/include/qt6/QtGui/QPaintDevice:
-
-/usr/include/qt6/QtGui/QOpenGLContext:
-
-/usr/include/qt6/QtGui/qoffscreensurface.h:
-
-/usr/include/qt6/QtGui/QMatrix4x4:
-
-MeuCentavoApp_autogen/include/ui_formExcluirUsuario.h:
-
-/usr/include/qt6/QtGui/QMatrix3x3:
-
-MeuCentavoApp_autogen/JGBQRWFFYH/moc_dialogImportarExtrato.cpp:
-
-/usr/include/qt6/QtGui/QImage:
-
-/usr/include/qt6/QtCore/qxpfunctional.h:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formUsuario.cpp.o:
-
-/usr/include/qt6/QtCore/qxmlstream.h:
-
-/usr/include/qt6/QtCore/qwaitcondition.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx2intrin.h:
-
-/usr/include/qt6/QtCore/qversionnumber.h:
-
-/usr/include/qt6/QtCore/qvariantmap.h:
-
-/usr/include/qt6/QtCore/qvariantlist.h:
-
-/usr/include/qt6/QtCore/qvariantanimation.h:
-
-/usr/lib/libc_nonshared.a:
-
-/usr/include/qt6/QtWidgets/qgraphicsproxywidget.h:
-
-/usr/include/qt6/QtCore/qtyperevision.h:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vp2intersectintrin.h:
 
-/usr/include/qt6/QtCore/qtsymbolmacros.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellTargets.cmake:
 
-/usr/include/qt6/QtCore/qtsan_impl.h:
+/usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qtransposeproxymodel.h:
+/usr/lib/libasound.so.2:
 
-/usr/include/qt6/QtCore/qtmocconstants.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qtimeline.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginTargets.cmake:
 
-/usr/include/qt6/QtCore/qthreadpool.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlConfig.cmake:
 
-/usr/include/qt6/QtCore/qtextboundaryfinder.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtCore/qtcoreversion.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargets.cmake:
 
-/usr/include/qt6/QtCore/qsystemsemaphore.h:
-
-/usr/include/qt6/QtCore/qstorageinfo.h:
-
-/usr/include/qt6/QtCore/qstaticlatin1stringmatcher.h:
-
-/usr/include/qt6/QtCore/qsortfilterproxymodel.h:
-
-/usr/include/qt6/QtCore/qsimd.h:
-
-/usr/include/qt6/QtCore/qsequentialiterable.h:
-
-/usr/include/qt6/QtCore/qsequentialanimationgroup.h:
-
-/usr/include/qt6/QtCore/qsavefile.h:
-
-/usr/include/qt6/QtCore/qrunnable.h:
-
-/usr/include/qt6/QtCore/qresultstore.h:
-
-/usr/include/qt6/QtWidgets/qgraphicsgridlayout.h:
-
-/usr/include/qt6/QtCore/qresource.h:
-
-/usr/include/qt6/QtCore/qreadwritelock.h:
-
-/usr/include/qt6/QtCore/qpropertyprivate.h:
-
-/usr/include/qt6/QtCore/qproperty.h:
-
-/usr/include/qt6/QtCore/qprocess.h:
-
-/usr/include/qt6/QtCore/qplugin.h:
-
-/usr/include/qt6/QtCore/qpermissions.h:
-
-/usr/include/qt6/QtCore/qparallelanimationgroup.h:
-
-/usr/include/qt6/QtCore/qoperatingsystemversion.h:
-
-/usr/include/qt6/QtCore/qobjectcleanuphandler.h:
-
-/usr/include/qt6/QtCore/qmimetype.h:
-
-/usr/include/qt6/QtCore/qmimedatabase.h:
-
-/usr/include/qt6/QtCore/qmimedata.h:
-
-/usr/include/qt6/QtCore/qmetaobject.h:
-
-MeuCentavoApp_autogen/FML5FN576F/moc_dialogAddEditMeta.cpp:
-
-/usr/include/qt6/QtCore/qmessageauthenticationcode.h:
-
-/usr/include/qt6/QtCore/qpluginloader.h:
-
-/usr/include/qt6/QtCore/qloggingcategory.h:
-
-/usr/include/qt6/QtCore/qlibrary.h:
-
-/usr/include/qt6/QtCore/qidentityproxymodel.h:
-
-/usr/include/qt6/QtCore/qfactoryinterface.h:
-
-/usr/include/qt6/QtCore/qeasingcurve.h:
-
-/usr/include/qt6/QtCore/qdirlisting.h:
-
-/usr/include/qt6/QtCore/qdiriterator.h:
-
-/usr/include/qt6/QtCore/qdir.h:
-
-/usr/include/qt6/QtCore/qcommandlineparser.h:
-
-/usr/include/qt6/QtWidgets/qshortcut.h:
-
-/usr/include/qt6/QtCore/qcommandlineoption.h:
-
-/usr/include/qt6/QtCore/qcollator.h:
-
-/usr/include/qt6/QtCore/qchronotimer.h:
-
-/usr/include/qt6/QtCore/qcborstreamreader.h:
-
-MeuCentavoApp_autogen/IMH5DCT4WY/moc_formUsuario.cpp:
-
-/usr/include/qt6/QtCore/qcborstream.h:
-
-/usr/include/qt6/QtWidgets/qtreewidgetitemiterator.h:
-
-/usr/include/qt6/QtCore/qcache.h:
-
-/usr/include/qt6/QtGui/qtextobject.h:
-
-/usr/include/qt6/QtCore/qbytearraymatcher.h:
-
-/usr/include/qt6/QtGui/qmovie.h:
-
-/usr/include/qt6/QtCore/qbitarray.h:
-
-/usr/include/qt6/QtCore/qatomicscopedvaluerollback.h:
-
-/usr/include/qt6/QtCore/qapplicationstatic.h:
-
-/usr/include/qt6/QtCore/qanimationgroup.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/ia32intrin.h:
-
-/usr/include/qt6/QtCore/qabstractnativeeventfilter.h:
-
-/usr/include/qt6/QtCore/qabstractanimation.h:
-
-/usr/lib/libsystemd.so.0:
-
-/usr/include/qt6/QtCore/q23functional.h:
-
-/usr/include/qt6/QtCore/q20vector.h:
-
-/usr/include/qt6/QtCore/q20map.h:
-
-/usr/include/qt6/QtCore/q20chrono.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/fxsrintrin.h:
-
-/usr/include/qt6/QtCore/q20algorithm.h:
-
-/usr/include/qt6/QtCore/QtCoreDepends:
-
-/usr/include/qt6/QtCore/QtCore:
-
-/usr/include/qt6/QtCore/qfilesystemwatcher.h:
-
-/usr/include/qt6/QtCore/QStringList:
-
-/usr/include/qt6/QtCharts/qxyseries.h:
-
-/usr/include/qt6/QtCharts/qvxymodelmapper.h:
-
-/usr/include/qt6/QtCharts/qvpiemodelmapper.h:
-
-/usr/include/qt6/QtCharts/qvboxplotmodelmapper.h:
-
-/usr/include/qt6/QtCharts/qvbarmodelmapper.h:
-
-/usr/lib/libbrotlicommon.so.1:
-
-/usr/include/qt6/QtCharts/qstackedbarseries.h:
-
-/usr/include/qt6/QtCharts/qscatterseries.h:
-
-/usr/lib/libcap.so.2:
-
-/usr/include/qt6/QtCharts/qpolarchart.h:
-
-/usr/include/qt6/QtCharts/qpiemodelmapper.h:
-
-/usr/include/qt6/QtCharts/qpercentbarseries.h:
-
-/usr/include/qt6/QtCharts/qlogvalueaxis.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mwaitintrin.h:
-
-/usr/include/qt6/QtCharts/qlineseries.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/rtmintrin.h:
-
-/usr/include/qt6/QtCharts/qvalueaxis.h:
-
-/usr/include/qt6/QtCharts/qlegendmarker.h:
-
-/usr/include/qt6/QtCharts/qhxymodelmapper.h:
-
-/usr/include/qt6/QtCharts/qhpiemodelmapper.h:
-
-/usr/include/qt6/QtCharts/qhorizontalpercentbarseries.h:
-
-/usr/include/qt6/QtCharts/qhcandlestickmodelmapper.h:
-
-/usr/include/qt6/QtCharts/qhboxplotmodelmapper.h:
-
-/usr/include/qt6/QtCharts/qhbarmodelmapper.h:
-
-/usr/include/qt6/QtCharts/qdatetimeaxis.h:
-
-/usr/include/qt6/QtCharts/qcategoryaxis.h:
-
-/usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsversion.h:
-
-/usr/include/qt6/QtCharts/qcandlestickseries.h:
-
-/usr/include/qt6/QtCharts/qcandlesticklegendmarker.h:
-
-/usr/lib/libQt6Core.so.6.9.1:
-
-/usr/include/qt6/QtCharts/qboxset.h:
-
-/usr/include/qt6/QtCharts/qboxplotseries.h:
-
-/usr/include/qt6/QtCharts/qboxplotmodelmapper.h:
-
-/usr/include/qt6/QtCharts/qxylegendmarker.h:
-
-/usr/include/qt6/QtCharts/qbarset.h:
-
-MeuCentavoApp_autogen/include/ui_dialogSimuladorFinanciamento.h:
-
-/usr/include/qt6/QtCharts/qbarmodelmapper.h:
-
-/usr/include/qt6/QtCharts/qbarlegendmarker.h:
-
-/usr/include/qt6/QtCharts/qbarcategoryaxis.h:
-
-/usr/include/qt6/QtCharts/qarealegendmarker.h:
-
-/usr/include/qt6/QtWidgets/qlistwidget.h:
-
-/usr/include/qt6/QtCharts/QtChartsDepends:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/bmiintrin.h:
-
-/usr/include/qt6/QtCharts/QtCharts:
-
-/usr/include/qt6/QtCharts/QXYSeries:
-
-/usr/include/qt6/QtCharts/QPieModelMapper:
-
-/usr/include/qt6/QtCharts/QLegendMarker:
-
-/usr/lib/libQt6OpenGL.so.6.9.1:
-
-MeuCentavoApp_autogen/include/ui_dialogAddEditAtivo.h:
-
-/usr/include/qt6/QtCharts/QCandlestickSeries:
-
-/usr/include/qt6/QtCharts/QBoxSet:
-
-/usr/include/qt6/QtCharts/QBoxPlotSeries:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxtf32intrin.h:
-
-/usr/include/qt6/QtCharts/QBoxPlotModelMapper:
-
-/usr/include/qt6/QtCharts/QBarModelMapper:
-
-/usr/include/inttypes.h:
-
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/opt_random.h:
-
-/usr/include/c++/15.1.1/experimental/source_location:
-
-/usr/include/c++/15.1.1/bits/std_thread.h:
-
-/usr/include/c++/15.1.1/bits/std_mutex.h:
-
-/usr/include/qt6/QtWidgets/qaction.h:
-
-/usr/include/GL/gl.h:
-
-/usr/include/qt6/QtWidgets/qtablewidget.h:
-
-/usr/include/qt6/QtWidgets/qtableview.h:
-
-/usr/include/qt6/QtWidgets/qtabbar.h:
-
-/usr/include/qt6/QtOpenGL/qopenglvertexarrayobject.h:
-
-/usr/include/qt6/QtWidgets/qstyleoption.h:
-
-/usr/include/qt6/QtWidgets/qstyle.h:
-
-MeuCentavoApp_autogen/include/ui_pageRelatorios.h:
-
-/usr/include/qt6/QtCore/qfutureinterface.h:
-
-/usr/include/qt6/QtWidgets/qslider.h:
-
-/usr/include/qt6/QtCore/qpromise.h:
-
-/usr/include/qt6/QtWidgets/qprogressbar.h:
-
-/usr/include/qt6/QtWidgets/qlabel.h:
-
-/usr/include/qt6/QtWidgets/qabstractitemview.h:
-
-/usr/include/qt6/QtWidgets/QProgressBar:
-
-/usr/include/qt6/QtWidgets/QHeaderView:
-
-/usr/include/qt6/QtWidgets/QFrame:
-
-MeuCentavoApp_autogen/include/ui_pageMetas.h:
-
-/usr/include/qt6/QtGui/qvalidator.h:
-
-/usr/include/qt6/QtCore/qcbormap.h:
-
-/usr/include/qt6/QtGui/qpicture.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/clflushoptintrin.h:
-
-/usr/include/qt6/QtCore/qitemselectionmodel.h:
-
-/usr/include/qt6/QtCore/QLocale:
-
-MeuCentavoApp_autogen/include/ui_dialogSimuladorCambio.h:
-
-MeuCentavoApp_autogen/include/ui_pageDividas.h:
-
-/usr/include/qt6/QtWidgets/qlayoutitem.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/enqcmdintrin.h:
-
-/usr/include/qt6/QtWidgets/qlayout.h:
-
-/usr/include/qt6/QtWidgets/qboxlayout.h:
-
-/usr/include/qt6/QtWidgets/QSpacerItem:
-
-/usr/include/qt6/QtWidgets/QHBoxLayout:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2-512mediaintrin.h:
-
-MeuCentavoApp_autogen/include/ui_pageConfig.h:
-
-MeuCentavoApp_autogen/include/ui_formBoasVindas.h:
-
-/usr/include/wctype.h:
-
-/usr/include/qt6/QtNetwork/qtnetworkglobal.h:
-
-/usr/include/qt6/QtGui/qimagewriter.h:
-
-/usr/include/qt6/QtNetwork/qsslerror.h:
-
-/usr/include/qt6/QtNetwork/qsslconfiguration.h:
-
-/usr/include/qt6/QtNetwork/qsslcertificate.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
-
-/usr/include/qt6/QtGui/qmatrix4x4.h:
-
-/usr/include/qt6/QtNetwork/qnetworkrequest.h:
-
-/usr/include/qt6/QtNetwork/qnetworkaccessmanager.h:
-
-/usr/include/qt6/QtWidgets/qtextbrowser.h:
-
-/usr/include/qt6/QtNetwork/qhttpheaders.h:
-
-/usr/include/qt6/QtNetwork/qhostaddress.h:
-
-/usr/include/qt6/QtNetwork/qabstractsocket.h:
-
-/usr/include/qt6/QtNetwork/QSslConfiguration:
-
-/usr/lib/libkrb5.so.3:
-
-/usr/include/qt6/QtGui/qpagesize.h:
-
-/usr/include/qt6/QtNetwork/QHttpMultiPart:
-
-/usr/lib/libgcc_s.so.1:
-
-/usr/include/qt6/QtCore/quuid.h:
-
-/usr/include/qt6/QtCore/qurlquery.h:
-
-/usr/include/qt6/QtCore/qtimezone.h:
-
-/usr/include/qt6/QtCore/qabstractitemmodel.h:
-
-/usr/include/qt6/QtCore/qjsonparseerror.h:
-
-/usr/include/qt6/QtCore/qjsonobject.h:
-
-CMakeFiles/MeuCentavoApp.dir/main.cpp.o:
-
-/usr/include/qt6/QtCore/qfileinfo.h:
-
-/usr/include/qt6/QtGui/QFileSystemModel:
-
-/usr/include/qt6/QtCore/qfiledevice.h:
-
-/usr/include/qt6/QtCore/qfile.h:
-
-/usr/include/qt6/QtGui/QIcon:
-
-/usr/include/qt6/QtWidgets/QCommonStyle:
-
-/usr/include/qt6/QtCore/QUrlQuery:
-
-/usr/include/qt6/QtCore/qregularexpression.h:
-
-/usr/include/qt6/QtCore/QUrl:
-
-/usr/include/qt6/QtCore/QJsonObject:
-
-/usr/include/qt6/QtWidgets/QTabWidget:
-
-/usr/include/qt6/QtCore/qcborcommon.h:
-
-/usr/include/qt6/QtCore/QJsonDocument:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/formMainDashboard.cpp.o:
-
-/usr/include/qt6/QtCore/QFileInfo:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginTargets.cmake:
 
 /usr/include/qt6/QtCore/QFile:
 
-/usr/include/qt6/QtCore/QDebug:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginTargets-relwithdebinfo.cmake:
 
-/usr/include/libintl.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderpluginTargets.cmake:
 
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/time_members.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets.cmake:
 
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginConfig.cmake:
 
-/usr/include/c++/15.1.1/sstream:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qlockfile.h:
+/usr/include/qt6/QtWebEngineCore/qwebenginepage.h:
 
-/usr/include/c++/15.1.1/ostream:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsPlatformpluginTargets-relwithdebinfo.cmake:
 
-/usr/include/c++/15.1.1/locale:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/waitpkgintrin.h:
 
-/usr/include/c++/15.1.1/cwctype:
+/usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateVersionlessAliasTargets.cmake:
 
-/usr/include/c++/15.1.1/codecvt:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qtranslator.h:
+/usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateConfigVersion.cmake:
 
-/usr/include/qt6/QtCore/qtemporarydir.h:
+/usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateConfig.cmake:
 
-/usr/include/c++/15.1.1/bits/sstream.tcc:
+/usr/include/qt6/QtWidgets/qapplication.h:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp.o:
+/usr/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/c++/15.1.1/bits/ostream.tcc:
+/usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateVersionlessAliasTargets.cmake:
 
-/usr/include/c++/15.1.1/bits/ostream.h:
+/usr/lib/cmake/Qt6Qml/Qt6QmlFindQmlscInternal.cmake:
 
-/usr/include/c++/15.1.1/bits/locale_facets_nonio.tcc:
+/usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersion.cmake:
 
-/usr/include/c++/15.1.1/bits/locale_facets_nonio.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.ui:
 
-/usr/lib/libduktape.so.207:
+/usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfig.cmake:
 
-/usr/include/qt6/QtGui/qvector3d.h:
+/usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtWidgets/qabstractitemdelegate.h:
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginTargets.cmake:
 
-/usr/include/c++/15.1.1/bits/locale_facets.tcc:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginAdditionalTargetInfo.cmake:
 
-/usr/include/c++/15.1.1/bits/locale_facets.h:
+/usr/include/qt6/QtGui/qimagereader.h:
 
-/usr/include/c++/15.1.1/bits/locale_conv.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginTargets-relwithdebinfo.cmake:
 
-/usr/include/c++/15.1.1/bits/istream.tcc:
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginTargets.cmake:
 
-/usr/include/qt6/QtCore/qsharedmemory.h:
+/usr/include/bits/mathcalls-narrow.h:
 
-/usr/include/c++/15.1.1/bits/fs_path.h:
+/usr/include/qt6/QtCore/q23type_traits.h:
 
-/usr/include/c++/15.1.1/bits/fs_fwd.h:
+/usr/include/qt6/QtCharts/QLegendMarker:
 
-/usr/include/c++/15.1.1/bits/basic_ios.tcc:
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginConfig.cmake:
 
-/usr/include/c++/15.1.1/bits/basic_ios.h:
+MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageMetas.cpp:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets-relwithdebinfo.cmake:
 
-/usr/include/sys/single_threaded.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginConfig.cmake:
 
-/usr/include/qt6/QtWidgets/qpushbutton.h:
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/QRegularExpression:
+/usr/lib/cmake/Qt6Positioning/Qt6PositioningConfigVersionImpl.cmake:
 
-/usr/include/qt6/QtCore/qtypes.h:
+/usr/include/qt6/QtWidgets/qmenu.h:
 
-/usr/include/qt6/QtCore/qtversion.h:
+/usr/lib/cmake/Qt6Positioning/Qt6PositioningConfigVersion.cmake:
 
-/usr/include/bits/libc-header-start.h:
+/usr/include/qt6/QtGui/QCloseEvent:
 
-/usr/include/qt6/QtCore/qtmetamacros.h:
+/usr/include/qt6/QtWidgets/qstackedlayout.h:
 
-/usr/include/qt6/QtWidgets/qgridlayout.h:
+/usr/include/qt6/QtWidgets/qtoolbutton.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageMetas.ui:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtWidgets/QtWidgets:
+/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateConfigVersion.cmake:
 
-/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:
+/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateVersionlessAliasTargets.cmake:
 
-/usr/include/qt6/QtCore/qtdeprecationmarkers.h:
+/usr/lib/cmake/Qt6/QtPublicToolHelpers.cmake:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2mediaintrin.h:
+/usr/include/c++/15.1.1/filesystem:
 
-/usr/include/locale.h:
+/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfigVersionImpl.cmake:
 
-/usr/include/qt6/QtCore/qtmochelpers.h:
+/usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateDependencies.cmake:
 
-/usr/include/c++/15.1.1/bits/random.tcc:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtWidgets/qgraphicswidget.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtWidgets/qabstractspinbox.h:
+/usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsVersionlessAliasTargets.cmake:
 
-/usr/include/qt6/QtCore/qtcoreglobal.h:
+/usr/include/qt6/QtGui/qtextdocumentwriter.h:
 
-/usr/include/qt6/QtCore/qtconfigmacros.h:
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake:
 
-MeuCentavoApp_autogen/include/ui_dialogAddEditOperacao.h:
+/usr/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake:
 
-/usr/include/qt6/QtOpenGLWidgets/qopenglwidget.h:
+/usr/include/c++/15.1.1/bits/cxxabi_init_exception.h:
 
-/usr/include/gnu/stubs.h:
+/usr/include/qt6/QtWebEngineCore/qwebengineframe.h:
 
-/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake:
+/usr/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qtclasshelpermacros.h:
+/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfigVersion.cmake:
 
-/usr/include/qt6/QtCore/qsysinfo.h:
+/usr/include/qt6/QtCharts/qxymodelmapper.h:
 
-/usr/include/qt6/QtCore/qlatin1stringmatcher.h:
+/usr/lib/cmake/Qt6Charts/Qt6ChartsTargets-relwithdebinfo.cmake:
 
-/usr/include/c++/15.1.1/ext/type_traits.h:
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLDependencies.cmake:
 
-/usr/include/qt6/QtCharts/QAbstractBarSeries:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.h:
 
-/usr/include/qt6/QtCore/qstringtokenizer.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginConfig.cmake:
 
-/usr/include/qt6/QtCore/qstringlist.h:
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vlbwintrin.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginTargets.cmake:
 
-/usr/include/qt6/QtCore/qstringfwd.h:
+/usr/include/qt6/QtCore/qsemaphore.h:
 
-/usr/include/qt6/QtCore/qstring.h:
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginTargets-relwithdebinfo.cmake:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/f16cintrin.h:
+/usr/include/bits/endianness.h:
 
-/usr/include/qt6/QtCore/qspan.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qshareddata.h:
+/usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtCore/qset.h:
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake:
 
-/usr/include/c++/15.1.1/system_error:
+/usr/include/qt6/QtWidgets/qtabwidget.h:
 
-/usr/include/qt6/QtCore/qscopeguard.h:
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake:
 
-/usr/include/stdlib.h:
+/usr/include/bits/types/__mbstate_t.h:
 
-/usr/include/qt6/QtGui/qiconengineplugin.h:
+/usr/include/c++/15.1.1/tr1/beta_function.tcc:
 
-/usr/include/qt6/QtCore/qobjectdefs.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qglobalstatic.h:
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/limits.h:
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qobject.h:
+/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets.cmake:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2-512satcvtintrin.h:
+/usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateConfigVersionImpl.cmake:
 
-/usr/include/qt6/QtCore/qmath.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpinyinpluginTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtGui/qoffscreensurface_platform.h:
+/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtGui/qtextformat.h:
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCharts/qpieseries.h:
+/usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateTargets.cmake:
 
-/usr/include/qt6/QtCore/qmap.h:
+/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginConfig.cmake:
 
-/usr/include/qt6/QtWidgets/QDateEdit:
+/usr/include/bits/stdint-least.h:
 
-/usr/include/qt6/QtWidgets/qdial.h:
+/usr/lib/libpgm-5.3.so.0:
 
-/usr/include/qt6/QtWidgets/qcolormap.h:
+/usr/lib/libgssapi_krb5.so.2:
 
-/usr/include/qt6/QtCore/qmalloc.h:
+/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtCore/qlocale.h:
+/usr/include/c++/15.1.1/bits/node_handle.h:
 
-/usr/include/qt6/QtCore/qiodevicebase.h:
+/usr/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake:
 
-/usr/include/qt6/QtGui/qopenglext.h:
+/usr/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake:
 
-/usr/include/c++/15.1.1/ext/numeric_traits.h:
+/usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake:
 
-/usr/include/qt6/QtCore/qhash.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qgenericatomic.h:
+/usr/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qsharedpointer_impl.h:
+/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake:
 
-/usr/include/c++/15.1.1/random:
+/usr/include/c++/15.1.1/streambuf:
 
-/usr/include/qt6/QtCore/qfunctionaltools_impl.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.ui:
 
-/usr/include/qt6/QtGui/qpolygon.h:
+/usr/lib/cmake/Qt6Gui/Qt6QSvgPluginConfig.cmake:
 
-/usr/include/qt6/QtCore/qfloat16.h:
-
-/usr/include/qt6/QtCore/qexceptionhandling.h:
-
-/usr/include/qt6/QtOpenGL/qopengldebug.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCore/qdebug.h:
-
-/usr/include/c++/15.1.1/bits/fs_dir.h:
-
-/usr/include/qt6/QtCore/qdeadlinetimer.h:
-
-/usr/include/qt6/QtCharts/qcandlestickmodelmapper.h:
-
-/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateConfig.cmake:
-
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake:
-
-/usr/include/qt6/QtCore/qtresource.h:
-
-/usr/include/qt6/QtCore/qdarwinhelpers.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargets.cmake:
-
-/usr/include/qt6/QtCore/qcontainertools_impl.h:
-
-/usr/include/time.h:
-
-/usr/include/qt6/QtCore/qcontainerfwd.h:
-
-/usr/include/qt6/QtCore/qcompare.h:
-
-/usr/include/qt6/QtGui/qgenericpluginfactory.h:
-
-/usr/include/qt6/QtCore/qstringview.h:
-
-/usr/include/qt6/QtCore/qcalendar.h:
-
-/usr/lib/libunistring.so.5:
-
-/usr/include/qt6/QtCore/qscopedvaluerollback.h:
-
-/usr/include/qt6/QtCore/qrefcount.h:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake:
-
-/usr/include/qt6/QtCore/qbytearraylist.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2copyintrin.h:
-
-/usr/include/c++/15.1.1/cwchar:
-
-/usr/include/qt6/QtCore/qarraydatapointer.h:
-
-/usr/include/qt6/QtCore/qstack.h:
-
-/usr/include/qt6/QtCore/qflags.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandEglPlatformIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCore/qarraydataops.h:
-
-/usr/include/qt6/QtCore/qarraydata.h:
-
-/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCharts/QPieSeries:
-
-/usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake:
-
-/usr/include/features.h:
-
-/usr/include/qt6/QtCore/qprocessordetection.h:
-
-/usr/include/qt6/QtGui/qrawfont.h:
-
-/usr/include/qt6/QtGui/qpainterpath.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginConfig.cmake:
-
-/usr/include/c++/15.1.1/istream:
-
-/usr/include/qt6/QtCore/QMetaType:
-
-/usr/include/qt6/QtGui/qaccessible_base.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.h:
-
-/usr/include/qt6/QtCore/QList:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCore/qsettings.h:
-
-/usr/include/c++/15.1.1/ios:
-
-/usr/include/qt6/QtCharts/qtchartsexports.h:
-
-/usr/include/qt6/QtGui/QPaintDeviceWindow:
-
-/usr/include/qt6/QtCore/qversiontagging.h:
-
-/usr/include/qt6/QtCore/qforeach.h:
-
-/usr/include/qt6/QtWidgets/qitemeditorfactory.h:
-
-/usr/share/cmake/Modules/FindThreads.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageConfig.cpp:
-
-/usr/include/qt6/QtOpenGL/qopenglpixeltransferoptions.h:
-
-/usr/include/qt6/QtCharts/qabstractseries.h:
-
-/usr/include/qt6/QtCharts/QChartView:
-
-/usr/include/qt6/QtWidgets/QTableWidget:
-
-/usr/include/qt6/QtNetwork/qtcpsocket.h:
-
-/usr/include/qt6/QtCharts/QChartGlobal:
-
-/usr/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCharts/QChart:
-
-/usr/include/qt6/QtCharts/QAbstractSeries:
-
-/usr/include/qt6/QtCore/QPointF:
-
-/usr/include/pthread.h:
-
-/usr/include/linux/types.h:
-
-/usr/include/qt6/QtOpenGL/qopengltimerquery.h:
-
-/usr/include/c++/15.1.1/iomanip:
-
-/usr/include/qt6/QtCore/qtversionchecks.h:
-
-/usr/include/qt6/QtCore/QVector:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formExcluirUsuario.cpp.o:
-
-/usr/include/features-time64.h:
-
-/usr/include/c++/15.1.1/bits/stl_numeric.h:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o:
-
-/usr/include/c++/15.1.1/condition_variable:
-
-/usr/include/qt6/QtWidgets/qgraphicslayoutitem.h:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.o:
-
-/usr/share/cmake/Modules/CMakeGenericSystem.cmake:
-
-/usr/include/qt6/QtWidgets/QInputDialog:
-
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/os_defines.h:
-
-MeuCentavoApp_autogen/include/ui_dialogSimularPlano.h:
-
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/error_constants.h:
-
-/usr/include/c++/15.1.1/bits/stl_uninitialized.h:
-
-/usr/lib/crti.o:
-
-/usr/include/c++/15.1.1/bits/shared_ptr.h:
-
-/usr/include/qt6/QtWidgets/QComboBox:
-
-/usr/include/qt6/QtCore/qthreadstorage.h:
-
-/usr/include/c++/15.1.1/bits/char_traits.h:
-
-/usr/include/qt6/QtCore/qmargins.h:
-
-/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCharts/qabstractbarseries.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/share/cmake/Modules/MacroAddFileDependencies.cmake:
-
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
-
-/usr/include/c++/15.1.1/unordered_set:
-
-/usr/include/c++/15.1.1/unordered_map:
-
-/usr/include/c++/15.1.1/tuple:
-
-/usr/include/c++/15.1.1/vector:
-
-/usr/include/qt6/QtCore/qcontainerinfo.h:
-
-/usr/include/c++/15.1.1/tr1/special_function_util.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avxintrin.h:
-
-/usr/include/c++/15.1.1/tr1/riemann_zeta.tcc:
-
-/usr/include/qt6/QtCore/qstringconverter.h:
-
-/usr/include/c++/15.1.1/tr1/modified_bessel_func.tcc:
-
-/usr/include/c++/15.1.1/tr1/gamma.tcc:
-
-/usr/include/c++/15.1.1/tr1/exp_integral.tcc:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginTargets.cmake:
-
-/usr/include/c++/15.1.1/tr1/ell_integral.tcc:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.h:
-
-/usr/include/qt6/QtCore/qchar.h:
-
-/usr/include/qt6/QtGui/qgenericplugin.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h:
-
-/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateAdditionalTargetInfo.cmake:
-
-/usr/include/c++/15.1.1/string_view:
-
-/usr/include/c++/15.1.1/set:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.h:
-
-/usr/include/qt6/QtGui/qvectornd.h:
-
-MeuCentavoApp_autogen/include/ui_dialogMapeamento.h:
-
-/usr/include/qt6/QtNetwork/QNetworkReply:
-
-/usr/include/qt6/QtCore/qsize.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h:
-
-/usr/include/qt6/QtCore/qtypeinfo.h:
-
-/usr/include/c++/15.1.1/pstl/execution_defs.h:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.o:
-
-/usr/include/c++/15.1.1/optional:
-
-MeuCentavoApp_autogen/73MS7PNRZQ/moc_dialogSimuladorCambio.cpp:
-
-/usr/include/c++/15.1.1/map:
-
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake:
-
-/usr/include/qt6/QtWidgets/qcommonstyle.h:
-
-/usr/include/c++/15.1.1/iterator:
-
-/usr/include/qt6/QtCharts/qcandlestickset.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginConfig.cmake:
-
-/usr/include/qt6/QtCore/qanystringview.h:
-
-/usr/include/qt6/QtCore/QMap:
-
-/usr/include/c++/15.1.1/iosfwd:
-
-/usr/include/c++/15.1.1/initializer_list:
-
-/usr/include/c++/15.1.1/ext/string_conversions.h:
-
-/usr/include/c++/15.1.1/ext/concurrence.h:
-
-/usr/include/c++/15.1.1/ext/atomicity.h:
-
-MeuCentavoApp_autogen/include/ui_dialogAddEditConta.h:
-
-/usr/include/c++/15.1.1/bits/unique_lock.h:
-
-/usr/include/c++/15.1.1/ext/alloc_traits.h:
-
-/usr/include/qt6/QtWidgets/qwizard.h:
-
-/usr/lib/cmake/Qt6/FindWrapAtomic.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake:
-
-/usr/include/qt6/QtCore/qbytearrayview.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake:
-
-/usr/include/qt6/QtWidgets/QCheckBox:
-
-/usr/include/c++/15.1.1/ext/aligned_buffer.h:
-
-/usr/include/qt6/QtGui/qfontmetrics.h:
-
-/usr/include/c++/15.1.1/exception:
-
-/usr/include/bits/wctype-wchar.h:
-
-/usr/include/c++/15.1.1/bits/stl_algo.h:
-
-/usr/include/c++/15.1.1/tr1/poly_hermite.tcc:
-
-/usr/include/c++/15.1.1/debug/debug.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCore/qutf8stringview.h:
-
-/usr/share/cmake/Modules/Platform/UnixPaths.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageConfig.ui:
-
-/usr/include/qt6/QtCore/qconstructormacros.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginTargets.cmake:
-
-/usr/include/c++/15.1.1/ctime:
-
-/usr/include/c++/15.1.1/cstring:
-
-/usr/include/qt6/QtCharts/qbarseries.h:
-
-/usr/share/cmake/Modules/FindVulkan.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp:
-
-/usr/include/qt6/QtCore/qelapsedtimer.h:
-
-/usr/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake:
-
-/usr/lib/libxkbcommon.so.0:
-
-MeuCentavoApp_autogen/include/ui_dialogAddEditMeta.h:
-
-/usr/include/c++/15.1.1/cstdlib:
-
-/usr/lib/libcurl.so.4:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vldqintrin.h:
-
-/usr/include/c++/15.1.1/variant:
-
-/usr/include/c++/15.1.1/cstdio:
-
-/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateDependencies.cmake:
-
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/messages_members.h:
-
-/usr/include/c++/15.1.1/tr1/legendre_function.tcc:
-
-/usr/include/qt6/QtCore/qlibraryinfo.h:
-
-/usr/include/c++/15.1.1/concepts:
-
-/usr/include/qt6/QtCore/qtemporaryfile.h:
-
-/usr/include/c++/15.1.1/bits/unordered_set.h:
-
-/usr/include/qt6/QtCore/qatomic_cxx11.h:
-
-/usr/include/qt6/QtCore/qtextstream.h:
-
-/usr/include/c++/15.1.1/climits:
-
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h:
-
-/usr/include/qt6/QtGui/QtGui:
-
-/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake:
-
-/usr/include/qt6/QtGui/qrgba64.h:
-
-/usr/include/c++/15.1.1/pstl/pstl_config.h:
-
-/usr/include/qt6/QtCharts/qcoloraxis.h:
-
-/usr/include/c++/15.1.1/chrono:
-
-/usr/include/qt6/QtCharts/QPieSlice:
-
-/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateDependencies.cmake:
-
-/usr/include/qt6/QtCore/qalgorithms.h:
-
-/usr/include/qt6/QtCharts/QLegend:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCharts/qhorizontalstackedbarseries.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/rdseedintrin.h:
-
-/usr/include/c++/15.1.1/bits/vector.tcc:
-
-/usr/include/qt6/QtWidgets/QGraphicsLayout:
-
-/usr/include/c++/15.1.1/bits/utility.h:
-
-/usr/include/c++/15.1.1/bits/uses_allocator_args.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.ui:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginTargets-relwithdebinfo.cmake:
 
 /usr/include/c++/15.1.1/bits/uses_allocator.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandEglPlatformIntegrationPluginConfig.cmake:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.ui:
 
-/usr/include/linux/errno.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtGui/qopenglextrafunctions.h:
+/usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginAdditionalTargetInfo.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginTargets.cmake:
 
-/usr/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginTargets-relwithdebinfo.cmake:
 
-MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageLancamentos.cpp:
+/usr/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake:
 
-/usr/include/c++/15.1.1/bits/uniform_int_dist.h:
+MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogAddEditConexao.cpp:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageMetas.h:
+/usr/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtGui/qtextcursor.h:
+/usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets.cmake:
 
-/usr/include/c++/15.1.1/bits/string_view.tcc:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingConfig.cmake:
 
-/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfig.cmake:
+/usr/include/c++/15.1.1/bits/atomic_lockfree_defines.h:
 
-/usr/include/qt6/QtCore/qiterator.h:
+/usr/include/qt6/QtCharts/QAreaSeries:
 
-/usr/include/qt6/QtCore/qminmax.h:
+/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/c++/15.1.1/bits/streambuf.tcc:
+/usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginConfig.cmake:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xsaveoptintrin.h:
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginConfig.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginConfig.cmake:
+/usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets-relwithdebinfo.cmake:
 
-/usr/include/c++/15.1.1/bits/stl_set.h:
+/usr/lib/cmake/Qt6DBus/Qt6DBusAdditionalTargetInfo.cmake:
 
-/usr/include/c++/15.1.1/bits/stl_multiset.h:
+/usr/include/qt6/QtGui/qopenglfunctions.h:
 
-/usr/include/qt6/QtCore/qfuturewatcher.h:
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginAdditionalTargetInfo.cmake:
 
-/usr/include/c++/15.1.1/debug/assertions.h:
+/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake:
 
-/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersion.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandEglPlatformIntegrationPluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h:
+/usr/include/qt6/QtCore/qtpreprocessorsupport.h:
 
-/usr/include/bits/types/struct_timespec.h:
+/usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets.cmake:
 
-/usr/include/c++/15.1.1/bits/stl_list.h:
+MeuCentavoApp_autogen/include/ui_dialogMapeamento.h:
 
-/usr/include/qt6/QtCore/qpoint.h:
+/usr/include/qt6/QtWidgets/qabstractscrollarea.h:
 
-/usr/include/c++/15.1.1/bits/stl_iterator_base_types.h:
+/usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginConfig.cmake:
 
-/usr/include/c++/15.1.1/bits/stl_iterator.h:
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginConfig.cmake:
+
+/usr/include/qt6/QtCore/qabstractproxymodel.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsPlatformpluginTargets.cmake:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qpair.h:
+
+/usr/include/qt6/QtWebEngineWidgets/qtwebenginewidgetsglobal.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake:
+
+/usr/include/qt6/QtCore/QDate:
+
+/usr/include/qt6/QtNetwork/qtnetworkexports.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateConfig.cmake:
+
+/usr/include/qt6/QtCore/QSharedDataPointer:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake:
+
+/usr/include/qt6/QtOpenGL/qopenglversionprofile.h:
+
+/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Positioning/Qt6PositioningTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/libabsl_low_level_hash.so.2505.0.0:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbthaipluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/bits/random.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QPdfPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/bits/stl_multimap.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMngPluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMngPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake:
+
+/usr/include/qt6/QtNetwork/qsslpresharedkeyauthenticator.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp:
+
+/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/qgraphicsitem.h:
+
+/usr/include/c++/15.1.1/bits/stream_iterator.h:
+
+/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/libgio-2.0.so.0:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/atomic:
+
+/usr/include/qt6/QtNetwork/qnetworkreply.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake:
+
+/usr/lib/libopencore-amrwb.so.0:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbsettingspluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qstandardpaths.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageMetas.cpp.o:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtNetwork/QSslConfiguration:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersionImpl.cmake:
+
+/usr/lib/libzstd.so.1:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake:
+
+/usr/include/linux/limits.h:
+
+/usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtWidgets/qwidgetaction.h:
+
+/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.ui:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxbf16intrin.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusConfig.cmake:
+
+/usr/lib/cmake/Qt6Charts/Qt6ChartsConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qsignalmapper.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginTargets.cmake:
+
+/usr/lib/libwebpmux.so.3:
+
+/usr/include/c++/15.1.1/bits/hashtable_policy.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxmovrsintrin.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qicon.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginConfig.cmake:
+
+/usr/lib/libxcb-dri3.so.0:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:
+
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateTargets.cmake:
+
+/usr/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake:
+
+/usr/include/qt6/QtCore/qfuture.h:
+
+/usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateDependencies.cmake:
+
+MeuCentavoApp_autogen/include/ui_pageConfig.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2-512mediaintrin.h:
+
+/usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateConfigVersion.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vpopcntdqintrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dassetutilspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtGui/QActionGroup:
+
+/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfig.cmake:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusVersionlessAliasTargets.cmake:
+
+/usr/include/c++/15.1.1/bits/stl_vector.h:
+
+/usr/include/qt6/QtCore/qcryptographichash.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusMacros.cmake:
+
+/usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateTargets-relwithdebinfo.cmake:
+
+/usr/include/bits/pthreadtypes-arch.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake:
+
+/usr/include/c++/15.1.1/bits/specfun.h:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusDependencies.cmake:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formCadastro.cpp:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/experimental/source_location:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginTargets.cmake:
 
 MeuCentavoApp_autogen/include/ui_formMainDashboard.h:
 
-/usr/include/qt6/QtCharts/qpieslice.h:
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formExcluirUsuario.cpp:
+/usr/lib/cmake/Qt6Quick/Qt6QuickConfigVersion.cmake:
 
-/usr/include/qt6/QtCharts/qtcharts-config.h:
+/usr/lib/libQt6QmlMeta.so.6.9.1:
 
-/usr/include/c++/15.1.1/list:
+/usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateTargets.cmake:
 
-/usr/include/qt6/QtWidgets/qlistview.h:
+/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfigVersion.cmake:
 
-/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateAdditionalTargetInfo.cmake:
+/usr/include/bits/types/FILE.h:
 
-/usr/include/c++/15.1.1/bits/stl_heap.h:
+/usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:
 
-/usr/include/c++/15.1.1/tr1/hypergeometric.tcc:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginTargets.cmake:
 
-/usr/include/qt6/QtWidgets/QWidget:
+/usr/include/gnu/stubs-64.h:
 
-/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessAliasTargets.cmake:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2satcvtintrin.h:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp.o:
+/usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateVersionlessAliasTargets.cmake:
 
-/usr/include/qt6/QtCore/qsharedpointer.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginTargets.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formBoasVindas.ui:
+/usr/include/qt6/QtCharts/qbarcategoryaxis.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageDividas.h:
+/usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtGui/qrgb.h:
+/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateTargets.cmake:
 
-/usr/include/qt6/QtGui/qtextlist.h:
+/usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateVersionlessAliasTargets.cmake:
 
-/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateVersionlessAliasTargets.cmake:
+/usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtCore/qnamespace.h:
+/usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersionImpl.cmake:
 
-/usr/include/qt6/QtCore/qcoreevent.h:
+/usr/lib/cmake/Qt6/QtInstallPaths.cmake:
 
-/usr/include/qt6/QtGui/qbitmap.h:
+/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateDependencies.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.ui:
+/usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentAdditionalTargetInfo.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets-relwithdebinfo.cmake:
+/usr/include/qt6/QtWidgets/qmenubar.h:
 
-/usr/include/qt6/QtCore/qglobal.h:
+/usr/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h:
+/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateTargets.cmake:
 
-/usr/include/qt6/QtWidgets/qframe.h:
+/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateDependencies.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginAdditionalTargetInfo.cmake:
+/usr/include/qt6/QtWidgets/QGraphicsView:
 
-/usr/include/qt6/QtCore/qfuture_impl.h:
+/usr/lib/libmvec.so.1:
 
-/usr/include/qt6/QtCore/qtdeprecationdefinitions.h:
+/usr/include/c++/15.1.1/bits/ios_base.h:
 
-/usr/include/asm/posix_types.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbthaipluginTargets-relwithdebinfo.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Perfil.h:
+/usr/include/qt6/QtCore/qvarianthash.h:
 
-/usr/include/qt6/QtCore/QVariant:
+/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersionImpl.cmake:
 
-/usr/lib/libgcc_s.so:
+/usr/include/qt6/QtWidgets/qmdisubwindow.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
+/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfig.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtGui/QAction:
+/usr/lib/cmake/Qt6Charts/Qt6ChartsConfigVersion.cmake:
 
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/ctype_inline.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginAdditionalTargetInfo.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets.cmake:
 
-/usr/include/bits/stdint-uintn.h:
+/usr/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake:
 
-/usr/include/qt6/QtGui/qopengl.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Dividendo.h:
+/usr/include/qt6/QtCore/qoverload.h:
 
-/usr/include/c++/15.1.1/new:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.h:
 
-/usr/include/qt6/QtWidgets/qwhatsthis.h:
+/usr/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
 
-/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateAdditionalTargetInfo.cmake:
+/usr/include/qt6/QtCore/qurl.h:
 
-/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake:
+/usr/include/qt6/QtOpenGL/qopengltextureblitter.h:
 
-MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageDividas.cpp:
+/usr/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake:
 
-/usr/include/c++/15.1.1/bits/monostate.h:
+/usr/lib/libabsl_city.so.2505.0.0:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Categoria.h:
+/usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptVersionlessAliasTargets.cmake:
 
-/usr/include/qt6/QtCore/qlatin1stringview.h:
+/usr/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake:
 
-/usr/include/bits/types/__FILE.h:
+/usr/include/asm/errno.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h:
+/usr/include/qt6/QtCore/qpauseanimation.h:
 
-/usr/lib/cmake/Qt6Core/Qt6CoreTargets.cmake:
+/usr/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake:
 
-/usr/include/c++/15.1.1/bits/memoryfwd.h:
+/usr/include/qt6/QtCore/qbasicatomic.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginAdditionalTargetInfo.cmake:
+/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfig.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/AppController.cpp:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets.cmake:
 
-/usr/include/bits/timex.h:
+/usr/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake:
+
+/usr/lib/libabsl_log_internal_globals.so.2505.0.0:
+
+/usr/lib/cmake/Qt6/QtPublicAppleHelpers.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3styleimplpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6/Qt6Dependencies.cmake:
+
+/usr/include/bits/types/__sigset_t.h:
+
+/usr/lib/cmake/Qt6/Qt6ConfigVersion.cmake:
+
+/usr/include/qt6/QtNetwork/QSslPreSharedKeyAuthenticator:
+
+/usr/lib/cmake/Qt6/Qt6ConfigExtras.cmake:
+
+/usr/include/qt6/QtCore/qmimetype.h:
+
+/usr/lib/cmake/Qt6/Qt6Config.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/recursos.qrc:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginConfig.cmake:
+
+/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:
+
+/usr/include/qt6/QtCore/qfuturesynchronizer.h:
+
+/usr/lib/cmake/Qt6/FindWrapOpenGL.cmake:
+
+/usr/lib/libabsl_log_internal_log_sink_set.so.2505.0.0:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/select.h:
+
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbstylespluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qabstractfileiconprovider.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageInvestimentos.ui:
+
+/usr/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake:
+
+/usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportPlugins.cmake:
+
+/usr/include/qt6/QtCore/qtimer.h:
+
+/usr/include/strings.h:
+
+/usr/include/c++/15.1.1/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/15.1.1/mutex:
+
+/usr/include/qt6/QtCharts/QCandlestickModelMapper:
+
+/usr/include/string.h:
+
+/usr/include/stdio.h:
+
+/usr/include/qt6/QtCore/qjsondocument.h:
+
+/usr/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateConfigVersionImpl.cmake:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++allocator.h:
+
+MeuCentavoApp_autogen/include/ui_dialogAddEditOperacao.h:
+
+/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qtwidgetsexports.h:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtWidgets/QStackedWidget:
+
+/usr/include/qt6/QtWidgets/qtwidgets-config.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/pconfigintrin.h:
+
+/usr/include/qt6/QtWidgets/qsizepolicy.h:
+
+/usr/include/qt6/QtNetwork/QNetworkAccessManager:
+
+/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/qscrollarea.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/memory_resource:
+
+/usr/include/qt6/QtWidgets/qmainwindow.h:
+
+/usr/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake:
+
+/usr/include/c++/15.1.1/bits/unordered_map.h:
+
+/usr/include/qt6/QtWidgets/qdialog.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMngPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Charts/Qt6ChartsDependencies.cmake:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/libva.so.2:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.ui:
+
+/usr/include/qt6/QtWidgets/QApplication:
+
+/usr/include/qt6/QtCharts/QBarSet:
+
+/usr/include/qt6/QtGui/qscreen_platform.h:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtCore/QScopedPointer:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickdelegatespluginConfig.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfigVersion.cmake:
+
+/usr/include/qt6/QtGui/qscreen.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginAdditionalTargetInfo.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp:
+
+/usr/include/qt6/QtCore/qassociativeiterable.h:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersion.cmake:
+
+/usr/include/qt6/QtQml/qtqml-config.h:
+
+/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/qpainter.h:
+
+/usr/lib/cmake/Qt6/QtFeature.cmake:
+
+/usr/include/qt6/QtGui/qpaintdevice.h:
+
+/usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateConfigVersion.cmake:
+
+/usr/lib/libopenmpt.so.0:
+
+/usr/include/qt6/QtCore/qmutex.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/qinputmethod.h:
+
+/usr/include/qt6/QtGui/qinputdevice.h:
+
+/usr/include/qt6/QtGui/qimage.h:
+
+/usr/include/qt6/QtGui/qcursor.h:
+
+/usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentDependencies.cmake:
+
+/usr/include/qt6/QtGui/qguiapplication_platform.h:
+
+/usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersion.cmake:
+
+/usr/include/qt6/QtWidgets/qgraphicsitemanimation.h:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp.o:
+
+/usr/include/qt6/QtGui/qfontinfo.h:
+
+/usr/lib/libQt6PrintSupport.so.6.9.1:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkblayoutspluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/qtguiglobal.h:
+
+/usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtGui/qcolor.h:
+
+/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake:
+
+/usr/lib/liblcms2.so.2:
+
+/usr/include/qt6/QtGui/qpagelayout.h:
+
+/usr/lib/libabsl_throw_delegate.so.2505.0.0:
+
+/usr/lib/libQt6Sql.so.6.9.1:
+
+/usr/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake:
+
+/usr/include/qt6/QtGui/QFont:
+
+/usr/include/qt6/QtGui/QBrush:
+
+/usr/include/qt6/QtCore/qyieldcpu.h:
+
+/usr/include/qt6/QtCore/qwineventnotifier.h:
+
+/usr/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake:
+
+/usr/include/qt6/QtCore/qvarlengtharray.h:
+
+/usr/lib/libQt6Widgets.so.6.9.1:
+
+/usr/include/qt6/QtCore/qvariant.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qutf8stringview.h:
+
+/usr/include/qt6/QtCore/qtypeinfo.h:
+
+/usr/lib/libplds4.so:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.h:
+
+/usr/include/qt6/QtCore/qtversionchecks.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginTargets.cmake:
+
+/usr/include/qt6/QtOpenGL/qopengltimerquery.h:
+
+/usr/include/qt6/QtGui/QTransform:
+
+/usr/include/qt6/QtCore/qjsonvalue.h:
+
+/usr/include/c++/15.1.1/memory:
+
+/usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateTargets.cmake:
+
+/usr/lib/cmake/Qt6/QtPublicTargetHelpers.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpinyinpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsConfigVersion.cmake:
+
+/usr/include/bits/errno.h:
+
+/usr/lib/libbrotlicommon.so.1:
+
+/usr/include/c++/15.1.1/bits/exception.h:
+
+/usr/include/qt6/QtGui/qpagedpaintdevice.h:
+
+/usr/include/c++/15.1.1/bits/predefined_ops.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vnnivlintrin.h:
+
+/usr/include/qt6/QtCore/QSizeF:
+
+/usr/share/cmake/Modules/FeatureSummary.cmake:
+
+/usr/include/qt6/QtGui/qpointingdevice.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfig.cmake:
+
+/usr/include/c++/15.1.1/bits/memory_resource.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginConfig.cmake:
+
+/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelConfigVersion.cmake:
+
+/usr/include/c++/15.1.1/bits/basic_string.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickdelegatespluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfigVersion.cmake:
+
+/usr/include/qt6/QtCore/qsocketnotifier.h:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageConfig.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbsettingspluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/qtextedit.h:
+
+/usr/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake:
+
+/usr/include/bits/types/locale_t.h:
 
 /usr/lib/libEGL.so.1:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/main.cpp:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginTargets-relwithdebinfo.cmake:
 
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets.cmake:
+/usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateDependencies.cmake:
 
-/usr/include/qt6/QtCore/qexception.h:
+/usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateConfig.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.h:
+/usr/include/c++/15.1.1/bits/concept_check.h:
 
-/usr/include/qt6/QtWidgets/qtwidgetsversion.h:
+/usr/lib/libdvdread.so.8:
 
-/usr/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake:
+/usr/include/bits/setjmp.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/CMakeLists.txt:
+/usr/include/qt6/QtGui/qfont.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginTargets.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginAdditionalTargetInfo.cmake:
 
-/usr/include/c++/15.1.1/bits/erase_if.h:
+/usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfigVersionImpl.cmake:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vbmi2intrin.h:
+/usr/include/c++/15.1.1/ctime:
 
-/usr/include/qt6/QtCore/qdatetime.h:
+/usr/include/qt6/QtCore/qstringlistmodel.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/pkuintrin.h:
+/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qatomic.h:
+
+/usr/lib/libwebpdemux.so.2:
+
+/usr/include/qt6/QtWidgets/QAbstractButton:
+
+/usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake:
+
+/usr/include/c++/15.1.1/bits/atomic_base.h:
+
+/usr/include/qt6/QtWidgets/QGraphicsWidget:
+
+/usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsDependencies.cmake:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/c++/15.1.1/bits/allocated_ptr.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6/Qt6Targets.cmake:
+
+/usr/include/qt6/QtCore/qcomparehelpers.h:
+
+/usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsDependencies.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/backward/binders.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/algorithm:
+
+/usr/include/qt6/QtCore/qabstracteventdispatcher.h:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsDependencies.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.ui:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h:
+
+/usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake:
+
+/usr/include/qt6/QtWidgets/QMessageBox:
+
+/usr/include/qt6/QtCharts/qvcandlestickmodelmapper.h:
+
+/usr/include/qt6/QtCore/QMutex:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.cpp:
+
+/usr/include/bits/uintn-identity.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/lib/cmake/Qt6Positioning/Qt6PositioningVersionlessAliasTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/AppController.cpp:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.ui:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6/3rdparty/kwin/FindXKB.cmake:
+
+/usr/include/bits/types/wint_t.h:
+
+/usr/include/qt6/QtCore/qpointer.h:
+
+MeuCentavoApp_autogen/2EK4JB7KXY/moc_formGerenciarContas.cpp:
+
+/usr/include/qt6/QtCore/QIODevice:
+
+/usr/include/c++/15.1.1/bits/list.tcc:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersion.cmake:
+
+/usr/include/c++/15.1.1/array:
+
+/usr/include/qt6/QtCore/qiterable.h:
+
+/usr/include/bits/types/struct___jmp_buf_tag.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginTargets.cmake:
+
+/usr/include/bits/types/sigset_t.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginConfig.cmake:
+
+/usr/include/bits/atomic_wide_counter.h:
+
+/usr/include/c++/15.1.1/bits/ostream_insert.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake:
+
+/usr/include/qt6/QtWidgets/qgraphicseffect.h:
+
+/usr/include/bits/types/__fpos64_t.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/bits/types.h:
+
+/usr/include/c++/15.1.1/bits/atomic_futex.h:
+
+/usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtCore/qtaggedpointer.h:
+
+/usr/include/c++/15.1.1/bits/alloc_traits.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhunspellpluginTargets.cmake:
+
+/usr/include/qt6/QtGui/QPainter:
+
+/usr/include/qt6/QtOpenGL/qopenglversionfunctionsfactory.h:
+
+/usr/include/qt6/QtNetwork/qtnetwork-config.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake:
+
+/usr/include/qt6/QtWidgets/qtreewidget.h:
+
+/usr/include/bits/thread-shared-types.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.ui:
+
+/usr/include/qt6/QtCharts/qabstractaxis.h:
+
+/usr/include/qt6/QtWidgets/QLineEdit:
+
+/usr/include/bits/types/struct_itimerspec.h:
+
+/usr/include/qt6/QtCore/q20type_traits.h:
+
+/usr/include/c++/15.1.1/tr1/bessel_function.tcc:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/bits/stl_construct.h:
+
+/usr/include/bits/time.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMngPluginConfig.cmake:
+
+/usr/include/c++/15.1.1/tr1/poly_laguerre.tcc:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginTargets.cmake:
+
+/usr/include/c++/15.1.1/cassert:
+
+/usr/include/qt6/QtWidgets/qabstractslider.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginAdditionalTargetInfo.cmake:
+
+/usr/lib/libtheoradec.so.2:
+
+/usr/include/c++/15.1.1/bits/functexcept.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/bits/stl_relops.h:
+
+/usr/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtCore/qtcoreexports.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets-relwithdebinfo.cmake:
+
+/usr/include/bits/cpu-set.h:
+
+/usr/include/qt6/QtCore/QHash:
+
+MeuCentavoApp_autogen/include/ui_dialogSimularPlano.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/qt6/QtWebEngineCore/qwebenginedownloadrequest.h:
+
+/usr/include/qt6/QtCore/qbytearray.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginConfig.cmake:
+
+/usr/include/asm/types.h:
+
+/usr/share/cmake/Modules/CheckLibraryExists.cmake:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/bits/long-double.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.h:
+
+/usr/include/qt6/QtGui/qtransform.h:
+
+/usr/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake:
+
+MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageHome.cpp:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formCadastro.h:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/compare:
+
+/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formLoginSenha.ui:
+
+/usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateVersionlessAliasTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qttranslation.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.h:
+
+/usr/include/qt6/QtCore/QRect:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:
+
+/usr/lib/libabsl_log_severity.so.2505.0.0:
+
+/usr/include/qt6/QtCore/qfileselector.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/adxintrin.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginTargets.cmake:
+
+/usr/include/qt6/QtWidgets/QDialog:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsAdditionalTargetInfo.cmake:
+
+/usr/include/bits/types/time_t.h:
+
+/usr/include/qt6/QtCore/QFlags:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qbindingstorage.h:
+
+/usr/lib/libpcre2-8.so.0:
+
+/usr/include/c++/15.1.1/bits/invoke.h:
+
+/usr/lib/cmake/Qt6/QtPublicTestHelpers.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h:
+
+/usr/include/c++/15.1.1/bit:
+
+/usr/lib/libopus.so.0:
+
+/usr/include/qt6/QtWidgets/qgraphicsscene.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtNetwork/qhttpmultipart.h:
+
+CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
+
+/usr/include/qt6/QtCore/qiodevice.h:
+
+/usr/include/c++/15.1.1/bits/quoted_string.h:
+
+/usr/include/c++/15.1.1/bits/charconv.h:
+
+/usr/include/qt6/QtCore/qassert.h:
+
+/usr/include/qt6/QtWidgets/qstyleditemdelegate.h:
+
+/usr/include/bits/types/struct_tm.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.ui:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtGui/qtextdocumentfragment.h:
+
+/usr/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake:
+
+/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:
+
+/usr/include/c++/15.1.1/bits/move.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.ui:
+
+/usr/include/asm-generic/types.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlTargets.cmake:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/c++/15.1.1/bits/stringfwd.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginTargets.cmake:
+
+/usr/include/qt6/QtCharts/qpielegendmarker.h:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/formInicio.cpp.o:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfig.cmake:
+
+/usr/include/c++/15.1.1/typeinfo:
+
+/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/QSurfaceFormat:
+
+/usr/include/c++/15.1.1/bits/basic_string.tcc:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formLoginSenha.cpp:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateTargets.cmake:
 
 /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfig.cmake:
 
-/usr/include/asm-generic/int-ll64.h:
+/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp:
+/usr/share/cmake/Modules/Platform/Linux-GNU.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginTargets-relwithdebinfo.cmake:
+/usr/include/asm-generic/errno-base.h:
 
-/usr/include/c++/15.1.1/stdlib.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.h:
 
-/usr/include/qt6/QtCharts/qsplineseries.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.cpp:
 
-/usr/include/qt6/QtWidgets/QVBoxLayout:
+/usr/include/qt6/QtCore/QSize:
 
-/usr/include/bits/types/struct_sched_param.h:
+/usr/include/qt6/QtCore/qtformat_impl.h:
 
-/usr/include/c++/15.1.1/bits/enable_special_members.h:
+/usr/include/qt6/QtWidgets/QMainWindow:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginConfig.cmake:
 
-/usr/include/c++/15.1.1/bits/stl_tempbuf.h:
+/usr/lib/libcurl.so.4:
 
-/usr/include/c++/15.1.1/bits/shared_ptr_atomic.h:
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargets.cmake:
 
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++locale.h:
+/usr/include/bits/timesize.h:
 
-/usr/include/c++/15.1.1/bits/streambuf_iterator.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfig.cmake:
 
-/usr/include/qt6/QtCharts/QXYModelMapper:
+/usr/include/qt6/QtCore/qstringbuilder.h:
 
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/cpu_defines.h:
+/usr/include/bits/wchar.h:
 
-/usr/include/c++/15.1.1/bits/ptr_traits.h:
+/usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginConfig.cmake:
 
-/usr/include/qt6/QtWidgets/qstyleplugin.h:
+/usr/include/alloca.h:
 
-/usr/include/errno.h:
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formExcluirUsuario.ui:
+/usr/include/qt6/QtCharts/qtchartsversion.h:
 
-/usr/include/qt6/QtGui/qtextoption.h:
+/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfigVersionImpl.cmake:
 
-/usr/include/qt6/QtCore/qnumeric.h:
+/usr/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake:
+/usr/include/qt6/QtCharts/qchartglobal.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxcomplexintrin.h:
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formExcluirUsuario.h:
+/usr/include/qt6/QtCore/qrect.h:
 
-/usr/include/qt6/QtWidgets/qgesture.h:
+/usr/include/qt6/QtCore/qobject_impl.h:
 
-/usr/include/qt6/QtCore/qbasictimer.h:
+/usr/include/qt6/QtCharts/QValueAxis:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2bf16intrin.h:
+/usr/include/endian.h:
 
-/usr/include/qt6/QtGui/QWindow:
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginConfig.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp:
+/usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/c++/15.1.1/bits/locale_classes.tcc:
+.qt/qml_imports/MeuCentavoApp_conf.cmake:
 
-/usr/include/qt6/QtGui/qfontvariableaxis.h:
+/usr/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginConfig.cmake:
 
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake:
+/usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaAdditionalTargetInfo.cmake:
 
-/usr/include/c++/15.1.1/cctype:
+/usr/include/qt6/QtGui/qtguiexports.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.cpp:
+/usr/include/qt6/QtGui/qvector2d.h:
 
-/usr/include/qt6/QtCore/qbuffer.h:
+/usr/include/bits/types/__fpos_t.h:
 
-/usr/include/qt6/QtCore/qstringconverter_base.h:
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtGui/qpixmap.h:
+/usr/include/qt6/QtCore/qflags.h:
 
-/usr/include/qt6/QtCore/q26numeric.h:
+/usr/include/qt6/QtCore/QByteArray:
 
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/gthr.h:
+/usr/include/qt6/QtCore/qsystemdetection.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/lzcntintrin.h:
+/usr/include/c++/15.1.1/bits/functional_hash.h:
 
-/usr/share/cmake/Modules/CMakeLanguageInformation.cmake:
+/usr/include/qt6/QtCore/q20utility.h:
 
-/usr/include/c++/15.1.1/bits/fs_ops.h:
+/usr/include/qt6/QtWebEngineWidgets/qwebengineview.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.ui:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbcomponentspluginConfig.cmake:
 
-MeuCentavoApp_autogen/JGBQRWFFYH/moc_dialogMapeamento.cpp:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp:
 
-/usr/include/qt6/QtCore/qhashfunctions.h:
+/usr/include/qt6/QtGui/qwindowdefs.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginTargets.cmake:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.ui:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mwaitintrin.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.h:
+
+/usr/include/qt6/QtWidgets/qformlayout.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.ui:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.ui:
+
+/usr/include/bits/types/clock_t.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp:
+
+/usr/lib/libnssutil3.so:
+
+/usr/include/c++/15.1.1/stdexcept:
+
+/usr/include/qt6/QtGui/qrasterwindow.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageDividas.cpp:
+
+MeuCentavoApp_autogen/73MS7PNRZQ/moc_dialogCalculadoraIR.cpp:
+
+/usr/include/qt6/QtCore/qendian.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageInvestimentos.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qswap.h:
+
+/usr/include/c++/15.1.1/bits/stl_pair.h:
+
+/usr/include/c++/15.1.1/future:
+
+/usr/include/c++/15.1.1/cstddef:
+
+/usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtCore/qmetaobject.h:
+
+/usr/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake:
+
+/usr/include/c++/15.1.1/bits/exception_defines.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.h:
+
+/usr/include/c++/15.1.1/clocale:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/bits/stl_map.h:
+
+/usr/include/qt6/QtGui/qglyphrun.h:
+
+/usr/include/bits/types/timer_t.h:
+
+/usr/include/qt6/QtGui/qsurfaceformat.h:
+
+/usr/include/c++/15.1.1/bits/hash_bytes.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginTargets.cmake:
+
+/usr/lib/libc.so:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dassetutilspluginConfig.cmake:
+
+/usr/include/c++/15.1.1/cstdint:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp:
+
+/usr/include/c++/15.1.1/bits/shared_ptr_base.h:
+
+/usr/include/c++/15.1.1/cmath:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qstdlibdetection.h:
+
+/usr/include/c++/15.1.1/utility:
+
+/usr/include/qt6/QtCore/qthread.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qobjectcleanuphandler.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginConfig.cmake:
+
+/usr/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formBoasVindas.cpp:
+
+/usr/include/qt6/QtCore/qtnoop.h:
+
+/usr/include/qt6/QtCore/qcoreapplication_platform.h:
+
+/usr/lib/libkrb5.so.3:
+
+/usr/include/qt6/QtCharts/qchart.h:
+
+/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginConfig.cmake:
+
+/usr/include/qt6/QtCharts/QCandlestickSeries:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.cpp:
+
+/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersion.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.cpp:
+
+/usr/include/qt6/QtCore/q17memory.h:
+
+/usr/include/qt6/QtCore/qline.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.cpp:
+
+/usr/lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake:
+
+/usr/bin/cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Conta.h:
+
+/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateDependencies.cmake:
+
+/usr/include/qt6/QtCharts/QAbstractAxis:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginConfig.cmake:
+
+/usr/include/bits/uio_lim.h:
+
+/usr/include/sched.h:
+
+/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake:
+
+/usr/include/qt6/QtCore/qcontiguouscache.h:
+
+/usr/include/qt6/QtCore/q20functional.h:
+
+/usr/share/cmake/Modules/Compiler/GNU-CXX.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.ui:
+
+/usr/include/qt6/QtWidgets/qstyle.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp:
+
+/usr/include/qt6/QtCore/qdatetime.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginAdditionalTargetInfo.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vbmi2intrin.h:
 
 /home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.cpp:
 
 /usr/include/qt6/QtCore/qtcore-config.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp:
+/usr/include/qt6/QtGui/qeventpoint.h:
 
-/usr/include/qt6/QtCore/qshareddata_impl.h:
+/usr/include/ctype.h:
 
-/usr/include/qt6/QtCore/qconfig.h:
-
-/usr/lib/libzstd.so.1:
-
-/usr/include/bits/sched.h:
-
-/usr/include/bits/struct_rwlock.h:
-
-/usr/include/c++/15.1.1/bits/refwrap.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.ui:
-
-/usr/include/qt6/QtOpenGL/qtopenglversion.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:
-
-/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfig.cmake:
-
-/usr/include/qt6/QtCore/qcborstreamwriter.h:
-
-/usr/include/qt6/QtCore/qtenvironmentvariables.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/immintrin.h:
-
-/usr/include/qt6/QtGui/qopenglcontext.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.h:
-
-/usr/lib/libicudata.so.76:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/AppController.h:
-
-/usr/lib/libdbus-1.so.3:
-
-/usr/include/bits/stdint-intn.h:
-
-/usr/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/hresetintrin.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp:
-
-/usr/include/c++/15.1.1/bits/algorithmfwd.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/libglib-2.0.so.0:
-
-/usr/include/qt6/QtCore/qfunctionpointer.h:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsConfigVersionImpl.cmake:
-
-/usr/include/qt6/QtCore/QString:
-
-/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginAdditionalTargetInfo.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.ui:
-
-/usr/include/qt6/QtCore/qmetatype.h:
-
-/usr/include/qt6/QtCore/qobjectdefs_impl.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.h:
-
-/usr/include/c++/15.1.1/numeric:
-
-/usr/include/qt6/QtGui/qtgui-config.h:
-
-/usr/include/bits/floatn-common.h:
-
-MeuCentavoApp_autogen/include/ui_formAdicionarLancamento.h:
-
-/usr/include/qt6/QtWidgets/qspinbox.h:
-
-/usr/include/qt6/QtGui/qevent.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vnniintrin.h:
-
-/usr/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.h:
-
-/usr/lib/libfreetype.so.6:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.h:
-
-/usr/include/qt6/QtGui/qsessionmanager.h:
-
-/usr/include/qt6/QtCore/qcompilerdetection.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mmintrin.h:
-
-/usr/include/qt6/QtWidgets/qrubberband.h:
-
-/usr/include/c++/15.1.1/bits/new_allocator.h:
-
-/usr/include/c++/15.1.1/bits/range_access.h:
-
-/usr/include/bits/types/error_t.h:
-
-/usr/include/bits/fp-fast.h:
-
-/usr/include/c++/15.1.1/bits/stl_tree.h:
-
-/usr/include/qt6/QtWidgets/qgraphicsview.h:
-
-/usr/include/qt6/QtWidgets/qactiongroup.h:
-
-/usr/include/bits/types/clockid_t.h:
-
-/usr/lib/cmake/Qt6/QtInstallPaths.cmake:
-
-/usr/lib/libcom_err.so.2:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512fp16intrin.h:
-
-/usr/include/qt6/QtWidgets/qcompleter.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginConfig.cmake:
-
-CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
-
-/usr/include/c++/15.1.1/pstl/glue_numeric_defs.h:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersionImpl.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.cpp:
-
-/usr/include/qt6/QtGui/qaction.h:
-
-/usr/include/c++/15.1.1/limits:
-
-/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake:
-
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2-512bf16intrin.h:
-
-/usr/include/bits/endian.h:
-
-/usr/include/qt6/QtWidgets/qlineedit.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.h:
-
-/usr/include/bits/floatn.h:
-
-/usr/include/qt6/QtCore/QMargins:
-
-/usr/include/c++/15.1.1/bits/parse_numbers.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.h:
-
-MeuCentavoApp_autogen/JUEWMI7LB7/moc_formMainDashboard.cpp:
-
-/usr/include/c++/15.1.1/bits/locale_classes.h:
-
-/usr/include/bits/pthread_stack_min-dynamic.h:
-
-MeuCentavoApp_autogen/moc_predefs.h:
-
-/usr/include/qt6/QtCore/qcborvalue.h:
-
-/usr/include/qt6/QtCore/qtconfiginclude.h:
-
-/usr/include/c++/15.1.1/functional:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageMetas.cpp:
-
-/usr/include/stdint.h:
-
-/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formCadastro.ui:
-
-/usr/include/bits/posix2_lim.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets.cmake:
-
-/usr/lib/libdouble-conversion.so.3:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xmmintrin.h:
-
-/usr/include/c++/15.1.1/backward/auto_ptr.h:
-
-/usr/lib/libgobject-2.0.so.0:
-
-/usr/include/assert.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.ui:
-
-MeuCentavoApp_autogen/include/ui_formGerenciarCategorias.h:
-
-/usr/include/qt6/QtCore/qdatastream.h:
-
-/usr/include/qt6/QtCore/qcoreapplication.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp:
-
-/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake:
-
-/usr/include/qt6/QtCore/QObject:
-
-/usr/include/qt6/QtWidgets/QSpinBox:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginTargets-relwithdebinfo.cmake:
 
 /usr/include/qt6/QtGui/qclipboard.h:
 
-/usr/include/linux/posix_types.h:
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake:
 
-/usr/include/qt6/QtGui/qeventpoint.h:
+/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateTargets.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.h:
+/usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateConfig.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.cpp:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageInvestimentos.cpp:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.h:
+/usr/include/qt6/QtCore/qcoreapplication.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.ui:
-
-/usr/include/qt6/QtCharts/QAbstractAxis:
-
-/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateDependencies.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/tbmintrin.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Conta.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.cpp:
-
-/usr/include/qt6/QtCore/qline.h:
-
-/usr/include/qt6/QtCore/q17memory.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.cpp:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.cpp:
-
-/usr/include/qt6/QtCharts/qchart.h:
-
-/usr/include/qt6/QtCore/qcoreapplication_platform.h:
-
-/usr/include/qt6/QtCore/qtnoop.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formBoasVindas.cpp:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginConfig.cmake:
-
-/usr/share/cmake/Modules/CheckIncludeFileCXX.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginConfig.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vpopcntdqintrin.h:
-
-/usr/include/asm-generic/posix_types.h:
-
-/usr/include/qt6/QtCore/qthread.h:
-
-/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake:
-
-/usr/include/c++/15.1.1/utility:
-
-/usr/lib/libblkid.so.1:
-
-/usr/include/qt6/QtCore/qstdlibdetection.h:
-
-/usr/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake:
-
-/usr/include/c++/15.1.1/cmath:
-
-/usr/include/c++/15.1.1/bits/shared_ptr_base.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/raointintrin.h:
-
-/usr/include/linux/stddef.h:
-
-/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfigVersion.cmake:
-
-/usr/include/c++/15.1.1/cstdint:
-
-/usr/include/linux/sched/types.h:
-
-/usr/include/asm/bitsperlong.h:
-
-/usr/include/c++/15.1.1/bits/allocator.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.h:
-
-/usr/include/c++/15.1.1/cstddef:
-
-/usr/include/c++/15.1.1/future:
-
-/usr/include/c++/15.1.1/bits/stl_pair.h:
-
-/usr/include/bits/pthreadtypes-arch.h:
-
-/usr/include/qt6/QtCore/qswap.h:
-
-/usr/include/qt6/QtGui/QPainter:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageInvestimentos.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.h:
-
-/usr/include/qt6/QtCore/qendian.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageDividas.cpp:
-
-/usr/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.ui:
-
-MeuCentavoApp_autogen/IMH5DCT4WY/moc_formExcluirUsuario.cpp:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.ui:
-
-/usr/include/qt6/QtCore/qstringliteral.h:
-
-/usr/include/qt6/QtCharts/qlegend.h:
-
-/usr/include/qt6/QtWidgets/qformlayout.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtWidgets/QPushButton:
-
-/usr/include/qt6/QtGui/qrasterwindow.h:
-
-/usr/include/c++/15.1.1/stdexcept:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.cpp:
-
-/usr/include/bits/types/clock_t.h:
-
-/usr/include/c++/15.1.1/clocale:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.h:
-
-/usr/include/c++/15.1.1/bits/exception_defines.h:
-
-/usr/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake:
-
-/usr/include/qt6/QtGui/qsurfaceformat.h:
-
-/usr/include/qt6/QtGui/qglyphrun.h:
-
-/usr/include/c++/15.1.1/ratio:
-
-/usr/include/c++/15.1.1/bits/stl_map.h:
-
-/usr/include/bits/types/mbstate_t.h:
-
-/usr/include/bits/types/struct_FILE.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.ui:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.ui:
-
-/usr/include/qt6/QtCore/QByteArray:
-
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateVersionlessAliasTargets.cmake:
-
-/usr/include/bits/types/__fpos_t.h:
-
-/usr/include/qt6/QtGui/qvector2d.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCore/qrect.h:
-
-/usr/include/qt6/QtCore/qttypetraits.h:
-
-/usr/include/qt6/QtCharts/qchartglobal.h:
-
-/usr/include/qt6/QtCore/QDeadlineTimer:
-
-/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake:
-
-/usr/include/alloca.h:
-
-/usr/include/c++/15.1.1/bits/localefwd.h:
-
-/usr/include/qt6/QtWidgets/qheaderview.h:
-
-/usr/include/bits/types/struct_timeval.h:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formCadastro.cpp.o:
-
-/usr/include/qt6/QtWidgets/qproxystyle.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.ui:
-
-/usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake:
-
-/usr/include/bits/timesize.h:
-
-/usr/include/c++/15.1.1/bits/std_function.h:
-
-MeuCentavoApp_autogen/include/ui_dialogCalculadoraIR.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp:
-
-/usr/bin/cmake:
-
-/usr/include/qt6/QtWidgets/QMainWindow:
-
-/usr/include/qt6/QtCore/qtformat_impl.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.ui:
-
-/usr/include/qt6/QtCore/QSize:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.cpp:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxavx512intrin.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formLoginSenha.cpp:
-
-/usr/include/c++/15.1.1/bits/basic_string.tcc:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/prfchiintrin.h:
-
-/usr/include/bits/waitstatus.h:
-
-/usr/include/c++/15.1.1/typeinfo:
-
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfig.cmake:
-
-/usr/include/qt6/QtCharts/qareaseries.h:
-
-/usr/include/c++/15.1.1/bits/postypes.h:
-
-/usr/include/qt6/QtCharts/qpielegendmarker.h:
-
-/usr/include/bits/types/timer_t.h:
-
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/lib/crtn.o:
-
-/usr/include/asm-generic/types.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.ui:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake:
-
-/usr/include/c++/15.1.1/bits/move.h:
-
-/usr/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake:
-
-/usr/lib/libk5crypto.so.3:
-
-/usr/include/qt6/QtGui/qtextdocumentfragment.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.ui:
-
-/usr/include/bits/types/struct_tm.h:
-
-/usr/include/qt6/QtCore/qnativeinterface.h:
-
-/usr/include/c++/15.1.1/bits/align.h:
-
-/usr/include/qt6/QtWidgets/qstyleditemdelegate.h:
-
-/usr/include/qt6/QtCore/qassert.h:
-
-/usr/include/c++/15.1.1/bits/charconv.h:
-
-/usr/include/c++/15.1.1/bits/quoted_string.h:
-
-/usr/include/qt6/QtCore/qiodevice.h:
+/usr/include/c++/15.1.1/backward/auto_ptr.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avxvnniint16intrin.h:
 
-CMakeFiles/4.0.3-dirty/CMakeSystem.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets-relwithdebinfo.cmake:
+/usr/lib/cmake/Qt6/QtPublicGitHelpers.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp:
+/usr/lib/cmake/Qt6/QtFeatureCommon.cmake:
 
-/usr/include/qt6/QtWidgets/qgraphicsscene.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mmintrin.h:
 
-/usr/include/c++/15.1.1/bit:
+/usr/include/qt6/QtCore/q20memory.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h:
+/usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateConfig.cmake:
 
-/usr/lib/cmake/Qt6/QtPublicTestHelpers.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginTargets.cmake:
 
-/usr/include/qt6/QtWidgets/qaccessiblewidget.h:
+/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfigVersionImpl.cmake:
 
-/usr/include/qt6/QtNetwork/qsslsocket.h:
+/usr/include/qt6/QtCharts/qhorizontalbarseries.h:
 
-/usr/include/bits/iscanonical.h:
+/usr/include/bits/posix2_lim.h:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formBoasVindas.cpp.o:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.cpp:
 
-/usr/include/qt6/QtCore/qbindingstorage.h:
+/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.cpp:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageMetas.cpp:
 
-/usr/include/qt6/QtCore/QFlags:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtWidgets/QDialog:
+/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/bits/locale.h:
+/usr/include/qt6/QtCore/qtconfiginclude.h:
 
-/usr/lib/libQt6DBus.so.6:
+MeuCentavoApp_autogen/IMH5DCT4WY/moc_formLoginSenha.cpp:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/adxintrin.h:
+/usr/include/qt6/QtCore/qcborvalue.h:
 
-/usr/include/qt6/QtCore/qfileselector.h:
+MeuCentavoApp_autogen/moc_predefs.h:
 
-/usr/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:
+/usr/include/bits/pthread_stack_min-dynamic.h:
 
-/usr/include/qt6/QtCore/QRect:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginConfig.cmake:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.h:
+/usr/include/c++/15.1.1/bits/locale_classes.h:
 
-/usr/include/qt6/QtCore/qttranslation.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginTargets-relwithdebinfo.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickpluginTargets.cmake:
 
-/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersionImpl.cmake:
+/usr/include/qt6/QtCore/QMargins:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formLoginSenha.ui:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsTargets-relwithdebinfo.cmake:
 
-MeuCentavoApp_autogen/include/ui_dialogAddEditCategoria.h:
+/usr/include/qt6/QtWidgets/qlineedit.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.h:
+/usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginAdditionalTargetInfo.cmake:
 
-/usr/include/c++/15.1.1/compare:
+/usr/include/bits/endian.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginTargets-relwithdebinfo.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbthaipluginTargets.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginAdditionalTargetInfo.cmake:
+/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake:
 
-/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateTargets.cmake:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2-512bf16intrin.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formCadastro.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp.o:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlAdditionalTargetInfo.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfig.cmake:
+/usr/include/qt6/QtCore/quuid.h:
 
-/usr/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:
+/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake:
 
-/usr/include/c++/15.1.1/bits/version.h:
+/usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateDependencies.cmake:
 
-/usr/include/qt6/QtCore/qbytearray.h:
+/usr/include/c++/15.1.1/limits:
 
-/usr/include/bits/stdio_lim.h:
+/usr/include/qt6/QtGui/qaction.h:
 
-/usr/include/qt6/QtGui/QCloseEvent:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.cpp:
 
-/usr/include/qt6/QtCore/QHash:
+/usr/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake:
 
-/usr/include/bits/cpu-set.h:
+/usr/include/qt6/QtGui/qguiapplication.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.h:
+
+/usr/include/c++/15.1.1/pstl/glue_numeric_defs.h:
+
+CMakeFiles/4.0.3-dirty/CMakeCXXCompiler.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qcompleter.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512fp16intrin.h:
+
+/usr/include/bits/types/clockid_t.h:
+
+/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsTargets.cmake:
+
+/usr/include/qt6/QtWidgets/qactiongroup.h:
+
+/usr/include/qt6/QtWidgets/qgraphicsview.h:
+
+/usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateDependencies.cmake:
+
+/usr/include/c++/15.1.1/bits/stl_tree.h:
+
+/usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateConfigVersion.cmake:
+
+/usr/include/bits/fp-fast.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginConfig.cmake:
 
@@ -24995,1448 +26326,3256 @@ CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAd
 
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake:
 
-/usr/include/c++/15.1.1/bits/stl_bvector.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtCore/qtcoreexports.h:
+/usr/include/bits/types/struct_timeval.h:
 
-/usr/include/qt6/QtWidgets/QLabel:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.ui:
 
-/usr/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickdelegatespluginTargets.cmake:
 
-/usr/include/c++/15.1.1/bits/stl_relops.h:
+/usr/include/qt6/QtWidgets/qproxystyle.h:
 
-/usr/lib/libQt6OpenGLWidgets.so.6.9.1:
+/usr/include/bits/types/error_t.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginTargets-relwithdebinfo.cmake:
+/usr/include/c++/15.1.1/bits/range_access.h:
 
-/usr/include/c++/15.1.1/bits/functexcept.h:
+/usr/lib/libunistring.so.5:
 
-/usr/include/qt6/QtGui/qbrush.h:
+/usr/include/c++/15.1.1/bits/new_allocator.h:
 
-/usr/include/bits/local_lim.h:
+/usr/include/qt6/QtWidgets/qrubberband.h:
 
-/usr/include/bits/pthreadtypes.h:
-
-/usr/include/qt6/QtWidgets/qabstractslider.h:
-
-/usr/include/c++/15.1.1/cassert:
-
-/usr/include/bits/select.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avxvnniintrin.h:
-
-/usr/include/c++/15.1.1/tr1/poly_laguerre.tcc:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMngPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargets-relwithdebinfo.cmake:
-
-MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageConfig.cpp:
-
-/usr/include/bits/time.h:
-
-/usr/include/c++/15.1.1/bits/stl_construct.h:
-
-/usr/include/qt6/QtGui/qkeysequence.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
-
-/usr/include/c++/15.1.1/tr1/bessel_function.tcc:
-
-/usr/include/qt6/QtCore/q23utility.h:
-
-/usr/include/bits/struct_mutex.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp:
-
-/usr/include/c++/15.1.1/cerrno:
-
-/usr/include/bits/long-double.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.h:
-
-/usr/include/qt6/QtCore/qobject_impl.h:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLAdditionalTargetInfo.cmake:
-
-/usr/include/endian.h:
-
-/usr/include/c++/15.1.1/shared_mutex:
-
-/usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCore/q20type_traits.h:
-
-/usr/include/bits/types/struct_itimerspec.h:
-
-/usr/include/c++/15.1.1/bits/stl_algobase.h:
-
-/usr/include/qt6/QtWidgets/qgraphicslayout.h:
-
-/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateDependencies.cmake:
-
-/usr/include/qt6/QtCharts/qabstractaxis.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.ui:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConta.cpp:
-
-/usr/include/bits/thread-shared-types.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/lib/libgomp.so.1:
-
-/usr/include/qt6/QtWidgets/qtreewidget.h:
-
-/usr/include/qt6/QtNetwork/qtnetwork-config.h:
-
-/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateVersionlessAliasTargets.cmake:
-
-/usr/include/qt6/QtOpenGL/qopenglversionfunctionsfactory.h:
-
-/usr/include/c++/15.1.1/bits/alloc_traits.h:
-
-/usr/include/qt6/QtCore/qtaggedpointer.h:
-
-/usr/include/c++/15.1.1/bits/atomic_futex.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginConfig.cmake:
-
-/usr/include/bits/types.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/popcntintrin.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginConfig.cmake:
-
-/usr/include/bits/types/__fpos64_t.h:
-
-/usr/include/qt6/QtWidgets/qgraphicseffect.h:
-
-/usr/include/qt6/QtCore/QEvent:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake:
-
-/usr/include/qt6/QtCore/QTimer:
-
-/usr/include/c++/15.1.1/bits/ostream_insert.h:
-
-/usr/include/bits/types/cookie_io_functions_t.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.ui:
-
-/usr/include/bits/atomic_wide_counter.h:
-
-/usr/include/qt6/QtCore/qstringalgorithms.h:
-
-/usr/include/bits/types/sigset_t.h:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusTargets.cmake:
-
-/usr/include/bits/types/struct___jmp_buf_tag.h:
-
-/usr/share/cmake/Modules/FindOpenGL.cmake:
-
-/usr/include/qt6/QtNetwork/QNetworkRequest:
-
-/usr/include/qt6/QtCore/qiterable.h:
-
-MeuCentavoApp_autogen/include/ui_formCadastro.h:
-
-/usr/include/c++/15.1.1/array:
-
-/usr/include/qt6/QtCore/QIODevice:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.ui:
-
-/usr/include/qt6/QtCore/qpointer.h:
-
-/usr/include/bits/types/wint_t.h:
-
-/usr/include/qt6/QtWidgets/qabstractbutton.h:
-
-/usr/include/bits/time64.h:
-
-/usr/lib/cmake/Qt6/3rdparty/kwin/FindXKB.cmake:
-
-/usr/include/c++/15.1.1/bits/hashtable.h:
-
-/usr/include/bits/typesizes.h:
-
-/usr/include/qt6/QtCore/qlist.h:
-
-/usr/include/bits/uintn-identity.h:
-
-/usr/include/qt6/QtOpenGL/qtopenglexports.h:
-
-/usr/include/qt6/QtCore/QMutex:
-
-/usr/include/qt6/QtCharts/qvcandlestickmodelmapper.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.ui:
-
-/usr/include/bits/waitflags.h:
-
-/usr/include/bits/xopen_lim.h:
-
-/usr/include/qt6/QtCore/qabstracteventdispatcher.h:
-
-/usr/include/c++/15.1.1/algorithm:
-
-/usr/include/c++/15.1.1/backward/binders.h:
-
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsDependencies.cmake:
-
-/usr/include/qt6/QtCore/qconcatenatetablesproxymodel.h:
-
-/usr/include/bits/byteswap.h:
-
-MeuCentavoApp_autogen/include/ui_pageHome.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageDividas.ui:
-
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake:
-
-/usr/include/c++/15.1.1/bits/allocated_ptr.h:
-
-/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateVersionlessAliasTargets.cmake:
-
-/usr/include/bits/posix1_lim.h:
-
-/usr/include/bits/wordsize.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h:
-
-/usr/include/c++/15.1.1/bits/atomic_base.h:
-
-/usr/lib/libm.so.6:
-
-/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake:
-
-/usr/include/qt6/QtCore/qstringmatcher.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiVersionlessAliasTargets.cmake:
-
-/usr/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake:
-
-/usr/include/qt6/QtCore/qatomic.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake:
-
-/usr/include/c++/15.1.1/bits/chrono.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/include/bits/setjmp.h:
-
-/usr/include/c++/15.1.1/bits/concept_check.h:
-
-MeuCentavoApp_autogen/IMH5DCT4WY/moc_formCadastro.cpp:
-
-/usr/include/bits/types/time_t.h:
-
-/usr/include/c++/15.1.1/bits/cxxabi_forced.h:
-
-/usr/include/bits/types/locale_t.h:
-
-/usr/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake:
-
-/usr/include/qt6/QtWidgets/qtextedit.h:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake:
-
-/usr/include/c++/15.1.1/bits/exception_ptr.h:
-
-/usr/include/qt6/QtGui/qwindowdefs.h:
-
-/usr/include/qt6/QtCore/q20utility.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/cmpccxaddintrin.h:
-
-/usr/include/c++/15.1.1/bits/functional_hash.h:
-
-/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake:
-
-/usr/include/c++/15.1.1/bits/hash_bytes.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageConfig.h:
-
-/usr/include/qt6/QtCore/qstringlistmodel.h:
-
-/usr/include/qt6/QtCore/qsocketnotifier.h:
-
-/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfigVersion.cmake:
-
-/usr/include/c++/15.1.1/bits/basic_string.h:
-
-/usr/include/c++/15.1.1/bits/memory_resource.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginTargets.cmake:
-
-/usr/include/c++/15.1.1/bits/invoke.h:
-
-MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogGerenciarPerfis.cpp:
-
-/usr/include/c++/15.1.1/bits/nested_exception.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vnnivlintrin.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake:
-
-/usr/include/c++/15.1.1/bits/predefined_ops.h:
-
-/usr/include/qt6/QtGui/qpagedpaintdevice.h:
-
-/usr/include/c++/15.1.1/bits/exception.h:
-
-/usr/include/bits/errno.h:
-
-MeuCentavoApp_autogen/73MS7PNRZQ/moc_dialogSimuladorFinanciamento.cpp:
-
-/usr/lib/cmake/Qt6/QtPublicTargetHelpers.cmake:
-
-/usr/include/c++/15.1.1/memory:
-
-/usr/include/qt6/QtCore/qjsonvalue.h:
-
-/usr/include/qt6/QtGui/QTransform:
-
-/usr/include/c++/15.1.1/bits/std_abs.h:
-
-/usr/include/qt6/QtCore/qstringbuilder.h:
-
-/usr/include/qt6/QtWidgets/QStackedWidget:
-
-/usr/include/qt6/QtCore/qvarlengtharray.h:
-
-/usr/include/qt6/QtCore/qvector.h:
-
-/usr/include/qt6/QtCore/qxptype_traits.h:
-
-/usr/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake:
-
-/usr/include/qt6/QtCore/qwineventnotifier.h:
-
-/usr/include/qt6/QtCore/qyieldcpu.h:
-
-/usr/include/qt6/QtGui/QBrush:
-
-/usr/include/qt6/QtGui/QFont:
-
-/usr/include/qt6/QtGui/qpagelayout.h:
-
-/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake:
-
-/usr/include/qt6/QtGui/QPen:
-
-/usr/include/qt6/QtCore/qlogging.h:
-
-/usr/include/qt6/QtGui/qcolor.h:
-
-/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateVersionlessAliasTargets.cmake:
-
-/usr/include/qt6/QtGui/qfont.h:
-
-/usr/include/qt6/QtGui/qtguiglobal.h:
-
-/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateAdditionalTargetInfo.cmake:
-
-/usr/include/c++/15.1.1/bits/codecvt.h:
-
-/usr/include/qt6/QtGui/qfontinfo.h:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake:
-
-/usr/include/qt6/QtGui/qguiapplication.h:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake:
-
-/usr/include/qt6/QtWidgets/qgraphicsitemanimation.h:
-
-/usr/include/bits/wchar.h:
-
-/usr/include/qt6/QtGui/qguiapplication_platform.h:
-
-/usr/include/qt6/QtGui/qcursor.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargets.cmake:
-
-/usr/include/qt6/QtWidgets/qapplication.h:
-
-/usr/include/bits/types/FILE.h:
-
-/usr/include/qt6/QtGui/qicon.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/sm3intrin.h:
-
-/usr/include/qt6/QtCore/QJsonArray:
-
-/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateTargets.cmake:
-
-/usr/include/qt6/QtWidgets/qmessagebox.h:
-
-/usr/include/qt6/QtGui/qimage.h:
-
-/usr/include/qt6/QtGui/qinputdevice.h:
-
-/usr/include/qt6/QtGui/qinputmethod.h:
-
-/usr/include/qt6/QtGui/qpaintdevice.h:
-
-/usr/lib/cmake/Qt6/QtFeature.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vp2intersectvlintrin.h:
-
-/usr/include/qt6/QtGui/qpainter.h:
-
-/usr/include/qt6/QtGui/qpalette.h:
-
-/usr/include/qt6/QtCore/qeventloop.h:
-
-/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersionImpl.cmake:
-
-/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersion.cmake:
-
-/usr/include/qt6/QtCore/qassociativeiterable.h:
-
-/usr/include/qt6/QtGui/qpen.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QPdfPluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtGui/qpixelformat.h:
-
-/usr/lib/libc.so:
-
-/usr/include/qt6/QtGui/qpointingdevice.h:
-
-/usr/include/qt6/QtGui/qregion.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp:
-
-/usr/include/qt6/QtGui/qscreen.h:
-
-/usr/include/qt6/QtCore/QScopedPointer:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake:
-
-/usr/include/qt6/QtGui/qscreen_platform.h:
-
-/usr/share/cmake/Modules/Linker/GNU.cmake:
-
-/usr/include/qt6/QtWidgets/QDoubleSpinBox:
-
-/usr/include/qt6/QtCharts/QBarSet:
-
-/usr/include/qt6/QtWidgets/QApplication:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditCategoria.ui:
-
-/usr/include/qt6/QtGui/qtguiexports.h:
-
-/usr/include/c++/15.1.1/bits/stringfwd.h:
-
-/usr/share/cmake/Modules/Platform/Linux-GNU.cmake:
-
-/usr/include/qt6/QtWidgets/QGraphicsWidget:
-
-/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMngPluginAdditionalTargetInfo.cmake:
-
-/usr/include/bits/mathcalls-narrow.h:
-
-/usr/include/qt6/QtWidgets/qdialog.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginAdditionalTargetInfo.cmake:
-
-/usr/include/c++/15.1.1/bits/unordered_map.h:
-
-/usr/include/qt6/QtWidgets/qmainwindow.h:
-
-/usr/include/c++/15.1.1/memory_resource:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake:
-
-/usr/include/qt6/QtWidgets/qscrollarea.h:
-
-/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtWidgets/qtwidgets-config.h:
-
-/usr/lib/libGLdispatch.so.0:
-
-/usr/include/bits/types/__locale_t.h:
-
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessAliasTargets.cmake:
-
-/usr/include/qt6/QtWidgets/qtwidgetsexports.h:
-
-/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfig.cmake:
-
-/usr/include/qt6/QtWidgets/qtwidgetsglobal.h:
-
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++allocator.h:
-
-/usr/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake:
-
-/usr/include/qt6/QtCore/qmetacontainer.h:
-
-/usr/include/sched.h:
-
-/usr/include/qt6/QtCore/qjsondocument.h:
-
-/usr/include/stdio.h:
-
-/usr/include/string.h:
-
-/usr/include/qt6/QtCharts/QCandlestickModelMapper:
-
-/usr/include/c++/15.1.1/mutex:
-
-/usr/include/c++/15.1.1/bits/stl_iterator_base_funcs.h:
-
-/usr/include/strings.h:
-
-/usr/include/qt6/QtCore/qtimer.h:
-
-/usr/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageInvestimentos.ui:
-
-/usr/include/sys/cdefs.h:
-
-/usr/include/sys/select.h:
-
-/usr/include/sys/types.h:
-
-/usr/include/wchar.h:
-
-/usr/include/c++/15.1.1/bits/cpp_type_traits.h:
-
-/usr/lib/cmake/Qt6/FindWrapOpenGL.cmake:
-
-/usr/include/qt6/QtCore/qfuturesynchronizer.h:
-
-/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:
-
-/usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/recursos.qrc:
-
-/usr/lib/cmake/Qt6/Qt6Config.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp:
-
-/usr/lib/cmake/Qt6/Qt6ConfigExtras.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/libnghttp3.so.9:
-
-/usr/include/qt6/QtNetwork/QSslPreSharedKeyAuthenticator:
-
-/usr/lib/cmake/Qt6/Qt6ConfigVersion.cmake:
-
-/usr/include/bits/types/__sigset_t.h:
-
-/usr/lib/cmake/Qt6/Qt6Dependencies.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formBoasVindas.h:
-
-/usr/include/qt6/QtWidgets/QLineEdit:
-
-/usr/lib/cmake/Qt6/Qt6Targets.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicAppleHelpers.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:
-
-/usr/include/qt6/QtCore/qbasicatomic.h:
-
-/usr/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake:
-
-/usr/include/qt6/QtCore/qpauseanimation.h:
-
-/usr/include/asm/errno.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicGitHelpers.cmake:
-
-/usr/include/qt6/QtOpenGL/qopengltexture.h:
-
-/usr/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake:
-
-CMakeFiles/MeuCentavoApp.dir/DataAccess/LancamentoDAO.cpp.o:
-
-/usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake:
-
-/usr/include/qt6/QtOpenGL/qopengltextureblitter.h:
-
-/usr/include/qt6/QtCore/qurl.h:
-
-/usr/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicSbomHelpers.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.h:
-
-/usr/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake:
-
-/usr/include/qt6/QtCore/qfuture.h:
-
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
-
-/usr/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/clwbintrin.h:
-
-/usr/include/qt6/QtCore/qoverload.h:
-
-/usr/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake:
-
-MeuCentavoApp_autogen/V5IIWBEYZM/moc_UsuarioDAO.cpp:
-
-/usr/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake:
-
-MeuCentavoApp_autogen/2EK4JB7KXY/moc_dialogAddEditConta.cpp:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets.cmake:
-
-MeuCentavoApp_autogen/IMH5DCT4WY/moc_formLoginSenha.cpp:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsConfigVersion.cmake:
-
-/usr/include/qt6/QtNetwork/qhttpmultipart.h:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsDependencies.cmake:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsTargets.cmake:
-
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfig.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xtestintrin.h:
-
-/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersion.cmake:
-
-/usr/include/qt6/QtWidgets/qmdisubwindow.h:
+/usr/include/qt6/QtCore/qcompilerdetection.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets-relwithdebinfo.cmake:
 
-/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersionImpl.cmake:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.h:
 
-/usr/include/qt6/QtCore/qvarianthash.h:
+/usr/include/qt6/QtGui/qevent.h:
 
-/usr/include/c++/15.1.1/bits/ios_base.h:
+/usr/include/qt6/QtWidgets/qspinbox.h:
 
-/usr/include/qt6/QtWidgets/QGraphicsView:
+/usr/lib/cmake/Qt6Positioning/Qt6PositioningTargets-relwithdebinfo.cmake:
 
-/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateDependencies.cmake:
+/usr/include/qt6/QtGui/qtgui-config.h:
 
-/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateTargets.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2satcvtintrin.h:
-
-/usr/include/gnu/stubs-64.h:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/shaintrin.h:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake:
-
-MeuCentavoApp_autogen/2EK4JB7KXY/moc_formGerenciarContas.cpp:
-
-/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfigVersion.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfigVersionImpl.cmake:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formCadastro.cpp:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake:
-
-/usr/include/qt6/QtWidgets/qwidget.h:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake:
-
-/usr/include/c++/15.1.1/string:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusDependencies.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.ui:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:
-
-/usr/lib/libQt6Charts.so.6.9.1:
-
-/usr/include/c++/15.1.1/bits/specfun.h:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake:
-
-/usr/include/qt6/QtCore/qsystemdetection.h:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusMacros.cmake:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginTargets.cmake:
-
-/usr/include/qt6/QtCore/qcryptographichash.h:
-
-/usr/include/qt6/QtCore/qscopedpointer.h:
-
-/usr/include/c++/15.1.1/bits/stl_vector.h:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusVersionlessAliasTargets.cmake:
-
-/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfig.cmake:
-
-MeuCentavoApp_autogen/7ZANJCWOHC/moc_dialogSimularPlano.cpp:
-
-/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersion.cmake:
-
-/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersionImpl.cmake:
-
-/usr/include/qt6/QtGui/QActionGroup:
-
-/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake:
-
-/usr/include/qt6/QtWidgets/qsystemtrayicon.h:
-
-/usr/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512fp16vlintrin.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginConfig.cmake:
-
-MeuCentavoApp_autogen/VE35X4DZIU/moc_dialogAddEditOperacao.cpp:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginTargets-relwithdebinfo.cmake:
-
-MeuCentavoApp_autogen/VE35X4DZIU/moc_dialogAddEditAtivo.cpp:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/share/cmake/Modules/FindPkgConfig.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxmovrsintrin.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/c++/15.1.1/bits/hashtable_policy.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginTargets.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xsavecintrin.h:
-
-/usr/include/qt6/QtCore/qsignalmapper.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginConfig.cmake:
-
-/usr/include/qt6/QtWidgets/qfilesystemmodel.h:
-
-/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginConfig.cmake:
-
-/usr/include/qt6/QtCore/qpropertyanimation.h:
-
-/usr/include/c++/15.1.1/version:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets.cmake:
-
-/usr/include/qt6/QtCore/qtipccommon.h:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxbf16intrin.h:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.ui:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake:
-
-/usr/include/qt6/QtWidgets/qwidgetaction.h:
-
-/usr/include/linux/limits.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersionImpl.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/vpclmulqdqintrin.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/libb2.so.1:
-
-/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCore/qstandardpaths.h:
-
-/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/tmmintrin.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512ifmaintrin.h:
-
-/usr/include/qt6/QtNetwork/qnetworkreply.h:
-
-/usr/include/c++/15.1.1/atomic:
-
-/usr/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateVersionlessAliasTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake:
-
-/usr/lib/libQt6Network.so.6.9.1:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/UsuarioDAO.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMngPluginTargets.cmake:
-
-/usr/include/c++/15.1.1/bits/stl_multimap.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake:
-
-MeuCentavoApp_autogen/include/ui_dialogAddDividendo.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake:
-
-/usr/include/qt6/QtCharts/QValueAxis:
-
-/usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake:
-
-MeuCentavoApp_autogen/include/ui_formUsuario.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QPdfPluginConfig.cmake:
-
-/usr/include/c++/15.1.1/bits/random.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtOpenGL/qopenglversionprofile.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/libkrb5support.so.0:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2-512convertintrin.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake:
-
-/usr/include/qt6/QtCore/QSharedDataPointer:
-
-/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateTargets.cmake:
-
-/usr/include/qt6/QtNetwork/qtnetworkexports.h:
-
-/usr/include/qt6/QtCore/QDate:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/libidn2.so.0:
-
-/usr/include/qt6/QtCore/qpair.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginConfig.cmake:
-
-/usr/include/qt6/QtCore/qabstractproxymodel.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginAdditionalTargetInfo.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.cpp:
-
-/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersionImpl.cmake:
-
-/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginConfig.cmake:
-
-/usr/include/qt6/QtWidgets/qabstractscrollarea.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets.cmake:
-
-/usr/include/qt6/QtCore/qtpreprocessorsupport.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandEglPlatformIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandEglPlatformIntegrationPluginTargets.cmake:
-
-/usr/include/qt6/QtGui/qtextdocument.h:
-
-/usr/include/qt6/QtGui/qopenglfunctions.h:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake:
-
-/usr/include/ctype.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCore/qmutex.h:
-
-/usr/include/qt6/QtCharts/QAreaSeries:
-
-/usr/include/c++/15.1.1/bits/atomic_lockfree_defines.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginConfig.cmake:
-
-/usr/share/cmake/Modules/Platform/Linker/GNU.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginTargets.cmake:
-
-/usr/include/c++/15.1.1/bits/stl_function.h:
-
-/usr/share/cmake/Modules/CMakeCXXInformation.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets.cmake:
-
-/usr/lib/libgio-2.0.so.0:
-
-/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfigVersionImpl.cmake:
-
-/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateDependencies.cmake:
-
-/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QSvgPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.ui:
-
-/usr/include/c++/15.1.1/streambuf:
-
-/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake:
-
-/usr/lib/libproxy/libpxbackend-1.0.so:
-
-/usr/include/c++/15.1.1/type_traits:
-
-/usr/include/c++/15.1.1/bits/node_handle.h:
-
-/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets.cmake:
-
-MeuCentavoApp_autogen/LTMKJI32CL/moc_SessionManager.cpp:
-
-/usr/include/qt6/QtCharts/qboxplotlegendmarker.h:
-
-/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateTargets.cmake:
-
-/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake:
-
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp.o:
-
-/usr/include/qt6/QtCharts/qtchartsversion.h:
-
-/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/c++/15.1.1/tr1/beta_function.tcc:
+/usr/include/c++/15.1.1/numeric:
 
 /usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake:
 
-/usr/include/bits/types/__mbstate_t.h:
+/usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateConfigVersionImpl.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginAdditionalTargetInfo.cmake:
+/usr/include/qt6/QtCore/qobjectdefs_impl.h:
 
-/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginConfig.cmake:
 
-/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3styleimplpluginAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtWidgets/qtabwidget.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.ui:
 
-/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake:
+/usr/lib/cmake/Qt6Charts/Qt6ChartsConfigVersionImpl.cmake:
 
-/usr/include/qt6/QtWidgets/qtreeview.h:
+/usr/include/qt6/QtWidgets/QDialogButtonBox:
 
-/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:
+/usr/include/qt6/QtCore/qfunctionpointer.h:
 
-/usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginConfig.cmake:
 
-/usr/include/bits/endianness.h:
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargets-relwithdebinfo.cmake:
 
-/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfig.cmake:
+/usr/include/qt6/QtOpenGL/qopenglshaderprogram.h:
 
-/usr/include/qt6/QtCore/qsemaphore.h:
-
-/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateVersionlessAliasTargets.cmake:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake:
-
-/usr/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake:
-
-/usr/lib/libffi.so.8:
-
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formUsuario.h:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLDependencies.cmake:
-
-CMakeFiles/MeuCentavoApp.dir/MeuCentavoApp_autogen/EWIEGA46WW/qrc_recursos.cpp.o:
-
-/usr/lib/libresolv.so.2:
-
-/usr/include/qt6/QtNetwork/QNetworkAccessManager:
-
-/usr/include/qt6/QtWidgets/qsizepolicy.h:
-
-/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersion.cmake:
-
-/usr/include/qt6/QtCore/q20iterator.h:
-
-/usr/lib/cmake/Qt6Charts/Qt6ChartsTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCharts/qxymodelmapper.h:
-
-/usr/include/c++/15.1.1/bits/cxxabi_init_exception.h:
-
-/usr/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets.cmake:
-
-MeuCentavoApp_autogen/LTMKJI32CL/moc_AppController.cpp:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake:
-
-/usr/include/qt6/QtGui/qtextdocumentwriter.h:
-
-/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfigVersion.cmake:
-
-/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfigVersionImpl.cmake:
-
-/usr/include/c++/15.1.1/filesystem:
-
-/usr/lib/cmake/Qt6/QtPublicToolHelpers.cmake:
-
-/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateVersionlessAliasTargets.cmake:
+/usr/include/c++/15.1.1/bits/algorithmfwd.h:
 
 /usr/include/qt6/QtCore/qqueue.h:
 
-/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateConfigVersion.cmake:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsDividas/dialogSimularPlano.cpp:
 
-/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateConfigVersionImpl.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake:
 
-/usr/include/qt6/QtWidgets/qtoolbutton.h:
+/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsDependencies.cmake:
 
-/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateDependencies.cmake:
+/usr/include/c++/15.1.1/bits/localefwd.h:
 
-/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateTargets.cmake:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.ui:
 
-/usr/include/c++/15.1.1/bits/requires_hosted.h:
+/usr/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake:
 
-/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake:
+/usr/include/bits/stdint-intn.h:
 
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersion.cmake:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/AppController.h:
 
-/usr/include/c++/15.1.1/bits/list.tcc:
+/usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsConfig.cmake:
 
-/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/lwpintrin.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioConfig.cmake:
 
-/usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake:
+/usr/include/qt6/QtCore/q20iterator.h:
 
-/usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake:
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
 
-/usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake:
+/usr/include/qt6/QtGui/qopenglcontext.h:
 
-/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditOperacao.cpp:
 
-/usr/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets.cmake:
+/usr/include/qt6/QtCore/qtenvironmentvariables.h:
 
-/usr/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake:
+/usr/include/qt6/QtCore/qcborstreamwriter.h:
 
-/usr/include/qt6/QtNetwork/qsslpresharedkeyauthenticator.h:
+/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfig.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QMngPluginTargets-relwithdebinfo.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:
 
-/usr/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake:
+/usr/include/qt6/QtOpenGL/qtopenglversion.h:
 
-/usr/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.cpp.o:
 
-/usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake:
+/usr/include/c++/15.1.1/bits/refwrap.h:
 
-/usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake:
+/usr/include/bits/sched.h:
 
-/usr/include/c++/15.1.1/bits/stream_iterator.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp:
 
-/usr/include/qt6/QtWidgets/qgraphicsitem.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginAdditionalTargetInfo.cmake:
 
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake:
+/usr/include/qt6/QtCore/qshareddata_impl.h:
 
-/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp:
 
-/usr/lib/cmake/Qt6/QtPublicPluginHelpers.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginTargets.cmake:
 
-/usr/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake:
+/usr/lib/libpangoft2-1.0.so.0:
 
-/usr/include/qt6/QtGui/qtransform.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.ui:
 
-/usr/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginConfig.cmake:
 
-/usr/include/qt6/QtCore/qrandom.h:
+/usr/include/c++/15.1.1/bits/fs_ops.h:
+
+/usr/include/qt6/QtCore/q26numeric.h:
+
+/usr/include/qt6/QtGui/qpixmap.h:
+
+/usr/include/qt6/QtCore/qstringconverter_base.h:
+
+/usr/include/qt6/QtCore/qbuffer.h:
+
+/usr/include/bits/select.h:
+
+/usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateConfigVersionImpl.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2-512convertintrin.h:
+
+/usr/include/c++/15.1.1/cctype:
+
+/usr/include/bits/floatn.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Targets.cmake:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake:
+
+/usr/include/qt6/QtGui/qfontvariableaxis.h:
+
+/usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfigVersion.cmake:
+
+/usr/include/c++/15.1.1/bits/locale_classes.tcc:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsInvestimentos/dialogAddEditAtivo.cpp:
+
+/usr/include/qt6/QtGui/QWindow:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2bf16intrin.h:
+
+/usr/include/qt6/QtCore/qbasictimer.h:
+
+/usr/include/qt6/QtWidgets/qgesture.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formExcluirUsuario.h:
+
+/usr/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxcomplexintrin.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets.cmake:
+
+/usr/include/qt6/QtGui/qtextoption.h:
+
+/usr/lib/libXtst.so.6:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formExcluirUsuario.ui:
+
+/usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.ui:
+
+/usr/include/qt6/QtWidgets/qstyleplugin.h:
+
+/usr/lib/libavutil.so.59:
+
+/usr/include/c++/15.1.1/bits/ptr_traits.h:
+
+/usr/include/qt6/QtCharts/QXYModelMapper:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++locale.h:
+
+/usr/include/c++/15.1.1/bits/stl_tempbuf.h:
+
+/usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formLoginSenha.h:
+
+/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake:
+
+/usr/include/bits/types/struct_sched_param.h:
+
+/usr/include/qt6/QtWidgets/QVBoxLayout:
+
+/usr/include/qt6/QtCharts/qsplineseries.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtWidgets/qdatetimeedit.h:
+
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginTargets.cmake:
+
+/usr/lib/libQt6Qml.so.6.9.1:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.cpp:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginConfig.cmake:
+
+/usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateConfig.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512ifmaintrin.h:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/main.cpp:
+
+/usr/include/bits/timex.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/bits/memoryfwd.h:
+
+/usr/lib/libpng16.so.16:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginTargets.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets.cmake:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateConfigVersionImpl.cmake:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/prfchiintrin.h:
+
+/usr/include/qt6/QtCore/qscopedpointer.h:
+
+/usr/include/qt6/QtCore/qexception.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Gerenciamento/SessionManager.h:
+
+MeuCentavoApp_autogen/include/ui_dialogAddEditAtivo.h:
+
+/usr/include/bits/types/__FILE.h:
+
+/usr/lib/libcrypto.so.3:
+
+/usr/include/qt6/QtCore/qlatin1stringview.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Categoria.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsPlatformpluginConfig.cmake:
+
+/usr/include/c++/15.1.1/bits/uniform_int_dist.h:
+
+/usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateConfig.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Dividendo.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickdelegatespluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtGui/qopengl.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets.cmake:
+
+/usr/include/qt6/QtCore/QVariant:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Perfil.h:
+
+/usr/include/asm/posix_types.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginConfig.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/cldemoteintrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandEglPlatformIntegrationPluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qfuture_impl.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/qframe.h:
+
+/usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake:
+
+/usr/include/qt6/QtWidgets/qwidget.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/TransacaoImportada.h:
+
+/usr/include/qt6/QtCore/qconcatenatetablesproxymodel.h:
+
+/usr/include/qt6/QtCore/qglobal.h:
+
+/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets-relwithdebinfo.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarCategorias.ui:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Positioning/Qt6PositioningPlugins.cmake:
+
+/usr/include/c++/15.1.1/bits/shared_ptr.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets.cmake:
+
+/usr/include/qt6/QtGui/qbitmap.h:
+
+/usr/include/qt6/QtCore/qcoreevent.h:
+
+/usr/include/qt6/QtCore/qnamespace.h:
+
+/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateVersionlessAliasTargets.cmake:
+
+/usr/include/c++/15.1.1/ratio:
+
+/usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioTargets.cmake:
+
+/usr/include/qt6/QtGui/qtextlist.h:
+
+/usr/include/qt6/QtCore/qstack.h:
+
+/usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfig.cmake:
+
+/usr/include/qt6/QtGui/qrgb.h:
+
+/usr/lib/libdbus-1.so.3:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageDividas.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formBoasVindas.ui:
+
+/usr/include/qt6/QtCore/qsharedpointer.h:
+
+/usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateConfig.cmake:
+
+/usr/include/c++/15.1.1/bits/std_function.h:
+
+/usr/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake:
+
+/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateDependencies.cmake:
+
+/usr/include/qt6/QtCore/qnativeinterface.h:
+
+/usr/include/qt6/QtWidgets/qgraphicslayout.h:
+
+/usr/include/c++/15.1.1/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/15.1.1/bits/stl_algobase.h:
+
+/usr/include/c++/15.1.1/tr1/hypergeometric.tcc:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mwaitxintrin.h:
+
+/usr/include/c++/15.1.1/bits/stl_function.h:
+
+/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtWidgets/qlistview.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.cpp:
+
+/usr/include/c++/15.1.1/list:
+
+/usr/include/qt6/QtCharts/qtcharts-config.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formExcluirUsuario.cpp:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCharts/qpieslice.h:
+
+/usr/include/c++/15.1.1/bits/stl_iterator.h:
+
+/usr/include/c++/15.1.1/bits/stl_iterator_base_types.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtCore/qpoint.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogImportarExtrato.cpp:
+
+/usr/include/c++/15.1.1/bits/stl_list.h:
+
+/usr/include/bits/types/struct_timespec.h:
+
+/usr/lib/libabsl_crc_cord_state.so.2505.0.0:
+
+/usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h:
+
+/usr/include/c++/15.1.1/debug/assertions.h:
+
+/usr/include/qt6/QtCore/qfuturewatcher.h:
+
+/usr/include/c++/15.1.1/bits/stl_multiset.h:
+
+/usr/include/c++/15.1.1/bits/stl_set.h:
+
+/usr/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateConfig.cmake:
+
+/usr/include/c++/15.1.1/bits/streambuf.tcc:
+
+/usr/include/qt6/QtCore/qminmax.h:
+
+/usr/include/qt6/QtCore/qiterator.h:
+
+/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginConfig.cmake:
+
+/usr/include/bits/types/cookie_io_functions_t.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageMetas.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake:
+
+/usr/lib/libm.so:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/formInicio.h:
+
+/usr/include/linux/errno.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandEglPlatformIntegrationPluginConfig.cmake:
+
+/usr/lib/libabsl_log_internal_message.so.2505.0.0:
+
+/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateVersionlessAliasTargets.cmake:
+
+/usr/include/c++/15.1.1/bits/utility.h:
+
+/usr/include/c++/15.1.1/bits/vector.tcc:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/string:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCharts/qhorizontalstackedbarseries.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/libabsl_log_internal_proto.so.2505.0.0:
+
+/usr/include/qt6/QtCharts/QLegend:
+
+/usr/include/qt6/QtCore/qalgorithms.h:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateDependencies.cmake:
+
+/usr/include/qt6/QtCharts/QPieSlice:
+
+/usr/include/c++/15.1.1/bits/uses_allocator_args.h:
+
+/usr/include/c++/15.1.1/chrono:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qwaylandcompositorpluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCharts/qcoloraxis.h:
+
+/usr/include/qt6/QtCore/qtextstream.h:
+
+/usr/include/qt6/QtCore/qatomic_cxx11.h:
+
+/usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateDependencies.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/fmaintrin.h:
+
+/usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/bits/unordered_set.h:
+
+/usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qtemporaryfile.h:
+
+/usr/include/qt6/QtCore/qlibraryinfo.h:
+
+/usr/include/c++/15.1.1/tr1/legendre_function.tcc:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/messages_members.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/cstdio:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/wbnoinvdintrin.h:
+
+/usr/include/c++/15.1.1/bits/postypes.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/variant:
+
+MeuCentavoApp_autogen/73MS7PNRZQ/moc_dialogSimuladorAposentadoria.cpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vldqintrin.h:
+
+/usr/include/c++/15.1.1/cstdlib:
+
+/usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsConfig.cmake:
+
+/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsConfig.cmake:
+
+/usr/include/qt6/QtCore/qelapsedtimer.h:
+
+/usr/lib/cmake/Qt6ConcurrentPrivate/Qt6ConcurrentPrivateTargets.cmake:
+
+/usr/include/qt6/QtCore/qmetacontainer.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptDependencies.cmake:
+
+/usr/include/c++/15.1.1/cstring:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.ui:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageConfig.ui:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/tr1/poly_hermite.tcc:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dassetutilspluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/bits/stl_algo.h:
+
+/usr/include/bits/wctype-wchar.h:
+
+/usr/include/c++/15.1.1/exception:
+
+/usr/include/c++/15.1.1/ext/aligned_buffer.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qbytearrayview.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6/FindWrapAtomic.cmake:
+
+/usr/include/qt6/QtWidgets/qwizard.h:
+
+/usr/include/c++/15.1.1/ext/alloc_traits.h:
+
+/usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/bits/unique_lock.h:
+
+/usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtCore/qstringview.h:
+
+/usr/include/c++/15.1.1/ext/atomicity.h:
+
+/usr/include/qt6/QtCore/qeventloop.h:
+
+/usr/include/c++/15.1.1/ext/concurrence.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateTargets.cmake:
+
+/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/ext/string_conversions.h:
+
+/usr/include/c++/15.1.1/initializer_list:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
+
+/usr/include/c++/15.1.1/iosfwd:
+
+/usr/include/qt6/QtCore/QMap:
+
+/usr/lib/libQt6WebEngineWidgets.so.6.9.1:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCharts/qcandlestickset.h:
+
+/usr/include/c++/15.1.1/iterator:
+
+/usr/include/qt6/QtWidgets/qcommonstyle.h:
+
+/usr/include/qt6/QtGui/QPen:
+
+/usr/include/c++/15.1.1/map:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbcomponentspluginTargets.cmake:
+
+/usr/include/c++/15.1.1/pstl/execution_defs.h:
+
+/usr/include/qt6/QtCore/qsize.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginConfig.cmake:
+
+/usr/include/qt6/QtNetwork/QNetworkReply:
+
+/usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtGui/qvectornd.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Composicoes/PasswordFormHelper.h:
+
+/usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsTargets.cmake:
+
+/usr/include/c++/15.1.1/bits/erase_if.h:
+
+/usr/include/c++/15.1.1/set:
+
+MeuCentavoApp_autogen/include/ui_dialogSimuladorFinanciamento.h:
+
+/usr/include/qt6/QtGui/qrgba64.h:
+
+/usr/include/c++/15.1.1/pstl/pstl_config.h:
+
+/usr/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake:
+
+/usr/include/c++/15.1.1/string_view:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateAdditionalTargetInfo.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Lancamento.h:
+
+/usr/include/qt6/QtGui/qgenericplugin.h:
+
+/usr/include/qt6/QtCore/qchar.h:
+
+/usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportDependencies.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginConfig.cmake:
+
+/usr/include/c++/15.1.1/tr1/ell_integral.tcc:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginTargets.cmake:
 
 /usr/include/asm/posix_types_64.h:
 
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Usuario.h:
+
 /usr/share/cmake/Modules/GNUInstallDirs.cmake:
 
-/usr/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake:
+/usr/include/qt6/QtCore/qrandom.h:
 
-/usr/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake:
+/usr/include/c++/15.1.1/tr1/gamma.tcc:
 
-/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfig.cmake:
+/usr/include/c++/15.1.1/tr1/modified_bessel_func.tcc:
 
-/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateDependencies.cmake:
+/usr/include/qt6/QtGui/qregion.h:
 
-/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateTargets.cmake:
+/usr/include/qt6/QtCore/qstringconverter.h:
 
-/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:
+/usr/include/c++/15.1.1/tr1/riemann_zeta.tcc:
 
-/usr/include/qt6/QtCharts/qchartview.h:
+/usr/lib/libabsl_malloc_internal.so.2505.0.0:
+
+/usr/include/qt6/QtCore/qcontainerinfo.h:
+
+/usr/include/c++/15.1.1/tuple:
+
+/usr/include/c++/15.1.1/bits/chrono.h:
+
+/usr/include/c++/15.1.1/unordered_map:
+
+/usr/include/c++/15.1.1/unordered_set:
+
+/usr/include/qt6/QtCore/qtdeprecationdefinitions.h:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
+
+/usr/include/qt6/QtCore/qregularexpression.h:
+
+/usr/include/qt6/QtCore/qmargins.h:
+
+/usr/include/c++/15.1.1/bits/char_traits.h:
+
+/usr/include/c++/15.1.1/bits/stl_uninitialized.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/sgxintrin.h:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/error_constants.h:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/os_defines.h:
+
+/usr/lib/libnghttp3.so.9:
+
+/usr/include/c++/15.1.1/bits/stl_numeric.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/QVector:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/bits/streambuf_iterator.h:
+
+/usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateDependencies.cmake:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/pthread.h:
+
+/usr/include/qt6/QtCharts/QAbstractSeries:
+
+/usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCharts/QChart:
+
+/usr/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake:
+
+/usr/include/assert.h:
+
+/usr/include/qt6/QtCharts/QChartGlobal:
+
+/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateDependencies.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtNetwork/qtcpsocket.h:
+
+/usr/include/qt6/QtWidgets/QTableWidget:
+
+/usr/include/qt6/QtOpenGL/qopenglpixeltransferoptions.h:
+
+/usr/include/qt6/QtWidgets/QLayoutItem:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageConfig.cpp:
+
+/usr/include/qt6/QtCore/qforeach.h:
+
+/usr/include/qt6/QtCore/qversiontagging.h:
 
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:
 
-/usr/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake:
+/usr/lib/libva-drm.so.2:
 
-/usr/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake:
+/usr/include/c++/15.1.1/ios:
+
+/usr/include/qt6/QtCore/qsettings.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/QList:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsConfiguracoes/dialogGerenciarPerfis.h:
+
+/usr/include/qt6/QtCore/QMetaType:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qpainterpath.h:
+
+/usr/include/qt6/QtGui/qrawfont.h:
+
+/usr/include/qt6/QtCore/qprocessordetection.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/features.h:
+
+/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qarraydata.h:
+
+/usr/include/qt6/QtCore/qarraydataops.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qarraydatapointer.h:
+
+/usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake:
+
+/usr/include/c++/15.1.1/cwchar:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2copyintrin.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/share/cmake/Modules/MacroAddFileDependencies.cmake:
+
+/usr/include/qt6/QtCharts/qabstractbarseries.h:
+
+/usr/include/qt6/QtCore/qbytearraylist.h:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake:
+
+/usr/include/qt6/QtCore/qrefcount.h:
+
+/usr/include/qt6/QtCore/qscopedvaluerollback.h:
+
+/usr/include/qt6/QtCore/qcalendar.h:
+
+/usr/include/qt6/QtCore/QString:
+
+/usr/include/qt6/QtGui/qpalette.h:
+
+/usr/include/qt6/QtCore/qcompare.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/tbmintrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qstringalgorithms.h:
 
 /usr/include/qt6/QtCore/qcompare_impl.h:
 
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake:
 
-/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateAdditionalTargetInfo.cmake:
+/usr/include/qt6/QtCore/qcontainerfwd.h:
 
-/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfig.cmake:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/immintrin.h:
 
-/usr/include/qt6/QtCharts/qhorizontalbarseries.h:
+/usr/include/qt6/QtCore/qmimedatabase.h:
 
-/usr/include/qt6/QtCore/q20memory.h:
+/usr/include/time.h:
 
-/usr/lib/cmake/Qt6/QtFeatureCommon.cmake:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.cpp.o:
 
-/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfigVersionImpl.cmake:
+/usr/include/qt6/QtCore/qcontainertools_impl.h:
 
-/usr/include/qt6/QtGui/QSurfaceFormat:
+/usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginTargets-relwithdebinfo.cmake:
 
-/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargets.cmake:
 
-/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateDependencies.cmake:
+/usr/include/qt6/QtCore/QPointF:
 
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake:
+/usr/include/c++/15.1.1/bits/requires_hosted.h:
 
-/usr/include/qt6/QtCore/qcomparehelpers.h:
+/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake:
 
-/usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake:
+/usr/include/qt6/QtGui/qbrush.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake:
+/usr/include/qt6/QtCore/qdarwinhelpers.h:
 
-/usr/include/qt6/QtCore/qvariant.h:
+/usr/lib/libQt6Core.so.6.9.1:
 
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake:
+/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateConfig.cmake:
 
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake:
+/usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginTargets-relwithdebinfo.cmake:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h:
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageLancamentos.ui:
 
-/usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
+/usr/include/qt6/QtCharts/qcandlestickmodelmapper.h:
 
-/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formLoginSenha.h:
+/usr/include/qt6/QtCore/qdeadlinetimer.h:
 
-/usr/include/c++/15.1.1/bits/unique_ptr.h:
+/usr/include/c++/15.1.1/bits/fs_dir.h:
 
-/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake:
 
-/usr/lib/libharfbuzz.so.0:
+/usr/include/qt6/QtCore/qexceptionhandling.h:
 
-/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:
+/usr/include/qt6/QtGui/qpolygon.h:
 
-/usr/include/asm/types.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginConfig.cmake:
 
-/usr/share/cmake/Modules/CheckLibraryExists.cmake:
+/usr/include/c++/15.1.1/random:
 
-/usr/include/qt6/QtCore/qbytearrayalgorithms.h:
+/usr/include/qt6/QtCore/qsharedpointer_impl.h:
 
-/usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake:
+/usr/include/qt6/QtCore/qgenericatomic.h:
 
-/usr/include/qt6/QtCore/q20functional.h:
+/usr/include/qt6/QtCore/qhash.h:
 
-/usr/include/qt6/QtCore/qcontiguouscache.h:
+/usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets.cmake:
 
-/usr/share/cmake/Modules/Compiler/GNU-CXX.cmake:
+/usr/include/c++/15.1.1/ext/numeric_traits.h:
 
-/usr/include/qt6/QtCore/qcborarray.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginAdditionalTargetInfo.cmake:
 
-/usr/share/cmake/Modules/Compiler/GNU.cmake:
+/usr/include/qt6/QtGui/qopenglext.h:
 
-/usr/include/qt6/QtCore/QSizeF:
+/usr/include/qt6/QtCore/qiodevicebase.h:
 
-/usr/share/cmake/Modules/FeatureSummary.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderpluginDependencies.cmake:
 
-/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake:
+/usr/include/qt6/QtCore/qttypetraits.h:
 
-/usr/share/cmake/Modules/FindPackageMessage.cmake:
+/usr/include/qt6/QtCore/qlocale.h:
 
-CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageHome.cpp.o:
+/usr/include/qt6/QtCore/qmalloc.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginAdditionalTargetInfo.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargets.cmake:
 
-/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake:
+/usr/include/qt6/QtWidgets/qdial.h:
 
-/usr/include/bits/uio_lim.h:
+/usr/include/qt6/QtCore/qmap.h:
 
-/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageRelatorios.cpp.o:
 
-/usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsAdditionalTargetInfo.cmake:
 
-/usr/share/cmake/Modules/Linker/GNU-CXX.cmake:
+/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelVersionlessAliasTargets.cmake:
 
-/usr/include/bits/stdlib-float.h:
+/usr/include/qt6/QtCharts/qpieseries.h:
 
-/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake:
+/usr/include/qt6/QtCore/qmath.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxint8intrin.h:
+MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageDividas.cpp:
 
-/usr/include/qt6/QtNetwork/qssl.h:
+/usr/include/qt6/QtCore/qobject.h:
 
-/usr/share/cmake/Modules/Platform/Linux.cmake:
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/formGerenciarContas.cpp.o:
 
-/usr/include/bits/flt-eval-method.h:
+/usr/include/limits.h:
 
-/usr/include/bits/libm-simd-decl-stubs.h:
+/usr/include/qt6/QtCore/qglobalstatic.h:
 
-/usr/include/qt6/QtCore/qjsonarray.h:
+/usr/include/c++/15.1.1/bits/cxxabi_forced.h:
 
-/usr/include/bits/math-vector.h:
+/usr/include/qt6/QtCore/qobjectdefs.h:
+
+/usr/include/qt6/QtGui/qiconengineplugin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandEglPlatformIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/stdlib.h:
+
+/usr/include/qt6/QtCore/qscopeguard.h:
+
+/usr/include/qt6/QtCore/qset.h:
+
+/usr/include/qt6/QtCore/qshareddata.h:
+
+/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qspan.h:
+
+/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreVersionlessAliasTargets.cmake:
+
+/usr/include/c++/15.1.1/bits/hashtable.h:
+
+/usr/include/qt6/QtCore/qstring.h:
+
+/usr/include/qt6/QtCore/qxptype_traits.h:
+
+/usr/include/qt6/QtCore/qstringfwd.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qwaylandcompositorpluginTargets.cmake:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/ctype_inline.h:
+
+/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vlbwintrin.h:
+
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets.cmake:
+
+/usr/include/c++/15.1.1/bits/exception_ptr.h:
+
+/usr/include/qt6/QtCore/qstringlist.h:
+
+/usr/include/qt6/QtWidgets/QWidget:
+
+/usr/include/qt6/QtCharts/QAbstractBarSeries:
+
+/usr/include/c++/15.1.1/ext/type_traits.h:
+
+/usr/include/qt6/QtCore/qsysinfo.h:
+
+/usr/include/qt6/QtCore/qtclasshelpermacros.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginAdditionalTargetInfo.cmake:
+
+/usr/include/gnu/stubs.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qvector.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/qt6/QtOpenGLWidgets/qopenglwidget.h:
+
+/usr/include/qt6/QtCore/qtconfigmacros.h:
+
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginConfig.cmake:
+
+/usr/include/bits/mathcalls-helper-functions.h:
 
 /usr/include/qt6/QtWidgets/QGridLayout:
 
-/usr/include/bits/mathcalls-helper-functions.h:
+/usr/include/qt6/QtCore/qtcoreglobal.h:
+
+/usr/include/qt6/QtWidgets/qabstractspinbox.h:
+
+/usr/lib/libQt6Network.so.6.9.1:
+
+/usr/include/qt6/QtWidgets/qgraphicswidget.h:
+
+/usr/include/c++/15.1.1/bits/random.tcc:
+
+/usr/include/locale.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2mediaintrin.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageMetas.ui:
+
+/usr/include/qt6/QtWidgets/qgridlayout.h:
+
+/usr/include/qt6/QtCore/qtversion.h:
+
+/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionConfig.cmake:
+
+/usr/include/c++/15.1.1/system_error:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Charts/Qt6ChartsTargets.cmake:
+
+/usr/include/qt6/QtWidgets/qsplitter.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhangulpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qpropertyprivate.h:
+
+/usr/include/c++/15.1.1/bits/istream.tcc:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfigVersion.cmake:
+
+/usr/include/qt6/QtWidgets/qstyleoption.h:
+
+/usr/include/qt6/QtOpenGL/qopenglvertexarrayobject.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargets-relwithdebinfo.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageHome.ui:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginConfig.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512cdintrin.h:
+
+/usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfig.cmake:
+
+/usr/include/bits/floatn-common.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qdatastream.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginTargets.cmake:
+
+/usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/bits/ostream.tcc:
+
+/usr/include/qt6/QtCore/qfunctionaltools_impl.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/libabsl_hash.so.2505.0.0:
+
+/usr/include/qt6/QtCharts/qabstractseries.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/Meta.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qsystemsemaphore.h:
+
+/usr/include/c++/15.1.1/bits/unique_ptr.h:
+
+/usr/include/qt6/QtGui/QAction:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtOpenGL/qopenglframebufferobject.h:
+
+/usr/lib/libgnutls.so.30:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginConfig.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/popcntintrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QPdfPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlPublicCMakeHelpers.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2minmaxintrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qsortfilterproxymodel.h:
+
+/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginConfig.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512bf16intrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formCadastro.ui:
+
+/usr/include/qt6/QtCore/qtmocconstants.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsConfig.cmake:
+
+/usr/include/c++/15.1.1/bits/allocator.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/condition_variable:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginTargets.cmake:
+
+/usr/share/cmake/Modules/CMakeCXXInformation.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginTargets.cmake:
+
+MeuCentavoApp_autogen/VE35X4DZIU/moc_dialogAddEditAtivo.cpp:
+
+/usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtCore/qreadwritelock.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/sstream:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qstringliteral.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2AdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Config.cmake:
+
+/usr/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersion.cmake:
+
+/usr/include/qt6/QtWidgets/qgraphicstransform.h:
+
+/usr/lib/libdvdnav.so.4:
+
+/usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateConfigVersionImpl.cmake:
+
+/usr/include/c++/15.1.1/vector:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Targets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/tr1/exp_integral.tcc:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qfiledialog.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxavx512intrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qtyperevision.h:
+
+/usr/include/qt6/QtWidgets/qgraphicsproxywidget.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginTargets-relwithdebinfo.cmake:
+
+MeuCentavoApp_autogen/include/ui_formBoasVindas.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dassetutilspluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsUsuarios/formBoasVindas.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets.cmake:
+
+/usr/include/qt6/QtCore/qlogging.h:
+
+/usr/include/c++/15.1.1/bits/stl_bvector.h:
+
+/usr/include/qt6/QtWidgets/qcheckbox.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/libgsm.so.1:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCharts/qlegend.h:
+
+/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake:
+
+/usr/include/qt6/QtCore/qcborstreamreader.h:
+
+MeuCentavoApp_autogen/JGBQRWFFYH/moc_formAdicionarLancamento.cpp:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginTargets.cmake:
+
+/usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptTargets.cmake:
+
+/usr/lib/libabsl_crc32c.so.2505.0.0:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtOpenGL/QtOpenGLDepends:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vbmi2vlintrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginConfig.cmake:
+
+/usr/lib/libxkbcommon.so.0:
+
+/usr/include/c++/15.1.1/bits/codecvt.h:
+
+/usr/include/qt6/QtCharts/qarealegendmarker.h:
+
+/usr/include/qt6/QtCore/qdebug.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCharts/qpolarchart.h:
+
+/usr/include/features-time64.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginTargets.cmake:
+
+/usr/lib/libQt6QmlModels.so.6.9.1:
+
+/usr/include/qt6/QtCore/QFileInfo:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtGui/qcolortransform.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qtmetamacros.h:
+
+/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3styleimplpluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qstandarditemmodel.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3styleimplpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbsettingspluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginTargets.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avxvnniintrin.h:
+
+/usr/include/qt6/QtWidgets/QtWidgetsDepends:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/libnghttp2.so.14:
+
+/usr/include/qt6/QtCore/QDeadlineTimer:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/formMainDashboard.cpp:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/qslider.h:
+
+/usr/include/qt6/QtWidgets/qgraphicslayoutitem.h:
+
+/usr/include/qt6/QtCore/qfutureinterface.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginTargets-relwithdebinfo.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Modelo/OperacaoInvestimento.h:
+
+/usr/include/qt6/QtCore/qnumeric.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginTargets.cmake:
+
+/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageDividas.ui:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginAdditionalTargetInfo.cmake:
+
+MeuCentavoApp_autogen/include/ui_formInicio.h:
+
+/usr/include/qt6/QtGui/qabstracttextdocumentlayout.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/qheaderview.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6OpenGLWidgetsPrivate/Qt6OpenGLWidgetsPrivateDependencies.cmake:
+
+/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/QTextStream:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginTargets.cmake:
+
+/usr/include/qt6/QtCharts/qvboxplotmodelmapper.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets.cmake:
+
+/usr/lib/ld-linux-x86-64.so.2:
+
+/usr/include/asm-generic/int-ll64.h:
+
+/usr/include/c++/15.1.1/optional:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets.cmake:
+
+CMakeFiles/MeuCentavoApp.dir/Composicoes/PasswordFormHelper.cpp.o:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/shaintrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qlayoutitem.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginAdditionalTargetInfo.cmake:
+
+/usr/share/cmake/Modules/FindThreads.cmake:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsRelatorios/dialogCalculadoraIR.cpp.o:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qdir.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/libabsl_kernel_timeout_internal.so.2505.0.0:
+
+/usr/include/qt6/QtCore/qresultstore.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginConfig.cmake:
+
+/usr/include/qt6/QtGui/QPaintDevice:
+
+/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbcomponentspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xsaveintrin.h:
+
+/usr/include/qt6/QtGui/qpageranges.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhangulpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhangulpluginConfig.cmake:
+
+/usr/include/bits/locale.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhangulpluginTargets.cmake:
+
+/usr/include/asm/bitsperlong.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhunspellpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhunspellpluginConfig.cmake:
+
+/usr/include/qt6/QtOpenGLWidgets/QtOpenGLWidgetsDepends:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhunspellpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkblayoutspluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/functional:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkblayoutspluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qconstructormacros.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512fintrin.h:
+
+/usr/include/qt6/QtCore/QObject:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpinyinpluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/QMatrix4x4:
+
+/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qoffscreensurface.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpinyinpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginConfig.cmake:
+
+/usr/include/qt6/QtCore/qhashfunctions.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qjsonobject.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbsettingspluginTargets.cmake:
+
+MeuCentavoApp_autogen/include/ui_pageInvestimentos.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbstylespluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/bits/enable_special_members.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbstylespluginTargets.cmake:
+
+/usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateConfig.cmake:
+
+/usr/lib/libxcb.so.1:
+
+/usr/include/qt6/QtCore/qurlquery.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbthaipluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/libQt6Quick.so.6.9.1:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Quick/Qt6QuickTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/bits/nested_exception.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtWidgets/qtwidgetsglobal.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingConfig.cmake:
+
+/usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateTargets.cmake:
+
+/usr/include/qt6/QtCore/qstringtokenizer.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowTargets-relwithdebinfo.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512bitalgintrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowTargets.cmake:
+
+/usr/include/qt6/QtGui/QShortcut:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qwaylandcompositorpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/bits/version.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginTargets.cmake:
+
+/usr/include/c++/15.1.1/istream:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWebEngineCore/qtwebenginecoreglobal.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginConfig.cmake:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateDependencies.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qtipccommon.h:
+
+/usr/include/qt6/QtCore/qdiriterator.h:
+
+/usr/include/c++/15.1.1/bits/std_abs.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginTargets.cmake:
+
+/usr/include/qt6/QtCharts/QBoxPlotSeries:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qgraphicsanchorlayout.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/clflushoptintrin.h:
+
+/usr/include/c++/15.1.1/bits/align.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/QPaintDeviceWindow:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQuick3DProfilerAdapterFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQuick3DProfilerAdapterFactoryPluginConfig.cmake:
+
+/usr/lib/libQt6WebEngineCore.so.6.9.1:
+
+/usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsAdditionalTargetInfo.cmake:
+
+/usr/lib/libabsl_spinlock_wait.so.2505.0.0:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQuick3DProfilerAdapterFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQuick3DProfilerAdapterFactoryPluginTargets.cmake:
+
+/usr/include/qt6/QtCore/qmetatype.h:
+
+/usr/include/qt6/QtGui/qstylehints.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qgenericmatrix.h:
+
+/usr/include/c++/15.1.1/iomanip:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake:
+
+/usr/lib/cmake/Qt6Quick/Qt6QuickAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/qpicture.h:
+
+/usr/include/qt6/QtCore/qcbormap.h:
+
+/usr/include/bits/types/mbstate_t.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlConfigExtras.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6/QtPublicPluginHelpers.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorFinanciamento.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlDependencies.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginTargets.cmake:
+
+/usr/include/qt6/QtCore/QUrlQuery:
+
+/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake:
+
+/usr/include/qt6/QtWidgets/QCommonStyle:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlPlugins.cmake:
+
+/usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderConfig.cmake:
+
+/usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Quick/Qt6QuickPlugins.cmake:
+
+/usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Quick/Qt6QuickTargets.cmake:
+
+/usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateDependencies.cmake:
+
+/usr/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateTargets.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake:
+
+/usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationConfig.cmake:
+
+/usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateConfigVersion.cmake:
+
+/usr/include/qt6/QtWidgets/qcolumnview.h:
+
+/usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateDependencies.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6QmlIntegrationPrivate/Qt6QmlIntegrationPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qwaylandcompositorpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaConfig.cmake:
+
+/usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaDependencies.cmake:
+
+/usr/include/qt6/QtCore/qrunnable.h:
+
+/usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaTargets-relwithdebinfo.cmake:
+
+/usr/include/wchar.h:
+
+/usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaTargets.cmake:
+
+/usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateConfig.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfigVersionImpl.cmake:
+
+MeuCentavoApp_autogen/include/ui_formCadastro.h:
+
+/usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/qtexttable.h:
+
+/usr/lib/libabsl_log_internal_conditions.so.2505.0.0:
+
+/usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsConfigVersion.cmake:
+
+/usr/include/qt6/QtCharts/QBoxSet:
+
+/usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtCharts/qdatetimeaxis.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorAposentadoria.cpp:
+
+/usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsTargets.cmake:
+
+/usr/include/bits/types/__locale_t.h:
+
+/usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qeasingcurve.h:
+
+/usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingTargets.cmake:
+
+/usr/include/qt6/QtGui/qrgbafloat.h:
+
+/usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateDependencies.cmake:
+
+/usr/include/qt6/QtCore/qsharedmemory.h:
+
+/usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateTargets.cmake:
+
+/usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsConfig.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtCharts/qboxset.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsDependencies.cmake:
+
+/usr/include/qt6/QtWidgets/qcommandlinkbutton.h:
+
+/usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/QDateEdit:
+
+/usr/include/qt6/QtWidgets/qlcdnumber.h:
+
+/usr/lib/cmake/Qt6QmlModelsPrivate/Qt6QmlModelsPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptConfig.cmake:
+
+/usr/include/c++/15.1.1/climits:
+
+/usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptConfigVersionImpl.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/lwpintrin.h:
+
+/usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptTargets-relwithdebinfo.cmake:
+
+/usr/lib/libcap.so.2:
+
+/usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateDependencies.cmake:
+
+/usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6QmlWorkerScriptPrivate/Qt6QmlWorkerScriptPrivateDependencies.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfigVersionImpl.cmake:
+
+/usr/include/bits/types/struct_FILE.h:
+
+/usr/lib/cmake/Qt6Quick/Qt6QuickConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:
+
+/usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateDependencies.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelpersimplpluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/qcolormap.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbcomponentspluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateTargets.cmake:
+
+/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsConfigVersion.cmake:
+
+/usr/include/qt6/QtWidgets/QCheckBox:
+
+/usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateConfigVersionImpl.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxtileintrin.h:
+
+/usr/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake:
+
+MeuCentavoApp_autogen/JGBQRWFFYH/moc_dialogMapeamento.cpp:
+
+/usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateDependencies.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateTargets.cmake:
+
+/usr/lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtCharts/qtchartsexports.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/qplaintextedit.h:
+
+/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtOpenGL/qopengldebug.h:
+
+/usr/include/qt6/QtGui/QtGui:
+
+/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake:
+
+/usr/lib/libproxy/libpxbackend-1.0.so:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake:
+
+/usr/lib/libabsl_tracing_internal.so.2505.0.0:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbstylespluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtWidgets/qsystemtrayicon.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfig.cmake:
+
+/usr/include/qt6/QtCharts/qareaseries.h:
+
+/usr/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/15.1.1/shared_mutex:
+
+/usr/include/linux/posix_types.h:
+
+/usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vp2intersectvlintrin.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vnniintrin.h:
+
+/usr/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtWidgets/qtwidgetsversion.h:
+
+/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtWidgets/qwhatsthis.h:
+
+/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfig.cmake:
+
+/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtCore/QUrl:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateTargets.cmake:
+
+/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtOpenGL/qopengltexture.h:
+
+/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelConfig.cmake:
+
+/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelDependencies.cmake:
+
+/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelTargets.cmake:
+
+/usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateConfig.cmake:
+
+/usr/include/qt6/QtGui/qfilesystemmodel.h:
+
+/usr/include/qt6/QtGui/qfontmetrics.h:
+
+/usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreDependencies.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreMacros.cmake:
+
+/usr/include/qt6/QtWidgets/QStatusBar:
+
+/usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfig.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateTargets.cmake:
+
+/usr/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/qpen.h:
+
+/usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtWidgets/qabstractitemview.h:
+
+/usr/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsDependencies.cmake:
+
+/usr/include/c++/15.1.1/bits/ostream.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsVersionlessTargets.cmake:
+
+/usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginConfig.cmake:
+
+/usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h:
+
+/usr/lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtGui/qsyntaxhighlighter.h:
+
+/usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateDependencies.cmake:
+
+/usr/lib/libsnappy.so.1:
+
+/usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:
+
+/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake:
+
+/usr/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake:
+
+/usr/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/pkuintrin.h:
+
+/usr/include/qt6/QtCore/qbytearrayalgorithms.h:
+
+/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/QEvent:
+
+/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfig.cmake:
+
+MeuCentavoApp_autogen/include/ui_formUsuario.h:
+
+/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateTargets.cmake:
+
+/usr/include/qt6/QtCore/QJsonArray:
+
+/usr/lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
+
+/usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsConfigVersionImpl.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginTargets-relwithdebinfo.cmake:
+
+/usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
+
+/usr/share/cmake/Modules/CMakeGenericSystem.cmake:
+
+/usr/include/qt6/QtCore/qstringmatcher.h:
+
+/usr/include/qt6/QtCharts/QBarModelMapper:
+
+/usr/share/cmake/Modules/CMakeLanguageInformation.cmake:
+
+/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtWidgets/qmessagebox.h:
+
+/usr/include/qt6/QtWidgets/qfilesystemmodel.h:
+
+/usr/include/qt6/QtCharts/qchartview.h:
+
+/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:
+
+/usr/share/cmake/Modules/CheckIncludeFileCXX.cmake:
+
+/usr/share/cmake/Modules/Compiler/GNU.cmake:
+
+/usr/include/qt6/QtCore/qcborarray.h:
+
+/usr/share/cmake/Modules/FindCups.cmake:
+
+/usr/share/cmake/Modules/FindOpenGL.cmake:
+
+/usr/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfigVersionImpl.cmake:
+
+/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/gthr.h:
+
+/usr/share/cmake/Modules/FindPackageMessage.cmake:
+
+/usr/share/cmake/Modules/FindVulkan.cmake:
+
+/usr/include/qt6/QtCharts/qbarseries.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2-512satcvtintrin.h:
+
+/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h:
+
+/usr/include/qt6/QtWidgets/QtWidgets:
+
+/usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake:
+
+/usr/include/bits/time64.h:
+
+/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:
+
+/usr/include/qt6/QtWidgets/qtreeview.h:
+
+/usr/share/cmake/Modules/Linker/GNU-CXX.cmake:
+
+MeuCentavoApp_autogen/include/ui_pageHome.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsRelatorios/dialogSimuladorCambio.cpp:
+
+/usr/share/cmake/Modules/Linker/GNU.cmake:
+
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake:
+
+/usr/share/cmake/Modules/Platform/Linker/GNU.cmake:
+
+/usr/lib/cmake/Qt6Positioning/Qt6PositioningAdditionalTargetInfo.cmake:
+
+/usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsPlatformpluginAdditionalTargetInfo.cmake:
+
+/usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsInvestimentos/dialogAddDividendo.cpp.o:
+
+/usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake:
+
+/usr/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtNetwork/QNetworkRequest:
+
+/usr/include/qt6/QtCore/qanystringview.h:
+
+/usr/include/qt6/QtCharts/QPieSeries:
+
+/usr/share/cmake/Modules/Platform/Linux.cmake:
+
+/usr/include/qt6/QtNetwork/qssl.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxint8intrin.h:
+
+/usr/lib/libXext.so.6:
+
+/usr/share/cmake/Modules/Platform/UnixPaths.cmake:
+
+/usr/include/bits/flt-eval-method.h:
 
 /usr/include/bits/fp-logb.h:
 
 /usr/include/bits/mathcalls-macros.h:
 
+/usr/include/bits/iscanonical.h:
+
+/usr/include/qt6/QtNetwork/qsslsocket.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
+/usr/include/bits/math-vector.h:
+
+/usr/include/qt6/QtCore/qjsonarray.h:
+
+/usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportVersionlessAliasTargets.cmake:
+
+/usr/include/c++/15.1.1/new:
+
 /usr/include/bits/mathcalls.h:
 
-/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginConfig.cmake:
+/usr/include/bits/stdint-uintn.h:
 
-/usr/include/bits/stdint-least.h:
+/usr/include/c++/15.1.1/bits/monostate.h:
 
-/usr/include/qt6/QtGui/qpdfwriter.h:
+/usr/include/qt6/QtCore/qxmlstream.h:
+
+/usr/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h:
 
-/usr/include/qt6/QtCore/QTextStream:
+/usr/include/qt6/QtGui/qpdfwriter.h:
 
 /usr/include/c++/15.1.1/pstl/glue_memory_defs.h:
 
+/usr/include/c++/15.1.1/stdlib.h:
+
+/usr/include/c++/15.1.1/version:
+
+/usr/include/qt6/QtWidgets/qaccessiblewidget.h:
+
+/usr/include/linux/sched/types.h:
+
+/usr/lib/libicui18n.so.76:
+
 /usr/include/math.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/formAdicionarLancamento.h:
+
+/usr/include/qt6/QtGui/qtextcursor.h:
+
+/usr/lib/libabsl_time.so.2505.0.0:
+
+/usr/include/qt6/QtGui/qtextdocument.h:
+
+/usr/include/qt6/QtGui/qtextformat.h:
+
+MeuCentavoApp_autogen/UKUT43B7UZ/moc_pageRelatorios.cpp:
+
+/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtGui/qoffscreensurface_platform.h:
+
+/usr/include/c++/15.1.1/debug/debug.h:
+
+/usr/include/qt6/QtWidgets/QPushButton:
+
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtWidgets/qabstractbutton.h:
+
+/usr/include/qt6/QtWidgets/qpushbutton.h:
+
+/usr/include/c++/15.1.1/tr1/special_function_util.h:
+
+/usr/include/sys/single_threaded.h:
+
+/usr/include/qt6/QtGui/qsessionmanager.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h:
+
+/usr/lib/libabsl_synchronization.so.2505.0.0:
+
+/usr/include/c++/15.1.1/bits/basic_ios.h:
+
+/usr/include/c++/15.1.1/bits/basic_ios.tcc:
+
+/usr/include/c++/15.1.1/bits/fs_fwd.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets.cmake:
+
+/usr/include/c++/15.1.1/bits/locale_conv.h:
+
+/usr/include/c++/15.1.1/bits/locale_facets.h:
+
+/usr/include/qt6/QtCore/qtmochelpers.h:
+
+/usr/include/c++/15.1.1/bits/locale_facets.tcc:
+
+/usr/include/qt6/QtWidgets/qabstractitemdelegate.h:
+
+/usr/include/qt6/QtGui/qvector3d.h:
+
+/usr/include/c++/15.1.1/bits/locale_facets_nonio.h:
+
+/usr/include/c++/15.1.1/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/15.1.1/bits/sstream.tcc:
+
+/usr/lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateTargets.cmake:
+
+/usr/include/qt6/QtCore/qtemporarydir.h:
+
+/usr/include/qt6/QtCore/qtranslator.h:
+
+/usr/include/c++/15.1.1/codecvt:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/DashboardPages/pageConfig.cpp.o:
+
+/usr/include/c++/15.1.1/cwctype:
+
+/usr/include/c++/15.1.1/locale:
+
+/usr/include/c++/15.1.1/ostream:
+
+/usr/include/qt6/QtCore/qlockfile.h:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/time_members.h:
+
+/usr/include/libintl.h:
+
+/usr/include/qt6/QtCore/QDebug:
+
+/usr/lib/cmake/Qt6Charts/Qt6ChartsAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/QJsonDocument:
+
+/usr/include/qt6/QtCore/qcborcommon.h:
+
+/usr/include/qt6/QtCore/QJsonObject:
+
+/usr/include/qt6/QtCore/qfile.h:
+
+/usr/include/qt6/QtGui/qgenericpluginfactory.h:
+
+/usr/include/qt6/QtCore/qfiledevice.h:
+
+/usr/include/qt6/QtGui/QFileSystemModel:
+
+/usr/include/qt6/QtCore/qfileinfo.h:
+
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qjsonparseerror.h:
+
+/usr/include/qt6/QtCore/qabstractitemmodel.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingTargets.cmake:
+
+/usr/include/qt6/QtCore/qtimezone.h:
+
+/usr/include/qt6/QtGui/qpixelformat.h:
+
+/usr/include/qt6/QtNetwork/QHttpMultiPart:
+
+/usr/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtGui/qpagesize.h:
+
+/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateDependencies.cmake:
+
+/usr/include/qt6/QtNetwork/qabstractsocket.h:
+
+/usr/include/qt6/QtNetwork/qhostaddress.h:
+
+/usr/lib/libharfbuzz-subset.so.0:
+
+/usr/lib/libXdamage.so.1:
+
+/usr/include/qt6/QtWidgets/qtextbrowser.h:
+
+/usr/include/qt6/QtWidgets/qitemeditorfactory.h:
+
+/usr/include/qt6/QtNetwork/qnetworkrequest.h:
+
+/usr/include/qt6/QtGui/qmatrix4x4.h:
+
+/usr/include/qt6/QtNetwork/qsslcertificate.h:
+
+/usr/include/qt6/QtNetwork/qsslerror.h:
+
+/usr/include/qt6/QtGui/qimagewriter.h:
+
+/usr/include/qt6/QtWidgets/QLabel:
+
+/usr/include/qt6/QtNetwork/qtnetworkglobal.h:
+
+/usr/include/wctype.h:
+
+/usr/include/qt6/QtWidgets/QHBoxLayout:
+
+/usr/include/bits/struct_mutex.h:
+
+/usr/include/qt6/QtWidgets/QSpacerItem:
+
+/usr/share/cmake/Modules/FindPkgConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qlayout.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginTargets.cmake:
+
+MeuCentavoApp_autogen/include/ui_pageDividas.h:
+
+/usr/lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersion.cmake:
+
+/usr/include/qt6/QtCore/QLocale:
+
+/usr/include/qt6/QtCore/qitemselectionmodel.h:
+
+/usr/include/qt6/QtGui/qvalidator.h:
+
+/usr/include/qt6/QtWidgets/QFrame:
+
+/usr/include/qt6/QtWidgets/QHeaderView:
+
+/usr/lib/cmake/Qt6Quick/Qt6QuickVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtWidgets/QProgressBar:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginConfig.cmake:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsLancamentos/dialogMapeamento.h:
+
+/usr/include/qt6/QtWidgets/qlabel.h:
+
+/usr/include/qt6/QtWidgets/qprogressbar.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginConfig.cmake:
+
+/usr/include/qt6/QtCore/qpromise.h:
+
+/usr/include/qt6/QtWidgets/qtabbar.h:
+
+/usr/lib/libabsl_flags_private_handle_accessor.so.2505.0.0:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qtableview.h:
+
+/usr/include/qt6/QtWidgets/qtablewidget.h:
+
+/usr/include/GL/gl.h:
+
+/usr/include/qt6/QtWidgets/qaction.h:
+
+/usr/include/qt6/QtCore/qconfig.h:
+
+/usr/include/c++/15.1.1/bits/std_mutex.h:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/opt_random.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginConfig.cmake:
+
+/usr/include/inttypes.h:
+
+/usr/include/qt6/QtCharts/QBoxPlotModelMapper:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxtf32intrin.h:
+
+/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake:
+
+/usr/include/qt6/QtCharts/QPieModelMapper:
+
+/usr/include/qt6/QtCharts/QXYSeries:
+
+/usr/lib/libX11.so.6:
+
+/usr/include/qt6/QtCharts/QtCharts:
+
+/usr/include/qt6/QtCharts/QtChartsDepends:
+
+/usr/include/qt6/QtCore/qlatin1stringmatcher.h:
+
+/usr/include/qt6/QtWidgets/qlistwidget.h:
+
+/usr/lib/libfribidi.so.0:
+
+/usr/include/qt6/QtCharts/qbarmodelmapper.h:
+
+/usr/include/qt6/QtCharts/qbarset.h:
+
+/usr/include/qt6/QtCharts/qxylegendmarker.h:
+
+/usr/include/qt6/QtCharts/qboxplotmodelmapper.h:
+
+/usr/include/qt6/QtCharts/qboxplotseries.h:
+
+/usr/include/qt6/QtCharts/qcandlesticklegendmarker.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginConfig.cmake:
+
+/usr/include/qt6/QtCharts/qcandlestickseries.h:
+
+/usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsversion.h:
+
+/usr/include/qt6/QtCharts/qcategoryaxis.h:
+
+/usr/lib/libabsl_raw_hash_set.so.2505.0.0:
+
+/usr/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtNetwork/qhttpheaders.h:
+
+/usr/include/qt6/QtCharts/qhbarmodelmapper.h:
+
+/usr/include/qt6/QtCharts/qhcandlestickmodelmapper.h:
+
+/usr/include/qt6/QtCharts/qhorizontalpercentbarseries.h:
+
+/usr/include/qt6/QtCharts/qhpiemodelmapper.h:
+
+MeuCentavoApp_autogen/2EK4JB7KXY/moc_formGerenciarCategorias.cpp:
+
+/usr/include/qt6/QtCharts/qhxymodelmapper.h:
+
+/usr/include/qt6/QtWidgets/QComboBox:
+
+/usr/include/qt6/QtCharts/qlegendmarker.h:
+
+/usr/include/qt6/QtCharts/qvalueaxis.h:
+
+/usr/lib/cmake/Qt6Positioning/Qt6PositioningConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginConfig.cmake:
+
+/usr/include/qt6/QtCharts/qlineseries.h:
+
+/usr/include/qt6/QtCharts/qlogvalueaxis.h:
+
+/usr/include/qt6/QtCharts/qpercentbarseries.h:
+
+/usr/lib/libabsl_debugging_internal.so.2505.0.0:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCharts/qpiemodelmapper.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/CMakeLists.txt:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginConfig.cmake:
+
+/usr/include/qt6/QtCharts/qscatterseries.h:
+
+/usr/include/qt6/QtCharts/qstackedbarseries.h:
+
+/usr/include/qt6/QtCore/qfloat16.h:
+
+/usr/include/qt6/QtCharts/qvbarmodelmapper.h:
+
+/usr/include/qt6/QtCharts/qvpiemodelmapper.h:
+
+/usr/include/c++/15.1.1/bits/fs_path.h:
+
+/usr/include/qt6/QtCharts/qvxymodelmapper.h:
+
+/usr/include/qt6/QtCharts/qxyseries.h:
+
+/usr/include/qt6/QtCore/qtypes.h:
+
+/usr/include/qt6/QtCore/QStringList:
+
+/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qfilesystemwatcher.h:
+
+/usr/lib/libQt6OpenGL.so.6.9.1:
+
+/usr/include/qt6/QtCore/QtCore:
+
+/usr/include/qt6/QtCore/QtCoreDepends:
+
+/usr/include/qt6/QtCore/q20algorithm.h:
+
+/usr/include/c++/15.1.1/bits/std_thread.h:
+
+/usr/include/qt6/QtCore/q20chrono.h:
+
+/usr/include/qt6/QtCore/q20map.h:
+
+/usr/include/qt6/QtCharts/qboxplotlegendmarker.h:
+
+/usr/lib/cmake/Qt6/QtPublicSbomHelpers.cmake:
+
+/usr/include/errno.h:
+
+/usr/include/qt6/QtCore/q20vector.h:
+
+/usr/include/qt6/QtCore/q23functional.h:
+
+/usr/include/qt6/QtCore/qabstractanimation.h:
+
+/usr/include/qt6/QtCore/qabstractnativeeventfilter.h:
+
+/usr/include/qt6/QtCore/qtresource.h:
+
+/usr/include/qt6/QtCore/qanimationgroup.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qapplicationstatic.h:
+
+/usr/include/qt6/QtCore/qatomicscopedvaluerollback.h:
+
+/usr/include/qt6/QtCore/qbitarray.h:
+
+/usr/include/c++/15.1.1/bits/stl_heap.h:
+
+/usr/include/qt6/QtCore/qbytearraymatcher.h:
+
+/usr/include/qt6/QtGui/qtextobject.h:
+
+/usr/include/bits/libc-header-start.h:
+
+/usr/include/qt6/QtCore/qcache.h:
+
+/usr/include/qt6/QtWidgets/qtreewidgetitemiterator.h:
+
+/usr/include/qt6/QtCore/qcborstream.h:
+
+/usr/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qchronotimer.h:
+
+/usr/include/qt6/QtCore/qcollator.h:
+
+/usr/include/qt6/QtCore/qcommandlineoption.h:
+
+/usr/include/qt6/QtWidgets/qshortcut.h:
+
+/usr/include/qt6/QtCore/qcommandlineparser.h:
+
+/usr/include/qt6/QtCore/qdirlisting.h:
+
+/usr/include/qt6/QtCore/qfactoryinterface.h:
+
+/usr/include/qt6/QtCore/qidentityproxymodel.h:
+
+/usr/include/qt6/QtCore/qlibrary.h:
+
+/usr/include/qt6/QtCore/qloggingcategory.h:
+
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtCore/qpluginloader.h:
+
+/usr/include/qt6/QtCore/qmessageauthenticationcode.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qmimedata.h:
+
+/usr/include/qt6/QtCharts/qhboxplotmodelmapper.h:
+
+/usr/include/qt6/QtCore/qoperatingsystemversion.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/wmmintrin.h:
+
+/usr/include/qt6/QtWidgets/qboxlayout.h:
+
+/usr/include/qt6/QtCore/qparallelanimationgroup.h:
+
+/usr/include/qt6/QtCore/qpermissions.h:
+
+/usr/include/qt6/QtCore/qplugin.h:
+
+/usr/include/qt6/QtCore/qprocess.h:
+
+/usr/include/qt6/QtCore/qproperty.h:
+
+/usr/include/qt6/QtCore/qresource.h:
+
+/usr/include/qt6/QtCharts/QChartView:
+
+/usr/lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateTargets.cmake:
+
+/usr/include/qt6/QtWidgets/qgraphicsgridlayout.h:
+
+/usr/include/qt6/QtCore/qsavefile.h:
+
+/usr/lib/cmake/Qt6CorePrivate/Qt6CorePrivateTargets.cmake:
+
+/usr/include/c++/15.1.1/bits/parse_numbers.h:
+
+/usr/include/qt6/QtCore/qsequentialanimationgroup.h:
+
+/usr/include/qt6/QtCore/qsequentialiterable.h:
+
+/usr/include/qt6/QtCore/qsimd.h:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsDashboard/FormsConfiguracoes/dialogAddEditConexao.cpp.o:
+
+/usr/include/qt6/QtCore/qstaticlatin1stringmatcher.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/FormsMetas/dialogAddEditMeta.h:
+
+/usr/include/qt6/QtCore/qstorageinfo.h:
+
+/usr/include/qt6/QtCore/qthreadstorage.h:
+
+/usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderTargets.cmake:
+
+/usr/include/qt6/QtCore/qtcoreversion.h:
+
+/usr/include/qt6/QtCore/qtextboundaryfinder.h:
+
+/usr/include/qt6/QtCore/qthreadpool.h:
+
+/usr/include/qt6/QtCore/qtimeline.h:
+
+/usr/include/qt6/QtCore/qtransposeproxymodel.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qtsan_impl.h:
+
+/usr/include/qt6/QtCore/qtsymbolmacros.h:
+
+/usr/include/qt6/QtCore/qvariantanimation.h:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:
+
+/usr/include/qt6/QtCore/qvariantlist.h:
+
+/usr/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake:
+
+/usr/include/qt6/QtCore/qvariantmap.h:
+
+/usr/lib/cmake/Qt6Positioning/Qt6PositioningDependencies.cmake:
+
+/usr/include/qt6/QtCore/qversionnumber.h:
+
+/usr/include/c++/15.1.1/type_traits:
+
+/usr/include/c++/15.1.1/cerrno:
+
+/usr/include/qt6/QtCore/qpropertyanimation.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx2intrin.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qwaitcondition.h:
+
+/usr/include/qt6/QtCore/qxpfunctional.h:
+
+/usr/lib/libffi.so.8:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/cpu_defines.h:
+
+/usr/include/c++/15.1.1/concepts:
+
+/usr/include/qt6/QtGui/QImage:
+
+/usr/include/qt6/QtGui/QMatrix3x3:
+
+/usr/include/qt6/QtNetwork/qnetworkaccessmanager.h:
+
+/usr/include/qt6/QtGui/QOpenGLContext:
+
+/usr/include/qt6/QtGui/QVector3D:
+
+/usr/include/qt6/QtGui/QtGuiDepends:
+
+/usr/include/qt6/QtGui/qaccessible.h:
+
+/usr/include/qt6/QtOpenGL/qtopenglexports.h:
+
+/usr/include/qt6/QtGui/qaccessiblebridge.h:
+
+/usr/lib/libk5crypto.so.3:
+
+/usr/include/qt6/QtGui/qaccessibleobject.h:
+
+/usr/include/qt6/QtGui/qaccessibleplugin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2convertintrin.h:
+
+MeuCentavoApp_autogen/IMH5DCT4WY/moc_formExcluirUsuario.cpp:
+
+/usr/include/qt6/QtGui/qactiongroup.h:
+
+/usr/include/c++/15.1.1/bits/cpp_type_traits.h:
+
+/usr/include/qt6/QtGui/qbackingstore.h:
+
+/usr/include/qt6/QtGui/qcolorspace.h:
+
+/usr/include/qt6/QtGui/qdesktopservices.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtGui/qdrag.h:
+
+/usr/lib/libavformat.so.61:
+
+/usr/include/qt6/QtGui/qfontdatabase.h:
+
+MeuCentavoApp_autogen/V5IIWBEYZM/moc_LancamentoDAO.cpp:
+
+/usr/include/qt6/QtGui/qiconengine.h:
+
+/usr/lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateConfig.cmake:
+
+/usr/lib/cmake/Qt6QmlMetaPrivate/Qt6QmlMetaPrivateTargets.cmake:
+
+/usr/include/qt6/QtGui/qimageiohandler.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlVersionlessAliasTargets.cmake:
+
+/usr/include/qt6/QtGui/qopenglcontext_platform.h:
+
+/usr/include/qt6/QtGui/qpainterstateguard.h:
+
+/usr/include/qt6/QtGui/qpaintdevicewindow.h:
+
+/usr/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/15.1.1/bits/string_view.tcc:
+
+/usr/include/qt6/QtGui/qpaintengine.h:
+
+/usr/include/qt6/QtGui/qkeysequence.h:
+
+/usr/include/qt6/QtGui/qpdfoutputintent.h:
+
+/usr/include/qt6/QtGui/qopenglextrafunctions.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vbmiintrin.h:
+
+/usr/include/qt6/QtGui/qpixmapcache.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtGui/qquaternion.h:
+
+/usr/include/qt6/QtCore/qtdeprecationmarkers.h:
+
+/usr/include/qt6/QtGui/qshortcut.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkblayoutspluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qstatictext.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512fp16vlintrin.h:
+
+/usr/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtGui/qsurface.h:
+
+/usr/lib/libQt6WebChannel.so.6.9.1:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtGui/qtextlayout.h:
+
+CMakeFiles/MeuCentavoApp.dir/Designer/FormsUsuarios/formExcluirUsuario.cpp.o:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qtguiversion.h:
+
+/usr/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qundogroup.h:
+
+/usr/include/qt6/QtGui/qundostack.h:
+
+/usr/include/linux/types.h:
+
+/usr/include/qt6/QtGui/qvector4d.h:
+
+/usr/include/qt6/QtWidgets/qradiobutton.h:
+
+/usr/include/qt6/QtCharts/qbarlegendmarker.h:
+
+/usr/include/qt6/QtGui/qwindow.h:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtOpenGL/QtOpenGL:
+
+/usr/include/qt6/QtQml/qqmlregistration.h:
+
+/usr/include/qt6/QtWidgets/qdatawidgetmapper.h:
+
+/usr/lib/libkrb5support.so.0:
+
+/usr/include/qt6/QtOpenGL/qopenglbuffer.h:
+
+/usr/include/qt6/QtOpenGL/qopenglpaintdevice.h:
+
+/usr/include/qt6/QtOpenGL/qopenglversionfunctions.h:
+
+/usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsDependencies.cmake:
+
+/usr/include/qt6/QtOpenGL/qopenglwindow.h:
+
+/usr/lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateTargets.cmake:
+
+/usr/include/qt6/QtOpenGL/qtopenglglobal.h:
+
+/usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtOpenGLWidgets/QtOpenGLWidgets:
+
+/usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h:
+
+/usr/include/qt6/QtWidgets/QGroupBox:
+
+/usr/lib/cmake/Qt6QmlAssetDownloader/Qt6QmlAssetDownloaderDependencies.cmake:
+
+/usr/include/qt6/QtWidgets/QScrollerProperties:
+
+/usr/include/qt6/QtWidgets/qbuttongroup.h:
+
+/usr/include/qt6/QtWidgets/qfileiconprovider.h:
+
+/usr/include/qt6/QtWidgets/qcalendarwidget.h:
+
+/usr/include/qt6/QtWidgets/qcolordialog.h:
+
+/usr/include/qt6/QtCore/q23utility.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtWidgets/qcombobox.h:
+
+/usr/include/qt6/QtWidgets/qdialogbuttonbox.h:
+
+/usr/include/qt6/QtWidgets/qdockwidget.h:
+
+/usr/include/qt6/QtWidgets/qdrawutil.h:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/Designer/FormsDashboard/DashboardPages/pageRelatorios.ui:
+
+/usr/include/qt6/QtWidgets/qerrormessage.h:
+
+/usr/include/qt6/QtWidgets/qfocusframe.h:
+
+/usr/include/qt6/QtWidgets/qfontcombobox.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qfontdialog.h:
+
+/usr/include/qt6/QtWidgets/qgesturerecognizer.h:
+
+/usr/lib/libgbm.so.1:
+
+/usr/include/qt6/QtWidgets/qgraphicslinearlayout.h:
+
+/usr/include/qt6/QtWidgets/qgraphicssceneevent.h:
+
+/usr/include/qt6/QtWidgets/qgroupbox.h:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake:
+
+/usr/include/qt6/QtWidgets/qinputdialog.h:
+
+/usr/include/qt6/QtWidgets/qitemdelegate.h:
+
+/usr/include/qt6/QtWidgets/qscrollerproperties.h:
+
+/usr/include/qt6/QtWidgets/qkeysequenceedit.h:
+
+/usr/lib/libnss3.so:
+
+/usr/include/qt6/QtCore/qlist.h:
+
+/usr/include/qt6/QtWidgets/qmdiarea.h:
+
+/usr/include/qt6/QtWidgets/qprogressdialog.h:
+
+/usr/include/bits/struct_rwlock.h:
+
+/usr/include/qt6/QtWidgets/qrhiwidget.h:
+
+/usr/include/qt6/QtQml/qtqmlglobal.h:
+
+/usr/include/qt6/QtWidgets/qscrollbar.h:
+
+/usr/include/qt6/QtWidgets/qscroller.h:
+
+/usr/include/stdint.h:
+
+/usr/include/qt6/QtGui/qmovie.h:
+
+/usr/include/qt6/QtWidgets/qsizegrip.h:
+
+/usr/include/qt6/QtWidgets/qsplashscreen.h:
+
+/usr/include/qt6/QtNetwork/qsslconfiguration.h:
+
+/usr/include/qt6/QtWidgets/qstackedwidget.h:
+
+/usr/include/qt6/QtWidgets/qstatusbar.h:
+
+/usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsVersionlessTargets.cmake:
+
+/usr/include/qt6/QtWidgets/qstylefactory.h:
+
+/usr/include/qt6/QtWidgets/qstylepainter.h:
+
+/usr/lib/libX11-xcb.so.1:
+
+/usr/include/qt6/QtWidgets/qtoolbar.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtWidgets/QLayout:
+
+/usr/include/qt6/QtWidgets/qtoolbox.h:
+
+/usr/include/qt6/QtWidgets/qtooltip.h:
+
+/usr/include/qt6/QtWidgets/qundoview.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxfp16intrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxfp8intrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/amxtransposeintrin.h:
+
+/usr/lib/libabsl_flags_reflection.so.2505.0.0:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx10_2-512minmaxintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vlintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512bf16vlintrin.h:
+
+MeuCentavoApp_autogen/73MS7PNRZQ/moc_dialogSimuladorFinanciamento.cpp:
+
+/home/bruno/Documentos/gestaoFinanceira/MeuCentavo/MeuCentavoApp/DataAccess/LancamentoDAO.cpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512bitalgvlintrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512bwintrin.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginTargets.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512dqintrin.h:
+
+/usr/include/qt6/QtGui/qaccessible_base.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512ifmavlintrin.h:
+
+/usr/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/avx512vbmivlintrin.h:
